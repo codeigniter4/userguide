@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Response Trait &mdash; CodeIgniter4 4.0.0-alpha.3 documentation</title>
+  <title>API Response Trait &mdash; CodeIgniter4 4.0.0-alpha.4 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-alpha.3 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-alpha.4 documentation" href="../index.html"/>
         <link rel="up" title="Building Responses" href="index.html"/>
         <link rel="next" title="Localization" href="localization.html"/>
         <link rel="prev" title="HTTP Responses" href="response.html"/> 
@@ -224,9 +224,11 @@ should be returned for which response types.</p>
 <p>The following example shows a common usage pattern within your controllers.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
 
+<span class="k">use</span> <span class="nx">CodeIgniter\API\ResponseTrait</span><span class="p">;</span>
+
 <span class="k">class</span> <span class="nc">Users</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
 <span class="p">{</span>
-    <span class="k">use</span> <span class="nx">\CodeIgniter\API\ResponseTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">ResponseTrait</span><span class="p">;</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">createUser</span><span class="p">()</span>
     <span class="p">{</span>
@@ -660,7 +662,7 @@ This might be due to some form of throttling or rate limiting. Status code is ty
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Nov 30, 2018.
+      Last updated on Dec 15, 2018.
 
     </p>
   </div>
@@ -682,7 +684,7 @@ This might be due to some form of throttling or rate limiting. Status code is ty
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-alpha.3',
+            VERSION:'4.0.0-alpha.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
