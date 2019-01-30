@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Session Library &mdash; CodeIgniter4 4.0.0-alpha.4 documentation</title>
+  <title>Session Library &mdash; CodeIgniter4 4.0.0-alpha.5 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-alpha.4 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-alpha.5 documentation" href="../index.html"/>
         <link rel="up" title="Library Reference" href="index.html"/>
         <link rel="next" title="Throttler" href="throttler.html"/>
         <link rel="prev" title="Security Class" href="security.html"/> 
@@ -117,7 +117,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Library Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
@@ -649,7 +648,7 @@ Sessions are a very sensitive component of any application, so some
 careful configuration must be done. Please take your time to consider
 all of the options and their effects.</p>
 <p>You&#8217;ll find the following Session related preferences in your
-<strong>application/Config/App.php</strong> file:</p>
+<strong>app/Config/App.php</strong> file:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="14%" />
@@ -773,7 +772,7 @@ engines, that you can use:</p>
 because it is the most safe choice and is expected to work everywhere
 (virtually every environment has a file system).</p>
 <p>However, any other driver may be selected via the <code class="docutils literal"><span class="pre">public</span> <span class="pre">$sessionDriver</span></code>
-line in your <strong>application/Config/App.php</strong> file, if you chose to do so.
+line in your <strong>app/Config/App.php</strong> file, if you chose to do so.
 Have it in mind though, every driver has different caveats, so be sure to
 get yourself familiar with them (below) before you make that choice.</p>
 <div class="section" id="filehandler-driver">
@@ -1002,8 +1001,8 @@ separate the multiple server paths with commas:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014-2018 British Columbia Institute of Technology.
-      Last updated on Dec 15, 2018.
+        &copy; Copyright 2014-2019 British Columbia Institute of Technology.
+      Last updated on Jan 30, 2019.
 
     </p>
   </div>
@@ -1025,7 +1024,7 @@ separate the multiple server paths with commas:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-alpha.4',
+            VERSION:'4.0.0-alpha.5',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

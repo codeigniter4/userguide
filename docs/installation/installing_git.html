@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Git Installation &mdash; CodeIgniter4 4.0.0-alpha.5 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="CodeIgniter4 4.0.0-alpha.5 documentation" href="../index.html"/>
+        <link rel="up" title="Installation" href="index.html"/>
+        <link rel="next" title="Running Your App" href="running.html"/>
+        <link rel="prev" title="Composer Installation" href="installing_composer.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing_manual.html">Manual Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Git Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running.html">Running Your App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repositories.html">CodeIgniter Repositories</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">CodeIgniter4 Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working With Databases</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Modeling Data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending CodeIgniter</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">The MIT License (MIT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CodeIgniter4</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Installation</a> &raquo;</li>
+        
+      <li>Git Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="git-installation">
+<h1>Git Installation<a class="headerlink" href="#git-installation" title="Permalink to this headline">¶</a></h1>
+<p>This would <em>not</em> be suitable for app development, but <em>is</em> suitable
+for contributing to the framework.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Install the latest version of the codebase by</p>
+<ul class="simple">
+<li>forking the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4">codebase</a> to your github account</li>
+<li>cloning <strong>your</strong> forked repository locally</li>
+</ul>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The command above will create a &#8220;CodeIgniter4&#8221; folder.
+Feel free to rename that as you see fit.</p>
+<p>You will want to setup a remote repository alias, so you can synchronize
+your repository with the main one:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">git</span> <span class="nx">remote</span> <span class="nx">add</span> <span class="nx">upstream</span> <span class="nx">https</span><span class="o">://</span><span class="nx">github</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">CodeIgniter4</span><span class="o">.</span><span class="nx">git</span>
+</pre></div>
+</div>
+<p>Copy the provided <code class="docutils literal"><span class="pre">env</span></code> file to <code class="docutils literal"><span class="pre">.env</span></code>, and use that for your git-ignored configuration settings,</p>
+<p>Copy the provided <code class="docutils literal"><span class="pre">phpunit.xml.dist</span></code> to <code class="docutils literal"><span class="pre">phpunit.xml</span></code> and tailor it as needed,
+if you want custom unit testing for the framework.</p>
+</div>
+<div class="section" id="upgrading">
+<h2>Upgrading<a class="headerlink" href="#upgrading" title="Permalink to this headline">¶</a></h2>
+<p>Update your code anytime:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">git</span> <span class="nx">checkout</span> <span class="nx">develop</span>
+<span class="nx">git</span> <span class="nx">pull</span> <span class="nx">upstream</span> <span class="nx">develop</span>
+<span class="nx">git</span> <span class="nx">push</span> <span class="nx">origin</span> <span class="nx">develop</span>
+</pre></div>
+</div>
+<p>Merge conflicts may arise when you pull from &#8220;upstream&#8221;.
+You will need to resolve them locally.</p>
+</div>
+<div class="section" id="pros">
+<h2>Pros<a class="headerlink" href="#pros" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>You have the latest version of the codebase (unreleased)</li>
+<li><dl class="first docutils">
+<dt>You can propose contributions to the framework, by creating a</dt>
+<dd>feature branch and submitting a pull request for it to the main repo</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>a pre-commit hook is installed for your repo, that binds it to the</dt>
+<dd>coding-standard we use</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="cons">
+<h2>Cons<a class="headerlink" href="#cons" title="Permalink to this headline">¶</a></h2>
+<p>You need to resolve merge conflicts when you synch with the repo.</p>
+<p>You would not use this technique for app development.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>Folders in your project after setup:</p>
+<ul class="simple">
+<li>app, public, system, tests, user_guide_src, writable</li>
+</ul>
+<div class="section" id="translations-installation">
+<h3>Translations Installation<a class="headerlink" href="#translations-installation" title="Permalink to this headline">¶</a></h3>
+<p>If you wish to contribute to the system message translations,
+then fork and clone the <a class="reference external" href="https://github.com/codeigniter4/translations">translations repository</a> separately from the codebase.
+These are two independent repositories!</p>
+</div>
+<div class="section" id="coding-standards-installation">
+<h3>Coding Standards Installation<a class="headerlink" href="#coding-standards-installation" title="Permalink to this headline">¶</a></h3>
+<p>This is bound and installed automatically as part of the
+codebase installation.</p>
+<p>If you wish to use it inside your project too,
+<code class="docutils literal"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">codeigniter4/translations</span> <span class="pre">&#64;alpha</span></code></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="running.html" class="btn btn-neutral float-right" title="Running Your App" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installing_composer.html" class="btn btn-neutral" title="Composer Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2019 British Columbia Institute of Technology.
+      Last updated on Jan 30, 2019.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.0.0-alpha.5',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
