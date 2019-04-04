@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Core System Classes &mdash; CodeIgniter4 4.0.0-beta.1 documentation</title>
+  <title>Creating Core System Classes &mdash; CodeIgniter4 4.0.0-beta.2 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.1 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.2 documentation" href="../index.html"/>
         <link rel="up" title="Extending CodeIgniter" href="index.html"/>
         <link rel="next" title="Events" href="events.html"/>
         <link rel="prev" title="Extending CodeIgniter" href="index.html"/> 
@@ -129,6 +129,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Extending CodeIgniter</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basecontroller.html">Extending the Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html">Contributing to CodeIgniter</a></li>
 </ul>
 </li>
@@ -240,7 +241,7 @@ attempting it.</p>
 <div class="section" id="replacing-core-classes">
 <h2>Replacing Core Classes<a class="headerlink" href="#replacing-core-classes" title="Permalink to this headline">¶</a></h2>
 <p>To use one of your own system classes instead of a default one, ensure that the <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">Autoloader</span></a>
-can find your class, that  your new class extends the appropriate interface, and modify the appropriate
+can find your class, that your new class extends the appropriate interface, and modify the appropriate
 <a class="reference internal" href="../concepts/services.html"><span class="doc">Service</span></a> to load your class in place of the core class.</p>
 <p>For example, if you have a new <code class="docutils literal"><span class="pre">App\Libraries\RouteCollection</span></code> class that you would like to use in place of
 the core system class, you would create your class like this:</p>
@@ -270,8 +271,8 @@ the core system class, you would create your class like this:</p>
 <div class="section" id="extending-core-classes">
 <h2>Extending Core Classes<a class="headerlink" href="#extending-core-classes" title="Permalink to this headline">¶</a></h2>
 <p>If all you need to is add some functionality to an existing library - perhaps add a method or two - then it&#8217;s overkill
-to recreate the entire library. In this case it&#8217;s better to simply extend the class. Extending the class is nearly
-identical to replacing a class with a one exception:</p>
+to recreate the entire library. In this case, it&#8217;s better to simply extend the class. Extending the class is nearly
+identical to replacing a class with one exception:</p>
 <ul class="simple">
 <li>The class declaration must extend the parent class.</li>
 </ul>
@@ -302,17 +303,6 @@ identical to replacing a class with a one exception:</p>
 </div>
 <p><strong>Tip:</strong>  Any functions in your class that are named identically to the methods in the parent class will be used
 instead of the native ones (this is known as “method overriding”). This allows you to substantially alter the CodeIgniter core.</p>
-<p>If you are extending the Controller core class, then be sure to extend your new class in your application controller’s
-constructors:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">App\BaseController</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Home</span> <span class="k">extends</span> <span class="nx">BaseController</span> <span class="p">{</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -339,7 +329,7 @@ constructors:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Mar 01, 2019.
+      Last updated on Apr 04, 2019.
 
     </p>
   </div>
@@ -361,7 +351,7 @@ constructors:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.1',
+            VERSION:'4.0.0-beta.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

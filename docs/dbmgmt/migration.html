@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database Migrations &mdash; CodeIgniter4 4.0.0-beta.1 documentation</title>
+  <title>Database Migrations &mdash; CodeIgniter4 4.0.0-beta.2 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.1 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.2 documentation" href="../index.html"/>
         <link rel="up" title="Managing Databases" href="index.html"/>
         <link rel="next" title="Database Seeding" href="seeds.html"/>
         <link rel="prev" title="Database Forge Class" href="forge.html"/> 
@@ -325,10 +325,11 @@ match the name of the database group exactly:</p>
 <div class="section" id="namespaces">
 <h3><a class="toc-backref" href="#id5">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
 <p>The migration library can automatically scan all namespaces you have defined within
-<strong>app/Config/Autoload.php</strong> and its <code class="docutils literal"><span class="pre">$psr4</span></code> property for matching directory
-names. It will include all migrations it finds in Database/Migrations.</p>
+<strong>app/Config/Autoload.php</strong> or loaded from an external source like Composer, using
+the <code class="docutils literal"><span class="pre">$psr4</span></code> property for matching directory names. It will include all migrations
+it finds in Database/Migrations.</p>
 <p>Each namespace has it&#8217;s own version sequence, this will help you upgrade and downgrade each module (namespace) without affecting other namespaces.</p>
-<p>For example, assume that we have the the following namespaces defined in our Autoload
+<p>For example, assume that we have the following namespaces defined in our Autoload
 configuration file:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;App&#39;</span>       <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
@@ -415,7 +416,7 @@ for the version.</p>
 <p>You can use (version) with the following options:</p>
 <ul class="simple">
 <li>(-g) to chose database group, otherwise default database group will be used.</li>
-<li>(-n) to choose namespace, , otherwise (App) namespace will be used.</li>
+<li>(-n) to choose namespace, otherwise (App) namespace will be used.</li>
 </ul>
 <p><strong>rollback</strong></p>
 <p>Rolls back all migrations, taking all database groups to a blank slate, effectively migration 0:</p>
@@ -625,7 +626,7 @@ newest migration found for all namespaces.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if no migrations are found, current version string on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Current version string on success, FALSE on failure or no migrations are found</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
@@ -722,7 +723,7 @@ specific versions. It works just like <code class="docutils literal"><span class
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Mar 01, 2019.
+      Last updated on Apr 04, 2019.
 
     </p>
   </div>
@@ -744,7 +745,7 @@ specific versions. It works just like <code class="docutils literal"><span class
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.1',
+            VERSION:'4.0.0-beta.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CLI Library &mdash; CodeIgniter4 4.0.0-beta.1 documentation</title>
+  <title>CLI Library &mdash; CodeIgniter4 4.0.0-beta.2 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.1 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.2 documentation" href="../index.html"/>
         <link rel="up" title="Command Line Usage" href="index.html"/>
         <link rel="next" title="CLIRequest Class" href="cli_request.html"/>
         <link rel="prev" title="Custom CLI Commands" href="cli_commands.html"/> 
@@ -274,7 +274,7 @@ even set background colors by passing the color name in as the third parameter:<
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;File overwritten.&#39;</span><span class="p">,</span> <span class="s1">&#39;light_red&#39;</span><span class="p">,</span> <span class="s1">&#39;dark_gray&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The following colors are available:</p>
+<p>The following foreground colors are available:</p>
 <ul class="simple">
 <li>black</li>
 <li>dark_gray</li>
@@ -294,6 +294,28 @@ even set background colors by passing the color name in as the third parameter:<
 <li>light_gray</li>
 <li>white</li>
 </ul>
+<p>And a smaller number are available as background colors:</p>
+<ul class="simple">
+<li>black</li>
+<li>blue</li>
+<li>green</li>
+<li>cyan</li>
+<li>red</li>
+<li>yellow</li>
+<li>light_gray</li>
+<li>magenta</li>
+</ul>
+<p><strong>print()</strong></p>
+<p>Print functions identically to the <code class="docutils literal"><span class="pre">write()</span></code> method, except that it does not force a newline either before or after.
+Instead it prints it to the screen wherever the cursor is currently. This allows you to print multiple items all on
+the same line, from different calls. This is especially helpful when you want to show a status, do something, then
+print &#8220;Done&#8221; on the same line:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">print</span><span class="p">(</span><span class="nv">$i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>color()</strong></p>
 <p>While the <code class="docutils literal"><span class="pre">write()</span></code> command will write a single line to the terminal, ending it with a EOL character, you can
 use the <code class="docutils literal"><span class="pre">color()</span></code> method to make a string fragment that can be used in the same way, except that it will not force
@@ -320,7 +342,7 @@ window and not go off screen:</p>
 <span class="nx">CLI</span><span class="o">::</span><span class="na">wrap</span><span class="p">(</span><span class="s2">&quot;Some long description goes here that might be longer than the current window.&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>By default the string will wrap at the terminal width. Windows currently doesn&#8217;t provide a way to determine
+<p>By default, the string will wrap at the terminal width. Windows currently doesn&#8217;t provide a way to determine
 the window size, so we default to 80 characters. If you want to restrict the width to something shorter that
 you can be pretty sure fits within the window, pass the maximum line-length as the second parameter. This
 will break the string at the nearest word barrier so that words are not broken.</p>
@@ -449,7 +471,7 @@ waiting for a key press.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Mar 01, 2019.
+      Last updated on Apr 04, 2019.
 
     </p>
   </div>
@@ -471,7 +493,7 @@ waiting for a key press.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.1',
+            VERSION:'4.0.0-beta.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

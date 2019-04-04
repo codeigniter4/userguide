@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database Quick Start: Example Code &mdash; CodeIgniter4 4.0.0-beta.1 documentation</title>
+  <title>Database Quick Start: Example Code &mdash; CodeIgniter4 4.0.0-beta.2 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.1 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.2 documentation" href="../index.html"/>
         <link rel="up" title="Working With Databases" href="index.html"/>
         <link rel="next" title="Database Configuration" href="configuration.html"/>
         <link rel="prev" title="Working With Databases" href="index.html"/> 
@@ -281,7 +281,7 @@ $row[&#8216;name&#8217;]</p>
 <h2>Standard Insert<a class="headerlink" href="#standard-insert" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO mytable (title, name) VALUES (&quot;</span><span class="o">.</span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
 <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">getAffectedRows</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">affectedRows</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -299,7 +299,7 @@ means of retrieving data:</p>
 </div>
 <p>The above get() function retrieves all the results from the supplied
 table. The <a class="reference internal" href="query_builder.html"><span class="doc">Query Builder</span></a> class contains a full
-compliment of functions for working with data.</p>
+complement of functions for working with data.</p>
 </div>
 <div class="section" id="query-builder-insert">
 <h2>Query Builder Insert<a class="headerlink" href="#query-builder-insert" title="Permalink to this headline">¶</a></h2>
@@ -338,7 +338,7 @@ compliment of functions for working with data.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Mar 01, 2019.
+      Last updated on Apr 04, 2019.
 
     </p>
   </div>
@@ -360,7 +360,7 @@ compliment of functions for working with data.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.1',
+            VERSION:'4.0.0-beta.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

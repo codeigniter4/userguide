@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>URL Helper &mdash; CodeIgniter4 4.0.0-beta.1 documentation</title>
+  <title>URL Helper &mdash; CodeIgniter4 4.0.0-beta.2 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.1 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.2 documentation" href="../index.html"/>
         <link rel="up" title="Helpers" href="index.html"/>
         <link rel="next" title="XML Helper" href="xml_helper.html"/>
         <link rel="prev" title="Text Helper" href="text_helper.html"/> 
@@ -232,7 +232,7 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
+<li><strong>$uri</strong> (<em>mixed</em>) &#8211; URI string or array of URI segments</li>
 <li><strong>$protocol</strong> (<em>string</em>) &#8211; Protocol, e.g. &#8216;http&#8217; or &#8216;https&#8217;</li>
 <li><strong>$altConfig</strong> (<em>\Config\App</em>) &#8211; Alternate configuration to use</li>
 </ul>
@@ -278,7 +278,7 @@ We use this for unit testing the framework itself.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) &#8211; URI string</li>
+<li><strong>$uri</strong> (<em>mixed</em>) &#8211; URI string or array of URI segments</li>
 <li><strong>$protocol</strong> (<em>string</em>) &#8211; Protocol, e.g. &#8216;http&#8217; or &#8216;https&#8217;</li>
 </ul>
 </td>
@@ -651,7 +651,7 @@ links. Example:</p>
 </pre></div>
 </div>
 <p>The second parameter determines whether URLs and e-mails are converted or
-just one or the other. Default behavior is both if the parameter is not
+just one or the other. The default behavior is both if the parameter is not
 specified. E-mail links are encoded as <a class="reference internal" href="#safe_mailto" title="safe_mailto"><code class="xref php php-func docutils literal"><span class="pre">safe_mailto()</span></code></a> as shown
 above.</p>
 <p>Converts only URLs:</p>
@@ -775,7 +775,7 @@ is missing from a URL.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Mar 01, 2019.
+      Last updated on Apr 04, 2019.
 
     </p>
   </div>
@@ -797,7 +797,7 @@ is missing from a URL.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.1',
+            VERSION:'4.0.0-beta.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
