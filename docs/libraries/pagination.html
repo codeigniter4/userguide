@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pagination &mdash; CodeIgniter4 4.0.0-beta.3 documentation</title>
+  <title>Pagination &mdash; CodeIgniter4 4.0.0-beta.4 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.3 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.4 documentation" href="../index.html"/>
         <link rel="up" title="Library Reference" href="index.html"/>
         <link rel="next" title="Security Class" href="security.html"/>
         <link rel="prev" title="Image Manipulation Class" href="images.html"/> 
@@ -312,6 +312,12 @@ sections.</p>
 </pre></div>
 </div>
 <p>Please note: <code class="docutils literal"><span class="pre">$segment</span></code> value cannot be greater than the number of URI segments plus 1.</p>
+<p>If you in need to show many pagers on one page then additional parameter which wil define a group could be helpful:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$pager</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;pager&#39;</span><span class="p">);</span>
+<span class="nv">$pager</span><span class="o">-&gt;</span><span class="na">setPath</span><span class="p">(</span><span class="s1">&#39;path/for/my-group&#39;</span><span class="p">,</span> <span class="s1">&#39;my-group&#39;</span><span class="p">);</span> <span class="c1">// Additionaly you could define path for every group.</span>
+<span class="nv">$pager</span><span class="o">-&gt;</span><span class="na">makeLinks</span><span class="p">(</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$perPage</span><span class="p">,</span> <span class="nv">$total</span><span class="p">,</span> <span class="s1">&#39;template_name&#39;</span><span class="p">,</span> <span class="nv">$segment</span><span class="p">,</span> <span class="s1">&#39;my-group&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="paginating-with-only-expected-queries">
 <h3>Paginating with Only Expected Queries<a class="headerlink" href="#paginating-with-only-expected-queries" title="Permalink to this headline">¶</a></h3>
@@ -472,7 +478,7 @@ title, which is just the number, and a boolean that tells whether the link is th
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on May 06, 2019.
+      Last updated on Jul 25, 2019.
 
     </p>
   </div>
@@ -494,7 +500,7 @@ title, which is just the number, and a boolean that tells whether the link is th
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.3',
+            VERSION:'4.0.0-beta.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

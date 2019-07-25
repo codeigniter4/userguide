@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>View Parser &mdash; CodeIgniter4 4.0.0-beta.3 documentation</title>
+  <title>View Parser &mdash; CodeIgniter4 4.0.0-beta.4 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-beta.3 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-beta.4 documentation" href="../index.html"/>
         <link rel="up" title="Building Responses" href="index.html"/>
         <link rel="next" title="HTML Table Class" href="table.html"/>
         <link rel="prev" title="View Layouts" href="view_layouts.html"/> 
@@ -800,7 +800,7 @@ callable:</p>
 </div>
 <div class="section" id="php-native-functions-as-filters">
 <h4>PHP Native functions as Filters<a class="headerlink" href="#php-native-functions-as-filters" title="Permalink to this headline">¶</a></h4>
-<p>You can easily use native php function as filters by editing <strong>app/Config/View.php</strong> and adding new entries to the
+<p>You can use native php function as filters by editing <strong>app/Config/View.php</strong> and adding new entries to the
 <code class="docutils literal"><span class="pre">$filters</span></code> array.Each key is the name of the native PHP function is called by in the view, and its value is any valid native PHP
 function prefixed with:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
@@ -839,9 +839,9 @@ key/value pairs:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
-<col width="14%" />
-<col width="43%" />
-<col width="33%" />
+<col width="13%" />
+<col width="42%" />
+<col width="34%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Plugin</th>
@@ -851,20 +851,20 @@ key/value pairs:</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>current_url</td>
+<tr class="row-even"><td>currentURL</td>
 <td>&nbsp;</td>
 <td>Alias for the current_url helper function.</td>
-<td>{+ current_url +}</td>
+<td>{+ currentURL +}</td>
 </tr>
-<tr class="row-odd"><td>previous_url</td>
+<tr class="row-odd"><td>previousURL</td>
 <td>&nbsp;</td>
 <td>Alias for the previous_url helper function.</td>
-<td>{+ previous_url +}</td>
+<td>{+ previousURL +}</td>
 </tr>
-<tr class="row-even"><td>site_url</td>
+<tr class="row-even"><td>siteURL</td>
 <td>&nbsp;</td>
 <td>Alias for the site_url helper function.</td>
-<td>{+ site_url &#8220;login&#8221; +}</td>
+<td>{+ siteURL &#8220;login&#8221; +}</td>
 </tr>
 <tr class="row-odd"><td>mailto</td>
 <td>email, title, attributes</td>
@@ -905,6 +905,22 @@ used within the template file. The value is any valid PHP callable, including st
                 <span class="k">return</span> <span class="nv">$str</span><span class="p">;</span>
         <span class="p">},</span>
 <span class="p">];</span>
+</pre></div>
+</div>
+<p>Any closures that are being used must be defined in the config file&#8217;s constructor:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Config\View</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">plugins</span><span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="k">array</span> <span class="nv">$params</span><span class="o">=</span><span class="p">[])</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="p">};</span>
+
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>If the callable is on its own, it is treated as a single tag, not a open/close one. It will be replaced by
@@ -1230,7 +1246,7 @@ substitutions are performed for each data pair.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on May 06, 2019.
+      Last updated on Jul 25, 2019.
 
     </p>
   </div>
@@ -1252,7 +1268,7 @@ substitutions are performed for each data pair.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-beta.3',
+            VERSION:'4.0.0-beta.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
