@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extending CodeIgniter &mdash; CodeIgniter4 4.0.0-rc.1 documentation</title>
+  <title>Replacing Common Functions &mdash; CodeIgniter4 4.0.0-rc.1 documentation</title>
   
 
   
@@ -35,8 +35,9 @@
 
   
     <link rel="top" title="CodeIgniter4 4.0.0-rc.1 documentation" href="../index.html"/>
-        <link rel="next" title="Creating Core System Classes" href="core_classes.html"/>
-        <link rel="prev" title="CLIRequest Class" href="../cli/cli_request.html"/> 
+        <link rel="up" title="Extending CodeIgniter" href="index.html"/>
+        <link rel="next" title="Events" href="events.html"/>
+        <link rel="prev" title="Creating Core System Classes" href="core_classes.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -125,9 +126,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Extending CodeIgniter</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extending CodeIgniter</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common.html">Replacing Common Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Replacing Common Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basecontroller.html">Extending the Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing.html">Contributing to CodeIgniter</a></li>
@@ -181,7 +182,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Extending CodeIgniter</li>
+          <li><a href="index.html">Extending CodeIgniter</a> &raquo;</li>
+        
+      <li>Replacing Common Functions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,17 +201,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extending-codeigniter">
-<h1>Extending CodeIgniter<a class="headerlink" href="#extending-codeigniter" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter 4 has been designed to be easy to extend or build upon.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common.html">Replacing Common Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basecontroller.html">Extending the Controller</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to CodeIgniter</a></li>
-</ul>
+  <div class="section" id="replacing-common-functions">
+<h1>Replacing Common Functions<a class="headerlink" href="#replacing-common-functions" title="Permalink to this headline">¶</a></h1>
+<p>There are quite a few functions necessary to CodeIgniter that need to be loaded early for use in the core classes and
+thus cannot be placed into a helper. While most users will never have any need to do this, but the option to replace
+these functions does exist for those who would like to significantly alter the CodeIgniter core. In the <code class="docutils literal"><span class="pre">App\</span></code>
+directory there is a file <code class="docutils literal"><span class="pre">Common.php</span></code>, and any functions defined in there will take precedence over the versions
+found in <code class="docutils literal"><span class="pre">system/Common.php</span></code>. This is also an opportunity to create globally-available functions you intend to
+use throughout the framework.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Messing with a core system class has a lot of implications, so make sure you know what you are doing before
+attempting it.</p>
 </div>
 </div>
 
@@ -222,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="core_classes.html" class="btn btn-neutral float-right" title="Creating Core System Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="events.html" class="btn btn-neutral float-right" title="Events" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../cli/cli_request.html" class="btn btn-neutral" title="CLIRequest Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="core_classes.html" class="btn btn-neutral" title="Creating Core System Classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
