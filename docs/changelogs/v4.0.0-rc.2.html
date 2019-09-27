@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version 4.0.0-beta.4 &mdash; CodeIgniter4 4.0.0-rc.2 documentation</title>
+  <title>Version 4.0.0-rc.2 &mdash; CodeIgniter4 4.0.0-rc.2 documentation</title>
   
 
   
@@ -34,10 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-rc.2 documentation" href="../index.html"/>
-        <link rel="up" title="Change Logs" href="index.html"/>
-        <link rel="next" title="Version 4.0.0-beta.3" href="v4.0.0-beta.3.html"/>
-        <link rel="prev" title="Version 4.0.0-rc.1" href="v4.0.0-rc.1.html"/> 
+    <link rel="top" title="CodeIgniter4 4.0.0-rc.2 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -128,25 +125,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending CodeIgniter</a></li>
 </ul>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">The MIT License (MIT)</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Change Logs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="next.html">Version 4.0-dev</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-rc.1.html">Version 4.0.0-rc.1</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Version 4.0.0-beta.4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#prs-merged">PRs merged:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-beta.3.html">Version 4.0.0-beta.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-beta.2.html">Version 4.0.0-beta.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-beta.1.html">Version 4.0.0-beta.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-alpha.5.html">Version 4.0.0-alpha.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-alpha.4.html">Version 4.0.0-alpha.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-alpha.3.html">Version 4.0.0-alpha.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-alpha.2.html">Version 4.0.0-alpha.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="v4.0.0-alpha.1.html">Version 4.0.0-alpha.1</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Change Logs</a></li>
 </ul>
 
             
@@ -191,9 +172,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Change Logs</a> &raquo;</li>
-        
-      <li>Version 4.0.0-beta.4</li>
+      <li>Version 4.0.0-rc.2</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,24 +189,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="version-4-0-0-beta-4">
-<h1>Version 4.0.0-beta.4<a class="headerlink" href="#version-4-0-0-beta-4" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="version-4-0-0-rc-2">
+<h1>Version 4.0.0-rc.2<a class="headerlink" href="#version-4-0-0-rc-2" title="Permalink to this headline">¶</a></h1>
 <p>Release Date: Not released</p>
-<p>Highlights:</p>
-<p>There are some breaking changes...</p>
+<p><strong>RC.2 release of CodeIgniter4</strong></p>
+<p>Enhancements:</p>
 <ul class="simple">
-<li>The Entity class has been refactored;</li>
-<li>The Model class changing has been updated to better handle soft deletes</li>
-<li>The routing has been beefed up</li>
-</ul>
-<p>New messages:</p>
-<ul class="simple">
-<li>new translation key: Database/noDateFormat</li>
+<li><dl class="first docutils">
+<dt>query builder testability simplified with new property, but dropped</dt>
+<dd>method parameters (breaking change)</dd>
+</dl>
+</li>
+<li>database, migrations and sessions beefed up</li>
+<li>numerous smaller bugs corrected</li>
 </ul>
 <p>App changes:</p>
-<p>Testing changes:</p>
 <ul class="simple">
-<li>enhanced database &amp; migration testing in tests/_support</li>
+<li>Config/Constants, Paths &amp; some config settings have had changes</li>
+</ul>
+<p>Message changes:</p>
+<ul class="simple">
+<li>N/A</li>
 </ul>
 <p>The list of changed files follows, with PR numbers shown.</p>
 <ul class="simple">
@@ -236,9 +218,11 @@
 <dt>app/</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Controllers/</dt>
+<dt>Config/</dt>
 <dd><ul class="first last">
-<li>Home #1999</li>
+<li>Boot/* #2241</li>
+<li>Constants #2183</li>
+<li>Paths #2181</li>
 </ul>
 </dd>
 </dl>
@@ -252,44 +236,9 @@
 <dt>system/</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Autoloader/</dt>
+<dt>CLI/</dt>
 <dd><ul class="first last">
-<li>FileLocator #2059, #2064</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Cache/</dt>
-<dd><ul class="first last">
-<li>CacheFactory #2060</li>
-<li><dl class="first docutils">
-<dt>Handlers/</dt>
-<dd><ul class="first last">
-<li>MemcachedHandler #2060</li>
-<li>PredisHandler #2060</li>
-<li>RedisHandler #2060</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Commands/</dt>
-<dd><ul class="first last">
-<li>Utilities/Routes #2008</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Config/</dt>
-<dd><ul class="first last">
-<li>Config #2079</li>
-<li>Services #2024</li>
+<li>BaseCommand #2231</li>
 </ul>
 </dd>
 </dl>
@@ -297,41 +246,22 @@
 <li><dl class="first docutils">
 <dt>Database/</dt>
 <dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>MySQLi/</dt>
-<dd><ul class="first last">
-<li>Connection #2042</li>
-<li>Result #2011</li>
-</ul>
-</dd>
-</dl>
-</li>
+<li>MySQLi/Connection #2201, 2229</li>
 <li><dl class="first docutils">
 <dt>Postgre/</dt>
 <dd><ul class="first last">
-<li>Connection #2042</li>
-<li>Result #2011</li>
+<li>BaseBuilder #2269</li>
+<li>Connection #2201</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>SQLite3/</dt>
-<dd><ul class="first last">
-<li>Connection #2042</li>
-<li>Forge #2042</li>
-<li>Result #2011</li>
-<li>Table #2042</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>BaseBuilder #1989</li>
-<li>BaseConnection #2042</li>
-<li>BaseResult #2002</li>
-<li>Forge #2042</li>
-<li>MigratiopnRollback #2035</li>
-<li>MigrationRunner #2019</li>
+<li>SQLite3/Connection #2201, 2228, 2230</li>
+<li>BaseBuilder #2257, 2232, 2269, 2270</li>
+<li>BaseConnection #2208, 2213, 2231</li>
+<li>Config #2224</li>
+<li>Forge #2205</li>
+<li>MigrationRunner #2191</li>
 </ul>
 </dd>
 </dl>
@@ -339,15 +269,16 @@
 <li><dl class="first docutils">
 <dt>Debug/</dt>
 <dd><ul class="first last">
-<li>Toolbar/Collectors/Routes #2030</li>
+<li>Exceptions #2262</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Exceptions.</dt>
+<dt>Encryption/</dt>
 <dd><ul class="first last">
-<li>ModelException #2054</li>
+<li>Encryption #2231</li>
+<li>Handlers/BaseHandler #2231</li>
 </ul>
 </dd>
 </dl>
@@ -355,16 +286,7 @@
 <li><dl class="first docutils">
 <dt>Files/</dt>
 <dd><ul class="first last">
-<li>File #2104</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Filters/</dt>
-<dd><ul class="first last">
-<li>Filters #2039 - helpers/</li>
-<li>date_helper #2091</li>
+<li>FileCollection #2265</li>
 </ul>
 </dd>
 </dl>
@@ -372,36 +294,43 @@
 <li><dl class="first docutils">
 <dt>HTTP/</dt>
 <dd><ul class="first last">
-<li>CLIRequest #2024</li>
-<li>CURLRequest #1996, #2050</li>
-<li>IncomingRequest #2063</li>
-<li>Request #2024</li>
+<li>CURLRequest #2168</li>
+<li>IncomingRequest #2265</li>
+<li>Request #2253</li>
+<li>Response #2253</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Language/en/</dt>
+<dt>I18n/</dt>
 <dd><ul class="first last">
-<li>Database #2054</li>
+<li>Time #2231</li>
+<li>TimeDifference #2231</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Pager/</dt>
+<dt>Images/</dt>
 <dd><ul class="first last">
-<li>Pager #2026</li>
+<li>Handlers/BaseHandler #2246</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Router/</dt>
+<dt>RESTful/</dt>
 <dd><ul class="first last">
-<li>RouteCollection #1959, #2012, #2024</li>
-<li>Router #2024, #2031, #2043</li>
-<li>RouterInterface #2024</li>
+<li>ResourcePresenter #2271</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Security/</dt>
+<dd><ul class="first last">
+<li>Security #2240</li>
 </ul>
 </dd>
 </dl>
@@ -409,7 +338,7 @@
 <li><dl class="first docutils">
 <dt>Session/</dt>
 <dd><ul class="first last">
-<li>Handlers/ArrayHandler #2014</li>
+<li>Session #2197, 2231</li>
 </ul>
 </dd>
 </dl>
@@ -417,35 +346,43 @@
 <li><dl class="first docutils">
 <dt>Test/</dt>
 <dd><ul class="first last">
-<li>CIUnitTestCase #2002</li>
-<li>FeatureTestCase #2043</li>
+<li>CIDatabaseTestCase #2205</li>
+<li>CIDatabaseUnitTestCase #2184</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Throttle/</dt>
+<dt>Validation/</dt>
 <dd><ul class="first last">
-<li>Throttler #2074</li>
+<li>FileRules #2265</li>
+<li>Validation #2268</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>CodeIgniter #2012, #2024</li>
-<li>Common #2036</li>
-<li>Entity #2002, #2004, #2011, #2081</li>
-<li>Model #2050, #2051, #2053, #2054</li>
+<li><dl class="first docutils">
+<dt>View/</dt>
+<dd><ul class="first last">
+<li>Parser #2264</li>
 </ul>
 </dd>
 </dl>
 </li>
+<li>Common #2200, 2209, 2261</li>
+<li>Model #2231</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>tests/_support/</li>
 <li><dl class="first docutils">
 <dt>tests/system/</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>CLI/</dt>
+<dt>Commands/</dt>
 <dd><ul class="first last">
-<li>ConsoleTest #2024</li>
+<li>CommandClassTest #2231</li>
 </ul>
 </dd>
 </dl>
@@ -454,18 +391,51 @@
 <dt>Database/</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
-<dt>Live/</dt>
+<dt>Builder/</dt>
 <dd><ul class="first last">
-<li>DbUtilsTest #2051, #2053</li>
-<li>ForgeTest #2019, #2042</li>
-<li>ModelTest #2002, #2051, #2053, #2054</li>
-<li>SQLite/AlterTablesTest #2042</li>
-<li>WhereTest #2052</li>
+<li>GetTest #2232</li>
+<li>CountTest #2269</li>
+<li>DeleteTest #2269</li>
+<li>EmptyTest #2269</li>
+<li>GetTest #2269</li>
+<li>GroupTest #2257</li>
+<li>InsertTest #2269</li>
+<li>ReplaceTest #2269</li>
+<li>TruncateTest #2269</li>
+<li>UpdateTest #2269</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>Migrations/MigrationRunnerTest #2019</li>
+<li><dl class="first docutils">
+<dt>Live/</dt>
+<dd><ul class="first last">
+<li>EscapeTest #2229</li>
+<li>ForgeTest #2201, 2211</li>
+<li>GroupTest #2257</li>
+<li>MetadataTest #2211</li>
+<li>ModelTest #2231</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>BaseConnectionTest #2229, 2231</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Encryption/</dt>
+<dd><ul class="first last">
+<li>EncryptionTest #2231</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Helpers/</dt>
+<dd><ul class="first last">
+<li>URLHelperTest #2259</li>
 </ul>
 </dd>
 </dl>
@@ -473,33 +443,42 @@
 <li><dl class="first docutils">
 <dt>HTTP/</dt>
 <dd><ul class="first last">
-<li>CLIRequest #2024</li>
-<li>CURLRequestTest #1996</li>
+<li>CURLRequestTest #2168</li>
+<li>FileCOllectionTest #2265</li>
+<li>URITest #2259</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Router/</dt>
+<dt>I18n/</dt>
 <dd><ul class="first last">
-<li>RouteCollectionTest #1959, #2012, #2024</li>
-<li>RouterTest #2024, #2043</li>
+<li>TimeDifferenceTest #2231</li>
+<li>TimeTest #2231</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Test/</dt>
+<dt>Pager/</dt>
 <dd><ul class="first last">
-<li>FeatureTestCaseTest #2043</li>
+<li>pagerTest #2259</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Throttle/</dt>
+<dt>RESTful/</dt>
 <dd><ul class="first last">
-<li>ThrottleTest #2074</li>
+<li>ResourcePresenterTest #2271</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Session/</dt>
+<dd><ul class="first last">
+<li>SessionTest #2231</li>
 </ul>
 </dd>
 </dl>
@@ -507,13 +486,11 @@
 <li><dl class="first docutils">
 <dt>View/</dt>
 <dd><ul class="first last">
-<li>ParserTest #2005</li>
+<li>ParserTest #2264</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>CodeIgniterTest #2024</li>
-<li>EntityTest #2002, #2004</li>
 </ul>
 </dd>
 </dl>
@@ -524,7 +501,7 @@
 <li><dl class="first docutils">
 <dt>concepts/</dt>
 <dd><ul class="first last">
-<li>autoloader #2035, #2071</li>
+<li>structure #2221</li>
 </ul>
 </dd>
 </dl>
@@ -532,7 +509,9 @@
 <li><dl class="first docutils">
 <dt>database/</dt>
 <dd><ul class="first last">
-<li>query_builder #2035</li>
+<li>metadata #2199, 2201, 2208</li>
+<li>queries #2208</li>
+<li>query_builder #2257, 2232, 2269</li>
 </ul>
 </dd>
 </dl>
@@ -540,16 +519,31 @@
 <li><dl class="first docutils">
 <dt>dbmgmt/</dt>
 <dd><ul class="first last">
-<li>forge #2042</li>
-<li>migration #2042</li>
+<li>migration #2190, 2191</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>helpers/</dt>
+<dt>extending/</dt>
 <dd><ul class="first last">
-<li>date_helper #2091</li>
+<li>contributing #2221</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>general/</dt>
+<dd><ul class="first last">
+<li>errors #2221</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>helpera/</dt>
+<dd><ul class="first last">
+<li>url_helper #2259</li>
 </ul>
 </dd>
 </dl>
@@ -557,7 +551,8 @@
 <li><dl class="first docutils">
 <dt>incoming/</dt>
 <dd><ul class="first last">
-<li>routing #2035</li>
+<li>restful #2189</li>
+<li>routing #2221</li>
 </ul>
 </dd>
 </dl>
@@ -565,7 +560,7 @@
 <li><dl class="first docutils">
 <dt>installation/</dt>
 <dd><ul class="first last">
-<li>installing_composer #2015, #2035</li>
+<li>troubleshooting #2260</li>
 </ul>
 </dd>
 </dl>
@@ -573,19 +568,10 @@
 <li><dl class="first docutils">
 <dt>libraries/</dt>
 <dd><ul class="first last">
-<li>pagination #2026</li>
-<li>sessions #2014, #2035</li>
-<li>validaiton #2069</li>
-<li>uploaded_files #2104</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>models/</dt>
-<dd><ul class="first last">
-<li>entitites #2002, #2004, #2035</li>
-<li>model #2051, #2053, #2054</li>
+<li>encryption #2221</li>
+<li>pagination #2216</li>
+<li>time #2221</li>
+<li>uti #2216</li>
 </ul>
 </dd>
 </dl>
@@ -593,7 +579,9 @@
 <li><dl class="first docutils">
 <dt>outgoing/</dt>
 <dd><ul class="first last">
-<li>view_parser #e21823, 32005</li>
+<li>api_responses #2245</li>
+<li>view_layouts #2218</li>
+<li>view_parser #2218, 2264</li>
 </ul>
 </dd>
 </dl>
@@ -601,7 +589,19 @@
 <li><dl class="first docutils">
 <dt>testing/</dt>
 <dd><ul class="first last">
-<li>database #2051, #2053</li>
+<li>controllers #2221</li>
+<li>debugging #2221, 2209</li>
+<li>feature #2218, 2221</li>
+<li>overview #2221</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>tutorial/</dt>
+<dd><ul class="first last">
+<li>news_section #2221</li>
+<li>static_pages #2221</li>
 </ul>
 </dd>
 </dl>
@@ -614,46 +614,48 @@
 <div class="section" id="prs-merged">
 <h2>PRs merged:<a class="headerlink" href="#prs-merged" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>#2104 File &amp; UploadFile Fixes</li>
-<li>#2091 Timezone select</li>
-<li>#2081 JSON format checking improved</li>
-<li>#2079 Update config() to check all namespaces</li>
-<li>#2074 Throttler can access bucket for bucket life time</li>
-<li>#2071 Fix autoloader.rst formatting</li>
-<li>#2069 validation rule: then -&gt; than (spelling)</li>
-<li>#2064 Bugfix file locator slash error</li>
-<li>#2063 Ensure query vars are part of request-&gt;uri. Fixes #2062</li>
-<li>#2060 Cache Drive Backups</li>
-<li>#2059 Add multi-path support to <cite>locateFile()</cite></li>
-<li>#2054 Add model exceptions for missing/invalid dateFormat</li>
-<li>#2053 Change Model&#8217;s deleted flag to a deleted_at datetime/timestamp. Fixes #2041</li>
-<li>#2052 Add various tests for (not) null</li>
-<li>#2051 Soft deletes use deleted_at</li>
-<li>#2050 Stash insert ID before event trigger</li>
-<li>#2043 Zero params should be passed through when routing. Fixes #2032</li>
-<li>#2042 SQLite3 now supports dropping foreign keys. Fixes #1982</li>
-<li>#2040 Update CURLRequest.php</li>
-<li>#2039 Restrict filter matching of uris so they require an exact match. Fixes #2038</li>
-<li>#2036 Make <cite>force_https()</cite> send headers before exit</li>
-<li>#2035 Various typos and Guide corrections</li>
-<li>#2031 Fallback to server request for default method</li>
-<li>#2030 Support the new <cite>router</cite> service in Debug Toolbar</li>
-<li>#2026 Extension Pager::makeLinks (optional grup name)</li>
-<li>#2024 Refactor the way the router and route collection determine the current HTTP verb</li>
-<li>#2019 SQLite and Mysql driver additional tests and migration runner test fixes</li>
-<li>#2015 Direct user to follow the upgrade steps after installation</li>
-<li>#2014 Added a new Session/ArrayHandler that can be used during testing</li>
-<li>#2012 Use request-&gt;method for HTTP verb</li>
-<li>#2011 Set the raw data array without any mutations for the Entity</li>
-<li>#2008 Add <cite>patch</cite> method to command &#8220;routes&#8221;</li>
-<li>#2005 Plugin closures docs update and test</li>
-<li>#2004 Allow hasChanged() without parameter</li>
-<li>#2002 Entity Refactor</li>
-<li>#1999 use CodeIgniterController; not needed since Home Controller extends …</li>
-<li>#1996 Attempting to fix CURLRequest debug issue. #1994</li>
-<li>#e21823 Corrected docs for parser plugins. Closes #1995</li>
-<li>#1989 argument set() must by type of string - cannot agree</li>
-<li>#1959 Prevent reverseRoute from searching closures</li>
+<li>#2271 fix ResourcePresenter::setModel()</li>
+<li>#2270 groupStart() refactorization</li>
+<li>#2269 testMode() method for BaseBuilder</li>
+<li>#2268 Validation session use only if exists</li>
+<li>#2267 Tests setUp and tearDown: void</li>
+<li>#2265 Fix a validation issue on multiple file upload</li>
+<li>#2264 fix. Parser allow other extension</li>
+<li>#2262 Fix parameter type in Debug/Exceptions</li>
+<li>#2261 Fix lang() signature</li>
+<li>#2260 Explain the whoops page</li>
+<li>#2259 Add URI &amp; url_helper tests</li>
+<li>#2257 Several updates to the HAVING clauses</li>
+<li>#2253 Fix invalid parameters</li>
+<li>#2246 EXIF not supported for GIF</li>
+<li>#2245 Fix class ref parameter types</li>
+<li>#2241 Fix ini_set parameter type</li>
+<li>#2240 Handle JSON POSTs in CSRF</li>
+<li>#2232 Fixes BaseBuilder getWhere() bug</li>
+<li>#2231 Add magic __isset to classes with __get</li>
+<li>#2230 Add escape to SQLite _listTables()</li>
+<li>#2229 MySQLi escapeLikeStringDirect()</li>
+<li>#2228 Exclude <cite>sqlite_%</cite> from listTables()</li>
+<li>#2224 change new ConfigDatabase() to config(&#8216;Database&#8217;)</li>
+<li>#2221 Documentation fixes</li>
+<li>#2218 Typo corrected</li>
+<li>#2216 Update uri.rst</li>
+<li>#2213 Filter listTables cache response on constrainPrefix</li>
+<li>#2211 Add listTable() tests</li>
+<li>#2209 Add trace()</li>
+<li>#2208 Add $db-&gt;getPrefix()</li>
+<li>#2205 Fix empty() bug on DBPrefix</li>
+<li>#2201 Foreign key columns</li>
+<li>#2200 Notify Kint of dd alias</li>
+<li>#2199 Add getForeignKeyData to User Guide</li>
+<li>#2187 Update Session.php</li>
+<li>#2191 Migration rollback reverse</li>
+<li>#2190 Fix name of ForeignKeyChecks</li>
+<li>#2189 missing return</li>
+<li>#2184 Fix case on &#8220;Seeds/&#8221; directory</li>
+<li>#2183 Check <cite>defined</cite> for constants</li>
+<li>#2181 Remove copy-paste extraneous text</li>
+<li>#2168 Fix for CURL for &#8216;debug&#8217; option</li>
 </ul>
 </div>
 </div>
@@ -665,15 +667,6 @@
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="v4.0.0-beta.3.html" class="btn btn-neutral float-right" title="Version 4.0.0-beta.3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="v4.0.0-rc.1.html" class="btn btn-neutral" title="Version 4.0.0-rc.1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
