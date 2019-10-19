@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Query Builder Class &mdash; CodeIgniter4 4.0.0-rc.2 documentation</title>
+  <title>Query Builder Class &mdash; CodeIgniter4 4.0.0-rc.3 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-rc.2 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-rc.3 documentation" href="../index.html"/>
         <link rel="up" title="Working With Databases" href="index.html"/>
         <link rel="next" title="Transactions" href="transactions.html"/>
         <link rel="prev" title="Query Helper Methods" href="helpers.html"/> 
@@ -1328,12 +1328,12 @@ run the query:</p>
 <div class="section" id="class-reference">
 <h2><a class="toc-backref" href="#id13">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="CodeIgniterDatabaseBaseBuilder">
-<em class="property">class </em><code class="descname">CodeIgniterDatabaseBaseBuilder</code><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="descname">CodeIgniter\Database\BaseBuilder</code></dt>
 <dd><blockquote>
 <div><dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::resetQuery">
-<code class="descname">resetQuery</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::resetQuery" title="Permalink to this definition">¶</a></dt>
+<dt id="resetQuery">
+<code class="descname">resetQuery</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#resetQuery" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1349,8 +1349,8 @@ to build a query that can be canceled under certain conditions.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::countAllResults">
-<code class="descname">countAllResults</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::countAllResults" title="Permalink to this definition">¶</a></dt>
+<dt id="countAllResults">
+<code class="descname">countAllResults</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#countAllResults" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1373,8 +1373,8 @@ all records returned by an Query Builder query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::countAll">
-<code class="descname">countAll</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::countAll" title="Permalink to this definition">¶</a></dt>
+<dt id="countAll">
+<code class="descname">countAll</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#countAll" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1397,8 +1397,8 @@ all records returned by an Query Builder query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>[$limit = NULL[, $offset = NULL[, $reset = TRUE]]]]</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::get" title="Permalink to this definition">¶</a></dt>
+<dt id="get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>[$limit = NULL[, $offset = NULL[, $reset = TRUE]]]]</em><span class="sig-paren">)</span><a class="headerlink" href="#get" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1423,8 +1423,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::getWhere">
-<code class="descname">getWhere</code><span class="sig-paren">(</span><em>[$where = NULL[, $limit = NULL[, $offset = NULL[, $reset = TRUE]]]]]</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::getWhere" title="Permalink to this definition">¶</a></dt>
+<dt id="getWhere">
+<code class="descname">getWhere</code><span class="sig-paren">(</span><em>[$where = NULL[, $limit = NULL[, $offset = NULL[, $reset = TRUE]]]]]</em><span class="sig-paren">)</span><a class="headerlink" href="#getWhere" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1449,8 +1449,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::select">
-<code class="descname">select</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = '*'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::select" title="Permalink to this definition">¶</a></dt>
+<dt id="select">
+<code class="descname">select</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = '*'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#select" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1473,8 +1473,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::selectAvg">
-<code class="descname">selectAvg</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::selectAvg" title="Permalink to this definition">¶</a></dt>
+<dt id="selectAvg">
+<code class="descname">selectAvg</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#selectAvg" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1497,8 +1497,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::selectMax">
-<code class="descname">selectMax</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::selectMax" title="Permalink to this definition">¶</a></dt>
+<dt id="selectMax">
+<code class="descname">selectMax</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#selectMax" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1521,8 +1521,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::selectMin">
-<code class="descname">selectMin</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::selectMin" title="Permalink to this definition">¶</a></dt>
+<dt id="selectMin">
+<code class="descname">selectMin</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#selectMin" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1545,8 +1545,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::selectSum">
-<code class="descname">selectSum</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::selectSum" title="Permalink to this definition">¶</a></dt>
+<dt id="selectSum">
+<code class="descname">selectSum</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#selectSum" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1569,8 +1569,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::selectCount">
-<code class="descname">selectCount</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::selectCount" title="Permalink to this definition">¶</a></dt>
+<dt id="selectCount">
+<code class="descname">selectCount</code><span class="sig-paren">(</span><span class="optional">[</span><em>$select = ''</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#selectCount" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1593,8 +1593,8 @@ called Query Builder methods.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::distinct">
-<code class="descname">distinct</code><span class="sig-paren">(</span><span class="optional">[</span><em>$val = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::distinct" title="Permalink to this definition">¶</a></dt>
+<dt id="distinct">
+<code class="descname">distinct</code><span class="sig-paren">(</span><span class="optional">[</span><em>$val = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#distinct" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1617,8 +1617,8 @@ a DISTINCT clause to the SELECT portion of the query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::from">
-<code class="descname">from</code><span class="sig-paren">(</span><em>$from</em><span class="optional">[</span>, <em>$overwrite = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::from" title="Permalink to this definition">¶</a></dt>
+<dt id="from">
+<code class="descname">from</code><span class="sig-paren">(</span><em>$from</em><span class="optional">[</span>, <em>$overwrite = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#from" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1641,8 +1641,8 @@ a DISTINCT clause to the SELECT portion of the query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::join">
-<code class="descname">join</code><span class="sig-paren">(</span><em>$table</em>, <em>$cond</em><span class="optional">[</span>, <em>$type = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::join" title="Permalink to this definition">¶</a></dt>
+<dt id="join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>$table</em>, <em>$cond</em><span class="optional">[</span>, <em>$type = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#join" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1667,8 +1667,8 @@ a DISTINCT clause to the SELECT portion of the query.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::where">
-<code class="descname">where</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::where" title="Permalink to this definition">¶</a></dt>
+<dt id="where">
+<code class="descname">where</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#where" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1693,8 +1693,8 @@ Separates multiple calls with &#8216;AND&#8217;.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orWhere">
-<code class="descname">orWhere</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orWhere" title="Permalink to this definition">¶</a></dt>
+<dt id="orWhere">
+<code class="descname">orWhere</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orWhere" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1719,8 +1719,8 @@ Separates multiple calls with &#8216;OR&#8217;.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orWhereIn">
-<code class="descname">orWhereIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orWhereIn" title="Permalink to this definition">¶</a></dt>
+<dt id="orWhereIn">
+<code class="descname">orWhereIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orWhereIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1745,8 +1745,8 @@ joined with &#8216;OR&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orWhereNotIn">
-<code class="descname">orWhereNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orWhereNotIn" title="Permalink to this definition">¶</a></dt>
+<dt id="orWhereNotIn">
+<code class="descname">orWhereNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orWhereNotIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1771,8 +1771,8 @@ joined with &#8216;OR&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::whereIn">
-<code class="descname">whereIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::whereIn" title="Permalink to this definition">¶</a></dt>
+<dt id="whereIn">
+<code class="descname">whereIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#whereIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1797,8 +1797,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::whereNotIn">
-<code class="descname">whereNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::whereNotIn" title="Permalink to this definition">¶</a></dt>
+<dt id="whereNotIn">
+<code class="descname">whereNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#whereNotIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1823,8 +1823,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::groupStart">
-<code class="descname">groupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::groupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="groupStart">
+<code class="descname">groupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#groupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1839,8 +1839,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orGroupStart">
-<code class="descname">orGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="orGroupStart">
+<code class="descname">orGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#orGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1855,8 +1855,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::notGroupStart">
-<code class="descname">notGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::notGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="notGroupStart">
+<code class="descname">notGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#notGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1871,8 +1871,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orNotGroupStart">
-<code class="descname">orNotGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orNotGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="orNotGroupStart">
+<code class="descname">orNotGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#orNotGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1887,8 +1887,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::groupEnd">
-<code class="descname">groupEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::groupEnd" title="Permalink to this definition">¶</a></dt>
+<dt id="groupEnd">
+<code class="descname">groupEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#groupEnd" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1903,8 +1903,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::like">
-<code class="descname">like</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::like" title="Permalink to this definition">¶</a></dt>
+<dt id="like">
+<code class="descname">like</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#like" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1930,8 +1930,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orLike">
-<code class="descname">orLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orLike" title="Permalink to this definition">¶</a></dt>
+<dt id="orLike">
+<code class="descname">orLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1957,8 +1957,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::notLike">
-<code class="descname">notLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::notLike" title="Permalink to this definition">¶</a></dt>
+<dt id="notLike">
+<code class="descname">notLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#notLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1984,8 +1984,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orNotLike">
-<code class="descname">orNotLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orNotLike" title="Permalink to this definition">¶</a></dt>
+<dt id="orNotLike">
+<code class="descname">orNotLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orNotLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2011,8 +2011,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::having">
-<code class="descname">having</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::having" title="Permalink to this definition">¶</a></dt>
+<dt id="having">
+<code class="descname">having</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#having" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2036,8 +2036,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orHaving">
-<code class="descname">orHaving</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orHaving" title="Permalink to this definition">¶</a></dt>
+<dt id="orHaving">
+<code class="descname">orHaving</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orHaving" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2061,8 +2061,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orHavingIn">
-<code class="descname">orHavingIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orHavingIn" title="Permalink to this definition">¶</a></dt>
+<dt id="orHavingIn">
+<code class="descname">orHavingIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orHavingIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2087,8 +2087,8 @@ joined with &#8216;OR&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orHavingNotIn">
-<code class="descname">orHavingNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orHavingNotIn" title="Permalink to this definition">¶</a></dt>
+<dt id="orHavingNotIn">
+<code class="descname">orHavingNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orHavingNotIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2113,8 +2113,8 @@ joined with &#8216;OR&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::havingIn">
-<code class="descname">havingIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::havingIn" title="Permalink to this definition">¶</a></dt>
+<dt id="havingIn">
+<code class="descname">havingIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#havingIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2139,8 +2139,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::havingNotIn">
-<code class="descname">havingNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::havingNotIn" title="Permalink to this definition">¶</a></dt>
+<dt id="havingNotIn">
+<code class="descname">havingNotIn</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">[</span>, <em>$values = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#havingNotIn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2166,8 +2166,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::havingLike">
-<code class="descname">havingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::havingLike" title="Permalink to this definition">¶</a></dt>
+<dt id="havingLike">
+<code class="descname">havingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#havingLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2193,8 +2193,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orHavingLike">
-<code class="descname">orHavingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orHavingLike" title="Permalink to this definition">¶</a></dt>
+<dt id="orHavingLike">
+<code class="descname">orHavingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orHavingLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2220,8 +2220,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::notHavingLike">
-<code class="descname">notHavingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::notHavingLike" title="Permalink to this definition">¶</a></dt>
+<dt id="notHavingLike">
+<code class="descname">notHavingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#notHavingLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2247,8 +2247,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orNotHavingLike">
-<code class="descname">orNotHavingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orNotHavingLike" title="Permalink to this definition">¶</a></dt>
+<dt id="orNotHavingLike">
+<code class="descname">orNotHavingLike</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$match = ''</em><span class="optional">[</span>, <em>$side = 'both'</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$insensitiveSearch = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orNotHavingLike" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2273,8 +2273,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::havingGroupStart">
-<code class="descname">havingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::havingGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="havingGroupStart">
+<code class="descname">havingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#havingGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2289,8 +2289,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orHavingGroupStart">
-<code class="descname">orHavingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orHavingGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="orHavingGroupStart">
+<code class="descname">orHavingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#orHavingGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2305,8 +2305,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::notHavingGroupStart">
-<code class="descname">notHavingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::notHavingGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="notHavingGroupStart">
+<code class="descname">notHavingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#notHavingGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2321,8 +2321,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orNotHavingGroupStart">
-<code class="descname">orNotHavingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orNotHavingGroupStart" title="Permalink to this definition">¶</a></dt>
+<dt id="orNotHavingGroupStart">
+<code class="descname">orNotHavingGroupStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#orNotHavingGroupStart" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2337,8 +2337,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::havingGroupEnd">
-<code class="descname">havingGroupEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::havingGroupEnd" title="Permalink to this definition">¶</a></dt>
+<dt id="havingGroupEnd">
+<code class="descname">havingGroupEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#havingGroupEnd" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2353,8 +2353,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::groupBy">
-<code class="descname">groupBy</code><span class="sig-paren">(</span><em>$by</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::groupBy" title="Permalink to this definition">¶</a></dt>
+<dt id="groupBy">
+<code class="descname">groupBy</code><span class="sig-paren">(</span><em>$by</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#groupBy" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2376,8 +2376,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::orderBy">
-<code class="descname">orderBy</code><span class="sig-paren">(</span><em>$orderby</em><span class="optional">[</span>, <em>$direction = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::orderBy" title="Permalink to this definition">¶</a></dt>
+<dt id="orderBy">
+<code class="descname">orderBy</code><span class="sig-paren">(</span><em>$orderby</em><span class="optional">[</span>, <em>$direction = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#orderBy" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2401,8 +2401,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::limit">
-<code class="descname">limit</code><span class="sig-paren">(</span><em>$value</em><span class="optional">[</span>, <em>$offset = 0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::limit" title="Permalink to this definition">¶</a></dt>
+<dt id="limit">
+<code class="descname">limit</code><span class="sig-paren">(</span><em>$value</em><span class="optional">[</span>, <em>$offset = 0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#limit" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2425,8 +2425,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::offset">
-<code class="descname">offset</code><span class="sig-paren">(</span><em>$offset</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::offset" title="Permalink to this definition">¶</a></dt>
+<dt id="offset">
+<code class="descname">offset</code><span class="sig-paren">(</span><em>$offset</em><span class="sig-paren">)</span><a class="headerlink" href="#offset" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2448,8 +2448,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::set">
-<code class="descname">set</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::set" title="Permalink to this definition">¶</a></dt>
+<dt id="set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2474,8 +2474,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::insert">
-<code class="descname">insert</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::insert" title="Permalink to this definition">¶</a></dt>
+<dt id="insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#insert" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2498,8 +2498,8 @@ joined with &#8216;AND&#8217; if appropriate.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::insertBatch">
-<code class="descname">insertBatch</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$batch_size = 100</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::insertBatch" title="Permalink to this definition">¶</a></dt>
+<dt id="insertBatch">
+<code class="descname">insertBatch</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">[</span>, <em>$batch_size = 100</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#insertBatch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2529,8 +2529,8 @@ up to <code class="docutils literal"><span class="pre">$batch_size</span></code>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::setInsertBatch">
-<code class="descname">setInsertBatch</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::setInsertBatch" title="Permalink to this definition">¶</a></dt>
+<dt id="setInsertBatch">
+<code class="descname">setInsertBatch</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setInsertBatch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2554,8 +2554,8 @@ up to <code class="docutils literal"><span class="pre">$batch_size</span></code>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::update">
-<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$where = NULL</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::update" title="Permalink to this definition">¶</a></dt>
+<dt id="update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$where = NULL</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#update" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2579,8 +2579,8 @@ up to <code class="docutils literal"><span class="pre">$batch_size</span></code>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::updateBatch">
-<code class="descname">updateBatch</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$batch_size = 100</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::updateBatch" title="Permalink to this definition">¶</a></dt>
+<dt id="updateBatch">
+<code class="descname">updateBatch</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">[</span>, <em>$batch_size = 100</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#updateBatch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2610,8 +2610,8 @@ multiple queries will be executed, each handling up to
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::setUpdateBatch">
-<code class="descname">setUpdateBatch</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::setUpdateBatch" title="Permalink to this definition">¶</a></dt>
+<dt id="setUpdateBatch">
+<code class="descname">setUpdateBatch</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$escape = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setUpdateBatch" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2635,8 +2635,8 @@ multiple queries will be executed, each handling up to
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::replace">
-<code class="descname">replace</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::replace" title="Permalink to this definition">¶</a></dt>
+<dt id="replace">
+<code class="descname">replace</code><span class="sig-paren">(</span><span class="optional">[</span><em>$set = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#replace" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2658,8 +2658,8 @@ multiple queries will be executed, each handling up to
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::delete">
-<code class="descname">delete</code><span class="sig-paren">(</span><span class="optional">[</span><em>$where = ''</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$reset_data = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::delete" title="Permalink to this definition">¶</a></dt>
+<dt id="delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><span class="optional">[</span><em>$where = ''</em><span class="optional">[</span>, <em>$limit = NULL</em><span class="optional">[</span>, <em>$reset_data = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2684,8 +2684,8 @@ multiple queries will be executed, each handling up to
 
 </div></blockquote>
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::increment">
-<code class="descname">increment</code><span class="sig-paren">(</span><em>$column</em><span class="optional">[</span>, <em>$value = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::increment" title="Permalink to this definition">¶</a></dt>
+<dt id="increment">
+<code class="descname">increment</code><span class="sig-paren">(</span><em>$column</em><span class="optional">[</span>, <em>$value = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#increment" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2704,8 +2704,8 @@ with $value.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::decrement">
-<code class="descname">decrement</code><span class="sig-paren">(</span><em>$column</em><span class="optional">[</span>, <em>$value = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::decrement" title="Permalink to this definition">¶</a></dt>
+<dt id="decrement">
+<code class="descname">decrement</code><span class="sig-paren">(</span><em>$column</em><span class="optional">[</span>, <em>$value = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#decrement" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2722,8 +2722,8 @@ with $value.</p>
 is not a numeric field, like a VARCHAR, it will likely be replaced
 with $value.</p>
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::truncate">
-<code class="descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::truncate" title="Permalink to this definition">¶</a></dt>
+<dt id="truncate">
+<code class="descname">truncate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truncate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2743,8 +2743,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::emptyTable">
-<code class="descname">emptyTable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::emptyTable" title="Permalink to this definition">¶</a></dt>
+<dt id="emptyTable">
+<code class="descname">emptyTable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#emptyTable" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2759,8 +2759,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::getCompiledSelect">
-<code class="descname">getCompiledSelect</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::getCompiledSelect" title="Permalink to this definition">¶</a></dt>
+<dt id="getCompiledSelect">
+<code class="descname">getCompiledSelect</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCompiledSelect" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2782,8 +2782,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::getCompiledInsert">
-<code class="descname">getCompiledInsert</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::getCompiledInsert" title="Permalink to this definition">¶</a></dt>
+<dt id="getCompiledInsert">
+<code class="descname">getCompiledInsert</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCompiledInsert" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2805,8 +2805,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::getCompiledUpdate">
-<code class="descname">getCompiledUpdate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::getCompiledUpdate" title="Permalink to this definition">¶</a></dt>
+<dt id="getCompiledUpdate">
+<code class="descname">getCompiledUpdate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCompiledUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2828,8 +2828,8 @@ a DELETE statement will be used instead.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseBaseBuilder::getCompiledDelete">
-<code class="descname">getCompiledDelete</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseBaseBuilder::getCompiledDelete" title="Permalink to this definition">¶</a></dt>
+<dt id="getCompiledDelete">
+<code class="descname">getCompiledDelete</code><span class="sig-paren">(</span><span class="optional">[</span><em>$reset = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCompiledDelete" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -2879,8 +2879,8 @@ a DELETE statement will be used instead.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Sep 26, 2019.
+        &copy; Copyright 2019 CodeIgniter Foundation.
+      Last updated on Oct 19, 2019.
 
     </p>
   </div>
@@ -2902,7 +2902,7 @@ a DELETE statement will be used instead.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-rc.2',
+            VERSION:'4.0.0-rc.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,

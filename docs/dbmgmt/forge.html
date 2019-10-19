@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database Forge Class &mdash; CodeIgniter4 4.0.0-rc.2 documentation</title>
+  <title>Database Forge Class &mdash; CodeIgniter4 4.0.0-rc.3 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="CodeIgniter4 4.0.0-rc.2 documentation" href="../index.html"/>
+    <link rel="top" title="CodeIgniter4 4.0.0-rc.3 documentation" href="../index.html"/>
         <link rel="up" title="Managing Databases" href="index.html"/>
         <link rel="next" title="Database Migrations" href="migration.html"/>
         <link rel="prev" title="Managing Databases" href="index.html"/> 
@@ -254,6 +254,13 @@ Returns TRUE/FALSE based on success or failure:</p>
 <span class="p">{</span>
         <span class="k">echo</span> <span class="s1">&#39;Database created!&#39;</span><span class="p">;</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<p>An optional second parameter set to TRUE will add IF EXISTS statement
+or will check if a database exists before create it (depending on DBMS).</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="c1">// gives CREATE DATABASE IF NOT EXISTS my_db</span>
+<span class="c1">// or will check if a database exists</span>
 </pre></div>
 </div>
 <p><strong>$forge-&gt;dropDatabase(&#8216;db_name&#8217;)</strong></p>
@@ -522,11 +529,11 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 <div class="section" id="class-reference">
 <h2><a class="toc-backref" href="#id15">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="CodeIgniterDatabaseForge">
-<em class="property">class </em><code class="descname">CodeIgniterDatabaseForge</code><a class="headerlink" href="#CodeIgniterDatabaseForge" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="descname">CodeIgniter\Database\Forge</code></dt>
 <dd><dl class="method">
-<dt id="CodeIgniterDatabaseForge::addColumn">
-<code class="descname">addColumn</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$field = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::addColumn" title="Permalink to this definition">¶</a></dt>
+<dt id="addColumn">
+<code class="descname">addColumn</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$field = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addColumn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -549,8 +556,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::addField">
-<code class="descname">addField</code><span class="sig-paren">(</span><em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::addField" title="Permalink to this definition">¶</a></dt>
+<dt id="addField">
+<code class="descname">addField</code><span class="sig-paren">(</span><em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#addField" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -572,8 +579,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::addKey">
-<code class="descname">addKey</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$primary = FALSE</em><span class="optional">[</span>, <em>$unique = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::addKey" title="Permalink to this definition">¶</a></dt>
+<dt id="addKey">
+<code class="descname">addKey</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$primary = FALSE</em><span class="optional">[</span>, <em>$unique = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addKey" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -597,8 +604,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::addPrimaryKey">
-<code class="descname">addPrimaryKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::addPrimaryKey" title="Permalink to this definition">¶</a></dt>
+<dt id="addPrimaryKey">
+<code class="descname">addPrimaryKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#addPrimaryKey" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -620,8 +627,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::addUniqueKey">
-<code class="descname">addUniqueKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::addUniqueKey" title="Permalink to this definition">¶</a></dt>
+<dt id="addUniqueKey">
+<code class="descname">addUniqueKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#addUniqueKey" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -643,14 +650,15 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::createDatabase">
-<code class="descname">createDatabase</code><span class="sig-paren">(</span><em>$db_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::createDatabase" title="Permalink to this definition">¶</a></dt>
+<dt id="createDatabase">
+<code class="descname">createDatabase</code><span class="sig-paren">(</span><em>$dbName</em><span class="optional">[</span>, <em>$ifNotExists = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createDatabase" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$db_name</strong> (<em>string</em>) &#8211; Name of the database to create</li>
+<li><strong>$ifNotExists</strong> (<em>string</em>) &#8211; Set to TRUE to add an &#8216;IF NOT EXISTS&#8217; clause or check if database exists</li>
 </ul>
 </td>
 </tr>
@@ -666,8 +674,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::createTable">
-<code class="descname">createTable</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = FALSE</em><span class="optional">[</span>, <em>array $attributes = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::createTable" title="Permalink to this definition">¶</a></dt>
+<dt id="createTable">
+<code class="descname">createTable</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = FALSE</em><span class="optional">[</span>, <em>array $attributes = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createTable" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -691,8 +699,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::dropColumn">
-<code class="descname">dropColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::dropColumn" title="Permalink to this definition">¶</a></dt>
+<dt id="dropColumn">
+<code class="descname">dropColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#dropColumn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -715,14 +723,14 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::dropDatabase">
-<code class="descname">dropDatabase</code><span class="sig-paren">(</span><em>$db_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::dropDatabase" title="Permalink to this definition">¶</a></dt>
+<dt id="dropDatabase">
+<code class="descname">dropDatabase</code><span class="sig-paren">(</span><em>$dbName</em><span class="sig-paren">)</span><a class="headerlink" href="#dropDatabase" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$db_name</strong> (<em>string</em>) &#8211; Name of the database to drop</li>
+<li><strong>$dbName</strong> (<em>string</em>) &#8211; Name of the database to drop</li>
 </ul>
 </td>
 </tr>
@@ -738,8 +746,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::dropTable">
-<code class="descname">dropTable</code><span class="sig-paren">(</span><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::dropTable" title="Permalink to this definition">¶</a></dt>
+<dt id="dropTable">
+<code class="descname">dropTable</code><span class="sig-paren">(</span><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#dropTable" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -762,8 +770,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::modifyColumn">
-<code class="descname">modifyColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::modifyColumn" title="Permalink to this definition">¶</a></dt>
+<dt id="modifyColumn">
+<code class="descname">modifyColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#modifyColumn" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -786,8 +794,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniterDatabaseForge::renameTable">
-<code class="descname">renameTable</code><span class="sig-paren">(</span><em>$table_name</em>, <em>$new_table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniterDatabaseForge::renameTable" title="Permalink to this definition">¶</a></dt>
+<dt id="renameTable">
+<code class="descname">renameTable</code><span class="sig-paren">(</span><em>$table_name</em>, <em>$new_table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#renameTable" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -836,8 +844,8 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014-2019 British Columbia Institute of Technology.
-      Last updated on Sep 26, 2019.
+        &copy; Copyright 2019 CodeIgniter Foundation.
+      Last updated on Oct 19, 2019.
 
     </p>
   </div>
@@ -859,7 +867,7 @@ change the name, you can add a &#8220;name&#8221; key into the field defining ar
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'4.0.0-rc.2',
+            VERSION:'4.0.0-rc.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  false,
