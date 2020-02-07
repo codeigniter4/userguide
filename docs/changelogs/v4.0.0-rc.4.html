@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to CodeIgniter4 &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Version 4.0-dev &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
   
 
   
@@ -38,8 +38,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="CodeIgniter4 4.0.0-rc.4 documentation" href="../index.html"/>
-        <link rel="next" title="Server Requirements" href="requirements.html"/>
-        <link rel="prev" title="CodeIgniter4 User Guide" href="../index.html"/> 
+        <link rel="up" title="Change Logs" href="index.html"/>
+        <link rel="next" title="Version 4.0.0-rc.3" href="v4.0.0-rc.3.html"/>
+        <link rel="prev" title="Version 4.0-dev" href="next.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,14 +86,8 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to CodeIgniter4</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Welcome to CodeIgniter4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="credits.html">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="psr.html">PSR Compliance</a></li>
-</ul>
-</li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
@@ -136,9 +131,31 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending CodeIgniter</a></li>
 </ul>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../license.html">The MIT License (MIT)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Change Logs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#version-version">Version 4.0-dev</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="next.html">Version 4.0-dev</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Version 4.0-dev</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prs-merged">PRs merged:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-rc.3.html">Version 4.0.0-rc.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-rc.2.html">Version 4.0.0-rc.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-rc.1.html">Version 4.0.0-rc.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-beta.4.html">Version 4.0.0-beta.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-beta.3.html">Version 4.0.0-beta.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-beta.2.html">Version 4.0.0-beta.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-beta.1.html">Version 4.0.0-beta.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-alpha.5.html">Version 4.0.0-alpha.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-alpha.4.html">Version 4.0.0-alpha.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-alpha.3.html">Version 4.0.0-alpha.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-alpha.2.html">Version 4.0.0-alpha.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="v4.0.0-alpha.1.html">Version 4.0.0-alpha.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -183,7 +200,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Welcome to CodeIgniter4</li>
+          <li><a href="index.html">Change Logs</a> &raquo;</li>
+        
+      <li>Version 4.0-dev</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,40 +219,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-codeigniter4">
-<h1>Welcome to CodeIgniter4<a class="headerlink" href="#welcome-to-codeigniter4" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter is an Application Development Framework - a toolkit - for
-people who build web sites using PHP. Its goal is to enable you to
-develop projects much faster than you could if you were writing code
-from scratch, by providing a rich set of libraries for commonly needed
-tasks, as well as a simple interface and logical structure to access
-these libraries. CodeIgniter lets you creatively focus on your project
-by minimizing the amount of code needed for a given task.</p>
-<p>Where possible, CodeIgniter has been kept as flexible as possible,
-allowing you to work in the way you want, not being forced into working
-any certain way. The framework can have core parts easily extended
-or completely replaced to make the system work the way you need it to.
-In short, CodeIgniter is the malleable framework that tries to provide
-the tools you need while staying out of the way.</p>
-<div class="section" id="who-is-codeigniter-for">
-<h2>Who is CodeIgniter For?<a class="headerlink" href="#who-is-codeigniter-for" title="Permalink to this headline">¶</a></h2>
-<p>CodeIgniter is right for you if:</p>
-<ul class="simple">
-<li>You want a framework with a small footprint.</li>
-<li>You need exceptional performance.</li>
-<li>You want a framework that requires nearly zero configuration.</li>
-<li>You want a framework that does not require you to use the command
-line.</li>
-<li>You want a framework that does not require you to adhere to
-restrictive coding rules.</li>
-<li>You are not interested in large-scale monolithic libraries like PEAR.</li>
-<li>You do not want to be forced to learn a templating language (although
-a template parser is optionally available if you desire one).</li>
-<li>You eschew complexity, favoring simple solutions.</li>
-<li>You need clear, thorough documentation.</li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="version-version">
+<h1>Version 4.0-dev<a class="headerlink" href="#version-version" title="Permalink to this headline">¶</a></h1>
+<p>Release Date: Not released</p>
+<p><strong>Next alpha release of CodeIgniter4</strong></p>
+<p>The list of changed files follows, with PR numbers shown.</p>
+<div class="section" id="prs-merged">
+<h2>PRs merged:<a class="headerlink" href="#prs-merged" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -247,10 +239,10 @@ a template parser is optionally available if you desire one).</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="requirements.html" class="btn btn-neutral float-right" title="Server Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="v4.0.0-rc.3.html" class="btn btn-neutral float-right" title="Version 4.0.0-rc.3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="CodeIgniter4 User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="next.html" class="btn btn-neutral" title="Version 4.0-dev" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

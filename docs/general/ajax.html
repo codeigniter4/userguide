@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to CodeIgniter4 &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>AJAX Requests &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
   
 
   
@@ -37,9 +37,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="CodeIgniter4 4.0.0-rc.4 documentation" href="../index.html"/>
-        <link rel="next" title="Server Requirements" href="requirements.html"/>
-        <link rel="prev" title="CodeIgniter4 User Guide" href="../index.html"/> 
+    <link rel="top" title="CodeIgniter4 4.0.0-rc.4 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,14 +83,8 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to CodeIgniter4</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Welcome to CodeIgniter4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="credits.html">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="psr.html">PSR Compliance</a></li>
-</ul>
-</li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
@@ -104,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">CodeIgniter4 Overview</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">General Topics</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a></li>
@@ -183,7 +175,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Welcome to CodeIgniter4</li>
+      <li>AJAX Requests</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,40 +192,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-codeigniter4">
-<h1>Welcome to CodeIgniter4<a class="headerlink" href="#welcome-to-codeigniter4" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter is an Application Development Framework - a toolkit - for
-people who build web sites using PHP. Its goal is to enable you to
-develop projects much faster than you could if you were writing code
-from scratch, by providing a rich set of libraries for commonly needed
-tasks, as well as a simple interface and logical structure to access
-these libraries. CodeIgniter lets you creatively focus on your project
-by minimizing the amount of code needed for a given task.</p>
-<p>Where possible, CodeIgniter has been kept as flexible as possible,
-allowing you to work in the way you want, not being forced into working
-any certain way. The framework can have core parts easily extended
-or completely replaced to make the system work the way you need it to.
-In short, CodeIgniter is the malleable framework that tries to provide
-the tools you need while staying out of the way.</p>
-<div class="section" id="who-is-codeigniter-for">
-<h2>Who is CodeIgniter For?<a class="headerlink" href="#who-is-codeigniter-for" title="Permalink to this headline">¶</a></h2>
-<p>CodeIgniter is right for you if:</p>
-<ul class="simple">
-<li>You want a framework with a small footprint.</li>
-<li>You need exceptional performance.</li>
-<li>You want a framework that requires nearly zero configuration.</li>
-<li>You want a framework that does not require you to use the command
-line.</li>
-<li>You want a framework that does not require you to adhere to
-restrictive coding rules.</li>
-<li>You are not interested in large-scale monolithic libraries like PEAR.</li>
-<li>You do not want to be forced to learn a templating language (although
-a template parser is optionally available if you desire one).</li>
-<li>You eschew complexity, favoring simple solutions.</li>
-<li>You need clear, thorough documentation.</li>
-</ul>
-<div class="toctree-wrapper compound">
+  <div class="section" id="ajax-requests">
+<h1>AJAX Requests<a class="headerlink" href="#ajax-requests" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">IncomingRequest::isAJAX()</span></code> method uses the <code class="docutils literal notranslate"><span class="pre">X-Requested-With</span></code> header to define whether the request is XHR or normal. However, the most recent JavaScript implementations (i.e. fetch) no longer send this header along with the request, thus the use of <code class="docutils literal notranslate"><span class="pre">IncomingRequest::isAJAX()</span></code> becomes less reliable, because without this header it is not possible to define whether the request is or not XHR.</p>
+<p>To get around this problem, the most efficient solution (so far) is to manually define the request header, forcing the information to be sent to the server, which will then be able to identify that the request is XHR.</p>
+<p>Here’s how to force the <code class="docutils literal notranslate"><span class="pre">X-Requested-With</span></code> header to be sent in the Fetch API and other JavaScript libraries.</p>
+<div class="section" id="fetch-api">
+<h2>Fetch API<a class="headerlink" href="#fetch-api" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="docutils">
+<dt>fetch(url, {</dt>
+<dd><p class="first">method: “get”,
+headers: {</p>
+<blockquote class="last">
+<div>“Content-Type”: “application/json”,
+“X-Requested-With”: “XMLHttpRequest”</div></blockquote>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
 </div>
+<div class="section" id="jquery">
+<h2>jQuery<a class="headerlink" href="#jquery" title="Permalink to this headline">¶</a></h2>
+<p>For libraries like jQuery for example, it is not necessary to make explicit the sending of this header, because according to the official documentation &lt;<a class="reference external" href="https://api.jquery.com/jquery.ajax/">https://api.jquery.com/jquery.ajax/</a>&gt; it is a standard header for all requests <code class="docutils literal notranslate"><span class="pre">$.ajax()</span></code>. But if you still want to force the shipment to not take risks, just do it as follows:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>$.ajax({</dt>
+<dd>url: “your url”,
+headers: {‘X-Requested-With’: ‘XMLHttpRequest’}</dd>
+</dl>
+<p>});</p>
+</div></blockquote>
+</div>
+<div class="section" id="vuejs">
+<h2>VueJS<a class="headerlink" href="#vuejs" title="Permalink to this headline">¶</a></h2>
+<p>In VueJS you just need to add the following code to the <code class="docutils literal notranslate"><span class="pre">created</span></code> function, as long as you are using Axios for this type of request.</p>
+<blockquote>
+<div>axios.defaults.headers.common[‘X-Requested-With’] = ‘XMLHttpRequest’;</div></blockquote>
+</div>
+<div class="section" id="react">
+<h2>React<a class="headerlink" href="#react" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>axios.get(“your url”, {headers: {‘Content-Type’: ‘application/json’}})</div></blockquote>
 </div>
 </div>
 
@@ -244,15 +244,6 @@ a template parser is optionally available if you desire one).</li>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="requirements.html" class="btn btn-neutral float-right" title="Server Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../index.html" class="btn btn-neutral" title="CodeIgniter4 User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
