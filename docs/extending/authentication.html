@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Managing Databases &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Authentication &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database Forge Class" href="forge.html" />
-    <link rel="prev" title="Working With Entities" href="../models/entities.html" /> 
+    <link rel="next" title="Contributing to CodeIgniter" href="contributing.html" />
+    <link rel="prev" title="Extending the Controller" href="basecontroller.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -192,11 +192,11 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Managing Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="migration.html">Database Migrations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="seeds.html">Database Seeding</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
 </ul>
 </li>
 </ul>
@@ -259,14 +259,14 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending CodeIgniter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../extending/core_classes.html">Creating Core System Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extending/common.html">Replacing Common Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extending/events.html">Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extending/basecontroller.html">Extending the Controller</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extending/authentication.html">Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../extending/contributing.html">Contributing to CodeIgniter</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extending CodeIgniter</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">Replacing Common Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basecontroller.html">Extending the Controller</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html">Contributing to CodeIgniter</a></li>
 </ul>
 </li>
 </ul>
@@ -314,7 +314,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Managing Databases</li>
+          <li><a href="index.html">Extending CodeIgniter</a> &raquo;</li>
+        
+      <li>Authentication</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -331,14 +333,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="managing-databases">
-<h1>Managing Databases<a class="headerlink" href="#managing-databases" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter comes with tools to restructure or seed your database.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="migration.html">Database Migrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="seeds.html">Database Seeding</a></li>
+  <div class="section" id="authentication">
+<h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter intentionally does not provide an internal authentication or authorization class. There are a number
+of great third-party modules that provide these services, as well as resources in the community for writing
+your own. The following are recommended guidelines to encourage consistency among developers of
+modules, projects, and the framework itself.</p>
+<div class="section" id="recommendations">
+<h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Modules that handle login and logout operations should trigger the <code class="docutils literal notranslate"><span class="pre">login</span></code> and <code class="docutils literal notranslate"><span class="pre">logout</span></code> Events when successful</li>
+<li>Modules that define a “current user” should define the function <code class="docutils literal notranslate"><span class="pre">user_id()</span></code> to return the user’s unique identifier, or <code class="docutils literal notranslate"><span class="pre">null</span></code> for “no current user”</li>
 </ul>
 </div>
 </div>
@@ -351,10 +356,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="forge.html" class="btn btn-neutral float-right" title="Database Forge Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing to CodeIgniter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../models/entities.html" class="btn btn-neutral float-left" title="Working With Entities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="basecontroller.html" class="btn btn-neutral float-left" title="Extending the Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
