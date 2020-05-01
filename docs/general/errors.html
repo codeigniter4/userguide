@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Error Handling &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Error Handling &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,14 +31,12 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Web Page Caching" href="caching.html" />
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -335,7 +336,7 @@
             
   <div class="section" id="error-handling">
 <h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter builds error reporting into your system through Exceptions, both the <a class="reference external" href="http://php.net/manual/en/spl.exceptions.php">SPL collection</a>, as
+<p>CodeIgniter builds error reporting into your system through Exceptions, both the <a class="reference external" href="https://www.php.net/manual/en/spl.exceptions.php">SPL collection</a>, as
 well as a few custom exceptions that are provided by the framework. Depending on your environment’s setup, the
 the default action when an error or exception is thrown is to display a detailed error report unless the application
 is running under the <code class="docutils literal notranslate"><span class="pre">production</span></code> environment. In this case, a more generic message is displayed to
@@ -361,37 +362,38 @@ keep the best user experience for your users.</p>
 <p>This section is a quick overview for newer programmers, or for developers who are not experienced with using exceptions.</p>
 <p>Exceptions are simply events that happen when the exception is “thrown”. This halts the current flow of the script, and
 execution is then sent to the error handler which displays the appropriate error page:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Some message goes here&quot;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">&quot;Some message goes here&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If you are calling a method that might throw an exception, you can catch that exception using a <code class="docutils literal notranslate"><span class="pre">try/catch</span></code> block:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
-        <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">try</span>
+<span class="p">{</span>
+    <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">die</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+    <span class="k">die</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>If the <code class="docutils literal notranslate"><span class="pre">$userModel</span></code> throws an exception, it is caught and the code within the catch block is executed. In this example,
 the scripts dies, echoing the error message that the <code class="docutils literal notranslate"><span class="pre">UserModel</span></code> defined.</p>
-<p>In this example, we catch any type of Exception. If we only want to watch for specific types of exceptions, like
-a UnknownFileException, we can specify that in the catch parameter. Any other exceptions that are thrown and are
+<p>In the example above, we catch any type of Exception. If we only want to watch for specific types of exceptions, like
+a <code class="docutils literal notranslate"><span class="pre">UnknownFileException</span></code>, we can specify that in the catch parameter. Any other exceptions that are thrown and are
 not child classes of the caught exception will be passed on to the error handler:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">catch</span> <span class="p">(</span><span class="nx">\CodeIgniter\UnknownFileException</span> <span class="nv">$e</span><span class="p">)</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">catch</span> <span class="p">(</span><span class="nx">\CodeIgniter\UnknownFileException</span> <span class="nv">$e</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="c1">// do something here...</span>
+    <span class="c1">// do something here...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>This can be handy for handling the error yourself, or for performing cleanup before the script ends. If you want
 the error handler to function as normal, you can throw a new exception within the catch block:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">catch</span> <span class="p">(</span><span class="nx">\CodeIgniter\UnknownFileException</span> <span class="nv">$e</span><span class="p">)</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">catch</span> <span class="p">(</span><span class="nx">\CodeIgniter\UnknownFileException</span> <span class="nv">$e</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="c1">// do something here...</span>
+    <span class="c1">// do something here...</span>
 
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\RuntimeException</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">(),</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">(),</span> <span class="nv">$e</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\RuntimeException</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">(),</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">(),</span> <span class="nv">$e</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -409,14 +411,14 @@ in the <code class="docutils literal notranslate"><span class="pre">.env</span><
 <h3><a class="toc-backref" href="#id3">Logging Exceptions</a><a class="headerlink" href="#logging-exceptions" title="Permalink to this headline">¶</a></h3>
 <p>By default, all Exceptions other than 404 - Page Not Found exceptions are logged. This can be turned on and off
 by setting the <strong>$log</strong> value of <code class="docutils literal notranslate"><span class="pre">Config\Exceptions</span></code>:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Exceptions</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Exceptions</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$log</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>To ignore logging on other status codes, you can set the status code to ignore in the same file:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Exceptions</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Exceptions</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$ignoredCodes</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">404</span> <span class="p">];</span>
 <span class="p">}</span>
@@ -438,9 +440,9 @@ are not set up to log <strong>critical</strong> errors, which all exceptions are
 <code class="docutils literal notranslate"><span class="pre">/app/views/errors/html/error_404.php</span></code>. You should customize all of the error views for your site.
 If, in <code class="docutils literal notranslate"><span class="pre">Config/Routes.php</span></code>, you have specified a 404 Override, that will be called instead of the standard
 404 page:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$pageModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">))</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$pageModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">))</span>
 <span class="p">{</span>
-        <span class="k">throw</span> <span class="nx">\CodeIgniter\Exceptions\PageNotFoundException</span><span class="o">::</span><span class="na">forPageNotFound</span><span class="p">();</span>
+    <span class="k">throw</span> <span class="nx">\CodeIgniter\Exceptions\PageNotFoundException</span><span class="o">::</span><span class="na">forPageNotFound</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -450,7 +452,7 @@ If, in <code class="docutils literal notranslate"><span class="pre">Config/Route
 <h3><a class="toc-backref" href="#id6">ConfigException</a><a class="headerlink" href="#configexception" title="Permalink to this headline">¶</a></h3>
 <p>This exception should be used when the values from the configuration class are invalid, or when the config class
 is not the right type, etc:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Exceptions\ConfigException</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Exceptions\ConfigException</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>This provides an HTTP status code of 500 and an exit code of 3.</p>
@@ -459,7 +461,7 @@ is not the right type, etc:</p>
 <h3><a class="toc-backref" href="#id7">DatabaseException</a><a class="headerlink" href="#databaseexception" title="Permalink to this headline">¶</a></h3>
 <p>This exception is thrown for database errors, such as when the database connection cannot be created,
 or when it is temporarily lost:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Database\Exceptions\DatabaseException</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Database\Exceptions\DatabaseException</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>This provides an HTTP status code of 500 and an exit code of 8.</p>
@@ -468,12 +470,12 @@ or when it is temporarily lost:</p>
 <h3><a class="toc-backref" href="#id8">RedirectException</a><a class="headerlink" href="#redirectexception" title="Permalink to this headline">¶</a></h3>
 <p>This exception is a special case allowing for overriding of all other response routing and
 forcing a redirect to a specific route or URL:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Router\Exceptions\RedirectException</span><span class="p">(</span><span class="nv">$route</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Router\Exceptions\RedirectException</span><span class="p">(</span><span class="nv">$route</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">$route</span></code> may be a named route, relative URI, or a complete URL. You can also supply a
 redirect code to use instead of the default (<code class="docutils literal notranslate"><span class="pre">302</span></code>, “temporary redirect”):</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Router\Exceptions\RedirectException</span><span class="p">(</span><span class="nv">$route</span><span class="p">,</span> <span class="mi">301</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Router\Exceptions\RedirectException</span><span class="p">(</span><span class="nv">$route</span><span class="p">,</span> <span class="mi">301</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -502,7 +504,7 @@ redirect code to use instead of the default (<code class="docutils literal notra
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>

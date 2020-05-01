@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CLIRequest Class &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>CLIRequest Class &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,14 +31,12 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Extending CodeIgniter" href="../extending/index.html" />
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -342,32 +343,32 @@ but adds some accessor methods for convenience.</p>
 <h2>Additional Accessors<a class="headerlink" href="#additional-accessors" title="Permalink to this headline">¶</a></h2>
 <p><strong>getSegments()</strong></p>
 <p>Returns an array of the command line arguments deemed to be part of a path:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getSegments</span><span class="p">();</span>  <span class="c1">// [&#39;users&#39;, &#39;21&#39;, &#39;profile&#39;]</span>
 </pre></div>
 </div>
 <p><strong>getPath()</strong></p>
 <p>Returns the reconstructed path as a string:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPath</span><span class="p">();</span>  <span class="c1">// users/21/profile</span>
 </pre></div>
 </div>
 <p><strong>getOptions()</strong></p>
 <p>Returns an array of the command line arguments deemed to be options:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">();</span>  <span class="c1">// [&#39;foo&#39; =&gt; &#39;bar&#39;]</span>
 </pre></div>
 </div>
 <p><strong>getOption($which)</strong></p>
 <p>Returns the value of a specific command line argument deemed to be an option:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getOption</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>  <span class="c1">// bar</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getOption</span><span class="p">(</span><span class="s1">&#39;notthere&#39;</span><span class="p">);</span> <span class="c1">// NULL</span>
 </pre></div>
 </div>
 <p><strong>getOptionString()</strong></p>
 <p>Returns the reconstructed command line string for the options:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// command line: php index.php users 21 profile -foo bar</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getOptionPath</span><span class="p">();</span>  <span class="c1">// -foo bar</span>
 </pre></div>
 </div>
@@ -396,7 +397,7 @@ but adds some accessor methods for convenience.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>

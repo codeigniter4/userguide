@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Working with Files &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Working with Files &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,14 +31,12 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Honeypot Class" href="honeypot.html" />
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -335,7 +336,7 @@
             
   <div class="section" id="working-with-files">
 <h1>Working with Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter provides a File class that wraps the <a class="reference external" href="http://php.net/manual/en/class.splfileinfo.php">SplFileInfo</a> class
+<p>CodeIgniter provides a File class that wraps the <a class="reference external" href="https://www.php.net/manual/en/class.splfileinfo.php">SplFileInfo</a> class
 and provides some additional convenience methods. This class is the base class for <a class="reference internal" href="uploaded_files.html"><span class="doc">uploaded files</span></a>
 and <a class="reference internal" href="images.html"><span class="doc">images</span></a>.</p>
 <div class="contents local topic" id="contents">
@@ -353,14 +354,14 @@ and <a class="reference internal" href="images.html"><span class="doc">images</s
 <p>You create a new File instance by passing in the path to the file in the constructor.
 By default, the file does not need to exist. However, you can pass an additional argument of “true”
 to check that the file exists and throw <code class="docutils literal notranslate"><span class="pre">FileNotFoundException()</span></code> if it does not.</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$file</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Files\File</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$file</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Files\File</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="taking-advantage-of-spl">
 <h2><a class="toc-backref" href="#id2">Taking Advantage of Spl</a><a class="headerlink" href="#taking-advantage-of-spl" title="Permalink to this headline">¶</a></h2>
 <p>Once you have an instance, you have the full power of the SplFileInfo class at the ready, including:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get the file&#39;s basename</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get the file&#39;s basename</span>
 <span class="k">echo</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getBasename</span><span class="p">();</span>
 <span class="c1">// Get last modified time</span>
 <span class="k">echo</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getMTime</span><span class="p">();</span>
@@ -388,14 +389,14 @@ to check that the file exists and throw <code class="docutils literal notranslat
 <p><strong>getRandomName()</strong></p>
 <p>You can generate a cryptographically secure random filename, with the current timestamp prepended, with the <code class="docutils literal notranslate"><span class="pre">getRandomName()</span></code>
 method. This is especially useful to rename files when moving it so that the filename is unguessable:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generates something like: 1465965676_385e33f741.jpg</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generates something like: 1465965676_385e33f741.jpg</span>
 <span class="nv">$newName</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getRandomName</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>getSize()</strong></p>
 <p>Returns the size of the uploaded file in bytes. You can pass in either ‘kb’ or ‘mb’ as the first parameter to get
 the results in kilobytes or megabytes, respectively:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$bytes</span>     <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">();</span>      <span class="c1">// 256901</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$bytes</span>     <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">();</span>      <span class="c1">// 256901</span>
 <span class="nv">$kilobytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">(</span><span class="s1">&#39;kb&#39;</span><span class="p">);</span>  <span class="c1">// 250.880</span>
 <span class="nv">$megabytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">(</span><span class="s1">&#39;mb&#39;</span><span class="p">);</span>  <span class="c1">// 0.245</span>
 </pre></div>
@@ -403,7 +404,7 @@ the results in kilobytes or megabytes, respectively:</p>
 <p><strong>getSizeByUnit()</strong></p>
 <p>Returns the size of the uploaded file default in bytes. You can pass in either ‘kb’ or ‘mb’ as the first parameter to get
 the results in kilobytes or megabytes, respectively:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$bytes</span>     <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSizeByUnit</span><span class="p">();</span>      <span class="c1">// 256901</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$bytes</span>     <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSizeByUnit</span><span class="p">();</span>      <span class="c1">// 256901</span>
 <span class="nv">$kilobytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSizeByUnit</span><span class="p">(</span><span class="s1">&#39;kb&#39;</span><span class="p">);</span>  <span class="c1">// 250.880</span>
 <span class="nv">$megabytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSizeByUnit</span><span class="p">(</span><span class="s1">&#39;mb&#39;</span><span class="p">);</span>  <span class="c1">// 0.245</span>
 </pre></div>
@@ -411,7 +412,7 @@ the results in kilobytes or megabytes, respectively:</p>
 <p><strong>getMimeType()</strong></p>
 <p>Retrieve the media type (mime type) of the file. Uses methods that are considered as secure as possible when determining
 the type of file:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$type</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getMimeType</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$type</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getMimeType</span><span class="p">();</span>
 
 <span class="k">echo</span> <span class="nv">$type</span><span class="p">;</span> <span class="c1">// image/png</span>
 </pre></div>
@@ -420,7 +421,7 @@ the type of file:</p>
 <p>Attempts to determine the file extension based on the trusted <code class="docutils literal notranslate"><span class="pre">getMimeType()</span></code> method. If the mime type is unknown,
 will return null. This is often a more trusted source than simply using the extension provided by the filename. Uses
 the values in <strong>app/Config/Mimes.php</strong> to determine extension:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns &#39;jpg&#39; (WITHOUT the period)</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns &#39;jpg&#39; (WITHOUT the period)</span>
 <span class="nv">$ext</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">guessExtension</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -428,17 +429,17 @@ the values in <strong>app/Config/Mimes.php</strong> to determine extension:</p>
 <h3><a class="toc-backref" href="#id4">Moving Files</a><a class="headerlink" href="#moving-files" title="Permalink to this headline">¶</a></h3>
 <p>Each file can be moved to its new location with the aptly named <code class="docutils literal notranslate"><span class="pre">move()</span></code> method. This takes the directory to move
 the file to as the first parameter:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$file</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">WRITEPATH</span><span class="o">.</span><span class="s1">&#39;uploads&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$file</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">WRITEPATH</span><span class="o">.</span><span class="s1">&#39;uploads&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>By default, the original filename was used. You can specify a new filename by passing it as the second parameter:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$newName</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getRandomName</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$newName</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getRandomName</span><span class="p">();</span>
 <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">WRITEPATH</span><span class="o">.</span><span class="s1">&#39;uploads&#39;</span><span class="p">,</span> <span class="nv">$newName</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The move() method returns a new File instance that for the relocated file, so you must capture the result if the
 resulting location is needed:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$file</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">WRITEPATH</span><span class="o">.</span><span class="s1">&#39;uploads&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$file</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">WRITEPATH</span><span class="o">.</span><span class="s1">&#39;uploads&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -467,7 +468,7 @@ resulting location is needed:</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>

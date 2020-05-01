@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Composer Installation &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Composer Installation &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,17 +31,15 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Git Installation" href="installing_git.html" />
+    <link rel="next" title="Running Your App" href="running.html" />
     <link rel="prev" title="Manual Installation" href="installing_manual.html" /> 
 </head>
 
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -361,7 +362,7 @@ a new CodeIgniter4 based project.</p>
 <div class="section" id="installation-set-up">
 <h3>Installation &amp; Set Up<a class="headerlink" href="#installation-set-up" title="Permalink to this headline">¶</a></h3>
 <p>In the folder above your project root:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">create</span><span class="o">-</span><span class="nx">project</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">appstarter</span> <span class="nx">project</span><span class="o">-</span><span class="nx">root</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">create</span><span class="o">-</span><span class="nx">project</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">appstarter</span> <span class="nx">project</span><span class="o">-</span><span class="nx">root</span>
 </pre></div>
 </div>
 <p>The command above will create a “project-root” folder.</p>
@@ -372,7 +373,7 @@ dependencies, then add the “–no-dev” option to the end of the above
 command line. That will result in only the framework, and the three
 trusted dependencies that we bundle, being composer-installed.</p>
 <p>A sample such installation command, using the default project-root “appstarter”:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">create</span><span class="o">-</span><span class="nx">project</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">appstarter</span> <span class="o">--</span><span class="nx">no</span><span class="o">-</span><span class="nx">dev</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">create</span><span class="o">-</span><span class="nx">project</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">appstarter</span> <span class="o">--</span><span class="nx">no</span><span class="o">-</span><span class="nx">dev</span>
 </pre></div>
 </div>
 <p>After installation you should follow the steps in the “Upgrading” section.</p>
@@ -380,7 +381,7 @@ trusted dependencies that we bundle, being composer-installed.</p>
 <div class="section" id="upgrading">
 <h3>Upgrading<a class="headerlink" href="#upgrading" title="Permalink to this headline">¶</a></h3>
 <p>Whenever there is a new release, then from the command line in your project root:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">update</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">update</span>
 </pre></div>
 </div>
 <p>If you used the “–no-dev” option when you created the project, it
@@ -413,13 +414,13 @@ for a developer who is willing to live with the latest unreleased changes, which
 Note that this differs from the released user guide, and will pertain to the
 develop branch explicitly.</p>
 <p>In your project root:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">php</span> <span class="nx">builds</span> <span class="nx">development</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">php</span> <span class="nx">builds</span> <span class="nx">development</span>
 </pre></div>
 </div>
 <p>The command above will update <strong>composer.json</strong> to point to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch of the
 working repository, and update the corresponding paths in config and XML files. To revert
 these changes run:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">php</span> <span class="nx">builds</span> <span class="nx">release</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">php</span> <span class="nx">builds</span> <span class="nx">release</span>
 </pre></div>
 </div>
 <p>After using the <code class="docutils literal notranslate"><span class="pre">builds</span></code> command be sure to run <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">update</span></code> to sync your vendor
@@ -434,24 +435,24 @@ existing project using Composer.</p>
 <p>Develop your app inside the <code class="docutils literal notranslate"><span class="pre">app</span></code> folder, and the <code class="docutils literal notranslate"><span class="pre">public</span></code> folder
 will be your document root.</p>
 <p>In your project root:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="k">require</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">framework</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="k">require</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">framework</span>
 </pre></div>
 </div>
 <p>As with the earlier two composer install methods, you can omit installing
 phpunit and its dependencies by adding the “–no-dev” argument to the “composer require” command.</p>
 <div class="section" id="set-up">
 <h3>Set Up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h3>
-<p>Copy the app, public, tests and writable folders from <code class="docutils literal notranslate"><span class="pre">vendor/codeigniter4/framework</span></code>
+<p>Copy the <code class="docutils literal notranslate"><span class="pre">app</span></code>, <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">tests</span></code> and <code class="docutils literal notranslate"><span class="pre">writable</span></code> folders from <code class="docutils literal notranslate"><span class="pre">vendor/codeigniter4/framework</span></code>
 to your project root</p>
 <p>Copy the <code class="docutils literal notranslate"><span class="pre">env</span></code>, <code class="docutils literal notranslate"><span class="pre">phpunit.xml.dist</span></code> and <code class="docutils literal notranslate"><span class="pre">spark</span></code> files, from
 <code class="docutils literal notranslate"><span class="pre">vendor/codeigniter4/framework</span></code> to your project root</p>
-<p>You will have to adjust paths to refer to vendor/codeigniter/framework``,
-- the $systemDirectory variable in <code class="docutils literal notranslate"><span class="pre">app/Config/Paths.php</span></code></p>
+<p>You will have to adjust the system path to refer to the vendor one, e.g. <code class="docutils literal notranslate"><span class="pre">ROOTPATH</span> <span class="pre">.</span> <span class="pre">'/vendor/codeigniter4/framework/system'</span></code>,
+- the <code class="docutils literal notranslate"><span class="pre">$systemDirectory</span></code> variable in <code class="docutils literal notranslate"><span class="pre">app/Config/Paths.php</span></code></p>
 </div>
 <div class="section" id="id1">
 <h3>Upgrading<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Whenever there is a new release, then from the command line in your project root:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">update</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="nx">update</span>
 </pre></div>
 </div>
 <p>Read the upgrade instructions, and check designated
@@ -479,7 +480,7 @@ to your project root</p>
 <p>If you want to take advantage of the system message translations,
 they can be added to your project in a similar fashion.</p>
 <p>From the command line inside your project root:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="k">require</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">translations</span> <span class="o">@</span><span class="nx">rc</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">composer</span> <span class="k">require</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">translations</span>
 </pre></div>
 </div>
 <p>These will be updated along with the framework whenever you do a <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">update</span></code>.</p>
@@ -494,7 +495,7 @@ they can be added to your project in a similar fashion.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installing_git.html" class="btn btn-neutral float-right" title="Git Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running.html" class="btn btn-neutral float-right" title="Running Your App" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installing_manual.html" class="btn btn-neutral float-left" title="Manual Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -508,7 +509,7 @@ they can be added to your project in a similar fashion.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>

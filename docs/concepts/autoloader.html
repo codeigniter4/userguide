@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Autoloading Files &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Autoloading Files &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,14 +31,12 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Services" href="services.html" />
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -343,14 +344,14 @@ hard-coding that location into your files in a series of <code class="docutils l
 headache and very error-prone. That’s where autoloaders come in.</p>
 <p>CodeIgniter provides a very flexible autoloader that can be used with very little configuration.
 It can locate individual non-namespaced classes, namespaced classes that adhere to
-<a class="reference external" href="http://www.php-fig.org/psr/psr-4/">PSR4</a> autoloading
+<a class="reference external" href="https://www.php-fig.org/psr/psr-4/">PSR4</a> autoloading
 directory structures, and will even attempt to locate classes in common directories (like Controllers,
 Models, etc).</p>
 <p>For performance improvement, the core CodeIgniter components have been added to the classmap.</p>
 <p>The autoloader works great by itself, but can also work with other autoloaders, like
 <a class="reference external" href="https://getcomposer.org">Composer</a>, or even your own custom autoloaders, if needed.
 Because they’re all registered through
-<a class="reference external" href="http://php.net/manual/en/function.spl-autoload-register.php">spl_autoload_register</a>,
+<a class="reference external" href="https://www.php.net/manual/en/function.spl-autoload-register.php">spl_autoload_register</a>,
 they work in sequence and don’t get in each other’s way.</p>
 <p>The autoloader is always active, being registered with <code class="docutils literal notranslate"><span class="pre">spl_autoload_register()</span></code> at the
 beginning of the framework’s execution.</p>
@@ -365,9 +366,9 @@ arrays: one for the classmap, and one for PSR4-compatible namespaces.</p>
 application’s files. This is most important for any business-logic related classes, entity classes,
 etc. The <code class="docutils literal notranslate"><span class="pre">psr4</span></code> array in the configuration file allows you to map the namespace to the directory
 those classes can be found in:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;App&#39;</span>         <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
-        <span class="s1">&#39;CodeIgniter&#39;</span> <span class="o">=&gt;</span> <span class="nx">SYSTEMPATH</span><span class="p">,</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;App&#39;</span>         <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
+    <span class="s1">&#39;CodeIgniter&#39;</span> <span class="o">=&gt;</span> <span class="nx">SYSTEMPATH</span><span class="p">,</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -379,7 +380,7 @@ have a trailing slash.</p>
 libraries, or models in the application directory, if you do, they will be found under the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace.
 You may change this namespace by editing the <strong>/app/Config/Constants.php</strong> file and setting the
 new namespace value under the <code class="docutils literal notranslate"><span class="pre">APP_NAMESPACE</span></code> setting:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;App&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;App&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You will need to modify any existing files that are referencing the current namespace.</p>
@@ -395,8 +396,8 @@ namespace has changed.</p>
 <p>The classmap is used extensively by CodeIgniter to eke the last ounces of performance out of the system
 by not hitting the file-system with extra <code class="docutils literal notranslate"><span class="pre">is_file()</span></code> calls. You can use the classmap to link to
 third-party libraries that are not namespaced:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$classmap</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;Markdown&#39;</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span><span class="s1">&#39;third_party/markdown.php&#39;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$classmap</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Markdown&#39;</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span><span class="s1">&#39;third_party/markdown.php&#39;</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -412,7 +413,7 @@ a measure to help ease the transition from previous versions.</p>
 <div class="section" id="composer-support">
 <h2>Composer Support<a class="headerlink" href="#composer-support" title="Permalink to this headline">¶</a></h2>
 <p>Composer support is automatically initialized by default. By default, it looks for Composer’s autoload file at
-ROOTPATH.’vendor/autoload.php’. If you need to change the location of that file for any reason, you can modify
+<code class="docutils literal notranslate"><span class="pre">ROOTPATH.'vendor/autoload.php'</span></code>. If you need to change the location of that file for any reason, you can modify
 the value defined in <code class="docutils literal notranslate"><span class="pre">Config\Constants.php</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -444,7 +445,7 @@ the first one to get a chance to locate the file.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>

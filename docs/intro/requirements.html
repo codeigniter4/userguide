@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Server Requirements &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Server Requirements &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,14 +31,12 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Credits" href="credits.html" />
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -335,13 +336,13 @@
             
   <div class="section" id="server-requirements">
 <h1>Server Requirements<a class="headerlink" href="#server-requirements" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://php.net/">PHP</a> version 7.2 or newer is required, with the
-<a class="reference external" href="http://php.net/manual/en/intl.requirements.php">*intl* extension</a>
+<p><a class="reference external" href="https://www.php.net/">PHP</a> version 7.2 or newer is required, with the
+<a class="reference external" href="https://www.php.net/manual/en/intl.requirements.php">*intl* extension</a> and <a class="reference external" href="https://www.php.net/manual/en/mbstring.requirements.php">*mbstring* extension</a>
 installed.</p>
 <p>The following PHP extensions should be enabled on your server:
-<code class="docutils literal notranslate"><span class="pre">php-json</span></code>, <code class="docutils literal notranslate"><span class="pre">php-mbstring</span></code>, <code class="docutils literal notranslate"><span class="pre">php-mysqlnd</span></code>, <cite>php-xml`</cite></p>
+<code class="docutils literal notranslate"><span class="pre">php-json</span></code>, <code class="docutils literal notranslate"><span class="pre">php-mysqlnd</span></code>, <code class="docutils literal notranslate"><span class="pre">php-xml</span></code></p>
 <p>In order to use the <a class="reference internal" href="../libraries/curlrequest.html"><span class="doc">CURLRequest</span></a>, you will need
-<a class="reference external" href="http://php.net/manual/en/curl.requirements.php">libcurl</a> installed.</p>
+<a class="reference external" href="https://www.php.net/manual/en/curl.requirements.php">libcurl</a> installed.</p>
 <p>A database is required for most web application programming.
 Currently supported databases are:</p>
 <blockquote>
@@ -389,7 +390,7 @@ The list below shows the outstanding ones.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>

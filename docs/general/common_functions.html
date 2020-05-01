@@ -8,15 +8,19 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Global Functions and Constants &mdash; CodeIgniter4 4.0.0-rc.4 documentation</title>
+  <title>Global Functions and Constants &mdash; CodeIgniter 4.0.3 documentation</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
   
   
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
@@ -27,14 +31,12 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/citheme.js"></script>
+        <script type="text/javascript" src="../_static/js/carbon.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Logging Information" href="logging.html" />
@@ -52,9 +54,12 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> CodeIgniter4
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -92,12 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_git.html">Git Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -125,7 +126,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Working With Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Global Functions and Constants</a></li>
@@ -283,7 +284,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CodeIgniter4</a>
+          <a href="../index.html">CodeIgniter</a>
         
       </nav>
 
@@ -335,7 +336,7 @@
             
   <div class="section" id="global-functions-and-constants">
 <h1>Global Functions and Constants<a class="headerlink" href="#global-functions-and-constants" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter uses provides a few functions and variables that are globally defined, and are available to you at any point.
+<p>CodeIgniter provides a few functions and variables that are globally defined, and are available to you at any point.
 These do not require loading any additional libraries or helpers.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -379,7 +380,7 @@ These do not require loading any additional libraries or helpers.</p>
 is provided, will return the value of $key as stored in the cache currently,
 or null if no value is found.</p>
 <p>Examples:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 <span class="nv">$cache</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -482,6 +483,30 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 </dd></dl>
 
 <dl class="function">
+<dt id="model">
+<code class="descname">model</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$getShared = true</em><span class="optional">[</span>, <em>&amp;$conn = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#model" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$name</strong> (<em>string</em>) – </li>
+<li><strong>$getShared</strong> (<em>boolean</em>) – </li>
+<li><strong>$conn</strong> (<em>ConnectionInterface|null</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">More simple way of getting model instances</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="old">
 <code class="descname">old</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$default = null</em><span class="optional">[</span>, <em>$escape = 'html'</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#old" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -505,7 +530,7 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 </table>
 <p>Provides a simple way to access “old input data” from submitting a form.</p>
 <p>Example:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// in controller, checking form submittal</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// in controller, checking form submittal</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$user</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="c1">// &#39;withInput&#39; is what specifies &quot;old data&quot;</span>
@@ -574,7 +599,7 @@ stored value. For more information, see the <a class="reference internal" href="
 of a benchmark point as the only parameter. This will start timing from this point, or stop
 timing if a timer with this name is already running.</p>
 <p>Example:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get an instance</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get an instance</span>
 <span class="nv">$timer</span> <span class="o">=</span> <span class="nx">timer</span><span class="p">();</span>
 
 <span class="c1">// Set timer start and stop points</span>
@@ -617,7 +642,7 @@ data for that view is forgotten after displaying that single view file.</p>
 <p>The $option array is provided primarily to facilitate third-party integrations with
 libraries like Twig.</p>
 <p>Example:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">];</span>
 
 <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;user_profile&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
@@ -625,9 +650,51 @@ libraries like Twig.</p>
 <p>For more details, see the <a class="reference internal" href="../outgoing/views.html"><span class="doc">Views</span></a> page.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="view_cell">
+<code class="descname">view_cell</code><span class="sig-paren">(</span><em>$library</em><span class="optional">[</span>, <em>$params = null</em><span class="optional">[</span>, <em>$ttl = 0</em><span class="optional">[</span>, <em>$cacheName = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#view_cell" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$library</strong> (<em>string</em>) – </li>
+<li><strong>$params</strong> (<em>null</em>) – </li>
+<li><strong>$ttl</strong> (<em>integer</em>) – </li>
+<li><strong>$cacheName</strong> (<em>string|null</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">View cells are used within views to insert HTML chunks that are managed by other classes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For more details, see the <a class="reference internal" href="../outgoing/view_cells.html"><span class="doc">View Cells</span></a> page.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="miscellaneous-functions">
 <h3><a class="toc-backref" href="#id3">Miscellaneous Functions</a><a class="headerlink" href="#miscellaneous-functions" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="app_timezone">
+<code class="descname">app_timezone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app_timezone" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The timezone the application has been set to display dates in.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the timezone the application has been set to display dates in.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="csrf_token">
 <code class="descname">csrf_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#csrf_token" title="Permalink to this definition">¶</a></dt>
@@ -690,8 +757,9 @@ libraries like Twig.</p>
 </tbody>
 </table>
 <p>Returns a hidden input with the CSRF information already inserted:</p>
-<blockquote>
-<div>&lt;input type=”hidden” name=”{csrf_token}” value=”{csrf_hash}”&gt;</div></blockquote>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;{csrf_token}&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;{csrf_hash}&quot;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -708,8 +776,9 @@ libraries like Twig.</p>
 </tbody>
 </table>
 <p>Returns a meta tag with the CSRF information already inserted:</p>
-<blockquote>
-<div>&lt;meta name=”{csrf_header}” content=”{csrf_hash}”&gt;</div></blockquote>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;{csrf_header}&quot;</span> <span class="nx">content</span><span class="o">=</span><span class="s2">&quot;{csrf_hash}&quot;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -735,6 +804,28 @@ modern browsers to automatically modify any HTTP requests to HTTPS requests for 
 </dd></dl>
 
 <dl class="function">
+<dt id="function_usable">
+<code class="descname">function_usable</code><span class="sig-paren">(</span><em>$function_name</em><span class="sig-paren">)</span><a class="headerlink" href="#function_usable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$function_name</strong> (<em>string</em>) – Function to check for</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if the function exists and is safe to call, FALSE otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="is_cli">
 <code class="descname">is_cli</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#is_cli" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -744,6 +835,28 @@ modern browsers to automatically modify any HTTP requests to HTTPS requests for 
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">TRUE if the script is being executed from the command line or FALSE otherwise.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="is_really_writable">
+<code class="descname">is_really_writable</code><span class="sig-paren">(</span><em>$file</em><span class="sig-paren">)</span><a class="headerlink" href="#is_really_writable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$file</strong> (<em>string</em>) – The filename being checked.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if you can write to the file, FALSE otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -793,7 +906,7 @@ modern browsers to automatically modify any HTTP requests to HTTPS requests for 
 </tbody>
 </table>
 <p>Returns a RedirectResponse instance allowing you to easily create redirects:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// Go back to the previous page</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Go back to the previous page</span>
 <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">back</span><span class="p">();</span>
 
 <span class="c1">// Go to specific UI</span>
@@ -811,7 +924,7 @@ modern browsers to automatically modify any HTTP requests to HTTPS requests for 
 </div>
 <p>When passing a URI into the function, it is treated as a reverse-route request, not a relative/full URI, treating
 it the same as using redirect()-&gt;route():</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="c1">// Go to a named/reverse-routed URI</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Go to a named/reverse-routed URI</span>
 <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;named_route&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -841,7 +954,7 @@ it the same as using redirect()-&gt;route():</p>
 <p>This function prevents inserting NULL characters between ASCII
 characters, like Java\0script.</p>
 <p>Example:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: &#39;Javascript&#39;</span>
 </pre></div>
 </div>
@@ -892,7 +1005,7 @@ combination. Will take parameters into effect, if provided.</p>
 This will always return a shared instance of the class, so no matter how many times this is called
 during a single request, only one class instance will be created.</p>
 <p>Example:</p>
-<div class="highlight-ci notranslate"><div class="highlight"><pre><span></span><span class="nv">$logger</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;logger&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$logger</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;logger&#39;</span><span class="p">);</span>
 <span class="nv">$renderer</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;renderer&#39;</span><span class="p">,</span> <span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;views/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -922,6 +1035,29 @@ during a single request, only one class instance will be created.</p>
 <p>Identical to the <strong>service()</strong> function described above, except that all calls to this
 function will return a new instance of the class, where <strong>service</strong> returns the same
 instance every time.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="slash_item">
+<code class="descname">slash_item</code><span class="sig-paren">(</span><em>$item</em><span class="sig-paren">)</span><a class="headerlink" href="#slash_item" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$item</strong> (<em>string</em>) – Config item name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The configuration item or NULL if the item doesn’t exist</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string|null</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Fetch a config file item with slash appended (if not empty)</p>
 </dd></dl>
 
 <dl class="function">
@@ -1062,7 +1198,7 @@ instance every time.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on Feb 24, 2020.
+        Last updated on May 01, 2020.
       </span>
 
     </p>
