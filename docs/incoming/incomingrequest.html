@@ -576,7 +576,7 @@ and uses best practices to minimize any security risks.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$files</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getFiles</span><span class="p">();</span>
 
 <span class="c1">// Grab the file by name given in HTML form</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$files</span><span class="o">-&gt;</span><span class="na">hasFile</span><span class="p">(</span><span class="s1">&#39;uploadedFile&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$files</span><span class="o">-&gt;</span><span class="na">hasFile</span><span class="p">(</span><span class="s1">&#39;uploadedFile&#39;</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="nv">$file</span> <span class="o">=</span> <span class="nv">$files</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;uploadedfile&#39;</span><span class="p">);</span>
 
