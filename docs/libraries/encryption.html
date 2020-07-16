@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Encryption Service &mdash; CodeIgniter 4.0.3 documentation</title>
+  <title>Encryption Service &mdash; CodeIgniter 4.0.4 documentation</title>
   
 
   
@@ -234,6 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">Inflector Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/test_helper.html">Test Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML Helper</a></li>
@@ -244,6 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing/overview.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
@@ -429,7 +431,7 @@ You don’t need to worry about it.</p>
 object of your own to the <code class="docutils literal notranslate"><span class="pre">Services</span></code> call. The <code class="docutils literal notranslate"><span class="pre">$config</span></code> variable must be
 an instance of either the <cite>Config\Encryption</cite> class or an object
 that extends <cite>CodeIgniter\Config\BaseConfig</cite>.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$config</span>         <span class="o">=</span> <span class="k">new</span> <span class="nx">Config\Encryption</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$config</span>         <span class="o">=</span> <span class="k">new</span> <span class="nx">\Config\Encryption</span><span class="p">();</span>
 <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">key</span>    <span class="o">=</span> <span class="s1">&#39;aBigsecret_ofAtleast32Characters&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">driver</span> <span class="o">=</span> <span class="s1">&#39;OpenSSL&#39;</span><span class="p">;</span>
 
@@ -469,9 +471,16 @@ a more friendly manner. For example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get a hex-encoded representation of the key:</span>
 <span class="nv">$encoded</span> <span class="o">=</span> <span class="nb">bin2hex</span><span class="p">(</span><span class="nx">Encryption</span><span class="o">::</span><span class="na">createKey</span><span class="p">(</span><span class="mi">32</span><span class="p">));</span>
 
-<span class="c1">// Put the same value in your config with hex2bin(),</span>
+<span class="c1">// Put the same value with hex2bin(),</span>
 <span class="c1">// so that it is still passed as binary to the library:</span>
-<span class="nv">$key</span> <span class="o">=</span> <span class="nb">hex2bin</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">your</span> <span class="nx">hex</span><span class="o">-</span><span class="nx">encoded</span> <span class="nb">key</span><span class="o">&gt;</span><span class="p">);</span>
+<span class="nv">$key</span> <span class="o">=</span> <span class="nb">hex2bin</span><span class="p">(</span><span class="s1">&#39;your-hex-encoded-key&#39;</span><span class="p">);</span>
+
+<span class="c1">// In the Encryption config class you can use a special &#39;hex2bin:&#39;</span>
+<span class="c1">// prefix so that the value is still passed as binary to the library:</span>
+<span class="k">public</span> <span class="nv">$key</span> <span class="o">=</span> <span class="s1">&#39;hex2bin:your-hex-encoded-key&#39;</span><span class="p">;</span>
+
+<span class="c1">// You can also use the same prefix in your .env file</span>
+<span class="nx">encryption</span><span class="o">.</span><span class="nb">key</span> <span class="o">=</span> <span class="nb">hex2bin</span><span class="o">:</span><span class="nx">your</span><span class="o">-</span><span class="nx">hex</span><span class="o">-</span><span class="nx">encoded</span><span class="o">-</span><span class="nb">key</span>
 </pre></div>
 </div>
 <p>You might find the same technique useful for the results
@@ -682,7 +691,7 @@ is an array; or the starting key may be passed as a string.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on May 01, 2020.
+        Last updated on Jul 15, 2020.
       </span>
 
     </p>

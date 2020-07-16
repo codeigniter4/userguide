@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dates and Times &mdash; CodeIgniter 4.0.3 documentation</title>
+  <title>Dates and Times &mdash; CodeIgniter 4.0.4 documentation</title>
   
 
   
@@ -234,6 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">Inflector Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/test_helper.html">Test Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML Helper</a></li>
@@ -244,6 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing/overview.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
@@ -695,11 +697,14 @@ thrown.</p>
 <div class="section" id="settimezone">
 <h3>setTimezone()<a class="headerlink" href="#settimezone" title="Permalink to this headline">¶</a></h3>
 <p>Converts the time from it’s current timezone into the new one:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$time</span>  <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;May 10, 2017&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$time</span>  <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;13 May 2020 10:00&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">);</span>
 <span class="nv">$time2</span> <span class="o">=</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">setTimezone</span><span class="p">(</span><span class="s1">&#39;Europe/London&#39;</span><span class="p">);</span>           <span class="c1">// Returns new instance converted to new timezone</span>
 
-<span class="k">echo</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">timezoneName</span><span class="p">;</span>   <span class="c1">// American/Chicago</span>
-<span class="k">echo</span> <span class="nv">$time2</span><span class="o">-&gt;</span><span class="na">timezoneName</span><span class="p">;</span>  <span class="c1">// Europe/London</span>
+<span class="k">echo</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">getTimezoneName</span><span class="p">();</span>   <span class="c1">// American/Chicago</span>
+<span class="k">echo</span> <span class="nv">$time2</span><span class="o">-&gt;</span><span class="na">getTimezoneName</span><span class="p">();</span>  <span class="c1">// Europe/London</span>
+
+<span class="k">echo</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">toDateTimeString</span><span class="p">();</span>   <span class="c1">// 2020-05-13 10:00:00</span>
+<span class="k">echo</span> <span class="nv">$time2</span><span class="o">-&gt;</span><span class="na">toDateTimeString</span><span class="p">();</span>   <span class="c1">// 2020-05-13 18:00:00</span>
 </pre></div>
 </div>
 </div>
@@ -913,7 +918,7 @@ human readable format that is geared towards being easily understood. It can cre
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on May 01, 2020.
+        Last updated on Jul 15, 2020.
       </span>
 
     </p>

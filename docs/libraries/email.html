@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Email Class &mdash; CodeIgniter 4.0.3 documentation</title>
+  <title>Email Class &mdash; CodeIgniter 4.0.4 documentation</title>
   
 
   
@@ -234,6 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">Inflector Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/test_helper.html">Test Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML Helper</a></li>
@@ -244,6 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing/overview.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
@@ -413,6 +415,12 @@ instead put them into the config file. Simply open the
 Email properties. Then save the file and it will be used automatically.
 You will NOT need to use the <code class="docutils literal notranslate"><span class="pre">$email-&gt;initialize()</span></code> method if
 you set your preferences in the config file.</p>
+</div>
+<div class="section" id="reviewing-preferences">
+<h4>Reviewing Preferences<a class="headerlink" href="#reviewing-preferences" title="Permalink to this headline">¶</a></h4>
+<p>The settings used for the last successful send are available from the
+instance property <code class="docutils literal notranslate"><span class="pre">$archive</span></code>. This is helpful for testing and debugging
+to determine that actual values at the time of the <code class="docutils literal notranslate"><span class="pre">send()</span></code> call.</p>
 </div>
 </div>
 <div class="section" id="email-preferences">
@@ -803,8 +811,8 @@ and strip the tags.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="setHeader">
-<code class="descname">setHeader</code><span class="sig-paren">(</span><em>$header</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#setHeader" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="descname">setHeader</code><span class="sig-paren">(</span><em>$header</em>, <em>$value</em><span class="sig-paren">)</span></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1081,7 +1089,7 @@ Valid options are: <strong>headers</strong>, <strong>subject</strong>, <strong>b
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on May 01, 2020.
+        Last updated on Jul 15, 2020.
       </span>
 
     </p>

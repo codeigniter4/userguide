@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HTML Helper &mdash; CodeIgniter 4.0.3 documentation</title>
+  <title>HTML Helper &mdash; CodeIgniter 4.0.4 documentation</title>
   
 
   
@@ -234,6 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">Inflector Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_helper.html">Test Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
@@ -244,6 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing/overview.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
@@ -412,7 +414,7 @@ is not provided, CodeIgniter will generate an empty string.</p>
 
 <dl class="function">
 <dt id="link_tag">
-<code class="descname">link_tag</code><span class="sig-paren">(</span><span class="optional">[</span><em>$href = ''</em><span class="optional">[</span>, <em>$rel = 'stylesheet'</em><span class="optional">[</span>, <em>$type = 'text/css'</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$media = ''</em><span class="optional">[</span>, <em>$indexPage = false</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#link_tag" title="Permalink to this definition">¶</a></dt>
+<code class="descname">link_tag</code><span class="sig-paren">(</span><span class="optional">[</span><em>$href = ''</em><span class="optional">[</span>, <em>$rel = 'stylesheet'</em><span class="optional">[</span>, <em>$type = 'text/css'</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$media = ''</em><span class="optional">[</span>, <em>$indexPage = false</em><span class="optional">[</span>, <em>$hreflang = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#link_tag" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -424,6 +426,7 @@ is not provided, CodeIgniter will generate an empty string.</p>
 <li><strong>$title</strong> (<em>string</em>) – Link title</li>
 <li><strong>$media</strong> (<em>string</em>) – Media type</li>
 <li><strong>$indexPage</strong> (<em>bool</em>) – Whether to treat $src as a routed URI string</li>
+<li><strong>$hreflang</strong> (<em>string</em>) – Hreflang type</li>
 </ul>
 </td>
 </tr>
@@ -1092,7 +1095,7 @@ pulled from <cite>application/Config/DocTypes.php</cite>, or they could be over-
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on May 01, 2020.
+        Last updated on Jul 15, 2020.
       </span>
 
     </p>

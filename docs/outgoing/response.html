@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HTTP Responses &mdash; CodeIgniter 4.0.3 documentation</title>
+  <title>HTTP Responses &mdash; CodeIgniter 4.0.4 documentation</title>
   
 
   
@@ -234,6 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">Inflector Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/test_helper.html">Test Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML Helper</a></li>
@@ -244,6 +245,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Testing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing/overview.html">Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
@@ -432,13 +434,13 @@ handler for that type - it can use it.</p>
 </pre></div>
 </div>
 <p>If you want to download an existing file from your server you’ll need to
-do the following:</p>
+pass <code class="docutils literal notranslate"><span class="pre">null</span></code> explicitly for the second parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Contents of photo.jpg will be automatically read</span>
-<span class="k">return</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;/path/to/photo.jpg&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+<span class="k">return</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;/path/to/photo.jpg&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Use the optional <code class="docutils literal notranslate"><span class="pre">setFileName()</span></code> method to change the filename as it is sent to the client’s browser:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;awkwardEncryptedFileName.fakeExt&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setFileName</span><span class="p">(</span><span class="s1">&#39;expenses.csv&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;awkwardEncryptedFileName.fakeExt&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setFileName</span><span class="p">(</span><span class="s1">&#39;expenses.csv&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -606,7 +608,8 @@ life, and is most secure when generated on the fly. To make this simple, you can
 <dl class="class">
 <dt>
 <code class="descname">CodeIgniter\HTTP\Response</code></dt>
-<dd><dl class="method">
+<dd><blockquote>
+<div><dl class="method">
 <dt id="getStatusCode">
 <code class="descname">getStatusCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getStatusCode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
@@ -1004,6 +1007,16 @@ that the cookie exists, and that it has the prescribed value.</p>
 </div>
 </dd></dl>
 
+</div></blockquote>
+<dl class="method">
+<dt id="getCookies">
+<code class="descname">getCookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getCookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>:rtype array</p>
+<p>Returns all cookies currently set within the Response instance.
+These are any cookies that you have specifically specified to set during the current
+request only.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1033,7 +1046,7 @@ that the cookie exists, and that it has the prescribed value.</p>
     <p>
         &copy; Copyright 2019-2020 CodeIgniter Foundation
       <span class="lastupdated">
-        Last updated on May 01, 2020.
+        Last updated on Jul 15, 2020.
       </span>
 
     </p>

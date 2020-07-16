@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Helpers &mdash; CodeIgniter 4.0.4 documentation</title>
+  <title>Test Helper &mdash; CodeIgniter 4.0.4 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Array Helper" href="array_helper.html" />
-    <link rel="prev" title="Validation" href="../libraries/validation.html" /> 
+    <link rel="next" title="Text Helper" href="text_helper.html" />
+    <link rel="prev" title="Security Helper" href="security_helper.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -224,7 +224,7 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Helpers</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
@@ -234,7 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">Inflector Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_helper.html">Test Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Test Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
@@ -317,7 +317,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Helpers</li>
+          <li><a href="index.html">Helpers</a> &raquo;</li>
+        
+      <li>Test Helper</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -334,25 +336,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="helpers">
-<h1>Helpers<a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h1>
-<p>Helpers are collections of useful procedural functions.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filesystem_helper.html">Filesystem Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inflector_helper.html">Inflector Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test_helper.html">Test Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
+  <div class="section" id="test-helper">
+<h1>Test Helper<a class="headerlink" href="#test-helper" title="Permalink to this headline">¶</a></h1>
+<p>The Test Helper file contains functions that assist in testing your project.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#loading-this-helper" id="id1">Loading this Helper</a></li>
+<li><a class="reference internal" href="#available-functions" id="id2">Available Functions</a></li>
 </ul>
+</div>
+<div class="custom-index container"></div><div class="section" id="loading-this-helper">
+<h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
+<p>This helper is loaded using the following code:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="available-functions">
+<h2><a class="toc-backref" href="#id2">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline">¶</a></h2>
+<p>The following functions are available:</p>
+<dl class="function">
+<dt id="fake">
+<code class="descname">fake</code><span class="sig-paren">(</span><em>$model</em>, <em>array $overrides = null</em><span class="sig-paren">)</span><a class="headerlink" href="#fake" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$model</strong> (<em>Model|object|string</em>) – Instance or name of the model to use with Fabricator</li>
+<li><strong>$overrides</strong> (<em>array|null</em>) – Overriding data to pass to Fabricator::setOverrides()</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A random fake item created and aded ot the database by Fabricator</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">object|array</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Uses <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\Fabricator</span></code> to create a random item and add it to the database.</p>
+<p>Usage example:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">testUserAccess</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nx">fake</span><span class="p">(</span><span class="s1">&#39;App\Models\UserModel&#39;</span><span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">userHasAccess</span><span class="p">(</span><span class="nv">$user</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 
@@ -364,10 +399,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="array_helper.html" class="btn btn-neutral float-right" title="Array Helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="text_helper.html" class="btn btn-neutral float-right" title="Text Helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../libraries/validation.html" class="btn btn-neutral float-left" title="Validation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="security_helper.html" class="btn btn-neutral float-left" title="Security Helper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
