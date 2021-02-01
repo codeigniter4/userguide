@@ -1,21 +1,13 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>HTTP Responses &mdash; CodeIgniter 4.0.4 documentation</title>
-  
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-  
+  <title>HTTP Responses &mdash; CodeIgniter 4.1.0 documentation</title>
   
 
   
@@ -23,7 +15,19 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -95,8 +100,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
@@ -119,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/mvc.html">Models, Views, and Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
@@ -211,10 +217,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/time.html">Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/time.html">Times and Dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">Working with URIs</a></li>
@@ -257,6 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
 </ul>
@@ -277,6 +284,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -311,11 +319,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Building Responses</a> &raquo;</li>
         
@@ -324,7 +334,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -459,7 +469,7 @@ introduction to all of the cache headers power, but you can get a good understan
 <a class="reference external" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">Google Developers</a>.</p>
 <p>By default, all response objects sent through CodeIgniter have HTTP caching turned off. The options and exact
 circumstances are too varied for us to be able to create a good default other than turning it off. It’s simple
-to set the Cache values to what you need, though, through the <code class="docutils literal notranslate"><span class="pre">setCache()</span></code> method:</p>
+to set the Cache values to what you need, through the <code class="docutils literal notranslate"><span class="pre">setCache()</span></code> method:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;max-age&#39;</span>  <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span>
         <span class="s1">&#39;s-maxage&#39;</span> <span class="o">=&gt;</span> <span class="mi">900</span><span class="p">,</span>
@@ -662,8 +672,8 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </dd></dl>
 
 <dl class="method">
-<dt id="getReason">
-<code class="descname">getReason</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getReason" title="Permalink to this definition">¶</a></dt>
+<dt id="getReasonPhrase">
+<code class="descname">getReasonPhrase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getReasonPhrase" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -675,7 +685,7 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tbody>
 </table>
 <p>Returns the current status code for this response. If not status has been set, will return an empty string:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getReason</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getReasonPhrase</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -847,7 +857,7 @@ this as it is handled automatically by CodeIgniter.</p>
 
 <dl class="method">
 <dt id="setCookie">
-<code class="descname">setCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setCookie" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">[</span>, <em>$samesite = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setCookie" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -861,6 +871,7 @@ this as it is handled automatically by CodeIgniter.</p>
 <li><strong>$prefix</strong> (<em>string</em>) – Cookie name prefix</li>
 <li><strong>$secure</strong> (<em>bool</em>) – Whether to only transfer the cookie through HTTPS</li>
 <li><strong>$httponly</strong> (<em>bool</em>) – Whether to only make the cookie accessible for HTTP requests (no JavaScript)</li>
+<li><strong>$samesite</strong> (<em>string</em>) – The value for the SameSite cookie parameter. If set to <code class="docutils literal notranslate"><span class="pre">''</span></code>, no SameSite attribute will be set on the cookie. If set to <cite>null</cite>, the default value from <cite>config/App.php</cite> will be used</li>
 </ul>
 </td>
 </tr>
@@ -883,7 +894,8 @@ parameter:</p>
         <span class="s1">&#39;path&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
         <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;myprefix_&#39;</span><span class="p">,</span>
         <span class="s1">&#39;secure&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
-        <span class="s1">&#39;httponly&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+        <span class="s1">&#39;httponly&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;samesite&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Lax&#39;</span>
 <span class="p">];</span>
 
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="nv">$cookie</span><span class="p">);</span>
@@ -904,10 +916,14 @@ URL to the <strong>domain</strong> starting with a period, like this:
 other identically named cookies for your server.</p>
 <p>The secure boolean is only needed if you want to make it a secure cookie
 by setting it to TRUE.</p>
+<p>The SameSite value controls how cookies are shared between domains and sub-domains.
+Allowed values are ‘None’, ‘Lax’, ‘Strict’ or a blank string <code class="docutils literal notranslate"><span class="pre">''</span></code>.
+If set to blank string, no SameSite attribute will be set on the cookie sent to the client.
+If set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default from <code class="docutils literal notranslate"><span class="pre">config/App.php</span></code> is used.</p>
 <p><strong>Discrete Parameters</strong></p>
 <p>If you prefer, you can set the cookie by passing data using individual
 parameters:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">,</span> <span class="nv">$httponly</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">,</span> <span class="nv">$httponly</span><span class="p">,</span> <span class="nv">$samesite</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1011,7 +1027,14 @@ that the cookie exists, and that it has the prescribed value.</p>
 <dl class="method">
 <dt id="getCookies">
 <code class="descname">getCookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getCookies" title="Permalink to this definition">¶</a></dt>
-<dd><p>:rtype array</p>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">array</td>
+</tr>
+</tbody>
+</table>
 <p>Returns all cookies currently set within the Response instance.
 These are any cookies that you have specifically specified to set during the current
 request only.</p>
@@ -1029,32 +1052,32 @@ request only.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="api_responses.html" class="btn btn-neutral float-right" title="API Response Trait" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="table.html" class="btn btn-neutral float-left" title="HTML Table Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="api_responses.html" class="btn btn-neutral float-right" title="API Response Trait" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="table.html" class="btn btn-neutral float-left" title="HTML Table Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 CodeIgniter Foundation
+        &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Feb 01, 2021.
       </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1062,7 +1085,6 @@ request only.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,21 +1,13 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>CodeIgniter4 User Guide &mdash; CodeIgniter 4.0.4 documentation</title>
-  
-
-  
-  
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
-  
-  
+  <title>CodeIgniter4 User Guide &mdash; CodeIgniter 4.1.0 documentation</title>
   
 
   
@@ -23,7 +15,19 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -76,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -94,8 +99,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/troubleshooting.html">Troubleshooting</a></li>
@@ -118,6 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="concepts/mvc.html">Models, Views, and Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/factories.html">Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/http.html">Working With HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/security.html">Security Guidelines</a></li>
 </ul>
@@ -210,10 +216,10 @@
 <li class="toctree-l2"><a class="reference internal" href="libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries/security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries/time.html">Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries/time.html">Times and Dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/uri.html">Working with URIs</a></li>
@@ -256,6 +262,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cli/index.html">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli.html">Running via the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_request.html">CLIRequest Class</a></li>
 </ul>
@@ -276,6 +283,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -310,18 +318,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
       <li>CodeIgniter4 User Guide</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -351,8 +361,8 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/troubleshooting.html">Troubleshooting</a></li>
@@ -385,6 +395,7 @@
 <li class="toctree-l2"><a class="reference internal" href="concepts/mvc.html">Models, Views, and Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/factories.html">Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/http.html">Working With HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concepts/security.html">Security Guidelines</a></li>
 </ul>
@@ -500,10 +511,10 @@
 <li class="toctree-l2"><a class="reference internal" href="libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries/security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries/time.html">Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries/time.html">Times and Dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries/uri.html">Working with URIs</a></li>
@@ -555,6 +566,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cli/index.html">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli.html">Running via the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_request.html">CLIRequest Class</a></li>
 </ul>
@@ -584,30 +596,31 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="intro/index.html" class="btn btn-neutral float-right" title="Welcome to CodeIgniter4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+        <a href="intro/index.html" class="btn btn-neutral float-right" title="Welcome to CodeIgniter4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 CodeIgniter Foundation
+        &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Feb 01, 2021.
       </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -615,7 +628,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

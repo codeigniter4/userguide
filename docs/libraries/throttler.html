@@ -1,21 +1,13 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Throttler &mdash; CodeIgniter 4.0.4 documentation</title>
-  
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-  
+  <title>Throttler &mdash; CodeIgniter 4.1.0 documentation</title>
   
 
   
@@ -23,7 +15,19 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -39,7 +43,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dates and Times" href="time.html" />
+    <link rel="next" title="Times and Dates" href="time.html" />
     <link rel="prev" title="Session Library" href="sessions.html" /> 
 </head>
 
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -95,8 +100,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
@@ -119,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/mvc.html">Models, Views, and Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
@@ -211,10 +217,10 @@
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html">Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Times and Dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">Working with URIs</a></li>
@@ -257,6 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
 </ul>
@@ -277,6 +284,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -311,11 +319,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Library Reference</a> &raquo;</li>
         
@@ -324,7 +334,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -387,7 +397,9 @@ start using it in your application.</p>
 <h3><a class="toc-backref" href="#id3">The Code</a><a class="headerlink" href="#the-code" title="Permalink to this headline">¶</a></h3>
 <p>You could make your own Throttler filter, at <strong>app/Filters/Throttle.php</strong>,
 along the lines of:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">namespace</span> <span class="nx">App\Filters</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Filters</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">CodeIgniter\Filters\FilterInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CodeIgniter\HTTP\RequestInterface</span><span class="p">;</span>
@@ -396,42 +408,43 @@ along the lines of:</p>
 
 <span class="k">class</span> <span class="nc">Throttle</span> <span class="k">implements</span> <span class="nx">FilterInterface</span>
 <span class="p">{</span>
-        <span class="sd">/**</span>
-<span class="sd">         * This is a demo implementation of using the Throttler class</span>
-<span class="sd">         * to implement rate limiting for your application.</span>
-<span class="sd">         *</span>
-<span class="sd">         * @param RequestInterface|\CodeIgniter\HTTP\IncomingRequest $request</span>
-<span class="sd">         * @param array|null                                         $arguments</span>
-<span class="sd">         *</span>
-<span class="sd">         * @return mixed</span>
-<span class="sd">         */</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">before</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="sd">/**</span>
+<span class="sd">     * This is a demo implementation of using the Throttler class</span>
+<span class="sd">     * to implement rate limiting for your application.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param RequestInterface|\CodeIgniter\HTTP\IncomingRequest $request</span>
+<span class="sd">     * @param array|null                                         $arguments</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return mixed</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">before</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$throttler</span> <span class="o">=</span> <span class="nx">Services</span><span class="o">::</span><span class="na">throttler</span><span class="p">();</span>
+
+        <span class="c1">// Restrict an IP address to no more</span>
+        <span class="c1">// than 1 request per second across the</span>
+        <span class="c1">// entire site.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$throttler</span><span class="o">-&gt;</span><span class="na">check</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getIPAddress</span><span class="p">(),</span> <span class="mi">60</span><span class="p">,</span> <span class="nx">MINUTE</span><span class="p">)</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span>
         <span class="p">{</span>
-                <span class="nv">$throttler</span> <span class="o">=</span> <span class="nx">Services</span><span class="o">::</span><span class="na">throttler</span><span class="p">();</span>
-
-                <span class="c1">// Restrict an IP address to no more</span>
-                <span class="c1">// than 1 request per second across the</span>
-                <span class="c1">// entire site.</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nv">$throttler</span><span class="o">-&gt;</span><span class="na">check</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getIPAddress</span><span class="p">(),</span> <span class="mi">60</span><span class="p">,</span> <span class="nx">MINUTE</span><span class="p">)</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span>
-                <span class="p">{</span>
-                        <span class="k">return</span> <span class="nx">Services</span><span class="o">::</span><span class="na">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">429</span><span class="p">);</span>
-                <span class="p">}</span>
+            <span class="k">return</span> <span class="nx">Services</span><span class="o">::</span><span class="na">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">429</span><span class="p">);</span>
         <span class="p">}</span>
+    <span class="p">}</span>
 
-        <span class="c1">//--------------------------------------------------------------------</span>
+    <span class="c1">//--------------------------------------------------------------------</span>
 
-        <span class="sd">/**</span>
-<span class="sd">         * We don&#39;t have anything to do here.</span>
-<span class="sd">         *</span>
-<span class="sd">         * @param RequestInterface|\CodeIgniter\HTTP\IncomingRequest $request</span>
-<span class="sd">         * @param ResponseInterface|\CodeIgniter\HTTP\Response       $response</span>
-<span class="sd">         * @param array|null                                         $arguments</span>
-<span class="sd">         *</span>
-<span class="sd">         * @return mixed</span>
-<span class="sd">         */</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">after</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">ResponseInterface</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-        <span class="p">{</span>
-        <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * We don&#39;t have anything to do here.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param RequestInterface|\CodeIgniter\HTTP\IncomingRequest $request</span>
+<span class="sd">     * @param ResponseInterface|\CodeIgniter\HTTP\Response       $response</span>
+<span class="sd">     * @param array|null                                         $arguments</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return mixed</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">after</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">ResponseInterface</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -518,32 +531,32 @@ tried again. In this case, the minimum enforced wait time is one second.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="time.html" class="btn btn-neutral float-right" title="Dates and Times" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="sessions.html" class="btn btn-neutral float-left" title="Session Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="time.html" class="btn btn-neutral float-right" title="Times and Dates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sessions.html" class="btn btn-neutral float-left" title="Session Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 CodeIgniter Foundation
+        &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Feb 01, 2021.
       </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -551,7 +564,6 @@ tried again. In this case, the minimum enforced wait time is one second.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
