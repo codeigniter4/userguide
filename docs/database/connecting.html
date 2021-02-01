@@ -1,21 +1,13 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connecting to your Database &mdash; CodeIgniter 4.0.4 documentation</title>
-  
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-  
+  <title>Connecting to your Database &mdash; CodeIgniter 4.1.0 documentation</title>
   
 
   
@@ -23,7 +15,19 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -95,8 +100,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
@@ -119,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/mvc.html">Models, Views, and Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
@@ -211,10 +217,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/time.html">Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/time.html">Times and Dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">Working with URIs</a></li>
@@ -257,6 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
 </ul>
@@ -277,6 +284,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -311,11 +319,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Working With Databases</a> &raquo;</li>
         
@@ -324,7 +334,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -355,7 +365,7 @@ and is provided for your convenience:</p>
 <div class="section" id="available-parameters">
 <h2>Available Parameters<a class="headerlink" href="#available-parameters" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The database group name, a string that must match the config class’ property name. Default value is $config-&gt;defaultGroup.</li>
+<li>The database group name, a string that must match the config class’ property name. Default value is <code class="docutils literal notranslate"><span class="pre">$config-&gt;defaultGroup</span></code>.</li>
 <li>TRUE/FALSE (boolean). Whether to return the shared connection (see
 Connecting to Multiple Databases below).</li>
 </ol>
@@ -391,12 +401,10 @@ do so as follows:</p>
 group names you are connecting to.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>You don’t need to create separate database configurations if you
+<p class="last">You don’t need to create separate database configurations if you
 only need to use a different database on the same connection. You
-can switch to a different database when you need to, like this:</p>
-<div class="last line-block">
-<div class="line">$db-&gt;setDatabase($database2_name);</div>
-</div>
+can switch to a different database when you need to, like this:
+<code class="docutils literal notranslate"><span class="pre">$db-&gt;setDatabase($database2_name);</span></code></p>
 </div>
 </div>
 <div class="section" id="connecting-with-custom-settings">
@@ -405,26 +413,24 @@ can switch to a different database when you need to, like this:</p>
 a connection that uses your custom settings. The array passed in must be
 the same format as the groups are defined in the configuration file:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$custom</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">&#39;DSN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-            <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">ENVIRONMENT</span> <span class="o">!==</span> <span class="s1">&#39;production&#39;</span><span class="p">),</span>
-            <span class="s1">&#39;cacheOn&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-            <span class="s1">&#39;cacheDir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-            <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-            <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-            <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
-            <span class="s1">&#39;port&#39;</span>     <span class="o">=&gt;</span> <span class="mi">3306</span><span class="p">,</span>
-    <span class="p">];</span>
+    <span class="s1">&#39;DSN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">ENVIRONMENT</span> <span class="o">!==</span> <span class="s1">&#39;production&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
+    <span class="s1">&#39;port&#39;</span>     <span class="o">=&gt;</span> <span class="mi">3306</span><span class="p">,</span>
+<span class="p">];</span>
 <span class="nv">$db</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="nv">$custom</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -433,12 +439,12 @@ the same format as the groups are defined in the configuration file:</p>
 <h3>Reconnecting / Keeping the Connection Alive<a class="headerlink" href="#reconnecting-keeping-the-connection-alive" title="Permalink to this headline">¶</a></h3>
 <p>If the database server’s idle timeout is exceeded while you’re doing
 some heavy PHP lifting (processing an image, for instance), you should
-consider pinging the server by using the reconnect() method before
+consider pinging the server by using the <code class="docutils literal notranslate"><span class="pre">reconnect()</span></code> method before
 sending further queries, which can gracefully keep the connection alive
 or re-establish it.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">If you are using MySQLi database driver, the reconnect() method
+<p class="last">If you are using MySQLi database driver, the <code class="docutils literal notranslate"><span class="pre">reconnect()</span></code> method
 does not ping the server but it closes the connection then connects again.</p>
 </div>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">reconnect</span><span class="p">();</span>
@@ -461,32 +467,32 @@ connections, you can explicitly close the connection.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="queries.html" class="btn btn-neutral float-right" title="Queries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="configuration.html" class="btn btn-neutral float-left" title="Database Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="queries.html" class="btn btn-neutral float-right" title="Queries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="configuration.html" class="btn btn-neutral float-left" title="Database Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 CodeIgniter Foundation
+        &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Feb 01, 2021.
       </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -494,7 +500,6 @@ connections, you can explicitly close the connection.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

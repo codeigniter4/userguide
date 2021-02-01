@@ -1,21 +1,13 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Caching Driver &mdash; CodeIgniter 4.0.4 documentation</title>
-  
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-  
+  <title>Caching Driver &mdash; CodeIgniter 4.1.0 documentation</title>
   
 
   
@@ -23,7 +15,19 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -95,8 +100,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
@@ -119,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/mvc.html">Models, Views, and Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
@@ -211,10 +217,10 @@
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html">Dates and Times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Times and Dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">Working with URIs</a></li>
@@ -257,6 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
 </ul>
@@ -277,6 +284,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -311,11 +319,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Library Reference</a> &raquo;</li>
         
@@ -324,7 +334,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -363,13 +373,13 @@ requirements are not met.</p>
 <div class="section" id="example-usage">
 <h2><a class="toc-backref" href="#id1">Example Usage</a><a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
 <p>The following example shows a common usage pattern within your controllers.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$foo</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">))</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$foo</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">))</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;Saving to the cache!&lt;br /&gt;&#39;</span><span class="p">;</span>
-        <span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;foobarbaz!&#39;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s1">&#39;Saving to the cache!&lt;br /&gt;&#39;</span><span class="p">;</span>
+    <span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;foobarbaz!&#39;</span><span class="p">;</span>
 
-        <span class="c1">// Save into the cache for 5 minutes</span>
-        <span class="nx">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+    <span class="c1">// Save into the cache for 5 minutes</span>
+    <span class="nx">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">echo</span> <span class="nv">$foo</span><span class="p">;</span>
@@ -389,14 +399,14 @@ the following items are available.</p>
 <p>The is the name of the handler that should be used as the primary handler when starting up the engine.
 Available names are: dummy, file, memcached, redis, predis, wincache.</p>
 <p><strong>$backupHandler</strong></p>
-<p>In the case that the first choice $hanlder is not available, this is the next cache handler to load.
+<p>In the case that the first choice $handler is not available, this is the next cache handler to load.
 This is commonly the <strong>file</strong> handler since the file system is always available, but may not fit
 more complex, multi-server setups.</p>
 <p><strong>$prefix</strong></p>
 <p>If you have more than one application using the same cache storage, you can add a custom prefix
-here that is prepended to all key names.</p>
-<p><strong>$path</strong></p>
-<p>This is used by the <code class="docutils literal notranslate"><span class="pre">file</span></code> handler to show where it should save the cache files to.</p>
+string here that is prepended to all key names.</p>
+<p><strong>$file</strong></p>
+<p>This is an array of settings specific to the  <code class="docutils literal notranslate"><span class="pre">File</span></code> handler to determine how it should save the cache files.</p>
 <p><strong>$memcached</strong></p>
 <p>This is an array of servers that will be used when using the <code class="docutils literal notranslate"><span class="pre">Memcache(d)</span></code> handler.</p>
 <p><strong>$redis</strong></p>
@@ -406,13 +416,13 @@ here that is prepended to all key names.</p>
 <div class="section" id="class-reference">
 <h2><a class="toc-backref" href="#id3">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt>
-<code class="descname">⠀isSupported()</code></dt>
+<dt id="isSupported">
+<code class="descname">isSupported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#isSupported" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">TRUE if supported, FALSE if not</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">true</span></code> if supported, <code class="docutils literal notranslate"><span class="pre">false</span></code> if not</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
@@ -422,7 +432,7 @@ here that is prepended to all key names.</p>
 
 <dl class="method">
 <dt>
-<code class="descname">⠀get($key)</code></dt>
+<code class="descname">get($key): mixed</code></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -432,7 +442,7 @@ here that is prepended to all key names.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Item value or NULL if not found</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Item value or <code class="docutils literal notranslate"><span class="pre">null</span></code> if not found</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
@@ -449,8 +459,34 @@ item does not exist, the method will return NULL.</p>
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">⠀save($key, $data[, $ttl = 60[, $raw = FALSE]])</code></dt>
+<dt id="remember">
+<code class="descname">remember</code><span class="sig-paren">(</span><em>string $key</em>, <em>int $ttl</em>, <em>Closure $callback</em><span class="sig-paren">)</span><a class="headerlink" href="#remember" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>string</em>) – Cache item name</li>
+<li><strong>$ttl</strong> (<em>int</em>) – Time to live in seconds</li>
+<li><strong>$callback</strong> (<em>Closure</em>) – Callback to invoke when the cache item returns null</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The value of the cache item</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Gets an item from the cache. If <code class="docutils literal notranslate"><span class="pre">null</span></code> was returned, this will invoke the callback
+and save the result. Either way, this will return the value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>string $key</em>, <em>$data</em><span class="optional">[</span>, <em>int $ttl = 60</em><span class="optional">[</span>, <em>$raw = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#save" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -463,16 +499,16 @@ item does not exist, the method will return NULL.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>This method will save an item to the cache store. If saving fails, the
-method will return FALSE.</p>
+method will return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;cache_item_id&#39;</span><span class="p">,</span> <span class="s1">&#39;data_to_cache&#39;</span><span class="p">);</span>
 </pre></div>
@@ -486,7 +522,7 @@ in order to allow usage of <code class="docutils literal notranslate"><span clas
 </div>
 <dl class="method">
 <dt>
-<code class="descname">⠀delete($key)</code></dt>
+<code class="descname">delete($key): bool</code></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -496,7 +532,7 @@ in order to allow usage of <code class="docutils literal notranslate"><span clas
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -514,7 +550,7 @@ deletion fails, the method will return FALSE.</p>
 
 <dl class="method">
 <dt>
-<code class="descname">⠀increment($key[, $offset = 1])</code></dt>
+<code class="descname">increment($key[, $offset = 1]): mixed</code></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -525,7 +561,7 @@ deletion fails, the method will return FALSE.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">New value on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">New value on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
@@ -536,9 +572,7 @@ deletion fails, the method will return FALSE.</p>
 <p>Performs atomic incrementation of a raw stored value.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// &#39;iterator&#39; has a value of 2</span>
-
-<span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">increment</span><span class="p">(</span><span class="s1">&#39;iterator&#39;</span><span class="p">);</span> <span class="c1">// &#39;iterator&#39; is now 3</span>
-
+<span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">increment</span><span class="p">(</span><span class="s1">&#39;iterator&#39;</span><span class="p">);</span>    <span class="c1">// &#39;iterator&#39; is now 3</span>
 <span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">increment</span><span class="p">(</span><span class="s1">&#39;iterator&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// &#39;iterator&#39; is now 6</span>
 </pre></div>
 </div>
@@ -546,7 +580,7 @@ deletion fails, the method will return FALSE.</p>
 
 <dl class="method">
 <dt>
-<code class="descname">⠀decrement($key[, $offset = 1])</code></dt>
+<code class="descname">decrement($key[, $offset = 1]): mixed</code></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -557,7 +591,7 @@ deletion fails, the method will return FALSE.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">New value on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">New value on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
@@ -568,22 +602,20 @@ deletion fails, the method will return FALSE.</p>
 <p>Performs atomic decrementation of a raw stored value.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// &#39;iterator&#39; has a value of 6</span>
-
-<span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">decrement</span><span class="p">(</span><span class="s1">&#39;iterator&#39;</span><span class="p">);</span> <span class="c1">// &#39;iterator&#39; is now 5</span>
-
+<span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">decrement</span><span class="p">(</span><span class="s1">&#39;iterator&#39;</span><span class="p">);</span>    <span class="c1">// &#39;iterator&#39; is now 5</span>
 <span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">decrement</span><span class="p">(</span><span class="s1">&#39;iterator&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// &#39;iterator&#39; is now 3</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">⠀clean()</code></dt>
+<dt id="clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clean" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
@@ -598,8 +630,8 @@ cache files fails, the method will return FALSE.</p>
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">⠀cache_info()</code></dt>
+<dt id="getCacheInfo">
+<code class="descname">getCacheInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getCacheInfo" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -612,7 +644,7 @@ cache files fails, the method will return FALSE.</p>
 </table>
 <p>This method will return information on the entire cache.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">cache_info</span><span class="p">());</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nb">var_dump</span><span class="p">(</span><span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">getCacheInfo</span><span class="p">());</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -623,8 +655,8 @@ cache files fails, the method will return FALSE.</p>
 on which adapter is being used.</p>
 </div>
 <dl class="method">
-<dt>
-<code class="descname">⠀getMetadata($key)</code></dt>
+<dt id="getMetadata">
+<code class="descname">getMetadata</code><span class="sig-paren">(</span><em>string $key</em><span class="sig-paren">)</span><a class="headerlink" href="#getMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -663,16 +695,17 @@ on which adapter is being used.</p>
 <p>Unlike caching from the Output Class, the driver file-based caching
 allows for pieces of view files to be cached. Use this with care, and
 make sure to benchmark your application, as a point can come where disk
-I/O will negate positive gains by caching. This requires a writable cache directory to be really writable (0777).</p>
+I/O will negate positive gains by caching. This requires a cache
+directory to be really writable by the application.</p>
 </div>
 <div class="section" id="memcached-caching">
 <h3><a class="toc-backref" href="#id6">Memcached Caching</a><a class="headerlink" href="#memcached-caching" title="Permalink to this headline">¶</a></h3>
 <p>Memcached servers can be specified in the cache configuration file. Available options are:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$memcached</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;host&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;port&#39;</span>   <span class="o">=&gt;</span> <span class="mi">11211</span><span class="p">,</span>
-        <span class="s1">&#39;weight&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s1">&#39;raw&#39;</span>    <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;host&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span>   <span class="o">=&gt;</span> <span class="mi">11211</span><span class="p">,</span>
+    <span class="s1">&#39;weight&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;raw&#39;</span>    <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -691,11 +724,11 @@ I/O will negate positive gains by caching. This requires a writable cache direct
 To use it, you need <a class="reference external" href="https://github.com/phpredis/phpredis">Redis server and phpredis PHP extension</a>.</p>
 <p>Config options to connect to redis server stored in the cache configuration file. Available options are:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$redis</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;host&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
-        <span class="s1">&#39;port&#39;</span>     <span class="o">=&gt;</span> <span class="mi">6379</span><span class="p">,</span>
-        <span class="s1">&#39;timeout&#39;</span>  <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;host&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span>     <span class="o">=&gt;</span> <span class="mi">6379</span><span class="p">,</span>
+    <span class="s1">&#39;timeout&#39;</span>  <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -726,32 +759,32 @@ support your chosen cache.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="curlrequest.html" class="btn btn-neutral float-right" title="CURLRequest Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Library Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="curlrequest.html" class="btn btn-neutral float-right" title="CURLRequest Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Library Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019-2020 CodeIgniter Foundation
+        &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jul 15, 2020.
+        Last updated on Feb 01, 2021.
       </span>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -759,7 +792,6 @@ support your chosen cache.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
