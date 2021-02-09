@@ -352,7 +352,7 @@
 can change to meet the needs of your application.</p>
 <div class="section" id="default-directories">
 <h2>Default Directories<a class="headerlink" href="#default-directories" title="Permalink to this headline">¶</a></h2>
-<p>A fresh install has six directories: <code class="docutils literal notranslate"><span class="pre">/app</span></code>, <code class="docutils literal notranslate"><span class="pre">/system</span></code>, <code class="docutils literal notranslate"><span class="pre">/public</span></code>,
+<p>A fresh install has six directories: <code class="docutils literal notranslate"><span class="pre">/app</span></code>, <code class="docutils literal notranslate"><span class="pre">/vendor</span></code>, <code class="docutils literal notranslate"><span class="pre">/public</span></code>,
 <code class="docutils literal notranslate"><span class="pre">/writable</span></code>, <code class="docutils literal notranslate"><span class="pre">/tests</span></code> and possibly <code class="docutils literal notranslate"><span class="pre">/docs</span></code>.
 Each of these directories has a very specific part to play.</p>
 <div class="section" id="app">
@@ -384,8 +384,8 @@ routing to controllers, and will need to define all of your routes in the routes
 <p>All files in this directory live under the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace, though you are free to change that in
 <strong>app/Config/Constants.php</strong>.</p>
 </div>
-<div class="section" id="system">
-<h3>system<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="vendor">
+<h3>vendor<a class="headerlink" href="#vendor" title="Permalink to this headline">¶</a></h3>
 <p>This directory stores the files that make up the framework, itself. While you have a lot of flexibility in how you
 use the application directory, the files in the system directory should never be modified. Instead, you should
 extend the classes, or create new classes, to provide the desired functionality.</p>
