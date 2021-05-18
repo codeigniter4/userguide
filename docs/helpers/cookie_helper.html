@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cookie Helper &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Cookie Helper &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -460,6 +462,28 @@ parameters.</p>
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="has_cookie">
+<code class="descname">has_cookie</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>?string $value = null</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#has_cookie" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$name</strong> (<em>string</em>) – Cookie name</li>
+<li><strong>$value</strong> (<em>string|null</em>) – Cookie value</li>
+<li><strong>$prefix</strong> (<em>string</em>) – Cookie prefix</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Checks if a cookie exists by name. This is an alias of <code class="docutils literal notranslate"><span class="pre">Response::hasCookie()</span></code>.</p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -479,7 +503,7 @@ parameters.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

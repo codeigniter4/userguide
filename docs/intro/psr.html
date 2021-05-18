@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PSR Compliance &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>PSR Compliance &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -364,10 +366,12 @@ but does not, and will not, meet all of them.</p>
 <p><strong>PSR-4: Autoloading Standard</strong></p>
 <p>This PSR provides a method for organizing file and namespaces to allow for a standard method of autoloading
 classes. Our <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">Autoloader</span></a> meets the PSR-4 recommendations.</p>
-<p><strong>PSR-6: Caching Interface</strong></p>
-<p>CodeIgniter will not be trying to meet this PSR, as we believe it oversteps its needs. The newly proposed
-<a class="reference external" href="https://github.com/dragoonis/fig-standards/blob/psr-simplecache/proposed/simplecache.md">SimpleCache Interfaces</a>
-do look like something we would consider.</p>
+<p><strong>PSR-6: Caching Interfaces</strong>
+<strong>PSR-16: SimpleCache Interface</strong></p>
+<p>While the framework Cache components do not adhere to PSR-6 or PSR-16, a separate set of adapters
+are available from the CodeIgniter4 organization as a supplemental module. It is recommended that
+projects use the native Cache drivers directly as the adapters are only intended for compatibility
+with third-party libraries. For more information visit the <a class="reference external" href="https://github.com/codeigniter4/cache">CodeIgniter4 Cache repo</a>.</p>
 <p><strong>PSR-7: HTTP Message Interface</strong></p>
 <p>This PSR standardizes a way of representing the HTTP interactions. While many of the concepts became part of our
 HTTP layer, CodeIgniter does not strive for compatibility with this recommendation.</p>
@@ -392,7 +396,7 @@ and we will get it fixed, or submit a pull request with the required changes.</p
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

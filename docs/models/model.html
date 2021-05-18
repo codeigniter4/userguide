@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Using CodeIgniter’s Model &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Using CodeIgniter’s Model &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -440,6 +442,28 @@ that extends <code class="docutils literal notranslate"><span class="pre">CodeIg
 </div>
 <p>This empty class provides convenient access to the database connection, the Query Builder,
 and a number of additional convenience methods.</p>
+<p>Should you need additional setup in your model you may extend the <code class="docutils literal notranslate"><span class="pre">initialize()</span></code> function
+which will be run immediately after the Model’s constructor. This allows you to perform
+extra steps without repeating the constructor parameters, for example extending other models:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Modules\Authentication\Models\UserAuthModel</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">UserAuthModel</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Called during initialization. Appends</span>
+<span class="sd">     * our custom field to the module&#39;s model.</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">()</span>
+    <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">allowedFields</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">&#39;middlename&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="connecting-to-the-database">
 <h3><a class="toc-backref" href="#id5">Connecting to the Database</a><a class="headerlink" href="#connecting-to-the-database" title="Permalink to this headline">¶</a></h3>
 <p>When the class is first instantiated, if no database connection instance is passed to the constructor,
@@ -1112,10 +1136,10 @@ main array will also contain the other values passed to the method, and be detai
 must return the original $data array so other callbacks have the full information.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">protected</span> <span class="k">function</span> <span class="nf">hashPassword</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">])</span> <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">]))</span> <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
 
     <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password_hash&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">],</span> <span class="nx">PASSWORD_DEFAULT</span><span class="p">);</span>
-    <span class="nb">unset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">];</span>
+    <span class="nb">unset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">]);</span>
 
     <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1282,7 +1306,7 @@ Model gives you out of the box, and create a fully custom experience.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

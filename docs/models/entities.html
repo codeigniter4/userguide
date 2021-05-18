@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Using Entity Classes &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Using Entity Classes &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -368,9 +370,10 @@ be used directly with the <a class="reference internal" href="model.html"><span 
 <li><a class="reference internal" href="#property-casting" id="id11">Property Casting</a></li>
 <li><a class="reference internal" href="#array-json-casting" id="id12">Array/Json Casting</a></li>
 <li><a class="reference internal" href="#csv-casting" id="id13">CSV Casting</a></li>
-<li><a class="reference internal" href="#checking-for-changed-attributes" id="id14">Checking for Changed Attributes</a></li>
+<li><a class="reference internal" href="#custom-casting" id="id14">Custom casting</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#checking-for-changed-attributes" id="id15">Checking for Changed Attributes</a></li>
 </ul>
 </div>
 <div class="section" id="entity-usage">
@@ -400,7 +403,7 @@ Entity itself at <strong>app/Entities/User.php</strong>.</p>
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -512,7 +515,7 @@ the attributes directly, allowing you to enforce any business logic or data conv
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CodeIgniter\I18n\Time</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
@@ -578,7 +581,7 @@ with the Entity class’ data mapping features.</p>
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -604,7 +607,7 @@ simply map the <code class="docutils literal notranslate"><span class="pre">full
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -644,7 +647,7 @@ of helpful methods in an immutable, localized way.</p>
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -671,14 +674,14 @@ current timezone, as set in <strong>app/Config/App.php</strong>:</p>
 This option should be an array where the key is the name of the class property, and the value is the data type it
 should be cast to. Casting only affects when values are read. No conversions happen that affect the permanent value in
 either the entity or the database. Properties can be cast to any of the following data types:
-<strong>integer</strong>, <strong>float</strong>, <strong>double</strong>, <strong>string</strong>, <strong>boolean</strong>, <strong>object</strong>, <strong>array</strong>, <strong>datetime</strong>, and <strong>timestamp</strong>.
+<strong>integer</strong>, <strong>float</strong>, <strong>double</strong>, <strong>string</strong>, <strong>boolean</strong>, <strong>object</strong>, <strong>array</strong>, <strong>datetime</strong>, <strong>timestamp</strong>, and <strong>uri</strong>.
 Add a question mark at the beginning of type to mark property as nullable, i.e., <strong>?string</strong>, <strong>?integer</strong>.</p>
 <p>For example, if you had a User entity with an <strong>is_banned</strong> property, you can cast it as a boolean:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -709,7 +712,7 @@ Unlike the rest of the data types that you can cast properties into, the:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -741,7 +744,7 @@ by humans:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Entity</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Widget</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
@@ -760,8 +763,113 @@ by humans:</p>
 <p class="last">Casting as CSV uses PHP’s internal <code class="docutils literal notranslate"><span class="pre">implode</span></code> and <code class="docutils literal notranslate"><span class="pre">explode</span></code> methods and assumes all values are string-safe and free of commas. For more complex data casts try <code class="docutils literal notranslate"><span class="pre">array</span></code> or <code class="docutils literal notranslate"><span class="pre">json</span></code>.</p>
 </div>
 </div>
+<div class="section" id="custom-casting">
+<h3><a class="toc-backref" href="#id14">Custom casting</a><a class="headerlink" href="#custom-casting" title="Permalink to this headline">¶</a></h3>
+<p>You can define your own conversion types for getting and setting data.</p>
+<p>At first you need to create a handler class for your type.
+Let’s say the class will be located in the ‘app/Entity/Cast’ directory:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Entity\Cast</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
+
+<span class="c1">//The class must inherit the CodeIgniter\Entity\Cast\BaseCast class</span>
+<span class="k">class</span> <span class="nc">CastBase64</span> <span class="k">extends</span> <span class="nx">BaseCast</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">set</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now you need to register it:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">extends</span> <span class="nx">Entity</span>
+<span class="p">{</span>
+    <span class="c1">// Specifying the type for the field</span>
+    <span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;base64&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="c1">//Bind the type to the handler</span>
+    <span class="k">protected</span> <span class="nv">$castHandlers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;base64&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;App\Entity\Cast\CastBase64&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">//...</span>
+
+<span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">key</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span> <span class="c1">// dGVzdA==</span>
+<span class="k">echo</span> <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">key</span><span class="p">;</span>     <span class="c1">// test</span>
+</pre></div>
+</div>
+<p>If you don’t need to change values when getting or setting a value. Then just don’t implement the appropriate method:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CastBase64</span> <span class="k">extends</span> <span class="nx">BaseCast</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Parameters</strong></p>
+<p>In some cases, one type is not enough. In this situation, you can use additional parameters.
+Additional parameters are indicated in square brackets and listed with a comma.</p>
+<p><strong>type[param1, param2]</strong></p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">//Defining a type with parameters</span>
+<span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;some_attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;class[App\SomeClass, param2, param3]&#39;</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="c1">//Bind the type to the handler</span>
+<span class="k">protected</span> <span class="nv">$castHandlers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SomeHandler&#39;</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SomeHandler</span> <span class="k">extends</span> <span class="nx">BaseCast</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
+    <span class="p">{</span>
+        <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
+        <span class="c1">// array(3) {</span>
+        <span class="c1">//   [0]=&gt;</span>
+        <span class="c1">//   string(13) &quot;App\SomeClass&quot;</span>
+        <span class="c1">//   [1]=&gt;</span>
+        <span class="c1">//   string(6) &quot;param2&quot;</span>
+        <span class="c1">//   [2]=&gt;</span>
+        <span class="c1">//   string(6) &quot;param3&quot;</span>
+        <span class="c1">// }</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the casting type is marked as nullable <code class="docutils literal notranslate"><span class="pre">?bool</span></code> and the passed value is not null, then the parameter with
+the value <code class="docutils literal notranslate"><span class="pre">nullable</span></code> will be passed to the casting type handler.
+If casting type has predefined parameters, then <code class="docutils literal notranslate"><span class="pre">nullable</span></code> will be added to the end of the list.</p>
+</div>
+</div>
+</div>
 <div class="section" id="checking-for-changed-attributes">
-<h3><a class="toc-backref" href="#id14">Checking for Changed Attributes</a><a class="headerlink" href="#checking-for-changed-attributes" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id15">Checking for Changed Attributes</a><a class="headerlink" href="#checking-for-changed-attributes" title="Permalink to this headline">¶</a></h2>
 <p>You can check if an Entity attribute has changed since it was created. The only parameter is the name of the
 attribute to check:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">();</span>
@@ -774,7 +882,6 @@ attribute to check:</p>
 <p>Or to check the whole entity for changed values omit the parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">hasChanged</span><span class="p">();</span>       <span class="c1">// true</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -795,7 +902,7 @@ attribute to check:</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

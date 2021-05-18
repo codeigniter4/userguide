@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Working with URIs &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Working with URIs &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Library Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -391,17 +393,18 @@ into its appropriate sections:</p>
 </div>
 <div class="section" id="the-current-uri">
 <h3><a class="toc-backref" href="#id2">The Current URI</a><a class="headerlink" href="#the-current-uri" title="Permalink to this headline">¶</a></h3>
-<p>Many times, all you really want is an object representing the current URL of this request. This can be accessed
-in two different ways. The first is to grab it directly from the current request object. Assuming that you’re in
-a controller that extends <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller</span></code> you can get it like:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$uri</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">uri</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Second, you can use one of the functions available in the <strong>url_helper</strong>:</p>
+<p>Many times, all you really want is an object representing the current URL of this request.
+You can use one of the functions available in the <strong>url_helper</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$uri</span> <span class="o">=</span> <span class="nx">current_url</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>You must pass <code class="docutils literal notranslate"><span class="pre">true</span></code> as the first parameter, otherwise, it will return the string representation of the current URL.</p>
+<p>You must pass <code class="docutils literal notranslate"><span class="pre">true</span></code> as the first parameter, otherwise, it will return the string representation of the current URL.
+This URI is based on the path (relative to your <code class="docutils literal notranslate"><span class="pre">baseURL</span></code>) as determined by the current request object and
+your settings in <code class="docutils literal notranslate"><span class="pre">Config\App</span></code> (baseURL, indexPage, and forceGlobalSecureRequests).
+Assuming that you’re in a controller that extends <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller</span></code> you can get this relative path:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$path</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPath</span><span class="p">();</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="uri-strings">
@@ -409,7 +412,7 @@ a controller that extends <code class="docutils literal notranslate"><span class
 <p>Many times, all you really want is to get a string representation of a URI. This is easy to do by simply casting
 the URI as a string:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$uri</span> <span class="o">=</span> <span class="nx">current_url</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
-<span class="k">echo</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$uri</span><span class="p">;</span>  <span class="c1">// http://example.com</span>
+<span class="k">echo</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$uri</span><span class="p">;</span>  <span class="c1">// http://example.com/index.php</span>
 </pre></div>
 </div>
 <p>If you know the pieces of the URI and just want to ensure it’s all formatted correctly, you can generate a string
@@ -655,7 +658,7 @@ that will prevent throwing exceptions.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

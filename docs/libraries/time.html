@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Times and Dates &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Times and Dates &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Library Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -468,13 +470,13 @@ and returns a <strong>Time</strong> instance, instead of DateTime:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="instance">
-<h3>instance()<a class="headerlink" href="#instance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="createfrominstance">
+<h3>createFromInstance()<a class="headerlink" href="#createfrominstance" title="Permalink to this headline">¶</a></h3>
 <p>When working with other libraries that provide a DateTime instance, you can use this method to convert that
 to a Time instance, optionally setting the locale. The timezone will be automatically determined from the DateTime
 instance passed in:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$dt</span>   <span class="o">=</span> <span class="k">new</span> <span class="nx">DateTime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">);</span>
-<span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">instance</span><span class="p">(</span><span class="nv">$dt</span><span class="p">,</span> <span class="s1">&#39;en_US&#39;</span><span class="p">);</span>
+<span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">createFromInstance</span><span class="p">(</span><span class="nv">$dt</span><span class="p">,</span> <span class="s1">&#39;en_US&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -814,7 +816,7 @@ a timezone string in as the second parameter. If no timezone is given, the syste
 </div>
 <div class="section" id="viewing-differences">
 <h4>Viewing Differences<a class="headerlink" href="#viewing-differences" title="Permalink to this headline">¶</a></h4>
-<p>To compare two Times directly, you would use the <strong>difference()</strong> method, which returns a <strong>CodeIgniterI18nTimeDifference</strong>
+<p>To compare two Times directly, you would use the <strong>difference()</strong> method, which returns a <strong>CodeIgniter\I18n\TimeDifference</strong>
 instance. The first parameter is either a Time instance, a DateTime instance, or a string with the date/time. If
 a string is passed in the first parameter, the second parameter can be a timezone string:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;March 10, 2017&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">);</span>
@@ -922,7 +924,7 @@ human readable format that is geared towards being easily understood. It can cre
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

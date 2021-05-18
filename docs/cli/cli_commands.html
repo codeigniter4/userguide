@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Custom CLI Commands &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Custom CLI Commands &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -383,6 +385,10 @@ available commands. You should pass the name of the command as the first argumen
 </div>
 <p>Some commands take additional arguments, which should be provided directly after the command, separated by spaces:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">db</span><span class="o">:</span><span class="nx">seed</span> <span class="nx">DevUserSeeder</span>
+</pre></div>
+</div>
+<p>You may always pass <code class="docutils literal notranslate"><span class="pre">--no-header</span></code> to suppress the header output, helpful for parsing results:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">cache</span><span class="o">:</span><span class="nx">clear</span> <span class="o">--</span><span class="nx">no</span><span class="o">-</span><span class="nb">header</span>
 </pre></div>
 </div>
 <p>For all of the commands CodeIgniter provides, if you do not provide the required arguments, you will be prompted
@@ -613,7 +619,7 @@ be familiar with when creating your own commands. It also has a <a class="refere
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

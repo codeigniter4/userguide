@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Version 4.1.2 &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Version 4.1.2 &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Version 4.1.1" href="v4.1.1.html" />
-    <link rel="prev" title="Change Logs" href="index.html" /> 
+    <link rel="prev" title="Version 4.1.3" href="v4.1.3.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -348,8 +350,59 @@
             
   <div class="section" id="version-4-1-2">
 <h1>Version 4.1.2<a class="headerlink" href="#version-4-1-2" title="Permalink to this headline">¶</a></h1>
-<p>Release Date: Not released</p>
+<p>Release Date: May 16, 2021</p>
 <p><strong>4.1.2 release of CodeIgniter4</strong></p>
+<p>BREAKING:</p>
+<p>Fixed <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/issues/4116">a bug</a> in <code class="docutils literal notranslate"><span class="pre">current_url()</span></code> that prevented
+configurations with an <code class="docutils literal notranslate"><span class="pre">indexPage</span></code> from including that value in the return value. Any installations
+using <code class="docutils literal notranslate"><span class="pre">App::$indexPage</span></code> should expect altered values from <code class="docutils literal notranslate"><span class="pre">current_url()</span></code> and all its dependencies
+(including Response Testing, Pager, Form Helper, Pager, and View Parser).</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li>New HTTP classes, <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> and <code class="docutils literal notranslate"><span class="pre">CookieStore</span></code>, for abstracting web cookies.</li>
+<li>New <code class="docutils literal notranslate"><span class="pre">assertRedirectTo()</span></code> assertion available for HTTP tests.</li>
+<li>New logger handler, <code class="docutils literal notranslate"><span class="pre">ErrorlogHandler</span></code>, that writes to <code class="docutils literal notranslate"><span class="pre">error_log()</span></code>.</li>
+<li>Entity. Added custom type casting functionality.</li>
+<li>New option in routing. The <code class="docutils literal notranslate"><span class="pre">priority</span></code> option lower the priority of specific route processing.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">Autoloader</span></code> class can now load files which do not contain PHP classes. The list of <cite>non-class</cite> files will be listed in the <code class="docutils literal notranslate"><span class="pre">$files</span></code> property of <code class="docutils literal notranslate"><span class="pre">Config\Autoload</span></code> class.</li>
+</ul>
+<p>Changes:</p>
+<ul class="simple">
+<li>Layouts in views now support nested sections.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Response::getCookie</span></code> now returns a <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> instance instead of an array of cookie attributes.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Response::getCookies</span></code> now returns an array of <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> instances instead of array of array of attributes.</li>
+<li>To eliminate warnings from modern browsers’ consoles, empty samesite values will be defaulted to <code class="docutils literal notranslate"><span class="pre">Lax</span></code> on cookie dispatch.</li>
+<li><cite>Model::errors()</cite> and <cite>BaseModel::errors()</cite> now always returns <cite>array</cite>; there was no definition change but the docblock has been updated.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Entity::castAs</span></code> has changed behavior. Added new parameter <code class="docutils literal notranslate"><span class="pre">$method</span></code>. Type casting has been moved to separate handlers.</li>
+<li>Entity. Timestamp casting now throws an exception when an invalid value is passed</li>
+<li><code class="docutils literal notranslate"><span class="pre">Entity::castAsJson</span></code> uses external cast handler <code class="docutils literal notranslate"><span class="pre">JsonCast::get</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Entity::mutateDate</span></code> uses external cast handler <code class="docutils literal notranslate"><span class="pre">DatetimeCast::get</span></code>.</li>
+<li>In order for <code class="docutils literal notranslate"><span class="pre">Config\**</span></code> classes to get their respective properties’ values from the <code class="docutils literal notranslate"><span class="pre">.env</span></code>, it is now necessary to namespace the property with the name of the class. Previously, the property names are enough but now disallowed because it can get system environment variables, like <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</li>
+<li>The array helper <code class="docutils literal notranslate"><span class="pre">_array_search_dot</span></code> is now marked for <code class="docutils literal notranslate"><span class="pre">&#64;internal</span></code> use. As this is used by <code class="docutils literal notranslate"><span class="pre">dot_array_search</span></code>, users should not use <code class="docutils literal notranslate"><span class="pre">_array_search_dot</span></code> directly in their code.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CacheInterface::getMetaData()</span></code> returns <code class="docutils literal notranslate"><span class="pre">null</span></code> for misses, or an array with at least the “expires” key set to the absolute epoch expiration, or <code class="docutils literal notranslate"><span class="pre">null</span></code> for “never expires”. The File, Memcached, and Wincache Handlers still return <code class="docutils literal notranslate"><span class="pre">false</span></code> which will become <code class="docutils literal notranslate"><span class="pre">null</span></code> in a future release.</li>
+</ul>
+<p>Deprecations:</p>
+<ul class="simple">
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">Codeigniter\View\View::$currentSection</span></code> property.</li>
+<li>Language strings and exceptions on invalid cookie samesite are deprecated for the <code class="docutils literal notranslate"><span class="pre">CookieException</span></code>’s own exception message.</li>
+<li>Deprecated <cite>CodeIgniterEntity</cite> in favor of <cite>CodeIgniterEntityEntity</cite></li>
+<li>Deprecated cookie-related properties of <code class="docutils literal notranslate"><span class="pre">Response</span></code> in order to use the <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> class.</li>
+<li>Deprecated cookie-related properties of <code class="docutils literal notranslate"><span class="pre">Security</span></code> in order to use the <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> class.</li>
+<li>Deprecated cookie-related properties of <code class="docutils literal notranslate"><span class="pre">Session</span></code> in order to use the <code class="docutils literal notranslate"><span class="pre">Cookie</span></code> class.</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">Security::isExpired()</span></code> to use the <code class="docutils literal notranslate"><span class="pre">Cookie</span></code>’s internal expires status.</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">CIDatabaseTestCase</span></code> to use the <code class="docutils literal notranslate"><span class="pre">DatabaseTestTrait</span></code> instead.</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">FeatureTestCase</span></code> to use the <code class="docutils literal notranslate"><span class="pre">FeatureTestTrait</span></code> instead.</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">ControllerTester</span></code> to use the <code class="docutils literal notranslate"><span class="pre">ControllerTestTrait</span></code> instead.</li>
+<li>Consolidated and deprecated <code class="docutils literal notranslate"><span class="pre">ControllerResponse</span></code> and <code class="docutils literal notranslate"><span class="pre">FeatureResponse</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">TestResponse</span></code>.</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">Time::instance()</span></code>, use <code class="docutils literal notranslate"><span class="pre">Time::createFromInstance()</span></code> instead (now accepts <code class="docutils literal notranslate"><span class="pre">DateTimeInterface</span></code>).</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">IncomingRequest::removeRelativeDirectory()</span></code>, use <code class="docutils literal notranslate"><span class="pre">URI::removeDotSegments()</span></code> instead</li>
+<li>Deprecated <code class="docutils literal notranslate"><span class="pre">\API\ResponseTrait::failValidationError</span></code> to use <code class="docutils literal notranslate"><span class="pre">\API\ResponseTrait::failValidationErrors</span></code> instead</li>
+</ul>
+<p>Bugs Fixed:</p>
+<p><em>See the repo’s **CHANGELOG.MD*</em> for a complete list of bugs fixed.*</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">BaseConnection::query()</span></code> now returns <code class="docutils literal notranslate"><span class="pre">false</span></code> for failed queries (unless <code class="docutils literal notranslate"><span class="pre">DBDebug==true</span></code>, in which case an exception will be thrown) and returns boolean values for write-type queries as specified in the docs.</li>
+</ul>
 </div>
 
 
@@ -359,7 +412,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="v4.1.1.html" class="btn btn-neutral float-right" title="Version 4.1.1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Change Logs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="v4.1.3.html" class="btn btn-neutral float-left" title="Version 4.1.3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -368,7 +421,7 @@
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

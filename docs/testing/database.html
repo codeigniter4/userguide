@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Testing Your Database &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Testing Your Database &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -361,15 +363,18 @@
 <div class="section" id="the-test-class">
 <h2><a class="toc-backref" href="#id1">The Test Class</a><a class="headerlink" href="#the-test-class" title="Permalink to this headline">¶</a></h2>
 <p>In order to take advantage of the built-in database tools that CodeIgniter provides for testing, your
-tests must extend <code class="docutils literal notranslate"><span class="pre">CIDatabaseTestCase</span></code>:</p>
+tests must extend <code class="docutils literal notranslate"><span class="pre">CIUnitTestCase</span></code> and use the <code class="docutils literal notranslate"><span class="pre">DatabaseTestTrait</span></code>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">App\Database</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIDatabaseTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\DatabaseTestTrait</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">CIDatabaseTestCase</span>
+<span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
 <span class="p">{</span>
+    <span class="k">use</span> <span class="nx">DatabaseTestTrait</span><span class="p">;</span>
+
     <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
@@ -381,10 +386,13 @@ of the functionality described here:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Database</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIDatabaseTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\DatabaseTestTrait</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">CIDatabaseTestCase</span>
+<span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
 <span class="p">{</span>
+    <span class="k">use</span> <span class="nx">DatabaseTestTrait</span><span class="p">;</span>
+
     <span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
@@ -426,10 +434,13 @@ by adding a couple of class properties to your test.</p>
 
 <span class="k">namespace</span> <span class="nx">App\Database</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIDatabaseTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\DatabaseTestTrait</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">\CIDatabaseTestCase</span>
+<span class="k">class</span> <span class="nc">MyTests</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
 <span class="p">{</span>
+    <span class="k">use</span> <span class="nx">DatabaseTestTrait</span><span class="p">;</span>
+
     <span class="k">protected</span> <span class="nv">$refresh</span>  <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
     <span class="k">protected</span> <span class="nv">$seed</span>     <span class="o">=</span> <span class="s1">&#39;TestSeeder&#39;</span><span class="p">;</span>
     <span class="k">protected</span> <span class="nv">$basePath</span> <span class="o">=</span> <span class="s1">&#39;path/to/database/files&#39;</span><span class="p">;</span>
@@ -467,7 +478,7 @@ To run migrations from all available namespaces set this property to <code class
 </div>
 <div class="section" id="helper-methods">
 <h2><a class="toc-backref" href="#id4">Helper Methods</a><a class="headerlink" href="#helper-methods" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>CIDatabaseTestCase</strong> class provides several helper methods to aid in testing your database.</p>
+<p>The <strong>DatabaseTestTrait</strong> class provides several helper methods to aid in testing your database.</p>
 <p><strong>regressDatabase()</strong></p>
 <p>Called during <code class="docutils literal notranslate"><span class="pre">$refresh</span></code> described above, this method is available if you need to reset the database manually.</p>
 <p><strong>migrateDatabase()</strong></p>
@@ -536,7 +547,7 @@ array with the data to insert into the table.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>
