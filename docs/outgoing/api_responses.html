@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>API Response Trait &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>API Response Trait &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -690,14 +692,14 @@ the client should not try again because it won’t help. Status code is 403.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="failValidationError">
-<code class="descname">failValidationError</code><span class="sig-paren">(</span><em>string $description = 'Bad Request'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failValidationError" title="Permalink to this definition">¶</a></dt>
+<dt id="failValidationErrors">
+<code class="descname">failValidationErrors</code><span class="sig-paren">(</span><em>$errors</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failValidationErrors" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$description</strong> (<em>string</em>) – The error message to show the user.</li>
+<li><strong>$errors</strong> (<em>mixed</em>) – The error message or array of messages to show the user.</li>
 <li><strong>$code</strong> (<em>string</em>) – A custom, API-specific, error code.</li>
 <li><strong>$message</strong> (<em>string</em>) – A custom “reason” message to return.</li>
 </ul>
@@ -708,9 +710,8 @@ the client should not try again because it won’t help. Status code is 403.</p>
 </tr>
 </tbody>
 </table>
-<p>Sets the appropriate status code to use when data the client sent did not pass validation rules.
-Status code is typically 400.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">failValidationError</span><span class="p">(</span><span class="nv">$validation</span><span class="o">-&gt;</span><span class="na">getErrors</span><span class="p">());</span>
+<p>Sets the appropriate status code to use when data the client sent did not pass validation rules. Status code is typically 400.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">failValidationErrors</span><span class="p">(</span><span class="nv">$validation</span><span class="o">-&gt;</span><span class="na">getErrors</span><span class="p">());</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -838,7 +839,7 @@ This might be due to some form of throttling or rate limiting. Status code is ty
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>

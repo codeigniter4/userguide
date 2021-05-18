@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Global Functions and Constants &mdash; CodeIgniter 4.1.1 documentation</title>
+  <title>Global Functions and Constants &mdash; CodeIgniter 4.1.2 documentation</title>
   
 
   
@@ -210,6 +210,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
@@ -254,6 +255,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/fabricator.html">Generating Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
 </ul>
@@ -399,8 +401,60 @@ or null if no value is found.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="cookie">
+<code class="descname">cookie</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $value = ''</em><span class="optional">[</span>, <em>array $options = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cookie" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$name</strong> (<em>string</em>) – Cookie name</li>
+<li><strong>$value</strong> (<em>string</em>) – Cookie value</li>
+<li><strong>$options</strong> (<em>array</em>) – Cookie options</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">Cookie</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">Cookie</span></code> instance</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Throws:</th><td class="field-body"><p class="first last"><code class="docutils literal notranslate"><span class="pre">CookieException</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Simpler way to create a new Cookie instance.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cookies">
+<code class="descname">cookies</code><span class="sig-paren">(</span><span class="optional">[</span><em>array $cookies = []</em><span class="optional">[</span>, <em>bool $getGlobal = true</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#cookies" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$cookies</strong> (<em>array</em>) – If <code class="docutils literal notranslate"><span class="pre">getGlobal</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, this is passed to <code class="docutils literal notranslate"><span class="pre">CookieStore</span></code>’s constructor.</li>
+<li><strong>$getGlobal</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">false</span></code>, creates a new instance of <code class="docutils literal notranslate"><span class="pre">CookieStore</span></code>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">CookieStore</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Instance of <code class="docutils literal notranslate"><span class="pre">CookieStore</span></code> saved in the current <code class="docutils literal notranslate"><span class="pre">Response</span></code>, or a new <code class="docutils literal notranslate"><span class="pre">CookieStore</span></code> instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Fetches the global <code class="docutils literal notranslate"><span class="pre">CookieStore</span></code> instance held by <code class="docutils literal notranslate"><span class="pre">Response</span></code>.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="env">
-<code class="descname">env</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$default=null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#env" title="Permalink to this definition">¶</a></dt>
+<code class="descname">env</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$default = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#env" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -429,7 +483,7 @@ settings, API keys, etc.</p>
 
 <dl class="function">
 <dt id="esc">
-<code class="descname">esc</code><span class="sig-paren">(</span><em>$data</em>, <em>$context='html'</em><span class="optional">[</span>, <em>$encoding</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#esc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">esc</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$context = 'html'</em><span class="optional">[</span>, <em>$encoding</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#esc" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1210,7 +1264,7 @@ instance every time.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Feb 01, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>
