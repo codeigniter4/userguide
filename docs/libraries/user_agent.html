@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>User Agent Class &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>User Agent Class &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -388,20 +388,13 @@ device, or a robot. It will also gather the platform information if it
 is available:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$agent</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getUserAgent</span><span class="p">();</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">())</span>
-<span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">())</span> <span class="p">{</span>
         <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getBrowser</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isRobot</span><span class="p">())</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isRobot</span><span class="p">())</span> <span class="p">{</span>
         <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">agent</span><span class="o">-&gt;</span><span class="na">robot</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">())</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">())</span> <span class="p">{</span>
         <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getMobile</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="s1">&#39;Unidentified User Agent&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -419,7 +412,7 @@ is available:</p>
 <code class="descname">CodeIgniter\HTTP\UserAgent</code></dt>
 <dd><dl class="method">
 <dt id="isBrowser">
-<code class="descname">isBrowser</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isBrowser" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isBrowser</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isBrowser" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -429,7 +422,7 @@ is available:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if the user agent is a (specified) browser, FALSE if not</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true if the user agent is a (specified) browser, false if not</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -437,13 +430,10 @@ is available:</p>
 </tr>
 </tbody>
 </table>
-<p>Returns TRUE/FALSE (boolean) if the user agent is a known web browser.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">(</span><span class="s1">&#39;Safari&#39;</span><span class="p">))</span>
-<span class="p">{</span>
+<p>Returns true/false (boolean) if the user agent is a known web browser.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">(</span><span class="s1">&#39;Safari&#39;</span><span class="p">))</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="s1">&#39;You are using Safari.&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">())</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="s1">&#39;You are using a browser.&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -458,7 +448,7 @@ browsers or change the strings.</p>
 
 <dl class="method">
 <dt id="isMobile">
-<code class="descname">isMobile</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isMobile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isMobile</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isMobile" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -468,7 +458,7 @@ browsers or change the strings.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if the user agent is a (specified) mobile device, FALSE if not</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true if the user agent is a (specified) mobile device, false if not</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -476,17 +466,12 @@ browsers or change the strings.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns TRUE/FALSE (boolean) if the user agent is a known mobile device.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">(</span><span class="s1">&#39;iphone&#39;</span><span class="p">))</span>
-<span class="p">{</span>
+<p>Returns true/false (boolean) if the user agent is a known mobile device.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">(</span><span class="s1">&#39;iphone&#39;</span><span class="p">))</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;iphone/home&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">())</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;mobile/home&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;web/home&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -495,7 +480,7 @@ browsers or change the strings.</p>
 
 <dl class="method">
 <dt id="isRobot">
-<code class="descname">isRobot</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isRobot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isRobot</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isRobot" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -505,7 +490,7 @@ browsers or change the strings.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if the user agent is a (specified) robot, FALSE if not</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true if the user agent is a (specified) robot, false if not</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -513,7 +498,7 @@ browsers or change the strings.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns TRUE/FALSE (boolean) if the user agent is a known robot.</p>
+<p>Returns true/false (boolean) if the user agent is a known robot.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The user agent library only contains the most common robot definitions. It is not a complete list of bots.
@@ -530,13 +515,13 @@ that commonly visit your site are missing from the list you can add them to your
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">TRUE if the user agent is a referral, FALSE if not</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true if the user agent is a referral, false if not</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
-<p>Returns TRUE/FALSE (boolean) if the user agent was referred from another site.</p>
+<p>Returns true/false (boolean) if the user agent was referred from another site.</p>
 </dd></dl>
 
 <dl class="method">
@@ -633,8 +618,7 @@ that commonly visit your site are missing from the list you can add them to your
 </tbody>
 </table>
 <p>The referrer, if the user agent was referred from another site. Typically you’ll test for this as follows:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isReferral</span><span class="p">())</span>
-<span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isReferral</span><span class="p">())</span> <span class="p">{</span>
         <span class="k">echo</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">referrer</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
@@ -701,7 +685,7 @@ that commonly visit your site are missing from the list you can add them to your
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>

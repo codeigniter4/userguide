@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Email Class &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>Email Class &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -519,8 +519,8 @@ regardless of SMTPCrypto setting.)</td>
 <td>SMTP Timeout (in seconds).</td>
 </tr>
 <tr class="row-even"><td><strong>SMTPKeepAlive</strong></td>
-<td>FALSE</td>
-<td>TRUE or FALSE (boolean)</td>
+<td>false</td>
+<td>true or false (boolean)</td>
 <td>Enable persistent SMTP connections.</td>
 </tr>
 <tr class="row-odd"><td><strong>SMTPCrypto</strong></td>
@@ -532,8 +532,8 @@ channel to the server using SSL and “tls” will issue a
 set this to blank.</td>
 </tr>
 <tr class="row-even"><td><strong>wordWrap</strong></td>
-<td>TRUE</td>
-<td>TRUE or FALSE (boolean)</td>
+<td>true</td>
+<td>true or false (boolean)</td>
 <td>Enable word-wrap.</td>
 </tr>
 <tr class="row-odd"><td><strong>wrapChars</strong></td>
@@ -554,8 +554,8 @@ paths otherwise they will not work.</td>
 <td>Character set (utf-8, iso-8859-1, etc.).</td>
 </tr>
 <tr class="row-even"><td><strong>validate</strong></td>
-<td>TRUE</td>
-<td>TRUE or FALSE (boolean)</td>
+<td>true</td>
+<td>true or false (boolean)</td>
 <td>Whether to validate the email address.</td>
 </tr>
 <tr class="row-odd"><td><strong>priority</strong></td>
@@ -574,8 +574,8 @@ paths otherwise they will not work.</td>
 <td>Newline character. (Use “\r\n” to comply with RFC 822).</td>
 </tr>
 <tr class="row-even"><td><strong>BCCBatchMode</strong></td>
-<td>FALSE</td>
-<td>TRUE or FALSE (boolean)</td>
+<td>false</td>
+<td>true or false (boolean)</td>
 <td>Enable BCC Batch Mode.</td>
 </tr>
 <tr class="row-odd"><td><strong>BCCBatchSize</strong></td>
@@ -584,8 +584,8 @@ paths otherwise they will not work.</td>
 <td>Number of emails in each BCC batch.</td>
 </tr>
 <tr class="row-even"><td><strong>DSN</strong></td>
-<td>FALSE</td>
-<td>TRUE or FALSE (boolean)</td>
+<td>false</td>
+<td>true or false (boolean)</td>
 <td>Enable notify message from server</td>
 </tr>
 </tbody>
@@ -912,7 +912,7 @@ permitting the data to be reset between cycles.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you set the parameter to TRUE any attachments will be cleared as
+<p>If you set the parameter to true any attachments will be cleared as
 well:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
@@ -931,7 +931,7 @@ well:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true on success, false on failure</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -939,7 +939,7 @@ well:</p>
 </tr>
 </tbody>
 </table>
-<p>The e-mail sending method. Returns boolean TRUE or FALSE based on
+<p>The e-mail sending method. Returns boolean true or false based on
 success or failure, enabling it to be used conditionally:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">())</span>
 <span class="p">{</span>
@@ -948,7 +948,7 @@ success or failure, enabling it to be used conditionally:</p>
 </pre></div>
 </div>
 <p>This method will automatically clear all parameters if the request was
-successful. To stop this behaviour pass FALSE:</p>
+successful. To stop this behaviour pass false:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">false</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="c1">// Parameters won&#39;t be cleared</span>
@@ -964,7 +964,7 @@ to avoid clearing the email parameters.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">If <code class="docutils literal notranslate"><span class="pre">BCCBatchMode</span></code> is enabled, and there are more than
 <code class="docutils literal notranslate"><span class="pre">BCCBatchSize</span></code> recipients, this method will always return
-boolean <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>.</p>
+boolean <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 </div>
 </dd></dl>
 
@@ -1034,7 +1034,7 @@ parameter as mime-type:</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Attachment Content-ID or FALSE if not found</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Attachment Content-ID or false if not found</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
@@ -1046,8 +1046,8 @@ parameter as mime-type:</p>
 (picture) attachment into HTML. First parameter must be the already attached file name.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$filename</span> <span class="o">=</span> <span class="s1">&#39;/img/photo1.jpg&#39;</span><span class="p">;</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$address</span><span class="p">)</span>
-<span class="p">{</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$address</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="nv">$address</span><span class="p">);</span>
         <span class="nv">$cid</span> <span class="o">=</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setAttachmentCID</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
         <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;cid:&#39;</span><span class="o">.</span> <span class="nv">$cid</span> <span class="o">.</span><span class="s1">&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;</span><span class="p">);</span>
@@ -1086,7 +1086,7 @@ the email message. Useful for debugging.</p>
 <p>You can optionally specify which parts of the message should be printed.
 Valid options are: <strong>headers</strong>, <strong>subject</strong>, <strong>body</strong>.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// You need to pass FALSE while sending in order for the email data</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// You need to pass false while sending in order for the email data</span>
 <span class="c1">// to not be cleared - if that happens, printDebugger() would have</span>
 <span class="c1">// nothing to output.</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
@@ -1122,7 +1122,7 @@ Valid options are: <strong>headers</strong>, <strong>subject</strong>, <strong>b
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>
