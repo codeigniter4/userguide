@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Testing &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>Testing &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -536,7 +536,7 @@ logged in user:</p>
 </div>
 <p><strong>assertEventTriggered($eventName)</strong></p>
 <p>Ensure that an event you expected to be triggered actually was:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$arg</span><span class="p">;</span>
 <span class="p">});</span>
 
@@ -703,7 +703,7 @@ might be helpful. The <code class="docutils literal notranslate"><span class="pr
 <span class="p">{</span>
     <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;first.&#39;</span><span class="p">);</span>
     <span class="nv">$expected</span> <span class="o">=</span> <span class="s2">&quot;first.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -727,7 +727,7 @@ might be helpful. The <code class="docutils literal notranslate"><span class="pr
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>HTML Table Class &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>HTML Table Class &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -505,7 +505,7 @@ to the Table constructor.:</p>
 <em class="property">class </em><code class="descname">Table</code><a class="headerlink" href="#Table" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$function = NULL</code></dt>
+<code class="descname">$function = null</code></dt>
 <dd><p>Allows you to specify a native PHP function or a valid function array object to be applied to all cell data.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$table</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\View\Table</span><span class="p">();</span>
 
@@ -524,7 +524,7 @@ to the Table constructor.:</p>
 
 <dl class="method">
 <dt id="Table::generate">
-<code class="descname">generate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$tableData = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Table::generate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">generate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$tableData = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Table::generate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -629,7 +629,7 @@ to the Table constructor.:</p>
 
 <dl class="method">
 <dt id="Table::addRow">
-<code class="descname">addRow</code><span class="sig-paren">(</span><span class="optional">[</span><em>$args = array()</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Table::addRow" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addRow</code><span class="sig-paren">(</span><span class="optional">[</span><em>$args = []</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Table::addRow" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -721,7 +721,7 @@ This allows a single array with many elements to be displayed in a table that ha
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true on success, false on failure</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -731,7 +731,7 @@ This allows a single array with many elements to be displayed in a table that ha
 </table>
 <p>Permits you to set your template. You can submit a full or partial template.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;table_open&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&lt;table border=&quot;1&quot; cellpadding=&quot;2&quot; cellspacing=&quot;1&quot; class=&quot;mytable&quot;&gt;&#39;</span>
+        <span class="s1">&#39;table_open&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;table border=&quot;1&quot; cellpadding=&quot;2&quot; cellspacing=&quot;1&quot; class=&quot;mytable&quot;&gt;&#39;</span>
 <span class="p">];</span>
 
 <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">setTemplate</span><span class="p">(</span><span class="nv">$template</span><span class="p">);</span>
@@ -786,22 +786,21 @@ generated to clear the previous table information.</p>
 <p>Example</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$table</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\View\Table</span><span class="p">();</span>
 
-
 <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">setCaption</span><span class="p">(</span><span class="s1">&#39;Preferences&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setHeading</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Color&#39;</span><span class="p">,</span> <span class="s1">&#39;Size&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Small&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Large&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">);</span>
+        <span class="o">-&gt;</span><span class="na">setHeading</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Color&#39;</span><span class="p">,</span> <span class="s1">&#39;Size&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Small&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Large&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">);</span>
 
 <span class="k">echo</span> <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 
 <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">();</span>
 
 <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">setCaption</span><span class="p">(</span><span class="s1">&#39;Shipping&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">setHeading</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Delivery&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Express&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Air&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Overnight&#39;</span><span class="p">);</span>
+        <span class="o">-&gt;</span><span class="na">setHeading</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Delivery&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Express&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Air&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Overnight&#39;</span><span class="p">);</span>
 
 <span class="k">echo</span> <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 </pre></div>
@@ -829,7 +828,7 @@ generated to clear the previous table information.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>

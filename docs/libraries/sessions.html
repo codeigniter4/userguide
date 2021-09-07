@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Session Library &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>Session Library &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -499,7 +499,7 @@ variable, you will do this:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">get()</span></code> method returns NULL if the item you are trying
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">get()</span></code> method returns null if the item you are trying
 to access does not exist.</p>
 </div>
 <p>If you want to retrieve all of the existing userdata, you can simply
@@ -531,7 +531,7 @@ an example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$newdata</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;johndoe@some-site.com&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+        <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
 <span class="p">];</span>
 
 <span class="nv">$session</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$newdata</span><span class="p">);</span>
@@ -544,8 +544,8 @@ supports this syntax:</p>
 </div>
 <p>If you want to verify that a session value exists, simply check with
 <code class="docutils literal notranslate"><span class="pre">isset()</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns FALSE if the &#39;some_name&#39; item doesn&#39;t exist or is NULL,</span>
-<span class="c1">// TRUE otherwise:</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// returns false if the &#39;some_name&#39; item doesn&#39;t exist or is null,</span>
+<span class="c1">// true otherwise:</span>
 <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -639,7 +639,7 @@ any other kind), you can also use the <code class="docutils literal notranslate"
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">getFlashdata()</span></code> method returns NULL if the item cannot be
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">getFlashdata()</span></code> method returns null if the item cannot be
 found.</p>
 </div>
 <p>If you find that you need to preserve a flashdata variable through an
@@ -672,7 +672,7 @@ you want them all to have the same expiry time or not:</p>
 <span class="c1">// will do so after only 240 seconds</span>
 <span class="nv">$session</span><span class="o">-&gt;</span><span class="na">markAsTempdata</span><span class="p">([</span>
         <span class="s1">&#39;item&#39;</span>  <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span>
-        <span class="s1">&#39;item2&#39;</span> <span class="o">=&gt;</span> <span class="mi">240</span>
+        <span class="s1">&#39;item2&#39;</span> <span class="o">=&gt;</span> <span class="mi">240</span><span class="p">,</span>
 <span class="p">]);</span>
 </pre></div>
 </div>
@@ -686,8 +686,8 @@ you want them all to have the same expiry time or not:</p>
 </pre></div>
 </div>
 <p>You can also pass an array to <code class="docutils literal notranslate"><span class="pre">setTempdata()</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$tempdata</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;newuser&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Thanks for joining!&#39;</span><span class="p">];</span>
-<span class="nv">$session</span><span class="o">-&gt;</span><span class="na">setTempdata</span><span class="p">(</span><span class="nv">$tempdata</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$tempdata</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;newuser&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Thanks for joining!&#39;</span><span class="p">];</span>
+<span class="nv">$session</span><span class="o">-&gt;</span><span class="na">setTempdata</span><span class="p">(</span><span class="nv">$tempdata</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -717,7 +717,7 @@ other kind), you can also use the <code class="docutils literal notranslate"><sp
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">getTempdata()</span></code> method returns NULL if the item cannot be
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">getTempdata()</span></code> method returns null if the item cannot be
 found.</p>
 </div>
 <p>If you need to remove a tempdata value before it expires, you can directly
@@ -822,16 +822,16 @@ CodeIgniter\Session\Handlers\ArrayHandler</td>
 If you would like a non-expiring session (until browser is closed) set the value to zero: 0</td>
 </tr>
 <tr class="row-odd"><td><strong>sessionSavePath</strong></td>
-<td>NULL</td>
+<td>null</td>
 <td>None</td>
 <td>Specifies the storage location, depends on the driver being used.</td>
 </tr>
 <tr class="row-even"><td><strong>sessionMatchIP</strong></td>
-<td>FALSE</td>
-<td>TRUE/FALSE (boolean)</td>
+<td>false</td>
+<td>true/false (boolean)</td>
 <td>Whether to validate the user’s IP address when reading the session cookie.
 Note that some ISPs dynamically changes the IP, so if you want a non-expiring session you
-will likely set this to FALSE.</td>
+will likely set this to false.</td>
 </tr>
 <tr class="row-odd"><td><strong>sessionTimeToUpdate</strong></td>
 <td>300</td>
@@ -840,10 +840,10 @@ will likely set this to FALSE.</td>
 session ID. Setting it to 0 will disable session ID regeneration.</td>
 </tr>
 <tr class="row-even"><td><strong>sessionRegenerateDestroy</strong></td>
-<td>FALSE</td>
-<td>TRUE/FALSE (boolean)</td>
+<td>false</td>
+<td>true/false (boolean)</td>
 <td>Whether to destroy session data associated with the old session ID when auto-regenerating
-the session ID. When set to FALSE, the data will be later deleted by the garbage collector.</td>
+the session ID. When set to false, the data will be later deleted by the garbage collector.</td>
 </tr>
 </tbody>
 </table>
@@ -990,10 +990,10 @@ you would do this:</p>
 <p>And then of course, create the database table …</p>
 <p>For MySQL:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="nx">EXISTS</span> <span class="sb">`ci_sessions`</span> <span class="p">(</span>
-        <span class="sb">`id`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="sb">`ip_address`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="sb">`timestamp`</span> <span class="nx">timestamp</span> <span class="k">DEFAULT</span> <span class="nx">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="sb">`id`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+        <span class="sb">`ip_address`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+        <span class="sb">`timestamp`</span> <span class="nx">timestamp</span> <span class="k">DEFAULT</span> <span class="nx">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+        <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
         <span class="nx">KEY</span> <span class="sb">`ci_sessions_timestamp`</span> <span class="p">(</span><span class="sb">`timestamp`</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
@@ -1011,10 +1011,10 @@ you would do this:</p>
 </div>
 <p>You will also need to add a PRIMARY KEY <strong>depending on your ‘sessionMatchIP’
 setting</strong>. The examples below work both on MySQL and PostgreSQL:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// When sessionMatchIP = TRUE</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// When sessionMatchIP = true</span>
 <span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">ADD</span> <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">ip_address</span><span class="p">);</span>
 
-<span class="c1">// When sessionMatchIP = FALSE</span>
+<span class="c1">// When sessionMatchIP = false</span>
 <span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">ADD</span> <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nx">id</span><span class="p">);</span>
 
 <span class="c1">// To drop a previously created primary key (use when changing the setting)</span>
@@ -1141,7 +1141,7 @@ separate the multiple server paths with commas:</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>

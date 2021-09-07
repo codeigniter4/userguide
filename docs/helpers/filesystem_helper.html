@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Filesystem Helper &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>Filesystem Helper &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -370,7 +370,7 @@ directories.</p>
 <p>The following functions are available:</p>
 <dl class="function">
 <dt id="directory_map">
-<code class="descname">directory_map</code><span class="sig-paren">(</span><em>$source_dir</em><span class="optional">[</span>, <em>$directory_depth = 0</em><span class="optional">[</span>, <em>$hidden = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#directory_map" title="Permalink to this definition">¶</a></dt>
+<code class="descname">directory_map</code><span class="sig-paren">(</span><em>$source_dir</em><span class="optional">[</span>, <em>$directory_depth = 0</em><span class="optional">[</span>, <em>$hidden = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#directory_map" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -407,7 +407,7 @@ parameter (integer). A depth of 1 will only map the top level directory:</p>
 <p>By default, hidden files will not be included in the returned array and
 hidden directories will be skipped. To override this behavior, you may
 set a third parameter to true (boolean):</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Each folder name will be an array index, while its contained files will
@@ -462,12 +462,9 @@ be numerically indexed. Here is an example of a typical array:</p>
 <p>Recursively copies the files and directories of the origin directory
 into the target directory, i.e. “mirror” its contents.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">try</span>
-<span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
     <span class="nx">directory_mirror</span><span class="p">(</span><span class="nv">$uploadedImages</span><span class="p">,</span> <span class="nx">FCPATH</span> <span class="o">.</span> <span class="s1">&#39;images/&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">catch</span> <span class="p">(</span><span class="nx">Throwable</span> <span class="nv">$e</span><span class="p">)</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Throwable</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s1">&#39;Failed to export uploads!&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -489,7 +486,7 @@ into the target directory, i.e. “mirror” its contents.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE if the write was successful, FALSE in case of an error</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true if the write was successful, false in case of an error</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -501,12 +498,10 @@ into the target directory, i.e. “mirror” its contents.</p>
 function will create it.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="s1">&#39;Some file data&#39;</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">))</span>
-<span class="p">{</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s1">&#39;Unable to write the file&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">else</span>
-<span class="p">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s1">&#39;File written!&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -537,7 +532,7 @@ are always relative to the main site index.</p>
 
 <dl class="function">
 <dt id="delete_files">
-<code class="descname">delete_files</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$delDir = FALSE</em><span class="optional">[</span>, <em>$htdocs = FALSE</em><span class="optional">[</span>, <em>$hidden = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_files" title="Permalink to this definition">¶</a></dt>
+<code class="descname">delete_files</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$delDir = false</em><span class="optional">[</span>, <em>$htdocs = false</em><span class="optional">[</span>, <em>$hidden = false</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_files" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -550,7 +545,7 @@ are always relative to the main site index.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TRUE on success, FALSE in case of an error</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">true on success, false in case of an error</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
@@ -563,10 +558,10 @@ are always relative to the main site index.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If the second parameter is set to TRUE, any directories contained within the supplied
+<p>If the second parameter is set to true, any directories contained within the supplied
 root path will be deleted as well.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -577,7 +572,7 @@ root path will be deleted as well.</p>
 
 <dl class="function">
 <dt id="get_filenames">
-<code class="descname">get_filenames</code><span class="sig-paren">(</span><em>$source_dir</em><span class="optional">[</span>, <em>$include_path = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_filenames" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_filenames</code><span class="sig-paren">(</span><em>$source_dir</em><span class="optional">[</span>, <em>$include_path = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_filenames" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -630,7 +625,7 @@ a full file path.</p>
 </table>
 <p>Reads the specified directory and builds an array containing the filenames, filesize,
 dates, and permissions. Sub-folders contained within the specified path are only read
-if forced by sending the second parameter to FALSE, as this can be an intensive
+if forced by sending the second parameter to false, as this can be an intensive
 operation.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$models_info</span> <span class="o">=</span> <span class="nx">get_dir_file_info</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;models/&#39;</span><span class="p">);</span>
@@ -651,7 +646,7 @@ operation.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An array containing info on the specified file or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An array containing info on the specified file or false on failure</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
@@ -749,7 +744,7 @@ a three character octal notation of file permissions.</p>
 
 <dl class="function">
 <dt id="set_realpath">
-<code class="descname">set_realpath</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$check_existence = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_realpath" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_realpath</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$check_existence = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_realpath" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -776,15 +771,15 @@ cause an error to be triggered if the path cannot be resolved.</p>
 <span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span> <span class="c1">// Prints &#39;/etc/php5/apache2/php.ini&#39;</span>
 
 <span class="nv">$non_existent_file</span> <span class="o">=</span> <span class="s1">&#39;/path/to/non-exist-file.txt&#39;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_file</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>    <span class="c1">// Shows an error, as the path cannot be resolved</span>
-<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_file</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>   <span class="c1">// Prints &#39;/path/to/non-exist-file.txt&#39;</span>
+<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_file</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>    <span class="c1">// Shows an error, as the path cannot be resolved</span>
+<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_file</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>   <span class="c1">// Prints &#39;/path/to/non-exist-file.txt&#39;</span>
 
 <span class="nv">$directory</span> <span class="o">=</span> <span class="s1">&#39;/etc/php5&#39;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$directory</span><span class="p">);</span>  <span class="c1">// Prints &#39;/etc/php5/&#39;</span>
 
 <span class="nv">$non_existent_directory</span> <span class="o">=</span> <span class="s1">&#39;/path/to/nowhere&#39;</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_directory</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>       <span class="c1">// Shows an error, as the path cannot be resolved</span>
-<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_directory</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>      <span class="c1">// Prints &#39;/path/to/nowhere&#39;</span>
+<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_directory</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>       <span class="c1">// Shows an error, as the path cannot be resolved</span>
+<span class="k">echo</span> <span class="nx">set_realpath</span><span class="p">(</span><span class="nv">$non_existent_directory</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>      <span class="c1">// Prints &#39;/path/to/nowhere&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -808,7 +803,7 @@ cause an error to be triggered if the path cannot be resolved.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>

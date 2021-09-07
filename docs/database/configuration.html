@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Database Configuration &mdash; CodeIgniter 4.1.3 documentation</title>
+  <title>Database Configuration &mdash; CodeIgniter 4.1.4 documentation</title>
   
 
   
@@ -370,14 +370,14 @@ prototype:</p>
     <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
-    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
     <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
     <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
 <span class="p">];</span>
 </pre></div>
@@ -433,14 +433,14 @@ These failovers can be specified by setting the failover for a connection like t
         <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
         <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
-        <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
         <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
         <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
         <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-        <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+        <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
     <span class="p">],</span>
     <span class="p">[</span>
         <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost2&#39;</span><span class="p">,</span>
@@ -449,14 +449,14 @@ These failovers can be specified by setting the failover for a connection like t
         <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
         <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
-        <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
         <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
         <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
         <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-        <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+        <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
     <span class="p">]</span>
 <span class="p">];</span>
 </pre></div>
@@ -475,14 +475,14 @@ example, to set up a “test” environment you would do this:</p>
     <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
-    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
     <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
     <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
-    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
     <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[]</span>
 <span class="p">);</span>
 </pre></div>
@@ -564,10 +564,10 @@ default group’s configuration settings. The values should be name following th
 installations to share one database.</td>
 </tr>
 <tr class="row-odd"><td><strong>pConnect</strong></td>
-<td>TRUE/FALSE (boolean) - Whether to use a persistent connection.</td>
+<td>true/false (boolean) - Whether to use a persistent connection.</td>
 </tr>
 <tr class="row-even"><td><strong>DBDebug</strong></td>
-<td>TRUE/FALSE (boolean) - Whether database errors should be displayed.</td>
+<td>true/false (boolean) - Whether database errors should be displayed.</td>
 </tr>
 <tr class="row-odd"><td><strong>charset</strong></td>
 <td>The character set used in communicating with the database.</td>
@@ -591,7 +591,7 @@ customizable by the end user.</td>
 <tr class="row-odd"><td><strong>encrypt</strong></td>
 <td><p class="first">Whether or not to use an encrypted connection.</p>
 <ul class="last">
-<li><p class="first">‘sqlsrv’ and ‘pdo/sqlsrv’ drivers accept TRUE/FALSE</p>
+<li><p class="first">‘sqlsrv’ and ‘pdo/sqlsrv’ drivers accept true/false</p>
 </li>
 <li><p class="first">‘MySQLi’ and ‘pdo/mysql’ drivers accept an array with the following options:</p>
 <blockquote>
@@ -601,7 +601,7 @@ customizable by the end user.</td>
 <li>‘ssl_ca’     - Path to the certificate authority file</li>
 <li>‘ssl_capath’ - Path to a directory containing trusted CA certificates in PEM format</li>
 <li>‘ssl_cipher’ - List of <em>allowed</em> ciphers to be used for the encryption, separated by colons (‘:’)</li>
-<li>‘ssl_verify’ - TRUE/FALSE; Whether to verify the server certificate or not (‘MySQLi’ only)</li>
+<li>‘ssl_verify’ - true/false; Whether to verify the server certificate or not (‘MySQLi’ only)</li>
 </ul>
 </div></blockquote>
 </li>
@@ -612,7 +612,7 @@ customizable by the end user.</td>
 <td>Whether or not to use client compression (MySQL only).</td>
 </tr>
 <tr class="row-odd"><td><strong>strictOn</strong></td>
-<td>TRUE/FALSE (boolean) - Whether to force “Strict Mode” connections, good for ensuring strict SQL
+<td>true/false (boolean) - Whether to force “Strict Mode” connections, good for ensuring strict SQL
 while developing an application.</td>
 </tr>
 <tr class="row-even"><td><strong>port</strong></td>
@@ -651,7 +651,7 @@ you are using MySQL.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jun 05, 2021.
+        Last updated on Sep 07, 2021.
       </span>
 
     </p>
