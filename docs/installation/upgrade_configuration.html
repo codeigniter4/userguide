@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrade Configuration &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Upgrade Configuration &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="Upgrade Migrations" href="upgrade_migrations.html" /> 
+    <link rel="next" title="Upgrade Database" href="upgrade_database.html" />
+    <link rel="prev" title="Upgrade Controllers" href="upgrade_controllers.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -383,7 +386,7 @@
 <li>You have to change the values in the default CI4 config files according to the
 changes in the CI3 files. The config names are pretty much the same as in CI3.</li>
 <li>If you are using custom config files in your CI3 project you have to create those
-files as new php classes in your CI4 project in <code class="docutils literal notranslate"><span class="pre">app/Config/</span></code>. These classes
+files as new PHP classes in your CI4 project in <code class="docutils literal notranslate"><span class="pre">app/Config/</span></code>. These classes
 should be in the <code class="docutils literal notranslate"><span class="pre">Config</span></code> namespace and should extend <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Config\BaseConfig</span></code>.</li>
 <li>Once you have created all custom config classes, you have to copy the variables
 from the CI3 config into the new CI4 config class as public class properties.</li>
@@ -433,8 +436,8 @@ you can use the object-oriented approach: <code class="docutils literal notransl
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="upgrade_migrations.html" class="btn btn-neutral float-left" title="Upgrade Migrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrade_database.html" class="btn btn-neutral float-right" title="Upgrade Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="upgrade_controllers.html" class="btn btn-neutral float-left" title="Upgrade Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -443,7 +446,7 @@ you can use the object-oriented approach: <code class="docutils literal notransl
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Running Your App &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Running Your App &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -370,11 +373,11 @@ section of the User Guide to begin learning how to build dynamic PHP application
 <ol class="arabic simple">
 <li>Open the <strong>app/Config/App.php</strong> file with a text editor and
 set your base URL. If you need more flexibility, the baseURL may
-be set within the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file as <strong>app.baseURL=”http://example.com/”</strong>.
+be set within the <strong>.env</strong> file as <code class="docutils literal notranslate"><span class="pre">app.baseURL=&quot;http://example.com/&quot;</span></code>.
 (Always use a trailing slash on your base URL!)</li>
 <li>If you intend to use a database, open the
 <strong>app/Config/Database.php</strong> file with a text editor and set your
-database settings. Alternately, these could be set in your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file.</li>
+database settings. Alternately, these could be set in your <strong>.env</strong> file.</li>
 </ol>
 <p>One additional measure to take in production environments is to disable
 PHP error reporting and any other development-only functionality. In
@@ -582,7 +585,7 @@ paths align with the expected directory structure for your installation method.<
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

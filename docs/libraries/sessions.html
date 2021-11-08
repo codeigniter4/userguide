@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Session Library &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Session Library &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -529,9 +532,9 @@ but you can pass an array containing your new session data to the
 <p>Where <code class="docutils literal notranslate"><span class="pre">$array</span></code> is an associative array containing your new data. Here’s
 an example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$newdata</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;johndoe@some-site.com&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;johndoe@some-site.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
 <span class="p">];</span>
 
 <span class="nv">$session</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$newdata</span><span class="p">);</span>
@@ -571,8 +574,8 @@ done through <code class="docutils literal notranslate"><span class="pre">unset(
 <span class="c1">// or multiple values:</span>
 
 <span class="nb">unset</span><span class="p">(</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">],</span>
-        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;another_name&#39;</span><span class="p">]</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">],</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;another_name&#39;</span><span class="p">]</span>
 <span class="p">);</span>
 </pre></div>
 </div>
@@ -671,8 +674,8 @@ you want them all to have the same expiry time or not:</p>
 <span class="c1">// &#39;item&#39; will be erased after 300 seconds, while &#39;item2&#39;</span>
 <span class="c1">// will do so after only 240 seconds</span>
 <span class="nv">$session</span><span class="o">-&gt;</span><span class="na">markAsTempdata</span><span class="p">([</span>
-        <span class="s1">&#39;item&#39;</span>  <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span>
-        <span class="s1">&#39;item2&#39;</span> <span class="o">=&gt;</span> <span class="mi">240</span><span class="p">,</span>
+    <span class="s1">&#39;item&#39;</span>    <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s1">&#39;item2&#39;</span>    <span class="o">=&gt;</span> <span class="mi">240</span><span class="p">,</span>
 <span class="p">]);</span>
 </pre></div>
 </div>
@@ -856,6 +859,13 @@ However, you should never rely on this behavior as it can cause
 unexpected results or be changed in the future. Please configure
 everything properly.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <code class="docutils literal notranslate"><span class="pre">sessionExpiration</span></code> is set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the <code class="docutils literal notranslate"><span class="pre">session.gc_maxlifetime</span></code>
+setting set by PHP in session management will be used as-is
+(often the default value of <code class="docutils literal notranslate"><span class="pre">1440</span></code>). This needs to be changed in
+<code class="docutils literal notranslate"><span class="pre">php.ini</span></code> or via <code class="docutils literal notranslate"><span class="pre">ini_set()</span></code> as needed.</p>
+</div>
 <p>In addition to the values above, the cookie and native drivers apply the
 following configuration values shared by the <a class="reference internal" href="../incoming/incomingrequest.html"><span class="doc">IncomingRequest</span></a> and
 <a class="reference internal" href="security.html"><span class="doc">Security</span></a> classes:</p>
@@ -990,20 +1000,20 @@ you would do this:</p>
 <p>And then of course, create the database table …</p>
 <p>For MySQL:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="nx">EXISTS</span> <span class="sb">`ci_sessions`</span> <span class="p">(</span>
-        <span class="sb">`id`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
-        <span class="sb">`ip_address`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
-        <span class="sb">`timestamp`</span> <span class="nx">timestamp</span> <span class="k">DEFAULT</span> <span class="nx">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
-        <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
-        <span class="nx">KEY</span> <span class="sb">`ci_sessions_timestamp`</span> <span class="p">(</span><span class="sb">`timestamp`</span><span class="p">)</span>
+    <span class="sb">`id`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+    <span class="sb">`ip_address`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+    <span class="sb">`timestamp`</span> <span class="nx">timestamp</span> <span class="k">DEFAULT</span> <span class="nx">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+    <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">,</span>
+    <span class="nx">KEY</span> <span class="sb">`ci_sessions_timestamp`</span> <span class="p">(</span><span class="sb">`timestamp`</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
 <p>For PostgreSQL:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="s2">&quot;ci_sessions&quot;</span> <span class="p">(</span>
-        <span class="s2">&quot;id&quot;</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="s2">&quot;ip_address&quot;</span> <span class="nx">inet</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="s2">&quot;timestamp&quot;</span> <span class="nx">timestamptz</span> <span class="k">DEFAULT</span> <span class="nx">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-        <span class="s2">&quot;data&quot;</span> <span class="nx">bytea</span> <span class="k">DEFAULT</span> <span class="s1">&#39;&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span>
+    <span class="s2">&quot;id&quot;</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="s2">&quot;ip_address&quot;</span> <span class="nx">inet</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="s2">&quot;timestamp&quot;</span> <span class="nx">timestamptz</span> <span class="k">DEFAULT</span> <span class="nx">CURRENT_TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="s2">&quot;data&quot;</span> <span class="nx">bytea</span> <span class="k">DEFAULT</span> <span class="s1">&#39;&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span>
 <span class="p">);</span>
 
 <span class="nx">CREATE</span> <span class="nx">INDEX</span> <span class="s2">&quot;ci_sessions_timestamp&quot;</span> <span class="nx">ON</span> <span class="s2">&quot;ci_sessions&quot;</span> <span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">);</span>
@@ -1022,7 +1032,7 @@ setting</strong>. The examples below work both on MySQL and PostgreSQL:</p>
 </pre></div>
 </div>
 <p>You can choose the Database group to use by adding a new line to the
-<strong>applicationConfigApp.php</strong> file with the name of the group to use:</p>
+<strong>app/Config/App.php</strong> file with the name of the group to use:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$sessionDBGroup</span> <span class="o">=</span> <span class="s1">&#39;groupName&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -1141,7 +1151,7 @@ separate the multiple server paths with commas:</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

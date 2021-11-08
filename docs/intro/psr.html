@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>PSR Compliance &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>PSR Compliance &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -356,11 +359,11 @@ not a member of the FIG, we are compatible with a number of their proposals. Thi
 status of our compliance with the various accepted, and some draft, proposals.</p>
 <p><strong>PSR-1: Basic Coding Standard</strong></p>
 <p>This recommendation covers basic class, method, and file-naming standards. Our
-<a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/styleguide.rst">style guide</a>
+<a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/styleguide.md">style guide</a>
 meets PSR-1 and adds its own requirements on top of it.</p>
-<p><strong>PSR-2: Coding Style Guide</strong></p>
-<p>This PSR was fairly controversial when it first came out. CodeIgniter meets many of the recommendations within,
-but does not, and will not, meet all of them.</p>
+<p><strong>PSR-12: Extended Coding Style</strong></p>
+<p>Our
+<a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing/styleguide.md">style guide</a> follows the recommendation plus a set of our own styling conventions.</p>
 <p><strong>PSR-3: Logger Interface</strong></p>
 <p>CodeIgniter’s <a class="reference internal" href="../general/logging.html"><span class="doc">Logger</span></a> implements all of the interfaces provided by this PSR.</p>
 <p><strong>PSR-4: Autoloading Standard</strong></p>
@@ -396,7 +399,7 @@ and we will get it fixed, or submit a pull request with the required changes.</p
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

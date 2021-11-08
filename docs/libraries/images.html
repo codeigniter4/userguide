@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Image Manipulation Class &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Image Manipulation Class &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -403,9 +406,9 @@ identical. You will set some preferences corresponding to the action you
 intend to perform, then call one of the available processing functions.
 For example, to create an image thumbnail you’ll do this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$image</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic_thumb.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic_thumb.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The above code tells the library to look for an image
@@ -419,11 +422,11 @@ needed before saving. The original image is left untouched, and a new image
 is used and passed through each method, applying the results on top of the
 previous results:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$image</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">reorient</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">crop</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic_thumb.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">reorient</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">rotate</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">crop</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic_thumb.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This example would take the same image and first fix any mobile phone orientation issues,
@@ -449,9 +452,9 @@ adjust PHP memory limits.</p>
 quality. Values range from 0 to 100 with 90 being the framework default. This parameter
 only applies to JPEG images and will be ignored otherwise:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$image</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="c1">// processing methods</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/my_low_quality_pic.jpg&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="c1">// processing methods</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/my_low_quality_pic.jpg&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -461,9 +464,9 @@ only applies to JPEG images and will be ignored otherwise:</p>
 <p>If you are only interested in changing the image quality without doing any processing.
 You will need to include the image resource or you will end up with an exact copy:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$image</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withResource</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/my_low_quality_pic.jpg&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">withResource</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/my_low_quality_pic.jpg&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -485,12 +488,12 @@ If they fail they will throw a <code class="docutils literal notranslate"><span 
 the error message. A good practice is to catch the exceptions, showing an
 error upon failure, like this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
-<span class="nv">$image</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
-    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic_thumb.jpg&#39;</span><span class="p">);</span>
+    <span class="nv">$image</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic_thumb.jpg&#39;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">CodeIgniter\Images\ImageException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -512,17 +515,17 @@ thumbnail images that should match a certain size/aspect ratio. This is handled 
 <p>To take a 50x50 pixel square out of the center of an image, you would need to first calculate the appropriate x and y
 offset values:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$info</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">getFile</span><span class="p">()</span>
-            <span class="o">-&gt;</span><span class="na">getProperties</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">getFile</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">getProperties</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 
 <span class="nv">$xOffset</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$info</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">25</span><span class="p">;</span>
 <span class="nv">$yOffset</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$info</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">25</span><span class="p">;</span>
 
 <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">crop</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">$xOffset</span><span class="p">,</span> <span class="nv">$yOffset</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">crop</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">$xOffset</span><span class="p">,</span> <span class="nv">$yOffset</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -535,9 +538,9 @@ offset values:</p>
 <ul>
 <li><p class="first"><strong>$imageType</strong> is one of PHP’s image type constants (see for example <a class="reference external" href="https://www.php.net/manual/en/function.image-type-to-mime-type.php">https://www.php.net/manual/en/function.image-type-to-mime-type.php</a>):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="nx">IMAGETYPE_PNG</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.png&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="nx">IMAGETYPE_PNG</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.png&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
@@ -566,9 +569,9 @@ indicated by their extension, ignoring <strong>$imageType</strong></p>
 </ul>
 <p>This provides a much simpler way to crop that will always maintain the aspect ratio:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -587,14 +590,14 @@ indicated by their extension, ignoring <strong>$imageType</strong></p>
 <li><strong>$blue</strong> is the blue value of the background.</li>
 </ul>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.png&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">flatten</span><span class="p">()</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.png&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">flatten</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 
 <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.png&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">flatten</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">112</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.png&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">flatten</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">112</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -608,9 +611,9 @@ indicated by their extension, ignoring <strong>$imageType</strong></p>
 <li><strong>$dir</strong> specifies the axis to flip along. Can be either ‘vertical’ or ‘horizontal’.</li>
 </ul>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">flip</span><span class="p">(</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">flip</span><span class="p">(</span><span class="s1">&#39;horizontal&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -630,9 +633,9 @@ indicated by their extension, ignoring <strong>$imageType</strong></p>
 image to fit the desired dimensions. If $maintainRatio is true, the dimension specified by $masterDim will stay the same,
 while the other dimension will be altered to match the original image’s aspect ratio.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">resize</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">resize</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -662,31 +665,31 @@ products.</p>
 <p>The first parameter is the string of text that you wish to display. The second parameter is an array of options
 that allow you to specify how the text should be displayed:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">image</span><span class="p">(</span><span class="s1">&#39;imagick&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">&#39;Copyright 2017 My Photo Co&#39;</span><span class="p">,</span> <span class="p">[</span>
-            <span class="s1">&#39;color&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;opacity&#39;</span>    <span class="o">=&gt;</span> <span class="mf">0.5</span><span class="p">,</span>
-            <span class="s1">&#39;withShadow&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-            <span class="s1">&#39;hAlign&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;vAlign&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;fontSize&#39;</span>   <span class="o">=&gt;</span> <span class="mi">20</span>
-        <span class="p">])</span>
-        <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
+    <span class="o">-&gt;</span><span class="na">withFile</span><span class="p">(</span><span class="s1">&#39;/path/to/image/mypic.jpg&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">text</span><span class="p">(</span><span class="s1">&#39;Copyright 2017 My Photo Co&#39;</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">&#39;color&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;opacity&#39;</span>    <span class="o">=&gt;</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s1">&#39;withShadow&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;hAlign&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;vAlign&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;fontSize&#39;</span>   <span class="o">=&gt;</span> <span class="mi">20</span>
+    <span class="p">])</span>
+    <span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="s1">&#39;/path/to/new/image.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The possible options that are recognized are as follows:</p>
 <ul class="simple">
 <li>color         Text Color (hex number), i.e., #ff0000</li>
-<li>opacity               A number between 0 and 1 that represents the opacity of the text.</li>
+<li>opacity        A number between 0 and 1 that represents the opacity of the text.</li>
 <li>withShadow    Boolean value whether to display a shadow or not.</li>
 <li>shadowColor   Color of the shadow (hex number)</li>
-<li>shadowOffset  How many pixels to offset the shadow. Applies to both the vertical and horizontal values.</li>
+<li>shadowOffset    How many pixels to offset the shadow. Applies to both the vertical and horizontal values.</li>
 <li>hAlign        Horizontal alignment: left, center, right</li>
 <li>vAlign        Vertical alignment: top, middle, bottom</li>
-<li>hOffset               Additional offset on the x axis, in pixels</li>
-<li>vOffset               Additional offset on the y axis, in pixels</li>
-<li>fontPath              The full server path to the TTF font you wish to use. System font will be used if none is given.</li>
-<li>fontSize              The font size to use. When using the GD handler with the system font, valid values are between 1-5.</li>
+<li>hOffset        Additional offset on the x axis, in pixels</li>
+<li>vOffset        Additional offset on the y axis, in pixels</li>
+<li>fontPath        The full server path to the TTF font you wish to use. System font will be used if none is given.</li>
+<li>fontSize        The font size to use. When using the GD handler with the system font, valid values are between 1-5.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -714,7 +717,7 @@ name of one of the installed system fonts that you wish to use, i.e., Calibri.</
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Request Class &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Request Class &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -392,12 +395,10 @@ HTTP_X_CLUSTER_CLIENT_IP address for the allowed IP address.</p>
 <dl class="method">
 <dt id="isValidIP">
 <code class="descname">isValidIP</code><span class="sig-paren">(</span><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isValidIP" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><div class="admonition important">
+<dd><div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">This method is deprecated.</p>
 </div>
-</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -436,12 +437,10 @@ an IP format. The default checks for both formats.</p>
 <dl class="method">
 <dt id="getMethod">
 <code class="descname">getMethod</code><span class="sig-paren">(</span><span class="optional">[</span><em>$upper = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getMethod" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><div class="admonition important">
+<dd><div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Use of the <code class="docutils literal notranslate"><span class="pre">$upper</span></code> parameter is deprecated.</p>
 </div>
-</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -627,7 +626,7 @@ Can optionally filter the input when you retrieve it by passing in a filter.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>
