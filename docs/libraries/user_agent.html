@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>User Agent Class &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>User Agent Class &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -389,13 +392,13 @@ is available:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$agent</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getUserAgent</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">())</span> <span class="p">{</span>
-        <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getBrowser</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">();</span>
+    <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getBrowser</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39; &#39;</span> <span class="o">.</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isRobot</span><span class="p">())</span> <span class="p">{</span>
-        <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">agent</span><span class="o">-&gt;</span><span class="na">robot</span><span class="p">();</span>
+    <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getRobot</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">())</span> <span class="p">{</span>
-        <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getMobile</span><span class="p">();</span>
+    <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">getMobile</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="s1">&#39;Unidentified User Agent&#39;</span><span class="p">;</span>
+    <span class="nv">$currentAgent</span> <span class="o">=</span> <span class="s1">&#39;Unidentified User Agent&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">echo</span> <span class="nv">$currentAgent</span><span class="p">;</span>
@@ -432,9 +435,9 @@ is available:</p>
 </table>
 <p>Returns true/false (boolean) if the user agent is a known web browser.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">(</span><span class="s1">&#39;Safari&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;You are using Safari.&#39;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s1">&#39;You are using Safari.&#39;</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isBrowser</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="s1">&#39;You are using a browser.&#39;</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="s1">&#39;You are using a browser.&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -468,11 +471,11 @@ browsers or change the strings.</p>
 </table>
 <p>Returns true/false (boolean) if the user agent is a known mobile device.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">(</span><span class="s1">&#39;iphone&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;iphone/home&#39;</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;iphone/home&#39;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isMobile</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;mobile/home&#39;</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;mobile/home&#39;</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;web/home&#39;</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;web/home&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -619,7 +622,7 @@ that commonly visit your site are missing from the list you can add them to your
 </table>
 <p>The referrer, if the user agent was referred from another site. Typically you’ll test for this as follows:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">isReferral</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">referrer</span><span class="p">();</span>
+    <span class="k">echo</span> <span class="nv">$agent</span><span class="o">-&gt;</span><span class="na">referrer</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -685,7 +688,7 @@ that commonly visit your site are missing from the list you can add them to your
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

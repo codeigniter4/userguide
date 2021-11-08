@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>CLI Library &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>CLI Library &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -387,7 +390,7 @@ need to ensure your controller can locate it via a <code class="docutils literal
 <h2><a class="toc-backref" href="#id2">Getting Input from the User</a><a class="headerlink" href="#getting-input-from-the-user" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes you need to ask the user for more information. They might not have provided optional command-line
 arguments, or the script may have encountered an existing file and needs confirmation before overwriting. This is
-handled with the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> method.</p>
+handled with the <code class="docutils literal notranslate"><span class="pre">prompt()</span></code> or <code class="docutils literal notranslate"><span class="pre">promptByKey()</span></code> method.</p>
 <p>You can provide a question by passing it in as the first parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$color</span> <span class="o">=</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">prompt</span><span class="p">(</span><span class="s1">&#39;What is your favorite color?&#39;</span><span class="p">);</span>
 </pre></div>
@@ -409,6 +412,35 @@ second parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span> <span class="o">=</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">prompt</span><span class="p">(</span><span class="s1">&#39;What is your email?&#39;</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;valid_email&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
+<p><strong>promptByKey()</strong></p>
+<p>Predefined answers (options) for prompt sometimes need to be described or are too complex to select via their value.
+<code class="docutils literal notranslate"><span class="pre">promptByKey()</span></code> allows the user to select an option by its key instead of its value:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$fruit</span> <span class="o">=</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">promptByKey</span><span class="p">(</span><span class="s1">&#39;These are your choices:&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;The red apple&#39;</span><span class="p">,</span> <span class="s1">&#39;The plump orange&#39;</span><span class="p">,</span> <span class="s1">&#39;The ripe banana&#39;</span><span class="p">]);</span>
+
+<span class="c1">//These are your choices:</span>
+<span class="c1">//  [0]  The red apple</span>
+<span class="c1">//  [1]  The plump orange</span>
+<span class="c1">//  [2]  The ripe banana</span>
+<span class="c1">//</span>
+<span class="c1">//[0, 1, 2]:</span>
+</pre></div>
+</div>
+<p>Named keys are also possible:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$fruit</span> <span class="o">=</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">promptByKey</span><span class="p">([</span><span class="s1">&#39;These are your choices:&#39;</span><span class="p">,</span> <span class="s1">&#39;Which would you like?&#39;</span><span class="p">],</span> <span class="p">[</span>
+    <span class="s1">&#39;apple&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The red apple&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;orange&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The plump orange&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;banana&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The ripe banana&#39;</span>
+<span class="p">]);</span>
+
+<span class="c1">//These are your choices:</span>
+<span class="c1">//  [apple]   The red apple</span>
+<span class="c1">//  [orange]  The plump orange</span>
+<span class="c1">//  [banana]  The ripe banana</span>
+<span class="c1">//</span>
+<span class="c1">//Which would you like? [apple, orange, banana]:</span>
+</pre></div>
+</div>
+<p>Finally, you can pass <a class="reference internal" href="../libraries/validation.html#validation"><span class="std std-ref">validation</span></a> rules to the answer input as the third parameter, the acceptable answers are automatically restricted to the passed options.</p>
 </div>
 <div class="section" id="providing-feedback">
 <h2><a class="toc-backref" href="#id3">Providing Feedback</a><a class="headerlink" href="#providing-feedback" title="Permalink to this headline">¶</a></h2>
@@ -507,14 +539,27 @@ will break the string at the nearest word barrier so that words are not broken.<
 on the right with their descriptions. By default, this will wrap back to the left edge of the window, which
 doesn’t allow things to line up in columns. In cases like this, you can pass in a number of spaces to pad
 every line after the first line, so that you will have a crisp column edge on the left:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Determine the maximum length of all titles</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$titles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;task1a&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;task1abc&#39;</span><span class="p">,</span>
+<span class="p">];</span>
+<span class="nv">$descriptions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;Lorem Ipsum has been the industry&#39;s standard dummy text ever since the&quot;</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="c1">// Determine the maximum length of all titles</span>
 <span class="c1">// to determine the width of the left column</span>
 <span class="nv">$maxlen</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">array_map</span><span class="p">(</span><span class="s1">&#39;strlen&#39;</span><span class="p">,</span> <span class="nv">$titles</span><span class="p">));</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$titles</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span>
         <span class="c1">// Display the title on the left of the row</span>
-        <span class="nv">$titles</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;   &#39;</span> <span class="o">.</span>
+        <span class="nb">substr</span><span class="p">(</span>
+            <span class="nv">$titles</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="o">.</span> <span class="nb">str_repeat</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nv">$maxlen</span> <span class="o">+</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="mi">0</span><span class="p">,</span>
+            <span class="nv">$maxlen</span> <span class="o">+</span> <span class="mi">3</span>
+        <span class="p">)</span> <span class="o">.</span>
         <span class="c1">// Wrap the descriptions in a right-hand column</span>
         <span class="c1">// with its left side 3 characters wider than</span>
         <span class="c1">// the longest item on the left.</span>
@@ -524,11 +569,12 @@ every line after the first line, so that you will have a crisp column edge on th
 </pre></div>
 </div>
 <p>Would create something like this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>task1a   Lorem Ipsum is simply dummy
-           text of the printing and typesetting
-           industry.
-task1abc   Lorem Ipsum has been the industry&#39;s
-           standard dummy text ever since the
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>task1a     Lorem Ipsum is simply dummy
+           text of the printing and
+           typesetting industry.
+task1abc   Lorem Ipsum has been the
+           industry&#39;s standard dummy
+           text ever since the
 </pre></div>
 </div>
 <p><strong>newLine()</strong></p>
@@ -615,7 +661,7 @@ waiting for a key press.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

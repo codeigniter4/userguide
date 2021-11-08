@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Security &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Security &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Session Library" href="sessions.html" />
-    <link rel="prev" title="Pagination" href="pagination.html" /> 
+    <link rel="prev" title="Publisher" href="publisher.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="publisher.html">Publisher</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -354,8 +357,16 @@
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#loading-the-library" id="id1">Loading the Library</a></li>
-<li><a class="reference internal" href="#cross-site-request-forgery-csrf" id="id2">Cross-site request forgery (CSRF)</a></li>
-<li><a class="reference internal" href="#other-helpful-methods" id="id3">Other Helpful Methods</a></li>
+<li><a class="reference internal" href="#cross-site-request-forgery-csrf" id="id2">Cross-site request forgery (CSRF)</a><ul>
+<li><a class="reference internal" href="#csrf-protection-methods" id="id3">CSRF Protection Methods</a></li>
+<li><a class="reference internal" href="#enable-csrf-protection" id="id4">Enable CSRF Protection</a></li>
+<li><a class="reference internal" href="#html-forms" id="id5">HTML Forms</a></li>
+<li><a class="reference internal" href="#the-order-of-token-sent-by-users" id="id6">The Order of Token Sent by Users</a></li>
+<li><a class="reference internal" href="#token-regeneration" id="id7">Token Regeneration</a></li>
+<li><a class="reference internal" href="#redirection-on-failure" id="id8">Redirection on Failure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-helpful-methods" id="id9">Other Helpful Methods</a></li>
 </ul>
 </div>
 <div class="section" id="loading-the-library">
@@ -369,13 +380,33 @@ as it runs as a filter and has no manual interaction.</p>
 </div>
 <div class="section" id="cross-site-request-forgery-csrf">
 <h2><a class="toc-backref" href="#id2">Cross-site request forgery (CSRF)</a><a class="headerlink" href="#cross-site-request-forgery-csrf" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The CSRF Protection is only available for <strong>POST/PUT/PATCH/DELETE</strong> requests.
+Requests for other methods are not protected.</p>
+</div>
+<div class="section" id="csrf-protection-methods">
+<h3><a class="toc-backref" href="#id3">CSRF Protection Methods</a><a class="headerlink" href="#csrf-protection-methods" title="Permalink to this headline">¶</a></h3>
+<p>By default, the Cookie based CSRF Protection is used. It is
+<a class="reference external" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie">Double Submit Cookie</a>
+on OWASP Cross-Site Request Forgery Prevention Cheat Sheet.</p>
+<p>You can also use Session based CSRF Protection. It is
+<a class="reference external" href="https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#synchronizer-token-pattern">Synchronizer Token Pattern</a>.</p>
+<p>You can set to use the Session based CSRF protection by editing the following config parameter value in
+<strong>app/Config/Security.php</strong>:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$csrfProtection</span> <span class="o">=</span> <span class="s1">&#39;session&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-csrf-protection">
+<h3><a class="toc-backref" href="#id4">Enable CSRF Protection</a><a class="headerlink" href="#enable-csrf-protection" title="Permalink to this headline">¶</a></h3>
 <p>You can enable CSRF protection by altering your <strong>app/Config/Filters.php</strong>
 and enabling the <cite>csrf</cite> filter globally:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="c1">// &#39;honeypot&#39;,</span>
-                <span class="s1">&#39;csrf&#39;</span><span class="p">,</span>
-        <span class="p">],</span>
+    <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="c1">// &#39;honeypot&#39;,</span>
+        <span class="s1">&#39;csrf&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -383,23 +414,39 @@ and enabling the <cite>csrf</cite> filter globally:</p>
 endpoints expecting externally POSTed content). You can add these URIs
 by adding them as exceptions in the filter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;api/record/save&#39;</span><span class="p">]],</span>
-        <span class="p">],</span>
+    <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;api/record/save&#39;</span><span class="p">]],</span>
+    <span class="p">],</span>
 <span class="p">];</span>
 </pre></div>
 </div>
 <p>Regular expressions are also supported (case-insensitive):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;api/record/[0-9]+&#39;</span><span class="p">]],</span>
-            <span class="p">],</span>
-    <span class="p">];</span>
+    <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;api/record/[0-9]+&#39;</span><span class="p">]],</span>
+    <span class="p">],</span>
+<span class="p">];</span>
 </pre></div>
 </div>
+<p>It is also possible to enable the CSRF filter only for specific methods:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$methods</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;get&#39;</span>  <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;csrf&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;post&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;csrf&#39;</span><span class="p">],</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="html-forms">
+<h3><a class="toc-backref" href="#id5">HTML Forms</a><a class="headerlink" href="#html-forms" title="Permalink to this headline">¶</a></h3>
 <p>If you use the <a class="reference internal" href="../helpers/form_helper.html"><span class="doc">form helper</span></a>, then
 <code class="xref py py-func docutils literal notranslate"><span class="pre">form_open()</span></code> will automatically insert a hidden csrf field in
-your forms. If not, then you can use the always available <code class="docutils literal notranslate"><span class="pre">csrf_token()</span></code>
+your forms.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To use auto-generation of CSRF field, you need to turn CSRF filter on to the form page.
+In most cases it is requested using the <code class="docutils literal notranslate"><span class="pre">GET</span></code> method.</p>
+</div>
+<p>If not, then you can use the always available <code class="docutils literal notranslate"><span class="pre">csrf_token()</span></code>
 and <code class="docutils literal notranslate"><span class="pre">csrf_hash()</span></code> functions</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;&lt;?= csrf_token() ?&gt;&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?= csrf_hash() ?&gt;&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
@@ -419,12 +466,18 @@ meta tag for you:</p>
 <span class="o">&lt;?=</span> <span class="nx">csrf_meta</span><span class="p">()</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="the-order-of-token-sent-by-users">
+<h3><a class="toc-backref" href="#id6">The Order of Token Sent by Users</a><a class="headerlink" href="#the-order-of-token-sent-by-users" title="Permalink to this headline">¶</a></h3>
 <p>The order of checking the availability of the CSRF token is as follows:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">$_POST</span></code> array</li>
-<li>Http header</li>
-<li><code class="docutils literal notranslate"><span class="pre">php://input</span></code> (JSON request) - bare in mind that this approach is the slowest one since we have to decode JSON and then encode it again</li>
+<li>HTTP header</li>
+<li><code class="docutils literal notranslate"><span class="pre">php://input</span></code> (JSON request) - bear in mind that this approach is the slowest one since we have to decode JSON and then re-encode it</li>
 </ol>
+</div>
+<div class="section" id="token-regeneration">
+<h3><a class="toc-backref" href="#id7">Token Regeneration</a><a class="headerlink" href="#token-regeneration" title="Permalink to this headline">¶</a></h3>
 <p>Tokens may be either regenerated on every submission (default) or
 kept the same throughout the life of the CSRF cookie. The default
 regeneration of tokens provides stricter security, but may result
@@ -435,6 +488,9 @@ may alter this behavior by editing the following config parameter value in
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$regenerate</span>  <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="redirection-on-failure">
+<h3><a class="toc-backref" href="#id8">Redirection on Failure</a><a class="headerlink" href="#redirection-on-failure" title="Permalink to this headline">¶</a></h3>
 <p>When a request fails the CSRF validation check, it will redirect to the previous page by default,
 setting an <code class="docutils literal notranslate"><span class="pre">error</span></code> flash message that you can display to the end user. This provides a nicer experience
 than simply crashing. This can be turned off by editing the following config parameter value in
@@ -442,17 +498,18 @@ than simply crashing. This can be turned off by editing the following config par
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$redirect</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Even when the redirect value is <strong>true</strong>, AJAX calls will not redirect, but will throw an error.</p>
+<p>Even when the redirect value is <code class="docutils literal notranslate"><span class="pre">true</span></code>, AJAX calls will not redirect, but will throw an error.</p>
+</div>
 </div>
 <div class="section" id="other-helpful-methods">
-<h2><a class="toc-backref" href="#id3">Other Helpful Methods</a><a class="headerlink" href="#other-helpful-methods" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Other Helpful Methods</a><a class="headerlink" href="#other-helpful-methods" title="Permalink to this headline">¶</a></h2>
 <p>You will never need to use most of the methods in the Security class directly. The following are methods that
 you might find helpful that are not related to the CSRF protection.</p>
 <p><strong>sanitizeFilename()</strong></p>
 <p>Tries to sanitize filenames in order to prevent directory traversal attempts and other security threats, which is
 particularly useful for files that were supplied via user input. The first parameter is the path to sanitize.</p>
-<p>If it is acceptable for the user input to include relative paths, e.g., file/in/some/approved/folder.txt, you can set
-the second optional parameter, $relative_path to true.</p>
+<p>If it is acceptable for the user input to include relative paths, e.g., <strong>file/in/some/approved/folder.txt</strong>, you can set
+the second optional parameter, <code class="docutils literal notranslate"><span class="pre">$relativePath</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$path</span> <span class="o">=</span> <span class="nv">$security</span><span class="o">-&gt;</span><span class="na">sanitizeFilename</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;filepath&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -466,7 +523,7 @@ the second optional parameter, $relative_path to true.</p>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="sessions.html" class="btn btn-neutral float-right" title="Session Library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="pagination.html" class="btn btn-neutral float-left" title="Pagination" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="publisher.html" class="btn btn-neutral float-left" title="Publisher" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -475,7 +532,7 @@ the second optional parameter, $relative_path to true.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

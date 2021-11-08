@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Troubleshooting &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Troubleshooting &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CodeIgniter Repositories" href="repositories.html" />
-    <link rel="prev" title="Upgrade Configuration" href="upgrade_configuration.html" /> 
+    <link rel="prev" title="Upgrade View Parser" href="upgrade_view_parser.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -373,11 +376,11 @@ in Apache’s <code class="docutils literal notranslate"><span class="pre">httpd
 <p>If you find that no matter what you put in your URL only your default
 page is loading, it might be that your server does not support the
 REQUEST_URI variable needed to serve search-engine friendly URLs. As a
-first step, open your <em>app/Config/App.php</em> file and look for
+first step, open your <strong>app/Config/App.php</strong> file and look for
 the URI Protocol information. It will recommend that you try a couple of
 alternate settings. If it still doesn’t work after you’ve tried this
 you’ll need to force CodeIgniter to add a question mark to your URLs. To
-do this open your <em>app/Config/App.php</em> file and change this:</p>
+do this open your <strong>app/Config/App.php</strong> file and change this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$indexPage</span> <span class="o">=</span> <span class="s1">&#39;index.php&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -402,12 +405,12 @@ then the text line “We seem to have hit a snag. Please try again later…”.<
 unrecoverable error, which we don’t want to show to the viewer of
 the webapp, for better security.</p>
 <p>You can see the error in the debug toolbar display by setting your environment to
-“development” (in <cite>.env</cite>), and reloading the page.</p>
+“development” (in <strong>.env</strong>), and reloading the page.</p>
 <p>Don’t forget to reset the environment to “production” once you fix the problem!</p>
 </div>
 <div class="section" id="codeigniter-error-logs">
 <h2>CodeIgniter Error Logs<a class="headerlink" href="#codeigniter-error-logs" title="Permalink to this headline">¶</a></h2>
-<p>CodeIgniter logs error messages, according to the settings in <cite>app/Config/Logger.php</cite>.</p>
+<p>CodeIgniter logs error messages, according to the settings in <strong>app/Config/Logger.php</strong>.</p>
 <p>You can adjust the error threshold to see more or fewer messages.</p>
 <p>The default configuration has daily log files stored in <cite>writable/logs</cite>.
 It would be a good idea to check them if things aren’t working the way you expect!</p>
@@ -421,7 +424,7 @@ It would be a good idea to check them if things aren’t working the way you exp
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="repositories.html" class="btn btn-neutral float-right" title="CodeIgniter Repositories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="upgrade_configuration.html" class="btn btn-neutral float-left" title="Upgrade Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrade_view_parser.html" class="btn btn-neutral float-left" title="Upgrade View Parser" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -430,7 +433,7 @@ It would be a good idea to check them if things aren’t working the way you exp
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

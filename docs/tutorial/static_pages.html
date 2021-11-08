@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Static pages &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Static pages &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -400,12 +403,20 @@ code.</p>
 one argument named <code class="docutils literal notranslate"><span class="pre">$page</span></code>. It also has an <code class="docutils literal notranslate"><span class="pre">index()</span></code> method, the same
 as the default controller found in <strong>app/Controllers/Home.php</strong>; that method
 displays the CodeIgniter welcome page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are two <code class="docutils literal notranslate"><span class="pre">view()</span></code> functions referred to in this tutorial.
+One is the class method created with <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">view($page</span> <span class="pre">=</span> <span class="pre">'home')</span></code>
+and <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">view('welcome_message')</span></code> for displaying a view.
+Both are <em>technically</em> a function. But when you create a function in a class,
+it’s called a method.</p>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Pages</span></code> class is extending the
 <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller</span></code> class. This means that the new Pages class can access the
 methods and variables defined in the <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller</span></code> class
-(<em>system/Controller.php</em>).</p>
+(<strong>system/Controller.php</strong>).</p>
 <p>The <strong>controller is what will become the center of every request</strong> to
-your web application. Like any php class, you refer to
+your web application. Like any PHP class, you refer to
 it within your controllers as <code class="docutils literal notranslate"><span class="pre">$this</span></code>.</p>
 <p>Now that you’ve created your first method, it’s time to make some basic page
 templates. We will be creating two “views” (page templates) that act as
@@ -434,17 +445,9 @@ includes the following code:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you look closely in <strong>header.php</strong> template we are using an <strong>esc()</strong>
+<p class="last">If you look closely in <strong>header.php</strong> template we are using an <code class="docutils literal notranslate"><span class="pre">esc()</span></code>
 function. It’s a global function provided by CodeIgniter to help prevent
 XSS attacks. You can read more about it <a class="reference internal" href="../general/common_functions.html"><span class="doc">here</span></a>.</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">There are two <strong>view()</strong> functions referred to in this tutorial.
-One is the class method created with <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">function</span> <span class="pre">view($page</span> <span class="pre">=</span> <span class="pre">'home')</span></code>
-and <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">view('welcome_message');</span></code> for displaying a view.
-Both are <em>technically</em> a function. But when you create a function in a class,
-it’s called a method.</p>
 </div>
 </div>
 <div class="section" id="adding-logic-to-the-controller">
@@ -461,7 +464,7 @@ page actually exists. This will be the body of the <code class="docutils literal
 in the <code class="docutils literal notranslate"><span class="pre">Pages</span></code> controller created above:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">is_file</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;/Views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">is_file</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Views/pages/&#39;</span> <span class="o">.</span> <span class="nv">$page</span> <span class="o">.</span> <span class="s1">&#39;.php&#39;</span><span class="p">))</span> <span class="p">{</span>
         <span class="c1">// Whoops, we don&#39;t have a page for that!</span>
         <span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Exceptions\PageNotFoundException</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span>
     <span class="p">}</span>
@@ -469,7 +472,7 @@ in the <code class="docutils literal notranslate"><span class="pre">Pages</span>
     <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// Capitalize the first letter</span>
 
     <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span> <span class="o">.</span> <span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
     <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -494,7 +497,7 @@ is assigned to a variable with the name of its key. So the value of
 view.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Any files and directory names passed into the <strong>view()</strong> function MUST
+<p class="last">Any files and directory names passed into the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function MUST
 match the case of the actual directory and file itself or the system will
 throw errors on case-sensitive platforms. You can read more about it
 <a class="reference internal" href="../outgoing/views.html"><span class="doc">here</span></a>.</p>
@@ -582,7 +585,7 @@ match, and calls the appropriate controller and method, possibly with
 arguments.</p>
 <p>More information about routing can be found in the URI Routing
 <a class="reference internal" href="../incoming/routing.html"><span class="doc">documentation</span></a>.</p>
-<p>Here, the second rule in the <code class="docutils literal notranslate"><span class="pre">$routes</span></code> array matches <strong>any</strong> request
+<p>Here, the second rule in the <code class="docutils literal notranslate"><span class="pre">$routes</span></code> object matches <strong>any</strong> request
 using the wildcard string <code class="docutils literal notranslate"><span class="pre">(:any)</span></code>. and passes the parameter to the
 <code class="docutils literal notranslate"><span class="pre">view()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">Pages</span></code> class.</p>
 <p>Now visit <code class="docutils literal notranslate"><span class="pre">localhost:8080/home</span></code>. Did it get routed correctly to the <code class="docutils literal notranslate"><span class="pre">view()</span></code>
@@ -592,7 +595,7 @@ method in the pages controller? Awesome!</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">When manually specifying routes, it is recommended to disable
-auto-routing by setting <code class="docutils literal notranslate"><span class="pre">$routes-&gt;setAutoRoute(false);</span></code> in the Routes.php file.
+auto-routing by setting <code class="docutils literal notranslate"><span class="pre">$routes-&gt;setAutoRoute(false);</span></code> in the <strong>Routes.php</strong> file.
 This ensures that only routes you define can be accessed.</p>
 </div>
 </div>
@@ -614,7 +617,7 @@ This ensures that only routes you define can be accessed.</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

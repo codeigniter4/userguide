@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Alternate PHP Syntax for View Files &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Alternate PHP Syntax for View Files &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -376,7 +379,7 @@ a simplified format as well. Here is an example using <code class="docutils lite
 
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$todo</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span> <span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$item</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$item</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endforeach</span> <span class="cp">?&gt;</span>
 
@@ -391,15 +394,15 @@ closing syntax: <code class="docutils literal notranslate"><span class="pre">end
 <p>Here is another example, using <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elseif</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code>. Notice the colons:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;sally&#39;</span><span class="p">)</span> <span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Sally<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Sally<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$username</span> <span class="o">===</span> <span class="s1">&#39;joe&#39;</span><span class="p">)</span> <span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Joe<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi Joe<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">else</span> <span class="o">:</span> <span class="cp">?&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi unknown user<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Hi unknown user<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
 <span class="cp">&lt;?php</span> <span class="k">endif</span> <span class="cp">?&gt;</span>
 </pre></div>
@@ -423,7 +426,7 @@ closing syntax: <code class="docutils literal notranslate"><span class="pre">end
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

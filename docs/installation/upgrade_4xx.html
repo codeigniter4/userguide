@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Upgrading from 3.x to 4.x &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Upgrading from 3.x to 4.x &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -374,7 +377,7 @@ them one by one.</p>
 <h2>General Adjustments<a class="headerlink" href="#general-adjustments" title="Permalink to this headline">¶</a></h2>
 <p><strong>Downloads</strong></p>
 <ul class="simple">
-<li>CI4 is still available as a ready-to-run zip or tarball, which includes the user guide (though in the <cite>docs</cite> subfolder).</li>
+<li>CI4 is still available as a ready-to-run zip or tarball.</li>
 <li>It can also be installed using Composer.</li>
 </ul>
 <p><strong>Namespaces</strong></p>
@@ -472,14 +475,29 @@ libraries are <a class="reference external" href="http://codeigniter.com/usergui
 <a class="reference external" href="http://codeigniter.com/userguide3/libraries/trackback.html">Trackback</a>,
 <a class="reference external" href="http://codeigniter.com/userguide3/libraries/xmlrpc.html">XML-RPC /-Server</a>,
 and <a class="reference external" href="http://codeigniter.com/userguide3/libraries/zip.html">Zip Encoding</a>.</li>
+<li>CI3’s <a class="reference external" href="http://codeigniter.com/userguide3/libraries/input.html">Input</a> corresponds to CI4’s <a class="reference internal" href="../incoming/incomingrequest.html"><span class="doc">IncomingRequest</span></a>.</li>
+<li>CI3’s <a class="reference external" href="http://codeigniter.com/userguide3/libraries/output.html">Output</a> corresponds to CI4’s <a class="reference internal" href="../outgoing/response.html"><span class="doc">Responses</span></a>.</li>
 <li>All the other libraries, which exist in both CodeIgniter versions, can be upgraded with some adjustments.
 The most important and mostly used libraries received an Upgrade Guide, which will help you with simple
 steps and examples to adjust your code.</li>
 </ul>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="upgrade_migrations.html">Upgrade Migrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="upgrade_configuration.html">Upgrade Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_database.html">Upgrade Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_emails.html">Upgrade Emails</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_encryption.html">Upgrade Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_file_upload.html">Upgrade Working with Uploaded Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_html_tables.html">Upgrade HTML Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_localization.html">Upgrade Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_migrations.html">Upgrade Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_pagination.html">Upgrade Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_responses.html">Upgrade HTTP Responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_routing.html">Upgrade Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_security.html">Upgrade Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_sessions.html">Upgrade Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_validations.html">Upgrade Validations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrade_view_parser.html">Upgrade View Parser</a></li>
 </ul>
 </div>
 <div class="admonition note">
@@ -505,7 +523,7 @@ steps and examples to adjust your code.</li>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

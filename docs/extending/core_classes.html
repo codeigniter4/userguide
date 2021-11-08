@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Creating Core System Classes &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Creating Core System Classes &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -406,14 +409,14 @@ the core system class, you would create your class like this:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Then  you would modify the <code class="docutils literal notranslate"><span class="pre">routes</span></code> service to load your class instead:</p>
+<p>Then you would add the <code class="docutils literal notranslate"><span class="pre">routes</span></code> service in <strong>app/Config/Services.php</strong> to load your class instead:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">routes</span><span class="p">(</span><span class="nx">bool</span> <span class="nv">$getShared</span> <span class="o">=</span> <span class="k">true</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$getShared</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="k">static</span><span class="o">::</span><span class="na">getSharedInstance</span><span class="p">(</span><span class="s1">&#39;routes&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$getShared</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">static</span><span class="o">::</span><span class="na">getSharedInstance</span><span class="p">(</span><span class="s1">&#39;routes&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
 
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">RouteCollection</span><span class="p">(</span><span class="k">static</span><span class="o">::</span><span class="na">locator</span><span class="p">(),</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;Modules&#39;</span><span class="p">));</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">RouteCollection</span><span class="p">(</span><span class="k">static</span><span class="o">::</span><span class="na">locator</span><span class="p">(),</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;Modules&#39;</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -478,7 +481,7 @@ instead of the native ones (this is known as “method overriding”). This allo
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

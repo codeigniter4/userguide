@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>CodeIgniter Repositories &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>CodeIgniter Repositories &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -351,13 +354,13 @@
   <div class="section" id="codeigniter-repositories">
 <h1>CodeIgniter Repositories<a class="headerlink" href="#codeigniter-repositories" title="Permalink to this headline">¶</a></h1>
 <p>The CodeIgniter 4 open source project has its own
-<a class="reference external" href="https://github.com/codeigniter4">Github organization</a>.</p>
+<a class="reference external" href="https://github.com/codeigniter4">GitHub organization</a>.</p>
 <p>There are several development repositories, of interest to potential contributors:</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="14%" />
-<col width="67%" />
+<col width="47%" />
+<col width="9%" />
+<col width="44%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Repository</th>
@@ -374,13 +377,9 @@
 <td>developers</td>
 <td>System message translations</td>
 </tr>
-<tr class="row-even"><td>coding-standard</td>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/CodeIgniter/coding-standard">coding-standard</a></td>
 <td>contributors</td>
 <td>Coding style conventions &amp; rules</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -413,15 +412,11 @@ Dependent on “framework”</td>
 <td>anyone</td>
 <td>Pre-built user guide</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td>&#160;</td>
-</tr>
 </tbody>
 </table>
 <p>In all the above, the latest version of a repository can be downloaded
 by selecting the “releases” link in the secondary navbar inside
-the “Code” tab of its Github repository page. The current (in development) version of each can
+the “Code” tab of its GitHub repository page. The current (in development) version of each can
 be cloned or downloaded by selecting the “Clone or download” dropdown
 button on the right-hand side if the repository homepage.</p>
 <div class="section" id="composer-packages">
@@ -432,14 +427,14 @@ These correspond to the repositories mentioned above:</p>
 <li><a class="reference external" href="https://packagist.org/packages/codeigniter4/framework">codeigniter4/framework</a></li>
 <li><a class="reference external" href="https://packagist.org/packages/codeigniter4/appstarter">codeigniter4/appstarter</a></li>
 <li><a class="reference external" href="https://packagist.org/packages/codeigniter4/translations">codeigniter4/translations</a></li>
-<li><a class="reference external" href="https://packagist.org/packages/codeigniter4/codeigniter4-standard">codeigniter4/coding-standard</a></li>
+<li><a class="reference external" href="https://packagist.org/packages/codeigniter/coding-standard">codeigniter/coding-standard</a></li>
 </ul>
 <p>See the <a class="reference internal" href="index.html"><span class="doc">Installation</span></a> page for more information.</p>
 </div>
 <div class="section" id="codeigniter-4-projects">
 <h2>CodeIgniter 4 Projects<a class="headerlink" href="#codeigniter-4-projects" title="Permalink to this headline">¶</a></h2>
 <p>We maintain a <a class="reference external" href="https://github.com/codeigniter4projects">codeigniter4projects</a> organization
-on Github as well, with projects that are not part of the framework,
+on GitHub as well, with projects that are not part of the framework,
 but which showcase it or make it easier to work with!</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -484,7 +479,7 @@ but which showcase it or make it easier to work with!</p>
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>

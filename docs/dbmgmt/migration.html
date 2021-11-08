@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Database Migrations &mdash; CodeIgniter 4.1.4 documentation</title>
+  <title>Database Migrations &mdash; CodeIgniter 4.1.5 documentation</title>
   
 
   
@@ -215,9 +215,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
@@ -258,6 +260,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -403,32 +406,32 @@ as <em>20121031100537_add_blog.php</em>.</p>
 
 <span class="k">class</span> <span class="nc">AddBlog</span> <span class="k">extends</span> <span class="nx">Migration</span>
 <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
-        <span class="p">{</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">([</span>
-                        <span class="s1">&#39;blog_id&#39;</span>          <span class="o">=&gt;</span> <span class="p">[</span>
-                                <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;INT&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
-                                <span class="s1">&#39;unsigned&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-                                <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-                        <span class="p">],</span>
-                        <span class="s1">&#39;blog_title&#39;</span>       <span class="o">=&gt;</span> <span class="p">[</span>
-                                <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
-                        <span class="p">],</span>
-                        <span class="s1">&#39;blog_description&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-                        <span class="p">],</span>
-                <span class="p">]);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">addKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">([</span>
+            <span class="s1">&#39;blog_id&#39;</span>          <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;INT&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;unsigned&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+                <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;blog_title&#39;</span>       <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;blog_description&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">]);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">addKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
-        <span class="p">{</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">dropTable</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">forge</span><span class="o">-&gt;</span><span class="na">dropTable</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -443,11 +446,11 @@ To temporarily bypass the foreign key checks while running migrations, use the <
 <code class="docutils literal notranslate"><span class="pre">enableForeignKeyChecks()</span></code> methods on the database connection.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
 <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">disableForeignKeyChecks</span><span class="p">()</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">disableForeignKeyChecks</span><span class="p">()</span>
 
-        <span class="c1">// Migration rules would go here..</span>
+    <span class="c1">// Migration rules would go here..</span>
 
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">enableForeignKeyChecks</span><span class="p">();</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">enableForeignKeyChecks</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -469,17 +472,17 @@ match the name of the database group exactly:</p>
 
 <span class="k">class</span> <span class="nc">AddBlog</span> <span class="k">extends</span> <span class="nx">Migration</span>
 <span class="p">{</span>
-        <span class="k">protected</span> <span class="nv">$DBGroup</span> <span class="o">=</span> <span class="s1">&#39;alternate_db_group&#39;</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$DBGroup</span> <span class="o">=</span> <span class="s1">&#39;alternate_db_group&#39;</span><span class="p">;</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
-        <span class="p">{</span>
-                <span class="c1">// ...</span>
-        <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
-        <span class="p">{</span>
-                <span class="c1">// ...</span>
-        <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -494,8 +497,8 @@ it finds in Database/Migrations.</p>
 <p>For example, assume that we have the following namespaces defined in our Autoload
 configuration file:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;App&#39;</span>       <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
-        <span class="s1">&#39;MyCompany&#39;</span> <span class="o">=&gt;</span> <span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">&#39;MyCompany&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;App&#39;</span>       <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
+    <span class="s1">&#39;MyCompany&#39;</span> <span class="o">=&gt;</span> <span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">&#39;MyCompany&#39;</span><span class="p">,</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -514,16 +517,16 @@ to update the schema:</p>
 
 <span class="k">class</span> <span class="nc">Migrate</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
 <span class="p">{</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
-        <span class="p">{</span>
-                <span class="nv">$migrate</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">migrations</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$migrate</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">migrations</span><span class="p">();</span>
 
-                <span class="k">try</span> <span class="p">{</span>
-                        <span class="nv">$migrate</span><span class="o">-&gt;</span><span class="na">latest</span><span class="p">();</span>
-                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Throwable</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="c1">// Do something with the error here...</span>
-                <span class="p">}</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nv">$migrate</span><span class="o">-&gt;</span><span class="na">latest</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Throwable</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Do something with the error here...</span>
         <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -594,8 +597,11 @@ creates is the Pascal case version of the filename.</p>
 </div>
 <p>You can use (make:migration) with the following options:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-n</span></code> - to choose namespace, otherwise the value of <code class="docutils literal notranslate"><span class="pre">APP_NAMESPACE</span></code> will be used.</li>
-<li><code class="docutils literal notranslate"><span class="pre">-force</span></code> - If a similarly named migration file is present in destination, this will be overwritten.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--session</span></code>   - Generates the migration file for database sessions.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--table</span></code>     - Table name to use for database sessions. Default: <code class="docutils literal notranslate"><span class="pre">ci_sessions</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--dbgroup</span></code>   - Database group to use for database sessions. Default: <code class="docutils literal notranslate"><span class="pre">default</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--namespace</span></code> - Set root namespace. Default: <code class="docutils literal notranslate"><span class="pre">APP_NAMESPACE</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--suffix</span></code>    - Append the component title to the class name.</li>
 </ul>
 </div>
 <div class="section" id="migration-preferences">
@@ -809,7 +815,7 @@ have not yet been run, and runs them in order of their version (namespaces inter
     <p>
         &#169; Copyright 2019-2021 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Sep 07, 2021.
+        Last updated on Nov 08, 2021.
       </span>
 
     </p>
