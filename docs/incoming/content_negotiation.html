@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Content Negotiation &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Content Negotiation &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -403,7 +405,7 @@ be able to return data as raw HTML, JSON, or XML. This list should be provided i
 </pre></div>
 </div>
 <p>In this case, both the client and the server can agree on formatting the data as JSON so ‘json’ is returned from
-the negotiate method. By default, if no match is found, the first element in the $supported array would be returned.
+the negotiate method. By default, if no match is found, the first element in the <code class="docutils literal notranslate"><span class="pre">$supported</span></code> array would be returned.
 In some cases, though, you might need to enforce the format to be a strict match. If you pass <code class="docutils literal notranslate"><span class="pre">true</span></code> as the
 final value, it will return an empty string if no match is found:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$format</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">negotiate</span><span class="p">(</span><span class="s1">&#39;media&#39;</span><span class="p">,</span> <span class="nv">$supported</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
@@ -435,7 +437,7 @@ and German you would do something like:</p>
 </pre></div>
 </div>
 <p>In this example, ‘en’ would be returned as the current language. If no match is found, it will return the first element
-in the $supported array, so that should always be the preferred language.</p>
+in the <code class="docutils literal notranslate"><span class="pre">$supported</span></code> array, so that should always be the preferred language.</p>
 </div>
 <div class="section" id="encoding">
 <h3>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h3>
@@ -484,9 +486,9 @@ specify the type of compression the client supports:</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>
