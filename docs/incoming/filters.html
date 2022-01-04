@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Controller Filters &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Controller Filters &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -368,7 +370,11 @@
 <li><a class="reference internal" href="#filter-arguments" id="id9">Filter arguments</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#provided-filters" id="id10">Provided Filters</a></li>
+<li><a class="reference internal" href="#provided-filters" id="id10">Provided Filters</a><ul>
+<li><a class="reference internal" href="#invalidchars" id="id11">InvalidChars</a></li>
+<li><a class="reference internal" href="#secureheaders" id="id12">SecureHeaders</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <p>Controller Filters allow you to perform actions either before or after the controllers execute. Unlike <a class="reference internal" href="../extending/events.html"><span class="doc">events</span></a>,
@@ -448,6 +454,17 @@ the final output, or even to filter the final output with a bad words filter.</p
 <h2><a class="toc-backref" href="#id4">Configuring Filters</a><a class="headerlink" href="#configuring-filters" title="Permalink to this headline">¶</a></h2>
 <p>Once you’ve created your filters, you need to configure when they get run. This is done in <strong>app/Config/Filters.php</strong>.
 This file contains four properties that allow you to configure exactly when the filters run.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The safest way to apply filters is to <a class="reference internal" href="routing.html#use-defined-routes-only"><span class="std std-ref">disable auto-routing</span></a>, and <a class="reference internal" href="routing.html#applying-filters"><span class="std std-ref">set filters to routes</span></a>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is recommended that you should always add <code class="docutils literal notranslate"><span class="pre">*</span></code> at the end of a URI in the filter settings.
+Because a controller method might be accessible by different URLs than you think.
+For example, when auto-routing is enabled, if you have <code class="docutils literal notranslate"><span class="pre">Blog::index</span></code>,
+it can be accessible with <code class="docutils literal notranslate"><span class="pre">blog</span></code>, <code class="docutils literal notranslate"><span class="pre">blog/index</span></code>, and <code class="docutils literal notranslate"><span class="pre">blog/index/1</span></code>, etc.</p>
+</div>
 <div class="section" id="aliases">
 <h3><a class="toc-backref" href="#id5">$aliases</a><a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">$aliases</span></code> array is used to associate a simple name with one or more fully-qualified class names that are the
@@ -487,7 +504,7 @@ run on every request. Filters can be specified by adding their alias to either t
 <p>There are times where you want to apply a filter to almost every request, but have a few that should be left alone.
 One common example is if you need to exclude a few URI’s from the CSRF protection filter to allow requests from
 third-party websites to hit one or two specific URI’s, while keeping the rest of them protected. To do this, add
-an array with the ‘except’ key and a uri to match as the value alongside the alias:</p>
+an array with the ‘except’ key and a URI to match as the value alongside the alias:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;api/*&#39;</span><span class="p">],</span>
@@ -545,10 +562,30 @@ a list of URI patterns that filter should apply to:</p>
 </div>
 <div class="section" id="provided-filters">
 <h2><a class="toc-backref" href="#id10">Provided Filters</a><a class="headerlink" href="#provided-filters" title="Permalink to this headline">¶</a></h2>
-<p>Three filters are bundled with CodeIgniter4: <code class="docutils literal notranslate"><span class="pre">Honeypot</span></code>, <code class="docutils literal notranslate"><span class="pre">CSRF</span></code>, and <code class="docutils literal notranslate"><span class="pre">DebugToolbar</span></code>.</p>
+<p>The filters bundled with CodeIgniter4 are: <a class="reference internal" href="../libraries/honeypot.html"><span class="doc">Honeypot</span></a>, <a class="reference internal" href="../libraries/security.html#cross-site-request-forgery"><span class="std std-ref">CSRF</span></a>, <code class="docutils literal notranslate"><span class="pre">InvalidChars</span></code>, <code class="docutils literal notranslate"><span class="pre">SecureHeaders</span></code>, and <a class="reference internal" href="../testing/debugging.html#the-debug-toolbar"><span class="std std-ref">DebugToolbar</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The filters are executed in the declared order  that is defined in the config file, but there is one exception to this and it concerns the <code class="docutils literal notranslate"><span class="pre">DebugToolbar</span></code>, which is always executed last. This is because <code class="docutils literal notranslate"><span class="pre">DebugToolbar</span></code> should be able to register everything that happens in other filters.</p>
+<p class="last">The filters are executed in the order defined in the config file. However, if enabled, <code class="docutils literal notranslate"><span class="pre">DebugToolbar</span></code> is always executed last because it should be able to capture everything that happens in the other filters.</p>
+</div>
+<div class="section" id="invalidchars">
+<h3><a class="toc-backref" href="#id11">InvalidChars</a><a class="headerlink" href="#invalidchars" title="Permalink to this headline">¶</a></h3>
+<p>This filter prohibits user input data (<code class="docutils literal notranslate"><span class="pre">$_GET</span></code>, <code class="docutils literal notranslate"><span class="pre">$_POST</span></code>, <code class="docutils literal notranslate"><span class="pre">$_COOKIE</span></code>, <code class="docutils literal notranslate"><span class="pre">php://input</span></code>) from containing the following characters:</p>
+<ul class="simple">
+<li>invalid UTF-8 characters</li>
+<li>control characters except line break and tab code</li>
+</ul>
+</div>
+<div class="section" id="secureheaders">
+<h3><a class="toc-backref" href="#id12">SecureHeaders</a><a class="headerlink" href="#secureheaders" title="Permalink to this headline">¶</a></h3>
+<p>This filter adds HTTP response headers that your application can use to increase the security of your application.</p>
+<p>If you want to customize the headers, extend <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Filters\SecureHeaders</span></code> and override the <code class="docutils literal notranslate"><span class="pre">$headers</span></code> property. And change the <code class="docutils literal notranslate"><span class="pre">$aliases</span></code> property in <strong>app/Config/Filters.php</strong>:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$aliases</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;secureheaders&#39;</span> <span class="o">=&gt;</span> <span class="nx">\App\Filters\SecureHeaders</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<p>If you want to know about secure headers, see <a class="reference external" href="https://owasp.org/www-project-secure-headers/">OWASP Secure Headers Project</a>.</p>
 </div>
 </div>
 </div>
@@ -567,9 +604,9 @@ a list of URI patterns that filter should apply to:</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>

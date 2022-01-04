@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Connecting to your Database &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Connecting to your Database &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -373,7 +375,7 @@ database available globally in that class.</p>
 </pre></div>
 </div>
 <p>If the above function does <strong>not</strong> contain any information in the first
-parameter it will connect to the default group specified in your database config
+parameter, it will connect to the default group specified in your database config
 file. For most people, this is the preferred method of use.</p>
 <p>A convenience method exists that is purely a wrapper around the above line
 and is provided for your convenience:</p>
@@ -382,9 +384,10 @@ and is provided for your convenience:</p>
 </div>
 <div class="section" id="available-parameters">
 <h2><a class="toc-backref" href="#id1">Available Parameters</a><a class="headerlink" href="#available-parameters" title="Permalink to this headline">¶</a></h2>
+<p><strong>\Config\Database::connect($group = null, bool $getShared = true): BaseConnection</strong></p>
 <ol class="arabic simple">
-<li>The database group name, a string that must match the config class’ property name. Default value is <code class="docutils literal notranslate"><span class="pre">$config-&gt;defaultGroup</span></code>.</li>
-<li>true/false (boolean). Whether to return the shared connection (see
+<li><code class="docutils literal notranslate"><span class="pre">$group</span></code>: The database group name, a string that must match the config class’ property name. Default value is <code class="docutils literal notranslate"><span class="pre">$config-&gt;defaultGroup</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">$getShared</span></code>: true/false (boolean). Whether to return the shared connection (see
 Connecting to Multiple Databases below).</li>
 </ol>
 </div>
@@ -412,10 +415,10 @@ to the same database, send <code class="docutils literal notranslate"><span clas
 <p>If you need to connect to more than one database simultaneously you can
 do so as follows:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$db1</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;group_one&#39;</span><span class="p">);</span>
-<span class="nv">$db</span>  <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;group_two&#39;</span><span class="p">);</span>
+<span class="nv">$db2</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;group_two&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: Change the words “group_one” and “group_two” to the specific
+<p>Note: Change the words <code class="docutils literal notranslate"><span class="pre">group_one</span></code> and <code class="docutils literal notranslate"><span class="pre">group_two</span></code> to the specific
 group names you are connecting to.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -494,9 +497,9 @@ connections, you can explicitly close the connection.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>

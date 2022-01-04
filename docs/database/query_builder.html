@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Query Builder Class &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Query Builder Class &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -633,22 +635,33 @@ control the comparison:</p>
 <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="nv">$where</span><span class="p">);</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
 <p>If you are using user-supplied data within the string, you MUST escape the
 data manually. Failure to do so could result in SQL injections.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$name</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">);</span>
+<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$name</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">);</span>
 <span class="nv">$where</span> <span class="o">=</span> <span class="s2">&quot;name=</span><span class="si">{</span><span class="nv">$name</span><span class="si">}</span><span class="s2"> AND status=&#39;boss&#39; OR status=&#39;active&#39;&quot;</span><span class="p">;</span>
 <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="nv">$where</span><span class="p">);</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+</div>
+<ol class="arabic" id="query-builder-where-subquery">
 <li><p class="first"><strong>Subqueries:</strong></p>
 <blockquote>
-<div><p>You can use an anonymous function to create a subquery:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;advance_amount &lt;&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<div><div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// With closure</span>
+
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;advance_amount &lt;&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;MAX(advance_amount)&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id &gt;&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 <span class="p">});</span>
+
 <span class="c1">// Produces: WHERE &quot;advance_amount&quot; &lt; (SELECT MAX(advance_amount) FROM &quot;orders&quot; WHERE &quot;id&quot; &gt; 2)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;orders&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;MAX(advance_amount)&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id &gt;&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;advance_amount &lt;&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -671,10 +684,15 @@ appropriate:</p>
 </pre></div>
 </div>
 <p>You can use subqueries instead of an array of values:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">whereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">whereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="c1">// Produces: WHERE &quot;id&quot; IN (SELECT &quot;job_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;user_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">whereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;orWhereIn()</strong></p>
@@ -686,11 +704,16 @@ appropriate:</p>
 </pre></div>
 </div>
 <p>You can use subqueries instead of an array of values:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orWhereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orWhereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Produces: OR &quot;id&quot; IN (SELECT &quot;job_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;user_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orWhereIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;whereNotIn()</strong></p>
@@ -702,11 +725,16 @@ AND if appropriate:</p>
 </pre></div>
 </div>
 <p>You can use subqueries instead of an array of values:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">whereNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">whereNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Produces: WHERE &quot;id&quot; NOT IN (SELECT &quot;job_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;user_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">whereNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;orWhereNotIn()</strong></p>
@@ -718,11 +746,16 @@ if appropriate:</p>
 </pre></div>
 </div>
 <p>You can use subqueries instead of an array of values:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orWhereNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orWhereNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Produces: OR &quot;id&quot; NOT IN (SELECT &quot;job_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;user_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;job_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orWhereNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -838,17 +871,22 @@ setting it to <code class="docutils literal notranslate"><span class="pre">false
 <p>Identical to <code class="docutils literal notranslate"><span class="pre">having()</span></code>, only separates multiple clauses with “OR”.</p>
 <p><strong>$builder-&gt;havingIn()</strong></p>
 <p>Generates a <code class="docutils literal notranslate"><span class="pre">HAVING</span> <span class="pre">field</span> <span class="pre">IN</span> <span class="pre">('item',</span> <span class="pre">'item')</span></code> SQL query joined with AND if
-appropriate</p>
+appropriate:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$groups</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
 <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingIn</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="nv">$groups</span><span class="p">);</span>
 <span class="c1">// Produces: HAVING group_id IN (1, 2, 3)</span>
 </pre></div>
 </div>
-<p>You can use subqueries instead of an array of values.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<p>You can use subqueries instead of an array of values.:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 <span class="c1">// Produces: HAVING &quot;id&quot; IN (SELECT &quot;user_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;group_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;orHavingIn()</strong></p>
@@ -859,12 +897,17 @@ appropriate</p>
 <span class="c1">// Produces: OR group_id IN (1, 2, 3)</span>
 </pre></div>
 </div>
-<p>You can use subqueries instead of an array of values.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orHavingIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<p>You can use subqueries instead of an array of values.:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">//With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orHavingIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Produces: OR &quot;id&quot; IN (SELECT &quot;user_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;group_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orHavingIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;havingNotIn()</strong></p>
@@ -875,12 +918,17 @@ AND if appropriate</p>
 <span class="c1">// Produces: HAVING group_id NOT IN (1, 2, 3)</span>
 </pre></div>
 </div>
-<p>You can use subqueries instead of an array of values.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<p>You can use subqueries instead of an array of values.:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">//With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Produces: HAVING &quot;id&quot; NOT IN (SELECT &quot;user_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;group_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">havingNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;orHavingNotIn()</strong></p>
@@ -891,12 +939,17 @@ if appropriate</p>
 <span class="c1">// Produces: OR group_id NOT IN (1, 2, 3)</span>
 </pre></div>
 </div>
-<p>You can use subqueries instead of an array of values.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orHavingNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
+<p>You can use subqueries instead of an array of values.:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">//With closure</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orHavingNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">BaseBuilder</span> <span class="nv">$builder</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// Produces: OR &quot;id&quot; NOT IN (SELECT &quot;user_id&quot; FROM &quot;users_jobs&quot; WHERE &quot;group_id&quot; = 3)</span>
+
+<span class="c1">// With builder directly</span>
+<span class="nv">$subQuery</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users_jobs&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group_id&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">orHavingNotIn</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$subQuery</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$builder-&gt;havingLike()</strong></p>
@@ -1149,15 +1202,15 @@ You can optionally pass an <strong>boolean</strong> to the function. Here is an 
     <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;My date&#39;</span><span class="p">,</span>
 <span class="p">];</span>
 
-<span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getCompiledInsert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getCompiledInsert</span><span class="p">();</span>
 <span class="k">echo</span> <span class="nv">$sql</span><span class="p">;</span>
 
 <span class="c1">// Produces string: INSERT INTO mytable (`title`, `name`, `date`) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)</span>
 </pre></div>
 </div>
-<p>The second parameter enables you to set whether or not the query builder query
+<p>The first parameter enables you to set whether or not the query builder query
 will be reset (by default it will be–just like <code class="docutils literal notranslate"><span class="pre">$builder-&gt;insert()</span></code>):</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;My Title&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getCompiledInsert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;My Title&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getCompiledInsert</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
 
 <span class="c1">// Produces string: INSERT INTO mytable (`title`) VALUES (&#39;My Title&#39;)</span>
 
@@ -1166,9 +1219,7 @@ will be reset (by default it will be–just like <code class="docutils literal n
 <span class="c1">// Produces string: INSERT INTO mytable (`title`, `content`) VALUES (&#39;My Title&#39;, &#39;My Content&#39;)</span>
 </pre></div>
 </div>
-<p>The key thing to notice in the above example is that the second query did not
-utilize <code class="docutils literal notranslate"><span class="pre">$builder-&gt;from()</span></code> nor did it pass a table name into the first
-parameter. The reason this worked is that the query has not been executed
+<p>The reason the second query worked is that the query has not been executed
 using <code class="docutils literal notranslate"><span class="pre">$builder-&gt;insert()</span></code> which resets values or reset directly using
 <code class="docutils literal notranslate"><span class="pre">$builder-&gt;resetQuery()</span></code>.</p>
 <div class="admonition note">
@@ -1887,7 +1938,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – The field to search</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -1912,7 +1963,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – The field to search</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -1937,7 +1988,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – Name of field to examine</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -1962,7 +2013,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – Name of field to examine</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -2225,7 +2276,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – The field to search</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -2250,7 +2301,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – The field to search</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -2275,7 +2326,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – Name of field to examine</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 </ul>
 </td>
@@ -2300,7 +2351,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$key</strong> (<em>string</em>) – Name of field to examine</li>
-<li><strong>$values</strong> (<em>array|Closure</em>) – Array of target values, or anonymous function for subquery</li>
+<li><strong>$values</strong> (<em>array|BaseBulder|Closure</em>) – Array of target values, or anonymous function for subquery</li>
 <li><strong>$escape</strong> (<em>bool</em>) – Whether to escape values and identifiers</li>
 <li><strong>$insensitiveSearch</strong> (<em>bool</em>) – Whether to force a case-insensitive search</li>
 </ul>
@@ -3021,9 +3072,9 @@ a <code class="docutils literal notranslate"><span class="pre">DELETE</span></co
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Code Modules &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Code Modules &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -385,8 +387,8 @@ language files, etc. Modules may contain as few, or as many, of these as you lik
 </div>
 <div class="section" id="namespaces">
 <h2><a class="toc-backref" href="#id1">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
-<p>The core element of the modules functionality comes from the <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">PSR4-compatible autoloading</span></a>
-that CodeIgniter uses. While any code can use the PSR4 autoloader and namespaces, the primary way to take full advantage of
+<p>The core element of the modules functionality comes from the <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">PSR-4 compatible autoloading</span></a>
+that CodeIgniter uses. While any code can use the PSR-4 autoloader and namespaces, the primary way to take full advantage of
 modules is to namespace your code and add it to <strong>app/Config/Autoload.php</strong>, in the <code class="docutils literal notranslate"><span class="pre">psr4</span></code> section.</p>
 <p>For example, let’s say we want to keep a simple blog module that we can re-use between applications. We might create
 folder with our company name, Acme, to store all of our modules within. We will put it right alongside our <strong>app</strong>
@@ -482,8 +484,8 @@ present, then no auto-discovery will happen for that item, but the others in the
 </div>
 <div class="section" id="discovery-and-composer">
 <h3><a class="toc-backref" href="#id6">Discovery and Composer</a><a class="headerlink" href="#discovery-and-composer" title="Permalink to this headline">¶</a></h3>
-<p>Packages that were installed via Composer will also be discovered by default. This only requires that the namespace
-that Composer knows about is a PSR4 namespace. PSR0 namespaces will not be detected.</p>
+<p>Packages installed via Composer using PSR-4 namespaces will also be discovered by default.
+PSR-0 namespaced packages will not be detected.</p>
 <p>If you do not want all of Composer’s known directories to be scanned when locating files, you can turn this off
 by editing the <code class="docutils literal notranslate"><span class="pre">$discoverInComposer</span></code> variable in <code class="docutils literal notranslate"><span class="pre">Config\Modules.php</span></code>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$discoverInComposer</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
@@ -505,6 +507,8 @@ the <strong>Modules</strong> config file, described above.</p>
 <p class="last">Since the files are being included into the current scope, the <code class="docutils literal notranslate"><span class="pre">$routes</span></code> instance is already defined for you.
 It will cause errors if you attempt to redefine that class.</p>
 </div>
+<p>When working with modules, it can be a problem if the routes in the application contain wildcards.
+In that case, see <a class="reference internal" href="../incoming/routing.html#routing-priority"><span class="std std-ref">Route processing queue</span></a>.</p>
 </div>
 <div class="section" id="filters">
 <h3><a class="toc-backref" href="#id9">Filters</a><a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h3>
@@ -543,6 +547,17 @@ with the <code class="docutils literal notranslate"><span class="pre">new</span>
 </pre></div>
 </div>
 <p>Config files are automatically discovered whenever using the <strong>config()</strong> function that is always available.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We don’t recommend you use the same short classname in modules.
+Modules that need to override or add to known configurations in <strong>app/Config/</strong> should use <a class="reference internal" href="configuration.html#registrars"><span class="std std-ref">Registrars</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>config()</strong> finds the file in <strong>app/Config/</strong> when there is a class with the same shortname,
+even if you specify a fully qualified class name like <code class="docutils literal notranslate"><span class="pre">config(\Acme\Blog\Config\Blog::class)</span></code>.
+This is because <code class="docutils literal notranslate"><span class="pre">config()</span></code> is a wrapper for the <code class="docutils literal notranslate"><span class="pre">Factories</span></code> class which uses <code class="docutils literal notranslate"><span class="pre">preferApp</span></code> by default. See <a class="reference internal" href="../concepts/factories.html#factories-options"><span class="std std-ref">Factories Options</span></a> for more information.</p>
+</div>
 </div>
 <div class="section" id="migrations">
 <h3><a class="toc-backref" href="#id12">Migrations</a><a class="headerlink" href="#migrations" title="Permalink to this headline">¶</a></h3>
@@ -608,9 +623,9 @@ file follows the same directory structures as the main application directory.</p
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>

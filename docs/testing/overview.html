@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Testing &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Testing &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -454,7 +456,7 @@ have the correct namespace relative to <code class="docutils literal notranslate
 <p class="first admonition-title">Note</p>
 <p class="last">Namespaces are not strictly required for test classes, but they are helpful to ensure no class names collide.</p>
 </div>
-<p>When testing database results, you must use the <a class="reference external" href="database.html">DatabaseTestTrait</a> in your class.</p>
+<p>When testing database results, you must use the <a class="reference internal" href="database.html"><span class="doc">DatabaseTestTrait</span></a> in your class.</p>
 <div class="section" id="staging">
 <h4>Staging<a class="headerlink" href="#staging" title="Permalink to this headline">¶</a></h4>
 <p>Most tests require some preparation in order to run correctly. PHPUnit’s <code class="docutils literal notranslate"><span class="pre">TestCase</span></code> provides four methods
@@ -559,7 +561,7 @@ logged in user:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertHeaderEmitted</span><span class="p">(</span><span class="s2">&quot;Set-Cookie: foo=bar&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: the test case with this should be <a class="reference external" href="https://phpunit.readthedocs.io/en/7.4/annotations.html#runinseparateprocess">run as a separate process
+<p>Note: the test case with this should be <a class="reference external" href="https://phpunit.readthedocs.io/en/9.5/annotations.html#runinseparateprocess">run as a separate process
 in PHPunit</a>.</p>
 <p><strong>assertHeaderNotEmitted($header, $ignoreCase = false)</strong></p>
 <p>Ensure that a header or cookie was not emitted:</p>
@@ -572,7 +574,7 @@ in PHPunit</a>.</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertHeaderNotEmitted</span><span class="p">(</span><span class="s2">&quot;Set-Cookie: banana&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: the test case with this should be <a class="reference external" href="https://phpunit.readthedocs.io/en/7.4/annotations.html#runinseparateprocess">run as a separate process
+<p>Note: the test case with this should be <a class="reference external" href="https://phpunit.readthedocs.io/en/9.5/annotations.html#runinseparateprocess">run as a separate process
 in PHPunit</a>.</p>
 <p><strong>assertCloseEnough($expected, $actual, $message = ‘’, $tolerance = 1)</strong></p>
 <p>For extended execution time testing, tests that the absolute difference
@@ -728,9 +730,9 @@ might be helpful. The <code class="docutils literal notranslate"><span class="pr
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>

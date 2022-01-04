@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Number Helper &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Number Helper &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -380,7 +382,7 @@ a value provided, for the given locale and options, then a
 <p>The following functions are available:</p>
 <dl class="function">
 <dt id="number_to_size">
-<code class="descname">number_to_size</code><span class="sig-paren">(</span><em>$num[, $precision = 1[, $locale = null]</em><span class="sig-paren">)</span><a class="headerlink" href="#number_to_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">number_to_size</code><span class="sig-paren">(</span><em>$num</em><span class="optional">[</span>, <em>$precision = 1</em><span class="optional">[</span>, <em>$locale = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#number_to_size" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -473,15 +475,15 @@ for numbers up to the quadrillions. Examples:</p>
 
 <dl class="function">
 <dt id="number_to_currency">
-<code class="descname">number_to_currency</code><span class="sig-paren">(</span><em>$num</em>, <em>$currency</em><span class="optional">[</span>, <em>$locale = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#number_to_currency" title="Permalink to this definition">¶</a></dt>
+<code class="descname">number_to_currency</code><span class="sig-paren">(</span><em>$num</em>, <em>$currency</em><span class="optional">[</span>, <em>$locale = null</em><span class="optional">[</span>, <em>$fraction = 0</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#number_to_currency" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$num</strong> (<em>mixed</em>) – Number to format</li>
+<li><strong>$num</strong> (<em>float</em>) – Number to format</li>
 <li><strong>$currency</strong> (<em>string</em>) – The currency type, i.e., USD, EUR, etc</li>
-<li><strong>$locale</strong> (<em>string</em>) – The locale to use for formatting</li>
+<li><strong>$locale</strong> (<em>string|null</em>) – The locale to use for formatting</li>
 <li><strong>$fraction</strong> (<em>integer</em>) – Number of fraction digits after decimal point</li>
 </ul>
 </td>
@@ -495,12 +497,13 @@ for numbers up to the quadrillions. Examples:</p>
 </tbody>
 </table>
 <p>Converts a number in common currency formats, like USD, EUR, GBP, etc:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">);</span>  <span class="c1">// Returns $1,234.56</span>
-<span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">);</span>  <span class="c1">// Returns €1,234.56</span>
-<span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;GBP&#39;</span><span class="p">);</span>  <span class="c1">// Returns £1,234.56</span>
-<span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;YEN&#39;</span><span class="p">);</span>  <span class="c1">// Returns YEN1,234.56</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;USD&#39;</span><span class="p">,</span> <span class="s1">&#39;en_US&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// Returns $1,234.56</span>
+<span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">,</span> <span class="s1">&#39;de_DE&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// Returns 1.234,56 €</span>
+<span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;GBP&#39;</span><span class="p">,</span> <span class="s1">&#39;en_GB&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// Returns £1,234.56</span>
+<span class="k">echo</span> <span class="nx">number_to_currency</span><span class="p">(</span><span class="mf">1234.56</span><span class="p">,</span> <span class="s1">&#39;YEN&#39;</span><span class="p">,</span> <span class="s1">&#39;ja_JP&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// Returns YEN 1,234.56</span>
 </pre></div>
 </div>
+<p>If you don’t specify a locale, the Request locale is used.</p>
 </dd></dl>
 
 <dl class="function">
@@ -550,9 +553,9 @@ It will return null for any value outside that range.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>

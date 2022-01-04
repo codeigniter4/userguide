@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Application Structure &mdash; CodeIgniter 4.1.5 documentation</title>
+  <title>Application Structure &mdash; CodeIgniter 4.1.6 documentation</title>
   
 
   
@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
 </ul>
 </li>
 </ul>
@@ -104,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -357,8 +359,8 @@
 can change to meet the needs of your application.</p>
 <div class="section" id="default-directories">
 <h2>Default Directories<a class="headerlink" href="#default-directories" title="Permalink to this headline">¶</a></h2>
-<p>A fresh install has six directories: <code class="docutils literal notranslate"><span class="pre">/app</span></code>, <code class="docutils literal notranslate"><span class="pre">/system</span></code>, <code class="docutils literal notranslate"><span class="pre">/public</span></code>,
-<code class="docutils literal notranslate"><span class="pre">/writable</span></code>, <code class="docutils literal notranslate"><span class="pre">/tests</span></code> and possibly <code class="docutils literal notranslate"><span class="pre">/docs</span></code>.
+<p>A fresh install has five directories: <code class="docutils literal notranslate"><span class="pre">/app</span></code>, <code class="docutils literal notranslate"><span class="pre">/public</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/writable</span></code>, <code class="docutils literal notranslate"><span class="pre">/tests</span></code> and <code class="docutils literal notranslate"><span class="pre">/system</span></code> or <code class="docutils literal notranslate"><span class="pre">/vendor</span></code>.
 Each of these directories has a very specific part to play.</p>
 <div class="section" id="app">
 <h3>app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h3>
@@ -391,6 +393,10 @@ routing to controllers, and will need to define all of your routes in the routes
 </div>
 <div class="section" id="system">
 <h3>system<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you install CodeIgniter with Composer, the <code class="docutils literal notranslate"><span class="pre">system</span></code> is located in <code class="docutils literal notranslate"><span class="pre">vendor/codeigniter4/framework/system</span></code>.</p>
+</div>
 <p>This directory stores the files that make up the framework, itself. While you have a lot of flexibility in how you
 use the application directory, the files in the system directory should never be modified. Instead, you should
 extend the classes, or create new classes, to provide the desired functionality.</p>
@@ -419,16 +425,11 @@ non-writable as an added security measure.</p>
 utilities that you can use while writing your tests. This directory does not need to be transferred to your
 production servers.</p>
 </div>
-<div class="section" id="docs">
-<h3>docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h3>
-<p>If this directory is part of your project, it holds a local copy of the CodeIgniter4
-User Guide.</p>
-</div>
 <div class="section" id="modifying-directory-locations">
 <h3>Modifying Directory Locations<a class="headerlink" href="#modifying-directory-locations" title="Permalink to this headline">¶</a></h3>
 <p>If you’ve relocated any of the main directories, you can change the configuration
 settings inside <strong>app/Config/Paths.php</strong>.</p>
-<p>Please read <a class="reference external" href="../general/managing_apps.html">Managing your Applications</a></p>
+<p>Please read <a class="reference internal" href="../general/managing_apps.html"><span class="doc">Managing your Applications</span></a>.</p>
 </div>
 </div>
 </div>
@@ -447,9 +448,9 @@ settings inside <strong>app/Config/Paths.php</strong>.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019-2021 CodeIgniter Foundation.
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Nov 08, 2021.
+        Last updated on Jan 04, 2022.
       </span>
 
     </p>
