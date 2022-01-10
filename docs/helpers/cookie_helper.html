@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Cookie Helper &mdash; CodeIgniter 4.1.6 documentation</title>
+  <title>Cookie Helper &mdash; CodeIgniter 4.1.7 documentation</title>
   
 
   
@@ -433,6 +433,10 @@ the <code class="docutils literal notranslate"><span class="pre">$cookiePrefix</
 <strong>app/Config/App.php</strong> file.</p>
 </dd></dl>
 
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Using XSS filtering is a bad practice. It does not prevent XSS attacks perfectly. Using <code class="docutils literal notranslate"><span class="pre">esc()</span></code> with the correct <code class="docutils literal notranslate"><span class="pre">$context</span></code> in the views is recommended.</p>
+</div>
 <dl class="function">
 <dt id="delete_cookie">
 <code class="descname">delete_cookie</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_cookie" title="Permalink to this definition">¶</a></dt>
@@ -508,7 +512,7 @@ parameters.</p>
     <p>
         &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jan 04, 2022.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>
