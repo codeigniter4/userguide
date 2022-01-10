@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Version 4.0.0-beta.3 &mdash; CodeIgniter 4.1.7 documentation</title>
+  <title>Upgrading from 4.1.6 to 4.1.7 &mdash; CodeIgniter 4.1.7 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Version 4.0.0-beta.2" href="v4.0.0-beta.2.html" />
-    <link rel="prev" title="Version 4.0.0-beta.4" href="v4.0.0-beta.4.html" /> 
+    <link rel="next" title="Upgrading from 4.1.5 to 4.1.6" href="upgrade_416.html" />
+    <link rel="prev" title="Upgrading From a Previous Version" href="upgrading.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,14 +100,14 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../installation/index.html">Installation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">Change Logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing_manual.html">Manual Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running.html">Running Your App</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repositories.html">CodeIgniter Repositories</a></li>
 </ul>
 </li>
 </ul>
@@ -334,11 +334,11 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../installation/index.html">Installation</a> &raquo;</li>
+          <li><a href="index.html">Installation</a> &raquo;</li>
         
-          <li><a href="index.html">Change Logs</a> &raquo;</li>
+          <li><a href="upgrading.html">Upgrading From a Previous Version</a> &raquo;</li>
         
-      <li>Version 4.0.0-beta.3</li>
+      <li>Upgrading from 4.1.6 to 4.1.7</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -355,414 +355,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="version-4-0-0-beta-3">
-<h1>Version 4.0.0-beta.3<a class="headerlink" href="#version-4-0-0-beta-3" title="Permalink to this headline">¶</a></h1>
-<p>Release Date: May 7, 2019</p>
-<p>Highlights:</p>
+  <div class="section" id="upgrading-from-4-1-6-to-4-1-7">
+<h1>Upgrading from 4.1.6 to 4.1.7<a class="headerlink" href="#upgrading-from-4-1-6-to-4-1-7" title="Permalink to this headline">¶</a></h1>
+<p>Please refer to the upgrade instructions corresponding to your installation method.</p>
 <ul class="simple">
-<li>Type hinting added throughout &amp; typos corrected (see API docs)</li>
-<li>Fixed a number of model, database, validation &amp; debug toolbar issues</li>
+<li><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></li>
+<li><a class="reference internal" href="installing_composer.html#adding-codeigniter4-upgrading"><span class="std std-ref">Composer Installation Adding CodeIgniter4 to an Existing Project Upgrading</span></a></li>
+<li><a class="reference internal" href="installing_manual.html#installing-manual-upgrading"><span class="std std-ref">Manual Installation Upgrading</span></a></li>
 </ul>
-<p>New messages:</p>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li>Database.FieldNotExists</li>
-<li>Validation.equals, not_equals</li>
+<li><a class="reference internal" href="#breaking-changes" id="id1">Breaking Changes</a></li>
 </ul>
-<p>App changes:</p>
+</div>
+<div class="section" id="breaking-changes">
+<h2><a class="toc-backref" href="#id1">Breaking Changes</a><a class="headerlink" href="#breaking-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Removed $salt config item in app/Config/App</li>
-<li>Enabled migrations by default in app/Config/Migrations</li>
-<li>Simplified public/.htaccess</li>
-</ul>
-<p>The list of changed files follows, with PR numbers shown.</p>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>admin/</dt>
-<dd><ul class="first last">
-<li>framework/composer.json #1935</li>
-<li>starter/composer.json #1935</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>app/</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Config/</dt>
-<dd><ul class="first last">
-<li>App #1973</li>
-<li>Migrations #1973</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>public/</dt>
-<dd><ul class="first last">
-<li>.htaccess #1973</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>system/</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>API/</dt>
-<dd><ul class="first last">
-<li>ResponseTrait #1962</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Commands/</dt>
-<dd><ul class="first last">
-<li>Server/rewrite #1925</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Config/</dt>
-<dd><ul class="first last">
-<li>AutoloadConfig #1974</li>
-<li>BaseConfig #1947</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Database/ #1938</dt>
-<dd><ul class="first last">
-<li>BaseBuilder #1923, #1933, #1950</li>
-<li>BaseConnection #1950</li>
-<li>BaseResult #1917</li>
-<li>BaseUtils #1917</li>
-<li>Forge #1917</li>
-<li><dl class="first docutils">
-<dt>SQLite3/</dt>
-<dd><ul class="first last">
-<li>Connection #1917</li>
-<li>Result #1917</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Debug/</dt>
-<dd><ul class="first last">
-<li>Toolbar #1916</li>
-<li><dl class="first docutils">
-<dt>Toolbar/Collectors/</dt>
-<dd><ul class="first last">
-<li>BaseCollector #1972</li>
-<li>Config #1973</li>
-<li>History #1945</li>
-<li>Routes #1949</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Toolbar/Views/</dt>
-<dd><ul class="first last">
-<li>_config.tpl.php #1973</li>
-<li>toolbar.tpl.php #1972</li>
-<li>toolbarloader.js #1931, #1961</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Exceptions/</dt>
-<dd><ul class="first last">
-<li>EntityException #1927</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Filters/</dt>
-<dd>Filters #1970, #1985</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Format/</dt>
-<dd><ul class="first last">
-<li>FormatterInterface #1918</li>
-<li>JSONFormatter #1918</li>
-<li>XMLFormatter #1918</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>HTTP/</dt>
-<dd><ul class="first last">
-<li>CLIRequest #1956</li>
-<li>CURLRequest #1915</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Images/Handlers/</dt>
-<dd><ul class="first last">
-<li>BaseHandler #1956</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Language/en/</dt>
-<dd><ul class="first last">
-<li>Database #1917</li>
-<li>Validation #1952</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Router/</dt>
-<dd><ul class="first last">
-<li>Router #1968</li>
-<li>RouteCollection #1977</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Session/Handlers/</dt>
-<dd><ul class="first last">
-<li>RedisHandler #1980</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Test/</dt>
-<dd><ul class="first last">
-<li>FeatureResponse #1977</li>
-<li>FeatureTestCase #1977</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Validation/</dt>
-<dd><ul class="first last">
-<li>FormatRules #1957</li>
-<li>Rules #1952</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>View/</dt>
-<dd><ul class="first last">
-<li>Table #1984</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>Entity #1911, #1927, #1943, #1950, #1955</li>
-<li>Model #1930, #1943, #1963, #1981</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>tests/system/</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>Config/</dt>
-<dd><ul class="first last">
-<li>BaseConfigTest #1947</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Database/</dt>
-<dd><ul class="first last">
-<li>BaseQueryTest #1917</li>
-<li><dl class="first docutils">
-<dt>Live/</dt>
-<dd><ul class="first last">
-<li>DbUtilsTest #1917, #1943</li>
-<li>ForgeTest #1917</li>
-<li>GetTest #1917, #1943</li>
-<li>ModelTest #1930, #1943, #1981</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Migrations/</dt>
-<dd><ul class="first last">
-<li>MigrationRunnerTest #1917</li>
-<li>MigrationTest #1943</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Filters/</dt>
-<dd><ul class="first last">
-<li>FilterTest #1985</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Test/</dt>
-<dd><ul class="first last">
-<li>FeatureTestCaseTest #1977</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Validation/</dt>
-<dd><ul class="first last">
-<li>FormatRulesTest #1957</li>
-<li>RulesTest #1952, #cbe4b1d</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>View/</dt>
-<dd><ul class="first last">
-<li>TableTest #1978, #1984</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>EntityTest #1911</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>user_guide_src/</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>dbmgmt/</dt>
-<dd><ul class="first last">
-<li>migrations #1973</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>installation/</dt>
-<dd><ul class="first last">
-<li>installing_composer #1926</li>
-<li>running #1935</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>libraries/</dt>
-<dd><ul class="first last">
-<li>validation #1952, #1954, #1957</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>outgoing/</dt>
-<dd><ul class="first last">
-<li>index #1978</li>
-<li>table #1978, #1984</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>testing/</dt>
-<dd><ul class="first last">
-<li>feature #1977</li>
-<li>overview #1936</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>.htaccess #1939</li>
-<li>composer.json #1935</li>
-<li>phpdoc.dist.xml #1987</li>
-</ul>
-<div class="section" id="prs-merged">
-<h2>PRs merged:<a class="headerlink" href="#prs-merged" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>#1987 Correct API docblock problems for phpdocs</li>
-<li>#1986 Update docblock version to 4.0.0</li>
-<li>#1985 Fix filter processing. Fixes #1907</li>
-<li>#cbe4b1d Fix SQLite tests</li>
-<li>#1984 Add footing to HTML Table</li>
-<li>#1981 Using soft deletes should not return an ambiguous field message when joining tables</li>
-<li>#1980 Corrected return value for Session/RedisHandler::read</li>
-<li>#1978 Implement HTML Table for CI4 (missed feature)</li>
-<li>#1977 Test/featuretestcase</li>
-<li>#1974 Remove framework classes from the autoloader classmap</li>
-<li>#1973 Defaultfixes</li>
-<li>#1972 Toolbar fix for custom collectors</li>
-<li>#1970 Add back filter arguments</li>
-<li>#1968 Fixed pathinfo mode 404 error</li>
-<li>#1963 String type primary key should also wrap into an array during db update</li>
-<li>#1962 Fix side issue</li>
-<li>#1961 Fix Debugbar url tail slash issue</li>
-<li>#1957 New generic string validation rule</li>
-<li>#1956 Use Null Coalesce Operator</li>
-<li>#1955 Travis-CI build failed fix</li>
-<li>#1954 Fix validation table format</li>
-<li>#1952 Add Validations for <cite>equals()</cite> and <cite>not_equals()</cite></li>
-<li>#1951 System typos changes &amp; code cleanup</li>
-<li>#1950 Fix some side issue</li>
-<li>#1949 Toobar/Routes correction</li>
-<li>#1947 Fix BaseConfig didn’t load Registrar files properly</li>
-<li>#1945 Fix datetime extraction from debugbar file</li>
-<li>#1943 Model, Entity, Exception &amp; Migration test cases</li>
-<li>#1939 Remove section that prevents hotlinking</li>
-<li>#1938 Database typos changes</li>
-<li>#1936 Docs: improce app testing writeup</li>
-<li>#1935 Update phpunit.xml scripts. Fixes #1932</li>
-<li>#1933 having (Is NULL deletion)</li>
-<li>#1931 Toolbar IE11 fix</li>
-<li>#1930 Model Changes w.r.t. #1773</li>
-<li>#1927 Entity exception for non existed props</li>
-<li>#1926 Docs: update installation guide</li>
-<li>#1925 removed $_SERVER[‘CI_ENVIRONMENT’]</li>
-<li>#1923 missing return</li>
-<li>#1918 JSONFormatter</li>
-<li>#1917 Database Test Cases</li>
-<li>#1916 Check if the value is string</li>
-<li>#1915 Fix for POST + JSON (Content-Length added)</li>
-<li>#1911 JSON Cast exception test cases</li>
+<li><code class="docutils literal notranslate"><span class="pre">get_cookie()</span></code> when <code class="docutils literal notranslate"><span class="pre">$xssClean</span></code> is true changed the output. Now it uses <code class="docutils literal notranslate"><span class="pre">FILTER_SANITIZE_FULL_SPECIAL_CHARS</span></code>, not <code class="docutils literal notranslate"><span class="pre">FILTER_SANITIZE_STRING</span></code>. Make sure the change is acceptable or not. Note that using XSS filtering is a bad practice. It does not prevent XSS attacks perfectly. Using <code class="docutils literal notranslate"><span class="pre">esc()</span></code> with the correct <code class="docutils literal notranslate"><span class="pre">$context</span></code> in the views is recommended.</li>
 </ul>
 </div>
 </div>
@@ -773,8 +382,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="v4.0.0-beta.2.html" class="btn btn-neutral float-right" title="Version 4.0.0-beta.2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="v4.0.0-beta.4.html" class="btn btn-neutral float-left" title="Version 4.0.0-beta.4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrade_416.html" class="btn btn-neutral float-right" title="Upgrading from 4.1.5 to 4.1.6" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="upgrading.html" class="btn btn-neutral float-left" title="Upgrading From a Previous Version" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
