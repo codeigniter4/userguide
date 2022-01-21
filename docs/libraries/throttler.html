@@ -387,7 +387,7 @@ the third being the amount of time it takes the bucket to refill:</p>
 more readable. This says that the bucket allows 60 actions every minute, or 1 action every second.</p>
 <p>Let’s say that a third-party script was trying to hit a URL repeatedly. At first, it would be able to use all 60
 of those tokens in less than a second. However, after that the Throttler would only allow one action per second,
-potentially slowing down the requests enough that they attack is no longer worth it.</p>
+potentially slowing down the requests enough that the attack is no longer worth it.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For the Throttler class to work, the Cache library must be set up to use a handler other than dummy.
