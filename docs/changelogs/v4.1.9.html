@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Version 4.2.0 &mdash; CodeIgniter 4.1.8 documentation</title>
+  <title>Version 4.1.9 &mdash; CodeIgniter 4.1.9 documentation</title>
   
 
   
@@ -169,7 +169,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -339,7 +338,7 @@
         
           <li><a href="index.html">Change Logs</a> &raquo;</li>
         
-      <li>Version 4.2.0</li>
+      <li>Version 4.1.9</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -356,57 +355,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="version-4-2-0">
-<h1>Version 4.2.0<a class="headerlink" href="#version-4-2-0" title="Permalink to this headline">¶</a></h1>
-<p>Release Date: Not Released</p>
-<p><strong>4.2.0 release of CodeIgniter4</strong></p>
+  <div class="section" id="version-4-1-9">
+<h1>Version 4.1.9<a class="headerlink" href="#version-4-1-9" title="Permalink to this headline">¶</a></h1>
+<p>Release Date: February 25, 2022</p>
+<p><strong>4.1.9 release of CodeIgniter4</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#breaking" id="id1">BREAKING</a></li>
-<li><a class="reference internal" href="#enhancements" id="id2">Enhancements</a></li>
-<li><a class="reference internal" href="#changes" id="id3">Changes</a></li>
-<li><a class="reference internal" href="#deprecations" id="id4">Deprecations</a></li>
-<li><a class="reference internal" href="#bugs-fixed" id="id5">Bugs Fixed</a></li>
+<li><a class="reference internal" href="#security" id="id1">SECURITY</a></li>
 </ul>
 </div>
-<div class="section" id="breaking">
-<h2><a class="toc-backref" href="#id1">BREAKING</a><a class="headerlink" href="#breaking" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="security">
+<h2><a class="toc-backref" href="#id1">SECURITY</a><a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The method signature of <code class="docutils literal notranslate"><span class="pre">Validation::setRule()</span></code> has been changed. The <code class="docutils literal notranslate"><span class="pre">string</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$rules</span></code> parameter was removed. Extending classes should likewise remove the parameter so as not to break LSP.</li>
+<li><em>Remote CLI Command Execution Vulnerability</em> was fixed. See the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-xjp4-6w75-qrj7">Security advisory GHSA-xjp4-6w75-qrj7</a> for more information.</li>
+<li><em>Cross-Site Request Forgery (CSRF) Protection Bypass Vulnerability</em> was fixed. See the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-4v37-24gm-h554">Security advisory GHSA-4v37-24gm-h554</a> for more information.</li>
 </ul>
-</div>
-<div class="section" id="enhancements">
-<h2><a class="toc-backref" href="#id2">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>Content Security Policy (CSP) enhancements</dt>
-<dd><ul class="first last">
-<li>Added the configs <code class="docutils literal notranslate"><span class="pre">$scriptNonceTag</span></code> and <code class="docutils literal notranslate"><span class="pre">$styleNonceTag</span></code> in  <code class="docutils literal notranslate"><span class="pre">Config\ContentSecurityPolicy</span></code> to customize the CSP placeholders (<code class="docutils literal notranslate"><span class="pre">{csp-script-nonce}</span></code> and <code class="docutils literal notranslate"><span class="pre">{csp-style-nonce}</span></code>)</li>
-<li>Added the config <code class="docutils literal notranslate"><span class="pre">$autoNonce</span></code> in <code class="docutils literal notranslate"><span class="pre">Config\ContentSecurityPolicy</span></code> to disable the CSP placeholder replacement</li>
-<li>Added the functions <code class="docutils literal notranslate"><span class="pre">csp_script_nonce()</span></code> and <code class="docutils literal notranslate"><span class="pre">csp_style_nonce()</span></code> to get nonce attributes</li>
-<li>See <a class="reference internal" href="../outgoing/response.html#content-security-policy"><span class="std std-ref">Content Security Policy</span></a> for details.</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li>New View Decorators allow modifying the generated HTML prior to caching.</li>
-<li>Added Subqueries in the FROM section. See <a class="reference internal" href="../database/query_builder.html#query-builder-from-subquery"><span class="std std-ref">Subqueries</span></a>.</li>
-<li>Added Validation Strict Rules. See <a class="reference internal" href="../libraries/validation.html#validation-traditional-and-strict-rules"><span class="std std-ref">Traditional and Strict Rules</span></a>.</li>
-</ul>
-</div>
-<div class="section" id="changes">
-<h2><a class="toc-backref" href="#id3">Changes</a><a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Update minimal PHP requirement to 7.4.</li>
-<li>The current version of Content Security Policy (CSP) outputs one nonce for script and one for style tags. The previous version outputted one nonce for each tag.</li>
-</ul>
-</div>
-<div class="section" id="deprecations">
-<h2><a class="toc-backref" href="#id4">Deprecations</a><a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="bugs-fixed">
-<h2><a class="toc-backref" href="#id5">Bugs Fixed</a><a class="headerlink" href="#bugs-fixed" title="Permalink to this headline">¶</a></h2>
-<p>See the repo’s <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CHANGELOG.md">CHANGELOG.md</a> for a complete list of bugs fixed.</p>
 </div>
 </div>
 
@@ -426,7 +389,7 @@
     <p>
         &#169; Copyright 2019-2022 CodeIgniter Foundation.
       <span class="lastupdated">
-        Last updated on Jan 24, 2022.
+        Last updated on Feb 26, 2022.
       </span>
 
     </p>
