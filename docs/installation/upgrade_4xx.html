@@ -1,34 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrading from 3.x to 4.x &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  <title>Upgrading from 3.x to 4.x &mdash; CodeIgniter 4.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Upgrade Models" href="upgrade_models.html" />
     <link rel="prev" title="Upgrading from 4.0.x to 4.0.4" href="upgrade_404.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -243,33 +295,75 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">Installation</a> &raquo;</li>
+        
           <li><a href="upgrading.html">Upgrading From a Previous Version</a> &raquo;</li>
+        
       <li>Upgrading from 3.x to 4.x</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="section" id="upgrading-from-3-x-to-4-x">
-<h1>Upgrading from 3.x to 4.x<a class="headerlink" href="#upgrading-from-3-x-to-4-x" title="Permalink to this headline"></a></h1>
+<h1>Upgrading from 3.x to 4.x<a class="headerlink" href="#upgrading-from-3-x-to-4-x" title="Permalink to this headline">¶</a></h1>
 <p>CodeIgniter 4 is a rewrite of the framework and is not backwards compatible.
 It is more appropriate to think of converting your app, rather than upgrading it.
 Once you have done that, upgrading from one version of CodeIgniter 4 to the next
@@ -306,22 +400,22 @@ them one by one.</p>
 </ul>
 </div>
 <div class="section" id="general-adjustments">
-<h2><a class="toc-backref" href="#id1">General Adjustments</a><a class="headerlink" href="#general-adjustments" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1">General Adjustments</a><a class="headerlink" href="#general-adjustments" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="downloads">
-<h3><a class="toc-backref" href="#id2">Downloads</a><a class="headerlink" href="#downloads" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id2">Downloads</a><a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>CI4 is still available as a ready-to-run zip or tarball.</li>
 <li>It can also be installed using Composer.</li>
 </ul>
 </div>
 <div class="section" id="namespaces">
-<h3><a class="toc-backref" href="#id3">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id3">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>CI4 is built for PHP 7.4+, and everything in the framework is namespaced, except for the helpers.</li>
 </ul>
 </div>
 <div class="section" id="application-structure">
-<h3><a class="toc-backref" href="#id4">Application Structure</a><a class="headerlink" href="#application-structure" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4">Application Structure</a><a class="headerlink" href="#application-structure" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>The <strong>application</strong> folder is renamed as <strong>app</strong> and the framework still has <strong>system</strong> folders,
 with the same interpretation as before.</li>
@@ -334,7 +428,7 @@ a different mechanism for extending framework components (see below).</li>
 </ul>
 </div>
 <div class="section" id="model-view-and-controller">
-<h3><a class="toc-backref" href="#id5">Model, View and Controller</a><a class="headerlink" href="#model-view-and-controller" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id5">Model, View and Controller</a><a class="headerlink" href="#model-view-and-controller" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>CodeIgniter is based on the MVC concept. Thus, the changes on the Model, View and Controller
 are one of the most important things you have to handle.</li>
@@ -359,7 +453,7 @@ you some step-by-step instructions to convert the MVC classes in CodeIgniter4:</
 </div>
 </div>
 <div class="section" id="class-loading">
-<h3><a class="toc-backref" href="#id6">Class Loading</a><a class="headerlink" href="#class-loading" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id6">Class Loading</a><a class="headerlink" href="#class-loading" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>There is no longer a CodeIgniter “superobject”, with framework component
 references magically injected as properties of your controller.</li>
@@ -373,7 +467,7 @@ you are most comfortable with, including the “HMVC” style.</li>
 </ul>
 </div>
 <div class="section" id="libraries">
-<h3><a class="toc-backref" href="#id7">Libraries</a><a class="headerlink" href="#libraries" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id7">Libraries</a><a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Your app classes can still go inside <strong>app/Libraries</strong>, but they don’t have to.</li>
 <li>Instead of CI3’s <code class="docutils literal notranslate"><span class="pre">$this-&gt;load-&gt;library(x);</span></code> you can now use
@@ -381,7 +475,7 @@ you are most comfortable with, including the “HMVC” style.</li>
 </ul>
 </div>
 <div class="section" id="helpers">
-<h3><a class="toc-backref" href="#id8">Helpers</a><a class="headerlink" href="#helpers" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id8">Helpers</a><a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Helpers are pretty much the same as before, though some have been simplified.</li>
 <li><dl class="first docutils">
@@ -396,7 +490,7 @@ you are most comfortable with, including the “HMVC” style.</li>
 </ul>
 </div>
 <div class="section" id="events">
-<h3><a class="toc-backref" href="#id9">Events</a><a class="headerlink" href="#events" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">Events</a><a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Hooks have been replaced by Events.</li>
 <li>Instead of CI3’s <code class="docutils literal notranslate"><span class="pre">$hook['post_controller_constructor']</span></code> you now use
@@ -405,7 +499,7 @@ you are most comfortable with, including the “HMVC” style.</li>
 </ul>
 </div>
 <div class="section" id="extending-the-framework">
-<h3><a class="toc-backref" href="#id10">Extending the Framework</a><a class="headerlink" href="#extending-the-framework" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id10">Extending the Framework</a><a class="headerlink" href="#extending-the-framework" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>You don’t need a <strong>core</strong> folder to hold <code class="docutils literal notranslate"><span class="pre">MY_...</span></code> framework
 component extensions or replacements.</li>
@@ -418,7 +512,7 @@ your components instead of the default ones.</li>
 </div>
 </div>
 <div class="section" id="upgrading-libraries">
-<h2><a class="toc-backref" href="#id11">Upgrading Libraries</a><a class="headerlink" href="#upgrading-libraries" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id11">Upgrading Libraries</a><a class="headerlink" href="#upgrading-libraries" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Your app classes can still go inside <strong>app/Libraries</strong>, but they don’t have to.</li>
 <li>Instead of CI3’s <code class="docutils literal notranslate"><span class="pre">$this-&gt;load-&gt;library(x);</span></code> you can now use <code class="docutils literal notranslate"><span class="pre">$this-&gt;x</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">X();</span></code>,
@@ -466,35 +560,53 @@ steps and examples to adjust your code.</li>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="upgrade_404.html" class="btn btn-neutral float-left" title="Upgrading from 4.0.x to 4.0.4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="upgrade_models.html" class="btn btn-neutral float-right" title="Upgrade Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="upgrade_404.html" class="btn btn-neutral float-left" title="Upgrading from 4.0.x to 4.0.4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 03, 2022.
-      </span></p>
-  </div>
+    <p>
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">
+        Last updated on Jun 03, 2022.
+      </span>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

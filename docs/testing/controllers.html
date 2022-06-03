@@ -1,34 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing Controllers &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  <title>Testing Controllers &mdash; CodeIgniter 4.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="HTTP Feature Testing" href="feature.html" />
     <link rel="prev" title="Generating Test Data" href="fabricator.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -243,32 +295,73 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">Testing</a> &raquo;</li>
+        
       <li>Testing Controllers</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="section" id="testing-controllers">
-<h1>Testing Controllers<a class="headerlink" href="#testing-controllers" title="Permalink to this headline"></a></h1>
+<h1>Testing Controllers<a class="headerlink" href="#testing-controllers" title="Permalink to this headline">¶</a></h1>
 <p>Testing your controllers is made convenient with a couple of new helper classes and traits. When testing controllers,
 you can execute the code within a controller, without first running through the entire application bootstrap process.
 Often times, using the <a class="reference internal" href="feature.html"><span class="doc">Feature Testing tools</span></a> will be simpler, but this functionality is here in
@@ -304,7 +397,7 @@ this way.</p>
 </ul>
 </div>
 <div class="section" id="the-helper-trait">
-<h2><a class="toc-backref" href="#id2">The Helper Trait</a><a class="headerlink" href="#the-helper-trait" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">The Helper Trait</a><a class="headerlink" href="#the-helper-trait" title="Permalink to this headline">¶</a></h2>
 <p>To enable Controller Testing you need to use the <code class="docutils literal notranslate"><span class="pre">ControllerTestTrait</span></code> trait within your tests:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -351,9 +444,9 @@ to run as the parameter:</p>
 </div>
 </div>
 <div class="section" id="helper-methods">
-<h2><a class="toc-backref" href="#id3">Helper Methods</a><a class="headerlink" href="#helper-methods" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Helper Methods</a><a class="headerlink" href="#helper-methods" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="controller-class">
-<h3><a class="toc-backref" href="#id4">controller($class)</a><a class="headerlink" href="#controller-class" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4">controller($class)</a><a class="headerlink" href="#controller-class" title="Permalink to this headline">¶</a></h3>
 <p>Specifies the class name of the controller to test. The first parameter must be a fully qualified class name
 (i.e., include the namespace):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -363,7 +456,7 @@ to run as the parameter:</p>
 </div>
 </div>
 <div class="section" id="execute-string-method-params">
-<h3><a class="toc-backref" href="#id5">execute(string $method, …$params)</a><a class="headerlink" href="#execute-string-method-params" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id5">execute(string $method, …$params)</a><a class="headerlink" href="#execute-string-method-params" title="Permalink to this headline">¶</a></h3>
 <p>Executes the specified method within the controller. The first parameter is the name of the method to run:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -376,7 +469,7 @@ to run as the parameter:</p>
 for details.</p>
 </div>
 <div class="section" id="withconfig-config">
-<h3><a class="toc-backref" href="#id6">withConfig($config)</a><a class="headerlink" href="#withconfig-config" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id6">withConfig($config)</a><a class="headerlink" href="#withconfig-config" title="Permalink to this headline">¶</a></h3>
 <p>Allows you to pass in a modified version of <strong>ConfigApp.php</strong> to test with different settings:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -391,7 +484,7 @@ for details.</p>
 <p>If you do not provide one, the application’s App config file will be used.</p>
 </div>
 <div class="section" id="withrequest-request">
-<h3><a class="toc-backref" href="#id7">withRequest($request)</a><a class="headerlink" href="#withrequest-request" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id7">withRequest($request)</a><a class="headerlink" href="#withrequest-request" title="Permalink to this headline">¶</a></h3>
 <p>Allows you to provide an <strong>IncomingRequest</strong> instance tailored to your testing needs:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -407,7 +500,7 @@ for details.</p>
 into your controller.</p>
 </div>
 <div class="section" id="withresponse-response">
-<h3><a class="toc-backref" href="#id8">withResponse($response)</a><a class="headerlink" href="#withresponse-response" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id8">withResponse($response)</a><a class="headerlink" href="#withresponse-response" title="Permalink to this headline">¶</a></h3>
 <p>Allows you to provide a <strong>Response</strong> instance:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -422,7 +515,7 @@ into your controller.</p>
 into your controller.</p>
 </div>
 <div class="section" id="withlogger-logger">
-<h3><a class="toc-backref" href="#id9">withLogger($logger)</a><a class="headerlink" href="#withlogger-logger" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">withLogger($logger)</a><a class="headerlink" href="#withlogger-logger" title="Permalink to this headline">¶</a></h3>
 <p>Allows you to provide a <strong>Logger</strong> instance:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -438,7 +531,7 @@ into your controller.</p>
 into your controller.</p>
 </div>
 <div class="section" id="withuri-string-uri">
-<h3><a class="toc-backref" href="#id10">withURI(string $uri)</a><a class="headerlink" href="#withuri-string-uri" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id10">withURI(string $uri)</a><a class="headerlink" href="#withuri-string-uri" title="Permalink to this headline">¶</a></h3>
 <p>Allows you to provide a new URI that simulates the URL the client was visiting when this controller was run.
 This is helpful if you need to check URI segments within your controller. The only parameter is a string
 representing a valid URI:</p>
@@ -452,7 +545,7 @@ representing a valid URI:</p>
 <p>It is a good practice to always provide the URI during testing to avoid surprises.</p>
 </div>
 <div class="section" id="withbody-body">
-<h3><a class="toc-backref" href="#id11">withBody($body)</a><a class="headerlink" href="#withbody-body" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id11">withBody($body)</a><a class="headerlink" href="#withbody-body" title="Permalink to this headline">¶</a></h3>
 <p>Allows you to provide a custom body for the request. This can be helpful when testing API controllers where
 you need to set a JSON value as the body. The only parameter is a string that represents the body of the request:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -467,16 +560,16 @@ you need to set a JSON value as the body. The only parameter is a string that re
 </div>
 </div>
 <div class="section" id="checking-the-response">
-<h2><a class="toc-backref" href="#id12">Checking the Response</a><a class="headerlink" href="#checking-the-response" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id12">Checking the Response</a><a class="headerlink" href="#checking-the-response" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">ControllerTestTrait::execute()</span></code> returns an instance of a <code class="docutils literal notranslate"><span class="pre">TestResponse</span></code>. See <a class="reference internal" href="response.html"><span class="doc">Testing Responses</span></a> on
 how to use this class to perform additional assertions and verification in your test cases.</p>
 </div>
 <div class="section" id="filter-testing">
-<h2><a class="toc-backref" href="#id13">Filter Testing</a><a class="headerlink" href="#filter-testing" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id13">Filter Testing</a><a class="headerlink" href="#filter-testing" title="Permalink to this headline">¶</a></h2>
 <p>Similar to Controller Testing, the framework provides tools to help with creating tests for
 custom <a class="reference internal" href="../incoming/filters.html"><span class="doc">Filters</span></a> and your projects use of them in routing.</p>
 <div class="section" id="id1">
-<h3><a class="toc-backref" href="#id14">The Helper Trait</a><a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id14">The Helper Trait</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Just like with the Controller Tester you need to include the <code class="docutils literal notranslate"><span class="pre">FilterTestTrait</span></code> in your test
 cases to enable these features:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -494,7 +587,7 @@ cases to enable these features:</p>
 </div>
 </div>
 <div class="section" id="configuration">
-<h3><a class="toc-backref" href="#id15">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id15">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
 <p>Because of the logical overlap with Controller Testing <code class="docutils literal notranslate"><span class="pre">FilterTestTrait</span></code> is designed to
 work together with <code class="docutils literal notranslate"><span class="pre">ControllerTestTrait</span></code> should you need both on the same class.
 Once the trait has been included <code class="docutils literal notranslate"><span class="pre">CIUnitTestCase</span></code> will detect its <code class="docutils literal notranslate"><span class="pre">setUp</span></code> method and
@@ -534,14 +627,14 @@ on an unfiltered route you could add it to the Config:</p>
 </div>
 </div>
 <div class="section" id="checking-routes">
-<h3><a class="toc-backref" href="#id16">Checking Routes</a><a class="headerlink" href="#checking-routes" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id16">Checking Routes</a><a class="headerlink" href="#checking-routes" title="Permalink to this headline">¶</a></h3>
 <p>The first helper method is <code class="docutils literal notranslate"><span class="pre">getFiltersForRoute()</span></code> which will simulate the provided route
 and return a list of all Filters (by their alias) that would have run for the given position
 (“before” or “after”), without actually executing any controller or routing code. This has
 a large performance advantage over Controller and HTTP Testing.</p>
 <dl class="function">
 <dt id="getFiltersForRoute">
-<code class="descname">getFiltersForRoute</code><span class="sig-paren">(</span><em>$route</em>, <em>$position</em><span class="sig-paren">)</span><a class="headerlink" href="#getFiltersForRoute" title="Permalink to this definition"></a></dt>
+<code class="descname">getFiltersForRoute</code><span class="sig-paren">(</span><em>$route</em>, <em>$position</em><span class="sig-paren">)</span><a class="headerlink" href="#getFiltersForRoute" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -570,13 +663,13 @@ a large performance advantage over Controller and HTTP Testing.</p>
 
 </div>
 <div class="section" id="calling-filter-methods">
-<h3><a class="toc-backref" href="#id17">Calling Filter Methods</a><a class="headerlink" href="#calling-filter-methods" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id17">Calling Filter Methods</a><a class="headerlink" href="#calling-filter-methods" title="Permalink to this headline">¶</a></h3>
 <p>The properties describe in Configuration are all set up to ensure maximum performance without
 interfering or interference from other tests. The next helper method will return a callable
 method using these properties to test your Filter code safely and check the results.</p>
 <dl class="function">
 <dt id="getFilterCaller">
-<code class="descname">getFilterCaller</code><span class="sig-paren">(</span><em>$filter</em>, <em>$position</em><span class="sig-paren">)</span><a class="headerlink" href="#getFilterCaller" title="Permalink to this definition"></a></dt>
+<code class="descname">getFilterCaller</code><span class="sig-paren">(</span><em>$filter</em>, <em>$position</em><span class="sig-paren">)</span><a class="headerlink" href="#getFilterCaller" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -622,11 +715,11 @@ method using these properties to test your Filter code safely and check the resu
 
 </div>
 <div class="section" id="assertions">
-<h3><a class="toc-backref" href="#id18">Assertions</a><a class="headerlink" href="#assertions" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id18">Assertions</a><a class="headerlink" href="#assertions" title="Permalink to this headline">¶</a></h3>
 <p>In addition to the helper methods above <code class="docutils literal notranslate"><span class="pre">FilterTestTrait</span></code> also comes with some assertions
 to streamline your test methods.</p>
 <div class="section" id="assertfilter">
-<h4>assertFilter()<a class="headerlink" href="#assertfilter" title="Permalink to this headline"></a></h4>
+<h4>assertFilter()<a class="headerlink" href="#assertfilter" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">assertFilter()</span></code> method checks that the given route at position uses the filter (by its alias):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -636,7 +729,7 @@ to streamline your test methods.</p>
 </div>
 </div>
 <div class="section" id="assertnotfilter">
-<h4>assertNotFilter()<a class="headerlink" href="#assertnotfilter" title="Permalink to this headline"></a></h4>
+<h4>assertNotFilter()<a class="headerlink" href="#assertnotfilter" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">assertNotFilter()</span></code> method checks that the given route at position does not use the filter (by its alias):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -646,7 +739,7 @@ to streamline your test methods.</p>
 </div>
 </div>
 <div class="section" id="asserthasfilters">
-<h4>assertHasFilters()<a class="headerlink" href="#asserthasfilters" title="Permalink to this headline"></a></h4>
+<h4>assertHasFilters()<a class="headerlink" href="#asserthasfilters" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">assertHasFilters()</span></code> method checks that the given route at position has at least one filter set:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -656,7 +749,7 @@ to streamline your test methods.</p>
 </div>
 </div>
 <div class="section" id="assertnothasfilters">
-<h4>assertNotHasFilters()<a class="headerlink" href="#assertnothasfilters" title="Permalink to this headline"></a></h4>
+<h4>assertNotHasFilters()<a class="headerlink" href="#assertnothasfilters" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">assertNotHasFilters()</span></code> method checks that the given route at position has no filters set:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -671,35 +764,53 @@ to streamline your test methods.</p>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="fabricator.html" class="btn btn-neutral float-left" title="Generating Test Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="feature.html" class="btn btn-neutral float-right" title="HTTP Feature Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fabricator.html" class="btn btn-neutral float-left" title="Generating Test Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 03, 2022.
-      </span></p>
-  </div>
+    <p>
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">
+        Last updated on Jun 03, 2022.
+      </span>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

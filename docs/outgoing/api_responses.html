@@ -1,34 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Response Trait &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  <title>API Response Trait &mdash; CodeIgniter 4.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Localization" href="localization.html" />
     <link rel="prev" title="HTTP Responses" href="response.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -243,32 +295,73 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">Building Responses</a> &raquo;</li>
+        
       <li>API Response Trait</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="section" id="api-response-trait">
-<h1>API Response Trait<a class="headerlink" href="#api-response-trait" title="Permalink to this headline"></a></h1>
+<h1>API Response Trait<a class="headerlink" href="#api-response-trait" title="Permalink to this headline">¶</a></h1>
 <p>Much of modern PHP development requires building API’s, whether simply to provide data for a javascript-heavy
 single page application, or as a standalone product. CodeIgniter provides an API Response trait that can be
 used with any controller to make common response types simple, with no need to remember which HTTP status code
@@ -281,7 +374,7 @@ should be returned for which response types.</p>
 </ul>
 </div>
 <div class="section" id="example-usage">
-<h2><a class="toc-backref" href="#id1">Example Usage</a><a class="headerlink" href="#example-usage" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1">Example Usage</a><a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
 <p>The following example shows a common usage pattern within your controllers.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -348,7 +441,7 @@ exist for the most common use cases:</p>
 </div>
 </div>
 <div class="section" id="handling-response-types">
-<h2><a class="toc-backref" href="#id2">Handling Response Types</a><a class="headerlink" href="#handling-response-types" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">Handling Response Types</a><a class="headerlink" href="#handling-response-types" title="Permalink to this headline">¶</a></h2>
 <p>When you pass your data in any of these methods, they will determine the data type to format the results as based on
 the following criteria:</p>
 <ul class="simple">
@@ -405,10 +498,10 @@ support both JSON and XML:</p>
 JSON data will be sent back to the client.</p>
 </div>
 <div class="section" id="class-reference">
-<h2><a class="toc-backref" href="#id3">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="setResponseFormat">
-<code class="descname">setResponseFormat</code><span class="sig-paren">(</span><em>$format</em><span class="sig-paren">)</span><a class="headerlink" href="#setResponseFormat" title="Permalink to this definition"></a></dt>
+<code class="descname">setResponseFormat</code><span class="sig-paren">(</span><em>$format</em><span class="sig-paren">)</span><a class="headerlink" href="#setResponseFormat" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -431,7 +524,7 @@ JSON data will be sent back to the client.</p>
 </div>
 <dl class="method">
 <dt id="respond">
-<code class="descname">respond</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$statusCode = 200</em><span class="optional">[</span>, <em>$message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#respond" title="Permalink to this definition"></a></dt>
+<code class="descname">respond</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$statusCode = 200</em><span class="optional">[</span>, <em>$message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#respond" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -461,7 +554,7 @@ be the final method in the script execution.</p>
 
 <dl class="method">
 <dt id="fail">
-<code class="descname">fail</code><span class="sig-paren">(</span><em>$messages</em><span class="optional">[</span>, <em>int $status = 400</em><span class="optional">[</span>, <em>string $code = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fail" title="Permalink to this definition"></a></dt>
+<code class="descname">fail</code><span class="sig-paren">(</span><em>$messages</em><span class="optional">[</span>, <em>int $status = 400</em><span class="optional">[</span>, <em>string $code = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fail" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -505,7 +598,7 @@ code of the error. The <code class="docutils literal notranslate"><span class="p
 
 <dl class="method">
 <dt id="respondCreated">
-<code class="descname">respondCreated</code><span class="sig-paren">(</span><em>$data = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#respondCreated" title="Permalink to this definition"></a></dt>
+<code class="descname">respondCreated</code><span class="sig-paren">(</span><em>$data = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#respondCreated" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -533,7 +626,7 @@ code of the error. The <code class="docutils literal notranslate"><span class="p
 
 <dl class="method">
 <dt id="respondDeleted">
-<code class="descname">respondDeleted</code><span class="sig-paren">(</span><em>$data = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#respondDeleted" title="Permalink to this definition"></a></dt>
+<code class="descname">respondDeleted</code><span class="sig-paren">(</span><em>$data = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#respondDeleted" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -561,7 +654,7 @@ code of the error. The <code class="docutils literal notranslate"><span class="p
 
 <dl class="method">
 <dt id="respondNoContent">
-<code class="descname">respondNoContent</code><span class="sig-paren">(</span><em>string $message = 'No Content'</em><span class="sig-paren">)</span><a class="headerlink" href="#respondNoContent" title="Permalink to this definition"></a></dt>
+<code class="descname">respondNoContent</code><span class="sig-paren">(</span><em>string $message = 'No Content'</em><span class="sig-paren">)</span><a class="headerlink" href="#respondNoContent" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -589,7 +682,7 @@ meaningful reply to send back to the client, typically 204.</p>
 
 <dl class="method">
 <dt id="failUnauthorized">
-<code class="descname">failUnauthorized</code><span class="sig-paren">(</span><em>string $description = 'Unauthorized'</em><span class="optional">[</span>, <em>string $code = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failUnauthorized" title="Permalink to this definition"></a></dt>
+<code class="descname">failUnauthorized</code><span class="sig-paren">(</span><em>string $description = 'Unauthorized'</em><span class="optional">[</span>, <em>string $code = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failUnauthorized" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -617,7 +710,7 @@ or has incorrect authorization. Status code is 401.</p>
 
 <dl class="method">
 <dt id="failForbidden">
-<code class="descname">failForbidden</code><span class="sig-paren">(</span><em>string $description = 'Forbidden'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failForbidden" title="Permalink to this definition"></a></dt>
+<code class="descname">failForbidden</code><span class="sig-paren">(</span><em>string $description = 'Forbidden'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failForbidden" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -646,7 +739,7 @@ the client should not try again because it won’t help. Status code is 403.</p>
 
 <dl class="method">
 <dt id="failNotFound">
-<code class="descname">failNotFound</code><span class="sig-paren">(</span><em>string $description = 'Not Found'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failNotFound" title="Permalink to this definition"></a></dt>
+<code class="descname">failNotFound</code><span class="sig-paren">(</span><em>string $description = 'Not Found'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failNotFound" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -673,7 +766,7 @@ the client should not try again because it won’t help. Status code is 403.</p>
 
 <dl class="method">
 <dt id="failValidationErrors">
-<code class="descname">failValidationErrors</code><span class="sig-paren">(</span><em>$errors</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failValidationErrors" title="Permalink to this definition"></a></dt>
+<code class="descname">failValidationErrors</code><span class="sig-paren">(</span><em>$errors</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failValidationErrors" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -700,7 +793,7 @@ the client should not try again because it won’t help. Status code is 403.</p>
 
 <dl class="method">
 <dt id="failResourceExists">
-<code class="descname">failResourceExists</code><span class="sig-paren">(</span><em>string $description = 'Conflict'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failResourceExists" title="Permalink to this definition"></a></dt>
+<code class="descname">failResourceExists</code><span class="sig-paren">(</span><em>string $description = 'Conflict'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failResourceExists" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -728,7 +821,7 @@ Status code is typically 409.</p>
 
 <dl class="method">
 <dt id="failResourceGone">
-<code class="descname">failResourceGone</code><span class="sig-paren">(</span><em>string $description = 'Gone'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failResourceGone" title="Permalink to this definition"></a></dt>
+<code class="descname">failResourceGone</code><span class="sig-paren">(</span><em>string $description = 'Gone'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failResourceGone" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -756,7 +849,7 @@ is no longer available. Status code is typically 410.</p>
 
 <dl class="method">
 <dt id="failTooManyRequests">
-<code class="descname">failTooManyRequests</code><span class="sig-paren">(</span><em>string $description = 'Too Many Requests'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failTooManyRequests" title="Permalink to this definition"></a></dt>
+<code class="descname">failTooManyRequests</code><span class="sig-paren">(</span><em>string $description = 'Too Many Requests'</em><span class="optional">[</span>, <em>string $code=null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failTooManyRequests" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -784,7 +877,7 @@ This might be due to some form of throttling or rate limiting. Status code is ty
 
 <dl class="method">
 <dt id="failServerError">
-<code class="descname">failServerError</code><span class="sig-paren">(</span><em>string $description = 'Internal Server Error'</em><span class="optional">[</span>, <em>string $code = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failServerError" title="Permalink to this definition"></a></dt>
+<code class="descname">failServerError</code><span class="sig-paren">(</span><em>string $description = 'Internal Server Error'</em><span class="optional">[</span>, <em>string $code = null</em><span class="optional">[</span>, <em>string $message = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#failServerError" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -814,35 +907,53 @@ This might be due to some form of throttling or rate limiting. Status code is ty
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="response.html" class="btn btn-neutral float-left" title="HTTP Responses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="localization.html" class="btn btn-neutral float-right" title="Localization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="response.html" class="btn btn-neutral float-left" title="HTTP Responses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 03, 2022.
-      </span></p>
-  </div>
+    <p>
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">
+        Last updated on Jun 03, 2022.
+      </span>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

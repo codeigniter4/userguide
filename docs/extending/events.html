@@ -1,34 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  <title>Events &mdash; CodeIgniter 4.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Extending the Controller" href="basecontroller.html" />
     <link rel="prev" title="Replacing Common Functions" href="common.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -243,32 +295,73 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">Extending CodeIgniter</a> &raquo;</li>
+        
       <li>Events</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="section" id="events">
-<h1>Events<a class="headerlink" href="#events" title="Permalink to this headline"></a></h1>
+<h1>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
 <p>CodeIgniter’s Events feature provides a means to tap into and modify the inner workings of the framework without hacking
 core files. When CodeIgniter runs it follows a specific execution process. There may be instances, however, when you’d
 like to cause some action to take place at a particular stage in the execution process. For example, you might want to run
@@ -290,11 +383,11 @@ action when that event is triggered.</p>
 </ul>
 </div>
 <div class="section" id="enabling-events">
-<h2><a class="toc-backref" href="#id1">Enabling Events</a><a class="headerlink" href="#enabling-events" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1">Enabling Events</a><a class="headerlink" href="#enabling-events" title="Permalink to this headline">¶</a></h2>
 <p>Events are always enabled, and are available globally.</p>
 </div>
 <div class="section" id="defining-an-event">
-<h2><a class="toc-backref" href="#id2">Defining an Event</a><a class="headerlink" href="#defining-an-event" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">Defining an Event</a><a class="headerlink" href="#defining-an-event" title="Permalink to this headline">¶</a></h2>
 <p>Most events are defined within the <strong>app/Config/Events.php</strong> file. You can subscribe an action to an event with
 the <code class="docutils literal notranslate"><span class="pre">Events</span></code> class’ <code class="docutils literal notranslate"><span class="pre">on()</span></code> method. The first parameter is the name of the event to subscribe to. The second parameter is
 a callable that will be run when that event is triggered:</p>
@@ -327,7 +420,7 @@ a callable that will be run when that event is triggered:</p>
 </pre></div>
 </div>
 <div class="section" id="setting-priorities">
-<h3><a class="toc-backref" href="#id3">Setting Priorities</a><a class="headerlink" href="#setting-priorities" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id3">Setting Priorities</a><a class="headerlink" href="#setting-priorities" title="Permalink to this headline">¶</a></h3>
 <p>Since multiple methods can be subscribed to a single event, you will need a way to define in what order those methods
 are called. You can do this by passing a priority value as the third parameter of the <code class="docutils literal notranslate"><span class="pre">on()</span></code> method. Lower values
 are executed first, with a value of 1 having the highest priority, and there being no limit on the lower values:</p>
@@ -357,7 +450,7 @@ the subscribers will stop.</p>
 </div>
 </div>
 <div class="section" id="publishing-your-own-events">
-<h2><a class="toc-backref" href="#id4">Publishing your own Events</a><a class="headerlink" href="#publishing-your-own-events" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">Publishing your own Events</a><a class="headerlink" href="#publishing-your-own-events" title="Permalink to this headline">¶</a></h2>
 <p>The Events library makes it simple for you to create events in your own code, also. To use this feature, you would simply
 need to call the <code class="docutils literal notranslate"><span class="pre">trigger()</span></code> method on the <strong>Events</strong> class with the name of the event:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -378,7 +471,7 @@ given the arguments in the same order as defined:</p>
 </div>
 </div>
 <div class="section" id="simulating-events">
-<h2><a class="toc-backref" href="#id5">Simulating Events</a><a class="headerlink" href="#simulating-events" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">Simulating Events</a><a class="headerlink" href="#simulating-events" title="Permalink to this headline">¶</a></h2>
 <p>During testing, you might not want the events to actually fire, as sending out hundreds of emails a day is both slow
 and counter-productive. You can tell the Events class to only simulate running the events with the <code class="docutils literal notranslate"><span class="pre">simulate()</span></code> method.
 When <strong>true</strong>, all events will be skipped over during the trigger method. Everything else will work as normal, though.</p>
@@ -395,7 +488,7 @@ When <strong>true</strong>, all events will be skipped over during the trigger m
 </div>
 </div>
 <div class="section" id="event-points">
-<h2><a class="toc-backref" href="#id6">Event Points</a><a class="headerlink" href="#event-points" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6">Event Points</a><a class="headerlink" href="#event-points" title="Permalink to this headline">¶</a></h2>
 <p>The following is a list of available event points within the CodeIgniter core code:</p>
 <ul class="simple">
 <li><strong>pre_system</strong> Called very early during system execution. Only the benchmark and events class have been loaded at this point. No routing or other processes have happened.</li>
@@ -410,35 +503,53 @@ When <strong>true</strong>, all events will be skipped over during the trigger m
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="common.html" class="btn btn-neutral float-left" title="Replacing Common Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="basecontroller.html" class="btn btn-neutral float-right" title="Extending the Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="common.html" class="btn btn-neutral float-left" title="Replacing Common Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 03, 2022.
-      </span></p>
-  </div>
+    <p>
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">
+        Last updated on Jun 03, 2022.
+      </span>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

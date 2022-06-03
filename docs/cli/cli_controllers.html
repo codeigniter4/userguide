@@ -1,34 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Running Controllers via CLI &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  <title>Running Controllers via CLI &mdash; CodeIgniter 4.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Spark Commands" href="spark_commands.html" />
     <link rel="prev" title="CLI Overview" href="cli_overview.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -243,32 +295,73 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">Command Line Usage</a> &raquo;</li>
+        
       <li>Running Controllers via CLI</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="section" id="running-controllers-via-cli">
-<h1>Running Controllers via CLI<a class="headerlink" href="#running-controllers-via-cli" title="Permalink to this headline"></a></h1>
+<h1>Running Controllers via CLI<a class="headerlink" href="#running-controllers-via-cli" title="Permalink to this headline">¶</a></h1>
 <p>As well as calling an application’s <a class="reference internal" href="../incoming/controllers.html"><span class="doc">Controllers</span></a>
 via the URL in a browser they can also be loaded via the command-line
 interface (CLI).</p>
@@ -284,9 +377,9 @@ interface (CLI).</p>
 </ul>
 </div>
 <div class="section" id="let-s-try-it-hello-world">
-<h2><a class="toc-backref" href="#id1">Let’s try it: Hello World!</a><a class="headerlink" href="#let-s-try-it-hello-world" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1">Let’s try it: Hello World!</a><a class="headerlink" href="#let-s-try-it-hello-world" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="create-a-controller">
-<h3><a class="toc-backref" href="#id2">Create a Controller</a><a class="headerlink" href="#create-a-controller" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id2">Create a Controller</a><a class="headerlink" href="#create-a-controller" title="Permalink to this headline">¶</a></h3>
 <p>Let’s create a simple controller so you can see it in action. Using your
 text editor, create a file called Tools.php, and put the following code
 in it:</p>
@@ -312,7 +405,7 @@ in it:</p>
 <p>Then save the file to your <strong>app/Controllers/</strong> directory.</p>
 </div>
 <div class="section" id="define-a-route">
-<h3><a class="toc-backref" href="#id3">Define a Route</a><a class="headerlink" href="#define-a-route" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id3">Define a Route</a><a class="headerlink" href="#define-a-route" title="Permalink to this headline">¶</a></h3>
 <p>If you use Auto Routing, skip this.</p>
 <p>In your <strong>app/Config/Routes.php</strong> file you can create routes that are only accessible from
 the CLI as easily as you would create any other route. Instead of using the <code class="docutils literal notranslate"><span class="pre">get()</span></code>,
@@ -331,7 +424,7 @@ anyone could access the command with the help of auto-routing via HTTP.</p>
 </div>
 </div>
 <div class="section" id="run-via-cli">
-<h3><a class="toc-backref" href="#id4">Run via CLI</a><a class="headerlink" href="#run-via-cli" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4">Run via CLI</a><a class="headerlink" href="#run-via-cli" title="Permalink to this headline">¶</a></h3>
 <p>Now normally you would visit your site using a URL similar to this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">tools</span><span class="o">/</span><span class="nx">message</span><span class="o">/</span><span class="nx">to</span>
 </pre></div>
@@ -354,7 +447,7 @@ work. “John Smith” is passed as an argument and output is:</p>
 </div>
 </div>
 <div class="section" id="that-s-the-basics">
-<h2><a class="toc-backref" href="#id5">That’s the Basics!</a><a class="headerlink" href="#that-s-the-basics" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">That’s the Basics!</a><a class="headerlink" href="#that-s-the-basics" title="Permalink to this headline">¶</a></h2>
 <p>That, in a nutshell, is all there is to know about controllers on the
 command line. Remember that this is just a normal controller, so routing
 and <code class="docutils literal notranslate"><span class="pre">_remap()</span></code> works fine.</p>
@@ -371,35 +464,53 @@ you with CLI-only tools.</p>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="cli_overview.html" class="btn btn-neutral float-left" title="CLI Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="spark_commands.html" class="btn btn-neutral float-right" title="Spark Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cli_overview.html" class="btn btn-neutral float-left" title="CLI Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 03, 2022.
-      </span></p>
-  </div>
+    <p>
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">
+        Last updated on Jun 03, 2022.
+      </span>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
