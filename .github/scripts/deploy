@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Deploys the User Guide to the production
+# website. Triggered by updates to the GitHub
+# repo's master branch.
+
+cd "$REPO_DIRECTORY"
+git pull
