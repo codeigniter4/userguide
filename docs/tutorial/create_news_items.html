@@ -1,34 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create News Items &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  <title>Create News Items &mdash; CodeIgniter 4.2.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Conclusion" href="conclusion.html" />
     <link rel="prev" title="News Section" href="news_section.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+          
           </a>
+
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -36,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -243,38 +295,79 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
+    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
           <li><a href="index.html">Build Your First Application</a> &raquo;</li>
+        
       <li>Create News Items</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="section" id="create-news-items">
-<h1>Create News Items<a class="headerlink" href="#create-news-items" title="Permalink to this headline"></a></h1>
+<h1>Create News Items<a class="headerlink" href="#create-news-items" title="Permalink to this headline">¶</a></h1>
 <p>You now know how you can read data from a database using CodeIgniter, but
 you haven’t written any information to the database yet. In this section,
 you’ll expand your news controller and model created earlier to include
 this functionality.</p>
 <div class="section" id="enable-csrf-filter">
-<h2>Enable CSRF Filter<a class="headerlink" href="#enable-csrf-filter" title="Permalink to this headline"></a></h2>
+<h2>Enable CSRF Filter<a class="headerlink" href="#enable-csrf-filter" title="Permalink to this headline">¶</a></h2>
 <p>Before creating a form, let’s enable the CSRF protection.</p>
 <p>Open the <strong>app/Config/Filters.php</strong> file and update the <code class="docutils literal notranslate"><span class="pre">$methods</span></code> property like the following:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -303,7 +396,7 @@ Accessing the controller with a method you don’t expect could bypass the filte
 </div>
 </div>
 <div class="section" id="create-a-form">
-<h2>Create a Form<a class="headerlink" href="#create-a-form" title="Permalink to this headline"></a></h2>
+<h2>Create a Form<a class="headerlink" href="#create-a-form" title="Permalink to this headline">¶</a></h2>
 <p>To input data into the database, you need to create a form where you can
 input the information to be stored. This means you’ll be needing a form
 with two fields, one for the title and one for the text. You’ll derive
@@ -391,7 +484,7 @@ slug, perfect for creating URIs.</p>
 </div>
 </div>
 <div class="section" id="model-updating">
-<h2>Model Updating<a class="headerlink" href="#model-updating" title="Permalink to this headline"></a></h2>
+<h2>Model Updating<a class="headerlink" href="#model-updating" title="Permalink to this headline">¶</a></h2>
 <p>The only thing that remains is ensuring that your model is set up
 to allow data to be saved properly. The <code class="docutils literal notranslate"><span class="pre">save()</span></code> method that was
 used will determine whether the information should be inserted
@@ -423,7 +516,7 @@ This helps protect against Mass Assignment Vulnerabilities. If your model is
 handling your timestamps, you would also leave those out.</p>
 </div>
 <div class="section" id="routing">
-<h2>Routing<a class="headerlink" href="#routing" title="Permalink to this headline"></a></h2>
+<h2>Routing<a class="headerlink" href="#routing" title="Permalink to this headline">¶</a></h2>
 <p>Before you can start adding news items into your CodeIgniter application
 you have to add an extra rule to <strong>app/Config/Routes.php</strong> file. Make sure your
 file contains the following. This makes sure CodeIgniter sees <code class="docutils literal notranslate"><span class="pre">create()</span></code>
@@ -449,7 +542,7 @@ Add some news and check out the different pages you made.</p>
 <a class="reference internal image-reference" href="../_images/tutorial4.png"><img alt="../_images/tutorial4.png" class="align-center" src="../_images/tutorial4.png" style="width: 45%; height: 415px;" /></a>
 </div>
 <div class="section" id="congratulations">
-<h2>Congratulations<a class="headerlink" href="#congratulations" title="Permalink to this headline"></a></h2>
+<h2>Congratulations<a class="headerlink" href="#congratulations" title="Permalink to this headline">¶</a></h2>
 <p>You just completed your first CodeIgniter4 application!</p>
 <p>The image underneath shows your project’s <strong>app</strong> folder,
 with all of the files that you created in red.
@@ -460,35 +553,53 @@ The two modified configuration files (<strong>Config/Routes.php</strong> &amp; <
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="news_section.html" class="btn btn-neutral float-left" title="News Section" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="conclusion.html" class="btn btn-neutral float-right" title="Conclusion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="news_section.html" class="btn btn-neutral float-left" title="News Section" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 03, 2022.
-      </span></p>
-  </div>
+    <p>
+        &#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">
+        Last updated on Jun 03, 2022.
+      </span>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
