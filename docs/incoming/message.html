@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>HTTP Messages &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>HTTP Messages &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Request Class" href="request.html" />
     <link rel="prev" title="Controller Filters" href="filters.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Controllers and Routing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filters.html">Controller Filters</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,74 +239,36 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Controllers and Routing</a> &raquo;</li>
-        
       <li>HTTP Messages</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="http-messages">
-<h1>HTTP Messages<a class="headerlink" href="#http-messages" title="Permalink to this headline">¶</a></h1>
+<h1>HTTP Messages<a class="headerlink" href="#http-messages" title="Permalink to this headline"></a></h1>
 <p>The Message class provides an interface to the portions of an HTTP message that are common to both
 requests and responses, including the message body, protocol version, utilities for working with
 the headers, and methods for handling content negotiation.</p>
@@ -363,12 +277,12 @@ the headers, and methods for handling content negotiation.</p>
 negotiation methods, may apply only to a request or response, and not the other one, but they have
 been included here to keep the header methods together.</p>
 <div class="section" id="what-is-content-negotiation">
-<h2>What is Content Negotiation?<a class="headerlink" href="#what-is-content-negotiation" title="Permalink to this headline">¶</a></h2>
+<h2>What is Content Negotiation?<a class="headerlink" href="#what-is-content-negotiation" title="Permalink to this headline"></a></h2>
 <p>At it’s heart Content Negotiation is simply a part of the HTTP specification that allows a single
 resource to serve more than one type of content, allowing the clients to request the type of
 data that works best for them.</p>
 <p>A classic example of this is a browser that cannot display PNG files can request only GIF or
-JPEG images. When the getServer receives the request, it looks at the available file types the client
+JPEG images. When the server receives the request, it looks at the available file types the client
 is requesting and selects the best match from the image formats that it supports, in this case
 likely choosing a JPEG image to return.</p>
 <p>This same negotiation can happen with four types of data:</p>
@@ -379,13 +293,13 @@ likely choosing a JPEG image to return.</p>
 <li><strong>Document Language</strong> - For sites that support multiple languages, this helps determine which to return.</li>
 </ul>
 <div class="section" id="class-reference">
-<h3>Class Reference<a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h3>
+<h3>Class Reference<a class="headerlink" href="#class-reference" title="Permalink to this headline"></a></h3>
 <dl class="class">
 <dt>
 <code class="descname">CodeIgniter\HTTP\Message</code></dt>
 <dd><dl class="method">
 <dt id="getBody">
-<code class="descname">getBody</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getBody" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getBody</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getBody" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -397,14 +311,16 @@ likely choosing a JPEG image to return.</p>
 </tbody>
 </table>
 <p>Returns the current message body, if any has been set. If not body exists, returns null:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setBody">
-<code class="descname">setBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#setBody" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#setBody" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -427,7 +343,7 @@ likely choosing a JPEG image to return.</p>
 
 <dl class="method">
 <dt id="appendBody">
-<code class="descname">appendBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#appendBody" title="Permalink to this definition">¶</a></dt>
+<code class="descname">appendBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#appendBody" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -450,7 +366,7 @@ likely choosing a JPEG image to return.</p>
 
 <dl class="method">
 <dt id="populateHeaders">
-<code class="descname">populateHeaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#populateHeaders" title="Permalink to this definition">¶</a></dt>
+<code class="descname">populateHeaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#populateHeaders" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -470,7 +386,7 @@ The preceding <code class="docutils literal notranslate"><span class="pre">HTTP_
 
 <dl class="method">
 <dt id="headers">
-<code class="descname">headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#headers" title="Permalink to this definition">¶</a></dt>
+<code class="descname">headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#headers" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -486,7 +402,7 @@ The preceding <code class="docutils literal notranslate"><span class="pre">HTTP_
 
 <dl class="method">
 <dt id="header">
-<code class="descname">header</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#header" title="Permalink to this definition">¶</a></dt>
+<code class="descname">header</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#header" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -506,7 +422,9 @@ The preceding <code class="docutils literal notranslate"><span class="pre">HTTP_
 </table>
 <p>Allows you to retrieve the current value of a single message header. <code class="docutils literal notranslate"><span class="pre">$name</span></code> is the case-insensitive header name.
 While the header is converted internally as described above, you can access the header with any type of case:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// These are all the same:</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// These are all the same:</span>
 <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;HOST&#39;</span><span class="p">);</span>
 <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">);</span>
 <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">);</span>
@@ -514,34 +432,41 @@ While the header is converted internally as described above, you can access the 
 </div>
 <p>If the header has multiple values, <code class="docutils literal notranslate"><span class="pre">getValue()</span></code> will return as an array of values. You can use the <code class="docutils literal notranslate"><span class="pre">getValueLine()</span></code>
 method to retrieve the values as a string:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="c1">// Outputs something like:</span>
-<span class="s1">&#39;Accept-Language: en,en-US&#39;</span>
+<span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm"> * Outputs something like:</span>
+<span class="cm"> * &#39;Accept-Language: en,en-US&#39;</span>
+<span class="cm"> */</span>
 
 <span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
-
-<span class="c1">// Outputs something like:</span>
-<span class="p">[</span>
-    <span class="s1">&#39;en&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;en-US&#39;</span>
-<span class="p">]</span>
+<span class="cm">/*</span>
+<span class="cm"> * Outputs something like:</span>
+<span class="cm"> * [</span>
+<span class="cm"> *     &#39;en&#39;,</span>
+<span class="cm"> *     &#39;en-US&#39;,</span>
+<span class="cm"> * ]</span>
+<span class="cm"> */</span>
 
 <span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getValueLine</span><span class="p">();</span>
-
-<span class="c1">// Outputs something like:</span>
-<span class="s1">&#39;en,en-US&#39;</span>
+<span class="cm">/*</span>
+<span class="cm"> * Outputs something like:</span>
+<span class="cm"> * en,en-US&#39;</span>
+<span class="cm"> */</span>
 </pre></div>
 </div>
 <p>You can filter the header by passing a filter value in as the second parameter:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Document-URI&#39;</span><span class="p">,</span> <span class="nx">FILTER_SANITIZE_URL</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Document-URI&#39;</span><span class="p">,</span> <span class="nx">FILTER_SANITIZE_URL</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="hasHeader">
-<code class="descname">hasHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">hasHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -563,7 +488,7 @@ method to retrieve the values as a string:</p>
 
 <dl class="method">
 <dt id="getHeaderLine">
-<code class="descname">getHeaderLine</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#getHeaderLine" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getHeaderLine</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#getHeaderLine" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -583,17 +508,20 @@ method to retrieve the values as a string:</p>
 </table>
 <p>Returns the value(s) of the header as a string. This method allows you to easily get a string representation
 of the header values when the header has multiple values. The values are appropriately joined:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getHeaderLine</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="c1">// Outputs:</span>
-<span class="nx">en</span><span class="p">,</span> <span class="nx">en</span><span class="o">-</span><span class="nx">US</span>
+<span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getHeaderLine</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm"> * Outputs:</span>
+<span class="cm"> * &#39;en,en-US&#39;</span>
+<span class="cm"> */</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setHeader">
-<code class="descname">setHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#setHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#setHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -615,14 +543,16 @@ of the header values when the header has multiple values. The values are appropr
 <p>Sets the value of a single header. <code class="docutils literal notranslate"><span class="pre">$name</span></code> is the case-insensitive name of the header. If the header
 doesn’t already exist in the collection, it will be created. The <code class="docutils literal notranslate"><span class="pre">$value</span></code> can be either a string
 or an array of strings:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">,</span> <span class="s1">&#39;codeigniter.com&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">,</span> <span class="s1">&#39;codeigniter.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="removeHeader">
-<code class="descname">removeHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#removeHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">removeHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#removeHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -641,14 +571,16 @@ or an array of strings:</p>
 </tbody>
 </table>
 <p>Removes the header from the Message. <code class="docutils literal notranslate"><span class="pre">$name</span></code> is the case-insensitive name of the header:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">removeHeader</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$message</span><span class="o">-&gt;</span><span class="na">removeHeader</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="appendHeader">
-<code class="descname">appendHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#appendHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">appendHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#appendHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -669,14 +601,16 @@ or an array of strings:</p>
 </table>
 <p>Adds a value to an existing header. The header must already be an array of values instead of a single string.
 If it is a string then a LogicException will be thrown.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">appendHeader</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US; q=0.8&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$message</span><span class="o">-&gt;</span><span class="na">appendHeader</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US; q=0.8&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="prependHeader">
-<code class="descname">prependHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#prependHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prependHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#prependHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -697,14 +631,16 @@ If it is a string then a LogicException will be thrown.</p>
 </table>
 <p>Prepends a value to an existing header. The header must already be an array of values instead of a single string.
 If it is a string then a LogicException will be thrown.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">prependHeader</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">,</span> <span class="s1">&#39;en,&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$message</span><span class="o">-&gt;</span><span class="na">prependHeader</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">,</span> <span class="s1">&#39;en,&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="getProtocolVersion">
-<code class="descname">getProtocolVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getProtocolVersion" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getProtocolVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getProtocolVersion" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -721,7 +657,7 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 
 <dl class="method">
 <dt id="setProtocolVersion">
-<code class="descname">setProtocolVersion</code><span class="sig-paren">(</span><em>$version</em><span class="sig-paren">)</span><a class="headerlink" href="#setProtocolVersion" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setProtocolVersion</code><span class="sig-paren">(</span><em>$version</em><span class="sig-paren">)</span><a class="headerlink" href="#setProtocolVersion" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -740,7 +676,9 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 </tbody>
 </table>
 <p>Sets the HTTP protocol version this Message uses. Valid values are <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.1</span></code> and <code class="docutils literal notranslate"><span class="pre">2.0</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setProtocolVersion</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setProtocolVersion</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -753,53 +691,35 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="request.html" class="btn btn-neutral float-right" title="Request Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="filters.html" class="btn btn-neutral float-left" title="Controller Filters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="request.html" class="btn btn-neutral float-right" title="Request Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

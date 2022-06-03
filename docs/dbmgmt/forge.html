@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Database Forge Class &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Database Forge Class &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Database Migrations" href="migration.html" />
     <link rel="prev" title="Managing Databases" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,149 +239,129 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Managing Databases</a> &raquo;</li>
-        
       <li>Database Forge Class</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="database-forge-class">
-<h1>Database Forge Class<a class="headerlink" href="#database-forge-class" title="Permalink to this headline">¶</a></h1>
+<h1>Database Forge Class<a class="headerlink" href="#database-forge-class" title="Permalink to this headline"></a></h1>
 <p>The Database Forge Class contains methods that help you manage your
 database.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#initializing-the-forge-class" id="id2">Initializing the Forge Class</a></li>
 <li><a class="reference internal" href="#creating-and-dropping-databases" id="id3">Creating and Dropping Databases</a><ul>
-<li><a class="reference internal" href="#creating-databases-in-the-command-line" id="id4">Creating Databases in the Command Line</a></li>
+<li><a class="reference internal" href="#forge-createdatabase-db-name" id="id4">$forge-&gt;createDatabase(‘db_name’)</a></li>
+<li><a class="reference internal" href="#forge-dropdatabase-db-name" id="id5">$forge-&gt;dropDatabase(‘db_name’)</a></li>
+<li><a class="reference internal" href="#creating-databases-in-the-command-line" id="id6">Creating Databases in the Command Line</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#creating-and-dropping-tables" id="id5">Creating and Dropping Tables</a><ul>
-<li><a class="reference internal" href="#adding-fields" id="id6">Adding Fields</a></li>
-<li><a class="reference internal" href="#adding-keys" id="id7">Adding Keys</a></li>
-<li><a class="reference internal" href="#adding-foreign-keys" id="id8">Adding Foreign Keys</a></li>
-<li><a class="reference internal" href="#creating-a-table" id="id9">Creating a Table</a></li>
-<li><a class="reference internal" href="#dropping-a-table" id="id10">Dropping a Table</a></li>
-<li><a class="reference internal" href="#dropping-a-foreign-key" id="id11">Dropping a Foreign Key</a></li>
-<li><a class="reference internal" href="#dropping-a-key" id="id12">Dropping a Key</a></li>
-<li><a class="reference internal" href="#renaming-a-table" id="id13">Renaming a Table</a></li>
+<li><a class="reference internal" href="#creating-and-dropping-tables" id="id7">Creating and Dropping Tables</a><ul>
+<li><a class="reference internal" href="#adding-fields" id="id8">Adding Fields</a></li>
+<li><a class="reference internal" href="#adding-keys" id="id9">Adding Keys</a></li>
+<li><a class="reference internal" href="#adding-foreign-keys" id="id10">Adding Foreign Keys</a></li>
+<li><a class="reference internal" href="#creating-a-table" id="id11">Creating a Table</a></li>
+<li><a class="reference internal" href="#dropping-a-table" id="id12">Dropping a Table</a></li>
+<li><a class="reference internal" href="#dropping-a-foreign-key" id="id13">Dropping a Foreign Key</a></li>
+<li><a class="reference internal" href="#dropping-a-key" id="id14">Dropping a Key</a></li>
+<li><a class="reference internal" href="#renaming-a-table" id="id15">Renaming a Table</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#modifying-tables" id="id14">Modifying Tables</a><ul>
-<li><a class="reference internal" href="#adding-a-column-to-a-table" id="id15">Adding a Column to a Table</a></li>
-<li><a class="reference internal" href="#dropping-columns-from-a-table" id="id16">Dropping Columns From a Table</a></li>
-<li><a class="reference internal" href="#modifying-a-column-in-a-table" id="id17">Modifying a Column in a Table</a></li>
+<li><a class="reference internal" href="#modifying-tables" id="id16">Modifying Tables</a><ul>
+<li><a class="reference internal" href="#adding-a-column-to-a-table" id="id17">Adding a Column to a Table</a></li>
+<li><a class="reference internal" href="#dropping-columns-from-a-table" id="id18">Dropping Columns From a Table</a></li>
+<li><a class="reference internal" href="#modifying-a-column-in-a-table" id="id19">Modifying a Column in a Table</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#class-reference" id="id18">Class Reference</a></li>
+<li><a class="reference internal" href="#class-reference" id="id20">Class Reference</a></li>
 </ul>
 </div>
 <div class="section" id="initializing-the-forge-class">
-<h2><a class="toc-backref" href="#id2">Initializing the Forge Class</a><a class="headerlink" href="#initializing-the-forge-class" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Initializing the Forge Class</a><a class="headerlink" href="#initializing-the-forge-class" title="Permalink to this headline"></a></h2>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">In order to initialize the Forge class, your database
 driver must already be running, since the Forge class relies on it.</p>
 </div>
 <p>Load the Forge Class as follows:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">forge</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">forge</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>You can also pass another database group name to the DB Forge loader, in case
 the database you want to manage isn’t the default one:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">myforge</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">forge</span><span class="p">(</span><span class="s1">&#39;other_db&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">myforge</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">forge</span><span class="p">(</span><span class="s1">&#39;other_db&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In the above example, we’re passing the name of a different database group
 to connect to as the first parameter.</p>
 </div>
 <div class="section" id="creating-and-dropping-databases">
-<h2><a class="toc-backref" href="#id3">Creating and Dropping Databases</a><a class="headerlink" href="#creating-and-dropping-databases" title="Permalink to this headline">¶</a></h2>
-<p><strong>$forge-&gt;createDatabase(‘db_name’)</strong></p>
+<h2><a class="toc-backref" href="#id3">Creating and Dropping Databases</a><a class="headerlink" href="#creating-and-dropping-databases" title="Permalink to this headline"></a></h2>
+<div class="section" id="forge-createdatabase-db-name">
+<h3><a class="toc-backref" href="#id4">$forge-&gt;createDatabase(‘db_name’)</a><a class="headerlink" href="#forge-createdatabase-db-name" title="Permalink to this headline"></a></h3>
 <p>Permits you to create the database specified in the first parameter.
 Returns true/false based on success or failure:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s1">&#39;Database created!&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>An optional second parameter set to true will add <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">EXISTS</span></code> statement
 or will check if a database exists before create it (depending on DBMS).</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-<span class="c1">// gives CREATE DATABASE IF NOT EXISTS `my_db`</span>
-<span class="c1">// or will check if a database exists</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm"> * gives CREATE DATABASE IF NOT EXISTS `my_db`</span>
+<span class="cm"> * or will check if a database exists</span>
+<span class="cm"> */</span>
 </pre></div>
 </div>
-<p><strong>$forge-&gt;dropDatabase(‘db_name’)</strong></p>
+</div>
+<div class="section" id="forge-dropdatabase-db-name">
+<h3><a class="toc-backref" href="#id5">$forge-&gt;dropDatabase(‘db_name’)</a><a class="headerlink" href="#forge-dropdatabase-db-name" title="Permalink to this headline"></a></h3>
 <p>Permits you to drop the database specified in the first parameter.
 Returns true/false based on success or failure:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">echo</span> <span class="s1">&#39;Database deleted!&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
 <div class="section" id="creating-databases-in-the-command-line">
-<h3><a class="toc-backref" href="#id4">Creating Databases in the Command Line</a><a class="headerlink" href="#creating-databases-in-the-command-line" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Creating Databases in the Command Line</a><a class="headerlink" href="#creating-databases-in-the-command-line" title="Permalink to this headline"></a></h3>
 <p>CodeIgniter supports creating databases straight from your favorite terminal using the dedicated <code class="docutils literal notranslate"><span class="pre">db:create</span></code>
 command. By using this command it is assumed that the database is not yet existing. Otherwise, CodeIgniter
 will complain that the database creation has failed.</p>
@@ -454,17 +386,19 @@ an in-memory database.</p>
 </div>
 </div>
 <div class="section" id="creating-and-dropping-tables">
-<h2><a class="toc-backref" href="#id5">Creating and Dropping Tables</a><a class="headerlink" href="#creating-and-dropping-tables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Creating and Dropping Tables</a><a class="headerlink" href="#creating-and-dropping-tables" title="Permalink to this headline"></a></h2>
 <p>There are several things you may wish to do when creating tables. Add
 fields, add keys to the table, alter columns. CodeIgniter provides a
 mechanism for this.</p>
 <div class="section" id="adding-fields">
-<h3><a class="toc-backref" href="#id6">Adding Fields</a><a class="headerlink" href="#adding-fields" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Adding Fields</a><a class="headerlink" href="#adding-fields" title="Permalink to this headline"></a></h3>
 <p>Fields are normally created via an associative array. Within the array, you must
 include a <code class="docutils literal notranslate"><span class="pre">type</span></code> key that relates to the datatype of the field. For
 example, INT, VARCHAR, TEXT, etc. Many datatypes (for example VARCHAR)
 also require a <code class="docutils literal notranslate"><span class="pre">constraint</span></code> key.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;users&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
         <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
@@ -484,31 +418,33 @@ field. Note that the field type must be a type that supports this,
 such as integer.</li>
 <li><code class="docutils literal notranslate"><span class="pre">unique</span></code>/true : to generate a unique key for the field definition.</li>
 </ul>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;id&#39;</span>          <span class="o">=&gt;</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;INT&#39;</span><span class="p">,</span>
         <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s1">&#39;unsigned&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-        <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+        <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="p">],</span>
-    <span class="s1">&#39;title&#39;</span>       <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;unique&#39;</span>         <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;unique&#39;</span>     <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="p">],</span>
-    <span class="s1">&#39;author&#39;</span>      <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span><span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
-        <span class="s1">&#39;default&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;King of Town&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s1">&#39;default&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;King of Town&#39;</span><span class="p">,</span>
     <span class="p">],</span>
     <span class="s1">&#39;description&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;null&#39;</span>           <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
     <span class="p">],</span>
-    <span class="s1">&#39;status&#39;</span>      <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;ENUM&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;publish&#39;</span><span class="p">,</span> <span class="s1">&#39;pending&#39;</span><span class="p">,</span> <span class="s1">&#39;draft&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;default&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;pending&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;type&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;ENUM&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;publish&#39;</span><span class="p">,</span> <span class="s1">&#39;pending&#39;</span><span class="p">,</span> <span class="s1">&#39;draft&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;default&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;pending&#39;</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">];</span>
 </pre></div>
@@ -516,13 +452,49 @@ such as integer.</li>
 <p>After the fields have been defined, they can be added using
 <code class="docutils literal notranslate"><span class="pre">$forge-&gt;addField($fields)</span></code> followed by a call to the
 <code class="docutils literal notranslate"><span class="pre">createTable()</span></code> method.</p>
-<p><strong>$forge-&gt;addField()</strong></p>
+<div class="section" id="forge-addfield">
+<h4>$forge-&gt;addField()<a class="headerlink" href="#forge-addfield" title="Permalink to this headline"></a></h4>
 <p>The add fields method will accept the above array.</p>
+</div>
+<div class="section" id="raw-sql-strings-as-default-values">
+<span id="forge-addfield-default-value-rawsql"></span><h4>Raw Sql Strings as Default Values<a class="headerlink" href="#raw-sql-strings-as-default-values" title="Permalink to this headline"></a></h4>
+<p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">$forge-&gt;addField()</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance, which expresses raw SQL strings.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Database\RawSql</span><span class="p">;</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;type&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;INT&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;constraint&#39;</span>     <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;unsigned&#39;</span>       <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;created_at&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;type&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;TIMESTAMP&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">RawSql</span><span class="p">(</span><span class="s1">&#39;CURRENT_TIMESTAMP&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="nv">$fields</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm">gives:</span>
+<span class="cm">    &quot;id&quot; INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,</span>
+<span class="cm">    &quot;created_at&quot; TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When you use <code class="docutils literal notranslate"><span class="pre">RawSql</span></code>, you MUST escape the data manually. Failure to do so could result in SQL injections.</p>
+</div>
+</div>
 <div class="section" id="passing-strings-as-fields">
-<h4>Passing strings as fields<a class="headerlink" href="#passing-strings-as-fields" title="Permalink to this headline">¶</a></h4>
+<h4>Passing Strings as Fields<a class="headerlink" href="#passing-strings-as-fields" title="Permalink to this headline"></a></h4>
 <p>If you know exactly how you want a field to be created, you can pass the
 string into the field definitions with <code class="docutils literal notranslate"><span class="pre">addField()</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s2">&quot;label varchar(100) NOT NULL DEFAULT &#39;default label&#39;&quot;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s2">&quot;label varchar(100) NOT NULL DEFAULT &#39;default label&#39;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -535,18 +507,20 @@ string into the field definitions with <code class="docutils literal notranslate
 </div>
 </div>
 <div class="section" id="creating-an-id-field">
-<h4>Creating an id field<a class="headerlink" href="#creating-an-id-field" title="Permalink to this headline">¶</a></h4>
+<h4>Creating an id field<a class="headerlink" href="#creating-an-id-field" title="Permalink to this headline"></a></h4>
 <p>There is a special exception for creating id fields. A field with type
 id will automatically be assigned as an INT(9) auto_incrementing
 Primary Key.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addField</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
 <span class="c1">// gives `id` INT(9) NOT NULL AUTO_INCREMENT</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="adding-keys">
-<h3><a class="toc-backref" href="#id7">Adding Keys</a><a class="headerlink" href="#adding-keys" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Adding Keys</a><a class="headerlink" href="#adding-keys" title="Permalink to this headline"></a></h3>
 <p>Generally speaking, you’ll want your table to have Keys. This is
 accomplished with <code class="docutils literal notranslate"><span class="pre">$forge-&gt;addKey('field')</span></code>. The optional second
 parameter set to true will make it a primary key and the third
@@ -554,7 +528,9 @@ parameter set to true will make it a unique key. Note that <code class="docutils
 must be followed by a call to <code class="docutils literal notranslate"><span class="pre">createTable()</span></code>.</p>
 <p>Multiple column non-primary keys must be sent as an array. Sample output
 below is for MySQL.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 <span class="c1">// gives PRIMARY KEY `blog_id` (`blog_id`)</span>
 
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
@@ -573,7 +549,9 @@ below is for MySQL.</p>
 </div>
 <p>To make code reading more objective it is also possible to add primary
 and unique keys with specific methods:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addPrimaryKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addPrimaryKey</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">);</span>
 <span class="c1">// gives PRIMARY KEY `blog_id` (`blog_id`)</span>
 
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addUniqueKey</span><span class="p">([</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="s1">&#39;uri&#39;</span><span class="p">]);</span>
@@ -582,10 +560,12 @@ and unique keys with specific methods:</p>
 </div>
 </div>
 <div class="section" id="adding-foreign-keys">
-<span id="id1"></span><h3><a class="toc-backref" href="#id8">Adding Foreign Keys</a><a class="headerlink" href="#adding-foreign-keys" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><a class="toc-backref" href="#id10">Adding Foreign Keys</a><a class="headerlink" href="#adding-foreign-keys" title="Permalink to this headline"></a></h3>
 <p>Foreign Keys help to enforce relationships and actions across your tables. For tables that support Foreign Keys,
 you may add them directly in forge:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addForeignKey</span><span class="p">(</span><span class="s1">&#39;users_id&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addForeignKey</span><span class="p">(</span><span class="s1">&#39;users_id&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">);</span>
 <span class="c1">// gives CONSTRAINT `TABLENAME_users_foreign` FOREIGN KEY(`users_id`) REFERENCES `users`(`id`)</span>
 
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addForeignKey</span><span class="p">([</span><span class="s1">&#39;users_id&#39;</span><span class="p">,</span> <span class="s1">&#39;users_name&#39;</span><span class="p">],</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]);</span>
@@ -593,7 +573,9 @@ you may add them directly in forge:</p>
 </pre></div>
 </div>
 <p>You can specify the desired action for the “on delete” and “on update” properties of the constraint:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addForeignKey</span><span class="p">(</span><span class="s1">&#39;users_id&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;CASCADE&#39;</span><span class="p">,</span> <span class="s1">&#39;CASCADE&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addForeignKey</span><span class="p">(</span><span class="s1">&#39;users_id&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;CASCADE&#39;</span><span class="p">,</span> <span class="s1">&#39;CASCADE&#39;</span><span class="p">);</span>
 <span class="c1">// gives CONSTRAINT `TABLENAME_users_foreign` FOREIGN KEY(`users_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE</span>
 
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addForeignKey</span><span class="p">([</span><span class="s1">&#39;users_id&#39;</span><span class="p">,</span> <span class="s1">&#39;users_name&#39;</span><span class="p">],</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="s1">&#39;CASCADE&#39;</span><span class="p">,</span> <span class="s1">&#39;CASCADE&#39;</span><span class="p">);</span>
@@ -602,21 +584,27 @@ you may add them directly in forge:</p>
 </div>
 </div>
 <div class="section" id="creating-a-table">
-<h3><a class="toc-backref" href="#id9">Creating a Table</a><a class="headerlink" href="#creating-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Creating a Table</a><a class="headerlink" href="#creating-a-table" title="Permalink to this headline"></a></h3>
 <p>After fields and keys have been declared, you can create a new table
 with</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 <span class="c1">// gives CREATE TABLE table_name</span>
 </pre></div>
 </div>
 <p>An optional second parameter set to true adds an <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span></code> clause
 into the definition</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 <span class="c1">// gives CREATE TABLE IF NOT EXISTS table_name</span>
 </pre></div>
 </div>
 <p>You could also pass optional table attributes, such as MySQL’s <code class="docutils literal notranslate"><span class="pre">ENGINE</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$attributes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ENGINE&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;InnoDB&#39;</span><span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$attributes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ENGINE&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;InnoDB&#39;</span><span class="p">];</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
 <span class="c1">// produces: CREATE TABLE `table_name` (...) ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci</span>
 </pre></div>
@@ -629,9 +617,11 @@ and <em>DBCollat</em> values, as long as they are not empty (MySQL only).</p>
 </div>
 </div>
 <div class="section" id="dropping-a-table">
-<h3><a class="toc-backref" href="#id10">Dropping a Table</a><a class="headerlink" href="#dropping-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Dropping a Table</a><a class="headerlink" href="#dropping-a-table" title="Permalink to this headline"></a></h3>
 <p>Execute a <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> statement and optionally add an <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">EXISTS</span></code> clause.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Produces: DROP TABLE `table_name`</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Produces: DROP TABLE `table_name`</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
 <span class="c1">// Produces: DROP TABLE IF EXISTS `table_name`</span>
@@ -640,46 +630,57 @@ and <em>DBCollat</em> values, as long as they are not empty (MySQL only).</p>
 </div>
 <p>A third parameter can be passed to add a <code class="docutils literal notranslate"><span class="pre">CASCADE</span></code> option, which might be required for some
 drivers to handle removal of tables with foreign keys.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Produces: DROP TABLE `table_name` CASCADE</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Produces: DROP TABLE `table_name` CASCADE</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropTable</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="dropping-a-foreign-key">
-<h3><a class="toc-backref" href="#id11">Dropping a Foreign Key</a><a class="headerlink" href="#dropping-a-foreign-key" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Dropping a Foreign Key</a><a class="headerlink" href="#dropping-a-foreign-key" title="Permalink to this headline"></a></h3>
 <p>Execute a DROP FOREIGN KEY.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Produces: ALTER TABLE `tablename` DROP FOREIGN KEY `users_foreign`</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Produces: ALTER TABLE `tablename` DROP FOREIGN KEY `users_foreign`</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropForeignKey</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">,</span> <span class="s1">&#39;users_foreign&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="dropping-a-key">
-<h3><a class="toc-backref" href="#id12">Dropping a Key</a><a class="headerlink" href="#dropping-a-key" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Dropping a Key</a><a class="headerlink" href="#dropping-a-key" title="Permalink to this headline"></a></h3>
 <p>Execute a DROP KEY.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Produces: DROP INDEX `users_index` ON `tablename`</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Produces: DROP INDEX `users_index` ON `tablename`</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropKey</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">,</span> <span class="s1">&#39;users_index&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="renaming-a-table">
-<h3><a class="toc-backref" href="#id13">Renaming a Table</a><a class="headerlink" href="#renaming-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Renaming a Table</a><a class="headerlink" href="#renaming-a-table" title="Permalink to this headline"></a></h3>
 <p>Executes a TABLE rename</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">renameTable</span><span class="p">(</span><span class="s1">&#39;old_table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;new_table_name&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">renameTable</span><span class="p">(</span><span class="s1">&#39;old_table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;new_table_name&#39;</span><span class="p">);</span>
 <span class="c1">// gives ALTER TABLE `old_table_name` RENAME TO `new_table_name`</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="modifying-tables">
-<h2><a class="toc-backref" href="#id14">Modifying Tables</a><a class="headerlink" href="#modifying-tables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Modifying Tables</a><a class="headerlink" href="#modifying-tables" title="Permalink to this headline"></a></h2>
 <div class="section" id="adding-a-column-to-a-table">
-<h3><a class="toc-backref" href="#id15">Adding a Column to a Table</a><a class="headerlink" href="#adding-a-column-to-a-table" title="Permalink to this headline">¶</a></h3>
-<p><strong>$forge-&gt;addColumn()</strong></p>
+<h3><a class="toc-backref" href="#id17">Adding a Column to a Table</a><a class="headerlink" href="#adding-a-column-to-a-table" title="Permalink to this headline"></a></h3>
+<div class="section" id="forge-addcolumn">
+<h4>$forge-&gt;addColumn()<a class="headerlink" href="#forge-addcolumn" title="Permalink to this headline"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">addColumn()</span></code> method is used to modify an existing table. It
 accepts the same field array as above, and can be used for an unlimited
 number of additional fields.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">]</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">],</span>
 <span class="p">];</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$fields</span><span class="p">);</span>
 <span class="c1">// Executes: ALTER TABLE `table_name` ADD `preferences` TEXT</span>
@@ -688,38 +689,50 @@ number of additional fields.</p>
 <p>If you are using MySQL or CUBIRD, then you can take advantage of their
 <code class="docutils literal notranslate"><span class="pre">AFTER</span></code> and <code class="docutils literal notranslate"><span class="pre">FIRST</span></code> clauses to position the new column.</p>
 <p>Examples:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Will place the new column after the `another_field` column:</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Will place the new column after the `another_field` column:</span>
 <span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;after&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;another_field&#39;</span><span class="p">]</span>
+    <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;after&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;another_field&#39;</span><span class="p">],</span>
 <span class="p">];</span>
 
 <span class="c1">// Will place the new column at the start of the table definition:</span>
 <span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">]</span>
+    <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">],</span>
 <span class="p">];</span>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="dropping-columns-from-a-table">
-<h3><a class="toc-backref" href="#id16">Dropping Columns From a Table</a><a class="headerlink" href="#dropping-columns-from-a-table" title="Permalink to this headline">¶</a></h3>
-<p><strong>$forge-&gt;dropColumn()</strong></p>
+<h3><a class="toc-backref" href="#id18">Dropping Columns From a Table</a><a class="headerlink" href="#dropping-columns-from-a-table" title="Permalink to this headline"></a></h3>
+<div class="section" id="forge-dropcolumn">
+<h4>$forge-&gt;dropColumn()<a class="headerlink" href="#forge-dropcolumn" title="Permalink to this headline"></a></h4>
 <p>Used to remove a column from a table.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;column_to_drop&#39;</span><span class="p">);</span> <span class="c1">// to drop one single column</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;column_to_drop&#39;</span><span class="p">);</span> <span class="c1">// to drop one single column</span>
 </pre></div>
 </div>
 <p>Used to remove multiple columns from a table.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;column_1,column_2&#39;</span><span class="p">);</span> <span class="c1">// by proving comma separated column names</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;column_1,column_2&#39;</span><span class="p">);</span> <span class="c1">// by proving comma separated column names</span>
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;column_1&#39;</span><span class="p">,</span> <span class="s1">&#39;column_2&#39;</span><span class="p">]);</span> <span class="c1">// by proving array of column names</span>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="modifying-a-column-in-a-table">
-<h3><a class="toc-backref" href="#id17">Modifying a Column in a Table</a><a class="headerlink" href="#modifying-a-column-in-a-table" title="Permalink to this headline">¶</a></h3>
-<p><strong>$forge-&gt;modifyColumn()</strong></p>
+<h3><a class="toc-backref" href="#id19">Modifying a Column in a Table</a><a class="headerlink" href="#modifying-a-column-in-a-table" title="Permalink to this headline"></a></h3>
+<div class="section" id="forge-modifycolumn">
+<h4>$forge-&gt;modifyColumn()<a class="headerlink" href="#forge-modifycolumn" title="Permalink to this headline"></a></h4>
 <p>The usage of this method is identical to <code class="docutils literal notranslate"><span class="pre">addColumn()</span></code>, except it
 alters an existing column rather than adding a new one. In order to
 change the name, you can add a “name” key into the field defining array.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$fields</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;old_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;new_name&#39;</span><span class="p">,</span>
         <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
@@ -731,14 +744,15 @@ change the name, you can add a “name” key into the field defining array.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="class-reference">
-<h2><a class="toc-backref" href="#id18">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline"></a></h2>
 <dl class="class">
 <dt>
 <code class="descname">CodeIgniter\Database\Forge</code></dt>
 <dd><dl class="method">
 <dt id="addColumn">
-<code class="descname">addColumn</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$field = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addColumn" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addColumn</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$field = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addColumn" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -762,7 +776,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="addField">
-<code class="descname">addField</code><span class="sig-paren">(</span><em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#addField" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addField</code><span class="sig-paren">(</span><em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#addField" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -786,7 +800,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="addForeignKey">
-<code class="descname">addForeignKey</code><span class="sig-paren">(</span><em>$fieldName</em>, <em>$tableName</em>, <em>$tableField</em><span class="optional">[</span>, <em>$onUpdate = ''</em>, <em>$onDelete = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addForeignKey" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addForeignKey</code><span class="sig-paren">(</span><em>$fieldName</em>, <em>$tableName</em>, <em>$tableField</em><span class="optional">[</span>, <em>$onUpdate = ''</em>, <em>$onDelete = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addForeignKey" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -813,7 +827,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="addKey">
-<code class="descname">addKey</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$primary = false</em><span class="optional">[</span>, <em>$unique = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addKey" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addKey</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$primary = false</em><span class="optional">[</span>, <em>$unique = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#addKey" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -838,7 +852,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="addPrimaryKey">
-<code class="descname">addPrimaryKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#addPrimaryKey" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addPrimaryKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#addPrimaryKey" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -861,7 +875,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="addUniqueKey">
-<code class="descname">addUniqueKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#addUniqueKey" title="Permalink to this definition">¶</a></dt>
+<code class="descname">addUniqueKey</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#addUniqueKey" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -884,7 +898,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="createDatabase">
-<code class="descname">createDatabase</code><span class="sig-paren">(</span><em>$dbName</em><span class="optional">[</span>, <em>$ifNotExists = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createDatabase" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createDatabase</code><span class="sig-paren">(</span><em>$dbName</em><span class="optional">[</span>, <em>$ifNotExists = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createDatabase" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -908,7 +922,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="createTable">
-<code class="descname">createTable</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = false</em><span class="optional">[</span>, <em>array $attributes = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createTable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">createTable</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = false</em><span class="optional">[</span>, <em>array $attributes = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#createTable" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -933,7 +947,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="dropColumn">
-<code class="descname">dropColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#dropColumn" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dropColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#dropColumn" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -957,7 +971,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="dropDatabase">
-<code class="descname">dropDatabase</code><span class="sig-paren">(</span><em>$dbName</em><span class="sig-paren">)</span><a class="headerlink" href="#dropDatabase" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dropDatabase</code><span class="sig-paren">(</span><em>$dbName</em><span class="sig-paren">)</span><a class="headerlink" href="#dropDatabase" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -980,7 +994,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="dropTable">
-<code class="descname">dropTable</code><span class="sig-paren">(</span><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#dropTable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dropTable</code><span class="sig-paren">(</span><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#dropTable" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1004,7 +1018,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="modifyColumn">
-<code class="descname">modifyColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#modifyColumn" title="Permalink to this definition">¶</a></dt>
+<code class="descname">modifyColumn</code><span class="sig-paren">(</span><em>$table</em>, <em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#modifyColumn" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1028,7 +1042,7 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 <dl class="method">
 <dt id="renameTable">
-<code class="descname">renameTable</code><span class="sig-paren">(</span><em>$table_name</em>, <em>$new_table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#renameTable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">renameTable</code><span class="sig-paren">(</span><em>$table_name</em>, <em>$new_table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#renameTable" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1057,53 +1071,35 @@ change the name, you can add a “name” key into the field defining array.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="migration.html" class="btn btn-neutral float-right" title="Database Migrations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Managing Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="migration.html" class="btn btn-neutral float-right" title="Database Migrations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

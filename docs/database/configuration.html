@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Database Configuration &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Database Configuration &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Connecting to your Database" href="connecting.html" />
     <link rel="prev" title="Database Quick Start: Example Code" href="examples.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,104 +239,86 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Working With Databases</a> &raquo;</li>
-        
       <li>Database Configuration</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="database-configuration">
-<h1>Database Configuration<a class="headerlink" href="#database-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>Database Configuration<a class="headerlink" href="#database-configuration" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#configuring-with-env-file" id="id1">Configuring With .env File</a></li>
-<li><a class="reference internal" href="#explanation-of-values" id="id2">Explanation of Values:</a></li>
+<li><a class="reference internal" href="#config-file" id="id1">Config File</a><ul>
+<li><a class="reference internal" href="#dsn" id="id2">DSN</a></li>
+<li><a class="reference internal" href="#failovers" id="id3">Failovers</a></li>
+<li><a class="reference internal" href="#defaultgroup" id="id4">defaultGroup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuring-with-env-file" id="id5">Configuring with .env File</a></li>
+<li><a class="reference internal" href="#explanation-of-values" id="id6">Explanation of Values:</a></li>
 </ul>
 </div>
+<div class="section" id="config-file">
+<h2><a class="toc-backref" href="#id1">Config File</a><a class="headerlink" href="#config-file" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter has a config file that lets you store your database
 connection values (username, password, database name, etc.). The config
 file is located at <strong>app/Config/Database.php</strong>. You can also set
 database connection values in the <strong>.env</strong> file. See below for more details.</p>
 <p>The config settings are stored in a class property that is an array with this
 prototype:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;DSN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-    <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
-<span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Database\Config</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Database</span> <span class="k">extends</span> <span class="nx">Config</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;DSN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
+        <span class="s1">&#39;port&#39;</span>     <span class="o">=&gt;</span> <span class="mi">3306</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The name of the class property is the connection name, and can be used
@@ -394,15 +328,25 @@ while connecting to specify a group name.</p>
 <p class="last">The default location of the SQLite3 database is in the <code class="docutils literal notranslate"><span class="pre">writable</span></code> folder.
 If you want to change the location, you must set the full path to the new folder.</p>
 </div>
+<div class="section" id="dsn">
+<h3><a class="toc-backref" href="#id2">DSN</a><a class="headerlink" href="#dsn" title="Permalink to this headline"></a></h3>
 <p>Some database drivers (such as PDO, PostgreSQL, Oracle, ODBC) might
 require a full DSN string to be provided. If that is the case, you
 should use the ‘DSN’ configuration setting, as if you’re using the
 driver’s underlying native PHP extension, like this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// PDO</span>
-<span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;DSN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pgsql:host=localhost;port=5432;dbname=database_name&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// PDO</span>
+<span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;DSN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;pgsql:host=localhost;port=5432;dbname=database_name&#39;</span><span class="p">,</span>
+    <span class="c1">// ...</span>
+<span class="p">];</span>
 
 <span class="c1">// Oracle</span>
-<span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;DSN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;//localhost/XE&#39;</span><span class="p">;</span>
+<span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;DSN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;//localhost/XE&#39;</span><span class="p">,</span>
+    <span class="c1">// ...</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -411,15 +355,29 @@ driver’s underlying native PHP extension, like this:</p>
 will try to build it with the rest of the provided settings.</p>
 </div>
 <p>You can also set a Data Source Name in universal manner (URL like). In that case DSNs must have this prototype:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;DSN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;DBDriver://username:password@hostname:port/database&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;DSN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;DBDriver://username:password@hostname:port/database&#39;</span><span class="p">,</span>
+    <span class="c1">// ...</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 <p>To override default config values when connecting with a universal version of the DSN string,
 add the config variables as a query string:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// MySQLi</span>
-<span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;DSN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MySQLi://username:password@hostname:3306/database?charset=utf8&amp;DBCollat=utf8_general_ci&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// MySQLi</span>
+<span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;DSN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi://username:password@hostname:3306/database?charset=utf8&amp;DBCollat=utf8_general_ci&#39;</span><span class="p">,</span>
+    <span class="c1">// ...</span>
+<span class="p">];</span>
+
 <span class="c1">// Postgre</span>
-<span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;DSN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Postgre://username:password@hostname:5432/database?charset=utf8&amp;connect_timeout=5&amp;sslmode=1&#39;</span><span class="p">;</span>
+<span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;DSN&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Postgre://username:password@hostname:5432/database?charset=utf8&amp;connect_timeout=5&amp;sslmode=1&#39;</span><span class="p">,</span>
+    <span class="c1">// ...</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -428,9 +386,14 @@ add the config variables as a query string:</p>
 database character set), which are present in the rest of the configuration
 fields, CodeIgniter will append them.</p>
 </div>
+</div>
+<div class="section" id="failovers">
+<h3><a class="toc-backref" href="#id3">Failovers</a><a class="headerlink" href="#failovers" title="Permalink to this headline"></a></h3>
 <p>You can also specify failovers for the situation when the main connection cannot connect for some reason.
 These failovers can be specified by setting the failover for a connection like this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;failover&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;failover&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span>
         <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost1&#39;</span><span class="p">,</span>
         <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -462,7 +425,7 @@ These failovers can be specified by setting the failover for a connection like t
         <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
         <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
         <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="p">]</span>
+    <span class="p">],</span>
 <span class="p">];</span>
 </pre></div>
 </div>
@@ -472,29 +435,42 @@ values. If, for example, you run multiple environments (development,
 production, test, etc.) under a single installation, you can set up a
 connection group for each, then switch between groups as needed. For
 example, to set up a “test” environment you would do this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$test</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;DSN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-    <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-    <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
-    <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[]</span>
-<span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Database\Config</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Database</span> <span class="k">extends</span> <span class="nx">Config</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$test</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;DSN&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DBDriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MySQLi&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DBPrefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;pConnect&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;DBDebug&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DBCollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;swapPre&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;encrypt&#39;</span>  <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;strictOn&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+        <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="p">[],</span>
+    <span class="p">];</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Then, to globally tell the system to use that group you would set this
 variable located in the config file:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$defaultGroup</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$defaultGroup</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -503,14 +479,23 @@ variable located in the config file:</p>
 default we’ve used the word “default” for the primary connection,
 but it too can be renamed to something more relevant to your project.</p>
 </div>
+</div>
+<div class="section" id="defaultgroup">
+<h3><a class="toc-backref" href="#id4">defaultGroup</a><a class="headerlink" href="#defaultgroup" title="Permalink to this headline"></a></h3>
 <p>You could modify the config file to detect the environment and automatically
 update the <cite>defaultGroup</cite> value to the correct one by adding the required logic
 within the class’ constructor:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Database</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Database\Config</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Database</span> <span class="k">extends</span> <span class="nx">Config</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$development</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">];</span>
-    <span class="k">public</span> <span class="nv">$test</span>        <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">];</span>
-    <span class="k">public</span> <span class="nv">$production</span>  <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">];</span>
+    <span class="k">public</span> <span class="nv">$development</span> <span class="o">=</span> <span class="p">[</span><span class="cm">/* ... */</span><span class="p">];</span>
+    <span class="k">public</span> <span class="nv">$test</span>        <span class="o">=</span> <span class="p">[</span><span class="cm">/* ... */</span><span class="p">];</span>
+    <span class="k">public</span> <span class="nv">$production</span>  <span class="o">=</span> <span class="p">[</span><span class="cm">/* ... */</span><span class="p">];</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
     <span class="p">{</span>
@@ -519,8 +504,10 @@ within the class’ constructor:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+</div>
 <div class="section" id="configuring-with-env-file">
-<h2><a class="toc-backref" href="#id1">Configuring With .env File</a><a class="headerlink" href="#configuring-with-env-file" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Configuring with .env File</a><a class="headerlink" href="#configuring-with-env-file" title="Permalink to this headline"></a></h2>
 <p>You can also save your configuration values within a <strong>.env</strong> file with the current server’s
 database settings. You only need to enter the values that change from what is in the
 default group’s configuration settings. The values should be name following this format, where
@@ -530,10 +517,9 @@ default group’s configuration settings. The values should be name following th
 <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">database</span> <span class="o">=</span> <span class="s1">&#39;ci4&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>As with all other</p>
 </div>
 <div class="section" id="explanation-of-values">
-<h2><a class="toc-backref" href="#id2">Explanation of Values:</a><a class="headerlink" href="#explanation-of-values" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Explanation of Values:</a><a class="headerlink" href="#explanation-of-values" title="Permalink to this headline"></a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="12%" />
@@ -561,7 +547,7 @@ default group’s configuration settings. The values should be name following th
 <td>The name of the database you want to connect to.</td>
 </tr>
 <tr class="row-odd"><td><strong>DBDriver</strong></td>
-<td>The database type. e.g.,: MySQLi, Postgre, etc. The case must match the driver name</td>
+<td>The database type. e.g.,: <code class="docutils literal notranslate"><span class="pre">MySQLi</span></code>, <code class="docutils literal notranslate"><span class="pre">Postgres</span></code>, etc. The case must match the driver name</td>
 </tr>
 <tr class="row-even"><td><strong>DBPrefix</strong></td>
 <td>An optional table prefix which will added to the table name when running
@@ -578,43 +564,29 @@ installations to share one database.</td>
 <td>The character set used in communicating with the database.</td>
 </tr>
 <tr class="row-even"><td><strong>DBCollat</strong></td>
-<td><p class="first">The character collation used in communicating with the database</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Only used in the ‘MySQLi’ driver.</p>
-</div>
-</td>
+<td>The character collation used in communicating with the database (<code class="docutils literal notranslate"><span class="pre">MySQLi</span></code> only)</td>
 </tr>
 <tr class="row-odd"><td><strong>swapPre</strong></td>
-<td>A default table prefix that should be swapped with dbprefix. This is useful for distributed
+<td>A default table prefix that should be swapped with <code class="docutils literal notranslate"><span class="pre">DBPrefix</span></code>. This is useful for distributed
 applications where you might run manually written queries, and need the prefix to still be
 customizable by the end user.</td>
 </tr>
 <tr class="row-even"><td><strong>schema</strong></td>
-<td>The database schema, default value varies by driver. Used by PostgreSQL and SQLSRV drivers.</td>
+<td>The database schema, default value varies by driver. Used by <code class="docutils literal notranslate"><span class="pre">Postgres</span></code> and <code class="docutils literal notranslate"><span class="pre">SQLSRV</span></code> drivers.</td>
 </tr>
 <tr class="row-odd"><td><strong>encrypt</strong></td>
-<td><p class="first">Whether or not to use an encrypted connection.</p>
-<ul class="last">
-<li><p class="first">‘sqlsrv’ and ‘pdo/sqlsrv’ drivers accept true/false</p>
-</li>
-<li><p class="first">‘MySQLi’ and ‘pdo/mysql’ drivers accept an array with the following options:</p>
-<blockquote>
-<div><ul class="simple">
-<li>‘ssl_key’    - Path to the private key file</li>
-<li>‘ssl_cert’   - Path to the public key certificate file</li>
-<li>‘ssl_ca’     - Path to the certificate authority file</li>
-<li>‘ssl_capath’ - Path to a directory containing trusted CA certificates in PEM format</li>
-<li>‘ssl_cipher’ - List of <em>allowed</em> ciphers to be used for the encryption, separated by colons (‘:’)</li>
-<li>‘ssl_verify’ - true/false; Whether to verify the server certificate or not (‘MySQLi’ only)</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-</td>
+<td>Whether or not to use an encrypted connection.
+<code class="docutils literal notranslate"><span class="pre">SQLSRV</span></code> drivers accept true/false
+<code class="docutils literal notranslate"><span class="pre">MySQLi</span></code> drivers accept an array with the following options:
+* <code class="docutils literal notranslate"><span class="pre">ssl_key</span></code>    - Path to the private key file
+* <code class="docutils literal notranslate"><span class="pre">ssl_cert</span></code>   - Path to the public key certificate file
+* <code class="docutils literal notranslate"><span class="pre">ssl_ca</span></code>     - Path to the certificate authority file
+* <code class="docutils literal notranslate"><span class="pre">ssl_capath</span></code> - Path to a directory containing trusted CA certificates in PEM format
+* <code class="docutils literal notranslate"><span class="pre">ssl_cipher</span></code> - List of <em>allowed</em> ciphers to be used for the encryption, separated by colons (<code class="docutils literal notranslate"><span class="pre">:</span></code>)
+* <code class="docutils literal notranslate"><span class="pre">ssl_verify</span></code> - true/false; Whether to verify the server certificate or not (<code class="docutils literal notranslate"><span class="pre">MySQLi</span></code> only)</td>
 </tr>
 <tr class="row-even"><td><strong>compress</strong></td>
-<td>Whether or not to use client compression (MySQL only).</td>
+<td>Whether or not to use client compression (<code class="docutils literal notranslate"><span class="pre">MySQLi</span></code> only).</td>
 </tr>
 <tr class="row-odd"><td><strong>strictOn</strong></td>
 <td>true/false (boolean) - Whether to force “Strict Mode” connections, good for ensuring strict SQL
@@ -622,8 +594,23 @@ while developing an application.</td>
 </tr>
 <tr class="row-even"><td><strong>port</strong></td>
 <td><p class="first">The database port number. To use this value you have to add a line to the database config array.</p>
-<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$default</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5432</span><span class="p">;</span>
+<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$default</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">// ...</span>
+    <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">5432</span><span class="p">,</span>
+<span class="p">];</span>
 </pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><strong>foreignKeys</strong></td>
+<td><p class="first">true/false (boolean) - Whether or not to enable Foreign Key constraint (<code class="docutils literal notranslate"><span class="pre">SQLite3</span></code> only).</p>
+<div class="last admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">SQLite3 Foreign Key constraint is disabled by default.
+See <a class="reference external" href="https://www.sqlite.org/pragma.html#pragma_foreign_keys">SQLite documentation</a>.
+To enforce Foreign Key constraint, set this config item to true.</p>
 </div>
 </td>
 </tr>
@@ -642,53 +629,35 @@ you are using MySQL.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="connecting.html" class="btn btn-neutral float-right" title="Connecting to your Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="examples.html" class="btn btn-neutral float-left" title="Database Quick Start: Example Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="connecting.html" class="btn btn-neutral float-right" title="Connecting to your Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

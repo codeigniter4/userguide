@@ -1,74 +1,33 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>CodeIgniter4 User Guide &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>CodeIgniter4 User Guide &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/js/citheme.js"></script>
         <script type="text/javascript" src="_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Welcome to CodeIgniter4" href="intro/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="#">
-          
-
-          
-            
-            <img src="_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="#"><img src="_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,18 +35,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -103,8 +51,8 @@
 <li class="toctree-l2"><a class="reference internal" href="installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -112,9 +60,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -149,8 +97,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/request.html">Request Class</a></li>
@@ -168,6 +116,7 @@
 <li class="toctree-l2"><a class="reference internal" href="outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/api_responses.html">API Response Trait</a></li>
@@ -205,6 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -267,8 +217,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_request.html">CLIRequest Class</a></li>
@@ -286,72 +238,35 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-        
       <li>CodeIgniter4 User Guide</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="codeigniter4-user-guide">
-<h1>CodeIgniter4 User Guide<a class="headerlink" href="#codeigniter4-user-guide" title="Permalink to this headline">¶</a></h1>
+<h1>CodeIgniter4 User Guide<a class="headerlink" href="#codeigniter4-user-guide" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="intro/index.html">Welcome to CodeIgniter4</a><ul>
@@ -365,15 +280,15 @@
 </ul>
 </div>
 <div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -382,13 +297,13 @@
 </div>
 </div>
 <div class="section" id="build-your-first-application">
-<h2>Build Your First Application<a class="headerlink" href="#build-your-first-application" title="Permalink to this headline">¶</a></h2>
+<h2>Build Your First Application<a class="headerlink" href="#build-your-first-application" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -396,7 +311,7 @@
 </div>
 </div>
 <div class="section" id="overview-general-topics">
-<h2>Overview &amp; General Topics<a class="headerlink" href="#overview-general-topics" title="Permalink to this headline">¶</a></h2>
+<h2>Overview &amp; General Topics<a class="headerlink" href="#overview-general-topics" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="concepts/index.html">CodeIgniter4 Overview</a><ul>
@@ -431,12 +346,12 @@
 </div>
 </div>
 <div class="section" id="request-handling">
-<h2>Request Handling<a class="headerlink" href="#request-handling" title="Permalink to this headline">¶</a></h2>
+<h2>Request Handling<a class="headerlink" href="#request-handling" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incoming/request.html">Request Class</a></li>
@@ -456,6 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="outgoing/api_responses.html">API Response Trait</a></li>
@@ -467,7 +383,7 @@
 </div>
 </div>
 <div class="section" id="handling-databases">
-<h2>Handling Databases<a class="headerlink" href="#handling-databases" title="Permalink to this headline">¶</a></h2>
+<h2>Handling Databases<a class="headerlink" href="#handling-databases" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="database/index.html">Working With Databases</a><ul>
@@ -502,13 +418,14 @@
 <li class="toctree-l2"><a class="reference internal" href="dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div class="section" id="libraries-helpers">
-<h2>Libraries &amp; Helpers<a class="headerlink" href="#libraries-helpers" title="Permalink to this headline">¶</a></h2>
+<h2>Libraries &amp; Helpers<a class="headerlink" href="#libraries-helpers" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="libraries/index.html">Library Reference</a><ul>
@@ -558,7 +475,7 @@
 </div>
 </div>
 <div class="section" id="advanced-topics">
-<h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h2>
+<h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="testing/index.html">Testing</a><ul>
@@ -578,8 +495,10 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli/cli_request.html">CLIRequest Class</a></li>
@@ -603,56 +522,46 @@
 <div class="toctree-wrapper compound">
 </div>
 </div>
+<div class="section" id="official-packages">
+<h2>Official Packages<a class="headerlink" href="#official-packages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="libraries/official_packages.html">Official Packages</a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="intro/index.html" class="btn btn-neutral float-right" title="Welcome to CodeIgniter4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

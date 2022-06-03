@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Email Class &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Email Class &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Encryption Service" href="encryption.html" />
     <link rel="prev" title="CURLRequest Class" href="curlrequest.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,74 +239,36 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Library Reference</a> &raquo;</li>
-        
       <li>Email Class</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="email-class">
-<h1>Email Class<a class="headerlink" href="#email-class" title="Permalink to this headline">¶</a></h1>
+<h1>Email Class<a class="headerlink" href="#email-class" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter’s robust Email Class supports the following features:</p>
 <ul class="simple">
 <li>Multiple Protocols: Mail, Sendmail, and SMTP</li>
@@ -383,13 +297,15 @@ BCC batches.</li>
 </ul>
 </div>
 <div class="section" id="using-the-email-library">
-<h2><a class="toc-backref" href="#id2">Using the Email Library</a><a class="headerlink" href="#using-the-email-library" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Using the Email Library</a><a class="headerlink" href="#using-the-email-library" title="Permalink to this headline"></a></h2>
 <div class="section" id="sending-email">
-<h3><a class="toc-backref" href="#id3">Sending Email</a><a class="headerlink" href="#sending-email" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Sending Email</a><a class="headerlink" href="#sending-email" title="Permalink to this headline"></a></h3>
 <p>Sending email is not only simple, but you can configure it on the fly or
 set your preferences in the <strong>app/Config/Email.php</strong> file.</p>
 <p>Here is a basic example demonstrating how you might send email:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">email</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">email</span><span class="p">();</span>
 
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;your@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
@@ -404,7 +320,7 @@ set your preferences in the <strong>app/Config/Email.php</strong> file.</p>
 </div>
 </div>
 <div class="section" id="setting-email-preferences">
-<span id="id1"></span><h3><a class="toc-backref" href="#id4">Setting Email Preferences</a><a class="headerlink" href="#setting-email-preferences" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><a class="toc-backref" href="#id4">Setting Email Preferences</a><a class="headerlink" href="#setting-email-preferences" title="Permalink to this headline"></a></h3>
 <p>There are 21 different preferences available to tailor how your email
 messages are sent. You can either set them manually as described here,
 or automatically via preferences stored in your config file, described
@@ -412,7 +328,9 @@ below:</p>
 <p>Preferences are set by passing an array of preference values to the
 email initialize method. Here is an example of how you might set some
 preferences:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;protocol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sendmail&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;protocol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sendmail&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;mailPath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/usr/sbin/sendmail&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;charset&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">&#39;iso-8859-1&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;wordWrap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -426,7 +344,7 @@ preferences:</p>
 if you do not set them.</p>
 </div>
 <div class="section" id="setting-email-preferences-in-a-config-file">
-<h4>Setting Email Preferences in a Config File<a class="headerlink" href="#setting-email-preferences-in-a-config-file" title="Permalink to this headline">¶</a></h4>
+<h4>Setting Email Preferences in a Config File<a class="headerlink" href="#setting-email-preferences-in-a-config-file" title="Permalink to this headline"></a></h4>
 <p>If you prefer not to set preferences using the above method, you can
 instead put them into the config file. Simply open the
 <strong>app/Config/Email.php</strong> file, and set your configs in the
@@ -435,14 +353,14 @@ You will NOT need to use the <code class="docutils literal notranslate"><span cl
 you set your preferences in the config file.</p>
 </div>
 <div class="section" id="reviewing-preferences">
-<h4>Reviewing Preferences<a class="headerlink" href="#reviewing-preferences" title="Permalink to this headline">¶</a></h4>
+<h4>Reviewing Preferences<a class="headerlink" href="#reviewing-preferences" title="Permalink to this headline"></a></h4>
 <p>The settings used for the last successful send are available from the
 instance property <code class="docutils literal notranslate"><span class="pre">$archive</span></code>. This is helpful for testing and debugging
 to determine that actual values at the time of the <code class="docutils literal notranslate"><span class="pre">send()</span></code> call.</p>
 </div>
 </div>
 <div class="section" id="ssl-versus-tls-for-smtp-protocol">
-<h3><a class="toc-backref" href="#id5">SSL versus TLS for SMTP Protocol</a><a class="headerlink" href="#ssl-versus-tls-for-smtp-protocol" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">SSL versus TLS for SMTP Protocol</a><a class="headerlink" href="#ssl-versus-tls-for-smtp-protocol" title="Permalink to this headline"></a></h3>
 <p>To protect the username, password and email content while communicating with the SMTP server,
 encryption on the channel should be used. Two different standards are widely deployed and
 it is important to understand the differences when trying to troubleshoot email sending
@@ -464,7 +382,7 @@ with the SMTP server to switch from clear-text to an encrypted channel. The init
 will be made in clear-text and the channel will be upgraded to TLS with the <code class="docutils literal notranslate"><span class="pre">STARTTLS</span></code> command.</p>
 </div>
 <div class="section" id="email-preferences">
-<h3><a class="toc-backref" href="#id6">Email Preferences</a><a class="headerlink" href="#email-preferences" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Email Preferences</a><a class="headerlink" href="#email-preferences" title="Permalink to this headline"></a></h3>
 <p>The following is a list of all the preferences that can be set when
 sending email.</p>
 <table border="1" class="docutils">
@@ -492,7 +410,7 @@ sending email.</p>
 <td>mail, sendmail, or smtp</td>
 <td>The mail sending protocol.</td>
 </tr>
-<tr class="row-even"><td><strong>mailpath</strong></td>
+<tr class="row-even"><td><strong>mailPath</strong></td>
 <td>/usr/sbin/sendmail</td>
 <td>None</td>
 <td>The server path to Sendmail.</td>
@@ -597,7 +515,7 @@ paths otherwise they will not work.</td>
 </table>
 </div>
 <div class="section" id="overriding-word-wrapping">
-<h3><a class="toc-backref" href="#id7">Overriding Word Wrapping</a><a class="headerlink" href="#overriding-word-wrapping" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Overriding Word Wrapping</a><a class="headerlink" href="#overriding-word-wrapping" title="Permalink to this headline"></a></h3>
 <p>If you have word wrapping enabled (recommended to comply with RFC 822)
 and you have a very long link in your email it can get wrapped too,
 causing it to become un-clickable by the person receiving it.
@@ -616,13 +534,13 @@ message like this:</p>
 </div>
 </div>
 <div class="section" id="class-reference">
-<h2><a class="toc-backref" href="#id8">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline"></a></h2>
 <dl class="class">
 <dt>
 <code class="descname">CodeIgniter\Email\Email</code></dt>
 <dd><dl class="method">
 <dt id="setFrom">
-<code class="descname">setFrom</code><span class="sig-paren">(</span><em>$from</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">[</span>, <em>$returnPath = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setFrom" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setFrom</code><span class="sig-paren">(</span><em>$from</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">[</span>, <em>$returnPath = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setFrom" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -643,11 +561,15 @@ message like this:</p>
 </tbody>
 </table>
 <p>Sets the email address and name of the person sending the email:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You can also set a Return-Path, to help redirect undelivered mail:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">,</span> <span class="s1">&#39;returned_emails@example.com&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">,</span> <span class="s1">&#39;returned_emails@example.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -659,7 +581,7 @@ your protocol.</p>
 
 <dl class="method">
 <dt id="setReplyTo">
-<code class="descname">setReplyTo</code><span class="sig-paren">(</span><em>$replyto</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setReplyTo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setReplyTo</code><span class="sig-paren">(</span><em>$replyto</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setReplyTo" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -680,14 +602,16 @@ your protocol.</p>
 </table>
 <p>Sets the reply-to address. If the information is not provided the
 information in the <a class="reference external" href="#setFrom">setFrom</a> method is used. Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setReplyTo</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setReplyTo</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setTo">
-<code class="descname">setTo</code><span class="sig-paren">(</span><em>$to</em><span class="sig-paren">)</span><a class="headerlink" href="#setTo" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setTo</code><span class="sig-paren">(</span><em>$to</em><span class="sig-paren">)</span><a class="headerlink" href="#setTo" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -707,20 +631,26 @@ information in the <a class="reference external" href="#setFrom">setFrom</a> met
 </table>
 <p>Sets the email address(s) of the recipient(s). Can be a single e-mail,
 a comma-delimited list or an array:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="s1">&#39;one@example.com, two@example.com, three@example.com&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="s1">&#39;one@example.com, two@example.com, three@example.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">([</span><span class="s1">&#39;one@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;two@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;three@example.com&#39;</span><span class="p">]);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">([</span><span class="s1">&#39;one@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;two@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;three@example.com&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setCC">
-<code class="descname">setCC</code><span class="sig-paren">(</span><em>$cc</em><span class="sig-paren">)</span><a class="headerlink" href="#setCC" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setCC</code><span class="sig-paren">(</span><em>$cc</em><span class="sig-paren">)</span><a class="headerlink" href="#setCC" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -744,7 +674,7 @@ a comma-delimited list or an array.</p>
 
 <dl class="method">
 <dt id="setBCC">
-<code class="descname">setBCC</code><span class="sig-paren">(</span><em>$bcc</em><span class="optional">[</span>, <em>$limit = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setBCC" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setBCC</code><span class="sig-paren">(</span><em>$bcc</em><span class="optional">[</span>, <em>$limit = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setBCC" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -772,7 +702,7 @@ the emails to batches, with each batch not exceeding the specified
 
 <dl class="method">
 <dt id="setSubject">
-<code class="descname">setSubject</code><span class="sig-paren">(</span><em>$subject</em><span class="sig-paren">)</span><a class="headerlink" href="#setSubject" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setSubject</code><span class="sig-paren">(</span><em>$subject</em><span class="sig-paren">)</span><a class="headerlink" href="#setSubject" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -791,14 +721,16 @@ the emails to batches, with each batch not exceeding the specified
 </tbody>
 </table>
 <p>Sets the email subject:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setSubject</span><span class="p">(</span><span class="s1">&#39;This is my subject&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setSubject</span><span class="p">(</span><span class="s1">&#39;This is my subject&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setMessage">
-<code class="descname">setMessage</code><span class="sig-paren">(</span><em>$body</em><span class="sig-paren">)</span><a class="headerlink" href="#setMessage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setMessage</code><span class="sig-paren">(</span><em>$body</em><span class="sig-paren">)</span><a class="headerlink" href="#setMessage" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -817,14 +749,16 @@ the emails to batches, with each batch not exceeding the specified
 </tbody>
 </table>
 <p>Sets the e-mail message body:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;This is my message&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;This is my message&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setAltMessage">
-<code class="descname">setAltMessage</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#setAltMessage" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setAltMessage</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#setAltMessage" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -843,7 +777,9 @@ the emails to batches, with each batch not exceeding the specified
 </tbody>
 </table>
 <p>Sets the alternative e-mail message body:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setAltMessage</span><span class="p">(</span><span class="s1">&#39;This is the alternative message&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setAltMessage</span><span class="p">(</span><span class="s1">&#39;This is the alternative message&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This is an optional message string which can be used if you send
@@ -876,7 +812,9 @@ and strip the tags.</p>
 </tbody>
 </table>
 <p>Appends additional headers to the e-mail:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Header1&#39;</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Header1&#39;</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">);</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Header2&#39;</span><span class="p">,</span> <span class="s1">&#39;Value2&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -884,7 +822,7 @@ and strip the tags.</p>
 
 <dl class="method">
 <dt id="clear">
-<code class="descname">clear</code><span class="sig-paren">(</span><em>$clearAttachments = false</em><span class="sig-paren">)</span><a class="headerlink" href="#clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clear</code><span class="sig-paren">(</span><em>$clearAttachments = false</em><span class="sig-paren">)</span><a class="headerlink" href="#clear" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -905,13 +843,14 @@ and strip the tags.</p>
 <p>Initializes all the email variables to an empty state. This method
 is intended for use if you run the email sending method in a loop,
 permitting the data to be reset between cycles.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&gt;</span> <span class="nv">$address</span><span class="p">)</span>
-<span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&gt;</span> <span class="nv">$address</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">();</span>
 
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="nv">$address</span><span class="p">);</span>
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;your@example.com&#39;</span><span class="p">);</span>
-    <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setSubject</span><span class="p">(</span><span class="s1">&#39;Here is your info &#39;</span><span class="o">.</span><span class="nv">$name</span><span class="p">);</span>
+    <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setSubject</span><span class="p">(</span><span class="s1">&#39;Here is your info &#39;</span> <span class="o">.</span> <span class="nv">$name</span><span class="p">);</span>
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;Hi &#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39; Here is the info you requested.&#39;</span><span class="p">);</span>
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 <span class="p">}</span>
@@ -919,14 +858,16 @@ permitting the data to be reset between cycles.</p>
 </div>
 <p>If you set the parameter to true any attachments will be cleared as
 well:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="send">
-<code class="descname">send</code><span class="sig-paren">(</span><em>$autoClear = true</em><span class="sig-paren">)</span><a class="headerlink" href="#send" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send</code><span class="sig-paren">(</span><em>$autoClear = true</em><span class="sig-paren">)</span><a class="headerlink" href="#send" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -946,16 +887,18 @@ well:</p>
 </table>
 <p>The e-mail sending method. Returns boolean true or false based on
 success or failure, enabling it to be used conditionally:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">())</span>
-<span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">())</span> <span class="p">{</span>
     <span class="c1">// Generate error</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>This method will automatically clear all parameters if the request was
 successful. To stop this behaviour pass false:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">false</span><span class="p">))</span>
-<span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">false</span><span class="p">))</span> <span class="p">{</span>
     <span class="c1">// Parameters won&#39;t be cleared</span>
 <span class="p">}</span>
 </pre></div>
@@ -975,7 +918,7 @@ boolean <code class="docutils literal notranslate"><span class="pre">true</span>
 
 <dl class="method">
 <dt id="attach">
-<code class="descname">attach</code><span class="sig-paren">(</span><em>$filename</em><span class="optional">[</span>, <em>$disposition = ''</em><span class="optional">[</span>, <em>$newname = null</em><span class="optional">[</span>, <em>$mime = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#attach" title="Permalink to this definition">¶</a></dt>
+<code class="descname">attach</code><span class="sig-paren">(</span><em>$filename</em><span class="optional">[</span>, <em>$disposition = ''</em><span class="optional">[</span>, <em>$newname = null</em><span class="optional">[</span>, <em>$mime = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#attach" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1001,35 +944,45 @@ specification used here. <a class="reference external" href="https://www.iana.or
 <p>Enables you to send an attachment. Put the file path/name in the first
 parameter. For multiple attachments use the method multiple times.
 For example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo1.jpg&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo1.jpg&#39;</span><span class="p">);</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo2.jpg&#39;</span><span class="p">);</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo3.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>To use the default disposition (attachment), leave the second parameter blank,
 otherwise use a custom disposition:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;image.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;image.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You can also use a URL:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;http://example.com/filename.pdf&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;http://example.com/filename.pdf&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If you’d like to use a custom file name, you can use the third parameter:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;filename.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;filename.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If you need to use a buffer string instead of a real - physical - file you can
 use the first parameter as buffer, the third parameter as file name and the fourth
 parameter as mime-type:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$buffer</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;application/pdf&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$buffer</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;application/pdf&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setAttachmentCID">
-<code class="descname">setAttachmentCID</code><span class="sig-paren">(</span><em>$filename</em><span class="sig-paren">)</span><a class="headerlink" href="#setAttachmentCID" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setAttachmentCID</code><span class="sig-paren">(</span><em>$filename</em><span class="sig-paren">)</span><a class="headerlink" href="#setAttachmentCID" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1049,13 +1002,15 @@ parameter as mime-type:</p>
 </table>
 <p>Sets and returns an attachment’s Content-ID, which enables your to embed an inline
 (picture) attachment into HTML. First parameter must be the already attached file name.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$filename</span> <span class="o">=</span> <span class="s1">&#39;/img/photo1.jpg&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$filename</span> <span class="o">=</span> <span class="s1">&#39;/img/photo1.jpg&#39;</span><span class="p">;</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$address</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="nv">$address</span><span class="p">);</span>
     <span class="nv">$cid</span> <span class="o">=</span> <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setAttachmentCID</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
-    <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;cid:&#39;</span><span class="o">.</span> <span class="nv">$cid</span> <span class="o">.</span><span class="s1">&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;</span><span class="p">);</span>
+    <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;cid:&#39;</span> <span class="o">.</span> <span class="nv">$cid</span> <span class="o">.</span> <span class="s1">&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;</span><span class="p">);</span>
     <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
@@ -1068,7 +1023,7 @@ parameter as mime-type:</p>
 
 <dl class="method">
 <dt id="printDebugger">
-<code class="descname">printDebugger</code><span class="sig-paren">(</span><em>$include = ['headers', 'subject', 'body']</em><span class="sig-paren">)</span><a class="headerlink" href="#printDebugger" title="Permalink to this definition">¶</a></dt>
+<code class="descname">printDebugger</code><span class="sig-paren">(</span><em>$include = ['headers', 'subject', 'body']</em><span class="sig-paren">)</span><a class="headerlink" href="#printDebugger" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1091,7 +1046,9 @@ the email message. Useful for debugging.</p>
 <p>You can optionally specify which parts of the message should be printed.
 Valid options are: <strong>headers</strong>, <strong>subject</strong>, <strong>body</strong>.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// You need to pass false while sending in order for the email data</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// You need to pass false while sending in order for the email data</span>
 <span class="c1">// to not be cleared - if that happens, printDebugger() would have</span>
 <span class="c1">// nothing to output.</span>
 <span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
@@ -1113,53 +1070,35 @@ Valid options are: <strong>headers</strong>, <strong>subject</strong>, <strong>b
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="encryption.html" class="btn btn-neutral float-right" title="Encryption Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="curlrequest.html" class="btn btn-neutral float-left" title="CURLRequest Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="encryption.html" class="btn btn-neutral float-right" title="Encryption Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

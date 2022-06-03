@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>HTTP Feature Testing &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>HTTP Feature Testing &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Testing Responses" href="response.html" />
     <link rel="prev" title="Testing Controllers" href="controllers.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,74 +239,36 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Testing</a> &raquo;</li>
-        
       <li>HTTP Feature Testing</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="http-feature-testing">
-<h1>HTTP Feature Testing<a class="headerlink" href="#http-feature-testing" title="Permalink to this headline">¶</a></h1>
+<h1>HTTP Feature Testing<a class="headerlink" href="#http-feature-testing" title="Permalink to this headline"></a></h1>
 <p>Feature testing allows you to view the results of a single call to your application. This might be returning the
 results of a single web form, hitting an API endpoint, and more. This is handy because it allows you to test the entire
 life-cycle of a single request, ensuring that the routing works, the response is the correct format, analyze the results,
@@ -375,7 +289,7 @@ and more.</p>
 </ul>
 </div>
 <div class="section" id="the-test-class">
-<h2><a class="toc-backref" href="#id1">The Test Class</a><a class="headerlink" href="#the-test-class" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">The Test Class</a><a class="headerlink" href="#the-test-class" title="Permalink to this headline"></a></h2>
 <p>Feature testing requires that all of your test classes use the <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\DatabaseTestTrait</span></code>
 and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\FeatureTestTrait</span></code> traits. Since these testing tools rely on proper database
 staging you must always ensure that <code class="docutils literal notranslate"><span class="pre">parent::setUp()</span></code> and <code class="docutils literal notranslate"><span class="pre">parent::tearDown()</span></code>
@@ -389,7 +303,8 @@ are called if you implement your own methods.</p>
 
 <span class="k">class</span> <span class="nc">TestFoo</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
 <span class="p">{</span>
-    <span class="k">use</span> <span class="nx">DatabaseTestTrait</span><span class="p">,</span> <span class="nx">FeatureTestTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">DatabaseTestTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">FeatureTestTrait</span><span class="p">;</span>
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
     <span class="p">{</span>
@@ -409,24 +324,28 @@ are called if you implement your own methods.</p>
 </div>
 </div>
 <div class="section" id="requesting-a-page">
-<h2><a class="toc-backref" href="#id2">Requesting A Page</a><a class="headerlink" href="#requesting-a-page" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Requesting A Page</a><a class="headerlink" href="#requesting-a-page" title="Permalink to this headline"></a></h2>
 <p>Essentially, feature tests simply allows you to call an endpoint on your application and get the results back.
 to do this, you use the <code class="docutils literal notranslate"><span class="pre">call()</span></code> method. The first parameter is the HTTP method to use (most frequently either GET or POST).
 The second parameter is the path on your site to test. The third parameter accepts an array that is used to populate the
 superglobal variables for the HTTP verb you are using. So, a method of <strong>GET</strong> would have the <strong>$_GET</strong> variable
 populated, while a <strong>post</strong> request would have the <strong>$_POST</strong> array populated.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get a simple page</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Get a simple page</span>
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">);</span>
 
 <span class="c1">// Submit a form</span>
-<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;contact&#39;</span><span class="p">),</span> <span class="p">[</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Fred Flintstone&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;flintyfred@example.com&#39;</span>
+    <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;flintyfred@example.com&#39;</span><span class="p">,</span>
 <span class="p">]);</span>
 </pre></div>
 </div>
 <p>Shorthand methods for each of the HTTP verbs exist to ease typing and make things clearer:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">patch</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
@@ -439,10 +358,12 @@ populated, while a <strong>post</strong> request would have the <strong>$_POST</
 <p class="last">The <code class="docutils literal notranslate"><span class="pre">$params</span></code> array does not make sense for every HTTP verb, but is included for consistency.</p>
 </div>
 <div class="section" id="setting-different-routes">
-<h3><a class="toc-backref" href="#id3">Setting Different Routes</a><a class="headerlink" href="#setting-different-routes" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Setting Different Routes</a><a class="headerlink" href="#setting-different-routes" title="Permalink to this headline"></a></h3>
 <p>You can use a custom collection of routes by passing an array of “routes” into the <code class="docutils literal notranslate"><span class="pre">withRoutes()</span></code> method. This will
 override any existing routes in the system:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$routes</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$routes</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;UserController::list&#39;</span><span class="p">],</span>
 <span class="p">];</span>
 
@@ -453,11 +374,13 @@ override any existing routes in the system:</p>
 the URI to match, and the routing destination.</p>
 </div>
 <div class="section" id="setting-session-values">
-<h3><a class="toc-backref" href="#id4">Setting Session Values</a><a class="headerlink" href="#setting-session-values" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Setting Session Values</a><a class="headerlink" href="#setting-session-values" title="Permalink to this headline"></a></h3>
 <p>You can set custom session values to use during a single test with the <code class="docutils literal notranslate"><span class="pre">withSession()</span></code> method. This takes an array
 of key/value pairs that should exist within the <code class="docutils literal notranslate"><span class="pre">$_SESSION</span></code> variable when this request is made, or <code class="docutils literal notranslate"><span class="pre">null</span></code> to indicate
 that the current values of <code class="docutils literal notranslate"><span class="pre">$_SESSION</span></code> should be used. This is handy for testing authentication and more.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$values</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$values</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="mi">123</span><span class="p">,</span>
 <span class="p">];</span>
 
@@ -472,10 +395,12 @@ that the current values of <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="section" id="setting-headers">
-<h3><a class="toc-backref" href="#id5">Setting Headers</a><a class="headerlink" href="#setting-headers" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Setting Headers</a><a class="headerlink" href="#setting-headers" title="Permalink to this headline"></a></h3>
 <p>You can set header values with the <code class="docutils literal notranslate"><span class="pre">withHeaders()</span></code> method. This takes an array of key/value pairs that would be
-passed as a header into the call.:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$headers</span> <span class="o">=</span> <span class="p">[</span>
+passed as a header into the call:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;CONTENT_TYPE&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
 <span class="p">];</span>
 
@@ -484,20 +409,24 @@ passed as a header into the call.:</p>
 </div>
 </div>
 <div class="section" id="bypassing-events">
-<h3><a class="toc-backref" href="#id6">Bypassing Events</a><a class="headerlink" href="#bypassing-events" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Bypassing Events</a><a class="headerlink" href="#bypassing-events" title="Permalink to this headline"></a></h3>
 <p>Events are handy to use in your application, but can be problematic during testing. Especially events that are used
 to send out emails. You can tell the system to skip any event handling with the <code class="docutils literal notranslate"><span class="pre">skipEvents()</span></code> method:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">skipEvents</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nv">$userInfo</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">skipEvents</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nv">$userInfo</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="formatting-the-request">
-<h3><a class="toc-backref" href="#id7">Formatting The Request</a><a class="headerlink" href="#formatting-the-request" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">Formatting The Request</a><a class="headerlink" href="#formatting-the-request" title="Permalink to this headline"></a></h3>
 <p>You can set the format of your request’s body using the <code class="docutils literal notranslate"><span class="pre">withBodyFormat()</span></code> method. Currently this supports either
 <cite>json</cite> or <cite>xml</cite>. This will take the parameters passed into <code class="docutils literal notranslate"><span class="pre">call()</span></code>, <code class="docutils literal notranslate"><span class="pre">post()</span></code>, <code class="docutils literal notranslate"><span class="pre">get()</span></code>… and assign them to the
 body of the request in the given format. This will also set the <cite>Content-Type</cite> header for your request accordingly.
 This is useful when testing JSON or XML API’s so that you can set the request in the form that the controller will expect.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// If your feature test contains this:</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// If your feature test contains this:</span>
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">withBodyFormat</span><span class="p">(</span><span class="s1">&#39;json&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nv">$userInfo</span><span class="p">);</span>
 
 <span class="c1">// Your controller can then get the parameters passed in with:</span>
@@ -506,14 +435,14 @@ This is useful when testing JSON or XML API’s so that you can set the request 
 </div>
 </div>
 <div class="section" id="setting-the-body">
-<h3><a class="toc-backref" href="#id8">Setting the Body</a><a class="headerlink" href="#setting-the-body" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Setting the Body</a><a class="headerlink" href="#setting-the-body" title="Permalink to this headline"></a></h3>
 <p>You can set the body of your request with the <code class="docutils literal notranslate"><span class="pre">withBody()</span></code> method. This allows you to format the body how you want
 to format it. It is recommended that you use this if you have more complicated xml’s to test. This will also not set
 the Content-Type header for you so if you need that, you can set it with the <code class="docutils literal notranslate"><span class="pre">withHeaders()</span></code> method.</p>
 </div>
 </div>
 <div class="section" id="checking-the-response">
-<h2><a class="toc-backref" href="#id9">Checking the Response</a><a class="headerlink" href="#checking-the-response" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Checking the Response</a><a class="headerlink" href="#checking-the-response" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">FeatureTestTrait::call()</span></code> returns an instance of a <code class="docutils literal notranslate"><span class="pre">TestResponse</span></code>. See <a class="reference internal" href="response.html"><span class="doc">Testing Responses</span></a> on
 how to use this class to perform additional assertions and verification in your test cases.</p>
 </div>
@@ -521,53 +450,35 @@ how to use this class to perform additional assertions and verification in your 
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="response.html" class="btn btn-neutral float-right" title="Testing Responses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="controllers.html" class="btn btn-neutral float-left" title="Testing Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="response.html" class="btn btn-neutral float-right" title="Testing Responses" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

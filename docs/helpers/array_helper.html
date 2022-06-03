@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Array Helper &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Array Helper &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cookie Helper" href="cookie_helper.html" />
     <link rel="prev" title="Helpers" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,74 +239,36 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Helpers</a> &raquo;</li>
-        
       <li>Array Helper</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="array-helper">
-<h1>Array Helper<a class="headerlink" href="#array-helper" title="Permalink to this headline">¶</a></h1>
+<h1>Array Helper<a class="headerlink" href="#array-helper" title="Permalink to this headline"></a></h1>
 <p>The array helper provides several functions to simplify more complex usages of arrays. It is not intended to duplicate
 any of the existing functionality that PHP provides - unless it is to vastly simplify their usage.</p>
 <div class="contents local topic" id="contents">
@@ -364,18 +278,20 @@ any of the existing functionality that PHP provides - unless it is to vastly sim
 </ul>
 </div>
 <div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline"></a></h2>
 <p>This helper is loaded using the following code:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="available-functions">
-<h2><a class="toc-backref" href="#id2">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline"></a></h2>
 <p>The following functions are available:</p>
 <dl class="function">
 <dt id="dot_array_search">
-<code class="descname">dot_array_search</code><span class="sig-paren">(</span><em>string $search</em>, <em>array $values</em><span class="sig-paren">)</span><a class="headerlink" href="#dot_array_search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dot_array_search</code><span class="sig-paren">(</span><em>string $search</em>, <em>array $values</em><span class="sig-paren">)</span><a class="headerlink" href="#dot_array_search" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -396,21 +312,25 @@ any of the existing functionality that PHP provides - unless it is to vastly sim
 </table>
 <p>This method allows you to use dot-notation to search through an array for a specific-key,
 and allows the use of a the ‘*’ wildcard. Given the following array:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;buzz&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;fizz&#39;</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="p">,</span>
         <span class="p">],</span>
         <span class="s1">&#39;bar&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;baz&#39;</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
-        <span class="p">]</span>
-    <span class="p">]</span>
-<span class="p">]</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 <p>We can locate the value of ‘fizz’ by using the search string “foo.buzz.fizz”. Likewise, the value
 of baz can be found with “foo.bar.baz”:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns: 11</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Returns: 11</span>
 <span class="nv">$fizz</span> <span class="o">=</span> <span class="nx">dot_array_search</span><span class="p">(</span><span class="s1">&#39;foo.buzz.fizz&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
 <span class="c1">// Returns: 23</span>
@@ -420,12 +340,16 @@ of baz can be found with “foo.bar.baz”:</p>
 <p>You can use the asterisk as a wildcard to replace any of the segments. When found, it will search through all
 of the child nodes until it finds it. This is handy if you don’t know the values, or if your values
 have a numeric index:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns: 23</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Returns: 23</span>
 <span class="nv">$baz</span> <span class="o">=</span> <span class="nx">dot_array_search</span><span class="p">(</span><span class="s1">&#39;foo.*.baz&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If the array key contains a dot, then the key can be escaped with a backslash:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;bar.baz&#39;</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
     <span class="p">],</span>
@@ -442,9 +366,14 @@ have a numeric index:</p>
 </div>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Prior to v4.2.0, <code class="docutils literal notranslate"><span class="pre">dot_array_search('foo.bar.baz',</span> <span class="pre">['foo'</span> <span class="pre">=&gt;</span> <span class="pre">['bar'</span> <span class="pre">=&gt;</span> <span class="pre">23]])</span></code> returned <code class="docutils literal notranslate"><span class="pre">23</span></code>
+due to a bug. v4.2.0 and later returns <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+</div>
 <dl class="function">
 <dt id="array_deep_search">
-<code class="descname">array_deep_search</code><span class="sig-paren">(</span><em>$key</em>, <em>array $array</em><span class="sig-paren">)</span><a class="headerlink" href="#array_deep_search" title="Permalink to this definition">¶</a></dt>
+<code class="descname">array_deep_search</code><span class="sig-paren">(</span><em>$key</em>, <em>array $array</em><span class="sig-paren">)</span><a class="headerlink" href="#array_deep_search" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -468,7 +397,7 @@ have a numeric index:</p>
 
 <dl class="function">
 <dt id="array_sort_by_multiple_keys">
-<code class="descname">array_sort_by_multiple_keys</code><span class="sig-paren">(</span><em>array &amp;$array</em>, <em>array $sortColumns</em><span class="sig-paren">)</span><a class="headerlink" href="#array_sort_by_multiple_keys" title="Permalink to this definition">¶</a></dt>
+<code class="descname">array_sort_by_multiple_keys</code><span class="sig-paren">(</span><em>array &amp;$array</em>, <em>array $sortColumns</em><span class="sig-paren">)</span><a class="headerlink" href="#array_sort_by_multiple_keys" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -491,7 +420,9 @@ sort flags as an associative array.</li>
 <p>This method sorts the elements of a multidimensional array by the values of one or
 more keys in a hierarchical way. Take the following array, that might be returned
 from, e.g., the <code class="docutils literal notranslate"><span class="pre">find()</span></code> function of a model:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
         <span class="s1">&#39;team_id&#39;</span>  <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
@@ -524,7 +455,9 @@ from, e.g., the <code class="docutils literal notranslate"><span class="pre">fin
 </div>
 <p>Now sort this array by two keys. Note that the method supports the dot-notation
 to access values in deeper array levels, but does not support wildcards:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">array_sort_by_multiple_keys</span><span class="p">(</span><span class="nv">$players</span><span class="p">,</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nx">array_sort_by_multiple_keys</span><span class="p">(</span><span class="nv">$players</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;team.order&#39;</span> <span class="o">=&gt;</span> <span class="nx">SORT_ASC</span><span class="p">,</span>
     <span class="s1">&#39;position&#39;</span>   <span class="o">=&gt;</span> <span class="nx">SORT_ASC</span><span class="p">,</span>
 <span class="p">]);</span>
@@ -533,13 +466,15 @@ to access values in deeper array levels, but does not support wildcards:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">$players</span></code> array is now sorted by the ‘order’ value in each players’
 ‘team’ subarray. If this value is equal for several players, these players
 will be ordered by their ‘position’. The resulting array is:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span>
         <span class="s1">&#39;team_id&#39;</span>  <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s1">&#39;team&#39;</span>     <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
             <span class="s1">&#39;order&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">],</span>
@@ -548,7 +483,7 @@ will be ordered by their ‘position’. The resulting array is:</p>
         <span class="s1">&#39;team_id&#39;</span>  <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span>
         <span class="s1">&#39;team&#39;</span>     <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
             <span class="s1">&#39;order&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">],</span>
@@ -557,7 +492,7 @@ will be ordered by their ‘position’. The resulting array is:</p>
         <span class="s1">&#39;team_id&#39;</span>  <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
         <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s1">&#39;team&#39;</span>     <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
             <span class="s1">&#39;order&#39;</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">],</span>
@@ -593,7 +528,9 @@ each nesting level and handle it accordingly.</p>
 </table>
 <p>This function flattens a multidimensional array to a single key-value array by using dots
 as separators for the keys.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$arrayToFlatten</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$arrayToFlatten</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;personal&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span>
         <span class="s1">&#39;last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span>
@@ -607,7 +544,9 @@ as separators for the keys.</p>
 </pre></div>
 </div>
 <p>On inspection, <code class="docutils literal notranslate"><span class="pre">$flattened</span></code> is equal to:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="p">[</span>
     <span class="s1">&#39;personal.first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span>
     <span class="s1">&#39;personal.last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span>
     <span class="s1">&#39;personal.age&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;26&#39;</span><span class="p">,</span>
@@ -619,17 +558,20 @@ as separators for the keys.</p>
 <p>Users may use the <code class="docutils literal notranslate"><span class="pre">$id</span></code> parameter on their own, but are not required to do so.
 The function uses this parameter internally to track the flattened keys. If users
 will be supplying an initial <code class="docutils literal notranslate"><span class="pre">$id</span></code>, it will be prepended to all keys.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// using the same data from above</span>
-<span class="nv">$flattened</span> <span class="o">=</span> <span class="nx">array_flatten_with_dots</span><span class="p">(</span><span class="nv">$arrayToFlatten</span><span class="p">,</span> <span class="s1">&#39;foo_&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="c1">// $flattened is now:</span>
-<span class="p">[</span>
-    <span class="s1">&#39;foo_personal.first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;foo_personal.last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;foo_personal.age&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;26&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;foo_personal.address&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;foo_other_details&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;marines officer&#39;</span><span class="p">,</span>
-<span class="p">];</span>
+<span class="c1">// using the same data from above</span>
+<span class="nv">$flattened</span> <span class="o">=</span> <span class="nx">array_flatten_with_dots</span><span class="p">(</span><span class="nv">$arrayToFlatten</span><span class="p">,</span> <span class="s1">&#39;foo_&#39;</span><span class="p">);</span>
+<span class="cm">/*</span>
+<span class="cm"> * $flattened is now:</span>
+<span class="cm"> * [</span>
+<span class="cm"> *     &#39;foo_personal.first_name&#39; =&gt; &#39;john&#39;,</span>
+<span class="cm"> *     &#39;foo_personal.last_name&#39;  =&gt; &#39;smith&#39;,</span>
+<span class="cm"> *     &#39;foo_personal.age&#39;        =&gt; &#39;26&#39;,</span>
+<span class="cm"> *     &#39;foo_personal.address&#39;    =&gt; &#39;US&#39;,</span>
+<span class="cm"> *     &#39;foo_other_details&#39;       =&gt; &#39;marines officer&#39;,</span>
+<span class="cm"> * ]</span>
+<span class="cm"> */</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -639,53 +581,35 @@ will be supplying an initial <code class="docutils literal notranslate"><span cl
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cookie_helper.html" class="btn btn-neutral float-right" title="Cookie Helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Helpers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cookie_helper.html" class="btn btn-neutral float-right" title="Cookie Helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

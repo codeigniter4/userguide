@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Views &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Views &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="View Cells" href="view_cells.html" />
     <link rel="prev" title="Building Responses" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,74 +239,36 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Building Responses</a> &raquo;</li>
-        
       <li>Views</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="views">
-<h1>Views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h1>
+<h1>Views<a class="headerlink" href="#views" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><a class="reference internal" href="#creating-a-view" id="id2">Creating a View</a></li>
@@ -363,8 +277,11 @@
 <li><a class="reference internal" href="#storing-views-within-sub-directories" id="id5">Storing Views within Sub-directories</a></li>
 <li><a class="reference internal" href="#namespaced-views" id="id6">Namespaced Views</a></li>
 <li><a class="reference internal" href="#caching-views" id="id7">Caching Views</a></li>
-<li><a class="reference internal" href="#adding-dynamic-data-to-the-view" id="id8">Adding Dynamic Data to the View</a></li>
-<li><a class="reference internal" href="#creating-loops" id="id9">Creating Loops</a></li>
+<li><a class="reference internal" href="#adding-dynamic-data-to-the-view" id="id8">Adding Dynamic Data to the View</a><ul>
+<li><a class="reference internal" href="#the-savedata-option" id="id9">The saveData Option</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-loops" id="id10">Creating Loops</a></li>
 </ul>
 </div>
 <p>A view is simply a web page, or a page fragment, like a header, footer, sidebar, etc. In fact,
@@ -375,7 +292,7 @@ the Controller acts as the traffic cop, so it is responsible for fetching a part
 not read the <a class="reference internal" href="../incoming/controllers.html"><span class="doc">Controllers</span></a> page, you should do so before continuing.</p>
 <p>Using the example controller you created in the controller page, let’s add a view to it.</p>
 <div class="section" id="creating-a-view">
-<h2><a class="toc-backref" href="#id2">Creating a View</a><a class="headerlink" href="#creating-a-view" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Creating a View</a><a class="headerlink" href="#creating-a-view" title="Permalink to this headline"></a></h2>
 <p>Using your text editor, create a file called <code class="docutils literal notranslate"><span class="pre">blog_view.php</span></code> and put this in it:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
@@ -390,9 +307,11 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 <p>Then save the file in your <strong>app/Views</strong> directory.</p>
 </div>
 <div class="section" id="displaying-a-view">
-<h2><a class="toc-backref" href="#id3">Displaying a View</a><a class="headerlink" href="#displaying-a-view" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Displaying a View</a><a class="headerlink" href="#displaying-a-view" title="Permalink to this headline"></a></h2>
 <p>To load and display a particular view file you will use the following function:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Where <em>name</em> is the name of your view file.</p>
@@ -405,11 +324,13 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 
 <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -418,14 +339,9 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">While all of the examples show echo the view directly, you can also return the output from the view, instead,
-and it will be appended to any captured output.</p>
-</div>
 </div>
 <div class="section" id="loading-multiple-views">
-<h2><a class="toc-backref" href="#id4">Loading Multiple Views</a><a class="headerlink" href="#loading-multiple-views" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Loading Multiple Views</a><a class="headerlink" href="#loading-multiple-views" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter will intelligently handle multiple calls to <code class="docutils literal notranslate"><span class="pre">view()</span></code> from within a controller. If more than one
 call happens they will be appended together. For example, you may wish to have a header view, a menu view, a
 content view, and a footer view. That might look something like this:</p>
@@ -433,7 +349,9 @@ content view, and a footer view. That might look something like this:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Page</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Page</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
     <span class="p">{</span>
@@ -441,10 +359,10 @@ content view, and a footer view. That might look something like this:</p>
             <span class="s1">&#39;page_title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Your title&#39;</span><span class="p">,</span>
         <span class="p">];</span>
 
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;footer&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">)</span>
+            <span class="o">.</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">)</span>
+            <span class="o">.</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">)</span>
+            <span class="o">.</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;footer&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -452,51 +370,61 @@ content view, and a footer view. That might look something like this:</p>
 <p>In the example above, we are using “dynamically added data”, which you will see below.</p>
 </div>
 <div class="section" id="storing-views-within-sub-directories">
-<h2><a class="toc-backref" href="#id5">Storing Views within Sub-directories</a><a class="headerlink" href="#storing-views-within-sub-directories" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Storing Views within Sub-directories</a><a class="headerlink" href="#storing-views-within-sub-directories" title="Permalink to this headline"></a></h2>
 <p>Your view files can also be stored within sub-directories if you prefer that type of organization.
 When doing so you will need to include the directory name loading the view. Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;directory_name/file_name&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;directory_name/file_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="namespaced-views">
-<h2><a class="toc-backref" href="#id6">Namespaced Views</a><a class="headerlink" href="#namespaced-views" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Namespaced Views</a><a class="headerlink" href="#namespaced-views" title="Permalink to this headline"></a></h2>
 <p>You can store views under a <strong>View</strong> directory that is namespaced, and load that view as if it was namespaced. While
 PHP does not support loading non-class files from a namespace, CodeIgniter provides this feature to make it possible
 to package your views together in a module-like fashion for easy re-use or distribution.</p>
 <p>If you have <code class="docutils literal notranslate"><span class="pre">example/blog</span></code> directory that has a PSR-4 mapping set up in the <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">Autoloader</span></a> living
 under the namespace <code class="docutils literal notranslate"><span class="pre">Example\Blog</span></code>, you could retrieve view files as if they were namespaced also. Following this
 example, you could load the <strong>blog_view.php</strong> file from <strong>example/blog/Views</strong> by prepending the namespace to the view name:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Example\Blog\Views\blog_view&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Example\Blog\Views\blog_view&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="caching-views">
-<span id="id1"></span><h2><a class="toc-backref" href="#id7">Caching Views</a><a class="headerlink" href="#caching-views" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id7">Caching Views</a><a class="headerlink" href="#caching-views" title="Permalink to this headline"></a></h2>
 <p>You can cache a view with the <code class="docutils literal notranslate"><span class="pre">view</span></code> command by passing a <code class="docutils literal notranslate"><span class="pre">cache</span></code> option with the number of seconds to cache
 the view for, in the third parameter:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Cache the view for 60 seconds</span>
-<span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="mi">60</span><span class="p">]);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Cache the view for 60 seconds</span>
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="mi">60</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>By default, the view will be cached using the same name as the view file itself. You can customize this by passing
 along <code class="docutils literal notranslate"><span class="pre">cache_name</span></code> and the cache ID you wish to use:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Cache the view for 60 seconds</span>
-<span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;cache_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_cached_view&#39;</span><span class="p">]);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Cache the view for 60 seconds</span>
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;cache_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_cached_view&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="adding-dynamic-data-to-the-view">
-<h2><a class="toc-backref" href="#id8">Adding Dynamic Data to the View</a><a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Permalink to this headline">¶</a></h2>
-<p>Data is passed from the controller to the view by way of an array in the second parameter of the view function.
+<h2><a class="toc-backref" href="#id8">Adding Dynamic Data to the View</a><a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Permalink to this headline"></a></h2>
+<p>Data is passed from the controller to the view by way of an array in the second parameter of the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function.
 Here’s an example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
     <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Heading&#39;</span><span class="p">,</span>
     <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Message&#39;</span><span class="p">,</span>
 <span class="p">];</span>
 
-<span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Let’s try it with your controller file. Open it and add this code:</p>
@@ -504,14 +432,16 @@ Here’s an example:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s2">&quot;My Real Title&quot;</span><span class="p">;</span>
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;My Real Heading&quot;</span><span class="p">;</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="s1">&#39;My Real Title&#39;</span><span class="p">;</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;My Real Heading&#39;</span><span class="p">;</span>
 
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -528,24 +458,30 @@ Here’s an example:</p>
 </pre></div>
 </div>
 <p>Then load the page at the URL you’ve been using and you should see the variables replaced.</p>
-<p>The data passed in is only available during one call to <cite>view</cite>. If you call the function multiple times
-in a single request, you will have to pass the desired data to each view. This keeps any data from “bleeding” into
-other views, potentially causing issues. If you would prefer the data to persist, you can pass the <cite>saveData</cite> option
-into the <cite>$option</cite> array in the third parameter.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="section" id="the-savedata-option">
+<h3><a class="toc-backref" href="#id9">The saveData Option</a><a class="headerlink" href="#the-savedata-option" title="Permalink to this headline"></a></h3>
+<p>The data passed in is retained for subsequent calls to <code class="docutils literal notranslate"><span class="pre">view()</span></code>. If you call the function multiple times
+in a single request, you will not have to pass the desired data to each <code class="docutils literal notranslate"><span class="pre">view()</span></code>.</p>
+<p>But this might not keep any data from “bleeding” into
+other views, potentially causing issues. If you would prefer to clean the data after one call, you can pass the <code class="docutils literal notranslate"><span class="pre">saveData</span></code> option
+into the <code class="docutils literal notranslate"><span class="pre">$option</span></code> array in the third parameter.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
     <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Heading&#39;</span><span class="p">,</span>
     <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Message&#39;</span><span class="p">,</span>
 <span class="p">];</span>
 
-<span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;saveData&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">]);</span>
+<span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;saveData&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">]);</span>
 </pre></div>
 </div>
-<p>Additionally, if you would like the default functionality of the view function to be that it does save the data
-between calls, you can set <code class="docutils literal notranslate"><span class="pre">$saveData</span></code> to <strong>true</strong> in <strong>app/Config/Views.php</strong>.</p>
+<p>Additionally, if you would like the default functionality of the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function to be that it does clear the data
+between calls, you can set <code class="docutils literal notranslate"><span class="pre">$saveData</span></code> to <strong>false</strong> in <strong>app/Config/Views.php</strong>.</p>
+</div>
 </div>
 <div class="section" id="creating-loops">
-<h2><a class="toc-backref" href="#id9">Creating Loops</a><a class="headerlink" href="#creating-loops" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Creating Loops</a><a class="headerlink" href="#creating-loops" title="Permalink to this headline"></a></h2>
 <p>The data array you pass to your view files is not limited to simple variables. You can pass multi dimensional
 arrays, which can be looped to generate multiple rows. For example, if you pull data from your database it will
 typically be in the form of a multi-dimensional array.</p>
@@ -554,7 +490,9 @@ typically be in the form of a multi-dimensional array.</p>
 
 <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
     <span class="p">{</span>
@@ -564,7 +502,7 @@ typically be in the form of a multi-dimensional array.</p>
             <span class="s1">&#39;heading&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My Real Heading&#39;</span><span class="p">,</span>
         <span class="p">];</span>
 
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;blog_view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -596,53 +534,35 @@ typically be in the form of a multi-dimensional array.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="view_cells.html" class="btn btn-neutral float-right" title="View Cells" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Building Responses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="view_cells.html" class="btn btn-neutral float-right" title="View Cells" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

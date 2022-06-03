@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Using Entity Classes &mdash; CodeIgniter 4.1.9 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Using Entity Classes &mdash; CodeIgniter 4.2.0 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Managing Databases" href="../dbmgmt/index.html" />
     <link rel="prev" title="Using CodeIgniter’s Model" href="model.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -104,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -113,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -150,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -169,6 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -206,6 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -268,8 +218,10 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli.html">Running via the Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Custom CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
@@ -287,74 +239,36 @@
 </ul>
 </li>
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Modeling Data</a> &raquo;</li>
-        
       <li>Using Entity Classes</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="using-entity-classes">
-<h1>Using Entity Classes<a class="headerlink" href="#using-entity-classes" title="Permalink to this headline">¶</a></h1>
+<h1>Using Entity Classes<a class="headerlink" href="#using-entity-classes" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter supports Entity classes as a first-class citizen in it’s database layer, while keeping
 them completely optional to use. They are commonly used as part of the Repository pattern, but can
 be used directly with the <a class="reference internal" href="model.html"><span class="doc">Model</span></a> if that fits your needs better.</p>
@@ -382,7 +296,7 @@ be used directly with the <a class="reference internal" href="model.html"><span 
 </ul>
 </div>
 <div class="section" id="entity-usage">
-<h2><a class="toc-backref" href="#id1">Entity Usage</a><a class="headerlink" href="#entity-usage" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Entity Usage</a><a class="headerlink" href="#entity-usage" title="Permalink to this headline"></a></h2>
 <p>At its core, an Entity class is simply a class that represents a single database row. It has class properties
 to represent the database columns, and provides any additional methods to implement the business logic for
 that row. The core feature, though, is that it doesn’t know anything about how to persist itself. That’s the
@@ -399,8 +313,12 @@ database when you’ve proven the concept works.</p>
 <span class="nx">created_at</span>  <span class="o">-</span> <span class="nx">datetime</span>
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">attributes</span></code> is a reserved word for internal use. If you use it as a column name, the Entity does not work correctly.</p>
+</div>
 <div class="section" id="create-the-entity-class">
-<h3><a class="toc-backref" href="#id2">Create the Entity Class</a><a class="headerlink" href="#create-the-entity-class" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">Create the Entity Class</a><a class="headerlink" href="#create-the-entity-class" title="Permalink to this headline"></a></h3>
 <p>Now create a new Entity class. Since there’s no default location to store these classes, and it doesn’t fit
 in with the existing directory structure, create a new directory at <strong>app/Entities</strong>. Create the
 Entity itself at <strong>app/Entities/User.php</strong>.</p>
@@ -419,7 +337,7 @@ Entity itself at <strong>app/Entities/User.php</strong>.</p>
 <p>At its simplest, this is all you need to do, though we’ll make it more useful in a minute.</p>
 </div>
 <div class="section" id="create-the-model">
-<h3><a class="toc-backref" href="#id3">Create the Model</a><a class="headerlink" href="#create-the-model" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Create the Model</a><a class="headerlink" href="#create-the-model" title="Permalink to this headline"></a></h3>
 <p>Create the model first at <strong>app/Models/UserModel.php</strong> so that we can interact with it:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -445,9 +363,11 @@ class as the <code class="docutils literal notranslate"><span class="pre">$retur
 instances of our User Entity class instead of an object or array like normal.</p>
 </div>
 <div class="section" id="working-with-the-entity-class">
-<h3><a class="toc-backref" href="#id4">Working With the Entity Class</a><a class="headerlink" href="#working-with-the-entity-class" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Working With the Entity Class</a><a class="headerlink" href="#working-with-the-entity-class" title="Permalink to this headline"></a></h3>
 <p>Now that all of the pieces are in place, you would work with the Entity class as you would any other class:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$user</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 
 <span class="c1">// Display</span>
 <span class="k">echo</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">username</span><span class="p">;</span>
@@ -456,14 +376,14 @@ instances of our User Entity class instead of an object or array like normal.</p
 <span class="c1">// Updating</span>
 <span class="nb">unset</span><span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">username</span><span class="p">);</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">username</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">username</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">username</span> <span class="o">=</span> <span class="s1">&#39;something new&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
 
 <span class="c1">// Create</span>
-<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
+<span class="nv">$user</span>           <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">username</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">email</span>    <span class="o">=</span> <span class="s1">&#39;foo@example.com&#39;</span><span class="p">;</span>
 <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
@@ -473,6 +393,10 @@ instances of our User Entity class instead of an object or array like normal.</p
 access them as if they were public properties. The base class, <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Entity\Entity</span></code>, takes care of this for you, as
 well as providing the ability to check the properties with <code class="docutils literal notranslate"><span class="pre">isset()</span></code>, or <code class="docutils literal notranslate"><span class="pre">unset()</span></code> the property, and keep track
 of what columns have changed since the object was created or pulled from the database.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Entity class stores the data in the property <code class="docutils literal notranslate"><span class="pre">$attributes</span></code>.</p>
+</div>
 <p>When the User is passed to the model’s <code class="docutils literal notranslate"><span class="pre">save()</span></code> method, it automatically takes care of reading the  properties
 and saving any changes to columns listed in the model’s <code class="docutils literal notranslate"><span class="pre">$allowedFields</span></code> property. It also knows whether to create
 a new row, or update an existing one.</p>
@@ -483,12 +407,14 @@ call the <code class="docutils literal notranslate"><span class="pre">update()</
 </div>
 </div>
 <div class="section" id="filling-properties-quickly">
-<h3><a class="toc-backref" href="#id5">Filling Properties Quickly</a><a class="headerlink" href="#filling-properties-quickly" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Filling Properties Quickly</a><a class="headerlink" href="#filling-properties-quickly" title="Permalink to this headline"></a></h3>
 <p>The Entity class also provides a method, <code class="docutils literal notranslate"><span class="pre">fill()</span></code> that allows you to shove an array of key/value pairs into the class
 and populate the class properties. Any property in the array will be set on the Entity. However, when saving through
 the model, only the fields in <code class="docutils literal notranslate"><span class="pre">$allowedFields</span></code> will actually be saved to the database, so you can store additional data
 on your entities without worrying much about stray fields getting saved incorrectly.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">();</span>
 
 <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">fill</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
@@ -496,7 +422,9 @@ on your entities without worrying much about stray fields getting saved incorrec
 </pre></div>
 </div>
 <p>You can also pass the data in the constructor and the data will be passed through the <code class="docutils literal notranslate"><span class="pre">fill()</span></code> method during instantiation.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getPost</span><span class="p">();</span>
 
 <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
@@ -504,7 +432,7 @@ on your entities without worrying much about stray fields getting saved incorrec
 </div>
 </div>
 <div class="section" id="bulk-accessing-properties">
-<h3><a class="toc-backref" href="#id6">Bulk Accessing Properties</a><a class="headerlink" href="#bulk-accessing-properties" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Bulk Accessing Properties</a><a class="headerlink" href="#bulk-accessing-properties" title="Permalink to this headline"></a></h3>
 <p>The Entity class has two methods to extract all available properties into an array: <code class="docutils literal notranslate"><span class="pre">toArray()</span></code> and <code class="docutils literal notranslate"><span class="pre">toRawArray()</span></code>.
 Using the raw version will bypass magic “getter” methods and casts. Both methods can take a boolean first parameter
 to specify whether returned values should be filtered by those that have changed, and a boolean final parameter to
@@ -512,7 +440,7 @@ make the method recursive, in case of nested Entities.</p>
 </div>
 </div>
 <div class="section" id="handling-business-logic">
-<h2><a class="toc-backref" href="#id7">Handling Business Logic</a><a class="headerlink" href="#handling-business-logic" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Handling Business Logic</a><a class="headerlink" href="#handling-business-logic" title="Permalink to this headline"></a></h2>
 <p>While the examples above are convenient, they don’t help enforce any business logic. The base Entity class implements
 some smart <code class="docutils literal notranslate"><span class="pre">__get()</span></code> and <code class="docutils literal notranslate"><span class="pre">__set()</span></code> methods that will check for special methods and use those instead of using
 the attributes directly, allowing you to enforce any business logic or data conversion that you need.</p>
@@ -570,14 +498,16 @@ is UTC so we can easily convert the viewer’s current timezone. In <code class=
 a formatted string in the application’s current timezone.</p>
 <p>While fairly simple, these examples show that using Entity classes can provide a very flexible way to enforce
 business logic and create objects that are pleasant to use.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Auto-hash the password - both do the same thing</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Auto-hash the password - both do the same thing</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">password</span> <span class="o">=</span> <span class="s1">&#39;my great password&#39;</span><span class="p">;</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">setPassword</span><span class="p">(</span><span class="s1">&#39;my great password&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="data-mapping">
-<h2><a class="toc-backref" href="#id8">Data Mapping</a><a class="headerlink" href="#data-mapping" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Data Mapping</a><a class="headerlink" href="#data-mapping" title="Permalink to this headline"></a></h2>
 <p>At many points in your career, you will run into situations where the use of an application has changed and the
 original column names in the database no longer make sense. Or you find that your coding style prefers camelCase
 class properties, but your database schema required snake_case names. These situations can be easily handled
@@ -619,7 +549,7 @@ simply map the <code class="docutils literal notranslate"><span class="pre">full
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$attributes</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;id&#39;</span>         <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
-        <span class="s1">&#39;name&#39;</span>       <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span> <span class="c1">// Represents a username</span>
+        <span class="s1">&#39;full_name&#39;</span>  <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span> <span class="c1">// In the $attributes, the key is the column name</span>
         <span class="s1">&#39;email&#39;</span>      <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
         <span class="s1">&#39;password&#39;</span>   <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
         <span class="s1">&#39;created_at&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
@@ -638,13 +568,13 @@ name of the column in the database.</p>
 <p>In this example, when the model sets the <code class="docutils literal notranslate"><span class="pre">full_name</span></code> field on the User class, it actually assigns that value to the
 class’ <code class="docutils literal notranslate"><span class="pre">$name</span></code> property, so it can be set and retrieved through <code class="docutils literal notranslate"><span class="pre">$user-&gt;name</span></code>. The value will still be accessible
 through the original <code class="docutils literal notranslate"><span class="pre">$user-&gt;full_name</span></code>, also, as this is needed for the model to get the data back out and save it
-to the database. However, <code class="docutils literal notranslate"><span class="pre">unset</span></code> and <code class="docutils literal notranslate"><span class="pre">isset</span></code> only work on the mapped property, <code class="docutils literal notranslate"><span class="pre">$name</span></code>, not on the original name,
-<code class="docutils literal notranslate"><span class="pre">full_name</span></code>.</p>
+to the database. However, <code class="docutils literal notranslate"><span class="pre">unset()</span></code> and <code class="docutils literal notranslate"><span class="pre">isset()</span></code> only work on the mapped property, <code class="docutils literal notranslate"><span class="pre">$user-&gt;name</span></code>, not on the database column name,
+<code class="docutils literal notranslate"><span class="pre">$user-&gt;full_name</span></code>.</p>
 </div>
 <div class="section" id="mutators">
-<h2><a class="toc-backref" href="#id9">Mutators</a><a class="headerlink" href="#mutators" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Mutators</a><a class="headerlink" href="#mutators" title="Permalink to this headline"></a></h2>
 <div class="section" id="date-mutators">
-<h3><a class="toc-backref" href="#id10">Date Mutators</a><a class="headerlink" href="#date-mutators" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Date Mutators</a><a class="headerlink" href="#date-mutators" title="Permalink to this headline"></a></h3>
 <p>By default, the Entity class will convert fields named <cite>created_at</cite>, <cite>updated_at</cite>, or <cite>deleted_at</cite> into
 <a class="reference internal" href="../libraries/time.html"><span class="doc">Time</span></a> instances whenever they are set or retrieved. The Time class provides a large number
 of helpful methods in an immutable, localized way.</p>
@@ -663,7 +593,9 @@ of helpful methods in an immutable, localized way.</p>
 </div>
 <p>Now, when any of those properties are set, they will be converted to a Time instance, using the application’s
 current timezone, as set in <strong>app/Config/App.php</strong>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
 
 <span class="c1">// Converted to Time instance</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">created_at</span> <span class="o">=</span> <span class="s1">&#39;April 15, 2017 10:30:00&#39;</span><span class="p">;</span>
@@ -675,7 +607,7 @@ current timezone, as set in <strong>app/Config/App.php</strong>:</p>
 </div>
 </div>
 <div class="section" id="property-casting">
-<h3><a class="toc-backref" href="#id11">Property Casting</a><a class="headerlink" href="#property-casting" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Property Casting</a><a class="headerlink" href="#property-casting" title="Permalink to this headline"></a></h3>
 <p>You can specify that properties in your Entity should be converted to common data types with the <code class="docutils literal notranslate"><span class="pre">$casts</span></code> property.
 This option should be an array where the key is the name of the class property, and the value is the data type it
 should be cast to. Casting only affects when values are read. No conversions happen that affect the permanent value in
@@ -700,7 +632,7 @@ Add a question mark at the beginning of type to mark property as nullable, i.e.,
 </div>
 </div>
 <div class="section" id="array-json-casting">
-<h3><a class="toc-backref" href="#id12">Array/Json Casting</a><a class="headerlink" href="#array-json-casting" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Array/Json Casting</a><a class="headerlink" href="#array-json-casting" title="Permalink to this headline"></a></h3>
 <p>Array/Json casting is especially useful with fields that store serialized arrays or json in them. When cast as:</p>
 <ul class="simple">
 <li>an <strong>array</strong>, they will automatically be unserialized,</li>
@@ -730,7 +662,9 @@ Unlike the rest of the data types that you can cast properties into, the:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span>    <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$user</span>    <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
 <span class="nv">$options</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">options</span><span class="p">;</span>
 
 <span class="nv">$options</span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
@@ -741,7 +675,7 @@ Unlike the rest of the data types that you can cast properties into, the:</p>
 </div>
 </div>
 <div class="section" id="csv-casting">
-<h3><a class="toc-backref" href="#id13">CSV Casting</a><a class="headerlink" href="#csv-casting" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">CSV Casting</a><a class="headerlink" href="#csv-casting" title="Permalink to this headline"></a></h3>
 <p>If you know you have a flat array of simple values, encoding them as a serialized or JSON string
 may be more complex than the original structure. Casting as Comma-Separated Values (CSV) is
 a simpler alternative will result in a string that uses less space and is more easily read
@@ -761,7 +695,9 @@ by humans:</p>
 </pre></div>
 </div>
 <p>Stored in the database as “red,yellow,green”:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -770,7 +706,7 @@ by humans:</p>
 </div>
 </div>
 <div class="section" id="custom-casting">
-<h3><a class="toc-backref" href="#id14">Custom casting</a><a class="headerlink" href="#custom-casting" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">Custom casting</a><a class="headerlink" href="#custom-casting" title="Permalink to this headline"></a></h3>
 <p>You can define your own conversion types for getting and setting data.</p>
 <p>At first you need to create a handler class for your type.
 Let’s say the class will be located in the <strong>app/Entities/Cast</strong> directory:</p>
@@ -785,7 +721,7 @@ Let’s say the class will be located in the <strong>app/Entities/Cast</strong> 
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">set</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
@@ -822,13 +758,17 @@ Let’s say the class will be located in the <strong>app/Entities/Cast</strong> 
 </pre></div>
 </div>
 <p>If you don’t need to change values when getting or setting a value. Then just don’t implement the appropriate method:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Entities\Cast</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">CastBase64</span> <span class="k">extends</span> <span class="nx">BaseCast</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -837,32 +777,48 @@ Let’s say the class will be located in the <strong>app/Entities/Cast</strong> 
 <p>In some cases, one type is not enough. In this situation, you can use additional parameters.
 Additional parameters are indicated in square brackets and listed with a comma.</p>
 <p><strong>type[param1, param2]</strong></p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defining a type with parameters</span>
-<span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;some_attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;class[App\SomeClass, param2, param3]&#39;</span><span class="p">,</span>
-<span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="c1">// Bind the type to the handler</span>
-<span class="k">protected</span> <span class="nv">$castHandlers</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SomeHandler&#39;</span><span class="p">,</span>
-<span class="p">];</span>
+<span class="k">namespace</span> <span class="nx">App\Entities</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">extends</span> <span class="nx">Entity</span>
+<span class="p">{</span>
+    <span class="c1">// Defining a type with parameters</span>
+    <span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;some_attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;class[App\SomeClass, param2, param3]&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="c1">// Bind the type to the handler</span>
+    <span class="k">protected</span> <span class="nv">$castHandlers</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SomeHandler&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Entities\Cast</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Entity\Cast\BaseCast</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">SomeHandler</span> <span class="k">extends</span> <span class="nx">BaseCast</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">get</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span>
     <span class="p">{</span>
         <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
-        <span class="c1">// array(3) {</span>
-        <span class="c1">//   [0]=&gt;</span>
-        <span class="c1">//   string(13) &quot;App\SomeClass&quot;</span>
-        <span class="c1">//   [1]=&gt;</span>
-        <span class="c1">//   string(6) &quot;param2&quot;</span>
-        <span class="c1">//   [2]=&gt;</span>
-        <span class="c1">//   string(6) &quot;param3&quot;</span>
-        <span class="c1">// }</span>
+        <span class="cm">/*</span>
+<span class="cm">         * Output:</span>
+<span class="cm">         * array(3) {</span>
+<span class="cm">         *   [0]=&gt;</span>
+<span class="cm">         *   string(13) &quot;App\SomeClass&quot;</span>
+<span class="cm">         *   [1]=&gt;</span>
+<span class="cm">         *   string(6) &quot;param2&quot;</span>
+<span class="cm">         *   [2]=&gt;</span>
+<span class="cm">         *   string(6) &quot;param3&quot;</span>
+<span class="cm">         * }</span>
+<span class="cm">         */</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -876,10 +832,12 @@ If casting type has predefined parameters, then <code class="docutils literal no
 </div>
 </div>
 <div class="section" id="checking-for-changed-attributes">
-<h2><a class="toc-backref" href="#id15">Checking for Changed Attributes</a><a class="headerlink" href="#checking-for-changed-attributes" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Checking for Changed Attributes</a><a class="headerlink" href="#checking-for-changed-attributes" title="Permalink to this headline"></a></h2>
 <p>You can check if an Entity attribute has changed since it was created. The only parameter is the name of the
 attribute to check:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Entities\User</span><span class="p">();</span>
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">hasChanged</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span> <span class="c1">// false</span>
 
 <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s1">&#39;Fred&#39;</span><span class="p">;</span>
@@ -887,7 +845,9 @@ attribute to check:</p>
 </pre></div>
 </div>
 <p>Or to check the whole entity for changed values omit the parameter:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">hasChanged</span><span class="p">();</span> <span class="c1">// true</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="na">hasChanged</span><span class="p">();</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 </div>
@@ -895,53 +855,35 @@ attribute to check:</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../dbmgmt/index.html" class="btn btn-neutral float-right" title="Managing Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="model.html" class="btn btn-neutral float-left" title="Using CodeIgniter’s Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../dbmgmt/index.html" class="btn btn-neutral float-right" title="Managing Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Feb 26, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 03, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
