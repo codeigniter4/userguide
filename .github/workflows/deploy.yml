@@ -19,4 +19,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: ~/userguide/.github/scripts/deploy
+          script: /opt/userguide/.github/scripts/deploy
