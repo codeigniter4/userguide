@@ -1,75 +1,34 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
+  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.1 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/js/citheme.js"></script>
         <script type="text/javascript" src="../_static/js/carbon.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CLI Generators" href="cli_generators.html" />
     <link rel="prev" title="Spark Commands" href="spark_commands.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-          
-
-          
-            <a href="../index.html">
-          
-
-          
-            
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
-          
+            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -77,18 +36,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
@@ -295,73 +243,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #DD4814" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">CodeIgniter</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Command Line Usage</a> &raquo;</li>
-        
       <li>Creating Spark Commands</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="creating-spark-commands">
-<h1>Creating Spark Commands<a class="headerlink" href="#creating-spark-commands" title="Permalink to this headline">¶</a></h1>
+<h1>Creating Spark Commands<a class="headerlink" href="#creating-spark-commands" title="Permalink to this headline"></a></h1>
 <p>While the ability to use Controllers via CLI like any other route is convenient, you might find times where you
 need a little something different. That’s where Spark commands come in. They are simple classes that do not
 need to have routes defined for, making them perfect for building tools that developers can use to make
@@ -378,7 +285,7 @@ building out custom code generators for your company.</p>
 </ul>
 </div>
 <div class="section" id="creating-new-commands">
-<h2><a class="toc-backref" href="#id1">Creating New Commands</a><a class="headerlink" href="#creating-new-commands" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Creating New Commands</a><a class="headerlink" href="#creating-new-commands" title="Permalink to this headline"></a></h2>
 <p>You can very easily create new commands to use in your own development. Each class must be in its own file,
 and must extend <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CLI\BaseCommand</span></code>, and implement the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method.</p>
 <p>The following properties should be used in order to get listed in CLI commands and to add help functionality to your command:</p>
@@ -392,7 +299,7 @@ and must extend <code class="docutils literal notranslate"><span class="pre">Cod
 </ul>
 <p><strong>Help description will be automatically generated according to the above parameters.</strong></p>
 <div class="section" id="file-location">
-<h3><a class="toc-backref" href="#id2">File Location</a><a class="headerlink" href="#file-location" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id2">File Location</a><a class="headerlink" href="#file-location" title="Permalink to this headline"></a></h3>
 <p>Commands must be stored within a directory named <strong>Commands</strong>. However, that directory can be located anywhere
 that the <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">Autoloader</span></a> can locate it. This could be in <strong>app/Commands</strong>, or
 a directory that you keep commands in to use in all of your project development, like <strong>Acme/Commands</strong>.</p>
@@ -403,7 +310,7 @@ possible to get environment information, path information, and to use any of the
 </div>
 </div>
 <div class="section" id="an-example-command">
-<h3><a class="toc-backref" href="#id3">An Example Command</a><a class="headerlink" href="#an-example-command" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">An Example Command</a><a class="headerlink" href="#an-example-command" title="Permalink to this headline"></a></h3>
 <p>Let’s step through an example command whose only function is to report basic information about the application
 itself, for demonstration purposes. Start by creating a new file at <strong>app/Commands/AppInfo.php</strong>. It
 should contain the following code:</p>
@@ -437,7 +344,7 @@ multiple commands from having naming collisions.</p>
 <p>The final property, <code class="docutils literal notranslate"><span class="pre">$description</span></code> is a short string that is displayed in the <strong>list</strong> command and should describe
 what the command does.</p>
 <div class="section" id="run">
-<h4>run()<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h4>
+<h4>run()<a class="headerlink" href="#run" title="Permalink to this headline"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">run()</span></code> method is the method that is called when the command is being run. The <code class="docutils literal notranslate"><span class="pre">$params</span></code> array is a list of
 any CLI arguments after the command name for your use. If the CLI string was:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">foo</span> <span class="nx">bar</span> <span class="nx">baz</span>
@@ -480,7 +387,7 @@ from the string. These parameters can be used to customize how your scripts beha
 </div>
 </div>
 <div class="section" id="basecommand">
-<h2><a class="toc-backref" href="#id4">BaseCommand</a><a class="headerlink" href="#basecommand" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">BaseCommand</a><a class="headerlink" href="#basecommand" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">BaseCommand</span></code> class that all commands must extend have a couple of helpful utility methods that you should
 be familiar with when creating your own commands. It also has a <a class="reference internal" href="../general/logging.html"><span class="doc">Logger</span></a> available at
 <code class="docutils literal notranslate"><span class="pre">$this-&gt;logger</span></code>.</p>
@@ -489,7 +396,7 @@ be familiar with when creating your own commands. It also has a <a class="refere
 <code class="descname">CodeIgniter\CLI\BaseCommand</code></dt>
 <dd><dl class="method">
 <dt id="call">
-<code class="descname">call</code><span class="sig-paren">(</span><em>string $command</em><span class="optional">[</span>, <em>array $params = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#call" title="Permalink to this definition">¶</a></dt>
+<code class="descname">call</code><span class="sig-paren">(</span><em>string $command</em><span class="optional">[</span>, <em>array $params = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#call" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -513,7 +420,7 @@ be familiar with when creating your own commands. It also has a <a class="refere
 
 <dl class="method">
 <dt id="showError">
-<code class="descname">showError</code><span class="sig-paren">(</span><em>Throwable $e</em><span class="sig-paren">)</span><a class="headerlink" href="#showError" title="Permalink to this definition">¶</a></dt>
+<code class="descname">showError</code><span class="sig-paren">(</span><em>Throwable $e</em><span class="sig-paren">)</span><a class="headerlink" href="#showError" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -539,13 +446,13 @@ be familiar with when creating your own commands. It also has a <a class="refere
 
 <dl class="method">
 <dt id="showHelp">
-<code class="descname">showHelp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#showHelp" title="Permalink to this definition">¶</a></dt>
+<code class="descname">showHelp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#showHelp" title="Permalink to this definition"></a></dt>
 <dd><p>A method to show command help: (usage,arguments,description,options)</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="getPad">
-<code class="descname">getPad</code><span class="sig-paren">(</span><em>$array</em>, <em>$pad</em><span class="sig-paren">)</span><a class="headerlink" href="#getPad" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getPad</code><span class="sig-paren">(</span><em>$array</em>, <em>$pad</em><span class="sig-paren">)</span><a class="headerlink" href="#getPad" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -582,53 +489,35 @@ be familiar with when creating your own commands. It also has a <a class="refere
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cli_generators.html" class="btn btn-neutral float-right" title="CLI Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="spark_commands.html" class="btn btn-neutral float-left" title="Spark Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cli_generators.html" class="btn btn-neutral float-right" title="CLI Generators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">
-        Last updated on Jun 03, 2022.
-      </span>
-
-    </p>
+    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jun 16, 2022.
+      </span></p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
