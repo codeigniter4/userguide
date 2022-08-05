@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Helper &mdash; CodeIgniter 4.2.1 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>URL Helper &mdash; CodeIgniter 4.2.2 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -52,9 +52,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
 </li>
@@ -908,8 +908,8 @@ is missing from a URL.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$controller</strong> (<em>string</em>) – The controller class and method</li>
-<li><strong>...$args</strong> (<em>mixed</em>) – Additional arguments to be injected into the route</li>
+<li><strong>$controller</strong> (<em>string</em>) – Named route or Controller::method</li>
+<li><strong>...$args</strong> (<em>mixed</em>) – One or more parameters to be passed to the route</li>
 </ul>
 </td>
 </tr>
@@ -928,20 +928,31 @@ is missing from a URL.</p>
 <p>Builds an absolute URL to a controller method in your app. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Home::index&#39;</span><span class="p">);</span>
+<span class="c1">// The route is defined as:</span>
+<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;Home::index&#39;</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Home::index&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- Result: &#39;http://example.com/&#39; --&gt;</span>
 </pre></div>
 </div>
 <p>You can also add arguments to the route.
 Here is an example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Page::index&#39;</span><span class="p">,</span> <span class="s1">&#39;home&#39;</span><span class="p">);</span>
+<span class="c1">// The route is defined as:</span>
+<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;pages/(:segment)&#39;</span><span class="p">,</span> <span class="s1">&#39;Page::index/$1&#39;</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Page::index&#39;</span><span class="p">,</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- Result: &#39;http://example.com/pages/home&#39; --&gt;</span>
 </pre></div>
 </div>
-<p>The above example would return something like:
-<em>http://example.com/page/home</em></p>
 <p>This is useful because you can still change your routes after putting links
 into your views.</p>
+<p>For full details, see the <a class="reference internal" href="../incoming/routing.html#reverse-routing"><span class="std std-ref">Reverse Routing</span></a> and <a class="reference internal" href="../incoming/routing.html#using-named-routes"><span class="std std-ref">Using Named Routes</span></a>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1002,7 +1013,7 @@ any other applicable characters in the URL:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 16, 2022.
+      <span class="lastupdated">Last updated on Aug 05, 2022.
       </span></p>
   </div>
 

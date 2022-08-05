@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing Controllers &mdash; CodeIgniter 4.2.1 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Testing Controllers &mdash; CodeIgniter 4.2.2 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -52,9 +52,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
 </li>
@@ -395,7 +395,13 @@ for details.</p>
 <p>Allows you to provide an <strong>IncomingRequest</strong> instance tailored to your testing needs:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\IncomingRequest</span><span class="p">(</span><span class="k">new</span> <span class="nx">\Config\App</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">URI</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">));</span>
+<span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\IncomingRequest</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">\Config\App</span><span class="p">(),</span>
+    <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\URI</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span>
+    <span class="k">null</span><span class="p">,</span>
+    <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\UserAgent</span><span class="p">()</span>
+<span class="p">);</span>
+
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setLocale</span><span class="p">(</span><span class="nv">$locale</span><span class="p">);</span>
 
 <span class="nv">$results</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">withRequest</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span>
@@ -681,7 +687,7 @@ to streamline your test methods.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 16, 2022.
+      <span class="lastupdated">Last updated on Aug 05, 2022.
       </span></p>
   </div>
 

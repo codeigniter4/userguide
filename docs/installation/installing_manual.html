@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual Installation &mdash; CodeIgniter 4.2.1 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Manual Installation &mdash; CodeIgniter 4.2.2 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -52,9 +52,9 @@
 <li class="toctree-l2"><a class="reference internal" href="installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running.html">Running Your App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="repositories.html">CodeIgniter Repositories</a></li>
 </ul>
 </li>
@@ -271,14 +271,12 @@
 <h1>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#installation" id="id1">Installation</a><ul>
-<li><a class="reference internal" href="#setting-up" id="id2">Setting Up</a></li>
+<li><a class="reference internal" href="#installation" id="id1">Installation</a></li>
+<li><a class="reference internal" href="#initial-configuration" id="id2">Initial Configuration</a></li>
 <li><a class="reference internal" href="#upgrading" id="id3">Upgrading</a></li>
 <li><a class="reference internal" href="#pros" id="id4">Pros</a></li>
 <li><a class="reference internal" href="#cons" id="id5">Cons</a></li>
 <li><a class="reference internal" href="#structure" id="id6">Structure</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#translations-installation" id="id7">Translations Installation</a></li>
 </ul>
 </div>
@@ -297,28 +295,35 @@ for <a class="reference external" href="https://codeigniter.com/userguide3/insta
 <h2><a class="toc-backref" href="#id1">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
 <p>Download the <a class="reference external" href="https://github.com/CodeIgniter4/framework/releases/latest">latest version</a>,
 and extract it to become your project root.</p>
-<div class="section" id="setting-up">
-<h3><a class="toc-backref" href="#id2">Setting Up</a><a class="headerlink" href="#setting-up" title="Permalink to this headline"></a></h3>
-<p>None</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">CodeIgniter autoloader does not allow special characters that are illegal in filenames on certain operating systems.
+The symbols that can be used are <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">_</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">:</span></code>, <code class="docutils literal notranslate"><span class="pre">\</span></code> and space.
+So if you install CodeIgniter under the folder that contains the special characters like <code class="docutils literal notranslate"><span class="pre">(</span></code>, <code class="docutils literal notranslate"><span class="pre">)</span></code>, etc., CodeIgniter won’t work.</p>
+</div>
+</div>
+<div class="section" id="initial-configuration">
+<h2><a class="toc-backref" href="#id2">Initial Configuration</a><a class="headerlink" href="#initial-configuration" title="Permalink to this headline"></a></h2>
+<p>After installation, a few initial configurations are required.
+See <a class="reference internal" href="running.html#initial-configuration"><span class="std std-ref">Initial Configuration</span></a> for the detail.</p>
 </div>
 <div class="section" id="upgrading">
-<span id="installing-manual-upgrading"></span><h3><a class="toc-backref" href="#id3">Upgrading</a><a class="headerlink" href="#upgrading" title="Permalink to this headline"></a></h3>
+<span id="installing-manual-upgrading"></span><h2><a class="toc-backref" href="#id3">Upgrading</a><a class="headerlink" href="#upgrading" title="Permalink to this headline"></a></h2>
 <p>Download a new copy of the framework, and then replace the <code class="docutils literal notranslate"><span class="pre">system</span></code> folder.</p>
 <p>Read the <a class="reference internal" href="upgrading.html"><span class="doc">upgrade instructions</span></a>, and check Breaking Changes and Enhancements.</p>
 </div>
 <div class="section" id="pros">
-<h3><a class="toc-backref" href="#id4">Pros</a><a class="headerlink" href="#pros" title="Permalink to this headline"></a></h3>
+<h2><a class="toc-backref" href="#id4">Pros</a><a class="headerlink" href="#pros" title="Permalink to this headline"></a></h2>
 <p>Download and run</p>
 </div>
 <div class="section" id="cons">
-<h3><a class="toc-backref" href="#id5">Cons</a><a class="headerlink" href="#cons" title="Permalink to this headline"></a></h3>
+<h2><a class="toc-backref" href="#id5">Cons</a><a class="headerlink" href="#cons" title="Permalink to this headline"></a></h2>
 <p>You are responsible for merge conflicts when updating</p>
 </div>
 <div class="section" id="structure">
-<h3><a class="toc-backref" href="#id6">Structure</a><a class="headerlink" href="#structure" title="Permalink to this headline"></a></h3>
+<h2><a class="toc-backref" href="#id6">Structure</a><a class="headerlink" href="#structure" title="Permalink to this headline"></a></h2>
 <p>Folders in your project after set up:
 app, public, system, writable</p>
-</div>
 </div>
 <div class="section" id="translations-installation">
 <h2><a class="toc-backref" href="#id7">Translations Installation</a><a class="headerlink" href="#translations-installation" title="Permalink to this headline"></a></h2>
@@ -344,7 +349,7 @@ to the translations.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 16, 2022.
+      <span class="lastupdated">Last updated on Aug 05, 2022.
       </span></p>
   </div>
 
