@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Session Library &mdash; CodeIgniter 4.2.2 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Session Library &mdash; CodeIgniter 4.2.3 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -767,7 +767,7 @@ application relied on these values, so here are alternative methods of
 accessing them:</p>
 <blockquote>
 <div><ul class="simple">
-<li>session_id: <code class="docutils literal notranslate"><span class="pre">session_id()</span></code></li>
+<li>session_id: <code class="docutils literal notranslate"><span class="pre">$session-&gt;session_id</span></code> or <code class="docutils literal notranslate"><span class="pre">session_id()</span></code> (PHP’s built-in function)</li>
 <li>ip_address: <code class="docutils literal notranslate"><span class="pre">$_SERVER['REMOTE_ADDR']</span></code></li>
 <li>user_agent: <code class="docutils literal notranslate"><span class="pre">$_SERVER['HTTP_USER_AGENT']</span></code> (unused by sessions)</li>
 <li>last_activity: Depends on the storage, no straightforward way. Sorry!</li>
@@ -1192,7 +1192,7 @@ separate the multiple server paths with commas:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 05, 2022.
+      <span class="lastupdated">Last updated on Aug 07, 2022.
       </span></p>
   </div>
 
