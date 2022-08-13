@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caching Driver &mdash; CodeIgniter 4.2.3 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Caching Driver &mdash; CodeIgniter 4.2.4 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -402,8 +402,8 @@ These tools are not required to use Cache driver but might help you.</p>
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">get($key): mixed</code></dt>
+<dt id="get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span> &#x2192; mixed<a class="headerlink" href="#get" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -496,8 +496,8 @@ in order to allow usage of <code class="docutils literal notranslate"><span clas
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">delete($key): bool</code></dt>
+<dt id="delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#delete" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -526,8 +526,8 @@ deletion fails, the method will return false.</p>
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">deleteMatching($pattern): integer</code></dt>
+<dt id="deleteMatching">
+<code class="descname">deleteMatching</code><span class="sig-paren">(</span><em>$pattern</em><span class="sig-paren">)</span> &#x2192; integer<a class="headerlink" href="#deleteMatching" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -564,8 +564,8 @@ Due to limitations, it couldn’t be implemented for Memcached and Wincache hand
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">increment($key[, $offset = 1]): mixed</code></dt>
+<dt id="increment">
+<code class="descname">increment</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; mixed<a class="headerlink" href="#increment" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -596,8 +596,8 @@ Due to limitations, it couldn’t be implemented for Memcached and Wincache hand
 </dd></dl>
 
 <dl class="method">
-<dt>
-<code class="descname">decrement($key[, $offset = 1]): mixed</code></dt>
+<dt id="decrement">
+<code class="descname">decrement</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; mixed<a class="headerlink" href="#decrement" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -849,7 +849,7 @@ support your chosen cache.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 07, 2022.
+      <span class="lastupdated">Last updated on Aug 13, 2022.
       </span></p>
   </div>
 
