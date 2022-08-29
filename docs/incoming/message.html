@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTTP Messages &mdash; CodeIgniter 4.2.4 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>HTTP Messages &mdash; CodeIgniter 4.2.5 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -292,14 +292,14 @@ likely choosing a JPEG image to return.</p>
 <li><strong>Document Encoding</strong> - Typically the type of compression used on the results.</li>
 <li><strong>Document Language</strong> - For sites that support multiple languages, this helps determine which to return.</li>
 </ul>
-<div class="section" id="class-reference">
-<h3>Class Reference<a class="headerlink" href="#class-reference" title="Permalink to this headline"></a></h3>
+<div class="section" id="namespace-CodeIgniter\HTTP">
+<span id="class-reference"></span><h3>Class Reference<a class="headerlink" href="#namespace-CodeIgniter\HTTP" title="Permalink to this headline"></a></h3>
 <dl class="class">
-<dt>
-<code class="descname">CodeIgniter\HTTP\Message</code></dt>
+<dt id="CodeIgniter\HTTP\Message">
+<em class="property">class </em><code class="descclassname">CodeIgniter\HTTP\</code><code class="descname">Message</code><a class="headerlink" href="#CodeIgniter\HTTP\Message" title="Permalink to this definition"></a></dt>
 <dd><dl class="method">
-<dt id="getBody">
-<code class="descname">getBody</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getBody" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::getBody">
+<code class="descname">getBody</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::getBody" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -319,8 +319,8 @@ likely choosing a JPEG image to return.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="setBody">
-<code class="descname">setBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#setBody" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::setBody">
+<code class="descname">setBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::setBody" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -342,8 +342,8 @@ likely choosing a JPEG image to return.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="appendBody">
-<code class="descname">appendBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#appendBody" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::appendBody">
+<code class="descname">appendBody</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::appendBody" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -365,8 +365,8 @@ likely choosing a JPEG image to return.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="populateHeaders">
-<code class="descname">populateHeaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#populateHeaders" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::populateHeaders">
+<code class="descname">populateHeaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::populateHeaders" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -385,8 +385,8 @@ The preceding <code class="docutils literal notranslate"><span class="pre">HTTP_
 </dd></dl>
 
 <dl class="method">
-<dt id="headers">
-<code class="descname">headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#headers" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::headers">
+<code class="descname">headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::headers" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -401,8 +401,8 @@ The preceding <code class="docutils literal notranslate"><span class="pre">HTTP_
 </dd></dl>
 
 <dl class="method">
-<dt id="header">
-<code class="descname">header</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#header" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::header">
+<code class="descname">header</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::header" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -465,8 +465,8 @@ method to retrieve the values as a string:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="hasHeader">
-<code class="descname">hasHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasHeader" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::hasHeader">
+<code class="descname">hasHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::hasHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -487,8 +487,8 @@ method to retrieve the values as a string:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="getHeaderLine">
-<code class="descname">getHeaderLine</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#getHeaderLine" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::getHeaderLine">
+<code class="descname">getHeaderLine</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::getHeaderLine" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -520,8 +520,8 @@ of the header values when the header has multiple values. The values are appropr
 </dd></dl>
 
 <dl class="method">
-<dt id="setHeader">
-<code class="descname">setHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#setHeader" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::setHeader">
+<code class="descname">setHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::setHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -551,8 +551,8 @@ or an array of strings:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="removeHeader">
-<code class="descname">removeHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#removeHeader" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::removeHeader">
+<code class="descname">removeHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::removeHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -565,7 +565,7 @@ or an array of strings:</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The current message instance</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeIgniter\HTTP\Message</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#CodeIgniter\HTTP\Message" title="CodeIgniter\HTTP\Message">CodeIgniter\HTTP\Message</a></p>
 </td>
 </tr>
 </tbody>
@@ -579,8 +579,8 @@ or an array of strings:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="appendHeader">
-<code class="descname">appendHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#appendHeader" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::appendHeader">
+<code class="descname">appendHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::appendHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -594,7 +594,7 @@ or an array of strings:</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The current message instance</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeIgniter\HTTP\Message</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#CodeIgniter\HTTP\Message" title="CodeIgniter\HTTP\Message">CodeIgniter\HTTP\Message</a></p>
 </td>
 </tr>
 </tbody>
@@ -609,8 +609,8 @@ If it is a string then a LogicException will be thrown.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="prependHeader">
-<code class="descname">prependHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#prependHeader" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::prependHeader">
+<code class="descname">prependHeader</code><span class="sig-paren">(</span><em>$name</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::prependHeader" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -624,7 +624,7 @@ If it is a string then a LogicException will be thrown.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The current message instance</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeIgniter\HTTP\Message</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#CodeIgniter\HTTP\Message" title="CodeIgniter\HTTP\Message">CodeIgniter\HTTP\Message</a></p>
 </td>
 </tr>
 </tbody>
@@ -639,8 +639,8 @@ If it is a string then a LogicException will be thrown.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="getProtocolVersion">
-<code class="descname">getProtocolVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getProtocolVersion" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::getProtocolVersion">
+<code class="descname">getProtocolVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::getProtocolVersion" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -656,8 +656,8 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 </dd></dl>
 
 <dl class="method">
-<dt id="setProtocolVersion">
-<code class="descname">setProtocolVersion</code><span class="sig-paren">(</span><em>$version</em><span class="sig-paren">)</span><a class="headerlink" href="#setProtocolVersion" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Message::setProtocolVersion">
+<code class="descname">setProtocolVersion</code><span class="sig-paren">(</span><em>$version</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Message::setProtocolVersion" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -670,7 +670,7 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The current message instance</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeIgniter\HTTP\Message</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#CodeIgniter\HTTP\Message" title="CodeIgniter\HTTP\Message">CodeIgniter\HTTP\Message</a></p>
 </td>
 </tr>
 </tbody>
@@ -701,7 +701,7 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 13, 2022.
+      <span class="lastupdated">Last updated on Aug 29, 2022.
       </span></p>
   </div>
 

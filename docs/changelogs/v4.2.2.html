@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.2.2 &mdash; CodeIgniter 4.2.4 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Version 4.2.2 &mdash; CodeIgniter 4.2.5 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -287,7 +287,7 @@
 <li>The method signature of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Debug\Exceptions::__construct()</span></code> has been changed. The <code class="docutils literal notranslate"><span class="pre">IncomingRequest</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$request</span></code> parameter was removed. Extending classes should likewise remove the parameter so as not to break LSP.</li>
 <li>The method signature of <code class="docutils literal notranslate"><span class="pre">BaseBuilder.php::insert()</span></code> and <code class="docutils literal notranslate"><span class="pre">BaseBuilder.php::update()</span></code> have been changed. The <code class="docutils literal notranslate"><span class="pre">?array</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$set</span></code> parameter was removed.</li>
 <li>A bug that caused pages to be cached before after filters were executed when using page caching has been fixed. Adding response headers or changing the response body in after filters now caches them correctly.</li>
-<li>Due to a bug fix, now <a class="reference internal" href="../helpers/text_helper.html#random_string" title="random_string"><code class="xref php php-func docutils literal notranslate"><span class="pre">random_string</span></code></a> with the first parameter <code class="docutils literal notranslate"><span class="pre">'crypto'</span></code> throws <code class="docutils literal notranslate"><span class="pre">InvalidArgumentException</span></code> if the second parameter <code class="docutils literal notranslate"><span class="pre">$len</span></code> is an odd number.</li>
+<li>Due to a bug fix, now <a class="reference internal" href="../helpers/text_helper.html#random_string" title="random_string"><code class="xref php php-func docutils literal notranslate"><span class="pre">random_string()</span></code></a> with the first parameter <code class="docutils literal notranslate"><span class="pre">'crypto'</span></code> throws <code class="docutils literal notranslate"><span class="pre">InvalidArgumentException</span></code> if the second parameter <code class="docutils literal notranslate"><span class="pre">$len</span></code> is an odd number.</li>
 </ul>
 </div>
 <div class="section" id="changes">
@@ -305,6 +305,7 @@
 <ul class="simple">
 <li>The parameters of <code class="docutils literal notranslate"><span class="pre">Services::request()</span></code> are deprecated.</li>
 <li>The first parameter <code class="docutils literal notranslate"><span class="pre">$cacheConfig</span></code> of <code class="docutils literal notranslate"><span class="pre">CodeIgniter::gatherOutput()</span></code> is deprecated.</li>
+<li>The second parameter <code class="docutils literal notranslate"><span class="pre">$ifNotExists</span></code> of <code class="docutils literal notranslate"><span class="pre">Forge::_createTable()</span></code> is deprecated.</li>
 </ul>
 </div>
 <div class="section" id="bugs-fixed">
@@ -325,7 +326,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 13, 2022.
+      <span class="lastupdated">Last updated on Aug 29, 2022.
       </span></p>
   </div>
 

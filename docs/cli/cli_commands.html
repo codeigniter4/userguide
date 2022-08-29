@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.4 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.5 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -391,12 +391,12 @@ from the string. These parameters can be used to customize how your scripts beha
 <p>The <code class="docutils literal notranslate"><span class="pre">BaseCommand</span></code> class that all commands must extend have a couple of helpful utility methods that you should
 be familiar with when creating your own commands. It also has a <a class="reference internal" href="../general/logging.html"><span class="doc">Logger</span></a> available at
 <code class="docutils literal notranslate"><span class="pre">$this-&gt;logger</span></code>.</p>
-<dl class="class">
-<dt>
-<code class="descname">CodeIgniter\CLI\BaseCommand</code></dt>
+<span class="target" id="namespace-CodeIgniter\CLI"></span><dl class="class">
+<dt id="CodeIgniter\CLI\BaseCommand">
+<em class="property">class </em><code class="descclassname">CodeIgniter\CLI\</code><code class="descname">BaseCommand</code><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand" title="Permalink to this definition"></a></dt>
 <dd><dl class="method">
-<dt id="call">
-<code class="descname">call</code><span class="sig-paren">(</span><em>string $command</em><span class="optional">[</span>, <em>array $params = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#call" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\CLI\BaseCommand::call">
+<code class="descname">call</code><span class="sig-paren">(</span><em>string $command</em><span class="optional">[</span>, <em>array $params = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::call" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -419,8 +419,8 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </dd></dl>
 
 <dl class="method">
-<dt id="showError">
-<code class="descname">showError</code><span class="sig-paren">(</span><em>Throwable $e</em><span class="sig-paren">)</span><a class="headerlink" href="#showError" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\CLI\BaseCommand::showError">
+<code class="descname">showError</code><span class="sig-paren">(</span><em>Throwable $e</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::showError" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -445,14 +445,14 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </dd></dl>
 
 <dl class="method">
-<dt id="showHelp">
-<code class="descname">showHelp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#showHelp" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\CLI\BaseCommand::showHelp">
+<code class="descname">showHelp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::showHelp" title="Permalink to this definition"></a></dt>
 <dd><p>A method to show command help: (usage,arguments,description,options)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="getPad">
-<code class="descname">getPad</code><span class="sig-paren">(</span><em>$array</em>, <em>$pad</em><span class="sig-paren">)</span><a class="headerlink" href="#getPad" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\CLI\BaseCommand::getPad">
+<code class="descname">getPad</code><span class="sig-paren">(</span><em>$array</em>, <em>$pad</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::getPad" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -499,7 +499,7 @@ be familiar with when creating your own commands. It also has a <a class="refere
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 13, 2022.
+      <span class="lastupdated">Last updated on Aug 29, 2022.
       </span></p>
   </div>
 

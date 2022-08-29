@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTTP Responses &mdash; CodeIgniter 4.2.4 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>HTTP Responses &mdash; CodeIgniter 4.2.5 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -598,12 +598,12 @@ life, and is most secure when generated on the fly. To make this simple, you can
 <li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::negotiateLanguage()</span></code></li>
 <li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::negotiateLanguage()</span></code></li>
 </ul>
-<dl class="class">
-<dt>
-<code class="descname">CodeIgniter\HTTP\Response</code></dt>
+<span class="target" id="namespace-CodeIgniter\HTTP"></span><dl class="class">
+<dt id="CodeIgniter\HTTP\Response">
+<em class="property">class </em><code class="descclassname">CodeIgniter\HTTP\</code><code class="descname">Response</code><a class="headerlink" href="#CodeIgniter\HTTP\Response" title="Permalink to this definition"></a></dt>
 <dd><dl class="method">
-<dt id="getStatusCode">
-<code class="descname">getStatusCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getStatusCode" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::getStatusCode">
+<code class="descname">getStatusCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::getStatusCode" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -624,8 +624,8 @@ will be thrown:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="setStatusCode">
-<code class="descname">setStatusCode</code><span class="sig-paren">(</span><em>$code</em><span class="optional">[</span>, <em>$reason=''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setStatusCode" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::setStatusCode">
+<code class="descname">setStatusCode</code><span class="sig-paren">(</span><em>$code</em><span class="optional">[</span>, <em>$reason=''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::setStatusCode" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -660,8 +660,8 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </dd></dl>
 
 <dl class="method">
-<dt id="getReasonPhrase">
-<code class="descname">getReasonPhrase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getReasonPhrase" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::getReasonPhrase">
+<code class="descname">getReasonPhrase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::getReasonPhrase" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -681,8 +681,8 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </dd></dl>
 
 <dl class="method">
-<dt id="setDate">
-<code class="descname">setDate</code><span class="sig-paren">(</span><em>$date</em><span class="sig-paren">)</span><a class="headerlink" href="#setDate" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::setDate">
+<code class="descname">setDate</code><span class="sig-paren">(</span><em>$date</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::setDate" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -710,8 +710,8 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </dd></dl>
 
 <dl class="method">
-<dt id="setContentType">
-<code class="descname">setContentType</code><span class="sig-paren">(</span><em>$mime</em><span class="optional">[</span>, <em>$charset='UTF-8'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setContentType" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::setContentType">
+<code class="descname">setContentType</code><span class="sig-paren">(</span><em>$mime</em><span class="optional">[</span>, <em>$charset='UTF-8'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::setContentType" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -748,8 +748,8 @@ pass the character set as the second parameter:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="noCache">
-<code class="descname">noCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#noCache" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::noCache">
+<code class="descname">noCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::noCache" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -774,8 +774,8 @@ of all response messages:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="setCache">
-<code class="descname">setCache</code><span class="sig-paren">(</span><em>$options</em><span class="sig-paren">)</span><a class="headerlink" href="#setCache" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::setCache">
+<code class="descname">setCache</code><span class="sig-paren">(</span><em>$options</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::setCache" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -809,8 +809,8 @@ of all response messages:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="setLastModified">
-<code class="descname">setLastModified</code><span class="sig-paren">(</span><em>$date</em><span class="sig-paren">)</span><a class="headerlink" href="#setLastModified" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::setLastModified">
+<code class="descname">setLastModified</code><span class="sig-paren">(</span><em>$date</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::setLastModified" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -839,8 +839,8 @@ instance:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="send">
-<code class="descname">send</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Response<a class="headerlink" href="#send" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::send">
+<code class="descname">send</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Response<a class="headerlink" href="#CodeIgniter\HTTP\Response::send" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -857,8 +857,8 @@ this as it is handled automatically by CodeIgniter.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="setCookie">
-<code class="descname">setCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = false</em><span class="optional">[</span>, <em>$httponly = false</em><span class="optional">[</span>, <em>$samesite = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setCookie" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::setCookie">
+<code class="descname">setCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = false</em><span class="optional">[</span>, <em>$httponly = false</em><span class="optional">[</span>, <em>$samesite = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::setCookie" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -937,8 +937,8 @@ parameters:</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="deleteCookie">
-<code class="descname">deleteCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#deleteCookie" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::deleteCookie">
+<code class="descname">deleteCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::deleteCookie" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -974,8 +974,8 @@ cookie will be deleted across all that apply.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="hasCookie">
-<code class="descname">hasCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = null</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#hasCookie" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::hasCookie">
+<code class="descname">hasCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = null</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::hasCookie" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1009,8 +1009,8 @@ has the prescribed value.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="getCookie">
-<code class="descname">getCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCookie" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::getCookie">
+<code class="descname">getCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::getCookie" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1037,8 +1037,8 @@ If no <code class="docutils literal notranslate"><span class="pre">name</span></
 </dd></dl>
 
 <dl class="method">
-<dt id="getCookies">
-<code class="descname">getCookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getCookies" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\HTTP\Response::getCookies">
+<code class="descname">getCookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Response::getCookies" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1069,7 +1069,7 @@ request only.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 13, 2022.
+      <span class="lastupdated">Last updated on Aug 29, 2022.
       </span></p>
   </div>
 
