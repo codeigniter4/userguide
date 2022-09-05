@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookies &mdash; CodeIgniter 4.2.5 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Cookies &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -302,7 +302,7 @@ cookie interaction.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#cookie-personalization" id="id13">Cookie Personalization</a></li>
-<li><a class="reference internal" href="#namespace-CodeIgniter\HTTP\Cookie" id="id14">Class Reference</a></li>
+<li><a class="reference internal" href="#namespace-CodeIgniter\Cookie" id="id14">Class Reference</a></li>
 </ul>
 </div>
 <div class="section" id="creating-cookies">
@@ -771,14 +771,14 @@ objects. However, you may wish to define your own settings by changing the follo
 </table>
 <p>In runtime, you can manually supply a new default using the <code class="docutils literal notranslate"><span class="pre">Cookie::setDefaults()</span></code> method.</p>
 </div>
-<div class="section" id="namespace-CodeIgniter\HTTP\Cookie">
-<span id="class-reference"></span><h2><a class="toc-backref" href="#id14">Class Reference</a><a class="headerlink" href="#namespace-CodeIgniter\HTTP\Cookie" title="Permalink to this headline"></a></h2>
+<div class="section" id="namespace-CodeIgniter\Cookie">
+<span id="class-reference"></span><h2><a class="toc-backref" href="#id14">Class Reference</a><a class="headerlink" href="#namespace-CodeIgniter\Cookie" title="Permalink to this headline"></a></h2>
 <dl class="class">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie">
-<em class="property">class </em><code class="descclassname">CodeIgniter\HTTP\Cookie\</code><code class="descname">Cookie</code><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie">
+<em class="property">class </em><code class="descclassname">CodeIgniter\Cookie\</code><code class="descname">Cookie</code><a class="headerlink" href="#CodeIgniter\Cookie\Cookie" title="Permalink to this definition"></a></dt>
 <dd><dl class="staticmethod">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::setDefaults">
-<em class="property">static </em><code class="descname">setDefaults</code><span class="sig-paren">(</span><span class="optional">[</span><em>$config = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::setDefaults" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::setDefaults">
+<em class="property">static </em><code class="descname">setDefaults</code><span class="sig-paren">(</span><span class="optional">[</span><em>$config = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::setDefaults" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -800,8 +800,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::fromHeaderString">
-<em class="property">static </em><code class="descname">fromHeaderString</code><span class="sig-paren">(</span><em>string $header</em><span class="optional">[</span>, <em>bool $raw = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::fromHeaderString" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::fromHeaderString">
+<em class="property">static </em><code class="descname">fromHeaderString</code><span class="sig-paren">(</span><em>string $header</em><span class="optional">[</span>, <em>bool $raw = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::fromHeaderString" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -827,8 +827,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::__construct">
-<code class="descname">__construct</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $value = ''</em><span class="optional">[</span>, <em>array $options = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::__construct" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::__construct">
+<code class="descname">__construct</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $value = ''</em><span class="optional">[</span>, <em>array $options = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::__construct" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -855,8 +855,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getId">
-<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getId" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getId">
+<code class="descname">getId</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getId" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -870,83 +870,83 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getPrefix">
-<code class="descname">getPrefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getPrefix" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getPrefix">
+<code class="descname">getPrefix</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getPrefix" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getName">
-<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getName" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getName" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getPrefixedName">
-<code class="descname">getPrefixedName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getPrefixedName" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getPrefixedName">
+<code class="descname">getPrefixedName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getPrefixedName" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getValue">
-<code class="descname">getValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getValue" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getValue">
+<code class="descname">getValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getValue" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getExpiresTimestamp">
-<code class="descname">getExpiresTimestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getExpiresTimestamp" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getExpiresTimestamp">
+<code class="descname">getExpiresTimestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getExpiresTimestamp" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getExpiresString">
-<code class="descname">getExpiresString</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getExpiresString" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getExpiresString">
+<code class="descname">getExpiresString</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getExpiresString" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::isExpired">
-<code class="descname">isExpired</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::isExpired" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::isExpired">
+<code class="descname">isExpired</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::isExpired" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getMaxAge">
-<code class="descname">getMaxAge</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getMaxAge" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getMaxAge">
+<code class="descname">getMaxAge</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getMaxAge" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getDomain">
-<code class="descname">getDomain</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getDomain" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getDomain">
+<code class="descname">getDomain</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getDomain" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getPath">
-<code class="descname">getPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getPath" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getPath">
+<code class="descname">getPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getPath" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::isSecure">
-<code class="descname">isSecure</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::isSecure" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::isSecure">
+<code class="descname">isSecure</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::isSecure" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::isHTTPOnly">
-<code class="descname">isHTTPOnly</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::isHTTPOnly" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::isHTTPOnly">
+<code class="descname">isHTTPOnly</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::isHTTPOnly" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getSameSite">
-<code class="descname">getSameSite</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getSameSite" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getSameSite">
+<code class="descname">getSameSite</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; string<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getSameSite" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::isRaw">
-<code class="descname">isRaw</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::isRaw" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::isRaw">
+<code class="descname">isRaw</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::isRaw" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::getOptions">
-<code class="descname">getOptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::getOptions" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::getOptions">
+<code class="descname">getOptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#CodeIgniter\Cookie\Cookie::getOptions" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withRaw">
-<code class="descname">withRaw</code><span class="sig-paren">(</span><span class="optional">[</span><em>bool $raw = true</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withRaw" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withRaw">
+<code class="descname">withRaw</code><span class="sig-paren">(</span><span class="optional">[</span><em>bool $raw = true</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withRaw" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -968,8 +968,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withPrefix">
-<code class="descname">withPrefix</code><span class="sig-paren">(</span><span class="optional">[</span><em>string $prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withPrefix" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withPrefix">
+<code class="descname">withPrefix</code><span class="sig-paren">(</span><span class="optional">[</span><em>string $prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withPrefix" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -991,8 +991,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withName">
-<code class="descname">withName</code><span class="sig-paren">(</span><em>string $name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withName" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withName">
+<code class="descname">withName</code><span class="sig-paren">(</span><em>string $name</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withName" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1014,8 +1014,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withValue">
-<code class="descname">withValue</code><span class="sig-paren">(</span><em>string $value</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withValue" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withValue">
+<code class="descname">withValue</code><span class="sig-paren">(</span><em>string $value</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withValue" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1037,8 +1037,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withExpires">
-<code class="descname">withExpires</code><span class="sig-paren">(</span><em>$expires</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withExpires" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withExpires">
+<code class="descname">withExpires</code><span class="sig-paren">(</span><em>$expires</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withExpires" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1060,8 +1060,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withExpired">
-<code class="descname">withExpired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withExpired" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withExpired">
+<code class="descname">withExpired</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withExpired" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1076,9 +1076,13 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withNeverExpiring">
-<code class="descname">withNeverExpiring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withNeverExpiring" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dt id="CodeIgniter\Cookie\Cookie::withNeverExpiring">
+<code class="descname">withNeverExpiring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withNeverExpiring" title="Permalink to this definition"></a></dt>
+<dd><div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This method is deprecated.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
@@ -1099,8 +1103,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withDomain">
-<code class="descname">withDomain</code><span class="sig-paren">(</span><em>?string $domain</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withDomain" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withDomain">
+<code class="descname">withDomain</code><span class="sig-paren">(</span><em>?string $domain</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withDomain" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1122,8 +1126,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withPath">
-<code class="descname">withPath</code><span class="sig-paren">(</span><em>?string $path</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withPath" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withPath">
+<code class="descname">withPath</code><span class="sig-paren">(</span><em>?string $path</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withPath" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1145,8 +1149,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withSecure">
-<code class="descname">withSecure</code><span class="sig-paren">(</span><span class="optional">[</span><em>bool $secure = true</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withSecure" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withSecure">
+<code class="descname">withSecure</code><span class="sig-paren">(</span><span class="optional">[</span><em>bool $secure = true</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withSecure" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1168,8 +1172,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withHTTPOnly">
-<code class="descname">withHTTPOnly</code><span class="sig-paren">(</span><span class="optional">[</span><em>bool $httponly = true</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withHTTPOnly" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withHTTPOnly">
+<code class="descname">withHTTPOnly</code><span class="sig-paren">(</span><span class="optional">[</span><em>bool $httponly = true</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withHTTPOnly" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1191,8 +1195,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::withSameSite">
-<code class="descname">withSameSite</code><span class="sig-paren">(</span><em>string $samesite</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::withSameSite" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::withSameSite">
+<code class="descname">withSameSite</code><span class="sig-paren">(</span><em>string $samesite</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::withSameSite" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1214,8 +1218,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::toHeaderString">
-<code class="descname">toHeaderString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::toHeaderString" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::toHeaderString">
+<code class="descname">toHeaderString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::toHeaderString" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1229,8 +1233,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\Cookie::toArray">
-<code class="descname">toArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\Cookie::toArray" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\Cookie::toArray">
+<code class="descname">toArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\Cookie::toArray" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1246,11 +1250,11 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="class">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore">
-<em class="property">class </em><code class="descclassname">CodeIgniter\HTTP\Cookie\</code><code class="descname">CookieStore</code><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore">
+<em class="property">class </em><code class="descclassname">CodeIgniter\Cookie\</code><code class="descname">CookieStore</code><a class="headerlink" href="#CodeIgniter\Cookie\CookieStore" title="Permalink to this definition"></a></dt>
 <dd><dl class="staticmethod">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::fromCookieHeaders">
-<em class="property">static </em><code class="descname">fromCookieHeaders</code><span class="sig-paren">(</span><em>array $headers</em><span class="optional">[</span>, <em>bool $raw = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::fromCookieHeaders" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::fromCookieHeaders">
+<em class="property">static </em><code class="descname">fromCookieHeaders</code><span class="sig-paren">(</span><em>array $headers</em><span class="optional">[</span>, <em>bool $raw = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::fromCookieHeaders" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1276,8 +1280,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::__construct">
-<code class="descname">__construct</code><span class="sig-paren">(</span><em>array $cookies</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::__construct" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::__construct">
+<code class="descname">__construct</code><span class="sig-paren">(</span><em>array $cookies</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::__construct" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1301,8 +1305,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::has">
-<code class="descname">has</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">[</span>, <em>?string $value = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::has" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::has">
+<code class="descname">has</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">[</span>, <em>?string $value = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::has" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1325,8 +1329,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; Cookie<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::get" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; Cookie<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::get" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1351,8 +1355,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::put">
-<code class="descname">put</code><span class="sig-paren">(</span><em>Cookie $cookie</em><span class="sig-paren">)</span> &#x2192; CookieStore<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::put" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>Cookie $cookie</em><span class="sig-paren">)</span> &#x2192; CookieStore<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::put" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1374,8 +1378,8 @@ objects. However, you may wish to define your own settings by changing the follo
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::remove">
-<code class="descname">remove</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; CookieStore<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::remove" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>string $name</em><span class="optional">[</span>, <em>string $prefix = ''</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; CookieStore<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::remove" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1399,8 +1403,8 @@ The original collection is left unchanged.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::dispatch">
-<code class="descname">dispatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; void<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::dispatch" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::dispatch">
+<code class="descname">dispatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; void<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::dispatch" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1413,8 +1417,8 @@ The original collection is left unchanged.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::display">
-<code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::display" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::display">
+<code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; array<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::display" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1428,8 +1432,8 @@ The original collection is left unchanged.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="CodeIgniter\HTTP\Cookie\CookieStore::clear">
-<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; void<a class="headerlink" href="#CodeIgniter\HTTP\Cookie\CookieStore::clear" title="Permalink to this definition"></a></dt>
+<dt id="CodeIgniter\Cookie\CookieStore::clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; void<a class="headerlink" href="#CodeIgniter\Cookie\CookieStore::clear" title="Permalink to this definition"></a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1458,7 +1462,7 @@ The original collection is left unchanged.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 29, 2022.
+      <span class="lastupdated">Last updated on Sep 05, 2022.
       </span></p>
   </div>
 
