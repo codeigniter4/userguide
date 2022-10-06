@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTTP Responses &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>HTTP Responses &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -700,13 +700,7 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tr>
 </tbody>
 </table>
-<p>Sets the date used for this response. The <code class="docutils literal notranslate"><span class="pre">$date</span></code> argument must be an instance of <code class="docutils literal notranslate"><span class="pre">DateTime</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$date</span> <span class="o">=</span> <span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;j-M-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;15-Feb-2016&#39;</span><span class="p">);</span>
-<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setDate</span><span class="p">(</span><span class="nv">$date</span><span class="p">);</span>
-</pre></div>
-</div>
+<p>Sets the date used for this response. The <code class="docutils literal notranslate"><span class="pre">$date</span></code> argument must be an instance of <code class="docutils literal notranslate"><span class="pre">DateTime</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -833,7 +827,7 @@ instance:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setLastModified</span><span class="p">(</span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;D, d M Y H:i:s&#39;</span><span class="p">));</span>
-<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setLastModified</span><span class="p">(</span><span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="nv">$time</span><span class="p">));</span>
+<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setLastModified</span><span class="p">(</span><span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;!U&#39;</span><span class="p">,</span> <span class="nv">$timestamp</span><span class="p">));</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -870,8 +864,8 @@ this as it is handled automatically by CodeIgniter.</p>
 <li><strong>$domain</strong> (<em>string</em>) – Cookie domain</li>
 <li><strong>$path</strong> (<em>string</em>) – Cookie path</li>
 <li><strong>$prefix</strong> (<em>string</em>) – Cookie name prefix. If set to <code class="docutils literal notranslate"><span class="pre">''</span></code>, the default value from <strong>app/Config/Cookie.php</strong> will be used</li>
-<li><strong>$secure</strong> (<em>bool</em>) – Whether to only transfer the cookie through HTTPS</li>
-<li><strong>$httponly</strong> (<em>bool</em>) – Whether to only make the cookie accessible for HTTP requests (no JavaScript)</li>
+<li><strong>$secure</strong> (<em>bool</em>) – Whether to only transfer the cookie through HTTPS. If set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default value from <strong>app/Config/Cookie.php</strong> will be used</li>
+<li><strong>$httponly</strong> (<em>bool</em>) – Whether to only make the cookie accessible for HTTP requests (no JavaScript). If set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default value from <strong>app/Config/Cookie.php</strong> will be used</li>
 <li><strong>$samesite</strong> (<em>string</em>) – The value for the SameSite cookie parameter. If set to <code class="docutils literal notranslate"><span class="pre">''</span></code>, no SameSite attribute will be set on the cookie. If set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default value from <strong>app/Config/Cookie.php</strong> will be used</li>
 </ul>
 </td>
@@ -881,6 +875,11 @@ this as it is handled automatically by CodeIgniter.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Prior to v4.2.7, the default values of <code class="docutils literal notranslate"><span class="pre">$secure</span></code> and <code class="docutils literal notranslate"><span class="pre">$httponly</span></code> were <code class="docutils literal notranslate"><span class="pre">false</span></code>
+due to a bug, and these values from <strong>app/Config/Cookie.php</strong> were never used.</p>
+</div>
 <p>Sets a cookie containing the values you specify. There are two ways to
 pass information to this method so that a cookie can be set: Array
 Method, and Discrete Parameters:</p>
@@ -1069,7 +1068,7 @@ request only.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2022.
+      <span class="lastupdated">Last updated on Oct 06, 2022.
       </span></p>
   </div>
 

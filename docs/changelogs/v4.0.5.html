@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.0.5 &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Version 4.0.5 &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -272,7 +272,16 @@
 <h1>Version 4.0.5<a class="headerlink" href="#version-4-0-5" title="Permalink to this headline"></a></h1>
 <p>Release Date: January 31, 2021</p>
 <p><strong>4.0.5 release of CodeIgniter4</strong></p>
-<p>Enhancements:</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#enhancements" id="id1">Enhancements</a></li>
+<li><a class="reference internal" href="#changes" id="id2">Changes</a></li>
+<li><a class="reference internal" href="#bugs-fixed" id="id3">Bugs Fixed</a></li>
+<li><a class="reference internal" href="#deprecations" id="id4">Deprecations</a></li>
+</ul>
+</div>
+<div class="section" id="enhancements">
+<h2><a class="toc-backref" href="#id1">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li>New URL helper function <code class="docutils literal notranslate"><span class="pre">url_to()</span></code> which creates absolute URLs based on controllers.</li>
 <li>New Model option: <code class="docutils literal notranslate"><span class="pre">$useAutoIncrement</span></code> which when set to <code class="docutils literal notranslate"><span class="pre">false</span></code> allows you to provide your own primary key for each record in the table. Handy when we want to implement 1:1 relation or use UUIDs for our model.</li>
@@ -283,17 +292,23 @@
 <li>The getter functions for file extensions of uploaded files now have different fallback values (<code class="docutils literal notranslate"><span class="pre">$this-&gt;getClientExtension()</span></code> for <code class="docutils literal notranslate"><span class="pre">UploadedFile-&gt;getExtension()</span></code> and <code class="docutils literal notranslate"><span class="pre">''</span></code> for <code class="docutils literal notranslate"><span class="pre">UploadedFile-&gt;guessExtension()</span></code>). This is a security fix and makes the process less dependent on the client.</li>
 <li>The Cache <code class="docutils literal notranslate"><span class="pre">FileHandler</span></code> now allows setting the file permissions mode via <code class="docutils literal notranslate"><span class="pre">Config\Cache</span></code></li>
 </ul>
-<p>Changes:</p>
+</div>
+<div class="section" id="changes">
+<h2><a class="toc-backref" href="#id2">Changes</a><a class="headerlink" href="#changes" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li>System messages defined in <code class="docutils literal notranslate"><span class="pre">system/Language/en/</span></code> are now strictly for internal framework use and are not covered by backwards compatibility (BC) promise. Users may use these messages in their applications but at their own risks.</li>
 </ul>
-<p>Bugs Fixed:</p>
+</div>
+<div class="section" id="bugs-fixed">
+<h2><a class="toc-backref" href="#id3">Bugs Fixed</a><a class="headerlink" href="#bugs-fixed" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li>Fixed a bug in <code class="docutils literal notranslate"><span class="pre">Entity</span></code> class where declaring class parameters was preventing data propagation to the <code class="docutils literal notranslate"><span class="pre">attributes</span></code> array.</li>
 <li>Handling for the environment variable <code class="docutils literal notranslate"><span class="pre">encryption.key</span></code> has changed. Previously, explicit function calls, like <code class="docutils literal notranslate"><span class="pre">getenv('encryption.key')</span></code> or <code class="docutils literal notranslate"><span class="pre">env('encryption.key')</span></code> where the value has the special prefix <code class="docutils literal notranslate"><span class="pre">hex2bin:</span></code> returns an automatically converted binary string. This is now changed to just return the character string with the prefix. This change was due to incompatibility with handling binary strings in environment variables on Windows platforms. However, accessing <code class="docutils literal notranslate"><span class="pre">$key</span></code> using <code class="docutils literal notranslate"><span class="pre">Encryption</span></code> class config remains unchanged and still returns a binary string.</li>
 <li><code class="docutils literal notranslate"><span class="pre">Config\Services</span></code> (in <strong>app/Config/Services.php</strong>) now extends <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Config\BaseService</span></code> to allow proper discovery of third-party services.</li>
 </ul>
-<p>Deprecations:</p>
+</div>
+<div class="section" id="deprecations">
+<h2><a class="toc-backref" href="#id4">Deprecations</a><a class="headerlink" href="#deprecations" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li>Deprecated <code class="docutils literal notranslate"><span class="pre">BaseCommand::getPad</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">BaseCommand::setPad</span></code>.</li>
 <li>Deprecated <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller::loadHelpers</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">helper</span></code> function.</li>
@@ -316,6 +331,7 @@
 <li>Deprecated <code class="docutils literal notranslate"><span class="pre">Config\Cache::$storePath</span></code> in favor of <code class="docutils literal notranslate"><span class="pre">Config\Cache::$file['storePath']</span></code></li>
 </ul>
 </div>
+</div>
 
 
            </div>
@@ -329,7 +345,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2022.
+      <span class="lastupdated">Last updated on Oct 06, 2022.
       </span></p>
   </div>
 

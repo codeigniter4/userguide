@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookie Helper &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Cookie Helper &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -303,8 +303,8 @@ cookies.</p>
 <li><strong>$domain</strong> (<em>string</em>) – Cookie domain (usually: .yourdomain.com)</li>
 <li><strong>$path</strong> (<em>string</em>) – Cookie path</li>
 <li><strong>$prefix</strong> (<em>string</em>) – Cookie name prefix. If <code class="docutils literal notranslate"><span class="pre">''</span></code>, the default from <strong>app/Config/Cookie.php</strong> is used</li>
-<li><strong>$secure</strong> (<em>bool</em>) – Whether to only send the cookie through HTTPS</li>
-<li><strong>$httpOnly</strong> (<em>bool</em>) – Whether to hide the cookie from JavaScript</li>
+<li><strong>$secure</strong> (<em>bool</em>) – Whether to only send the cookie through HTTPS. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default from <strong>app/Config/Cookie.php</strong> is used</li>
+<li><strong>$httpOnly</strong> (<em>bool</em>) – Whether to hide the cookie from JavaScript. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default from <strong>app/Config/Cookie.php</strong> is used</li>
 <li><strong>$sameSite</strong> (<em>string</em>) – The value for the SameSite cookie parameter. If <code class="docutils literal notranslate"><span class="pre">null</span></code>, the default from <strong>app/Config/Cookie.php</strong> is used</li>
 </ul>
 </td>
@@ -314,6 +314,11 @@ cookies.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Prior to v4.2.7, the default values of <code class="docutils literal notranslate"><span class="pre">$secure</span></code> and <code class="docutils literal notranslate"><span class="pre">$httpOnly</span></code> were <code class="docutils literal notranslate"><span class="pre">false</span></code>
+due to a bug, and these values from <strong>app/Config/Cookie.php</strong> were never used.</p>
+</div>
 <p>This helper function gives you friendlier syntax to set browser
 cookies. Refer to the <a class="reference internal" href="../outgoing/response.html"><span class="doc">Response Library</span></a> for
 a description of its use, as this function is an alias for
@@ -440,7 +445,7 @@ parameters.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2022.
+      <span class="lastupdated">Last updated on Oct 06, 2022.
       </span></p>
   </div>
 

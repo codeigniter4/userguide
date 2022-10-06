@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.0.4 &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Version 4.0.4 &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -272,7 +272,14 @@
 <h1>Version 4.0.4<a class="headerlink" href="#version-4-0-4" title="Permalink to this headline"></a></h1>
 <p>Release Date: July 15, 2020</p>
 <p><strong>4.0.4 release of CodeIgniter4</strong></p>
-<p>Enhancements:</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#enhancements" id="id1">Enhancements</a></li>
+<li><a class="reference internal" href="#bugs-fixed" id="id2">Bugs Fixed</a></li>
+</ul>
+</div>
+<div class="section" id="enhancements">
+<h2><a class="toc-backref" href="#id1">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li>The location for the SQLite3 database has changed and by default will be now located in a <code class="docutils literal notranslate"><span class="pre">writable</span></code> folder instead of the <code class="docutils literal notranslate"><span class="pre">public</span></code> folder.</li>
 <li>New CLI command: <code class="docutils literal notranslate"><span class="pre">cache:clear</span></code> that will destroy all data within the current cache engine.</li>
@@ -298,7 +305,9 @@
 <li>Cookies and headers can be copied from the global Response object when doing a redirect using the new <code class="docutils literal notranslate"><span class="pre">withCookies()</span></code> and <code class="docutils literal notranslate"><span class="pre">withHeaders()</span></code> methods.</li>
 <li>Support for special prefix “hex2bin:” which can be used with <code class="docutils literal notranslate"><span class="pre">$key</span></code> parameter in <a class="reference internal" href="../libraries/encryption.html"><span class="doc">Encryption class</span></a> or in .env file.</li>
 </ul>
-<p>Bugs Fixed:</p>
+</div>
+<div class="section" id="bugs-fixed">
+<h2><a class="toc-backref" href="#id2">Bugs Fixed</a><a class="headerlink" href="#bugs-fixed" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li>Fixed location for the SQLite3 database which by default will be now located in a <code class="docutils literal notranslate"><span class="pre">writable</span></code> folder instead of the <code class="docutils literal notranslate"><span class="pre">public</span></code> folder.</li>
 <li>Fixed bug where <code class="docutils literal notranslate"><span class="pre">force_https</span></code> could add <code class="docutils literal notranslate"><span class="pre">https://</span></code> a second time.</li>
@@ -324,6 +333,7 @@
 <li>Fixed a bug where filter arguments were not passed to after()</li>
 </ul>
 </div>
+</div>
 
 
            </div>
@@ -337,7 +347,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2022.
+      <span class="lastupdated">Last updated on Oct 06, 2022.
       </span></p>
   </div>
 

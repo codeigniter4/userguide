@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrade Models &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Upgrade Models &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -304,7 +304,7 @@
 <li>Add this line just after the opening php tag: <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Models;</span></code>.</li>
 <li>Below the <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Models;</span></code> line add this line: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">CodeIgniter\Model;</span></code>.</li>
 <li>Replace <code class="docutils literal notranslate"><span class="pre">extends</span> <span class="pre">CI_Model</span></code> with <code class="docutils literal notranslate"><span class="pre">extends</span> <span class="pre">Model</span></code>.</li>
-<li>Instead of CI3’s <code class="docutils literal notranslate"><span class="pre">$this-&gt;load-&gt;model(x);</span></code>, you would now use <code class="docutils literal notranslate"><span class="pre">$this-&gt;x</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">X();</span></code>, following namespaced conventions for your component. Alternatively, you can use the <code class="docutils literal notranslate"><span class="pre">model()</span></code> function: <code class="docutils literal notranslate"><span class="pre">$this-&gt;x</span> <span class="pre">=</span> <span class="pre">model('X');</span></code>.</li>
+<li>Instead of CI3’s <code class="docutils literal notranslate"><span class="pre">$this-&gt;load-&gt;model(x);</span></code>, you would now use <code class="docutils literal notranslate"><span class="pre">$this-&gt;x</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">X();</span></code>, following namespaced conventions for your component. Alternatively, you can use the <a class="reference internal" href="../general/common_functions.html#model" title="model"><code class="xref php php-func docutils literal notranslate"><span class="pre">model()</span></code></a> function: <code class="docutils literal notranslate"><span class="pre">$this-&gt;x</span> <span class="pre">=</span> <span class="pre">model('X');</span></code>.</li>
 </ol>
 <p>If you use sub-directories in your model structure you have to change the namespace according to that.
 Example: You have a version 3 model located in <strong>application/models/users/user_contact.php</strong> the namespace has to be <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Models\Users;</span></code> and the model path in the version 4 should look like this: <strong>app/Models/Users/UserContact.php</strong></p>
@@ -365,7 +365,7 @@ Inserting data is also easier than before. In CI4 there is an <code class="docut
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2022.
+      <span class="lastupdated">Last updated on Oct 06, 2022.
       </span></p>
   </div>
 

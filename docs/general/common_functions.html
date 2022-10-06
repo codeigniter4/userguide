@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Functions and Constants &mdash; CodeIgniter 4.2.6 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Global Functions and Constants &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -477,20 +477,21 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – </li>
-<li><strong>$getShared</strong> (<em>boolean</em>) – </li>
-<li><strong>$conn</strong> (<em>ConnectionInterface|null</em>) – </li>
+<li><strong>$name</strong> (<em>string</em>) – The model classname.</li>
+<li><strong>$getShared</strong> (<em>boolean</em>) – Whether to return a shared instance.</li>
+<li><strong>$conn</strong> (<em>ConnectionInterface|null</em>) – The database connection.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">More simple way of getting model instances</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="../helpers/html_helper.html#object" title="object">object</a></p>
 </td>
 </tr>
 </tbody>
 </table>
+<p>See also the <a class="reference internal" href="../models/model.html#accessing-models"><span class="std std-ref">Using CodeIgniter’s Model</span></a>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1287,7 +1288,7 @@ instance every time.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2022.
+      <span class="lastupdated">Last updated on Oct 06, 2022.
       </span></p>
   </div>
 
