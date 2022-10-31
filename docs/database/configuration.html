@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Configuration &mdash; CodeIgniter 4.2.7 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Database Configuration &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -544,7 +544,12 @@ default group’s configuration settings. The values should be name following th
 <td>The password used to connect to the database.</td>
 </tr>
 <tr class="row-even"><td><strong>database</strong></td>
-<td>The name of the database you want to connect to.</td>
+<td><p class="first">The name of the database you want to connect to.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">CodeIgniter doesn’t support dots (<code class="docutils literal notranslate"><span class="pre">.</span></code>) in the database, table, and column names.</p>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td><strong>DBDriver</strong></td>
 <td>The database type. e.g.,: <code class="docutils literal notranslate"><span class="pre">MySQLi</span></code>, <code class="docutils literal notranslate"><span class="pre">Postgres</span></code>, etc. The case must match the driver name</td>
@@ -639,7 +644,7 @@ you are using MySQL.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 06, 2022.
+      <span class="lastupdated">Last updated on Oct 31, 2022.
       </span></p>
   </div>
 
