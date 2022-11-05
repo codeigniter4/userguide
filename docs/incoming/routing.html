@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URI Routing &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>URI Routing &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Controllers and Routing</a> &raquo;</li>
-      <li>URI Routing</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Controllers and Routing</a></li>
+      <li class="breadcrumb-item active">URI Routing</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,70 +271,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="uri-routing">
+  <section id="uri-routing">
 <h1>URI Routing<a class="headerlink" href="#uri-routing" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#what-is-uri-routing" id="id10">What is URI Routing?</a></li>
-<li><a class="reference internal" href="#setting-routing-rules" id="id11">Setting Routing Rules</a><ul>
-<li><a class="reference internal" href="#http-verbs" id="id12">HTTP verbs</a></li>
-<li><a class="reference internal" href="#controller-s-namespace" id="id13">Controller’s Namespace</a></li>
-<li><a class="reference internal" href="#placeholders" id="id14">Placeholders</a></li>
-<li><a class="reference internal" href="#examples" id="id15">Examples</a></li>
-<li><a class="reference internal" href="#array-callable-syntax" id="id16">Array Callable Syntax</a></li>
-<li><a class="reference internal" href="#custom-placeholders" id="id17">Custom Placeholders</a></li>
-<li><a class="reference internal" href="#regular-expressions" id="id18">Regular Expressions</a></li>
-<li><a class="reference internal" href="#closures" id="id19">Closures</a></li>
-<li><a class="reference internal" href="#redirecting-routes" id="id20">Redirecting Routes</a></li>
-<li><a class="reference internal" href="#grouping-routes" id="id21">Grouping Routes</a></li>
-<li><a class="reference internal" href="#environment-restrictions" id="id22">Environment Restrictions</a></li>
-<li><a class="reference internal" href="#reverse-routing" id="id23">Reverse Routing</a></li>
-<li><a class="reference internal" href="#using-named-routes" id="id24">Using Named Routes</a></li>
-<li><a class="reference internal" href="#routes-with-any-http-verbs" id="id25">Routes with any HTTP verbs</a></li>
-<li><a class="reference internal" href="#mapping-multiple-routes" id="id26">Mapping Multiple Routes</a></li>
-<li><a class="reference internal" href="#command-line-only-routes" id="id27">Command-Line Only Routes</a></li>
-<li><a class="reference internal" href="#global-options" id="id28">Global Options</a></li>
+<li><p><a class="reference internal" href="#what-is-uri-routing" id="id10">What is URI Routing?</a></p></li>
+<li><p><a class="reference internal" href="#setting-routing-rules" id="id11">Setting Routing Rules</a></p>
+<ul>
+<li><p><a class="reference internal" href="#http-verbs" id="id12">HTTP verbs</a></p></li>
+<li><p><a class="reference internal" href="#controller-s-namespace" id="id13">Controller’s Namespace</a></p></li>
+<li><p><a class="reference internal" href="#placeholders" id="id14">Placeholders</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id15">Examples</a></p></li>
+<li><p><a class="reference internal" href="#array-callable-syntax" id="id16">Array Callable Syntax</a></p></li>
+<li><p><a class="reference internal" href="#custom-placeholders" id="id17">Custom Placeholders</a></p></li>
+<li><p><a class="reference internal" href="#regular-expressions" id="id18">Regular Expressions</a></p></li>
+<li><p><a class="reference internal" href="#closures" id="id19">Closures</a></p></li>
+<li><p><a class="reference internal" href="#redirecting-routes" id="id20">Redirecting Routes</a></p></li>
+<li><p><a class="reference internal" href="#grouping-routes" id="id21">Grouping Routes</a></p></li>
+<li><p><a class="reference internal" href="#environment-restrictions" id="id22">Environment Restrictions</a></p></li>
+<li><p><a class="reference internal" href="#reverse-routing" id="id23">Reverse Routing</a></p></li>
+<li><p><a class="reference internal" href="#using-named-routes" id="id24">Using Named Routes</a></p></li>
+<li><p><a class="reference internal" href="#routes-with-any-http-verbs" id="id25">Routes with any HTTP verbs</a></p></li>
+<li><p><a class="reference internal" href="#mapping-multiple-routes" id="id26">Mapping Multiple Routes</a></p></li>
+<li><p><a class="reference internal" href="#command-line-only-routes" id="id27">Command-Line Only Routes</a></p></li>
+<li><p><a class="reference internal" href="#global-options" id="id28">Global Options</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#route-priority" id="id29">Route Priority</a><ul>
-<li><a class="reference internal" href="#changing-route-priority" id="id30">Changing Route Priority</a></li>
+<li><p><a class="reference internal" href="#route-priority" id="id29">Route Priority</a></p>
+<ul>
+<li><p><a class="reference internal" href="#changing-route-priority" id="id30">Changing Route Priority</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#routes-configuration-options" id="id31">Routes Configuration Options</a><ul>
-<li><a class="reference internal" href="#default-namespace" id="id32">Default Namespace</a></li>
-<li><a class="reference internal" href="#translate-uri-dashes" id="id33">Translate URI Dashes</a></li>
-<li><a class="reference internal" href="#use-defined-routes-only" id="id34">Use Defined Routes Only</a></li>
-<li><a class="reference internal" href="#override" id="id35">404 Override</a></li>
-<li><a class="reference internal" href="#route-processing-by-priority" id="id36">Route Processing by Priority</a></li>
+<li><p><a class="reference internal" href="#routes-configuration-options" id="id31">Routes Configuration Options</a></p>
+<ul>
+<li><p><a class="reference internal" href="#default-namespace" id="id32">Default Namespace</a></p></li>
+<li><p><a class="reference internal" href="#translate-uri-dashes" id="id33">Translate URI Dashes</a></p></li>
+<li><p><a class="reference internal" href="#use-defined-routes-only" id="id34">Use Defined Routes Only</a></p></li>
+<li><p><a class="reference internal" href="#override" id="id35">404 Override</a></p></li>
+<li><p><a class="reference internal" href="#route-processing-by-priority" id="id36">Route Processing by Priority</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#auto-routing-improved" id="id37">Auto Routing (Improved)</a><ul>
-<li><a class="reference internal" href="#enable-auto-routing" id="id38">Enable Auto Routing</a></li>
-<li><a class="reference internal" href="#uri-segments" id="id39">URI Segments</a></li>
-<li><a class="reference internal" href="#configuration-options" id="id40">Configuration Options</a></li>
+<li><p><a class="reference internal" href="#auto-routing-improved" id="id37">Auto Routing (Improved)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#enable-auto-routing" id="id38">Enable Auto Routing</a></p></li>
+<li><p><a class="reference internal" href="#uri-segments" id="id39">URI Segments</a></p></li>
+<li><p><a class="reference internal" href="#configuration-options" id="id40">Configuration Options</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#auto-routing-legacy" id="id41">Auto Routing (Legacy)</a><ul>
-<li><a class="reference internal" href="#enable-auto-routing-legacy" id="id42">Enable Auto Routing (Legacy)</a></li>
-<li><a class="reference internal" href="#uri-segments-legacy" id="id43">URI Segments (Legacy)</a></li>
-<li><a class="reference internal" href="#configuration-options-legacy" id="id44">Configuration Options (Legacy)</a></li>
+<li><p><a class="reference internal" href="#auto-routing-legacy" id="id41">Auto Routing (Legacy)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#enable-auto-routing-legacy" id="id42">Enable Auto Routing (Legacy)</a></p></li>
+<li><p><a class="reference internal" href="#uri-segments-legacy" id="id43">URI Segments (Legacy)</a></p></li>
+<li><p><a class="reference internal" href="#configuration-options-legacy" id="id44">Configuration Options (Legacy)</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#confirming-routes" id="id45">Confirming Routes</a><ul>
-<li><a class="reference internal" href="#routes" id="id46">routes</a></li>
+<li><p><a class="reference internal" href="#confirming-routes" id="id45">Confirming Routes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#routes" id="id46">routes</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="what-is-uri-routing">
+<section id="what-is-uri-routing">
 <h2><a class="toc-backref" href="#id10">What is URI Routing?</a><a class="headerlink" href="#what-is-uri-routing" title="Permalink to this headline"></a></h2>
 <p>URI Routing associates a URI with a controller’s method.</p>
 <p>CodeIgniter has two kinds of routing. One is <strong>Defined Route Routing</strong>, and the other is <strong>Auto Routing</strong>.
 With Defined Route Routing, you can define routes manually. It allows flexible URL.
 Auto Routing automatically routes HTTP requests based on conventions and execute the corresponding controller methods. There is no need to define routes manually.</p>
 <p>First, let’s look at Defined Route Routing. If you want to use Auto Routing, see <a class="reference internal" href="#auto-routing-improved"><span class="std std-ref">Auto Routing (Improved)</span></a>.</p>
-</div>
-<div class="section" id="setting-routing-rules">
+</section>
+<section id="setting-routing-rules">
 <span id="defined-route-routing"></span><h2><a class="toc-backref" href="#id11">Setting Routing Rules</a><a class="headerlink" href="#setting-routing-rules" title="Permalink to this headline"></a></h2>
 <p>Routing rules are defined in the <strong>app/Config/Routes.php</strong> file. In it you’ll see that
 it creates an instance of the RouteCollection class (<code class="docutils literal notranslate"><span class="pre">$routes</span></code>) that permits you to specify your own routing criteria.
@@ -356,7 +366,7 @@ passed to it, then they would be listed after the method name, separated by forw
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;users/1/23&#39;</span><span class="p">,</span> <span class="s1">&#39;Users::list/1/23&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="http-verbs">
+<section id="http-verbs">
 <h3><a class="toc-backref" href="#id12">HTTP verbs</a><a class="headerlink" href="#http-verbs" title="Permalink to this headline"></a></h3>
 <p>You can use any standard HTTP verb (GET, POST, PUT, DELETE, OPTIONS, etc):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -372,8 +382,8 @@ passed to it, then they would be listed after the method name, separated by forw
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">([</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;put&#39;</span><span class="p">],</span> <span class="s1">&#39;products&#39;</span><span class="p">,</span> <span class="s1">&#39;Product::feature&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="controller-s-namespace">
+</section>
+<section id="controller-s-namespace">
 <h3><a class="toc-backref" href="#id13">Controller’s Namespace</a><a class="headerlink" href="#controller-s-namespace" title="Permalink to this headline"></a></h3>
 <p>If a controller name is stated without beginning with <code class="docutils literal notranslate"><span class="pre">\</span></code>, the <a class="reference internal" href="#routing-default-namespace"><span class="std std-ref">Default Namespace</span></a> will be prepended:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -397,8 +407,8 @@ passed to it, then they would be listed after the method name, separated by forw
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="#assigning-namespace"><span class="std std-ref">Assigning Namespace</span></a> for details.</p>
-</div>
-<div class="section" id="placeholders">
+</section>
+<section id="placeholders">
 <h3><a class="toc-backref" href="#id14">Placeholders</a><a class="headerlink" href="#placeholders" title="Permalink to this headline"></a></h3>
 <p>A typical route might look something like this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -414,44 +424,44 @@ the <code class="docutils literal notranslate"><span class="pre">Catalog</span><
 process, these placeholders are replaced with the value of the Regular Expression. They are primarily
 used for readability.</p>
 <p>The following placeholders are available for you to use in your routes:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Placeholders</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Placeholders</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>(:any)</td>
-<td>will match all characters from that point to the end of the URI. This may include multiple URI segments.</td>
+<tbody>
+<tr class="row-even"><td><p>(:any)</p></td>
+<td><p>will match all characters from that point to the end of the URI. This may include multiple URI segments.</p></td>
 </tr>
-<tr class="row-odd"><td>(:segment)</td>
-<td>will match any character except for a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) restricting the result to a single segment.</td>
+<tr class="row-odd"><td><p>(:segment)</p></td>
+<td><p>will match any character except for a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) restricting the result to a single segment.</p></td>
 </tr>
-<tr class="row-even"><td>(:num)</td>
-<td>will match any integer.</td>
+<tr class="row-even"><td><p>(:num)</p></td>
+<td><p>will match any integer.</p></td>
 </tr>
-<tr class="row-odd"><td>(:alpha)</td>
-<td>will match any string of alphabetic characters</td>
+<tr class="row-odd"><td><p>(:alpha)</p></td>
+<td><p>will match any string of alphabetic characters</p></td>
 </tr>
-<tr class="row-even"><td>(:alphanum)</td>
-<td>will match any string of alphabetic characters or integers, or any combination of the two.</td>
+<tr class="row-even"><td><p>(:alphanum)</p></td>
+<td><p>will match any string of alphabetic characters or integers, or any combination of the two.</p></td>
 </tr>
-<tr class="row-odd"><td>(:hash)</td>
-<td>is the same as <code class="docutils literal notranslate"><span class="pre">(:segment)</span></code>, but can be used to easily see which routes use hashed ids.</td>
+<tr class="row-odd"><td><p>(:hash)</p></td>
+<td><p>is the same as <code class="docutils literal notranslate"><span class="pre">(:segment)</span></code>, but can be used to easily see which routes use hashed ids.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">{locale}</span></code> cannot be used as a placeholder or other part of the route, as it is reserved for use
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">{locale}</span></code> cannot be used as a placeholder or other part of the route, as it is reserved for use
 in <a class="reference internal" href="../outgoing/localization.html"><span class="doc">localization</span></a>.</p>
 </div>
-</div>
-<div class="section" id="examples">
+</section>
+<section id="examples">
 <h3><a class="toc-backref" href="#id15">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
 <p>Here are a few basic routing examples.</p>
 <p>A URL containing the word <strong>journals</strong> in the first segment will be mapped to the <code class="docutils literal notranslate"><span class="pre">\App\Controllers\Blogs</span></code> class,
@@ -513,8 +523,8 @@ routes. With the examples URLs from above:</p>
 </pre></div>
 </div>
 <p>will only match <strong>product/123</strong> and generate 404 errors for other example.</p>
-</div>
-<div class="section" id="array-callable-syntax">
+</section>
+<section id="array-callable-syntax">
 <h3><a class="toc-backref" href="#id16">Array Callable Syntax</a><a class="headerlink" href="#array-callable-syntax" title="Permalink to this headline"></a></h3>
 <p>Since v4.2.0, you can use array callable syntax to specify the controller:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">\App\Controllers\Home</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">]);</span>
@@ -545,8 +555,8 @@ In such a case, you can specify the parameters manually:</p>
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;product/(:num)/(:num)&#39;</span><span class="p">,</span> <span class="s1">&#39;Product::index/$2/$1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="custom-placeholders">
+</section>
+<section id="custom-placeholders">
 <h3><a class="toc-backref" href="#id17">Custom Placeholders</a><a class="headerlink" href="#custom-placeholders" title="Permalink to this headline"></a></h3>
 <p>You can create your own placeholders that can be used in your routes file to fully customize the experience
 and readability.</p>
@@ -559,16 +569,16 @@ This must be called before you add the route:</p>
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;users/(:uuid)&#39;</span><span class="p">,</span> <span class="s1">&#39;Users::show/$1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="regular-expressions">
+</section>
+<section id="regular-expressions">
 <h3><a class="toc-backref" href="#id18">Regular Expressions</a><a class="headerlink" href="#regular-expressions" title="Permalink to this headline"></a></h3>
 <p>If you prefer you can use regular expressions to define your routing rules. Any valid regular expression
 is allowed, as are back-references.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="admonition-title">Important</p>
 <p>Note: If you use back-references you must use the dollar syntax rather than the double backslash syntax.
 A typical RegEx route might look something like this:</p>
-<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">,</span> <span class="s1">&#39;Products::show/$1/id_$2&#39;</span><span class="p">);</span>
 </pre></div>
@@ -588,11 +598,11 @@ redirect them back to the same page after they log in, you may find this example
 <p>For those of you who don’t know regular expressions and want to learn more about them,
 <a class="reference external" href="https://www.regular-expressions.info/">regular-expressions.info</a> might be a good starting point.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Note: You can also mix and match wildcards with regular expressions.</p>
+<p class="admonition-title">Important</p>
+<p>Note: You can also mix and match wildcards with regular expressions.</p>
 </div>
-</div>
-<div class="section" id="closures">
+</section>
+<section id="closures">
 <h3><a class="toc-backref" href="#id19">Closures</a><a class="headerlink" href="#closures" title="Permalink to this headline"></a></h3>
 <p>You can use an anonymous function, or Closure, as the destination that a route maps to. This function will be
 executed when the user visits that URI. This is handy for quickly executing small tasks, or even just showing
@@ -606,8 +616,8 @@ a simple view:</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="redirecting-routes">
+</section>
+<section id="redirecting-routes">
 <span id="id1"></span><h3><a class="toc-backref" href="#id20">Redirecting Routes</a><a class="headerlink" href="#redirecting-routes" title="Permalink to this headline"></a></h3>
 <p>Any site that lives long enough is bound to have pages that move. You can specify routes that should redirect
 to other routes with the <code class="docutils literal notranslate"><span class="pre">addRedirect()</span></code> method. The first parameter is the URI pattern for the old route. The
@@ -633,13 +643,13 @@ redirect and is recommended in most cases:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">addRedirect()</span></code> can use placeholders.</p>
+<p class="admonition-title">Note</p>
+<p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">addRedirect()</span></code> can use placeholders.</p>
 </div>
 <p>If a redirect route is matched during a page load, the user will be immediately redirected to the new page before a
 controller can be loaded.</p>
-</div>
-<div class="section" id="grouping-routes">
+</section>
+<section id="grouping-routes">
 <h3><a class="toc-backref" href="#id21">Grouping Routes</a><a class="headerlink" href="#grouping-routes" title="Permalink to this headline"></a></h3>
 <p>You can group your routes under a common name with the <code class="docutils literal notranslate"><span class="pre">group()</span></code> method. The group name becomes a segment that
 appears prior to the routes defined inside of the group. This allows you to reduce the typing needed to build out an
@@ -684,8 +694,8 @@ run the filter before or after the controller. This is especially handy during a
 </div>
 <p>This would handle the URL at <strong>admin/users/list</strong>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Options passed to the outer <code class="docutils literal notranslate"><span class="pre">group()</span></code> (for example <code class="docutils literal notranslate"><span class="pre">namespace</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code>) are not merged with the inner <code class="docutils literal notranslate"><span class="pre">group()</span></code> options.</p>
+<p class="admonition-title">Note</p>
+<p>Options passed to the outer <code class="docutils literal notranslate"><span class="pre">group()</span></code> (for example <code class="docutils literal notranslate"><span class="pre">namespace</span></code> and <code class="docutils literal notranslate"><span class="pre">filter</span></code>) are not merged with the inner <code class="docutils literal notranslate"><span class="pre">group()</span></code> options.</p>
 </div>
 <p>At some point, you may want to group routes for the purpose of applying filters or other route
 config options like namespace, subdomain, etc. Without necessarily needing to add a prefix to the group, you can pass
@@ -700,8 +710,8 @@ given route config options:</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="environment-restrictions">
+</section>
+<section id="environment-restrictions">
 <h3><a class="toc-backref" href="#id22">Environment Restrictions</a><a class="headerlink" href="#environment-restrictions" title="Permalink to this headline"></a></h3>
 <p>You can create a set of routes that will only be viewable in a certain environment. This allows you to create
 tools that only the developer can use on their local machines that are not reachable on testing or production servers.
@@ -714,8 +724,8 @@ routes defined within this closure are only accessible from the given environmen
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="reverse-routing">
+</section>
+<section id="reverse-routing">
 <span id="id2"></span><h3><a class="toc-backref" href="#id23">Reverse Routing</a><a class="headerlink" href="#reverse-routing" title="Permalink to this headline"></a></h3>
 <p>Reverse routing allows you to define the controller and method, as well as any parameters, that a link should go
 to, and have the router lookup the current route to it. This allows route definitions to change without you having
@@ -731,13 +741,13 @@ should be passed to the route are passed in next:</p>
 
 <span class="cp">?&gt;</span>
 
-<span class="c">&lt;!-- Generate the URI to link to user ID 15, gallery 12: --&gt;</span>
+<span class="cm">&lt;!-- Generate the URI to link to user ID 15, gallery 12: --&gt;</span>
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Galleries::showUserGallery&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>View Gallery<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- Result: &#39;http://example.com/users/15/gallery/12&#39; --&gt;</span>
+<span class="cm">&lt;!-- Result: &#39;http://example.com/users/15/gallery/12&#39; --&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-named-routes">
+</section>
+<section id="using-named-routes">
 <span id="id3"></span><h3><a class="toc-backref" href="#id24">Using Named Routes</a><a class="headerlink" href="#using-named-routes" title="Permalink to this headline"></a></h3>
 <p>You can name routes to make your application less fragile. This applies a name to a route that can be called
 later, and even if the route definition changes, all of the links in your application built with <code class="docutils literal notranslate"><span class="pre">route_to()</span></code>
@@ -750,18 +760,18 @@ with the name of the route:</p>
 
 <span class="cp">?&gt;</span>
 
-<span class="c">&lt;!-- Generate the URI to link to user ID 15, gallery 12: --&gt;</span>
+<span class="cm">&lt;!-- Generate the URI to link to user ID 15, gallery 12: --&gt;</span>
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;user_gallery&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>View Gallery<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- Result: &#39;http://example.com//users/15/gallery/12&#39; --&gt;</span>
+<span class="cm">&lt;!-- Result: &#39;http://example.com//users/15/gallery/12&#39; --&gt;</span>
 </pre></div>
 </div>
 <p>This has the added benefit of making the views more readable, too.</p>
-</div>
-<div class="section" id="routes-with-any-http-verbs">
+</section>
+<section id="routes-with-any-http-verbs">
 <h3><a class="toc-backref" href="#id25">Routes with any HTTP verbs</a><a class="headerlink" href="#routes-with-any-http-verbs" title="Permalink to this headline"></a></h3>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">While the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method seems to be convenient, it is recommended to always use the HTTP-verb-based
+<p class="admonition-title">Warning</p>
+<p>While the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method seems to be convenient, it is recommended to always use the HTTP-verb-based
 routes, described above, as it is more secure. If you use the <a class="reference internal" href="../libraries/security.html"><span class="doc">CSRF protection</span></a>, it does not protect <strong>GET</strong>
 requests. If the URI specified in the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method is accessible by the GET method, the CSRF protection
 will not work.</p>
@@ -774,17 +784,17 @@ You can use the <code class="docutils literal notranslate"><span class="pre">add
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Using the HTTP-verb-based routes will also provide a slight performance increase, since
+<p class="admonition-title">Note</p>
+<p>Using the HTTP-verb-based routes will also provide a slight performance increase, since
 only routes that match the current request method are stored, resulting in fewer routes to scan through
 when trying to find a match.</p>
 </div>
-</div>
-<div class="section" id="mapping-multiple-routes">
+</section>
+<section id="mapping-multiple-routes">
 <h3><a class="toc-backref" href="#id26">Mapping Multiple Routes</a><a class="headerlink" href="#mapping-multiple-routes" title="Permalink to this headline"></a></h3>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">map()</span></code> method is not recommended as well as <code class="docutils literal notranslate"><span class="pre">add()</span></code>
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">map()</span></code> method is not recommended as well as <code class="docutils literal notranslate"><span class="pre">add()</span></code>
 because it calls <code class="docutils literal notranslate"><span class="pre">add()</span></code> internally.</p>
 </div>
 <p>While the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method is simple to use, it is often handier to work with multiple routes at once, using
@@ -800,8 +810,8 @@ define an array of routes and then pass it as the first parameter to the <code c
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">map</span><span class="p">(</span><span class="nv">$multipleRoutes</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="command-line-only-routes">
+</section>
+<section id="command-line-only-routes">
 <span id="id4"></span><h3><a class="toc-backref" href="#id27">Command-Line Only Routes</a><a class="headerlink" href="#command-line-only-routes" title="Permalink to this headline"></a></h3>
 <p>You can create routes that work only from the command-line, and are inaccessible from the web browser, with the
 <code class="docutils literal notranslate"><span class="pre">cli()</span></code> method. Any route created by any of the HTTP-verb-based
@@ -813,17 +823,17 @@ available from the command line:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It is recommended to use Spark Commands for CLI scripts instead of calling controllers via CLI.
+<p class="admonition-title">Note</p>
+<p>It is recommended to use Spark Commands for CLI scripts instead of calling controllers via CLI.
 See the <a class="reference internal" href="../cli/cli_commands.html"><span class="doc">Creating Spark Commands</span></a> page for detailed information.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If you enable <a class="reference internal" href="#auto-routing"><span class="std std-ref">Auto Routing (Legacy)</span></a> and place the command file in <strong>app/Controllers</strong>,
+<p class="admonition-title">Warning</p>
+<p>If you enable <a class="reference internal" href="#auto-routing"><span class="std std-ref">Auto Routing (Legacy)</span></a> and place the command file in <strong>app/Controllers</strong>,
 anyone could access the command with the help of auto-routing via HTTP.</p>
 </div>
-</div>
-<div class="section" id="global-options">
+</section>
+<section id="global-options">
 <h3><a class="toc-backref" href="#id28">Global Options</a><a class="headerlink" href="#global-options" title="Permalink to this headline"></a></h3>
 <p>All of the methods for creating a route (add, get, post, <a class="reference internal" href="restful.html"><span class="doc">resource</span></a> etc) can take an array of options that
 can modify the generated routes, or further restrict them. The <code class="docutils literal notranslate"><span class="pre">$options</span></code> array is always the last parameter:</p>
@@ -843,25 +853,25 @@ can modify the generated routes, or further restrict them. The <code class="docu
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nv">$options</span><span class="p">,</span> <span class="k">static</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{});</span>
 </pre></div>
 </div>
-<div class="section" id="applying-filters">
+<section id="applying-filters">
 <span id="id5"></span><h4>Applying Filters<a class="headerlink" href="#applying-filters" title="Permalink to this headline"></a></h4>
 <p>You can alter the behavior of specific routes by supplying filters to run before or after the controller. This is especially handy during authentication or api logging.
 The value for the filter can be a string or an array of strings:</p>
 <ul class="simple">
-<li>matching the aliases defined in <strong>app/Config/Filters.php</strong>.</li>
-<li>filter classnames</li>
+<li><p>matching the aliases defined in <strong>app/Config/Filters.php</strong>.</p></li>
+<li><p>filter classnames</p></li>
 </ul>
 <p>See <a class="reference internal" href="filters.html"><span class="doc">Controller filters</span></a> for more information on setting up filters.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If you set filters to routes in <strong>app/Config/Routes.php</strong>
+<p class="admonition-title">Warning</p>
+<p>If you set filters to routes in <strong>app/Config/Routes.php</strong>
 (not in <strong>app/Config/Filters.php</strong>), it is recommended to disable auto-routing.
 When auto-routing is enabled, it may be possible that a controller can be accessed
 via a different URL than the configured route,
 in which case the filter you specified to the route will not be applied.
 See <a class="reference internal" href="#use-defined-routes-only"><span class="std std-ref">Use Defined Routes Only</span></a> to disable auto-routing.</p>
 </div>
-<div class="section" id="alias-filter">
+<section id="alias-filter">
 <h5>Alias Filter<a class="headerlink" href="#alias-filter" title="Permalink to this headline"></a></h5>
 <p>You specify an alias defined in <strong>app/Config/Filters.php</strong> for the filter value:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -875,8 +885,8 @@ See <a class="reference internal" href="#use-defined-routes-only"><span class="s
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;users/delete/(:segment)&#39;</span><span class="p">,</span> <span class="s1">&#39;AdminController::index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;filter&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin-auth:dual,noreturn&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="classname-filter">
+</section>
+<section id="classname-filter">
 <h5>Classname Filter<a class="headerlink" href="#classname-filter" title="Permalink to this headline"></a></h5>
 <p>You specify a filter classname for the filter value:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -884,12 +894,12 @@ See <a class="reference internal" href="#use-defined-routes-only"><span class="s
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="s1">&#39; AdminController::index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;filter&#39;</span> <span class="o">=&gt;</span> <span class="nx">\App\Filters\SomeFilter</span><span class="o">::</span><span class="na">class</span><span class="p">]);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="multiple-filters">
+</section>
+<section id="multiple-filters">
 <h5>Multiple Filters<a class="headerlink" href="#multiple-filters" title="Permalink to this headline"></a></h5>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last"><em>Multiple filters</em> is disabled by default. Because it breaks backward compatibility. If you want to use it, you need to configure. See <a class="reference internal" href="../installation/upgrade_415.html#upgrade-415-multiple-filters-for-a-route"><span class="std std-ref">Multiple filters for a route</span></a> for the details.</p>
+<p class="admonition-title">Important</p>
+<p><em>Multiple filters</em> is disabled by default. Because it breaks backward compatibility. If you want to use it, you need to configure. See <a class="reference internal" href="../installation/upgrade_415.html#upgrade-415-multiple-filters-for-a-route"><span class="std std-ref">Multiple filters for a route</span></a> for the details.</p>
 </div>
 <p>You specify an array for the filter value:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -897,9 +907,9 @@ See <a class="reference internal" href="#use-defined-routes-only"><span class="s
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="s1">&#39; AdminController::index&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;filter&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;admin-auth&#39;</span><span class="p">,</span> <span class="nx">\App\Filters\SomeFilter</span><span class="o">::</span><span class="na">class</span><span class="p">]]);</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="assigning-namespace">
+</section>
+</section>
+<section id="assigning-namespace">
 <span id="id6"></span><h4>Assigning Namespace<a class="headerlink" href="#assigning-namespace" title="Permalink to this headline"></a></h4>
 <p>While a <a class="reference internal" href="#routing-default-namespace"><span class="std std-ref">Default Namespace</span></a> will be prepended to the generated controllers, you can also specify
 a different namespace to be used in any options array, with the <code class="docutils literal notranslate"><span class="pre">namespace</span></code> option. The value should be the
@@ -913,8 +923,8 @@ namespace you want modified:</p>
 <p>The new namespace is only applied during that call for any methods that create a single route, like get, post, etc.
 For any methods that create multiple routes, the new namespace is attached to all routes generated by that function
 or, in the case of <code class="docutils literal notranslate"><span class="pre">group()</span></code>, all routes generated while in the closure.</p>
-</div>
-<div class="section" id="limit-to-hostname">
+</section>
+<section id="limit-to-hostname">
 <h4>Limit to Hostname<a class="headerlink" href="#limit-to-hostname" title="Permalink to this headline"></a></h4>
 <p>You can restrict groups of routes to function only in certain domain or sub-domains of your application
 by passing the “hostname” option along with the desired domain to allow it on as part of the options array:</p>
@@ -925,8 +935,8 @@ by passing the “hostname” option along with the desired domain to allow it o
 </div>
 <p>This example would only allow the specified hosts to work if the domain exactly matched <strong>accounts.example.com</strong>.
 It would not work under the main site at <strong>example.com</strong>.</p>
-</div>
-<div class="section" id="limit-to-subdomains">
+</section>
+<section id="limit-to-subdomains">
 <h4>Limit to Subdomains<a class="headerlink" href="#limit-to-subdomains" title="Permalink to this headline"></a></h4>
 <p>When the <code class="docutils literal notranslate"><span class="pre">subdomain</span></code> option is present, the system will restrict the routes to only be available on that
 sub-domain. The route will only be matched if the subdomain is the one the application is being viewed through:</p>
@@ -945,13 +955,13 @@ that does not have any subdomain present, this will not be matched:</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">The system is not perfect and should be tested for your specific domain before being used in production.
+<p class="admonition-title">Important</p>
+<p>The system is not perfect and should be tested for your specific domain before being used in production.
 Most domains should work fine but some edge case ones, especially with a period in the domain itself (not used
 to separate suffixes or www) can potentially lead to false positives.</p>
 </div>
-</div>
-<div class="section" id="offsetting-the-matched-parameters">
+</section>
+<section id="offsetting-the-matched-parameters">
 <h4>Offsetting the Matched Parameters<a class="headerlink" href="#offsetting-the-matched-parameters" title="Permalink to this headline"></a></h4>
 <p>You can offset the matched parameters in your route by any numeric value with the <code class="docutils literal notranslate"><span class="pre">offset</span></code> option, with the
 value being the number of segments to offset.</p>
@@ -965,18 +975,18 @@ be used when the first parameter is a language string:</p>
 <span class="nv">$routes</span><span class="p">[</span><span class="s1">&#39;users/(:num)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;users/show/$2&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="route-priority">
+</section>
+</section>
+</section>
+<section id="route-priority">
 <span id="routing-priority"></span><h2><a class="toc-backref" href="#id29">Route Priority</a><a class="headerlink" href="#route-priority" title="Permalink to this headline"></a></h2>
 <p>Routes are registered in the routing table in the order in which they are defined. This means that when a URI is accessed, the first matching route will be executed.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If a route (the URI path) is defined more than once with different handlers, only the first defined route is registered.</p>
+<p class="admonition-title">Note</p>
+<p>If a route (the URI path) is defined more than once with different handlers, only the first defined route is registered.</p>
 </div>
 <p>You can check registered routes in the routing table by running the <a class="reference internal" href="#spark-routes"><span class="std std-ref">spark routes</span></a> command.</p>
-<div class="section" id="changing-route-priority">
+<section id="changing-route-priority">
 <h3><a class="toc-backref" href="#id30">Changing Route Priority</a><a class="headerlink" href="#changing-route-priority" title="Permalink to this headline"></a></h3>
 <p>When working with modules, it can be a problem if the routes in the application contain wildcards.
 Then the module routes will not be processed correctly.
@@ -1004,17 +1014,17 @@ route priority in the processing queue:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">By default, all routes have a priority of 0.
+<p class="admonition-title">Note</p>
+<p>By default, all routes have a priority of 0.
 Negative integers will be cast to the absolute value.</p>
 </div>
-</div>
-</div>
-<div class="section" id="routes-configuration-options">
+</section>
+</section>
+<section id="routes-configuration-options">
 <span id="id7"></span><h2><a class="toc-backref" href="#id31">Routes Configuration Options</a><a class="headerlink" href="#routes-configuration-options" title="Permalink to this headline"></a></h2>
 <p>The RoutesCollection class provides several options that affect all routes, and can be modified to meet your
 application’s needs. These options are available at the top of <strong>app/Config/Routes.php</strong>.</p>
-<div class="section" id="default-namespace">
+<section id="default-namespace">
 <span id="routing-default-namespace"></span><h3><a class="toc-backref" href="#id32">Default Namespace</a><a class="headerlink" href="#default-namespace" title="Permalink to this headline"></a></h3>
 <p>When matching a controller to a route, the router will add the default namespace value to the front of the controller
 specified by the route. By default, this value is <code class="docutils literal notranslate"><span class="pre">App\Controllers</span></code>.</p>
@@ -1044,8 +1054,8 @@ then you can change this value to save typing:</p>
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;Admin\Users::index&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="translate-uri-dashes">
+</section>
+<section id="translate-uri-dashes">
 <h3><a class="toc-backref" href="#id33">Translate URI Dashes</a><a class="headerlink" href="#translate-uri-dashes" title="Permalink to this headline"></a></h3>
 <p>This option enables you to automatically replace dashes (<code class="docutils literal notranslate"><span class="pre">-</span></code>) with underscores in the controller and method
 URI segments, thus saving you additional route entries if you need to do that. This is required because the
@@ -1055,8 +1065,8 @@ dash isn’t a valid class or method name character and would cause a fatal erro
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">setTranslateURIDashes</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="use-defined-routes-only">
+</section>
+<section id="use-defined-routes-only">
 <span id="id8"></span><h3><a class="toc-backref" href="#id34">Use Defined Routes Only</a><a class="headerlink" href="#use-defined-routes-only" title="Permalink to this headline"></a></h3>
 <p>Since v4.2.0, the auto-routing is disabled by default.</p>
 <p>When no defined route is found that matches the URI, the system will attempt to match that URI against the
@@ -1069,12 +1079,12 @@ to only those defined by you, by setting the <code class="docutils literal notra
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If you use the <a class="reference internal" href="../libraries/security.html"><span class="doc">CSRF protection</span></a>, it does not protect <strong>GET</strong>
+<p class="admonition-title">Warning</p>
+<p>If you use the <a class="reference internal" href="../libraries/security.html"><span class="doc">CSRF protection</span></a>, it does not protect <strong>GET</strong>
 requests. If the URI is accessible by the GET method, the CSRF protection will not work.</p>
 </div>
-</div>
-<div class="section" id="override">
+</section>
+<section id="override">
 <h3><a class="toc-backref" href="#id35">404 Override</a><a class="headerlink" href="#override" title="Permalink to this headline"></a></h3>
 <p>When a page is not found that matches the current URI, the system will show a generic 404 view. You can change
 what happens by specifying an action to happen with the <code class="docutils literal notranslate"><span class="pre">set404Override()</span></code> method. The value can be either
@@ -1091,14 +1101,14 @@ a valid class/method pair, just like you would show in any route, or a Closure:<
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">set404Override()</span></code> method does not change the Response status code to <code class="docutils literal notranslate"><span class="pre">404</span></code>.
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">set404Override()</span></code> method does not change the Response status code to <code class="docutils literal notranslate"><span class="pre">404</span></code>.
 If you don’t set the status code in the controller you set, the default status code <code class="docutils literal notranslate"><span class="pre">200</span></code>
 will be returned. See <a class="reference internal" href="../outgoing/response.html#CodeIgniter\HTTP\Response::setStatusCode" title="CodeIgniter\HTTP\Response::setStatusCode"><code class="xref php php-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Response::setStatusCode()</span></code></a> for
 information on how to set the status code.</p>
 </div>
-</div>
-<div class="section" id="route-processing-by-priority">
+</section>
+<section id="route-processing-by-priority">
 <h3><a class="toc-backref" href="#id36">Route Processing by Priority</a><a class="headerlink" href="#route-processing-by-priority" title="Permalink to this headline"></a></h3>
 <p>Enables or disables processing of the routes queue by priority. Lowering the priority is defined in the route option.
 Disabled by default. This functionality affects all routes.
@@ -1112,23 +1122,23 @@ For an example use of lowering the priority see <a class="reference internal" hr
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">setPrioritize</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="auto-routing-improved">
+</section>
+</section>
+<section id="auto-routing-improved">
 <span id="id9"></span><h2><a class="toc-backref" href="#id37">Auto Routing (Improved)</a><a class="headerlink" href="#auto-routing-improved" title="Permalink to this headline"></a></h2>
 <p>Since v4.2.0, the new more secure Auto Routing has been introduced.</p>
 <p>When no defined route is found that matches the URI, the system will attempt to match that URI against the controllers and methods when Auto Routing is enabled.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">For security reasons, if a controller is used in the defined routes, Auto Routing (Improved) does not route to the controller.</p>
+<p class="admonition-title">Important</p>
+<p>For security reasons, if a controller is used in the defined routes, Auto Routing (Improved) does not route to the controller.</p>
 </div>
 <p>Auto Routing can automatically route HTTP requests based on conventions
 and execute the corresponding controller methods.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Auto Routing (Improved) is disabled by default. To use it, see below.</p>
+<p class="admonition-title">Note</p>
+<p>Auto Routing (Improved) is disabled by default. To use it, see below.</p>
 </div>
-<div class="section" id="enable-auto-routing">
+<section id="enable-auto-routing">
 <span id="enabled-auto-routing-improved"></span><h3><a class="toc-backref" href="#id38">Enable Auto Routing</a><a class="headerlink" href="#enable-auto-routing" title="Permalink to this headline"></a></h3>
 <p>To use it, you need to change the setting <code class="docutils literal notranslate"><span class="pre">setAutoRoute()</span></code> option to true in <strong>app/Config/Routes.php</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">setAutoRoute</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
@@ -1138,17 +1148,17 @@ and execute the corresponding controller methods.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nx">bool</span> <span class="nv">$autoRoutesImproved</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="uri-segments">
+</section>
+<section id="uri-segments">
 <h3><a class="toc-backref" href="#id39">URI Segments</a><a class="headerlink" href="#uri-segments" title="Permalink to this headline"></a></h3>
 <p>The segments in the URL, in following with the Model-View-Controller approach, usually represent:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">method</span><span class="o">/</span><span class="nx">ID</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>The first segment represents the controller <strong>class</strong> that should be invoked.</li>
-<li>The second segment represents the class <strong>method</strong> that should be called.</li>
-<li>The third, and any additional segments, represent the ID and any variables that will be passed to the controller.</li>
+<li><p>The first segment represents the controller <strong>class</strong> that should be invoked.</p></li>
+<li><p>The second segment represents the class <strong>method</strong> that should be called.</p></li>
+<li><p>The third, and any additional segments, represent the ID and any variables that will be passed to the controller.</p></li>
 </ol>
 <p>Consider this URI:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">helloworld</span><span class="o">/</span><span class="nx">hello</span><span class="o">/</span><span class="mi">1</span>
@@ -1158,15 +1168,15 @@ and execute the corresponding controller methods.</p>
 Auto Routing would attempt to find a controller named <code class="docutils literal notranslate"><span class="pre">App\Controllers\Helloworld</span></code>
 and executes <code class="docutils literal notranslate"><span class="pre">getHello()</span></code> method with passing <code class="docutils literal notranslate"><span class="pre">'1'</span></code> as the first argument.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">A controller method that will be executed by Auto Routing (Improved) needs HTTP verb (<code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">post</span></code>, <code class="docutils literal notranslate"><span class="pre">put</span></code>, etc.) prefix like <code class="docutils literal notranslate"><span class="pre">getIndex()</span></code>, <code class="docutils literal notranslate"><span class="pre">postCreate()</span></code>.</p>
+<p class="admonition-title">Note</p>
+<p>A controller method that will be executed by Auto Routing (Improved) needs HTTP verb (<code class="docutils literal notranslate"><span class="pre">get</span></code>, <code class="docutils literal notranslate"><span class="pre">post</span></code>, <code class="docutils literal notranslate"><span class="pre">put</span></code>, etc.) prefix like <code class="docutils literal notranslate"><span class="pre">getIndex()</span></code>, <code class="docutils literal notranslate"><span class="pre">postCreate()</span></code>.</p>
 </div>
 <p>See <a class="reference internal" href="controllers.html#controller-auto-routing-improved"><span class="std std-ref">Auto Routing in Controllers</span></a> for more info.</p>
-</div>
-<div class="section" id="configuration-options">
+</section>
+<section id="configuration-options">
 <h3><a class="toc-backref" href="#id40">Configuration Options</a><a class="headerlink" href="#configuration-options" title="Permalink to this headline"></a></h3>
 <p>These options are available at the top of <strong>app/Config/Routes.php</strong>.</p>
-<div class="section" id="default-controller">
+<section id="default-controller">
 <h4>Default Controller<a class="headerlink" href="#default-controller" title="Permalink to this headline"></a></h4>
 <p>When a user visits the root of your site (i.e., <strong>example.com</strong>) the controller to use is determined by the value set by
 the <code class="docutils literal notranslate"><span class="pre">setDefaultController()</span></code> method, unless a route exists for it explicitly. The default value for this is <code class="docutils literal notranslate"><span class="pre">Home</span></code>
@@ -1181,13 +1191,13 @@ which matches the controller at <strong>app/Controllers/Home.php</strong>:</p>
 in the controllers directory. For example, if the user visits <strong>example.com/admin</strong>, if a controller was found at
 <strong>app/Controllers/Admin/Home.php</strong>, it would be used.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You cannot access the default controller with the URI of the controller name.
+<p class="admonition-title">Note</p>
+<p>You cannot access the default controller with the URI of the controller name.
 When the default controller is <code class="docutils literal notranslate"><span class="pre">Home</span></code>, you can access <strong>example.com/</strong>, but if you access <strong>example.com/home</strong>, it will be not found.</p>
 </div>
 <p>See <a class="reference internal" href="controllers.html#controller-auto-routing-improved"><span class="std std-ref">Auto Routing in Controllers</span></a> for more info.</p>
-</div>
-<div class="section" id="default-method">
+</section>
+<section id="default-method">
 <h4>Default Method<a class="headerlink" href="#default-method" title="Permalink to this headline"></a></h4>
 <p>This works similar to the default controller setting, but is used to determine the default method that is used
 when a controller is found that matches the URI, but no segment exists for the method. The default value is
@@ -1200,47 +1210,47 @@ when a controller is found that matches the URI, but no segment exists for the m
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You cannot access the controller with the URI of the default method name.
+<p class="admonition-title">Note</p>
+<p>You cannot access the controller with the URI of the default method name.
 In the example above, you can access <strong>example.com/products</strong>, but if you access <strong>example.com/products/listall</strong>, it will be not found.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="auto-routing-legacy">
+</section>
+</section>
+</section>
+<section id="auto-routing-legacy">
 <span id="auto-routing"></span><h2><a class="toc-backref" href="#id41">Auto Routing (Legacy)</a><a class="headerlink" href="#auto-routing-legacy" title="Permalink to this headline"></a></h2>
 <p>Auto Routing (Legacy) is a routing system from CodeIgniter 3.
 It can automatically route HTTP requests based on conventions and execute the corresponding controller methods.</p>
 <p>It is recommended that all routes are defined in the <strong>app/Config/Routes.php</strong> file,
 or to use <a class="reference internal" href="#auto-routing-improved"><span class="std std-ref">Auto Routing (Improved)</span></a>,</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">To prevent misconfiguration and miscoding, we recommend that you do not use
+<p class="admonition-title">Warning</p>
+<p>To prevent misconfiguration and miscoding, we recommend that you do not use
 Auto Routing (Legacy) feature. It is easy to create vulnerable apps where controller filters
 or CSRF protection are bypassed.</p>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Auto Routing (Legacy) routes a HTTP request with <strong>any</strong> HTTP method to a controller method.</p>
+<p class="admonition-title">Important</p>
+<p>Auto Routing (Legacy) routes a HTTP request with <strong>any</strong> HTTP method to a controller method.</p>
 </div>
-<div class="section" id="enable-auto-routing-legacy">
+<section id="enable-auto-routing-legacy">
 <h3><a class="toc-backref" href="#id42">Enable Auto Routing (Legacy)</a><a class="headerlink" href="#enable-auto-routing-legacy" title="Permalink to this headline"></a></h3>
 <p>Since v4.2.0, the auto-routing is disabled by default.</p>
 <p>To use it, you need to change the setting <code class="docutils literal notranslate"><span class="pre">setAutoRoute()</span></code> option to true in <strong>app/Config/Routes.php</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">setAutoRoute</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="uri-segments-legacy">
+</section>
+<section id="uri-segments-legacy">
 <h3><a class="toc-backref" href="#id43">URI Segments (Legacy)</a><a class="headerlink" href="#uri-segments-legacy" title="Permalink to this headline"></a></h3>
 <p>The segments in the URL, in following with the Model-View-Controller approach, usually represent:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">method</span><span class="o">/</span><span class="nx">ID</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>The first segment represents the controller <strong>class</strong> that should be invoked.</li>
-<li>The second segment represents the class <strong>method</strong> that should be called.</li>
-<li>The third, and any additional segments, represent the ID and any variables that will be passed to the controller.</li>
+<li><p>The first segment represents the controller <strong>class</strong> that should be invoked.</p></li>
+<li><p>The second segment represents the class <strong>method</strong> that should be called.</p></li>
+<li><p>The third, and any additional segments, represent the ID and any variables that will be passed to the controller.</p></li>
 </ol>
 <p>Consider this URI:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">helloworld</span><span class="o">/</span><span class="nx">index</span><span class="o">/</span><span class="mi">1</span>
@@ -1249,11 +1259,11 @@ or CSRF protection are bypassed.</p>
 <p>In the above example, CodeIgniter would attempt to find a controller named <strong>Helloworld.php</strong>
 and executes <code class="docutils literal notranslate"><span class="pre">index()</span></code> method with passing <code class="docutils literal notranslate"><span class="pre">'1'</span></code> as the first argument.</p>
 <p>See <a class="reference internal" href="controllers.html#controller-auto-routing"><span class="std std-ref">Auto Routing (Legacy) in Controllers</span></a> for more info.</p>
-</div>
-<div class="section" id="configuration-options-legacy">
+</section>
+<section id="configuration-options-legacy">
 <h3><a class="toc-backref" href="#id44">Configuration Options (Legacy)</a><a class="headerlink" href="#configuration-options-legacy" title="Permalink to this headline"></a></h3>
 <p>These options are available at the top of <strong>app/Config/Routes.php</strong>.</p>
-<div class="section" id="default-controller-legacy">
+<section id="default-controller-legacy">
 <h4>Default Controller (Legacy)<a class="headerlink" href="#default-controller-legacy" title="Permalink to this headline"></a></h4>
 <p>When a user visits the root of your site (i.e., example.com) the controller to use is determined by the value set by
 the <code class="docutils literal notranslate"><span class="pre">setDefaultController()</span></code> method, unless a route exists for it explicitly. The default value for this is <code class="docutils literal notranslate"><span class="pre">Home</span></code>
@@ -1268,8 +1278,8 @@ which matches the controller at <strong>app/Controllers/Home.php</strong>:</p>
 in the controllers directory. For example, if the user visits <strong>example.com/admin</strong>, if a controller was found at
 <strong>app/Controllers/Admin/Home.php</strong>, it would be used.</p>
 <p>See <a class="reference internal" href="controllers.html#controller-auto-routing"><span class="std std-ref">Auto Routing in Controllers</span></a> for more info.</p>
-</div>
-<div class="section" id="default-method-legacy">
+</section>
+<section id="default-method-legacy">
 <h4>Default Method (Legacy)<a class="headerlink" href="#default-method-legacy" title="Permalink to this headline"></a></h4>
 <p>This works similar to the default controller setting, but is used to determine the default method that is used
 when a controller is found that matches the URI, but no segment exists for the method. The default value is
@@ -1281,13 +1291,13 @@ when a controller is found that matches the URI, but no segment exists for the m
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">setDefaultMethod</span><span class="p">(</span><span class="s1">&#39;listAll&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="confirming-routes">
+</section>
+</section>
+</section>
+<section id="confirming-routes">
 <h2><a class="toc-backref" href="#id45">Confirming Routes</a><a class="headerlink" href="#confirming-routes" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter has the following <a class="reference internal" href="../cli/spark_commands.html"><span class="doc">command</span></a> to display all routes.</p>
-<div class="section" id="routes">
+<section id="routes">
 <span id="spark-routes"></span><h3><a class="toc-backref" href="#id46">routes</a><a class="headerlink" href="#routes" title="Permalink to this headline"></a></h3>
 <p>Displays all routes and filters:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">routes</span>
@@ -1321,16 +1331,16 @@ But <code class="docutils literal notranslate"><span class="pre">[/...]</span></
 <p>The <em>Method</em> will be like <code class="docutils literal notranslate"><span class="pre">GET(auto)</span></code>. <code class="docutils literal notranslate"><span class="pre">/..</span></code> in the <em>Route</em> column indicates one segment.
 <code class="docutils literal notranslate"><span class="pre">[/..]</span></code> indicates it is optional.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When auto-routing is enabled, if you have the route <code class="docutils literal notranslate"><span class="pre">home</span></code>, it can be also accessd by <code class="docutils literal notranslate"><span class="pre">Home</span></code>, or maybe by <code class="docutils literal notranslate"><span class="pre">hOme</span></code>, <code class="docutils literal notranslate"><span class="pre">hoMe</span></code>, <code class="docutils literal notranslate"><span class="pre">HOME</span></code>, etc. But the command shows only <code class="docutils literal notranslate"><span class="pre">home</span></code>.</p>
+<p class="admonition-title">Note</p>
+<p>When auto-routing is enabled, if you have the route <code class="docutils literal notranslate"><span class="pre">home</span></code>, it can be also accessd by <code class="docutils literal notranslate"><span class="pre">Home</span></code>, or maybe by <code class="docutils literal notranslate"><span class="pre">hOme</span></code>, <code class="docutils literal notranslate"><span class="pre">hoMe</span></code>, <code class="docutils literal notranslate"><span class="pre">HOME</span></code>, etc. But the command shows only <code class="docutils literal notranslate"><span class="pre">home</span></code>.</p>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">The system is not perfect. If you use Custom Placeholders, <em>Filters</em> might not be correct. But the filters defined in <strong>app/Config/Routes.php</strong> are always displayed correctly.</p>
+<p class="admonition-title">Important</p>
+<p>The system is not perfect. If you use Custom Placeholders, <em>Filters</em> might not be correct. But the filters defined in <strong>app/Config/Routes.php</strong> are always displayed correctly.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -1344,7 +1354,7 @@ But <code class="docutils literal notranslate"><span class="pre">[/...]</span></
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

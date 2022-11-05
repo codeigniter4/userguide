@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News Section &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>News Section &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Build Your First Application</a> &raquo;</li>
-      <li>News Section</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Build Your First Application</a></li>
+      <li class="breadcrumb-item active">News Section</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,13 +271,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="news-section">
+  <section id="news-section">
 <h1>News Section<a class="headerlink" href="#news-section" title="Permalink to this headline"></a></h1>
 <p>In the last section, we went over some basic concepts of the framework
 by writing a class that references static pages. We cleaned up the URI by
 adding custom routing rules. Now it’s time to introduce dynamic content
 and start using a database.</p>
-<div class="section" id="create-a-database-to-work-with">
+<section id="create-a-database-to-work-with">
 <h2>Create a Database to Work with<a class="headerlink" href="#create-a-database-to-work-with" title="Permalink to this headline"></a></h2>
 <p>The CodeIgniter installation assumes that you have set up an appropriate
 database, as outlined in the <a class="reference internal" href="../intro/requirements.html"><span class="doc">requirements</span></a>.
@@ -306,8 +310,8 @@ user- and SEO-friendly short text used in a URL to identify and describe a resou
 <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Caffeination, Yes!&#39;</span><span class="p">,</span><span class="s1">&#39;caffeination-yes&#39;</span><span class="p">,</span><span class="s1">&#39;World\&#39;s largest coffee shop open onsite nested coffee shop for staff only.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="connect-to-your-database">
+</section>
+<section id="connect-to-your-database">
 <h2>Connect to Your Database<a class="headerlink" href="#connect-to-your-database" title="Permalink to this headline"></a></h2>
 <p>The local configuration file, <code class="docutils literal notranslate"><span class="pre">.env</span></code>, that you created when you installed
 CodeIgniter, should have the database property settings uncommented and
@@ -320,8 +324,8 @@ your database properly as described <a class="reference internal" href="../datab
 <span class="nx">database</span><span class="o">.</span><span class="k">default</span><span class="o">.</span><span class="nx">DBDriver</span> <span class="o">=</span> <span class="nx">MySQLi</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-up-your-model">
+</section>
+<section id="setting-up-your-model">
 <h2>Setting up Your Model<a class="headerlink" href="#setting-up-your-model" title="Permalink to this headline"></a></h2>
 <p>Instead of writing database operations right in the controller, queries
 should be placed in a model, so they can easily be reused later. Models
@@ -375,8 +379,8 @@ property we set in <strong>NewsModel</strong> class, earlier. They are helper me
 that use the Query Builder to run their commands on the current table, and
 returning an array of results in the format of your choice. In this example,
 <code class="docutils literal notranslate"><span class="pre">findAll()</span></code> returns an array of array.</p>
-</div>
-<div class="section" id="display-the-news">
+</section>
+<section id="display-the-news">
 <h2>Display the News<a class="headerlink" href="#display-the-news" title="Permalink to this headline"></a></h2>
 <p>Now that the queries are written, the model should be tied to the views
 that are going to display the news items to the user. This could be done
@@ -479,8 +483,8 @@ and add the next piece of code.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">We are again using using <a class="reference internal" href="../general/common_functions.html#esc" title="esc"><code class="xref php php-func docutils literal notranslate"><span class="pre">esc()</span></code></a> to help prevent XSS attacks.
+<p class="admonition-title">Note</p>
+<p>We are again using using <a class="reference internal" href="../general/common_functions.html#esc" title="esc"><code class="xref php php-func docutils literal notranslate"><span class="pre">esc()</span></code></a> to help prevent XSS attacks.
 But this time we also passed “url” as a second parameter. That’s because
 attack patterns are different depending on the context in which the output
 is used.</p>
@@ -531,8 +535,8 @@ The only thing left to do is create the corresponding view at
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">esc</span><span class="p">(</span><span class="nv">$news</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="routing">
+</section>
+<section id="routing">
 <h2>Routing<a class="headerlink" href="#routing" title="Permalink to this headline"></a></h2>
 <p>Modify your routing file
 (<strong>app/Config/Routes.php</strong>) so it looks as follows.
@@ -555,8 +559,8 @@ with a slug to the <code class="docutils literal notranslate"><span class="pre">
 you should see a list of the news items, each of which has a link
 to display just the one article.</p>
 <img alt="../_images/tutorial2.png" class="align-center" src="../_images/tutorial2.png" />
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -570,7 +574,7 @@ to display just the one article.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

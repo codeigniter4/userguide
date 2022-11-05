@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Localization &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Localization &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Building Responses</a> &raquo;</li>
-      <li>Localization</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Building Responses</a></li>
+      <li class="breadcrumb-item active">Localization</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,26 +271,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="localization">
+  <section id="localization">
 <h1>Localization<a class="headerlink" href="#localization" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#working-with-locales" id="id1">Working With Locales</a><ul>
-<li><a class="reference internal" href="#configuring-the-locale" id="id2">Configuring the Locale</a></li>
-<li><a class="reference internal" href="#locale-detection" id="id3">Locale Detection</a></li>
-<li><a class="reference internal" href="#retrieving-the-current-locale" id="id4">Retrieving the Current Locale</a></li>
+<li><p><a class="reference internal" href="#working-with-locales" id="id1">Working With Locales</a></p>
+<ul>
+<li><p><a class="reference internal" href="#configuring-the-locale" id="id2">Configuring the Locale</a></p></li>
+<li><p><a class="reference internal" href="#locale-detection" id="id3">Locale Detection</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-the-current-locale" id="id4">Retrieving the Current Locale</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#language-localization" id="id5">Language Localization</a><ul>
-<li><a class="reference internal" href="#creating-language-files" id="id6">Creating Language Files</a></li>
-<li><a class="reference internal" href="#basic-usage" id="id7">Basic Usage</a></li>
-<li><a class="reference internal" href="#language-fallback" id="id8">Language Fallback</a></li>
-<li><a class="reference internal" href="#message-translations" id="id9">Message Translations</a></li>
+<li><p><a class="reference internal" href="#language-localization" id="id5">Language Localization</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-language-files" id="id6">Creating Language Files</a></p></li>
+<li><p><a class="reference internal" href="#basic-usage" id="id7">Basic Usage</a></p></li>
+<li><p><a class="reference internal" href="#language-fallback" id="id8">Language Fallback</a></p></li>
+<li><p><a class="reference internal" href="#message-translations" id="id9">Message Translations</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="working-with-locales">
+<section id="working-with-locales">
 <h2><a class="toc-backref" href="#id1">Working With Locales</a><a class="headerlink" href="#working-with-locales" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter provides several tools to help you localize your application for different languages. While full
 localization of an application is a complex subject, it’s simple to swap out strings in your application
@@ -302,11 +308,11 @@ supported language:</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Locale detection only works for web-based requests that use the IncomingRequest class.
+<p class="admonition-title">Important</p>
+<p>Locale detection only works for web-based requests that use the IncomingRequest class.
 Command-line requests will not have these features.</p>
 </div>
-<div class="section" id="configuring-the-locale">
+<section id="configuring-the-locale">
 <h3><a class="toc-backref" href="#id2">Configuring the Locale</a><a class="headerlink" href="#configuring-the-locale" title="Permalink to this headline"></a></h3>
 <p>Every site will have a default language/locale they operate in. This can be set in <strong>Config/App.php</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -331,15 +337,15 @@ to this can be found on the <a class="reference external" href="https://www.w3.o
 cannot be found. If the locale code was set to <strong>en-US</strong> and we only have language files set up for <strong>en</strong>
 then those will be used since nothing exists for the more specific <strong>en-US</strong>. If, however, a language
 directory existed at <strong>app/Language/en-US</strong> then that would be used first.</p>
-</div>
-<div class="section" id="locale-detection">
+</section>
+<section id="locale-detection">
 <h3><a class="toc-backref" href="#id3">Locale Detection</a><a class="headerlink" href="#locale-detection" title="Permalink to this headline"></a></h3>
 <p>There are two methods supported to detect the correct locale during the request. The first is a “set and forget”
 method that will automatically perform <a class="reference internal" href="../incoming/content_negotiation.html"><span class="doc">content negotiation</span></a> for you to
 determine the correct locale to use. The second method allows you to specify a segment in your routes that
 will be used to set the locale.</p>
 <p>Should you ever need to set the locale directly you may use <code class="docutils literal notranslate"><span class="pre">IncomingRequest::setLocale(string</span> <span class="pre">$locale)</span></code>.</p>
-<div class="section" id="content-negotiation">
+<section id="content-negotiation">
 <h4>Content Negotiation<a class="headerlink" href="#content-negotiation" title="Permalink to this headline"></a></h4>
 <p>You can set up content negotiation to happen automatically by setting two additional settings in Config/App.
 The first value tells the Request class that we do want to negotiate a locale, so simply set it to true:</p>
@@ -375,8 +381,8 @@ the following example, the <strong>en</strong> locale would be used if no match 
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="in-routes">
+</section>
+<section id="in-routes">
 <h4>In Routes<a class="headerlink" href="#in-routes" title="Permalink to this headline"></a></h4>
 <p>The second method uses a custom placeholder to detect the desired locale and set it on the Request. The
 placeholder <code class="docutils literal notranslate"><span class="pre">{locale}</span></code> can be placed as a segment in your route. If present, the contents of the matching
@@ -389,13 +395,13 @@ segment will be your locale:</p>
 <p>In this example, if the user tried to visit <code class="docutils literal notranslate"><span class="pre">http://example.com/fr/books</span></code>, then the locale would be
 set to <code class="docutils literal notranslate"><span class="pre">fr</span></code>, assuming it was configured as a valid locale.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If the value doesn’t match a valid locale as defined in the App configuration file, the default
+<p class="admonition-title">Note</p>
+<p>If the value doesn’t match a valid locale as defined in the App configuration file, the default
 locale will be used in it’s place.</p>
 </div>
-</div>
-</div>
-<div class="section" id="retrieving-the-current-locale">
+</section>
+</section>
+<section id="retrieving-the-current-locale">
 <h3><a class="toc-backref" href="#id4">Retrieving the Current Locale</a><a class="headerlink" href="#retrieving-the-current-locale" title="Permalink to this headline"></a></h3>
 <p>The current locale can always be retrieved from the IncomingRequest object, through the <code class="docutils literal notranslate"><span class="pre">getLocale()</span></code> method.
 If your controller is extending <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller</span></code>, this will be available through <code class="docutils literal notranslate"><span class="pre">$this-&gt;request</span></code>:</p>
@@ -418,11 +424,11 @@ If your controller is extending <code class="docutils literal notranslate"><span
 <span class="nv">$locale</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;request&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getLocale</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="language-localization">
+</section>
+</section>
+<section id="language-localization">
 <h2><a class="toc-backref" href="#id5">Language Localization</a><a class="headerlink" href="#language-localization" title="Permalink to this headline"></a></h2>
-<div class="section" id="creating-language-files">
+<section id="creating-language-files">
 <h3><a class="toc-backref" href="#id6">Creating Language Files</a><a class="headerlink" href="#creating-language-files" title="Permalink to this headline"></a></h3>
 <p>Languages do not have any specific naming convention that are required. The file should be named logically to
 describe the type of content it holds. For example, let’s say you want to create a file containing error messages.
@@ -461,8 +467,8 @@ You might name it simply: <strong>Errors.php</strong>.</p>
 <span class="p">];</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="basic-usage">
+</section>
+<section id="basic-usage">
 <h3><a class="toc-backref" href="#id7">Basic Usage</a><a class="headerlink" href="#basic-usage" title="Permalink to this headline"></a></h3>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">lang()</span></code> helper function to retrieve text from any of the language files, by passing the
 filename and the language key as the first parameter, separated by a period (.). For example, to load the
@@ -480,11 +486,11 @@ filename and the language key as the first parameter, separated by a period (.).
 </div>
 <p>If the requested language key doesn’t exist in the file for the current locale, the string will be passed
 back, unchanged. In this example, it would return ‘Errors.errorEmailMissing’ or ‘Errors.nested.error.message’ if it didn’t exist.</p>
-<div class="section" id="replacing-parameters">
+<section id="replacing-parameters">
 <h4>Replacing Parameters<a class="headerlink" href="#replacing-parameters" title="Permalink to this headline"></a></h4>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The following functions all require the <a class="reference external" href="https://www.php.net/manual/en/book.intl.php">intl</a> extension to
+<p class="admonition-title">Note</p>
+<p>The following functions all require the <a class="reference external" href="https://www.php.net/manual/en/book.intl.php">intl</a> extension to
 be loaded on your system in order to work. If the extension is not loaded, no replacement will be attempted.
 A great overview can be found over at <a class="reference external" href="https://www.sitepoint.com/localization-demystified-understanding-php-intl/">Sitepoint</a>.</p>
 </div>
@@ -521,12 +527,12 @@ A great overview can be found over at <a class="reference external" href="https:
 <a class="reference external" href="https://unicode-org.github.io/icu-docs/apidoc/released/icu4c/classMessageFormat.html#details">official ICU docs</a> for the underlying
 library, the following types of data can be replaced:</p>
 <ul class="simple">
-<li>numbers - integer, currency, percent</li>
-<li>dates - short, medium, long, full</li>
-<li>time - short, medium, long, full</li>
-<li>spellout - spells out numbers (i.e., 34 becomes thirty-four)</li>
-<li>ordinal</li>
-<li>duration</li>
+<li><p>numbers - integer, currency, percent</p></li>
+<li><p>dates - short, medium, long, full</p></li>
+<li><p>time - short, medium, long, full</p></li>
+<li><p>spellout - spells out numbers (i.e., 34 becomes thirty-four)</p></li>
+<li><p>ordinal</p></li>
+<li><p>duration</p></li>
 </ul>
 <p>Here are a few examples:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -574,8 +580,8 @@ library, the following types of data can be replaced:</p>
 <p>You should be sure to read up on the MessageFormatter class and the underlying ICU formatting to get a better
 idea on what capabilities it has, like performing the conditional replacement, pluralization, and more. Both of the links provided
 earlier will give you an excellent idea as to the options available.</p>
-</div>
-<div class="section" id="specifying-locale">
+</section>
+<section id="specifying-locale">
 <h4>Specifying Locale<a class="headerlink" href="#specifying-locale" title="Permalink to this headline"></a></h4>
 <p>To specify a different locale to be used when replacing parameters, you can pass the locale in as the
 third parameter to the <code class="docutils literal notranslate"><span class="pre">lang()</span></code> method.</p>
@@ -590,8 +596,8 @@ third parameter to the <code class="docutils literal notranslate"><span class="p
 <span class="k">echo</span> <span class="nx">lang</span><span class="p">(</span><span class="s1">&#39;{price, number, currency}&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;price&#39;</span> <span class="o">=&gt;</span> <span class="mf">7.41</span><span class="p">],</span> <span class="s1">&#39;en-US&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="nested-arrays">
+</section>
+<section id="nested-arrays">
 <h4>Nested Arrays<a class="headerlink" href="#nested-arrays" title="Permalink to this headline"></a></h4>
 <p>Language files also allow nested arrays to make working with lists, etc… easier.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -613,9 +619,9 @@ third parameter to the <code class="docutils literal notranslate"><span class="p
 <span class="k">echo</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="nx">lang</span><span class="p">(</span><span class="s1">&#39;Fruit.list&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="language-fallback">
+</section>
+</section>
+<section id="language-fallback">
 <h3><a class="toc-backref" href="#id8">Language Fallback</a><a class="headerlink" href="#language-fallback" title="Permalink to this headline"></a></h3>
 <p>If you have a set of messages for a given locale, for instance
 <code class="docutils literal notranslate"><span class="pre">Language/en/app.php</span></code>, you can add language variants for that locale,
@@ -629,8 +635,8 @@ a chance to translate them yet for your locale.</p>
 <p>So, if you are using the locale <code class="docutils literal notranslate"><span class="pre">fr-CA</span></code>, then a localized
 message will first be sought in <code class="docutils literal notranslate"><span class="pre">Language/fr/CA</span></code>, then in
 <code class="docutils literal notranslate"><span class="pre">Language/fr</span></code>, and finally in <code class="docutils literal notranslate"><span class="pre">Language/en</span></code>.</p>
-</div>
-<div class="section" id="message-translations">
+</section>
+<section id="message-translations">
 <h3><a class="toc-backref" href="#id9">Message Translations</a><a class="headerlink" href="#message-translations" title="Permalink to this headline"></a></h3>
 <p>We have an “official” set of translations in their
 <a class="reference external" href="https://github.com/codeigniter4/translations">own repository</a>.</p>
@@ -640,9 +646,9 @@ picked up because the <code class="docutils literal notranslate"><span class="pr
 <p>Alternately, a better practice would be to <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">require</span> <span class="pre">codeigniter4/translations</span></code>
 inside your project, and the translated messages will be automatically picked
 up because the translations folders get mapped appropriately.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -656,7 +662,7 @@ up because the translations folders get mapped appropriately.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

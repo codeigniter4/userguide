@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authentication &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Authentication &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Extending CodeIgniter</a> &raquo;</li>
-      <li>Authentication</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Extending CodeIgniter</a></li>
+      <li class="breadcrumb-item active">Authentication</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="authentication">
+  <section id="authentication">
 <h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter provides an official authentication and authorization framework
 <a class="reference internal" href="../libraries/official_packages.html#shield"><span class="std std-ref">CodeIgniter Shield</span></a> for CodeIgniter 4,
@@ -275,11 +279,11 @@ It is designed to be secure, flexible, and easily extendable to meet the needs
 of many different types of websites.</p>
 <p>The following are recommended guidelines to encourage consistency among developers of
 modules, projects, and the framework itself.</p>
-<div class="section" id="recommendations">
+<section id="recommendations">
 <h2>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>Modules that handle login and logout operations should trigger the <code class="docutils literal notranslate"><span class="pre">login</span></code> and <code class="docutils literal notranslate"><span class="pre">logout</span></code> Events when successful</li>
-<li>Modules that define a “current user” should define the function <code class="docutils literal notranslate"><span class="pre">user_id()</span></code> to return the user’s unique identifier, or <code class="docutils literal notranslate"><span class="pre">null</span></code> for “no current user”</li>
+<li><p>Modules that handle login and logout operations should trigger the <code class="docutils literal notranslate"><span class="pre">login</span></code> and <code class="docutils literal notranslate"><span class="pre">logout</span></code> Events when successful</p></li>
+<li><p>Modules that define a “current user” should define the function <code class="docutils literal notranslate"><span class="pre">user_id()</span></code> to return the user’s unique identifier, or <code class="docutils literal notranslate"><span class="pre">null</span></code> for “no current user”</p></li>
 </ul>
 <p>Modules that fulfill these recommendations may indicate compatibility by adding the following provision to <strong>composer.json</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;provide&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -288,8 +292,8 @@ modules, projects, and the framework itself.</p>
 </pre></div>
 </div>
 <p>You may view a list of modules that provide this implementation on <a class="reference external" href="https://packagist.org/providers/codeigniter4/authentication-implementation">Packagist</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -303,7 +307,7 @@ modules, projects, and the framework itself.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

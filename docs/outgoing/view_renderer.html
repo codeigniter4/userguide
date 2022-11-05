@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>View Renderer &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>View Renderer &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Building Responses</a> &raquo;</li>
-      <li>View Renderer</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Building Responses</a></li>
+      <li class="breadcrumb-item active">View Renderer</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,21 +271,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="view-renderer">
+  <section id="view-renderer">
 <h1>View Renderer<a class="headerlink" href="#view-renderer" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#using-the-view-renderer" id="id1">Using the View Renderer</a><ul>
-<li><a class="reference internal" href="#what-it-does" id="id2">What It Does</a></li>
-<li><a class="reference internal" href="#method-chaining" id="id3">Method Chaining</a></li>
-<li><a class="reference internal" href="#escaping-data" id="id4">Escaping Data</a></li>
-<li><a class="reference internal" href="#view-renderer-options" id="id5">View Renderer Options</a></li>
+<li><p><a class="reference internal" href="#using-the-view-renderer" id="id1">Using the View Renderer</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-it-does" id="id2">What It Does</a></p></li>
+<li><p><a class="reference internal" href="#method-chaining" id="id3">Method Chaining</a></p></li>
+<li><p><a class="reference internal" href="#escaping-data" id="id4">Escaping Data</a></p></li>
+<li><p><a class="reference internal" href="#view-renderer-options" id="id5">View Renderer Options</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#namespace-CodeIgniter\View" id="id6">Class Reference</a></li>
+<li><p><a class="reference internal" href="#namespace-CodeIgniter\View" id="id6">Class Reference</a></p></li>
 </ul>
 </div>
-<div class="section" id="using-the-view-renderer">
+<section id="using-the-view-renderer">
 <h2><a class="toc-backref" href="#id1">Using the View Renderer</a><a class="headerlink" href="#using-the-view-renderer" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">view()</span></code> function is a convenience function that grabs an instance of the
 <code class="docutils literal notranslate"><span class="pre">renderer</span></code> service, sets the data, and renders the view. While this is often
@@ -300,14 +305,14 @@ can instantiate it directly:</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">You should create services only within controllers. If you need
+<p class="admonition-title">Important</p>
+<p>You should create services only within controllers. If you need
 access to the View class from a library, you should set that as a dependency
 in your library’s constructor.</p>
 </div>
 <p>Then you can use any of the three standard methods that it provides:
 <strong>render(viewpath, options, save)</strong>, <strong>setVar(name, value, context)</strong> and <strong>setData(data, context)</strong>.</p>
-<div class="section" id="what-it-does">
+<section id="what-it-does">
 <h3><a class="toc-backref" href="#id2">What It Does</a><a class="headerlink" href="#what-it-does" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">View</span></code> class processes conventional HTML/PHP scripts stored in the application’s view path,
 after extracting view parameters into PHP variables, accessible inside the scripts.
@@ -319,8 +324,8 @@ need to be unique, or a later variable setting will over-ride an earlier one.</p
 script. You will have to give each escaped value a unique parameter name.</p>
 <p>No special meaning is attached to parameters whose value is an array. It is up
 to you to process the array appropriately in your PHP code.</p>
-</div>
-<div class="section" id="method-chaining">
+</section>
+<section id="method-chaining">
 <h3><a class="toc-backref" href="#id3">Method Chaining</a><a class="headerlink" href="#method-chaining" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">setVar()</span></code> and <code class="docutils literal notranslate"><span class="pre">setData()</span></code> methods are chainable, allowing you to combine a
 number of different calls together in a chain:</p>
@@ -331,8 +336,8 @@ number of different calls together in a chain:</p>
     <span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;myView&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="escaping-data">
+</section>
+<section id="escaping-data">
 <h3><a class="toc-backref" href="#id4">Escaping Data</a><a class="headerlink" href="#escaping-data" title="Permalink to this headline"></a></h3>
 <p>When you pass data to the <code class="docutils literal notranslate"><span class="pre">setVar()</span></code> and <code class="docutils literal notranslate"><span class="pre">setData()</span></code> functions you have the option to escape the data to protect
 against cross-site scripting attacks. As the last parameter in either method, you can pass the desired context to
@@ -349,7 +354,7 @@ context to escape the data for (see below):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?=</span> <span class="nx">esc</span><span class="p">(</span><span class="nv">$object</span><span class="o">-&gt;</span><span class="na">getStat</span><span class="p">())</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<div class="section" id="escaping-contexts">
+<section id="escaping-contexts">
 <h4>Escaping Contexts<a class="headerlink" href="#escaping-contexts" title="Permalink to this headline"></a></h4>
 <p>By default, the <code class="docutils literal notranslate"><span class="pre">esc()</span></code> and, in turn, the <code class="docutils literal notranslate"><span class="pre">setVar()</span></code> and <code class="docutils literal notranslate"><span class="pre">setData()</span></code> functions assume that the data you want to
 escape is intended to be used within standard HTML. However, if the data is intended for use in Javascript, CSS,
@@ -368,50 +373,46 @@ context as the second parameter. Valid contexts are <code class="docutils litera
 <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="view-renderer-options">
+</section>
+</section>
+<section id="view-renderer-options">
 <h3><a class="toc-backref" href="#id5">View Renderer Options</a><a class="headerlink" href="#view-renderer-options" title="Permalink to this headline"></a></h3>
 <p>Several options can be passed to the <code class="docutils literal notranslate"><span class="pre">render()</span></code> or <code class="docutils literal notranslate"><span class="pre">renderString()</span></code> methods:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">cache</span></code> - the time in seconds, to save a view’s results; ignored for renderString()</li>
-<li><code class="docutils literal notranslate"><span class="pre">cache_name</span></code> - the ID used to save/retrieve a cached view result; defaults to the viewpath; ignored for <code class="docutils literal notranslate"><span class="pre">renderString()</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">saveData</span></code> - true if the view data parameters should be retained for subsequent calls</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cache</span></code> - the time in seconds, to save a view’s results; ignored for renderString()</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cache_name</span></code> - the ID used to save/retrieve a cached view result; defaults to the viewpath; ignored for <code class="docutils literal notranslate"><span class="pre">renderString()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">saveData</span></code> - true if the view data parameters should be retained for subsequent calls</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">saveData</span></code> as defined by the interface must be a boolean, but implementing
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">saveData</span></code> as defined by the interface must be a boolean, but implementing
 classes (like <code class="docutils literal notranslate"><span class="pre">View</span></code> below) may extend this to include <code class="docutils literal notranslate"><span class="pre">null</span></code> values.</p>
 </div>
-</div>
-</div>
-<div class="section" id="namespace-CodeIgniter\View">
+</section>
+</section>
+<section id="namespace-CodeIgniter\View">
 <span id="class-reference"></span><h2><a class="toc-backref" href="#id6">Class Reference</a><a class="headerlink" href="#namespace-CodeIgniter\View" title="Permalink to this headline"></a></h2>
-<dl class="class">
-<dt id="CodeIgniter\View\View">
-<em class="property">class </em><code class="descclassname">CodeIgniter\View\</code><code class="descname">View</code><a class="headerlink" href="#CodeIgniter\View\View" title="Permalink to this definition"></a></dt>
-<dd><dl class="method">
-<dt>
-<code class="descname">render</code><span class="sig-paren">(</span><em>$view</em><span class="optional">[</span>, <em>$options</em><span class="optional">[</span>, <em>$saveData = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$view</strong> (<em>string</em>) – File name of the view source</li>
-<li><strong>$options</strong> (<em>array</em>) – Array of options, as key/value pairs</li>
-<li><strong>$saveData</strong> (<em>boolean|null</em>) – If true, will save data for use with any other calls. If false, will clean the data after rendering the view. If null, uses the config setting.</li>
+<dl class="php class">
+<dt class="sig sig-object php" id="CodeIgniter\View\View">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CodeIgniter\View\</span></span><span class="sig-name descname"><span class="pre">View</span></span><a class="headerlink" href="#CodeIgniter\View\View" title="Permalink to this definition"></a></dt>
+<dd><dl class="php method">
+<dt class="sig sig-object php">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$view</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$options</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$saveData</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$view</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – File name of the view source</p></li>
+<li><p><strong>$options</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Array of options, as key/value pairs</p></li>
+<li><p><strong>$saveData</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean|null</span></code></span>) – If true, will save data for use with any other calls. If false, will clean the data after rendering the view. If null, uses the config setting.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The rendered text for the chosen view</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rendered text for the chosen view</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Builds the output based upon a file name and any data that has already been set:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -420,28 +421,24 @@ classes (like <code class="docutils literal notranslate"><span class="pre">View<
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt>
-<code class="descname">renderString</code><span class="sig-paren">(</span><em>$view</em><span class="optional">[</span>, <em>$options</em><span class="optional">[</span>, <em>$saveData = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$view</strong> (<em>string</em>) – Contents of the view to render, for instance content retrieved from a database</li>
-<li><strong>$options</strong> (<em>array</em>) – Array of options, as key/value pairs</li>
-<li><strong>$saveData</strong> (<em>boolean|null</em>) – If true, will save data for use with any other calls. If false, will clean the data after rendering the view. If null, uses the config setting.</li>
+<dl class="php method">
+<dt class="sig sig-object php">
+<span class="sig-name descname"><span class="pre">renderString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$view</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$options</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$saveData</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$view</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Contents of the view to render, for instance content retrieved from a database</p></li>
+<li><p><strong>$options</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Array of options, as key/value pairs</p></li>
+<li><p><strong>$saveData</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean|null</span></code></span>) – If true, will save data for use with any other calls. If false, will clean the data after rendering the view. If null, uses the config setting.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The rendered text for the chosen view</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The rendered text for the chosen view</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Builds the output based upon a view fragment and any data that has already been set:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -451,33 +448,29 @@ classes (like <code class="docutils literal notranslate"><span class="pre">View<
 </dd></dl>
 
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This could be used for displaying content that might have been stored in a database,
+<p class="admonition-title">Warning</p>
+<p>This could be used for displaying content that might have been stored in a database,
 but you need to be aware that this is a potential security vulnerability,
 and that you <strong>must</strong> validate any such data, and probably escape it
 appropriately!</p>
 </div>
-<dl class="method">
-<dt>
-<code class="descname">setData</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data</em><span class="optional">[</span>, <em>$context = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Array of view data strings, as key/value pairs</li>
-<li><strong>$context</strong> (<em>string</em>) – The context to use for data escaping.</li>
+<dl class="php method">
+<dt class="sig sig-object php">
+<span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$context</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Array of view data strings, as key/value pairs</p></li>
+<li><p><strong>$context</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The context to use for data escaping.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The Renderer, for method chaining</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeIgniter\View\RendererInterface.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Renderer, for method chaining</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\View\RendererInterface.</span></code></span></p>
+</dd>
+</dl>
 <p>Sets several pieces of view data at once:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -490,28 +483,24 @@ If <code class="docutils literal notranslate"><span class="pre">'raw'</span></co
 until the view is rendered.</p>
 </dd></dl>
 
-<dl class="method">
-<dt>
-<code class="descname">setVar</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$value = null</em><span class="optional">[</span>, <em>$context = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – Name of the view data variable</li>
-<li><strong>$value</strong> (<em>mixed</em>) – The value of this view data</li>
-<li><strong>$context</strong> (<em>string</em>) – The context to use for data escaping.</li>
+<dl class="php method">
+<dt class="sig sig-object php">
+<span class="sig-name descname"><span class="pre">setVar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$context</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Name of the view data variable</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – The value of this view data</p></li>
+<li><p><strong>$context</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The context to use for data escaping.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The Renderer, for method chaining</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">CodeIgniter\View\RendererInterface.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Renderer, for method chaining</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\View\RendererInterface.</span></code></span></p>
+</dd>
+</dl>
 <p>Sets a single piece of view data:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -526,8 +515,8 @@ for this object, the new value will replace the existing one.</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -541,7 +530,7 @@ for this object, the new value will replace the existing one.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

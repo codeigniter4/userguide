@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrading from 4.2.7 to 4.2.8 &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Upgrading from 4.2.7 to 4.2.8 &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Upgrading from 4.2.6 to 4.2.7" href="upgrade_427.html" />
-    <link rel="prev" title="Backward Compatibility Notes" href="backward_compatibility_notes.html" /> 
+    <link rel="prev" title="Upgrading from 4.2.9 to 4.2.10" href="upgrade_4210.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,10 +260,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Installation</a> &raquo;</li>
-          <li><a href="upgrading.html">Upgrading From a Previous Version</a> &raquo;</li>
-      <li>Upgrading from 4.2.7 to 4.2.8</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="upgrading.html">Upgrading From a Previous Version</a></li>
+      <li class="breadcrumb-item active">Upgrading from 4.2.7 to 4.2.8</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,45 +272,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="upgrading-from-4-2-7-to-4-2-8">
+  <section id="upgrading-from-4-2-7-to-4-2-8">
 <h1>Upgrading from 4.2.7 to 4.2.8<a class="headerlink" href="#upgrading-from-4-2-7-to-4-2-8" title="Permalink to this headline"></a></h1>
 <p>Please refer to the upgrade instructions corresponding to your installation method.</p>
 <ul class="simple">
-<li><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></li>
-<li><a class="reference internal" href="installing_composer.html#adding-codeigniter4-upgrading"><span class="std std-ref">Composer Installation Adding CodeIgniter4 to an Existing Project Upgrading</span></a></li>
-<li><a class="reference internal" href="installing_manual.html#installing-manual-upgrading"><span class="std std-ref">Manual Installation Upgrading</span></a></li>
+<li><p><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></p></li>
+<li><p><a class="reference internal" href="installing_composer.html#adding-codeigniter4-upgrading"><span class="std std-ref">Composer Installation Adding CodeIgniter4 to an Existing Project Upgrading</span></a></p></li>
+<li><p><a class="reference internal" href="installing_manual.html#installing-manual-upgrading"><span class="std std-ref">Manual Installation Upgrading</span></a></p></li>
 </ul>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#project-files" id="id1">Project Files</a><ul>
-<li><a class="reference internal" href="#all-changes" id="id2">All Changes</a></li>
+<li><p><a class="reference internal" href="#project-files" id="id1">Project Files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#all-changes" id="id2">All Changes</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="project-files">
+<section id="project-files">
 <h2><a class="toc-backref" href="#id1">Project Files</a><a class="headerlink" href="#project-files" title="Permalink to this headline"></a></h2>
 <p>The following files had changes to code or behavior that merit updating in your projects:</p>
 <ul class="simple">
-<li>app/Views/errors/html/error_exception.php</li>
+<li><p>app/Views/errors/html/error_exception.php</p></li>
 </ul>
-<div class="section" id="all-changes">
+<section id="all-changes">
 <h3><a class="toc-backref" href="#id2">All Changes</a><a class="headerlink" href="#all-changes" title="Permalink to this headline"></a></h3>
 <p>This is a list of all files in the <strong>project space</strong> that received changes;
 many will be simple comments or formatting that have no effect on the runtime:</p>
 <ul class="simple">
-<li>app/Config/Logger.php</li>
-<li>app/Views/errors/html/error_exception.php</li>
+<li><p>app/Config/Logger.php</p></li>
+<li><p>app/Views/errors/html/error_exception.php</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="backward_compatibility_notes.html" class="btn btn-neutral float-left" title="Backward Compatibility Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrade_4210.html" class="btn btn-neutral float-left" title="Upgrading from 4.2.9 to 4.2.10" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="upgrade_427.html" class="btn btn-neutral float-right" title="Upgrading from 4.2.6 to 4.2.7" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -314,7 +319,7 @@ many will be simple comments or formatting that have no effect on the runtime:</
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

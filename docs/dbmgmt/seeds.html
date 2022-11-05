@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Seeding &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Database Seeding &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Managing Databases</a> &raquo;</li>
-      <li>Database Seeding</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Managing Databases</a></li>
+      <li class="breadcrumb-item active">Database Seeding</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="database-seeding">
+  <section id="database-seeding">
 <h1>Database Seeding<a class="headerlink" href="#database-seeding" title="Permalink to this headline"></a></h1>
 <p>Database seeding is a simple way to add data into your database. It is especially useful during development where
 you need to populate the database with sample data that you can develop against, but it is not limited to that.
@@ -301,7 +305,7 @@ stored within the <strong>app/Database/Seeds</strong> directory. The name of the
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="nesting-seeders">
+<section id="nesting-seeders">
 <h2>Nesting Seeders<a class="headerlink" href="#nesting-seeders" title="Permalink to this headline"></a></h2>
 <p>Seeders can call other seeders, with the <strong>call()</strong> method. This allows you to easily organize a central seeder,
 but organize the tasks into separate seeder files:</p>
@@ -340,8 +344,8 @@ anywhere the autoloader can find them. This is great for more modular code bases
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-seeders">
+</section>
+<section id="using-seeders">
 <h2>Using Seeders<a class="headerlink" href="#using-seeders" title="Permalink to this headline"></a></h2>
 <p>You can grab a copy of the main seeder through the database config class:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -350,15 +354,15 @@ anywhere the autoloader can find them. This is great for more modular code bases
 <span class="nv">$seeder</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;TestSeeder&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="command-line-seeding">
+<section id="command-line-seeding">
 <h3>Command Line Seeding<a class="headerlink" href="#command-line-seeding" title="Permalink to this headline"></a></h3>
 <p>You can also seed data from the command line, as part of the Migrations CLI tools, if you don’t want to create
 a dedicated controller:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">db</span><span class="o">:</span><span class="nx">seed</span> <span class="nx">TestSeeder</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="creating-seed-files">
+</section>
+<section id="creating-seed-files">
 <h3>Creating Seed Files<a class="headerlink" href="#creating-seed-files" title="Permalink to this headline"></a></h3>
 <p>Using the command line, you can easily generate seed files.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">make</span><span class="o">:</span><span class="nx">seeder</span> <span class="nx">user</span> <span class="o">--</span><span class="nx">suffix</span>
@@ -371,9 +375,9 @@ a dedicated controller:</p>
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">Acme\Blog</span></code> is mapped to <code class="docutils literal notranslate"><span class="pre">app/Blog</span></code> directory, then this command will generate <code class="docutils literal notranslate"><span class="pre">MySeeder.php</span></code> at <code class="docutils literal notranslate"><span class="pre">app/Blog/Database/Seeds</span></code> directory.</p>
 <p>Supplying the <code class="docutils literal notranslate"><span class="pre">--force</span></code> option will overwrite existing files in destination.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -387,7 +391,7 @@ a dedicated controller:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Working with Uploaded Files &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Working with Uploaded Files &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Library Reference</a> &raquo;</li>
-      <li>Working with Uploaded Files</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Library Reference</a></li>
+      <li class="breadcrumb-item active">Working with Uploaded Files</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,57 +271,60 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="working-with-uploaded-files">
+  <section id="working-with-uploaded-files">
 <h1>Working with Uploaded Files<a class="headerlink" href="#working-with-uploaded-files" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter makes working with files uploaded through a form much simpler and more secure than using PHP’s <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code>
 array directly. This extends the <a class="reference internal" href="files.html"><span class="doc">File class</span></a> and thus gains all of the features of that class.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is not the same as the File Uploading class in CodeIgniter v3.x. This provides a raw
+<p class="admonition-title">Note</p>
+<p>This is not the same as the File Uploading class in CodeIgniter v3.x. This provides a raw
 interface to the uploaded files with a few small features.</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#the-process" id="id2">The Process</a><ul>
-<li><a class="reference internal" href="#creating-the-upload-form" id="id3">Creating the Upload Form</a></li>
-<li><a class="reference internal" href="#the-success-page" id="id4">The Success Page</a></li>
-<li><a class="reference internal" href="#the-controller" id="id5">The Controller</a></li>
-<li><a class="reference internal" href="#the-routes" id="id6">The Routes</a></li>
-<li><a class="reference internal" href="#the-upload-directory" id="id7">The Upload Directory</a></li>
-<li><a class="reference internal" href="#try-it" id="id8">Try it!</a></li>
+<li><p><a class="reference internal" href="#the-process" id="id2">The Process</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-the-upload-form" id="id3">Creating the Upload Form</a></p></li>
+<li><p><a class="reference internal" href="#the-success-page" id="id4">The Success Page</a></p></li>
+<li><p><a class="reference internal" href="#the-controller" id="id5">The Controller</a></p></li>
+<li><p><a class="reference internal" href="#the-routes" id="id6">The Routes</a></p></li>
+<li><p><a class="reference internal" href="#the-upload-directory" id="id7">The Upload Directory</a></p></li>
+<li><p><a class="reference internal" href="#try-it" id="id8">Try it!</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#accessing-files" id="id9">Accessing Files</a><ul>
-<li><a class="reference internal" href="#all-files" id="id10">All Files</a></li>
-<li><a class="reference internal" href="#single-file" id="id11">Single File</a></li>
-<li><a class="reference internal" href="#multiple-files" id="id12">Multiple files</a></li>
+<li><p><a class="reference internal" href="#accessing-files" id="id9">Accessing Files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#all-files" id="id10">All Files</a></p></li>
+<li><p><a class="reference internal" href="#single-file" id="id11">Single File</a></p></li>
+<li><p><a class="reference internal" href="#multiple-files" id="id12">Multiple files</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#working-with-the-file" id="id13">Working With the File</a><ul>
-<li><a class="reference internal" href="#verify-a-file" id="id14">Verify a File</a></li>
-<li><a class="reference internal" href="#file-names" id="id15">File Names</a></li>
-<li><a class="reference internal" href="#other-file-info" id="id16">Other File Info</a></li>
-<li><a class="reference internal" href="#moving-files" id="id17">Moving Files</a></li>
-<li><a class="reference internal" href="#store-files" id="id18">Store Files</a></li>
+<li><p><a class="reference internal" href="#working-with-the-file" id="id13">Working With the File</a></p>
+<ul>
+<li><p><a class="reference internal" href="#verify-a-file" id="id14">Verify a File</a></p></li>
+<li><p><a class="reference internal" href="#file-names" id="id15">File Names</a></p></li>
+<li><p><a class="reference internal" href="#other-file-info" id="id16">Other File Info</a></p></li>
+<li><p><a class="reference internal" href="#moving-files" id="id17">Moving Files</a></p></li>
+<li><p><a class="reference internal" href="#store-files" id="id18">Store Files</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="the-process">
+<section id="the-process">
 <h2><a class="toc-backref" href="#id2">The Process</a><a class="headerlink" href="#the-process" title="Permalink to this headline"></a></h2>
 <p>Uploading a file involves the following general process:</p>
 <ul class="simple">
-<li>An upload form is displayed, allowing a user to select a file and
-upload it.</li>
-<li>When the form is submitted, the file is uploaded to the destination
-you specify.</li>
-<li>Along the way, the file is validated to make sure it is allowed to be
-uploaded based on the preferences you set.</li>
-<li>Once uploaded, the user will be shown a success message.</li>
+<li><p>An upload form is displayed, allowing a user to select a file and
+upload it.</p></li>
+<li><p>When the form is submitted, the file is uploaded to the destination
+you specify.</p></li>
+<li><p>Along the way, the file is validated to make sure it is allowed to be
+uploaded based on the preferences you set.</p></li>
+<li><p>Once uploaded, the user will be shown a success message.</p></li>
 </ul>
 <p>To demonstrate this process here is brief tutorial. Afterward you’ll
 find reference information.</p>
-<div class="section" id="creating-the-upload-form">
+<section id="creating-the-upload-form">
 <h3><a class="toc-backref" href="#id3">Creating the Upload Form</a><a class="headerlink" href="#creating-the-upload-form" title="Permalink to this headline"></a></h3>
 <p>Using a text editor, create a form called <strong>upload_form.php</strong>. In it, place
 this code and save it to your <strong>app/Views/</strong> directory:</p>
@@ -351,8 +358,8 @@ File uploads require a multipart form, so the helper creates the proper
 syntax for you. You’ll also notice we have an <code class="docutils literal notranslate"><span class="pre">$errors</span></code> variable. This is
 so we can show error messages in the event the user does something
 wrong.</p>
-</div>
-<div class="section" id="the-success-page">
+</section>
+<section id="the-success-page">
 <h3><a class="toc-backref" href="#id4">The Success Page</a><a class="headerlink" href="#the-success-page" title="Permalink to this headline"></a></h3>
 <p>Using a text editor, create a form called <strong>upload_success.php</strong>. In it,
 place this code and save it to your <strong>app/Views/</strong> directory:</p>
@@ -377,8 +384,8 @@ place this code and save it to your <strong>app/Views/</strong> directory:</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-controller">
+</section>
+<section id="the-controller">
 <h3><a class="toc-backref" href="#id5">The Controller</a><a class="headerlink" href="#the-controller" title="Permalink to this headline"></a></h3>
 <p>Using a text editor, create a controller called <strong>Upload.php</strong>. In it, place
 this code and save it to your <strong>app/Controllers/</strong> directory:</p>
@@ -432,13 +439,13 @@ this code and save it to your <strong>app/Controllers/</strong> directory:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since the value of a file upload HTML field doesn’t exist, and is stored in the <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code> global,
+<p class="admonition-title">Note</p>
+<p>Since the value of a file upload HTML field doesn’t exist, and is stored in the <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code> global,
 only <a class="reference internal" href="validation.html#rules-for-file-uploads"><span class="std std-ref">Rules for File Uploads</span></a> can be used to validate upload file with <a class="reference internal" href="validation.html"><span class="doc">Validation</span></a>.
 The rule <code class="docutils literal notranslate"><span class="pre">required</span></code> also can’t be used, so use <code class="docutils literal notranslate"><span class="pre">uploaded</span></code> instead.</p>
 </div>
-</div>
-<div class="section" id="the-routes">
+</section>
+<section id="the-routes">
 <h3><a class="toc-backref" href="#id6">The Routes</a><a class="headerlink" href="#the-routes" title="Permalink to this headline"></a></h3>
 <p>Using a text editor, open <strong>app/Config/Routes.php</strong>. In it, add the following two routes:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -461,12 +468,12 @@ The rule <code class="docutils literal notranslate"><span class="pre">required</
 <span class="c1">// ...</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-upload-directory">
+</section>
+<section id="the-upload-directory">
 <h3><a class="toc-backref" href="#id7">The Upload Directory</a><a class="headerlink" href="#the-upload-directory" title="Permalink to this headline"></a></h3>
 <p>The uploaded files are stored in the <strong>writable/uploads/</strong> directory.</p>
-</div>
-<div class="section" id="try-it">
+</section>
+<section id="try-it">
 <h3><a class="toc-backref" href="#id8">Try it!</a><a class="headerlink" href="#try-it" title="Permalink to this headline"></a></h3>
 <p>To try your form, visit your site using a URL similar to this one:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">upload</span><span class="o">/</span>
@@ -475,11 +482,11 @@ The rule <code class="docutils literal notranslate"><span class="pre">required</
 <p>You should see an upload form. Try uploading an image file (either a
 <strong>jpg</strong>, <strong>gif</strong>, <strong>png</strong>, or <strong>webp</strong>). If the path in your controller is correct it should
 work.</p>
-</div>
-</div>
-<div class="section" id="accessing-files">
+</section>
+</section>
+<section id="accessing-files">
 <span id="uploaded-files-accessing-files"></span><h2><a class="toc-backref" href="#id9">Accessing Files</a><a class="headerlink" href="#accessing-files" title="Permalink to this headline"></a></h2>
-<div class="section" id="all-files">
+<section id="all-files">
 <h3><a class="toc-backref" href="#id10">All Files</a><a class="headerlink" href="#all-files" title="Permalink to this headline"></a></h3>
 <p>When you upload files they can be accessed natively in PHP through the <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code> superglobal. This array has some
 major shortcomings when working with multiple files uploaded at once, and has potential security flaws many developers
@@ -504,8 +511,8 @@ The array returns in a manner that you would expect. With the simplest usage, a 
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The UploadedFile instance corresponds to <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code>. Even if a user just clicks the submit button and does not upload any file, the instance will still exist. You can check that the file was actually uploaded by the <code class="docutils literal notranslate"><span class="pre">isValid()</span></code> method in UploadedFile. See <a class="reference internal" href="#verify-a-file"><span class="std std-ref">Verify a File</span></a>.</p>
+<p class="admonition-title">Note</p>
+<p>The UploadedFile instance corresponds to <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code>. Even if a user just clicks the submit button and does not upload any file, the instance will still exist. You can check that the file was actually uploaded by the <code class="docutils literal notranslate"><span class="pre">isValid()</span></code> method in UploadedFile. See <a class="reference internal" href="#verify-a-file"><span class="std std-ref">Verify a File</span></a>.</p>
 </div>
 <p>If you used an array notation for the name, the input would look something like:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;my-form[details][avatar]&quot;</span> <span class="o">/&gt;</span>
@@ -539,11 +546,11 @@ The array returns in a manner that you would expect. With the simplest usage, a 
 <span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="single-file">
+</section>
+<section id="single-file">
 <h3><a class="toc-backref" href="#id11">Single File</a><a class="headerlink" href="#single-file" title="Permalink to this headline"></a></h3>
 <p>If you just need to access a single file, you can use <code class="docutils literal notranslate"><span class="pre">getFile()</span></code> to retrieve the file instance directly. This will return an instance of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Files\UploadedFile</span></code>:</p>
-<div class="section" id="simplest-usage">
+<section id="simplest-usage">
 <h4>Simplest usage<a class="headerlink" href="#simplest-usage" title="Permalink to this headline"></a></h4>
 <p>With the simplest usage, a single file might be submitted like:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;userfile&quot;</span> <span class="o">/&gt;</span>
@@ -555,8 +562,8 @@ The array returns in a manner that you would expect. With the simplest usage, a 
 <span class="nv">$file</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;userfile&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="array-notation">
+</section>
+<section id="array-notation">
 <h4>Array notation<a class="headerlink" href="#array-notation" title="Permalink to this headline"></a></h4>
 <p>If you used an array notation for the name, the input would look something like:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;my-form[details][avatar]&quot;</span> <span class="o">/&gt;</span>
@@ -568,9 +575,9 @@ The array returns in a manner that you would expect. With the simplest usage, a 
 <span class="nv">$file</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getFile</span><span class="p">(</span><span class="s1">&#39;my-form.details.avatar&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="multiple-files">
+</section>
+</section>
+<section id="multiple-files">
 <h3><a class="toc-backref" href="#id12">Multiple files</a><a class="headerlink" href="#multiple-files" title="Permalink to this headline"></a></h3>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;images[]&quot;</span> <span class="nx">multiple</span> <span class="o">/&gt;</span>
 </pre></div>
@@ -616,16 +623,16 @@ The array returns in a manner that you would expect. With the simplest usage, a 
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Using <code class="docutils literal notranslate"><span class="pre">getFiles()</span></code> is more appropriate.</p>
+<p class="admonition-title">Note</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">getFiles()</span></code> is more appropriate.</p>
 </div>
-</div>
-</div>
-<div class="section" id="working-with-the-file">
+</section>
+</section>
+<section id="working-with-the-file">
 <h2><a class="toc-backref" href="#id13">Working With the File</a><a class="headerlink" href="#working-with-the-file" title="Permalink to this headline"></a></h2>
 <p>Once you’ve retrieved the UploadedFile instance, you can retrieve information about the file in safe ways, as well as
 move the file to a new location.</p>
-<div class="section" id="verify-a-file">
+<section id="verify-a-file">
 <span id="id1"></span><h3><a class="toc-backref" href="#id14">Verify a File</a><a class="headerlink" href="#verify-a-file" title="Permalink to this headline"></a></h3>
 <p>You can check that a file was actually uploaded via HTTP with no errors by calling the <code class="docutils literal notranslate"><span class="pre">isValid()</span></code> method:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -639,18 +646,18 @@ move the file to a new location.</p>
 message with the <code class="docutils literal notranslate"><span class="pre">getError()</span></code> and <code class="docutils literal notranslate"><span class="pre">getErrorString()</span></code> methods. The following errors can be discovered through
 this method:</p>
 <ul class="simple">
-<li>The file exceeds your <code class="docutils literal notranslate"><span class="pre">upload_max_filesize</span></code> ini directive.</li>
-<li>The file exceeds the upload limit defined in your form.</li>
-<li>The file was only partially uploaded.</li>
-<li>No file was uploaded.</li>
-<li>The file could not be written on disk.</li>
-<li>File could not be uploaded: missing temporary directory.</li>
-<li>File upload was stopped by a PHP extension.</li>
+<li><p>The file exceeds your <code class="docutils literal notranslate"><span class="pre">upload_max_filesize</span></code> ini directive.</p></li>
+<li><p>The file exceeds the upload limit defined in your form.</p></li>
+<li><p>The file was only partially uploaded.</p></li>
+<li><p>No file was uploaded.</p></li>
+<li><p>The file could not be written on disk.</p></li>
+<li><p>File could not be uploaded: missing temporary directory.</p></li>
+<li><p>File upload was stopped by a PHP extension.</p></li>
 </ul>
-</div>
-<div class="section" id="file-names">
+</section>
+<section id="file-names">
 <h3><a class="toc-backref" href="#id15">File Names</a><a class="headerlink" href="#file-names" title="Permalink to this headline"></a></h3>
-<div class="section" id="getname">
+<section id="getname">
 <h4>getName()<a class="headerlink" href="#getname" title="Permalink to this headline"></a></h4>
 <p>You can retrieve the original filename provided by the client with the <code class="docutils literal notranslate"><span class="pre">getName()</span></code> method. This will typically be the
 filename sent by the client, and should not be trusted. If the file has been moved, this will return the final name of
@@ -660,8 +667,8 @@ the moved file:</p>
 <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="getclientname">
+</section>
+<section id="getclientname">
 <h4>getClientName()<a class="headerlink" href="#getclientname" title="Permalink to this headline"></a></h4>
 <p>Always returns the original name of the uploaded file as sent by the client, even if the file has been moved:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -669,8 +676,8 @@ the moved file:</p>
 <span class="nv">$originalName</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getClientName</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="gettempname">
+</section>
+<section id="gettempname">
 <h4>getTempName()<a class="headerlink" href="#gettempname" title="Permalink to this headline"></a></h4>
 <p>To get the full path of the temp file that was created during the upload, you can use the <code class="docutils literal notranslate"><span class="pre">getTempName()</span></code> method:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -678,11 +685,11 @@ the moved file:</p>
 <span class="nv">$tempfile</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getTempName</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="other-file-info">
+</section>
+</section>
+<section id="other-file-info">
 <h3><a class="toc-backref" href="#id16">Other File Info</a><a class="headerlink" href="#other-file-info" title="Permalink to this headline"></a></h3>
-<div class="section" id="getclientextension">
+<section id="getclientextension">
 <h4>getClientExtension()<a class="headerlink" href="#getclientextension" title="Permalink to this headline"></a></h4>
 <p>Returns the original file extension, based on the file name that was uploaded:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -691,11 +698,11 @@ the moved file:</p>
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This is NOT a trusted source. For a trusted version, use <code class="docutils literal notranslate"><span class="pre">guessExtension()</span></code> instead.</p>
+<p class="admonition-title">Warning</p>
+<p>This is NOT a trusted source. For a trusted version, use <code class="docutils literal notranslate"><span class="pre">guessExtension()</span></code> instead.</p>
 </div>
-</div>
-<div class="section" id="getclientmimetype">
+</section>
+<section id="getclientmimetype">
 <h4>getClientMimeType()<a class="headerlink" href="#getclientmimetype" title="Permalink to this headline"></a></h4>
 <p>Returns the mime type (mime type) of the file as provided by the client. This is NOT a trusted value. For a trusted
 version, use <code class="docutils literal notranslate"><span class="pre">getMimeType()</span></code> instead:</p>
@@ -706,9 +713,9 @@ version, use <code class="docutils literal notranslate"><span class="pre">getMim
 <span class="k">echo</span> <span class="nv">$type</span><span class="p">;</span> <span class="c1">// image/png</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="moving-files">
+</section>
+</section>
+<section id="moving-files">
 <h3><a class="toc-backref" href="#id17">Moving Files</a><a class="headerlink" href="#moving-files" title="Permalink to this headline"></a></h3>
 <p>Each file can be moved to its new location with the aptly named <code class="docutils literal notranslate"><span class="pre">move()</span></code> method. This takes the directory to move
 the file to as the first parameter:</p>
@@ -735,12 +742,12 @@ the <code class="docutils literal notranslate"><span class="pre">hasMoved()</spa
 </div>
 <p>Moving an uploaded file can fail, with an HTTPException, under several circumstances:</p>
 <ul class="simple">
-<li>the file has already been moved</li>
-<li>the file did not upload successfully</li>
-<li>the file move operation fails (e.g., improper permissions)</li>
+<li><p>the file has already been moved</p></li>
+<li><p>the file did not upload successfully</p></li>
+<li><p>the file move operation fails (e.g., improper permissions)</p></li>
 </ul>
-</div>
-<div class="section" id="store-files">
+</section>
+<section id="store-files">
 <h3><a class="toc-backref" href="#id18">Store Files</a><a class="headerlink" href="#store-files" title="Permalink to this headline"></a></h3>
 <p>Each file can be moved to its new location with the aptly named <code class="docutils literal notranslate"><span class="pre">store()</span></code> method.</p>
 <p>With the simplest usage, a single file might be submitted like:</p>
@@ -763,13 +770,13 @@ passing it as the second parameter:</p>
 </div>
 <p>Moving an uploaded file can fail, with an <code class="docutils literal notranslate"><span class="pre">HTTPException</span></code>, under several circumstances:</p>
 <ul class="simple">
-<li>the file has already been moved</li>
-<li>the file did not upload successfully</li>
-<li>the file move operation fails (e.g., improper permissions)</li>
+<li><p>the file has already been moved</p></li>
+<li><p>the file did not upload successfully</p></li>
+<li><p>the file move operation fails (e.g., improper permissions)</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -783,7 +790,7 @@ passing it as the second parameter:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

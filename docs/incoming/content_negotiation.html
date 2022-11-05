@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Negotiation &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Content Negotiation &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Controllers and Routing</a> &raquo;</li>
-      <li>Content Negotiation</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Controllers and Routing</a></li>
+      <li class="breadcrumb-item active">Content Negotiation</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="content-negotiation">
+  <section id="content-negotiation">
 <h1>Content Negotiation<a class="headerlink" href="#content-negotiation" title="Permalink to this headline"></a></h1>
 <p>Content negotiation is a way to determine what type of content to return to the client based on what the client
 can handle, and what the server can handle. This can be used to determine whether the client is wanting HTML or JSON
@@ -275,7 +279,7 @@ returned, whether the image should be returned as a jpg or png, what type of com
 is done by analyzing four different headers which can each support multiple value options, each with their own priority.
 Trying to match this up manually can be pretty challenging. CodeIgniter provides the <code class="docutils literal notranslate"><span class="pre">Negotiator</span></code> class that
 can handle this for you.</p>
-<div class="section" id="loading-the-class">
+<section id="loading-the-class">
 <h2>Loading the Class<a class="headerlink" href="#loading-the-class" title="Permalink to this headline"></a></h2>
 <p>You can load an instance of the class manually through the Service class:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -294,12 +298,12 @@ method:</p>
 </div>
 <p>When accessed this way, the first parameter is the type of content you’re trying to find a match for, while the
 second is an array of supported values.</p>
-</div>
-<div class="section" id="negotiating">
+</section>
+<section id="negotiating">
 <h2>Negotiating<a class="headerlink" href="#negotiating" title="Permalink to this headline"></a></h2>
 <p>In this section, we will discuss the 4 types of content that can be negotiated and show how that would look using
 both of the methods described above to access the negotiator.</p>
-<div class="section" id="media">
+<section id="media">
 <h3>Media<a class="headerlink" href="#media" title="Permalink to this headline"></a></h3>
 <p>The first aspect to look at is handling ‘media’ negotiations. These are provided by the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> header and
 is one of the most complex headers available. A common example is the client telling the server what format it
@@ -335,8 +339,8 @@ final value, it will return an empty string if no match is found:</p>
 <span class="nv">$format</span> <span class="o">=</span> <span class="nv">$negotiate</span><span class="o">-&gt;</span><span class="na">media</span><span class="p">(</span><span class="nv">$supported</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="language">
+</section>
+<section id="language">
 <h3>Language<a class="headerlink" href="#language" title="Permalink to this headline"></a></h3>
 <p>Another common usage is to determine the language the content should be served in. If you are running only a single
 language site, this obviously isn’t going to make much difference, but any site that can offer up multiple translations
@@ -362,8 +366,8 @@ and German you would do something like:</p>
 </div>
 <p>In this example, ‘en’ would be returned as the current language. If no match is found, it will return the first element
 in the <code class="docutils literal notranslate"><span class="pre">$supported</span></code> array, so that should always be the preferred language.</p>
-</div>
-<div class="section" id="encoding">
+</section>
+<section id="encoding">
 <h3>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Accept-Encoding</span></code> header contains the character sets the client prefers to receive, and is used to
 specify the type of compression the client supports:</p>
@@ -380,8 +384,8 @@ specify the type of compression the client supports:</p>
 </pre></div>
 </div>
 <p>See more at <a class="reference external" href="https://en.wikipedia.org/wiki/HTTP_compression">Wikipedia</a>.</p>
-</div>
-<div class="section" id="character-set">
+</section>
+<section id="character-set">
 <h3>Character Set<a class="headerlink" href="#character-set" title="Permalink to this headline"></a></h3>
 <p>The desired character set is passed through the <code class="docutils literal notranslate"><span class="pre">Accept-Charset</span></code> header:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="o">/</span><span class="nx">foo</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
@@ -396,9 +400,9 @@ specify the type of compression the client supports:</p>
 <span class="nv">$charset</span> <span class="o">=</span> <span class="nv">$negotiate</span><span class="o">-&gt;</span><span class="na">charset</span><span class="p">([</span><span class="s1">&#39;utf-8&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -412,7 +416,7 @@ specify the type of compression the client supports:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

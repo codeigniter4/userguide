@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benchmarking &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Benchmarking &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Testing</a> &raquo;</li>
-      <li>Benchmarking</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Testing</a></li>
+      <li class="breadcrumb-item active">Benchmarking</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="benchmarking">
+  <section id="benchmarking">
 <h1>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter provides two separate tools to help you benchmark your code and test different options:
 the <strong>Timer</strong> and the <strong>Iterator</strong>. The Timer allows you to easily calculate the time between two points in the
@@ -277,19 +281,21 @@ performance and memory statistics to help you decide which version is the best.<
 sending the output to the user, enabling a very accurate timing of the entire system execution.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#using-the-timer" id="id1">Using the Timer</a><ul>
-<li><a class="reference internal" href="#viewing-your-benchmark-points" id="id2">Viewing Your Benchmark Points</a></li>
-<li><a class="reference internal" href="#displaying-execution-time" id="id3">Displaying Execution Time</a></li>
+<li><p><a class="reference internal" href="#using-the-timer" id="id1">Using the Timer</a></p>
+<ul>
+<li><p><a class="reference internal" href="#viewing-your-benchmark-points" id="id2">Viewing Your Benchmark Points</a></p></li>
+<li><p><a class="reference internal" href="#displaying-execution-time" id="id3">Displaying Execution Time</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-the-iterator" id="id4">Using the Iterator</a><ul>
-<li><a class="reference internal" href="#creating-tasks-to-run" id="id5">Creating Tasks To Run</a></li>
-<li><a class="reference internal" href="#running-the-tasks" id="id6">Running the Tasks</a></li>
+<li><p><a class="reference internal" href="#using-the-iterator" id="id4">Using the Iterator</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-tasks-to-run" id="id5">Creating Tasks To Run</a></p></li>
+<li><p><a class="reference internal" href="#running-the-tasks" id="id6">Running the Tasks</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="using-the-timer">
+<section id="using-the-timer">
 <h2><a class="toc-backref" href="#id1">Using the Timer</a><a class="headerlink" href="#using-the-timer" title="Permalink to this headline"></a></h2>
 <p>With the Timer, you can measure the time between two moments in the execution of your application. This makes
 it simple to measure the performance of different aspects of your application. All measurement is done using
@@ -320,7 +326,7 @@ and stop timers:</p>
 <span class="nx">timer</span><span class="p">(</span><span class="s1">&#39;render view&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="viewing-your-benchmark-points">
+<section id="viewing-your-benchmark-points">
 <h3><a class="toc-backref" href="#id2">Viewing Your Benchmark Points</a><a class="headerlink" href="#viewing-your-benchmark-points" title="Permalink to this headline"></a></h3>
 <p>When your application runs, all of the timers that you have set are collected by the Timer class. It does
 not automatically display them, though. You can retrieve all of your timers by calling the <code class="docutils literal notranslate"><span class="pre">getTimers()</span></code> method.
@@ -348,8 +354,8 @@ the only parameter. The default value is 4 numbers behind the decimal point:</p>
 </pre></div>
 </div>
 <p>The timers are automatically displayed in the <a class="reference internal" href="debugging.html"><span class="doc">Debug Toolbar</span></a>.</p>
-</div>
-<div class="section" id="displaying-execution-time">
+</section>
+<section id="displaying-execution-time">
 <h3><a class="toc-backref" href="#id3">Displaying Execution Time</a><a class="headerlink" href="#displaying-execution-time" title="Permalink to this headline"></a></h3>
 <p>While the <code class="docutils literal notranslate"><span class="pre">getTimers()</span></code> method will give you the raw data for all of the timers in your project, you can retrieve
 the duration of a single timer, in seconds, with the <code class="docutils literal notranslate"><span class="pre">getElapsedTime()</span></code> method. The first parameter is the name of
@@ -360,15 +366,15 @@ the timer to display. The second is the number of decimal places to display. Thi
 <span class="c1">// Displays: 0.0234</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="using-the-iterator">
+</section>
+</section>
+<section id="using-the-iterator">
 <h2><a class="toc-backref" href="#id4">Using the Iterator</a><a class="headerlink" href="#using-the-iterator" title="Permalink to this headline"></a></h2>
 <p>The Iterator is a simple tool that is designed to allow you to try out multiple variations on a solution to
 see the speed differences and different memory usage patterns. You can add any number of “tasks” for it to
 run and the class will run the task hundreds or thousands of times to get a clearer picture of performance.
 The results can then be retrieved and used by your script, or displayed as an HTML table.</p>
-<div class="section" id="creating-tasks-to-run">
+<section id="creating-tasks-to-run">
 <h3><a class="toc-backref" href="#id5">Creating Tasks To Run</a><a class="headerlink" href="#creating-tasks-to-run" title="Permalink to this headline"></a></h3>
 <p>Tasks are defined within Closures. Any output the task creates will be discarded automatically. They are
 added to the Iterator class through the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method. The first parameter is a name you want to refer to
@@ -382,8 +388,8 @@ this test by. The second parameter is the Closure, itself:</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-the-tasks">
+</section>
+<section id="running-the-tasks">
 <h3><a class="toc-backref" href="#id6">Running the Tasks</a><a class="headerlink" href="#running-the-tasks" title="Permalink to this headline"></a></h3>
 <p>Once you’ve added the tasks to run, you can use the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method to loop over the tasks many times.
 By default, it will run each task 1000 times. This is probably sufficient for most simple tests. If you need
@@ -402,9 +408,9 @@ If you don’t want the results, you can pass in <code class="docutils literal n
 <span class="nv">$iterator</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -418,7 +424,7 @@ If you don’t want the results, you can pass in <code class="docutils literal n
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

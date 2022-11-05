@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Helper &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>URL Helper &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Helpers</a> &raquo;</li>
-      <li>URL Helper</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Helpers</a></li>
+      <li class="breadcrumb-item active">URL Helper</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,44 +271,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="url-helper">
+  <section id="url-helper">
 <h1>URL Helper<a class="headerlink" href="#url-helper" title="Permalink to this headline"></a></h1>
 <p>The URL Helper file contains functions that assist in working with URLs.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id1">Loading this Helper</a></li>
-<li><a class="reference internal" href="#available-functions" id="id2">Available Functions</a></li>
+<li><p><a class="reference internal" href="#loading-this-helper" id="id1">Loading this Helper</a></p></li>
+<li><p><a class="reference internal" href="#available-functions" id="id2">Available Functions</a></p></li>
 </ul>
 </div>
-<div class="section" id="loading-this-helper">
+<section id="loading-this-helper">
 <h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline"></a></h2>
 <p>This helper is automatically loaded by the framework on every request.</p>
-</div>
-<div class="section" id="available-functions">
+</section>
+<section id="available-functions">
 <h2><a class="toc-backref" href="#id2">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline"></a></h2>
 <p>The following functions are available:</p>
-<dl class="function">
-<dt id="site_url">
-<code class="descname">site_url</code><span class="sig-paren">(</span><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$protocol = null</em><span class="optional">[</span>, <em>$altConfig = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#site_url" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>mixed</em>) – URI string or array of URI segments</li>
-<li><strong>$protocol</strong> (<em>string</em>) – Protocol, e.g., ‘http’ or ‘https’</li>
-<li><strong>$altConfig</strong> (<em>\Config\App</em>) – Alternate configuration to use</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="site_url">
+<span class="sig-name descname"><span class="pre">site_url</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$uri</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$protocol</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$altConfig</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#site_url" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$uri</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – URI string or array of URI segments</p></li>
+<li><p><strong>$protocol</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Protocol, e.g., ‘http’ or ‘https’</p></li>
+<li><p><strong>$altConfig</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">\Config\App</span></code></span>) – Alternate configuration to use</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Site URL</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Site URL</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Returns your site URL, as specified in your config file. The index.php
 file (or whatever you have set as your site <strong>indexPage</strong> in your config
 file) will be added to the URL, as will any URI segments you pass to the
@@ -333,27 +333,23 @@ different site than yours, which contains different configuration preferences.
 We use this for unit testing the framework itself.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="base_url">
-<code class="descname">base_url</code><span class="sig-paren">(</span><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$protocol = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#base_url" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>mixed</em>) – URI string or array of URI segments</li>
-<li><strong>$protocol</strong> (<em>string</em>) – Protocol, e.g., ‘http’ or ‘https’</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="base_url">
+<span class="sig-name descname"><span class="pre">base_url</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$uri</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$protocol</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#base_url" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$uri</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – URI string or array of URI segments</p></li>
+<li><p><strong>$protocol</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Protocol, e.g., ‘http’ or ‘https’</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Base URL</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Base URL</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Returns your site base URL, as specified in your config file. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -382,34 +378,30 @@ string to a file, such as an image or stylesheet. For example:</p>
 <em>http://example.com/images/icons/edit.png</em></p>
 </dd></dl>
 
-<dl class="function">
-<dt id="current_url">
-<code class="descname">current_url</code><span class="sig-paren">(</span><span class="optional">[</span><em>$returnObject = false</em><span class="optional">[</span>, <em>$request = null</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#current_url" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$returnObject</strong> (<em>boolean</em>) – True if you would like a URI instance returned, instead of a string.</li>
-<li><strong>$request</strong> (<em>IncomingRequest|null</em>) – An alternate request to use for path detection; useful for testing.</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="current_url">
+<span class="sig-name descname"><span class="pre">current_url</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$returnObject</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$request</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#current_url" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$returnObject</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – True if you would like a URI instance returned, instead of a string.</p></li>
+<li><p><strong>$request</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">IncomingRequest|null</span></code></span>) – An alternate request to use for path detection; useful for testing.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The current URL</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string|\CodeIgniter\HTTP\URI</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The current URL</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string|\CodeIgniter\HTTP\URI</span></code></span></p>
+</dd>
+</dl>
 <p>Returns the full URL (including segments) of the page being currently viewed.
 However for security reasons, it is created based on the <code class="docutils literal notranslate"><span class="pre">Config\App</span></code> settings,
 and not intended to match the browser URL.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Calling this function is the same as doing this:</p>
-<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nx">site_url</span><span class="p">(</span><span class="nx">uri_string</span><span class="p">());</span>
 </pre></div>
@@ -418,59 +410,51 @@ and not intended to match the browser URL.</p>
 </dd></dl>
 
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Prior to v4.1.2, this function had a bug causing it to ignore the configuration on <code class="docutils literal notranslate"><span class="pre">App::$indexPage</span></code>.</p>
+<p class="admonition-title">Important</p>
+<p>Prior to v4.1.2, this function had a bug causing it to ignore the configuration on <code class="docutils literal notranslate"><span class="pre">App::$indexPage</span></code>.</p>
 </div>
-<dl class="function">
-<dt id="previous_url">
-<code class="descname">previous_url</code><span class="sig-paren">(</span><span class="optional">[</span><em>$returnObject = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#previous_url" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$returnObject</strong> (<em>boolean</em>) – True if you would like a URI instance returned instead of a string.</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="previous_url">
+<span class="sig-name descname"><span class="pre">previous_url</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$returnObject</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#previous_url" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$returnObject</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – True if you would like a URI instance returned instead of a string.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The URL the user was previously on</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string|mixed|\CodeIgniter\HTTP\URI</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The URL the user was previously on</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string|mixed|\CodeIgniter\HTTP\URI</span></code></span></p>
+</dd>
+</dl>
 <p>Returns the full URL (including segments) of the page the user was previously on.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Due to security issues of blindly trusting the HTTP_REFERER system variable, CodeIgniter will
+<p class="admonition-title">Note</p>
+<p>Due to security issues of blindly trusting the HTTP_REFERER system variable, CodeIgniter will
 store previously visited pages in the session if it’s available. This ensures that we always
 use a known and trusted source. If the session hasn’t been loaded, or is otherwise unavailable,
 then a sanitized version of HTTP_REFERER will be used.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="uri_string">
-<code class="descname">uri_string</code><span class="sig-paren">(</span><span class="optional">[</span><em>$relative = false</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#uri_string" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$relative</strong> (<em>boolean</em>) – True if you would like the string relative to baseURL</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="uri_string">
+<span class="sig-name descname"><span class="pre">uri_string</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$relative</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#uri_string" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$relative</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – True if you would like the string relative to baseURL</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A URI string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A URI string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Returns the path part of the current URL.
 For example, if your URL was this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">http</span><span class="o">://</span><span class="nx">some</span><span class="o">-</span><span class="nx">site</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
@@ -489,26 +473,22 @@ For example, if your URL was this:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="index_page">
-<code class="descname">index_page</code><span class="sig-paren">(</span><span class="optional">[</span><em>$altConfig = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#index_page" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$altConfig</strong> (<em>\Config\App</em>) – Alternate configuration to use</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="index_page">
+<span class="sig-name descname"><span class="pre">index_page</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$altConfig</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#index_page" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$altConfig</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">\Config\App</span></code></span>) – Alternate configuration to use</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">‘index_page’ value</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>‘index_page’ value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Returns your site <strong>indexPage</strong>, as specified in your config file.
 Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -522,36 +502,32 @@ different site than yours, which contains different configuration preferences.
 We use this for unit testing the framework itself.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="anchor">
-<code class="descname">anchor</code><span class="sig-paren">(</span><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">[</span>, <em>$altConfig = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#anchor" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>mixed</em>) – URI string or array of URI segments</li>
-<li><strong>$title</strong> (<em>string</em>) – Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) – HTML attributes</li>
-<li><strong>$altConfig</strong> (<em>\Config\App</em>) – Alternate configuration to use</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="anchor">
+<span class="sig-name descname"><span class="pre">anchor</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$uri</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$title</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$altConfig</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#anchor" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$uri</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – URI string or array of URI segments</p></li>
+<li><p><strong>$title</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Anchor title</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – HTML attributes</p></li>
+<li><p><strong>$altConfig</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">\Config\App</span></code></span>) – Alternate configuration to use</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">HTML hyperlink (anchor tag)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>HTML hyperlink (anchor tag)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Creates a standard HTML anchor link based on your local site URL.</p>
 <p>The first parameter can contain any segments you wish appended to the
 URL. As with the <a class="reference internal" href="#site_url" title="site_url"><code class="xref php php-func docutils literal notranslate"><span class="pre">site_url()</span></code></a> function above, segments can
 be a string or an array.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you are building links that are internal to your application
+<p class="admonition-title">Note</p>
+<p>If you are building links that are internal to your application
 do not include the base URL (<cite>http://…</cite>). This will be added
 automatically from the information specified in your config file.
 Include only the URI segments you wish appended to the URL.</p>
@@ -579,34 +555,30 @@ You may find the alternate configuration useful if generating links for a
 different site than yours, which contains different configuration preferences.
 We use this for unit testing the framework itself.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Attributes passed into the anchor function are automatically escaped to protected against XSS attacks.</p>
+<p class="admonition-title">Note</p>
+<p>Attributes passed into the anchor function are automatically escaped to protected against XSS attacks.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="anchor_popup">
-<code class="descname">anchor_popup</code><span class="sig-paren">(</span><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$attributes = false</em><span class="optional">[</span>, <em>$altConfig = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#anchor_popup" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$uri</strong> (<em>string</em>) – URI string</li>
-<li><strong>$title</strong> (<em>string</em>) – Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) – HTML attributes</li>
-<li><strong>$altConfig</strong> (<em>\Config\App</em>) – Alternate configuration to use</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="anchor_popup">
+<span class="sig-name descname"><span class="pre">anchor_popup</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$uri</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$title</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$altConfig</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#anchor_popup" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$uri</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – URI string</p></li>
+<li><p><strong>$title</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Anchor title</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – HTML attributes</p></li>
+<li><p><strong>$altConfig</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">\Config\App</span></code></span>) – Alternate configuration to use</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Pop-up hyperlink</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pop-up hyperlink</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Nearly identical to the <a class="reference internal" href="#anchor" title="anchor"><code class="xref php php-func docutils literal notranslate"><span class="pre">anchor()</span></code></a> function except that it
 opens the URL in a new window. You can specify JavaScript window
 attributes in the third parameter to control how the window is opened.
@@ -634,56 +606,52 @@ You may find the alternate configuration useful if generating links for a
 different site than yours, which contains different configuration preferences.
 We use this for unit testing the framework itself.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>The above attributes are the function defaults so you only need to
 set the ones that are different from what you need. If you want the
 function to use all of its defaults simply pass an empty array in the
 third parameter:</p>
-<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">echo</span> <span class="nx">anchor_popup</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Me!&#39;</span><span class="p">,</span> <span class="p">[]);</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <strong>window_name</strong> is not really an attribute, but an argument to
+<p class="admonition-title">Note</p>
+<p>The <strong>window_name</strong> is not really an attribute, but an argument to
 the JavaScript <a class="reference external" href="https://www.w3schools.com/jsref/met_win_open.asp">window.open()</a>
 method, which accepts either a window name or a window target.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Any other attribute than the listed above will be parsed as an
+<p class="admonition-title">Note</p>
+<p>Any other attribute than the listed above will be parsed as an
 HTML attribute to the anchor tag.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Attributes passed into the anchor_popup function are automatically escaped to protected against XSS attacks.</p>
+<p class="admonition-title">Note</p>
+<p>Attributes passed into the anchor_popup function are automatically escaped to protected against XSS attacks.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mailto">
-<code class="descname">mailto</code><span class="sig-paren">(</span><em>$email</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mailto" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$email</strong> (<em>string</em>) – E-mail address</li>
-<li><strong>$title</strong> (<em>string</em>) – Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) – HTML attributes</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="mailto">
+<span class="sig-name descname"><span class="pre">mailto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$email</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$title</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mailto" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$email</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – E-mail address</p></li>
+<li><p><strong>$title</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Anchor title</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – HTML attributes</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A “mail to” hyperlink</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A “mail to” hyperlink</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Creates a standard HTML e-mail link. Usage example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -699,60 +667,52 @@ third parameter:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Attributes passed into the mailto function are automatically escaped to protected against XSS attacks.</p>
+<p class="admonition-title">Note</p>
+<p>Attributes passed into the mailto function are automatically escaped to protected against XSS attacks.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="safe_mailto">
-<code class="descname">safe_mailto</code><span class="sig-paren">(</span><em>$email</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#safe_mailto" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$email</strong> (<em>string</em>) – E-mail address</li>
-<li><strong>$title</strong> (<em>string</em>) – Anchor title</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) – HTML attributes</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="safe_mailto">
+<span class="sig-name descname"><span class="pre">safe_mailto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$email</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$title</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#safe_mailto" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$email</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – E-mail address</p></li>
+<li><p><strong>$title</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Anchor title</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – HTML attributes</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A spam-safe “mail to” hyperlink</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A spam-safe “mail to” hyperlink</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Identical to the <a class="reference internal" href="#mailto" title="mailto"><code class="xref php php-func docutils literal notranslate"><span class="pre">mailto()</span></code></a> function except it writes an obfuscated
 version of the <em>mailto</em> tag using ordinal numbers written with JavaScript to
 help prevent the e-mail address from being harvested by spam bots.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="auto_link">
-<code class="descname">auto_link</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$type = 'both'</em><span class="optional">[</span>, <em>$popup = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#auto_link" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) – Input string</li>
-<li><strong>$type</strong> (<em>string</em>) – Link type (‘email’, ‘url’ or ‘both’)</li>
-<li><strong>$popup</strong> (<em>bool</em>) – Whether to create popup links</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="auto_link">
+<span class="sig-name descname"><span class="pre">auto_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$type</span> <span class="pre">=</span> <span class="pre">'both'</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$popup</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#auto_link" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Input string</p></li>
+<li><p><strong>$type</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Link type (‘email’, ‘url’ or ‘both’)</p></li>
+<li><p><strong>$popup</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to create popup links</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Linkified string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Linkified string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Automatically turns URLs and e-mail addresses contained in a string into
 links. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -784,33 +744,29 @@ The value can be true or false (boolean):</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The only URLs recognized are those that start with “www.” or with “://”.</p>
+<p class="admonition-title">Note</p>
+<p>The only URLs recognized are those that start with “www.” or with “://”.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="url_title">
-<code class="descname">url_title</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$separator = '-'</em><span class="optional">[</span>, <em>$lowercase = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#url_title" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) – Input string</li>
-<li><strong>$separator</strong> (<em>string</em>) – Word separator (usually ‘-‘ or ‘_’)</li>
-<li><strong>$lowercase</strong> (<em>bool</em>) – Whether to transform the output string to lowercase</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="url_title">
+<span class="sig-name descname"><span class="pre">url_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$separator</span> <span class="pre">=</span> <span class="pre">'-'</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$lowercase</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#url_title" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Input string</p></li>
+<li><p><strong>$separator</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Word separator (usually ‘-’ or ‘_’)</p></li>
+<li><p><strong>$lowercase</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to transform the output string to lowercase</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">URL-formatted string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>URL-formatted string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Takes a string as input and creates a human-friendly URL string. This is
 useful if, for example, you have a blog in which you’d like to use the
 title of your entries in the URL. Example:</p>
@@ -843,53 +799,45 @@ forced. By default they are not. Options are boolean true/false.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mb_url_title">
-<code class="descname">mb_url_title</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$separator = '-'</em><span class="optional">[</span>, <em>$lowercase = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mb_url_title" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) – Input string</li>
-<li><strong>$separator</strong> (<em>string</em>) – Word separator (usually ‘-‘ or ‘_’)</li>
-<li><strong>$lowercase</strong> (<em>bool</em>) – Whether to transform the output string to lowercase</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="mb_url_title">
+<span class="sig-name descname"><span class="pre">mb_url_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$str</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$separator</span> <span class="pre">=</span> <span class="pre">'-'</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$lowercase</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mb_url_title" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Input string</p></li>
+<li><p><strong>$separator</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Word separator (usually ‘-’ or ‘_’)</p></li>
+<li><p><strong>$lowercase</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to transform the output string to lowercase</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">URL-formatted string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>URL-formatted string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function works the same as <a class="reference internal" href="#url_title" title="url_title"><code class="xref php php-func docutils literal notranslate"><span class="pre">url_title()</span></code></a> but it converts all
 accented characters automatically.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="prep_url">
-<code class="descname">prep_url</code><span class="sig-paren">(</span><span class="optional">[</span><em>$str = ''</em><span class="optional">[</span>, <em>$secure = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#prep_url" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$str</strong> (<em>string</em>) – URL string</li>
-<li><strong>$secure</strong> (<em>boolean</em>) – true for <a class="reference external" href="https://">https://</a></li>
+<dl class="php function">
+<dt class="sig sig-object php" id="prep_url">
+<span class="sig-name descname"><span class="pre">prep_url</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$str</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$secure</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#prep_url" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – URL string</p></li>
+<li><p><strong>$secure</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – true for <a class="reference external" href="https://">https://</a></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Protocol-prefixed URL string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Protocol-prefixed URL string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function will add <em>http://</em> or <em>https://</em> in the event that a protocol prefix
 is missing from a URL.</p>
 <p>Pass the URL string to the function like this:</p>
@@ -900,30 +848,26 @@ is missing from a URL.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="url_to">
-<code class="descname">url_to</code><span class="sig-paren">(</span><em>$controller</em><span class="optional">[</span>, <em>...$args</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#url_to" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$controller</strong> (<em>string</em>) – Named route or Controller::method</li>
-<li><strong>...$args</strong> (<em>mixed</em>) – One or more parameters to be passed to the route</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="url_to">
+<span class="sig-name descname"><span class="pre">url_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$controller</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">...$args</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#url_to" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$controller</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Named route or Controller::method</p></li>
+<li><p><strong>...$args</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – One or more parameters to be passed to the route</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Absolute URL</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Absolute URL</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This function requires the controller/method to have a route defined in <strong>app/Config/routes.php</strong>.</p>
+<p class="admonition-title">Note</p>
+<p>This function requires the controller/method to have a route defined in <strong>app/Config/routes.php</strong>.</p>
 </div>
 <p>Builds an absolute URL to a controller method in your app. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -934,7 +878,7 @@ is missing from a URL.</p>
 <span class="cp">?&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Home::index&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- Result: &#39;http://example.com/&#39; --&gt;</span>
+<span class="cm">&lt;!-- Result: &#39;http://example.com/&#39; --&gt;</span>
 </pre></div>
 </div>
 <p>You can also add arguments to the route.
@@ -947,7 +891,7 @@ Here is an example:</p>
 <span class="cp">?&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;Page::index&#39;</span><span class="p">,</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- Result: &#39;http://example.com/pages/home&#39; --&gt;</span>
+<span class="cm">&lt;!-- Result: &#39;http://example.com/pages/home&#39; --&gt;</span>
 </pre></div>
 </div>
 <p>This is useful because you can still change your routes after putting links
@@ -955,23 +899,19 @@ into your views.</p>
 <p>For full details, see the <a class="reference internal" href="../incoming/routing.html#reverse-routing"><span class="std std-ref">Reverse Routing</span></a> and <a class="reference internal" href="../incoming/routing.html#using-named-routes"><span class="std std-ref">Using Named Routes</span></a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="url_is">
-<code class="descname">url_is</code><span class="sig-paren">(</span><em>$path</em><span class="sig-paren">)</span><a class="headerlink" href="#url_is" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) – The path to check the current URI path against.</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="url_is">
+<span class="sig-name descname"><span class="pre">url_is</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#url_is" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The path to check the current URI path against.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">boolean</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span></p>
+</dd>
+</dl>
 <p>Compares the current URL’s path against the given path to see if they match. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -991,15 +931,15 @@ any other applicable characters in the URL:</p>
 </div>
 <p>This would match any of the following:</p>
 <ul class="simple">
-<li>/admin</li>
-<li>/admin/</li>
-<li>/admin/users</li>
-<li>/admin/users/schools/classmates/…</li>
+<li><p>/admin</p></li>
+<li><p>/admin/</p></li>
+<li><p>/admin/users</p></li>
+<li><p>/admin/users/schools/classmates/…</p></li>
 </ul>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1013,7 +953,7 @@ any other applicable characters in the URL:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

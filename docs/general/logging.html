@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Logging Information &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Logging Information &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">General Topics</a> &raquo;</li>
-      <li>Logging Information</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">General Topics</a></li>
+      <li class="breadcrumb-item active">Logging Information</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,16 +271,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="logging-information">
+  <section id="logging-information">
 <h1>Logging Information<a class="headerlink" href="#logging-information" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#configuration" id="id1">Configuration</a><ul>
-<li><a class="reference internal" href="#using-multiple-log-handlers" id="id2">Using Multiple Log Handlers</a></li>
+<li><p><a class="reference internal" href="#configuration" id="id1">Configuration</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-multiple-log-handlers" id="id2">Using Multiple Log Handlers</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#modifying-the-message-with-context" id="id3">Modifying the Message With Context</a></li>
-<li><a class="reference internal" href="#using-third-party-loggers" id="id4">Using Third-Party Loggers</a></li>
+<li><p><a class="reference internal" href="#modifying-the-message-with-context" id="id3">Modifying the Message With Context</a></p></li>
+<li><p><a class="reference internal" href="#using-third-party-loggers" id="id4">Using Third-Party Loggers</a></p></li>
 </ul>
 </div>
 <p>You can log information to the local log files by using the <code class="docutils literal notranslate"><span class="pre">log_message()</span></code> method. You must supply
@@ -290,48 +295,48 @@ The second parameter is the message itself:</p>
 </pre></div>
 </div>
 <p>There are eight different log levels, matching to the <a class="reference external" href="https://tools.ietf.org/html/rfc5424">RFC 5424</a> levels, and they are as follows:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Level</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Level</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>debug</td>
-<td>Detailed debug information.</td>
+<tbody>
+<tr class="row-even"><td><p>debug</p></td>
+<td><p>Detailed debug information.</p></td>
 </tr>
-<tr class="row-odd"><td>info</td>
-<td>Interesting events in your application, like a user logging in, logging SQL queries, etc.</td>
+<tr class="row-odd"><td><p>info</p></td>
+<td><p>Interesting events in your application, like a user logging in, logging SQL queries, etc.</p></td>
 </tr>
-<tr class="row-even"><td>notice</td>
-<td>Normal, but significant events in your application.</td>
+<tr class="row-even"><td><p>notice</p></td>
+<td><p>Normal, but significant events in your application.</p></td>
 </tr>
-<tr class="row-odd"><td>warning</td>
-<td>Exceptional occurrences that are not errors, like the use of deprecated APIs,
-poor use of an API, or other undesirable things that are not necessarily wrong.</td>
+<tr class="row-odd"><td><p>warning</p></td>
+<td><p>Exceptional occurrences that are not errors, like the use of deprecated APIs,
+poor use of an API, or other undesirable things that are not necessarily wrong.</p></td>
 </tr>
-<tr class="row-even"><td>error</td>
-<td>Runtime errors that do not require immediate action but should typically be logged and monitored.</td>
+<tr class="row-even"><td><p>error</p></td>
+<td><p>Runtime errors that do not require immediate action but should typically be logged and monitored.</p></td>
 </tr>
-<tr class="row-odd"><td>critical</td>
-<td>Critical conditions, like an application component not available, or an unexpected exception.</td>
+<tr class="row-odd"><td><p>critical</p></td>
+<td><p>Critical conditions, like an application component not available, or an unexpected exception.</p></td>
 </tr>
-<tr class="row-even"><td>alert</td>
-<td>Action must be taken immediately, like when an entire website is down, the database unavailable, etc.</td>
+<tr class="row-even"><td><p>alert</p></td>
+<td><p>Action must be taken immediately, like when an entire website is down, the database unavailable, etc.</p></td>
 </tr>
-<tr class="row-odd"><td>emergency</td>
-<td>The system is unusable.</td>
+<tr class="row-odd"><td><p>emergency</p></td>
+<td><p>The system is unusable.</p></td>
 </tr>
 </tbody>
 </table>
 <p>The logging system does not provide ways to alert sysadmins or webmasters about these events, they solely log
 the information. For many of the more critical event levels, the logging happens automatically by the
 Error Handler, described above.</p>
-<div class="section" id="configuration">
+<section id="configuration">
 <h2><a class="toc-backref" href="#id1">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
 <p>You can modify which levels are actually logged, as well as assign different Loggers to handle different levels, within
 the <strong>app/Config/Logger.php</strong> configuration file.</p>
@@ -373,18 +378,18 @@ to the threshold value:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="using-multiple-log-handlers">
+<section id="using-multiple-log-handlers">
 <h3><a class="toc-backref" href="#id2">Using Multiple Log Handlers</a><a class="headerlink" href="#using-multiple-log-handlers" title="Permalink to this headline"></a></h3>
 <p>The logging system can support multiple methods of handling logging running at the same time. Each handler can
 be set to handle specific levels and ignore the rest. Currently, three handlers come with a default install:</p>
 <ul class="simple">
-<li><strong>File Handler</strong> is the default handler and will create a single file for every day locally. This is the
-recommended method of logging.</li>
-<li><strong>ChromeLogger Handler</strong> If you have the <a class="reference external" href="https://craig.is/writing/chrome-logger">ChromeLogger extension</a>
+<li><p><strong>File Handler</strong> is the default handler and will create a single file for every day locally. This is the
+recommended method of logging.</p></li>
+<li><p><strong>ChromeLogger Handler</strong> If you have the <a class="reference external" href="https://craig.is/writing/chrome-logger">ChromeLogger extension</a>
 installed in the Chrome web browser, you can use this handler to display the log information in
-Chrome’s console window.</li>
-<li><strong>Errorlog Handler</strong> This handler will take advantage of PHP’s native <code class="docutils literal notranslate"><span class="pre">error_log()</span></code> function and write
-the logs there. Currently, only the <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> message types of <code class="docutils literal notranslate"><span class="pre">error_log()</span></code> are supported.</li>
+Chrome’s console window.</p></li>
+<li><p><strong>Errorlog Handler</strong> This handler will take advantage of PHP’s native <code class="docutils literal notranslate"><span class="pre">error_log()</span></code> function and write
+the logs there. Currently, only the <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> message types of <code class="docutils literal notranslate"><span class="pre">error_log()</span></code> are supported.</p></li>
 </ul>
 <p>The handlers are configured in the main configuration file, in the <code class="docutils literal notranslate"><span class="pre">$handlers</span></code> property, which is simply
 an array of handlers and their configuration. Each handler is specified with the key being the fully
@@ -410,9 +415,9 @@ Each handler’s section will have one property in common: <code class="docutils
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="modifying-the-message-with-context">
+</section>
+</section>
+<section id="modifying-the-message-with-context">
 <h2><a class="toc-backref" href="#id3">Modifying the Message With Context</a><a class="headerlink" href="#modifying-the-message-with-context" title="Permalink to this headline"></a></h2>
 <p>You will often want to modify the details of your message based on the context of the event being logged.
 You might need to log a user id, an IP address, the current POST variables, etc. You can do this by use
@@ -443,42 +448,42 @@ file name and line number. You must still provide the exception placeholder in t
 </pre></div>
 </div>
 <p>Several core placeholders exist that will be automatically expanded for you based on the current page request:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="24%" />
-<col width="76%" />
+<col style="width: 24%" />
+<col style="width: 76%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Placeholder</th>
-<th class="head">Inserted value</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Placeholder</p></th>
+<th class="head"><p>Inserted value</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>{post_vars}</td>
-<td>$_POST variables</td>
+<tbody>
+<tr class="row-even"><td><p>{post_vars}</p></td>
+<td><p>$_POST variables</p></td>
 </tr>
-<tr class="row-odd"><td>{get_vars}</td>
-<td>$_GET variables</td>
+<tr class="row-odd"><td><p>{get_vars}</p></td>
+<td><p>$_GET variables</p></td>
 </tr>
-<tr class="row-even"><td>{session_vars}</td>
-<td>$_SESSION variables</td>
+<tr class="row-even"><td><p>{session_vars}</p></td>
+<td><p>$_SESSION variables</p></td>
 </tr>
-<tr class="row-odd"><td>{env}</td>
-<td>Current environment name, i.e., development</td>
+<tr class="row-odd"><td><p>{env}</p></td>
+<td><p>Current environment name, i.e., development</p></td>
 </tr>
-<tr class="row-even"><td>{file}</td>
-<td>The name of file calling the logger</td>
+<tr class="row-even"><td><p>{file}</p></td>
+<td><p>The name of file calling the logger</p></td>
 </tr>
-<tr class="row-odd"><td>{line}</td>
-<td>The line in {file} where the logger was called</td>
+<tr class="row-odd"><td><p>{line}</p></td>
+<td><p>The line in {file} where the logger was called</p></td>
 </tr>
-<tr class="row-even"><td>{env:foo}</td>
-<td>The value of ‘foo’ in $_ENV</td>
+<tr class="row-even"><td><p>{env:foo}</p></td>
+<td><p>The value of ‘foo’ in $_ENV</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="using-third-party-loggers">
+</section>
+<section id="using-third-party-loggers">
 <h2><a class="toc-backref" href="#id4">Using Third-Party Loggers</a><a class="headerlink" href="#using-third-party-loggers" title="Permalink to this headline"></a></h2>
 <p>You can use any other logger that you might like as long as it extends from either
 <code class="docutils literal notranslate"><span class="pre">Psr\Log\LoggerInterface</span></code> and is <a class="reference external" href="https://www.php-fig.org/psr/psr-3/">PSR-3</a> compatible. This means
@@ -488,8 +493,8 @@ the <strong>app/Config/Autoload.php</strong> configuration file, or through anot
 like Composer. Next, you should modify <strong>app/Config/Services.php</strong> to point the <code class="docutils literal notranslate"><span class="pre">logger</span></code>
 alias to your new class name.</p>
 <p>Now, any call that is done through the <code class="docutils literal notranslate"><span class="pre">log_message()</span></code> function will use your library instead.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -503,7 +508,7 @@ alias to your new class name.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

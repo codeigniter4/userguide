@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Publisher &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Publisher &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Library Reference</a> &raquo;</li>
-      <li>Publisher</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Library Reference</a></li>
+      <li class="breadcrumb-item active">Publisher</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,32 +271,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="publisher">
+  <section id="publisher">
 <h1>Publisher<a class="headerlink" href="#publisher" title="Permalink to this headline"></a></h1>
 <p>The Publisher library provides a means to copy files within a project using robust detection and error checking.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-the-library" id="id1">Loading the Library</a></li>
-<li><a class="reference internal" href="#concept-and-usage" id="id2">Concept and Usage</a><ul>
-<li><a class="reference internal" href="#on-demand" id="id3">On Demand</a></li>
-<li><a class="reference internal" href="#automation-and-discovery" id="id4">Automation and Discovery</a></li>
-<li><a class="reference internal" href="#security" id="id5">Security</a></li>
+<li><p><a class="reference internal" href="#loading-the-library" id="id1">Loading the Library</a></p></li>
+<li><p><a class="reference internal" href="#concept-and-usage" id="id2">Concept and Usage</a></p>
+<ul>
+<li><p><a class="reference internal" href="#on-demand" id="id3">On Demand</a></p></li>
+<li><p><a class="reference internal" href="#automation-and-discovery" id="id4">Automation and Discovery</a></p></li>
+<li><p><a class="reference internal" href="#security" id="id5">Security</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#examples" id="id6">Examples</a><ul>
-<li><a class="reference internal" href="#file-sync-example" id="id7">File Sync Example</a></li>
-<li><a class="reference internal" href="#asset-dependencies-example" id="id8">Asset Dependencies Example</a></li>
-<li><a class="reference internal" href="#module-deployment-example" id="id9">Module Deployment Example</a></li>
+<li><p><a class="reference internal" href="#examples" id="id6">Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#file-sync-example" id="id7">File Sync Example</a></p></li>
+<li><p><a class="reference internal" href="#asset-dependencies-example" id="id8">Asset Dependencies Example</a></p></li>
+<li><p><a class="reference internal" href="#module-deployment-example" id="id9">Module Deployment Example</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#library-reference" id="id10">Library Reference</a><ul>
-<li><a class="reference internal" href="#support-methods" id="id11">Support Methods</a></li>
-<li><a class="reference internal" href="#outputting-files" id="id12">Outputting Files</a></li>
+<li><p><a class="reference internal" href="#library-reference" id="id10">Library Reference</a></p>
+<ul>
+<li><p><a class="reference internal" href="#support-methods" id="id11">Support Methods</a></p></li>
+<li><p><a class="reference internal" href="#outputting-files" id="id12">Outputting Files</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="loading-the-library">
+<section id="loading-the-library">
 <h2><a class="toc-backref" href="#id1">Loading the Library</a><a class="headerlink" href="#loading-the-library" title="Permalink to this headline"></a></h2>
 <p>Because Publisher instances are specific to their source and destination this library is not available
 through <code class="docutils literal notranslate"><span class="pre">Services</span></code> but should be instantiated or extended directly. E.g.:</p>
@@ -301,21 +308,21 @@ through <code class="docutils literal notranslate"><span class="pre">Services</s
 <span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Publisher\Publisher</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="concept-and-usage">
+</section>
+<section id="concept-and-usage">
 <h2><a class="toc-backref" href="#id2">Concept and Usage</a><a class="headerlink" href="#concept-and-usage" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Publisher</span></code> solves a handful of common problems when working within a backend framework:</p>
 <ul class="simple">
-<li>How do I maintain project assets with version dependencies?</li>
-<li>How do I manage uploads and other “dynamic” files that need to be web accessible?</li>
-<li>How can I update my project when the framework or modules change?</li>
-<li>How can components inject new content into existing projects?</li>
+<li><p>How do I maintain project assets with version dependencies?</p></li>
+<li><p>How do I manage uploads and other “dynamic” files that need to be web accessible?</p></li>
+<li><p>How can I update my project when the framework or modules change?</p></li>
+<li><p>How can components inject new content into existing projects?</p></li>
 </ul>
 <p>At its most basic, publishing amounts to copying a file or files into a project. <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> extends <code class="docutils literal notranslate"><span class="pre">FileCollection</span></code>
 to enact fluent-style command chaining to read, filter, and process input files, then copies or merges them into the target destination.
 You may use <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> on demand in your Controllers or other components, or you may stage publications by extending
 the class and leveraging its discovery with <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">publish</span></code>.</p>
-<div class="section" id="on-demand">
+<section id="on-demand">
 <h3><a class="toc-backref" href="#id3">On Demand</a><a class="headerlink" href="#on-demand" title="Permalink to this headline"></a></h3>
 <p>Access <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> directly by instantiating a new instance of the class:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -362,8 +369,8 @@ to their destination(s):</p>
 </pre></div>
 </div>
 <p>See the <a class="reference internal" href="#reference"><span class="std std-ref">Library Reference</span></a> for a full description of available methods.</p>
-</div>
-<div class="section" id="automation-and-discovery">
+</section>
+<section id="automation-and-discovery">
 <h3><a class="toc-backref" href="#id4">Automation and Discovery</a><a class="headerlink" href="#automation-and-discovery" title="Permalink to this headline"></a></h3>
 <p>You may have regular publication tasks embedded as part of your application deployment or upkeep. <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> leverages
 the powerful <code class="docutils literal notranslate"><span class="pre">Autoloader</span></code> to locate any child classes primed for publication:</p>
@@ -394,26 +401,26 @@ different directory and it will return any child classes found:</p>
 </div>
 <p>By default on your class extension <code class="docutils literal notranslate"><span class="pre">publish()</span></code> will add all files from your <code class="docutils literal notranslate"><span class="pre">$source</span></code> and merge them
 out to your destination, overwriting on collision.</p>
-</div>
-<div class="section" id="security">
+</section>
+<section id="security">
 <h3><a class="toc-backref" href="#id5">Security</a><a class="headerlink" href="#security" title="Permalink to this headline"></a></h3>
 <p>In order to prevent modules from injecting malicious code into your projects, <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> contains a config file
 that defines which directories and file patterns are allowed as destinations. By default, files may only be published
 to your project (to prevent access to the rest of the filesystem), and the <strong>public/</strong> folder (<code class="docutils literal notranslate"><span class="pre">FCPATH</span></code>) will only
 receive files with the following extensions:</p>
 <ul class="simple">
-<li>Web assets: css, scss, js, map</li>
-<li>Non-executable web files: htm, html, xml, json, webmanifest</li>
-<li>Fonts: ttf, eot, woff, woff2</li>
-<li>Images: gif, jpg, jpeg, tif, tiff, png, webp, bmp, ico, svg</li>
+<li><p>Web assets: css, scss, js, map</p></li>
+<li><p>Non-executable web files: htm, html, xml, json, webmanifest</p></li>
+<li><p>Fonts: ttf, eot, woff, woff2</p></li>
+<li><p>Images: gif, jpg, jpeg, tif, tiff, png, webp, bmp, ico, svg</p></li>
 </ul>
 <p>If you need to add or adjust the security for your project then alter the <code class="docutils literal notranslate"><span class="pre">$restrictions</span></code> property of <code class="docutils literal notranslate"><span class="pre">Config\Publisher</span></code> in <strong>app/Config/Publisher.php</strong>.</p>
-</div>
-</div>
-<div class="section" id="examples">
+</section>
+</section>
+<section id="examples">
 <h2><a class="toc-backref" href="#id6">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
 <p>Here are a handful of example use cases and their implementations to help you get started publishing.</p>
-<div class="section" id="file-sync-example">
+<section id="file-sync-example">
 <h3><a class="toc-backref" href="#id7">File Sync Example</a><a class="headerlink" href="#file-sync-example" title="Permalink to this headline"></a></h3>
 <p>You want to display a “photo of the day” image on your homepage. You have a feed for daily photos but you
 need to get the actual file into a browsable location in your project at <strong>public/images/daily_photo.jpg</strong>.
@@ -453,8 +460,8 @@ resource and publish it out instead:</p>
 <span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">addUri</span><span class="p">(</span><span class="s1">&#39;https://example.com/feeds/daily_photo.jpg&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">copy</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="asset-dependencies-example">
+</section>
+<section id="asset-dependencies-example">
 <h3><a class="toc-backref" href="#id8">Asset Dependencies Example</a><a class="headerlink" href="#asset-dependencies-example" title="Permalink to this headline"></a></h3>
 <p>You want to integrate the frontend library “Bootstrap” into your project, but the frequent updates makes it a hassle
 to keep up with. You can create a publication definition in your project to sync frontend assets by extending
@@ -535,8 +542,8 @@ to keep up with. You can create a publication definition in your project to sync
             <span class="nx">bootstrap</span><span class="o">.</span><span class="nb">min</span><span class="o">.</span><span class="nx">js</span><span class="o">.</span><span class="nx">map</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="module-deployment-example">
+</section>
+<section id="module-deployment-example">
 <h3><a class="toc-backref" href="#id9">Module Deployment Example</a><a class="headerlink" href="#module-deployment-example" title="Permalink to this headline"></a></h3>
 <p>You want to allow developers using your popular authentication module the ability to expand on the default behavior
 of your Migration, Controller, and Model. You can create your own module “publish” command to inject these components
@@ -593,76 +600,76 @@ into an application for use:</p>
 <span class="nx">app</span><span class="o">/</span><span class="nx">Models</span><span class="o">/</span><span class="nx">UserModel</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="library-reference">
+</section>
+</section>
+<section id="library-reference">
 <span id="reference"></span><h2><a class="toc-backref" href="#id10">Library Reference</a><a class="headerlink" href="#library-reference" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">Publisher</span></code> is an extension of <a class="reference internal" href="files.html"><span class="doc">FileCollection</span></a> so has access to all those methods for reading and filtering files.</p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Publisher</span></code> is an extension of <a class="reference internal" href="files.html"><span class="doc">FileCollection</span></a> so has access to all those methods for reading and filtering files.</p>
 </div>
-<div class="section" id="support-methods">
+<section id="support-methods">
 <h3><a class="toc-backref" href="#id11">Support Methods</a><a class="headerlink" href="#support-methods" title="Permalink to this headline"></a></h3>
-<div class="section" id="static-discover-string-directory-publishers-publisher">
+<section id="static-discover-string-directory-publishers-publisher">
 <h4>[static] discover(string $directory = ‘Publishers’): Publisher[]<a class="headerlink" href="#static-discover-string-directory-publishers-publisher" title="Permalink to this headline"></a></h4>
 <p>Discovers and returns all Publishers in the specified namespace directory. For example, if both
 <strong>app/Publishers/FrameworkPublisher.php</strong> and <strong>myModule/src/Publishers/AssetPublisher.php</strong> exist and are
 extensions of <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> then <code class="docutils literal notranslate"><span class="pre">Publisher::discover()</span></code> would return an instance of each.</p>
-</div>
-<div class="section" id="publish-bool">
+</section>
+<section id="publish-bool">
 <h4>publish(): bool<a class="headerlink" href="#publish-bool" title="Permalink to this headline"></a></h4>
 <p>Processes the full input-process-output chain. By default this is the equivalent of calling <code class="docutils literal notranslate"><span class="pre">addPath($source)</span></code>
 and <code class="docutils literal notranslate"><span class="pre">merge(true)</span></code> but child classes will typically provide their own implementation. <code class="docutils literal notranslate"><span class="pre">publish()</span></code> is called
 on all discovered Publishers when running <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">publish</span></code>.
 Returns success or failure.</p>
-</div>
-<div class="section" id="getscratch-string">
+</section>
+<section id="getscratch-string">
 <h4>getScratch(): string<a class="headerlink" href="#getscratch-string" title="Permalink to this headline"></a></h4>
 <p>Returns the temporary workspace, creating it if necessary. Some operations use intermediate storage to stage
 files and changes, and this provides the path to a transient, writable directory that you may use as well.</p>
-</div>
-<div class="section" id="geterrors-array-string-throwable">
+</section>
+<section id="geterrors-array-string-throwable">
 <h4>getErrors(): array&lt;string, Throwable&gt;<a class="headerlink" href="#geterrors-array-string-throwable" title="Permalink to this headline"></a></h4>
 <p>Returns any errors from the last write operation. The array keys are the files that caused the error, and the
 values are the Throwable that was caught. Use <code class="docutils literal notranslate"><span class="pre">getMessage()</span></code> on the Throwable to get the error message.</p>
-</div>
-<div class="section" id="addpath-string-path-bool-recursive-true">
+</section>
+<section id="addpath-string-path-bool-recursive-true">
 <h4>addPath(string $path, bool $recursive = true)<a class="headerlink" href="#addpath-string-path-bool-recursive-true" title="Permalink to this headline"></a></h4>
 <p>Adds all files indicated by the relative path. Path is a reference to actual files or directories relative
 to <code class="docutils literal notranslate"><span class="pre">$source</span></code>. If the relative path resolves to a directory then <code class="docutils literal notranslate"><span class="pre">$recursive</span></code> will include sub-directories.</p>
-</div>
-<div class="section" id="addpaths-array-paths-bool-recursive-true">
+</section>
+<section id="addpaths-array-paths-bool-recursive-true">
 <h4>addPaths(array $paths, bool $recursive = true)<a class="headerlink" href="#addpaths-array-paths-bool-recursive-true" title="Permalink to this headline"></a></h4>
 <p>Adds all files indicated by the relative paths. Paths are references to actual files or directories relative
 to <code class="docutils literal notranslate"><span class="pre">$source</span></code>. If the relative path resolves to a directory then <code class="docutils literal notranslate"><span class="pre">$recursive</span></code> will include sub-directories.</p>
-</div>
-<div class="section" id="adduri-string-uri">
+</section>
+<section id="adduri-string-uri">
 <h4>addUri(string $uri)<a class="headerlink" href="#adduri-string-uri" title="Permalink to this headline"></a></h4>
 <p>Downloads the contents of a URI using <code class="docutils literal notranslate"><span class="pre">CURLRequest</span></code> into the scratch workspace then adds the resulting
 file to the list.</p>
-</div>
-<div class="section" id="adduris-array-uris">
+</section>
+<section id="adduris-array-uris">
 <h4>addUris(array $uris)<a class="headerlink" href="#adduris-array-uris" title="Permalink to this headline"></a></h4>
 <p>Downloads the contents of URIs using <code class="docutils literal notranslate"><span class="pre">CURLRequest</span></code> into the scratch workspace then adds the resulting
 files to the list.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The CURL request made is a simple <code class="docutils literal notranslate"><span class="pre">GET</span></code> and uses the response body for the file contents. Some
+<p class="admonition-title">Note</p>
+<p>The CURL request made is a simple <code class="docutils literal notranslate"><span class="pre">GET</span></code> and uses the response body for the file contents. Some
 remote files may need a custom request to be handled properly.</p>
 </div>
-</div>
-</div>
-<div class="section" id="outputting-files">
+</section>
+</section>
+<section id="outputting-files">
 <h3><a class="toc-backref" href="#id12">Outputting Files</a><a class="headerlink" href="#outputting-files" title="Permalink to this headline"></a></h3>
-<div class="section" id="wipe">
+<section id="wipe">
 <h4>wipe()<a class="headerlink" href="#wipe" title="Permalink to this headline"></a></h4>
 <p>Removes all files, directories, and sub-directories from <code class="docutils literal notranslate"><span class="pre">$destination</span></code>.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Use wisely.</p>
+<p class="admonition-title">Important</p>
+<p>Use wisely.</p>
 </div>
-</div>
-<div class="section" id="copy-bool-replace-true-bool">
+</section>
+<section id="copy-bool-replace-true-bool">
 <h4>copy(bool $replace = true): bool<a class="headerlink" href="#copy-bool-replace-true-bool" title="Permalink to this headline"></a></h4>
 <p>Copies all files into the <code class="docutils literal notranslate"><span class="pre">$destination</span></code>. This does not recreate the directory structure, so every file
 from the current list will end up in the same destination directory. Using <code class="docutils literal notranslate"><span class="pre">$replace</span></code> will cause files
@@ -681,8 +688,8 @@ Be mindful of duplicate basename collisions, for example:</p>
 <span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">copy</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="merge-bool-replace-true-bool">
+</section>
+<section id="merge-bool-replace-true-bool">
 <h4>merge(bool $replace = true): bool<a class="headerlink" href="#merge-bool-replace-true-bool" title="Permalink to this headline"></a></h4>
 <p>Copies all files into the <code class="docutils literal notranslate"><span class="pre">$destination</span></code> in appropriate relative sub-directories. Any files that
 match <code class="docutils literal notranslate"><span class="pre">$source</span></code> will be placed into their equivalent directories in <code class="docutils literal notranslate"><span class="pre">$destination</span></code>, effectively
@@ -703,10 +710,10 @@ affect other files in the destination. Returns success or failure, use <code cla
 <span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">merge</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -720,7 +727,7 @@ affect other files in the destination. Returns success or failure, use <code cla
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

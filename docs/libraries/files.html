@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Working with Files &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Working with Files &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Library Reference</a> &raquo;</li>
-      <li>Working with Files</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Library Reference</a></li>
+      <li class="breadcrumb-item active">Working with Files</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,27 +271,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="working-with-files">
+  <section id="working-with-files">
 <h1>Working with Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter provides a File class that wraps the <a class="reference external" href="https://www.php.net/manual/en/class.splfileinfo.php">SplFileInfo</a> class
 and provides some additional convenience methods. This class is the base class for <a class="reference internal" href="uploaded_files.html"><span class="doc">uploaded files</span></a>
 and <a class="reference internal" href="images.html"><span class="doc">images</span></a>.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#getting-a-file-instance" id="id1">Getting a File instance</a></li>
-<li><a class="reference internal" href="#taking-advantage-of-spl" id="id2">Taking Advantage of Spl</a></li>
-<li><a class="reference internal" href="#new-features" id="id3">New Features</a><ul>
-<li><a class="reference internal" href="#getrandomname" id="id4">getRandomName()</a></li>
-<li><a class="reference internal" href="#getsize" id="id5">getSize()</a></li>
-<li><a class="reference internal" href="#getsizebyunit" id="id6">getSizeByUnit()</a></li>
-<li><a class="reference internal" href="#getmimetype" id="id7">getMimeType()</a></li>
-<li><a class="reference internal" href="#guessextension" id="id8">guessExtension()</a></li>
-<li><a class="reference internal" href="#moving-files" id="id9">Moving Files</a></li>
+<li><p><a class="reference internal" href="#getting-a-file-instance" id="id1">Getting a File instance</a></p></li>
+<li><p><a class="reference internal" href="#taking-advantage-of-spl" id="id2">Taking Advantage of Spl</a></p></li>
+<li><p><a class="reference internal" href="#new-features" id="id3">New Features</a></p>
+<ul>
+<li><p><a class="reference internal" href="#getrandomname" id="id4">getRandomName()</a></p></li>
+<li><p><a class="reference internal" href="#getsize" id="id5">getSize()</a></p></li>
+<li><p><a class="reference internal" href="#getsizebyunit" id="id6">getSizeByUnit()</a></p></li>
+<li><p><a class="reference internal" href="#getmimetype" id="id7">getMimeType()</a></p></li>
+<li><p><a class="reference internal" href="#guessextension" id="id8">guessExtension()</a></p></li>
+<li><p><a class="reference internal" href="#moving-files" id="id9">Moving Files</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="getting-a-file-instance">
+<section id="getting-a-file-instance">
 <h2><a class="toc-backref" href="#id1">Getting a File instance</a><a class="headerlink" href="#getting-a-file-instance" title="Permalink to this headline"></a></h2>
 <p>You create a new File instance by passing in the path to the file in the constructor.
 By default, the file does not need to exist. However, you can pass an additional argument of “true”
@@ -297,8 +302,8 @@ to check that the file exists and throw <code class="docutils literal notranslat
 <span class="nv">$file</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Files\File</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="taking-advantage-of-spl">
+</section>
+<section id="taking-advantage-of-spl">
 <h2><a class="toc-backref" href="#id2">Taking Advantage of Spl</a><a class="headerlink" href="#taking-advantage-of-spl" title="Permalink to this headline"></a></h2>
 <p>Once you have an instance, you have the full power of the SplFileInfo class at the ready, including:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -322,11 +327,11 @@ to check that the file exists and throw <code class="docutils literal notranslat
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="new-features">
+</section>
+<section id="new-features">
 <h2><a class="toc-backref" href="#id3">New Features</a><a class="headerlink" href="#new-features" title="Permalink to this headline"></a></h2>
 <p>In addition to all of the methods in the SplFileInfo class, you get some new tools.</p>
-<div class="section" id="getrandomname">
+<section id="getrandomname">
 <h3><a class="toc-backref" href="#id4">getRandomName()</a><a class="headerlink" href="#getrandomname" title="Permalink to this headline"></a></h3>
 <p>You can generate a cryptographically secure random filename, with the current timestamp prepended, with the <code class="docutils literal notranslate"><span class="pre">getRandomName()</span></code>
 method. This is especially useful to rename files when moving it so that the filename is unguessable:</p>
@@ -336,8 +341,8 @@ method. This is especially useful to rename files when moving it so that the fil
 <span class="nv">$newName</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getRandomName</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="getsize">
+</section>
+<section id="getsize">
 <h3><a class="toc-backref" href="#id5">getSize()</a><a class="headerlink" href="#getsize" title="Permalink to this headline"></a></h3>
 <p>Returns the size of the uploaded file in bytes:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -345,8 +350,8 @@ method. This is especially useful to rename files when moving it so that the fil
 <span class="nv">$size</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">();</span> <span class="c1">// 256901</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="getsizebyunit">
+</section>
+<section id="getsizebyunit">
 <h3><a class="toc-backref" href="#id6">getSizeByUnit()</a><a class="headerlink" href="#getsizebyunit" title="Permalink to this headline"></a></h3>
 <p>Returns the size of the uploaded file default in bytes. You can pass in either ‘kb’ or ‘mb’ as the first parameter to get
 the results in kilobytes or megabytes, respectively:</p>
@@ -357,8 +362,8 @@ the results in kilobytes or megabytes, respectively:</p>
 <span class="nv">$megabytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSizeByUnit</span><span class="p">(</span><span class="s1">&#39;mb&#39;</span><span class="p">);</span> <span class="c1">// 0.245</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="getmimetype">
+</section>
+<section id="getmimetype">
 <h3><a class="toc-backref" href="#id7">getMimeType()</a><a class="headerlink" href="#getmimetype" title="Permalink to this headline"></a></h3>
 <p>Retrieve the media type (mime type) of the file. Uses methods that are considered as secure as possible when determining
 the type of file:</p>
@@ -369,8 +374,8 @@ the type of file:</p>
 <span class="k">echo</span> <span class="nv">$type</span><span class="p">;</span> <span class="c1">// image/png</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="guessextension">
+</section>
+<section id="guessextension">
 <h3><a class="toc-backref" href="#id8">guessExtension()</a><a class="headerlink" href="#guessextension" title="Permalink to this headline"></a></h3>
 <p>Attempts to determine the file extension based on the trusted <code class="docutils literal notranslate"><span class="pre">getMimeType()</span></code> method. If the mime type is unknown,
 will return null. This is often a more trusted source than simply using the extension provided by the filename. Uses
@@ -381,8 +386,8 @@ the values in <strong>app/Config/Mimes.php</strong> to determine extension:</p>
 <span class="nv">$ext</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">guessExtension</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="moving-files">
+</section>
+<section id="moving-files">
 <h3><a class="toc-backref" href="#id9">Moving Files</a><a class="headerlink" href="#moving-files" title="Permalink to this headline"></a></h3>
 <p>Each file can be moved to its new location with the aptly named <code class="docutils literal notranslate"><span class="pre">move()</span></code> method. This takes the directory to move
 the file to as the first parameter:</p>
@@ -405,10 +410,10 @@ resulting location is needed:</p>
 <span class="nv">$file</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="nx">WRITEPATH</span> <span class="o">.</span> <span class="s1">&#39;uploads&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="file-collections">
+</section>
+</section>
+</section>
+<section id="file-collections">
 <h1>File Collections<a class="headerlink" href="#file-collections" title="Permalink to this headline"></a></h1>
 <p>Working with groups of files can be cumbersome, so the framework supplies the <code class="docutils literal notranslate"><span class="pre">FileCollection</span></code> class to facilitate
 locating and working with groups of files across the filesystem. At its most basic, <code class="docutils literal notranslate"><span class="pre">FileCollection</span></code> is an index
@@ -446,14 +451,14 @@ or retain files matching a certain regex or glob-style pattern:</p>
 </pre></div>
 </div>
 <p>Below are the specific methods for working with a <code class="docutils literal notranslate"><span class="pre">FileCollection</span></code>.</p>
-<div class="section" id="starting-a-collection">
+<section id="starting-a-collection">
 <h2>Starting a Collection<a class="headerlink" href="#starting-a-collection" title="Permalink to this headline"></a></h2>
-<div class="section" id="construct-string-files">
+<section id="construct-string-files">
 <h3>__construct(string[] $files = [])<a class="headerlink" href="#construct-string-files" title="Permalink to this headline"></a></h3>
 <p>The constructor accepts an optional array of file paths to use as the initial collection. These are passed to
 <code class="docutils literal notranslate"><span class="pre">add()</span></code> so any files supplied by child classes in the <code class="docutils literal notranslate"><span class="pre">$files</span></code> will remain.</p>
-</div>
-<div class="section" id="define">
+</section>
+<section id="define">
 <h3>define()<a class="headerlink" href="#define" title="Permalink to this headline"></a></h3>
 <p>Allows child classes to define their own initial files. This method is called by the constructor and allows
 predefined collections without having to use their methods. Example:</p>
@@ -472,43 +477,43 @@ predefined collections without having to use their methods. Example:</p>
 </div>
 <p>Now you may use the <code class="docutils literal notranslate"><span class="pre">ConfigCollection</span></code> anywhere in your project to access all App Config files without
 having to re-call the collection methods every time.</p>
-</div>
-<div class="section" id="set-array-files">
+</section>
+<section id="set-array-files">
 <h3>set(array $files)<a class="headerlink" href="#set-array-files" title="Permalink to this headline"></a></h3>
 <p>Sets the list of input files to the provided string array of file paths. This will remove any existing
 files from the collection, so <code class="docutils literal notranslate"><span class="pre">$collection-&gt;set([])</span></code> is essentially a hard reset.</p>
-</div>
-</div>
-<div class="section" id="inputting-files">
+</section>
+</section>
+<section id="inputting-files">
 <h2>Inputting Files<a class="headerlink" href="#inputting-files" title="Permalink to this headline"></a></h2>
-<div class="section" id="add-string-string-paths-bool-recursive-true">
+<section id="add-string-string-paths-bool-recursive-true">
 <h3>add(string[]|string $paths, bool $recursive = true)<a class="headerlink" href="#add-string-string-paths-bool-recursive-true" title="Permalink to this headline"></a></h3>
 <p>Adds all files indicated by the path or array of paths. If the path resolves to a directory then <code class="docutils literal notranslate"><span class="pre">$recursive</span></code>
 will include sub-directories.</p>
-</div>
-<div class="section" id="addfile-string-file-addfiles-array-files">
+</section>
+<section id="addfile-string-file-addfiles-array-files">
 <h3>addFile(string $file) / addFiles(array $files)<a class="headerlink" href="#addfile-string-file-addfiles-array-files" title="Permalink to this headline"></a></h3>
 <p>Adds the file or files to the current list of input files. Files are absolute paths to actual files.</p>
-</div>
-<div class="section" id="removefile-string-file-removefiles-array-files">
+</section>
+<section id="removefile-string-file-removefiles-array-files">
 <h3>removeFile(string $file) / removeFiles(array $files)<a class="headerlink" href="#removefile-string-file-removefiles-array-files" title="Permalink to this headline"></a></h3>
 <p>Removes the file or files from the current list of input files.</p>
-</div>
-<div class="section" id="adddirectory-string-directory-bool-recursive-false">
+</section>
+<section id="adddirectory-string-directory-bool-recursive-false">
 <h3>addDirectory(string $directory, bool $recursive = false)<a class="headerlink" href="#adddirectory-string-directory-bool-recursive-false" title="Permalink to this headline"></a></h3>
-</div>
-<div class="section" id="adddirectories-array-directories-bool-recursive-false">
+</section>
+<section id="adddirectories-array-directories-bool-recursive-false">
 <h3>addDirectories(array $directories, bool $recursive = false)<a class="headerlink" href="#adddirectories-array-directories-bool-recursive-false" title="Permalink to this headline"></a></h3>
 <p>Adds all files from the directory or directories, optionally recursing into sub-directories. Directories are
 absolute paths to actual directories.</p>
-</div>
-</div>
-<div class="section" id="filtering-files">
+</section>
+</section>
+<section id="filtering-files">
 <h2>Filtering Files<a class="headerlink" href="#filtering-files" title="Permalink to this headline"></a></h2>
-<div class="section" id="removepattern-string-pattern-string-scope-null">
+<section id="removepattern-string-pattern-string-scope-null">
 <h3>removePattern(string $pattern, string $scope = null)<a class="headerlink" href="#removepattern-string-pattern-string-scope-null" title="Permalink to this headline"></a></h3>
-</div>
-<div class="section" id="retainpattern-string-pattern-string-scope-null">
+</section>
+<section id="retainpattern-string-pattern-string-scope-null">
 <h3>retainPattern(string $pattern, string $scope = null)<a class="headerlink" href="#retainpattern-string-pattern-string-scope-null" title="Permalink to this headline"></a></h3>
 <p>Filters the current file list through the pattern (and optional scope), removing or retaining matched
 files. <code class="docutils literal notranslate"><span class="pre">$pattern</span></code> may be a complete regex (like <code class="docutils literal notranslate"><span class="pre">'#[A-Za-z]+\.php#'</span></code>) or a pseudo-regex similar
@@ -528,20 +533,20 @@ outside of <code class="docutils literal notranslate"><span class="pre">$scope</
 <span class="nv">$files</span><span class="o">-&gt;</span><span class="na">retainPattern</span><span class="p">(</span><span class="s1">&#39;#d.+php$#&#39;</span><span class="p">,</span> <span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Config/boot&#39;</span><span class="p">);</span> <span class="c1">// Would keep everything but boot/production.php and boot/testing.php</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="retrieving-files">
+</section>
+</section>
+<section id="retrieving-files">
 <h2>Retrieving Files<a class="headerlink" href="#retrieving-files" title="Permalink to this headline"></a></h2>
-<div class="section" id="get-string">
+<section id="get-string">
 <h3>get(): string[]<a class="headerlink" href="#get-string" title="Permalink to this headline"></a></h3>
 <p>Returns an array of all the loaded input files.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">FileCollection</span></code> is an <code class="docutils literal notranslate"><span class="pre">IteratorAggregate</span></code> so you can work with it directly (e.g. <code class="docutils literal notranslate"><span class="pre">foreach</span> <span class="pre">($collection</span> <span class="pre">as</span> <span class="pre">$file)</span></code>).</p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">FileCollection</span></code> is an <code class="docutils literal notranslate"><span class="pre">IteratorAggregate</span></code> so you can work with it directly (e.g. <code class="docutils literal notranslate"><span class="pre">foreach</span> <span class="pre">($collection</span> <span class="pre">as</span> <span class="pre">$file)</span></code>).</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -555,7 +560,7 @@ outside of <code class="docutils literal notranslate"><span class="pre">$scope</
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

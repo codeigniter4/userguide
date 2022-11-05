@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caching Driver &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Caching Driver &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Library Reference</a> &raquo;</li>
-      <li>Caching Driver</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Library Reference</a></li>
+      <li class="breadcrumb-item active">Caching Driver</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="caching-driver">
+  <section id="caching-driver">
 <h1>Caching Driver<a class="headerlink" href="#caching-driver" title="Permalink to this headline"></a></h1>
 <p>CodeIgniter features wrappers around some of the most popular forms of
 fast and dynamic caching. All but file-based caching require specific
@@ -275,35 +279,38 @@ server requirements, and a Fatal Exception will be thrown if server
 requirements are not met.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#example-usage" id="id1">Example Usage</a></li>
-<li><a class="reference internal" href="#configuring-the-cache" id="id2">Configuring the Cache</a><ul>
-<li><a class="reference internal" href="#handler" id="id3">$handler</a></li>
-<li><a class="reference internal" href="#backuphandler" id="id4">$backupHandler</a></li>
-<li><a class="reference internal" href="#prefix" id="id5">$prefix</a></li>
-<li><a class="reference internal" href="#ttl" id="id6">$ttl</a></li>
-<li><a class="reference internal" href="#file" id="id7">$file</a></li>
-<li><a class="reference internal" href="#memcached" id="id8">$memcached</a></li>
-<li><a class="reference internal" href="#redis" id="id9">$redis</a></li>
+<li><p><a class="reference internal" href="#example-usage" id="id1">Example Usage</a></p></li>
+<li><p><a class="reference internal" href="#configuring-the-cache" id="id2">Configuring the Cache</a></p>
+<ul>
+<li><p><a class="reference internal" href="#handler" id="id3">$handler</a></p></li>
+<li><p><a class="reference internal" href="#backuphandler" id="id4">$backupHandler</a></p></li>
+<li><p><a class="reference internal" href="#prefix" id="id5">$prefix</a></p></li>
+<li><p><a class="reference internal" href="#ttl" id="id6">$ttl</a></p></li>
+<li><p><a class="reference internal" href="#file" id="id7">$file</a></p></li>
+<li><p><a class="reference internal" href="#memcached" id="id8">$memcached</a></p></li>
+<li><p><a class="reference internal" href="#redis" id="id9">$redis</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#command-line-tools" id="id10">Command-Line Tools</a><ul>
-<li><a class="reference internal" href="#cache-clear" id="id11">cache:clear</a></li>
-<li><a class="reference internal" href="#cache-info" id="id12">cache:info</a></li>
+<li><p><a class="reference internal" href="#command-line-tools" id="id10">Command-Line Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#cache-clear" id="id11">cache:clear</a></p></li>
+<li><p><a class="reference internal" href="#cache-info" id="id12">cache:info</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#namespace-CodeIgniter\Cache" id="id13">Class Reference</a></li>
-<li><a class="reference internal" href="#drivers" id="id14">Drivers</a><ul>
-<li><a class="reference internal" href="#file-based-caching" id="id15">File-based Caching</a></li>
-<li><a class="reference internal" href="#memcached-caching" id="id16">Memcached Caching</a></li>
-<li><a class="reference internal" href="#wincache-caching" id="id17">WinCache Caching</a></li>
-<li><a class="reference internal" href="#redis-caching" id="id18">Redis Caching</a></li>
-<li><a class="reference internal" href="#predis-caching" id="id19">Predis Caching</a></li>
-<li><a class="reference internal" href="#dummy-cache" id="id20">Dummy Cache</a></li>
+<li><p><a class="reference internal" href="#namespace-CodeIgniter\Cache" id="id13">Class Reference</a></p></li>
+<li><p><a class="reference internal" href="#drivers" id="id14">Drivers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#file-based-caching" id="id15">File-based Caching</a></p></li>
+<li><p><a class="reference internal" href="#memcached-caching" id="id16">Memcached Caching</a></p></li>
+<li><p><a class="reference internal" href="#wincache-caching" id="id17">WinCache Caching</a></p></li>
+<li><p><a class="reference internal" href="#redis-caching" id="id18">Redis Caching</a></p></li>
+<li><p><a class="reference internal" href="#predis-caching" id="id19">Predis Caching</a></p></li>
+<li><p><a class="reference internal" href="#dummy-cache" id="id20">Dummy Cache</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="example-usage">
+<section id="example-usage">
 <h2><a class="toc-backref" href="#id1">Example Usage</a><a class="headerlink" href="#example-usage" title="Permalink to this headline"></a></h2>
 <p>The following example shows a common usage pattern within your controllers.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -327,110 +334,104 @@ requirements are not met.</p>
 <span class="nv">$foo</span> <span class="o">=</span> <span class="nv">$cache</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="configuring-the-cache">
+</section>
+<section id="configuring-the-cache">
 <h2><a class="toc-backref" href="#id2">Configuring the Cache</a><a class="headerlink" href="#configuring-the-cache" title="Permalink to this headline"></a></h2>
 <p>All configuration for the cache engine is done in <strong>app/Config/Cache.php</strong>. In that file,
 the following items are available.</p>
-<div class="section" id="handler">
+<section id="handler">
 <h3><a class="toc-backref" href="#id3">$handler</a><a class="headerlink" href="#handler" title="Permalink to this headline"></a></h3>
 <p>The is the name of the handler that should be used as the primary handler when starting up the engine.
 Available names are: dummy, file, memcached, redis, predis, wincache.</p>
-</div>
-<div class="section" id="backuphandler">
+</section>
+<section id="backuphandler">
 <h3><a class="toc-backref" href="#id4">$backupHandler</a><a class="headerlink" href="#backuphandler" title="Permalink to this headline"></a></h3>
 <p>In the case that the first choice <code class="docutils literal notranslate"><span class="pre">$handler</span></code> is not available, this is the next cache handler to load.
 This is commonly the <code class="docutils literal notranslate"><span class="pre">File</span></code> handler since the file system is always available, but may not fit
 more complex, multi-server setups.</p>
-</div>
-<div class="section" id="prefix">
+</section>
+<section id="prefix">
 <h3><a class="toc-backref" href="#id5">$prefix</a><a class="headerlink" href="#prefix" title="Permalink to this headline"></a></h3>
 <p>If you have more than one application using the same cache storage, you can add a custom prefix
 string here that is prepended to all key names.</p>
-</div>
-<div class="section" id="ttl">
+</section>
+<section id="ttl">
 <h3><a class="toc-backref" href="#id6">$ttl</a><a class="headerlink" href="#ttl" title="Permalink to this headline"></a></h3>
 <p>The default number of seconds to save items when none is specified.</p>
 <p>WARNING: This is not used by framework handlers where 60 seconds is hard-coded, but may be useful
 to projects and modules. This will replace the hard-coded value in a future release.</p>
-</div>
-<div class="section" id="file">
+</section>
+<section id="file">
 <h3><a class="toc-backref" href="#id7">$file</a><a class="headerlink" href="#file" title="Permalink to this headline"></a></h3>
 <p>This is an array of settings specific to the  <code class="docutils literal notranslate"><span class="pre">File</span></code> handler to determine how it should save the cache files.</p>
-</div>
-<div class="section" id="memcached">
+</section>
+<section id="memcached">
 <h3><a class="toc-backref" href="#id8">$memcached</a><a class="headerlink" href="#memcached" title="Permalink to this headline"></a></h3>
 <p>This is an array of servers that will be used when using the <code class="docutils literal notranslate"><span class="pre">Memcache(d)</span></code> handler.</p>
-</div>
-<div class="section" id="redis">
+</section>
+<section id="redis">
 <h3><a class="toc-backref" href="#id9">$redis</a><a class="headerlink" href="#redis" title="Permalink to this headline"></a></h3>
 <p>The settings for the Redis server that you wish to use when using the <code class="docutils literal notranslate"><span class="pre">Redis</span></code> and <code class="docutils literal notranslate"><span class="pre">Predis</span></code> handler.</p>
-</div>
-</div>
-<div class="section" id="command-line-tools">
+</section>
+</section>
+<section id="command-line-tools">
 <h2><a class="toc-backref" href="#id10">Command-Line Tools</a><a class="headerlink" href="#command-line-tools" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter ships with several <a class="reference internal" href="../cli/spark_commands.html"><span class="doc">commands</span></a> that are available
 from the command line to help you work with Cache.
 These tools are not required to use Cache driver but might help you.</p>
-<div class="section" id="cache-clear">
+<section id="cache-clear">
 <h3><a class="toc-backref" href="#id11">cache:clear</a><a class="headerlink" href="#cache-clear" title="Permalink to this headline"></a></h3>
 <p>Clears the current system caches:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">cache</span><span class="o">:</span><span class="nx">clear</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="cache-info">
+</section>
+<section id="cache-info">
 <h3><a class="toc-backref" href="#id12">cache:info</a><a class="headerlink" href="#cache-info" title="Permalink to this headline"></a></h3>
 <p>Shows file cache information in the current system:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">cache</span><span class="o">:</span><span class="nx">info</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This command only supports the File cache handler.</p>
+<p class="admonition-title">Note</p>
+<p>This command only supports the File cache handler.</p>
 </div>
-</div>
-</div>
-<div class="section" id="namespace-CodeIgniter\Cache">
+</section>
+</section>
+<section id="namespace-CodeIgniter\Cache">
 <span id="class-reference"></span><h2><a class="toc-backref" href="#id13">Class Reference</a><a class="headerlink" href="#namespace-CodeIgniter\Cache" title="Permalink to this headline"></a></h2>
-<dl class="class">
-<dt id="CodeIgniter\Cache\CacheInterface">
-<em class="property">class </em><code class="descclassname">CodeIgniter\Cache\</code><code class="descname">CacheInterface</code><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface" title="Permalink to this definition"></a></dt>
-<dd><dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::isSupported">
-<code class="descname">isSupported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::isSupported" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">true</span></code> if supported, <code class="docutils literal notranslate"><span class="pre">false</span></code> if not</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="php class">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CodeIgniter\Cache\</span></span><span class="sig-name descname"><span class="pre">CacheInterface</span></span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface" title="Permalink to this definition"></a></dt>
+<dd><dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::isSupported">
+<span class="sig-name descname"><span class="pre">isSupported</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::isSupported" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if supported, <code class="docutils literal notranslate"><span class="pre">false</span></code> if not</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span> &#x2192; mixed<a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::get" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Cache item name</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$key</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">mixed</span></span></span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::get" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cache item name</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Item value or <code class="docutils literal notranslate"><span class="pre">null</span></code> if not found</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Item value or <code class="docutils literal notranslate"><span class="pre">null</span></code> if not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>This method will attempt to fetch an item from the cache store. If the
 item does not exist, the method will return null.</p>
 <p>Example:</p>
@@ -441,55 +442,47 @@ item does not exist, the method will return null.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::remember">
-<code class="descname">remember</code><span class="sig-paren">(</span><em>string $key</em>, <em>int $ttl</em>, <em>Closure $callback</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::remember" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Cache item name</li>
-<li><strong>$ttl</strong> (<em>int</em>) – Time to live in seconds</li>
-<li><strong>$callback</strong> (<em>Closure</em>) – Callback to invoke when the cache item returns null</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::remember">
+<span class="sig-name descname"><span class="pre">remember</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span> <span class="pre">$key</span></em>, <em class="sig-param"><span class="pre">int</span> <span class="pre">$ttl</span></em>, <em class="sig-param"><span class="pre">Closure</span> <span class="pre">$callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::remember" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cache item name</p></li>
+<li><p><strong>$ttl</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Time to live in seconds</p></li>
+<li><p><strong>$callback</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">Closure</span></code></span>) – Callback to invoke when the cache item returns null</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The value of the cache item</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The value of the cache item</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>Gets an item from the cache. If <code class="docutils literal notranslate"><span class="pre">null</span></code> was returned, this will invoke the callback
 and save the result. Either way, this will return the value.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::save">
-<code class="descname">save</code><span class="sig-paren">(</span><em>string $key</em>, <em>$data</em><span class="optional">[</span>, <em>int $ttl = 60</em><span class="optional">[</span>, <em>$raw = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::save" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Cache item name</li>
-<li><strong>$data</strong> (<em>mixed</em>) – the data to save</li>
-<li><strong>$ttl</strong> (<em>int</em>) – Time To Live, in seconds (default 60)</li>
-<li><strong>$raw</strong> (<em>bool</em>) – Whether to store the raw value</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span> <span class="pre">$key</span></em>, <em class="sig-param"><span class="pre">$data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">int</span> <span class="pre">$ttl</span> <span class="pre">=</span> <span class="pre">60</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$raw</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::save" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cache item name</p></li>
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – the data to save</p></li>
+<li><p><strong>$ttl</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Time To Live, in seconds (default 60)</p></li>
+<li><p><strong>$raw</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to store the raw value</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 <p>This method will save an item to the cache store. If saving fails, the
 method will return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>Example:</p>
@@ -499,32 +492,28 @@ method will return <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">$raw</span></code> parameter is only utilized by Memcache,
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">$raw</span></code> parameter is only utilized by Memcache,
 in order to allow usage of <code class="docutils literal notranslate"><span class="pre">increment()</span></code> and <code class="docutils literal notranslate"><span class="pre">decrement()</span></code>.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::delete">
-<code class="descname">delete</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::delete" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – name of cached item</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$key</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::delete" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – name of cached item</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 <p>This method will delete a specific item from the cache store. If item
 deletion fails, the method will return false.</p>
 <p>Example:</p>
@@ -535,31 +524,27 @@ deletion fails, the method will return false.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::deleteMatching">
-<code class="descname">deleteMatching</code><span class="sig-paren">(</span><em>$pattern</em><span class="sig-paren">)</span> &#x2192; integer<a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::deleteMatching" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$pattern</strong> (<em>string</em>) – glob-style pattern to match cached items keys</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::deleteMatching">
+<span class="sig-name descname"><span class="pre">deleteMatching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$pattern</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span></span></span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::deleteMatching" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$pattern</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – glob-style pattern to match cached items keys</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">number of deleted items</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">integer</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number of deleted items</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">integer</span></code></span></p>
+</dd>
+</dl>
 <p>This method will delete multiple items from the cache store at once by
 matching their keys against a glob-style pattern. It will return the total number of deleted items.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">This method is only implemented for File, Redis and Predis handlers.
+<p class="admonition-title">Important</p>
+<p>This method is only implemented for File, Redis and Predis handlers.
 Due to limitations, it couldn’t be implemented for Memcached and Wincache handlers.</p>
 </div>
 <p>Example:</p>
@@ -573,27 +558,23 @@ Due to limitations, it couldn’t be implemented for Memcached and Wincache hand
 <a class="reference external" href="https://en.wikipedia.org/wiki/Glob_(programming)#Syntax">Glob (programming)</a>.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::increment">
-<code class="descname">increment</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; mixed<a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::increment" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Cache ID</li>
-<li><strong>$offset</strong> (<em>int</em>) – Step/value to add</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::increment">
+<span class="sig-name descname"><span class="pre">increment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$key</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$offset</span> <span class="pre">=</span> <span class="pre">1</span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">mixed</span></span></span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::increment" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cache ID</p></li>
+<li><p><strong>$offset</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Step/value to add</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">New value on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New value on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>Performs atomic incrementation of a raw stored value.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -605,27 +586,23 @@ Due to limitations, it couldn’t be implemented for Memcached and Wincache hand
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::decrement">
-<code class="descname">decrement</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$offset = 1</em><span class="optional">]</span><span class="sig-paren">)</span> &#x2192; mixed<a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::decrement" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Cache ID</li>
-<li><strong>$offset</strong> (<em>int</em>) – Step/value to reduce by</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::decrement">
+<span class="sig-name descname"><span class="pre">decrement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$key</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$offset</span> <span class="pre">=</span> <span class="pre">1</span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">mixed</span></span></span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::decrement" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cache ID</p></li>
+<li><p><strong>$offset</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Step/value to reduce by</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">New value on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New value on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>Performs atomic decrementation of a raw stored value.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -637,19 +614,17 @@ Due to limitations, it couldn’t be implemented for Memcached and Wincache hand
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::clean">
-<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::clean" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::clean" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> on failure</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 <p>This method will ‘clean’ the entire cache. If the deletion of the
 cache files fails, the method will return false.</p>
 <p>Example:</p>
@@ -660,19 +635,17 @@ cache files fails, the method will return false.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::getCacheInfo">
-<code class="descname">getCacheInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::getCacheInfo" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Information on the entire cache database</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">mixed</td>
-</tr>
-</tbody>
-</table>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::getCacheInfo">
+<span class="sig-name descname"><span class="pre">getCacheInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::getCacheInfo" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Information on the entire cache database</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>This method will return information on the entire cache.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -681,32 +654,28 @@ cache files fails, the method will return false.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The information returned and the structure of the data is dependent
+<p class="admonition-title">Note</p>
+<p>The information returned and the structure of the data is dependent
 on which adapter is being used.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\Cache\CacheInterface::getMetadata">
-<code class="descname">getMetadata</code><span class="sig-paren">(</span><em>string $key</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::getMetadata" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Cache item name</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::getMetadata">
+<span class="sig-name descname"><span class="pre">getMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span> <span class="pre">$key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::getMetadata" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cache item name</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Metadata for the cached item. <code class="docutils literal notranslate"><span class="pre">null</span></code> for missing items, or an array with at least the “expire” key for absolute epoch expiry (<code class="docutils literal notranslate"><span class="pre">null</span></code> for never expires).</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array|null</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Metadata for the cached item. <code class="docutils literal notranslate"><span class="pre">null</span></code> for missing items, or an array with at least the “expire” key for absolute epoch expiry (<code class="docutils literal notranslate"><span class="pre">null</span></code> for never expires).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|null</span></code></span></p>
+</dd>
+</dl>
 <p>This method will return detailed information on a specific item in the
 cache.</p>
 <p>Example:</p>
@@ -716,34 +685,30 @@ cache.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The information returned and the structure of the data is dependent
+<p class="admonition-title">Note</p>
+<p>The information returned and the structure of the data is dependent
 on which adapter is being used. Some adapters (File, Memcached, Wincache)
 still return <code class="docutils literal notranslate"><span class="pre">false</span></code> for missing items.</p>
 </div>
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="CodeIgniter\Cache\CacheInterface::validateKey">
-<em class="property">static </em><code class="descname">validateKey</code><span class="sig-paren">(</span><em>string $key</em>, <em>string $prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::validateKey" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$key</strong> (<em>string</em>) – Potential cache key</li>
-<li><strong>$prefix</strong> (<em>string</em>) – Optional prefix</li>
+<dl class="php staticmethod">
+<dt class="sig sig-object php" id="CodeIgniter\Cache\CacheInterface::validateKey">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">validateKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span> <span class="pre">$key</span></em>, <em class="sig-param"><span class="pre">string</span> <span class="pre">$prefix</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Cache\CacheInterface::validateKey" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$key</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Potential cache key</p></li>
+<li><p><strong>$prefix</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Optional prefix</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The verified and prefixed key. If the key exceeds the driver’s max key length it will be hashed.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The verified and prefixed key. If the key exceeds the driver’s max key length it will be hashed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This method is used by handler methods to check that keys are valid. It will throw
 an <code class="docutils literal notranslate"><span class="pre">InvalidArgumentException</span></code> for non-strings, invalid characters, and empty lengths.</p>
 <p>Example:</p>
@@ -756,18 +721,18 @@ an <code class="docutils literal notranslate"><span class="pre">InvalidArgumentE
 
 </dd></dl>
 
-</div>
-<div class="section" id="drivers">
+</section>
+<section id="drivers">
 <h2><a class="toc-backref" href="#id14">Drivers</a><a class="headerlink" href="#drivers" title="Permalink to this headline"></a></h2>
-<div class="section" id="file-based-caching">
+<section id="file-based-caching">
 <h3><a class="toc-backref" href="#id15">File-based Caching</a><a class="headerlink" href="#file-based-caching" title="Permalink to this headline"></a></h3>
 <p>Unlike caching from the Output Class, the driver file-based caching
 allows for pieces of view files to be cached. Use this with care, and
 make sure to benchmark your application, as a point can come where disk
 I/O will negate positive gains by caching. This requires a cache
 directory to be really writable by the application.</p>
-</div>
-<div class="section" id="memcached-caching">
+</section>
+<section id="memcached-caching">
 <h3><a class="toc-backref" href="#id16">Memcached Caching</a><a class="headerlink" href="#memcached-caching" title="Permalink to this headline"></a></h3>
 <p>Memcached servers can be specified in the cache configuration file. Available options are:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -793,14 +758,14 @@ directory to be really writable by the application.</p>
 </div>
 <p>For more information on Memcached, please see
 <a class="reference external" href="https://www.php.net/memcached">https://www.php.net/memcached</a>.</p>
-</div>
-<div class="section" id="wincache-caching">
+</section>
+<section id="wincache-caching">
 <h3><a class="toc-backref" href="#id17">WinCache Caching</a><a class="headerlink" href="#wincache-caching" title="Permalink to this headline"></a></h3>
 <p>Under Windows, you can also utilize the WinCache driver.</p>
 <p>For more information on WinCache, please see
 <a class="reference external" href="https://www.php.net/wincache">https://www.php.net/wincache</a>.</p>
-</div>
-<div class="section" id="redis-caching">
+</section>
+<section id="redis-caching">
 <h3><a class="toc-backref" href="#id18">Redis Caching</a><a class="headerlink" href="#redis-caching" title="Permalink to this headline"></a></h3>
 <p>Redis is an in-memory key-value store which can operate in LRU cache mode.
 To use it, you need <a class="reference external" href="https://github.com/phpredis/phpredis">Redis server and phpredis PHP extension</a>.</p>
@@ -829,8 +794,8 @@ To use it, you need <a class="reference external" href="https://github.com/phpre
 </div>
 <p>For more information on Redis, please see
 <a class="reference external" href="https://redis.io">https://redis.io</a>.</p>
-</div>
-<div class="section" id="predis-caching">
+</section>
+<section id="predis-caching">
 <h3><a class="toc-backref" href="#id19">Predis Caching</a><a class="headerlink" href="#predis-caching" title="Permalink to this headline"></a></h3>
 <p>Predis is a flexible and feature-complete PHP client library for the Redis key-value store.
 To use it, from the command line inside your project root:</p>
@@ -839,15 +804,15 @@ To use it, from the command line inside your project root:</p>
 </div>
 <p>For more information on Redis, please see
 <a class="reference external" href="https://github.com/nrk/predis">https://github.com/nrk/predis</a>.</p>
-</div>
-<div class="section" id="dummy-cache">
+</section>
+<section id="dummy-cache">
 <h3><a class="toc-backref" href="#id20">Dummy Cache</a><a class="headerlink" href="#dummy-cache" title="Permalink to this headline"></a></h3>
 <p>This is a caching backend that will always ‘miss.’ It stores no data,
 but lets you keep your caching code in place in environments that don’t
 support your chosen cache.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -861,7 +826,7 @@ support your chosen cache.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

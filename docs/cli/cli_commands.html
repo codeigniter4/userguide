@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Command Line Usage</a> &raquo;</li>
-      <li>Creating Spark Commands</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Command Line Usage</a></li>
+      <li class="breadcrumb-item active">Creating Spark Commands</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="creating-spark-commands">
+  <section id="creating-spark-commands">
 <h1>Creating Spark Commands<a class="headerlink" href="#creating-spark-commands" title="Permalink to this headline"></a></h1>
 <p>While the ability to use Controllers via CLI like any other route is convenient, you might find times where you
 need a little something different. That’s where Spark commands come in. They are simple classes that do not
@@ -276,40 +280,41 @@ their jobs simpler, whether by handling migrations or database seeding, checking
 building out custom code generators for your company.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#creating-new-commands" id="id1">Creating New Commands</a><ul>
-<li><a class="reference internal" href="#file-location" id="id2">File Location</a></li>
-<li><a class="reference internal" href="#an-example-command" id="id3">An Example Command</a></li>
+<li><p><a class="reference internal" href="#creating-new-commands" id="id1">Creating New Commands</a></p>
+<ul>
+<li><p><a class="reference internal" href="#file-location" id="id2">File Location</a></p></li>
+<li><p><a class="reference internal" href="#an-example-command" id="id3">An Example Command</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#basecommand" id="id4">BaseCommand</a></li>
+<li><p><a class="reference internal" href="#basecommand" id="id4">BaseCommand</a></p></li>
 </ul>
 </div>
-<div class="section" id="creating-new-commands">
+<section id="creating-new-commands">
 <h2><a class="toc-backref" href="#id1">Creating New Commands</a><a class="headerlink" href="#creating-new-commands" title="Permalink to this headline"></a></h2>
 <p>You can very easily create new commands to use in your own development. Each class must be in its own file,
 and must extend <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CLI\BaseCommand</span></code>, and implement the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method.</p>
 <p>The following properties should be used in order to get listed in CLI commands and to add help functionality to your command:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">$group</span></code>: a string to describe the group the command is lumped under when listing commands. For example: <code class="docutils literal notranslate"><span class="pre">Database</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$name</span></code>: a string to describe the command’s name. For example: <code class="docutils literal notranslate"><span class="pre">migrate:create</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$description</span></code>: a string to describe the command. For example: <code class="docutils literal notranslate"><span class="pre">Creates</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">migration</span> <span class="pre">file.</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$usage</span></code>: a string to describe the command usage. For example: <code class="docutils literal notranslate"><span class="pre">migrate:create</span> <span class="pre">[name]</span> <span class="pre">[options]</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$arguments</span></code>: an array of strings to describe each command argument. For example: <code class="docutils literal notranslate"><span class="pre">'name'</span> <span class="pre">=&gt;</span> <span class="pre">'The</span> <span class="pre">migration</span> <span class="pre">file</span> <span class="pre">name'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$options</span></code>: an array of strings to describe each command option. For example: <code class="docutils literal notranslate"><span class="pre">'-n'</span> <span class="pre">=&gt;</span> <span class="pre">'Set</span> <span class="pre">migration</span> <span class="pre">namespace'</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$group</span></code>: a string to describe the group the command is lumped under when listing commands. For example: <code class="docutils literal notranslate"><span class="pre">Database</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$name</span></code>: a string to describe the command’s name. For example: <code class="docutils literal notranslate"><span class="pre">migrate:create</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$description</span></code>: a string to describe the command. For example: <code class="docutils literal notranslate"><span class="pre">Creates</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">migration</span> <span class="pre">file.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$usage</span></code>: a string to describe the command usage. For example: <code class="docutils literal notranslate"><span class="pre">migrate:create</span> <span class="pre">[name]</span> <span class="pre">[options]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$arguments</span></code>: an array of strings to describe each command argument. For example: <code class="docutils literal notranslate"><span class="pre">'name'</span> <span class="pre">=&gt;</span> <span class="pre">'The</span> <span class="pre">migration</span> <span class="pre">file</span> <span class="pre">name'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$options</span></code>: an array of strings to describe each command option. For example: <code class="docutils literal notranslate"><span class="pre">'-n'</span> <span class="pre">=&gt;</span> <span class="pre">'Set</span> <span class="pre">migration</span> <span class="pre">namespace'</span></code></p></li>
 </ul>
 <p><strong>Help description will be automatically generated according to the above parameters.</strong></p>
-<div class="section" id="file-location">
+<section id="file-location">
 <h3><a class="toc-backref" href="#id2">File Location</a><a class="headerlink" href="#file-location" title="Permalink to this headline"></a></h3>
 <p>Commands must be stored within a directory named <strong>Commands</strong>. However, that directory can be located anywhere
 that the <a class="reference internal" href="../concepts/autoloader.html"><span class="doc">Autoloader</span></a> can locate it. This could be in <strong>app/Commands</strong>, or
 a directory that you keep commands in to use in all of your project development, like <strong>Acme/Commands</strong>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When the commands are executed, the full CodeIgniter CLI environment has been loaded, making it
+<p class="admonition-title">Note</p>
+<p>When the commands are executed, the full CodeIgniter CLI environment has been loaded, making it
 possible to get environment information, path information, and to use any of the tools you would use when making a Controller.</p>
 </div>
-</div>
-<div class="section" id="an-example-command">
+</section>
+<section id="an-example-command">
 <h3><a class="toc-backref" href="#id3">An Example Command</a><a class="headerlink" href="#an-example-command" title="Permalink to this headline"></a></h3>
 <p>Let’s step through an example command whose only function is to report basic information about the application
 itself, for demonstration purposes. Start by creating a new file at <strong>app/Commands/AppInfo.php</strong>. It
@@ -343,7 +348,7 @@ with further grouping of commands being done by using a colon with the command n
 multiple commands from having naming collisions.</p>
 <p>The final property, <code class="docutils literal notranslate"><span class="pre">$description</span></code> is a short string that is displayed in the <strong>list</strong> command and should describe
 what the command does.</p>
-<div class="section" id="run">
+<section id="run">
 <h4>run()<a class="headerlink" href="#run" title="Permalink to this headline"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">run()</span></code> method is the method that is called when the command is being run. The <code class="docutils literal notranslate"><span class="pre">$params</span></code> array is a list of
 any CLI arguments after the command name for your use. If the CLI string was:</p>
@@ -383,32 +388,28 @@ from the string. These parameters can be used to customize how your scripts beha
 </pre></div>
 </div>
 <p>See the <a class="reference internal" href="cli_library.html"><span class="doc">CLI Library</span></a> page for detailed information.</p>
-</div>
-</div>
-</div>
-<div class="section" id="basecommand">
+</section>
+</section>
+</section>
+<section id="basecommand">
 <h2><a class="toc-backref" href="#id4">BaseCommand</a><a class="headerlink" href="#basecommand" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">BaseCommand</span></code> class that all commands must extend have a couple of helpful utility methods that you should
 be familiar with when creating your own commands. It also has a <a class="reference internal" href="../general/logging.html"><span class="doc">Logger</span></a> available at
 <code class="docutils literal notranslate"><span class="pre">$this-&gt;logger</span></code>.</p>
-<span class="target" id="namespace-CodeIgniter\CLI"></span><dl class="class">
-<dt id="CodeIgniter\CLI\BaseCommand">
-<em class="property">class </em><code class="descclassname">CodeIgniter\CLI\</code><code class="descname">BaseCommand</code><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand" title="Permalink to this definition"></a></dt>
-<dd><dl class="method">
-<dt id="CodeIgniter\CLI\BaseCommand::call">
-<code class="descname">call</code><span class="sig-paren">(</span><em>string $command</em><span class="optional">[</span>, <em>array $params = []</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::call" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$command</strong> (<em>string</em>) – The name of another command to call.</li>
-<li><strong>$params</strong> (<em>array</em>) – Additional CLI arguments to make available to that command.</li>
+<span class="target" id="namespace-CodeIgniter\CLI"></span><dl class="php class">
+<dt class="sig sig-object php" id="CodeIgniter\CLI\BaseCommand">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CodeIgniter\CLI\</span></span><span class="sig-name descname"><span class="pre">BaseCommand</span></span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand" title="Permalink to this definition"></a></dt>
+<dd><dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\CLI\BaseCommand::call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">string</span> <span class="pre">$command</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">array</span> <span class="pre">$params</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::call" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$command</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of another command to call.</p></li>
+<li><p><strong>$params</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Additional CLI arguments to make available to that command.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>This method allows you to run other commands during the execution of your current command:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -418,20 +419,16 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\CLI\BaseCommand::showError">
-<code class="descname">showError</code><span class="sig-paren">(</span><em>Throwable $e</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::showError" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$e</strong> (<em>Throwable</em>) – The exception to use for error reporting.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\CLI\BaseCommand::showError">
+<span class="sig-name descname"><span class="pre">showError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Throwable</span> <span class="pre">$e</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::showError" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$e</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">Throwable</span></code></span>) – The exception to use for error reporting.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>A convenience method to maintain a consistent and clear error output to the CLI:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -444,27 +441,23 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\CLI\BaseCommand::showHelp">
-<code class="descname">showHelp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::showHelp" title="Permalink to this definition"></a></dt>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\CLI\BaseCommand::showHelp">
+<span class="sig-name descname"><span class="pre">showHelp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::showHelp" title="Permalink to this definition"></a></dt>
 <dd><p>A method to show command help: (usage,arguments,description,options)</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\CLI\BaseCommand::getPad">
-<code class="descname">getPad</code><span class="sig-paren">(</span><em>$array</em>, <em>$pad</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::getPad" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$array</strong> (<em>array</em>) – The  $key =&gt; $value array.</li>
-<li><strong>$pad</strong> (<em>integer</em>) – The pad spaces.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\CLI\BaseCommand::getPad">
+<span class="sig-name descname"><span class="pre">getPad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$array</span></em>, <em class="sig-param"><span class="pre">$pad</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\CLI\BaseCommand::getPad" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$array</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – The  $key =&gt; $value array.</p></li>
+<li><p><strong>$pad</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">integer</span></code></span>) – The pad spaces.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>A method to calculate padding for <code class="docutils literal notranslate"><span class="pre">$key</span> <span class="pre">=&gt;</span> <span class="pre">$value</span></code> array output. The padding can be used to output a will formatted table in CLI:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -484,8 +477,8 @@ be familiar with when creating your own commands. It also has a <a class="refere
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -499,7 +492,7 @@ be familiar with when creating your own commands. It also has a <a class="refere
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

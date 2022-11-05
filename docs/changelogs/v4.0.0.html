@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.0.0 &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Version 4.0.0 &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,10 +260,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../installation/index.html">Installation</a> &raquo;</li>
-          <li><a href="index.html">Change Logs</a> &raquo;</li>
-      <li>Version 4.0.0</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../installation/index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Change Logs</a></li>
+      <li class="breadcrumb-item active">Version 4.0.0</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,36 +272,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="version-4-0-0">
+  <section id="version-4-0-0">
 <h1>Version 4.0.0<a class="headerlink" href="#version-4-0-0" title="Permalink to this headline"></a></h1>
 <p>Release Date: February 24, 2020</p>
 <p><strong>4.0 release of CodeIgniter4</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#enhancements" id="id1">Enhancements</a></li>
-<li><a class="reference internal" href="#repo-changes" id="id2">Repo Changes</a></li>
+<li><p><a class="reference internal" href="#enhancements" id="id1">Enhancements</a></p></li>
+<li><p><a class="reference internal" href="#repo-changes" id="id2">Repo Changes</a></p></li>
 </ul>
 </div>
-<div class="section" id="enhancements">
+<section id="enhancements">
 <h2><a class="toc-backref" href="#id1">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>Updated welcome view file</li>
-<li>Debug Toolbar now supports dark mode</li>
-<li>New alpha_numeric_punct validation rule</li>
-<li>Kint was updated from the 2.x branch to the latest 3.x branch, with new config file to specify options</li>
-<li>Additional docs for getting started</li>
-<li>CLI fixed to better handle complex arguments</li>
-<li>Improvements to File class</li>
-<li>New <a class="reference internal" href="../general/common_functions.html#model" title="model"><code class="xref php php-func docutils literal notranslate"><span class="pre">model()</span></code></a> helper method for easy singleton Models.</li>
-<li>Tests completely reorganized to make app-level tests simpler out of the box.</li>
+<li><p>Updated welcome view file</p></li>
+<li><p>Debug Toolbar now supports dark mode</p></li>
+<li><p>New alpha_numeric_punct validation rule</p></li>
+<li><p>Kint was updated from the 2.x branch to the latest 3.x branch, with new config file to specify options</p></li>
+<li><p>Additional docs for getting started</p></li>
+<li><p>CLI fixed to better handle complex arguments</p></li>
+<li><p>Improvements to File class</p></li>
+<li><p>New <a class="reference internal" href="../general/common_functions.html#model" title="model"><code class="xref php php-func docutils literal notranslate"><span class="pre">model()</span></code></a> helper method for easy singleton Models.</p></li>
+<li><p>Tests completely reorganized to make app-level tests simpler out of the box.</p></li>
 </ul>
-</div>
-<div class="section" id="repo-changes">
+</section>
+<section id="repo-changes">
 <h2><a class="toc-backref" href="#id2">Repo Changes</a><a class="headerlink" href="#repo-changes" title="Permalink to this headline"></a></h2>
 <p>The devstarter repo has been deprecated.</p>
 <p>We now have an automated changelog generated in the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CHANGELOG.md">CHANGELOG.md</a> file in the main repo. See it for more details.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -311,7 +315,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

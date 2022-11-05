@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Helper &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Form Helper &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Helpers</a> &raquo;</li>
-      <li>Form Helper</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Helpers</a></li>
+      <li class="breadcrumb-item active">Form Helper</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,18 +271,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="form-helper">
+  <section id="form-helper">
 <h1>Form Helper<a class="headerlink" href="#form-helper" title="Permalink to this headline"></a></h1>
 <p>The Form Helper file contains functions that assist in working with
 forms.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#loading-this-helper" id="id1">Loading this Helper</a></li>
-<li><a class="reference internal" href="#escaping-field-values" id="id2">Escaping field values</a></li>
-<li><a class="reference internal" href="#available-functions" id="id3">Available Functions</a></li>
+<li><p><a class="reference internal" href="#loading-this-helper" id="id1">Loading this Helper</a></p></li>
+<li><p><a class="reference internal" href="#escaping-field-values" id="id2">Escaping field values</a></p></li>
+<li><p><a class="reference internal" href="#available-functions" id="id3">Available Functions</a></p></li>
 </ul>
 </div>
-<div class="section" id="loading-this-helper">
+<section id="loading-this-helper">
 <h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline"></a></h2>
 <p>This helper is loaded using the following code:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -286,8 +290,8 @@ forms.</p>
 <span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="escaping-field-values">
+</section>
+<section id="escaping-field-values">
 <h2><a class="toc-backref" href="#id2">Escaping field values</a><a class="headerlink" href="#escaping-field-values" title="Permalink to this headline"></a></h2>
 <p>You may need to use HTML and characters such as quotes within your form
 elements. In order to do that safely, you’ll need to use
@@ -310,39 +314,35 @@ characters so that it can be used safely:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you use any of the form helper functions listed on this page,
+<p class="admonition-title">Note</p>
+<p>If you use any of the form helper functions listed on this page,
 and you pass values as an associative array,
 the form values will be automatically escaped, so there is no need
 to call this function. Use it only if you are creating your own
 form elements, which you would pass as strings.</p>
 </div>
-</div>
-<div class="section" id="available-functions">
+</section>
+<section id="available-functions">
 <h2><a class="toc-backref" href="#id3">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline"></a></h2>
 <p>The following functions are available:</p>
-<dl class="function">
-<dt id="form_open">
-<code class="descname">form_open</code><span class="sig-paren">(</span><span class="optional">[</span><em>$action = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">[</span>, <em>$hidden = []</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_open" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$action</strong> (<em>string</em>) – Form action/target URI string</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) – HTML attributes, as an array or escaped string</li>
-<li><strong>$hidden</strong> (<em>array</em>) – An array of hidden fields’ definitions</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_open">
+<span class="sig-name descname"><span class="pre">form_open</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$action</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_open" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$action</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Form action/target URI string</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – HTML attributes, as an array or escaped string</p></li>
+<li><p><strong>$hidden</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An array of hidden fields’ definitions</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML form opening tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML form opening tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Creates an opening form tag with a site URL <strong>built from your</strong> <code class="docutils literal notranslate"><span class="pre">Config\App::$baseURL</span></code>.
 It will optionally let you add form attributes and hidden input fields, and
 will always add the <cite>accept-charset</cite> attribute based on the charset value in your
@@ -403,8 +403,8 @@ parameter, like this:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">To use auto-generation of CSRF field, you need to turn CSRF filter on to the form page. In most cases it is requested using the <code class="docutils literal notranslate"><span class="pre">GET</span></code> method.</p>
+<p class="admonition-title">Note</p>
+<p>To use auto-generation of CSRF field, you need to turn CSRF filter on to the form page. In most cases it is requested using the <code class="docutils literal notranslate"><span class="pre">GET</span></code> method.</p>
 </div>
 </div></blockquote>
 <p><strong>Adding Hidden Input Fields</strong></p>
@@ -427,54 +427,46 @@ third parameter, like this:</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_open_multipart">
-<code class="descname">form_open_multipart</code><span class="sig-paren">(</span><span class="optional">[</span><em>$action = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">[</span>, <em>$hidden = []</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_open_multipart" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$action</strong> (<em>string</em>) – Form action/target URI string</li>
-<li><strong>$attributes</strong> (<em>mixed</em>) – HTML attributes, as an array or escaped string</li>
-<li><strong>$hidden</strong> (<em>array</em>) – An array of hidden fields’ definitions</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_open_multipart">
+<span class="sig-name descname"><span class="pre">form_open_multipart</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$action</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_open_multipart" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$action</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Form action/target URI string</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – HTML attributes, as an array or escaped string</p></li>
+<li><p><strong>$hidden</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An array of hidden fields’ definitions</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML multipart form opening tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML multipart form opening tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function is identical to <a class="reference internal" href="#form_open" title="form_open"><code class="xref php php-func docutils literal notranslate"><span class="pre">form_open()</span></code></a> above,
 except that it adds a <em>multipart</em> attribute, which is necessary if you
 would like to use the form to upload files with.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_hidden">
-<code class="descname">form_hidden</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_hidden" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – Field name</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_hidden">
+<span class="sig-name descname"><span class="pre">form_hidden</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$name</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_hidden" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML hidden input field tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML hidden input field tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate hidden input fields. You can either submit a
 name/value string to create one field:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -539,29 +531,25 @@ name/value string to create one field:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_input">
-<code class="descname">form_input</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">[</span>, <em>$type = 'text'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_input" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Field attributes data</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
-<li><strong>$type</strong> (<em>string</em>) – The type of input field. i.e., ‘text’, ‘email’, ‘number’, etc.</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_input">
+<span class="sig-name descname"><span class="pre">form_input</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$type</span> <span class="pre">=</span> <span class="pre">'text'</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_input" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Field attributes data</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
+<li><p><strong>$type</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The type of input field. i.e., ‘text’, ‘email’, ‘number’, etc.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML text input field tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML text input field tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate a standard text input field. You can minimally pass
 the field name and value in the first and second parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -643,113 +631,97 @@ JavaScript, you can pass it as a string in the third parameter:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_password">
-<code class="descname">form_password</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_password" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Field attributes data</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_password">
+<span class="sig-name descname"><span class="pre">form_password</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_password" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Field attributes data</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML password input field tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML password input field tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function is identical in all respects to the <a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal notranslate"><span class="pre">form_input()</span></code></a>
 function above except that it uses the “password” input type.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_upload">
-<code class="descname">form_upload</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_upload" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Field attributes data</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_upload">
+<span class="sig-name descname"><span class="pre">form_upload</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_upload" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Field attributes data</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML file upload input field tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML file upload input field tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function is identical in all respects to the <a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal notranslate"><span class="pre">form_input()</span></code></a>
 function above except that it uses the “file” input type, allowing it to
 be used to upload files.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_textarea">
-<code class="descname">form_textarea</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_textarea" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Field attributes data</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_textarea">
+<span class="sig-name descname"><span class="pre">form_textarea</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_textarea" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Field attributes data</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML textarea tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML textarea tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function is identical in all respects to the <a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal notranslate"><span class="pre">form_input()</span></code></a>
 function above except that it generates a “textarea” type.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Instead of the <em>maxlength</em> and <em>size</em> attributes in the above example,
+<p class="admonition-title">Note</p>
+<p>Instead of the <em>maxlength</em> and <em>size</em> attributes in the above example,
 you will instead specify <em>rows</em> and <em>cols</em>.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_dropdown">
-<code class="descname">form_dropdown</code><span class="sig-paren">(</span><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$options = []</em><span class="optional">[</span>, <em>$selected = []</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_dropdown" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – Field name</li>
-<li><strong>$options</strong> (<em>array</em>) – An associative array of options to be listed</li>
-<li><strong>$selected</strong> (<em>array</em>) – List of fields to mark with the <em>selected</em> attribute</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_dropdown">
+<span class="sig-name descname"><span class="pre">form_dropdown</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$name</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$options</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$selected</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_dropdown" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$options</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An associative array of options to be listed</p></li>
+<li><p><strong>$selected</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – List of fields to mark with the <em>selected</em> attribute</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML dropdown select field tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML dropdown select field tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you create a standard drop-down field. The first parameter will
 contain the name of the field, the second parameter will contain an
 associative array of options, and the third parameter will contain the
@@ -814,29 +786,25 @@ parameter:</p>
 label.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_multiselect">
-<code class="descname">form_multiselect</code><span class="sig-paren">(</span><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$options = []</em><span class="optional">[</span>, <em>$selected = []</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_multiselect" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>string</em>) – Field name</li>
-<li><strong>$options</strong> (<em>array</em>) – An associative array of options to be listed</li>
-<li><strong>$selected</strong> (<em>array</em>) – List of fields to mark with the <em>selected</em> attribute</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_multiselect">
+<span class="sig-name descname"><span class="pre">form_multiselect</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$name</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$options</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$selected</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_multiselect" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$options</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An associative array of options to be listed</p></li>
+<li><p><strong>$selected</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – List of fields to mark with the <em>selected</em> attribute</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML dropdown multiselect field tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML dropdown multiselect field tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you create a standard multiselect field. The first parameter will
 contain the name of the field, the second parameter will contain an
 associative array of options, and the third parameter will contain the
@@ -846,27 +814,23 @@ except of course that the name of the field will need to use POST array
 syntax, e.g., foo[].</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_fieldset">
-<code class="descname">form_fieldset</code><span class="sig-paren">(</span><span class="optional">[</span><em>$legend_text = ''</em><span class="optional">[</span>, <em>$attributes = []</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_fieldset" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$legend_text</strong> (<em>string</em>) – Text to put in the &lt;legend&gt; tag</li>
-<li><strong>$attributes</strong> (<em>array</em>) – Attributes to be set on the &lt;fieldset&gt; tag</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_fieldset">
+<span class="sig-name descname"><span class="pre">form_fieldset</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$legend_text</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_fieldset" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$legend_text</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Text to put in the &lt;legend&gt; tag</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Attributes to be set on the &lt;fieldset&gt; tag</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML fieldset opening tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML fieldset opening tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate fieldset/legend fields.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -877,7 +841,7 @@ syntax, e.g., foo[].</p>
 
 <span class="cp">?&gt;</span>
 
-<span class="c">&lt;!-- Produces: --&gt;</span>
+<span class="cm">&lt;!-- Produces: --&gt;</span>
 <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Address Information<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>form content here<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -899,7 +863,7 @@ second parameter if you prefer to set additional attributes:</p>
 
 <span class="cp">?&gt;</span>
 
-<span class="c">&lt;!-- Produces: --&gt;</span>
+<span class="cm">&lt;!-- Produces: --&gt;</span>
 <span class="p">&lt;</span><span class="nt">fieldset</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;address_info&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;address_info&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Address Information<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>form content here<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -908,26 +872,22 @@ second parameter if you prefer to set additional attributes:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_fieldset_close">
-<code class="descname">form_fieldset_close</code><span class="sig-paren">(</span><span class="optional">[</span><em>$extra = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_fieldset_close" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$extra</strong> (<em>string</em>) – Anything to append after the closing tag, <em>as is</em></li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_fieldset_close">
+<span class="sig-name descname"><span class="pre">form_fieldset_close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_fieldset_close" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Anything to append after the closing tag, <em>as is</em></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML fieldset closing tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML fieldset closing tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Produces a closing <code class="docutils literal notranslate"><span class="pre">&lt;/fieldset&gt;</span></code> tag. The only advantage to using this
 function is it permits you to pass data to it which will be added below
 the tag. For example</p>
@@ -940,29 +900,25 @@ the tag. For example</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_checkbox">
-<code class="descname">form_checkbox</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$checked = false</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_checkbox" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Field attributes data</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
-<li><strong>$checked</strong> (<em>bool</em>) – Whether to mark the checkbox as being <em>checked</em></li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_checkbox">
+<span class="sig-name descname"><span class="pre">form_checkbox</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$checked</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_checkbox" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Field attributes data</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
+<li><p><strong>$checked</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to mark the checkbox as being <em>checked</em></p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML checkbox input tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML checkbox input tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate a checkbox field. Simple example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -1006,55 +962,47 @@ fourth parameter:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_radio">
-<code class="descname">form_radio</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$checked = false</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_radio" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>array</em>) – Field attributes data</li>
-<li><strong>$value</strong> (<em>string</em>) – Field value</li>
-<li><strong>$checked</strong> (<em>bool</em>) – Whether to mark the radio button as being <em>checked</em></li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_radio">
+<span class="sig-name descname"><span class="pre">form_radio</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$checked</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_radio" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Field attributes data</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field value</p></li>
+<li><p><strong>$checked</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to mark the radio button as being <em>checked</em></p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML radio input tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML radio input tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This function is identical in all respects to the <a class="reference internal" href="#form_checkbox" title="form_checkbox"><code class="xref php php-func docutils literal notranslate"><span class="pre">form_checkbox()</span></code></a>
 function above except that it uses the “radio” input type.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_label">
-<code class="descname">form_label</code><span class="sig-paren">(</span><span class="optional">[</span><em>$label_text = ''</em><span class="optional">[</span>, <em>$id = ''</em><span class="optional">[</span>, <em>$attributes = []</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_label" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$label_text</strong> (<em>string</em>) – Text to put in the &lt;label&gt; tag</li>
-<li><strong>$id</strong> (<em>string</em>) – ID of the form element that we’re making a label for</li>
-<li><strong>$attributes</strong> (<em>string</em>) – HTML attributes</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_label">
+<span class="sig-name descname"><span class="pre">form_label</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$label_text</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$id</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$attributes</span> <span class="pre">=</span> <span class="pre">[]</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_label" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$label_text</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Text to put in the &lt;label&gt; tag</p></li>
+<li><p><strong>$id</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – ID of the form element that we’re making a label for</p></li>
+<li><p><strong>$attributes</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – HTML attributes</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML field label tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML field label tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate a &lt;label&gt;. Simple example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -1078,28 +1026,24 @@ third parameter if you prefer to set additional attributes.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_submit">
-<code class="descname">form_submit</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_submit" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>string</em>) – Button name</li>
-<li><strong>$value</strong> (<em>string</em>) – Button value</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_submit">
+<span class="sig-name descname"><span class="pre">form_submit</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_submit" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Button name</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Button value</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML input submit tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML input submit tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate a standard submit button. Simple example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -1112,54 +1056,46 @@ first parameter if you prefer to set your own attributes. The third
 parameter lets you add extra data to your form, like JavaScript.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_reset">
-<code class="descname">form_reset</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_reset" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>string</em>) – Button name</li>
-<li><strong>$value</strong> (<em>string</em>) – Button value</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_reset">
+<span class="sig-name descname"><span class="pre">form_reset</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_reset" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Button name</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Button value</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML input reset button tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML input reset button tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate a standard reset button. Use is identical to
 <code class="xref py py-func docutils literal notranslate"><span class="pre">form_submit()</span></code>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_button">
-<code class="descname">form_button</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$content = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_button" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$data</strong> (<em>string</em>) – Button name</li>
-<li><strong>$content</strong> (<em>string</em>) – Button label</li>
-<li><strong>$extra</strong> (<em>mixed</em>) – Extra attributes to be added to the tag either as an array or a literal string</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_button">
+<span class="sig-name descname"><span class="pre">form_button</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$data</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$content</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_button" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Button name</p></li>
+<li><p><strong>$content</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Button label</p></li>
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Extra attributes to be added to the tag either as an array or a literal string</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML button tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML button tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Lets you generate a standard button element. You can minimally pass the
 button name and content in the first and second parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -1194,26 +1130,22 @@ JavaScript, you can pass it as a string in the third parameter:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="form_close">
-<code class="descname">form_close</code><span class="sig-paren">(</span><span class="optional">[</span><em>$extra = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_close" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$extra</strong> (<em>string</em>) – Anything to append after the closing tag, <em>as is</em></li>
+<dl class="php function">
+<dt class="sig sig-object php" id="form_close">
+<span class="sig-name descname"><span class="pre">form_close</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$extra</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_close" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$extra</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Anything to append after the closing tag, <em>as is</em></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An HTML form closing tag</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An HTML form closing tag</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Produces a closing <code class="docutils literal notranslate"><span class="pre">&lt;/form&gt;</span></code> tag. The only advantage to using this
 function is it permits you to pass data to it which will be added below
 the tag. For example:</p>
@@ -1226,28 +1158,24 @@ the tag. For example:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="set_value">
-<code class="descname">set_value</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$default = ''</em><span class="optional">[</span>, <em>$html_escape = true</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_value" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$field</strong> (<em>string</em>) – Field name</li>
-<li><strong>$default</strong> (<em>string</em>) – Default value</li>
-<li><strong>$html_escape</strong> (<em>bool</em>) – Whether to turn off HTML escaping of the value</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="set_value">
+<span class="sig-name descname"><span class="pre">set_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$field</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$default</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$html_escape</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_value" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$field</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$default</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Default value</p></li>
+<li><p><strong>$html_escape</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to turn off HTML escaping of the value</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Field value</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Field value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Permits you to set the value of an input form or textarea. You must
 supply the field name via the first parameter of the function. The
 second (optional) parameter allows you to set a default value for the
@@ -1261,28 +1189,24 @@ i.e., <a class="reference internal" href="#form_input" title="form_input"><code 
 <p>The above form will show “0” when loaded for the first time.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="set_select">
-<code class="descname">set_select</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_select" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$field</strong> (<em>string</em>) – Field name</li>
-<li><strong>$value</strong> (<em>string</em>) – Value to check for</li>
-<li><strong>$default</strong> (<em>string</em>) – Whether the value is also a default one</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="set_select">
+<span class="sig-name descname"><span class="pre">set_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$field</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$default</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_select" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$field</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Value to check for</p></li>
+<li><p><strong>$default</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Whether the value is also a default one</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">‘selected’ attribute or an empty string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>‘selected’ attribute or an empty string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>If you use a &lt;select&gt; menu, this function permits you to display the
 menu item that was selected.</p>
 <p>The first parameter must contain the name of the select menu, the second
@@ -1298,28 +1222,24 @@ parameter lets you set an item as the default (use boolean true/false).</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="set_checkbox">
-<code class="descname">set_checkbox</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_checkbox" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$field</strong> (<em>string</em>) – Field name</li>
-<li><strong>$value</strong> (<em>string</em>) – Value to check for</li>
-<li><strong>$default</strong> (<em>string</em>) – Whether the value is also a default one</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="set_checkbox">
+<span class="sig-name descname"><span class="pre">set_checkbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$field</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$default</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_checkbox" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$field</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Value to check for</p></li>
+<li><p><strong>$default</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Whether the value is also a default one</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">‘checked’ attribute or an empty string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>‘checked’ attribute or an empty string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Permits you to display a checkbox in the state it was submitted.</p>
 <p>The first parameter must contain the name of the checkbox, the second
 parameter must contain its value, and the third (optional) parameter
@@ -1331,28 +1251,24 @@ lets you set an item as the default (use boolean true/false).</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="set_radio">
-<code class="descname">set_radio</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = false</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_radio" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$field</strong> (<em>string</em>) – Field name</li>
-<li><strong>$value</strong> (<em>string</em>) – Value to check for</li>
-<li><strong>$default</strong> (<em>string</em>) – Whether the value is also a default one</li>
+<dl class="php function">
+<dt class="sig sig-object php" id="set_radio">
+<span class="sig-name descname"><span class="pre">set_radio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$field</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$value</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$default</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_radio" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$field</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Field name</p></li>
+<li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Value to check for</p></li>
+<li><p><strong>$default</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Whether the value is also a default one</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">‘checked’ attribute or an empty string</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>‘checked’ attribute or an empty string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>Permits you to display radio buttons in the state they were submitted.
 This function is identical to the <a class="reference internal" href="#set_checkbox" title="set_checkbox"><code class="xref php php-func docutils literal notranslate"><span class="pre">set_checkbox()</span></code></a> function above.</p>
 <p>Example:</p>
@@ -1362,8 +1278,8 @@ This function is identical to the <a class="reference internal" href="#set_check
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1377,7 +1293,7 @@ This function is identical to the <a class="reference internal" href="#set_check
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

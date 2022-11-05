@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTTP Feature Testing &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>HTTP Feature Testing &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Testing</a> &raquo;</li>
-      <li>HTTP Feature Testing</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Testing</a></li>
+      <li class="breadcrumb-item active">HTTP Feature Testing</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="http-feature-testing">
+  <section id="http-feature-testing">
 <h1>HTTP Feature Testing<a class="headerlink" href="#http-feature-testing" title="Permalink to this headline"></a></h1>
 <p>Feature testing allows you to view the results of a single call to your application. This might be returning the
 results of a single web form, hitting an API endpoint, and more. This is handy because it allows you to test the entire
@@ -275,20 +279,21 @@ life-cycle of a single request, ensuring that the routing works, the response is
 and more.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#the-test-class" id="id1">The Test Class</a></li>
-<li><a class="reference internal" href="#requesting-a-page" id="id2">Requesting A Page</a><ul>
-<li><a class="reference internal" href="#setting-different-routes" id="id3">Setting Different Routes</a></li>
-<li><a class="reference internal" href="#setting-session-values" id="id4">Setting Session Values</a></li>
-<li><a class="reference internal" href="#setting-headers" id="id5">Setting Headers</a></li>
-<li><a class="reference internal" href="#bypassing-events" id="id6">Bypassing Events</a></li>
-<li><a class="reference internal" href="#formatting-the-request" id="id7">Formatting The Request</a></li>
-<li><a class="reference internal" href="#setting-the-body" id="id8">Setting the Body</a></li>
+<li><p><a class="reference internal" href="#the-test-class" id="id1">The Test Class</a></p></li>
+<li><p><a class="reference internal" href="#requesting-a-page" id="id2">Requesting A Page</a></p>
+<ul>
+<li><p><a class="reference internal" href="#setting-different-routes" id="id3">Setting Different Routes</a></p></li>
+<li><p><a class="reference internal" href="#setting-session-values" id="id4">Setting Session Values</a></p></li>
+<li><p><a class="reference internal" href="#setting-headers" id="id5">Setting Headers</a></p></li>
+<li><p><a class="reference internal" href="#bypassing-events" id="id6">Bypassing Events</a></p></li>
+<li><p><a class="reference internal" href="#formatting-the-request" id="id7">Formatting The Request</a></p></li>
+<li><p><a class="reference internal" href="#setting-the-body" id="id8">Setting the Body</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#checking-the-response" id="id9">Checking the Response</a></li>
+<li><p><a class="reference internal" href="#checking-the-response" id="id9">Checking the Response</a></p></li>
 </ul>
 </div>
-<div class="section" id="the-test-class">
+<section id="the-test-class">
 <h2><a class="toc-backref" href="#id1">The Test Class</a><a class="headerlink" href="#the-test-class" title="Permalink to this headline"></a></h2>
 <p>Feature testing requires that all of your test classes use the <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\DatabaseTestTrait</span></code>
 and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\FeatureTestTrait</span></code> traits. Since these testing tools rely on proper database
@@ -322,8 +327,8 @@ are called if you implement your own methods.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="requesting-a-page">
+</section>
+<section id="requesting-a-page">
 <h2><a class="toc-backref" href="#id2">Requesting A Page</a><a class="headerlink" href="#requesting-a-page" title="Permalink to this headline"></a></h2>
 <p>Essentially, feature tests simply allows you to call an endpoint on your application and get the results back.
 to do this, you use the <code class="docutils literal notranslate"><span class="pre">call()</span></code> method. The first parameter is the HTTP method to use (most frequently either GET or POST).
@@ -354,10 +359,10 @@ populated, while a <strong>post</strong> request would have the <strong>$_POST</
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">$params</span></code> array does not make sense for every HTTP verb, but is included for consistency.</p>
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">$params</span></code> array does not make sense for every HTTP verb, but is included for consistency.</p>
 </div>
-<div class="section" id="setting-different-routes">
+<section id="setting-different-routes">
 <h3><a class="toc-backref" href="#id3">Setting Different Routes</a><a class="headerlink" href="#setting-different-routes" title="Permalink to this headline"></a></h3>
 <p>You can use a custom collection of routes by passing an array of “routes” into the <code class="docutils literal notranslate"><span class="pre">withRoutes()</span></code> method. This will
 override any existing routes in the system:</p>
@@ -372,8 +377,8 @@ override any existing routes in the system:</p>
 </div>
 <p>Each of the “routes” is a 3 element array containing the HTTP verb (or “add” for all),
 the URI to match, and the routing destination.</p>
-</div>
-<div class="section" id="setting-session-values">
+</section>
+<section id="setting-session-values">
 <h3><a class="toc-backref" href="#id4">Setting Session Values</a><a class="headerlink" href="#setting-session-values" title="Permalink to this headline"></a></h3>
 <p>You can set custom session values to use during a single test with the <code class="docutils literal notranslate"><span class="pre">withSession()</span></code> method. This takes an array
 of key/value pairs that should exist within the <code class="docutils literal notranslate"><span class="pre">$_SESSION</span></code> variable when this request is made, or <code class="docutils literal notranslate"><span class="pre">null</span></code> to indicate
@@ -393,8 +398,8 @@ that the current values of <code class="docutils literal notranslate"><span clas
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">withSession</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-headers">
+</section>
+<section id="setting-headers">
 <h3><a class="toc-backref" href="#id5">Setting Headers</a><a class="headerlink" href="#setting-headers" title="Permalink to this headline"></a></h3>
 <p>You can set header values with the <code class="docutils literal notranslate"><span class="pre">withHeaders()</span></code> method. This takes an array of key/value pairs that would be
 passed as a header into the call:</p>
@@ -407,8 +412,8 @@ passed as a header into the call:</p>
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">withHeaders</span><span class="p">(</span><span class="nv">$headers</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="bypassing-events">
+</section>
+<section id="bypassing-events">
 <h3><a class="toc-backref" href="#id6">Bypassing Events</a><a class="headerlink" href="#bypassing-events" title="Permalink to this headline"></a></h3>
 <p>Events are handy to use in your application, but can be problematic during testing. Especially events that are used
 to send out emails. You can tell the system to skip any event handling with the <code class="docutils literal notranslate"><span class="pre">skipEvents()</span></code> method:</p>
@@ -417,8 +422,8 @@ to send out emails. You can tell the system to skip any event handling with the 
 <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">skipEvents</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nv">$userInfo</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="formatting-the-request">
+</section>
+<section id="formatting-the-request">
 <h3><a class="toc-backref" href="#id7">Formatting The Request</a><a class="headerlink" href="#formatting-the-request" title="Permalink to this headline"></a></h3>
 <p>You can set the format of your request’s body using the <code class="docutils literal notranslate"><span class="pre">withBodyFormat()</span></code> method. Currently this supports either
 <cite>json</cite> or <cite>xml</cite>. This will take the parameters passed into <code class="docutils literal notranslate"><span class="pre">call()</span></code>, <code class="docutils literal notranslate"><span class="pre">post()</span></code>, <code class="docutils literal notranslate"><span class="pre">get()</span></code>… and assign them to the
@@ -433,20 +438,20 @@ This is useful when testing JSON or XML APIs so that you can set the request in 
 <span class="nv">$userInfo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getJson</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-the-body">
+</section>
+<section id="setting-the-body">
 <h3><a class="toc-backref" href="#id8">Setting the Body</a><a class="headerlink" href="#setting-the-body" title="Permalink to this headline"></a></h3>
 <p>You can set the body of your request with the <code class="docutils literal notranslate"><span class="pre">withBody()</span></code> method. This allows you to format the body how you want
 to format it. It is recommended that you use this if you have more complicated XMLs to test. This will also not set
 the Content-Type header for you so if you need that, you can set it with the <code class="docutils literal notranslate"><span class="pre">withHeaders()</span></code> method.</p>
-</div>
-</div>
-<div class="section" id="checking-the-response">
+</section>
+</section>
+<section id="checking-the-response">
 <h2><a class="toc-backref" href="#id9">Checking the Response</a><a class="headerlink" href="#checking-the-response" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">FeatureTestTrait::call()</span></code> returns an instance of a <code class="docutils literal notranslate"><span class="pre">TestResponse</span></code>. See <a class="reference internal" href="response.html"><span class="doc">Testing Responses</span></a> on
 how to use this class to perform additional assertions and verification in your test cases.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -460,7 +465,7 @@ how to use this class to perform additional assertions and verification in your 
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

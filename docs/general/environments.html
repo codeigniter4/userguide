@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Handling Multiple Environments &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Handling Multiple Environments &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">General Topics</a> &raquo;</li>
-      <li>Handling Multiple Environments</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">General Topics</a></li>
+      <li class="breadcrumb-item active">Handling Multiple Environments</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="handling-multiple-environments">
+  <section id="handling-multiple-environments">
 <h1>Handling Multiple Environments<a class="headerlink" href="#handling-multiple-environments" title="Permalink to this headline"></a></h1>
 <p>Developers often desire different system behavior depending on whether
 an application is running in a development or production environment.
@@ -277,76 +281,78 @@ when “live”. In development environments, you might want additional
 tools loaded that you don’t in production environments, etc.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#the-environment-constant" id="id1">The ENVIRONMENT Constant</a><ul>
-<li><a class="reference internal" href="#env" id="id2">.env</a></li>
-<li><a class="reference internal" href="#apache" id="id3">Apache</a></li>
-<li><a class="reference internal" href="#nginx" id="id4">nginx</a></li>
-<li><a class="reference internal" href="#boot-files" id="id5">Boot Files</a></li>
+<li><p><a class="reference internal" href="#the-environment-constant" id="id1">The ENVIRONMENT Constant</a></p>
+<ul>
+<li><p><a class="reference internal" href="#env" id="id2">.env</a></p></li>
+<li><p><a class="reference internal" href="#apache" id="id3">Apache</a></p></li>
+<li><p><a class="reference internal" href="#nginx" id="id4">nginx</a></p></li>
+<li><p><a class="reference internal" href="#boot-files" id="id5">Boot Files</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#effects-on-default-framework-behavior" id="id6">Effects On Default Framework Behavior</a><ul>
-<li><a class="reference internal" href="#error-reporting" id="id7">Error Reporting</a></li>
+<li><p><a class="reference internal" href="#effects-on-default-framework-behavior" id="id6">Effects On Default Framework Behavior</a></p>
+<ul>
+<li><p><a class="reference internal" href="#error-reporting" id="id7">Error Reporting</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="the-environment-constant">
+<section id="the-environment-constant">
 <span id="environment-constant"></span><h2><a class="toc-backref" href="#id1">The ENVIRONMENT Constant</a><a class="headerlink" href="#the-environment-constant" title="Permalink to this headline"></a></h2>
 <p>By default, CodeIgniter comes with the <code class="docutils literal notranslate"><span class="pre">ENVIRONMENT</span></code> constant set to use
 the value provided in <code class="docutils literal notranslate"><span class="pre">$_SERVER['CI_ENVIRONMENT']</span></code>, otherwise defaulting to
 <code class="docutils literal notranslate"><span class="pre">production</span></code>. This can be set in several ways depending on your server setup.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The environment <code class="docutils literal notranslate"><span class="pre">testing</span></code> is the special one for PHPUnit testing.
+<p class="admonition-title">Note</p>
+<p>The environment <code class="docutils literal notranslate"><span class="pre">testing</span></code> is the special one for PHPUnit testing.
 It has special conditions built into the framework at various places to assist with that.
 You can’t use it for your development.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>You can check the current environment by <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">env</span></code> command:</p>
-<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">env</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">env</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="env">
+<section id="env">
 <h3><a class="toc-backref" href="#id2">.env</a><a class="headerlink" href="#env" title="Permalink to this headline"></a></h3>
 <p>The simplest method to set the variable is in your <a class="reference internal" href="configuration.html"><span class="doc">.env file</span></a>.</p>
-<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">CI_ENVIRONMENT</span> <span class="o">=</span> <span class="s">development</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">CI_ENVIRONMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">development</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>You can change the <code class="docutils literal notranslate"><span class="pre">CI_ENVIRONMENT</span></code> value in <strong>.env</strong> file by <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">env</span></code> command:</p>
-<div class="last highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">env</span> <span class="nx">production</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">env</span> <span class="nx">production</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="apache">
+</section>
+<section id="apache">
 <span id="environment-apache"></span><h3><a class="toc-backref" href="#id3">Apache</a><a class="headerlink" href="#apache" title="Permalink to this headline"></a></h3>
 <p>This server variable can be set in your <code class="docutils literal notranslate"><span class="pre">.htaccess</span></code> file or Apache
 config using <a class="reference external" href="https://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv">SetEnv</a>.</p>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">SetEnv</span> CI_ENVIRONMENT development
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">SetEnv</span><span class="w"> </span>CI_ENVIRONMENT<span class="w"> </span>development<span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="nginx">
+</section>
+<section id="nginx">
 <span id="environment-nginx"></span><h3><a class="toc-backref" href="#id4">nginx</a><a class="headerlink" href="#nginx" title="Permalink to this headline"></a></h3>
 <p>Under nginx, you must pass the environment variable through the <code class="docutils literal notranslate"><span class="pre">fastcgi_params</span></code>
 in order for it to show up under the <cite>$_SERVER</cite> variable. This allows it to work on the
 virtual-host level, instead of using <cite>env</cite> to set it for the entire server, though that
 would work fine on a dedicated server. You would then modify your server config to something
 like:</p>
-<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
-    <span class="kn">server_name</span> <span class="s">localhost</span><span class="p">;</span>
-    <span class="kn">include</span>     <span class="s">conf/defaults.conf</span><span class="p">;</span>
-    <span class="kn">root</span>        <span class="s">/var/www</span><span class="p">;</span>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">localhost</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">include</span><span class="w">     </span><span class="s">conf/defaults.conf</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kn">root</span><span class="w">        </span><span class="s">/var/www</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kn">location</span>    <span class="p">~</span><span class="sr">*</span> <span class="s">\.php</span>$ <span class="p">{</span>
-        <span class="kn">fastcgi_param</span> <span class="s">CI_ENVIRONMENT</span> <span class="s">&quot;production&quot;</span><span class="p">;</span>
-        <span class="kn">include</span> <span class="s">conf/fastcgi-php.conf</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kn">location</span><span class="w">    </span><span class="p">~</span><span class="sr">*</span><span class="w"> </span><span class="s">\.php</span>$<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kn">fastcgi_param</span><span class="w"> </span><span class="s">CI_ENVIRONMENT</span><span class="w"> </span><span class="s">&quot;production&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kn">include</span><span class="w"> </span><span class="s">conf/fastcgi-php.conf</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Alternative methods are available for nginx and other servers, or you can
@@ -355,8 +361,8 @@ remove this logic entirely and set the constant based on the server’s IP addre
 <p>In addition to affecting some basic framework behavior (see the next
 section), you may use this constant in your own development to
 differentiate between which environment you are running in.</p>
-</div>
-<div class="section" id="boot-files">
+</section>
+<section id="boot-files">
 <h3><a class="toc-backref" href="#id5">Boot Files</a><a class="headerlink" href="#boot-files" title="Permalink to this headline"></a></h3>
 <p>CodeIgniter requires that a PHP script matching the environment’s name is located
 under <strong>APPPATH/Config/Boot</strong>. These files can contain any customizations that
@@ -365,27 +371,27 @@ settings, loading additional developer tools, or anything else. These are
 automatically loaded by the system. The following files are already created in
 a fresh install:</p>
 <ul class="simple">
-<li>development.php</li>
-<li>production.php</li>
-<li>testing.php</li>
+<li><p>development.php</p></li>
+<li><p>production.php</p></li>
+<li><p>testing.php</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="effects-on-default-framework-behavior">
+</section>
+</section>
+<section id="effects-on-default-framework-behavior">
 <h2><a class="toc-backref" href="#id6">Effects On Default Framework Behavior</a><a class="headerlink" href="#effects-on-default-framework-behavior" title="Permalink to this headline"></a></h2>
 <p>There are some places in the CodeIgniter system where the ENVIRONMENT
 constant is used. This section describes how default framework behavior
 is affected.</p>
-<div class="section" id="error-reporting">
+<section id="error-reporting">
 <h3><a class="toc-backref" href="#id7">Error Reporting</a><a class="headerlink" href="#error-reporting" title="Permalink to this headline"></a></h3>
 <p>Setting the ENVIRONMENT constant to a value of <code class="docutils literal notranslate"><span class="pre">development</span></code> will cause
 all PHP errors to be rendered to the browser when they occur.
 Conversely, setting the constant to <code class="docutils literal notranslate"><span class="pre">production</span></code> will disable all error
 output. Disabling error reporting in production is a
 <a class="reference internal" href="../concepts/security.html"><span class="doc">good security practice</span></a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -399,7 +405,7 @@ output. Disabling error reporting in production is a
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

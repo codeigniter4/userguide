@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Your First Application &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Build Your First Application &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,8 +260,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Build Your First Application</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Build Your First Application</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -266,9 +270,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="build-your-first-application">
+  <section id="build-your-first-application">
 <h1>Build Your First Application<a class="headerlink" href="#build-your-first-application" title="Permalink to this headline"></a></h1>
-<div class="section" id="overview">
+<section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>This tutorial is intended to introduce you to the CodeIgniter4 framework
 and the basic principles of MVC architecture. It will show you how a
@@ -281,33 +285,33 @@ will create a news section that reads news items from a database.
 Finally, you’ll add a form to create news items in the database.</p>
 <p>This tutorial will primarily focus on:</p>
 <ul class="simple">
-<li>Model-View-Controller basics</li>
-<li>Routing basics</li>
-<li>Form validation</li>
-<li>Performing basic database queries using CodeIgniter’s Model</li>
+<li><p>Model-View-Controller basics</p></li>
+<li><p>Routing basics</p></li>
+<li><p>Form validation</p></li>
+<li><p>Performing basic database queries using CodeIgniter’s Model</p></li>
 </ul>
 <p>The entire tutorial is split up over several pages, each explaining a
 small part of the functionality of the CodeIgniter framework. You’ll go
 through the following pages:</p>
 <ul class="simple">
-<li>Introduction, this page, which gives you an overview of what to
-expect and gets your default application downloaded and running.</li>
-<li><a class="reference internal" href="static_pages.html"><span class="doc">Static pages</span></a>, which will teach you the basics
-of controllers, views and routing.</li>
-<li><a class="reference internal" href="news_section.html"><span class="doc">News section</span></a>, where you’ll start using models
-and will be doing some basic database operations.</li>
-<li><a class="reference internal" href="create_news_items.html"><span class="doc">Create news items</span></a>, which will introduce
-more advanced database operations and form validation.</li>
-<li><a class="reference internal" href="conclusion.html"><span class="doc">Conclusion</span></a>, which will give you some pointers on
-further reading and other resources.</li>
+<li><p>Introduction, this page, which gives you an overview of what to
+expect and gets your default application downloaded and running.</p></li>
+<li><p><a class="reference internal" href="static_pages.html"><span class="doc">Static pages</span></a>, which will teach you the basics
+of controllers, views and routing.</p></li>
+<li><p><a class="reference internal" href="news_section.html"><span class="doc">News section</span></a>, where you’ll start using models
+and will be doing some basic database operations.</p></li>
+<li><p><a class="reference internal" href="create_news_items.html"><span class="doc">Create news items</span></a>, which will introduce
+more advanced database operations and form validation.</p></li>
+<li><p><a class="reference internal" href="conclusion.html"><span class="doc">Conclusion</span></a>, which will give you some pointers on
+further reading and other resources.</p></li>
 </ul>
 <p>Enjoy your exploration of the CodeIgniter framework.</p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="section" id="getting-up-and-running">
+</section>
+<section id="getting-up-and-running">
 <h2>Getting Up and Running<a class="headerlink" href="#getting-up-and-running" title="Permalink to this headline"></a></h2>
-<div class="section" id="installing-codeigniter">
+<section id="installing-codeigniter">
 <h3>Installing CodeIgniter<a class="headerlink" href="#installing-codeigniter" title="Permalink to this headline"></a></h3>
 <p>You can download a release manually from the site, but for this tutorial we will
 use the recommended way and install the AppStarter package through Composer.
@@ -317,8 +321,8 @@ From your command line type the following:</p>
 </div>
 <p>This creates a new folder, <strong>ci-news</strong>, which contains your application code, with
 CodeIgniter installed in the vendor folder.</p>
-</div>
-<div class="section" id="setting-development-mode">
+</section>
+<section id="setting-development-mode">
 <span id="id1"></span><h3>Setting Development Mode<a class="headerlink" href="#setting-development-mode" title="Permalink to this headline"></a></h3>
 <p>By default, CodeIgniter starts up in production mode. This is a safety feature
 to keep your site a bit more secure in case settings are messed up once it is live.
@@ -331,8 +335,8 @@ out. So uncomment the line with <code class="docutils literal notranslate"><span
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">CI_ENVIRONMENT</span> <span class="o">=</span> <span class="nx">development</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-development-server">
+</section>
+<section id="running-development-server">
 <h3>Running Development Server<a class="headerlink" href="#running-development-server" title="Permalink to this headline"></a></h3>
 <p>With that out of the way it’s time to view your application in a browser. You can
 serve it through any server of your choice, Apache, Nginx, etc, but CodeIgniter
@@ -342,9 +346,9 @@ command line from the root of your project:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">serve</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="the-welcome-page">
+</section>
+</section>
+<section id="the-welcome-page">
 <h2>The Welcome Page<a class="headerlink" href="#the-welcome-page" title="Permalink to this headline"></a></h2>
 <p>Now point your browser to the correct URL you will be greeted by a welcome screen.
 Try it now by heading to the following URL:</p>
@@ -352,10 +356,10 @@ Try it now by heading to the following URL:</p>
 </pre></div>
 </div>
 <p>and you should be greeted by the following page:</p>
-<img alt="../_images/welcome1.png" src="../_images/welcome1.png" />
+<img alt="../_images/welcome.png" src="../_images/welcome.png" />
 <p>This means that your application works and you can start making changes to it.</p>
-</div>
-<div class="section" id="debugging">
+</section>
+<section id="debugging">
 <h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline"></a></h2>
 <p>Now that you’re in development mode, you’ll see a toolbar on the bottom of your application.
 This toolbar contains a number of helpful items that you can reference during development.
@@ -370,16 +374,16 @@ greeted by a screen looking something like this:</p>
 <img alt="../_images/error.png" src="../_images/error.png" />
 <p>There are a couple of things to note here:</p>
 <ol class="arabic simple">
-<li>Hovering over the red header at the top reveals a <code class="docutils literal notranslate"><span class="pre">search</span></code> link that will open up
-DuckDuckGo.com in a new tab and searching for the exception.</li>
-<li>Clicking the <code class="docutils literal notranslate"><span class="pre">arguments</span></code> link on any line in the Backtrace will expand a list of
-the arguments that were passed into that function call.</li>
+<li><p>Hovering over the red header at the top reveals a <code class="docutils literal notranslate"><span class="pre">search</span></code> link that will open up
+DuckDuckGo.com in a new tab and searching for the exception.</p></li>
+<li><p>Clicking the <code class="docutils literal notranslate"><span class="pre">arguments</span></code> link on any line in the Backtrace will expand a list of
+the arguments that were passed into that function call.</p></li>
 </ol>
 <p>Everything else should be clear when you see it.</p>
 <p>Now that we know how to get started and how to debug a little, let’s get started building this
 small news application.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -393,7 +397,7 @@ small news application.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

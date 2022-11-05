@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.0.3 &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Version 4.0.3 &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,10 +260,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../installation/index.html">Installation</a> &raquo;</li>
-          <li><a href="index.html">Change Logs</a> &raquo;</li>
-      <li>Version 4.0.3</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../installation/index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Change Logs</a></li>
+      <li class="breadcrumb-item active">Version 4.0.3</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,41 +272,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="version-4-0-3">
+  <section id="version-4-0-3">
 <h1>Version 4.0.3<a class="headerlink" href="#version-4-0-3" title="Permalink to this headline"></a></h1>
 <p>Release Date: May 1, 2020</p>
 <p><strong>4.0.3 release of CodeIgniter4</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#enhancements" id="id1">Enhancements</a></li>
-<li><a class="reference internal" href="#bugs-fixed" id="id2">Bugs Fixed</a></li>
+<li><p><a class="reference internal" href="#enhancements" id="id1">Enhancements</a></p></li>
+<li><p><a class="reference internal" href="#bugs-fixed" id="id2">Bugs Fixed</a></p></li>
 </ul>
 </div>
 <p>Thanks to the community, there have been 74 bugs closed, 21 issues closed, and 88 merged pull requests. These are all
 listed in the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CHANGELOG.md">CHANGELOG.md</a>. This is a small
 representation of some of the bigger changes you should know about.</p>
-<div class="section" id="enhancements">
+<section id="enhancements">
 <h2><a class="toc-backref" href="#id1">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>The API Response Trait now only determines the final formatting (json/xml) through content negotiation when the controller’s <code class="docutils literal notranslate"><span class="pre">$format</span></code> variable is <code class="docutils literal notranslate"><span class="pre">null</span></code>. If it contains either <code class="docutils literal notranslate"><span class="pre">json</span></code> or <code class="docutils literal notranslate"><span class="pre">xml</span></code>, then that format will always be returned.</li>
-<li>Pagination now can actually create next page and previous page links, instead of next/previous groups of links.</li>
-<li>Windows users wanting to build their own copy of the user guide locally can now use the included <code class="docutils literal notranslate"><span class="pre">make.bat</span></code> file.</li>
-<li>Locale matching in the IncomingRequest class now works to match broad groups, like <code class="docutils literal notranslate"><span class="pre">fr</span></code> even when the browser only supplies a more specific locale code, like <code class="docutils literal notranslate"><span class="pre">fr-FR</span></code>.</li>
-<li>Added the ability to have nested language defintions.</li>
-<li>add ability to replace {locale} to request-&gt;getLocale() in form_open(‘action’)</li>
-<li>tables generated by CLI commands can now be colored.</li>
+<li><p>The API Response Trait now only determines the final formatting (json/xml) through content negotiation when the controller’s <code class="docutils literal notranslate"><span class="pre">$format</span></code> variable is <code class="docutils literal notranslate"><span class="pre">null</span></code>. If it contains either <code class="docutils literal notranslate"><span class="pre">json</span></code> or <code class="docutils literal notranslate"><span class="pre">xml</span></code>, then that format will always be returned.</p></li>
+<li><p>Pagination now can actually create next page and previous page links, instead of next/previous groups of links.</p></li>
+<li><p>Windows users wanting to build their own copy of the user guide locally can now use the included <code class="docutils literal notranslate"><span class="pre">make.bat</span></code> file.</p></li>
+<li><p>Locale matching in the IncomingRequest class now works to match broad groups, like <code class="docutils literal notranslate"><span class="pre">fr</span></code> even when the browser only supplies a more specific locale code, like <code class="docutils literal notranslate"><span class="pre">fr-FR</span></code>.</p></li>
+<li><p>Added the ability to have nested language defintions.</p></li>
+<li><p>add ability to replace {locale} to request-&gt;getLocale() in form_open(‘action’)</p></li>
+<li><p>tables generated by CLI commands can now be colored.</p></li>
 </ul>
-</div>
-<div class="section" id="bugs-fixed">
+</section>
+<section id="bugs-fixed">
 <h2><a class="toc-backref" href="#id2">Bugs Fixed</a><a class="headerlink" href="#bugs-fixed" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>Deleting through the Model on a table with string primary key now works.</li>
-<li>Default pagination templates fixed to use the correct locale.</li>
-<li>Lots of tweaks and corrections in the user guide.</li>
-<li>Fixed locating files in custom namespaces that were occassionally not found. Primarily affected console commands.</li>
+<li><p>Deleting through the Model on a table with string primary key now works.</p></li>
+<li><p>Default pagination templates fixed to use the correct locale.</p></li>
+<li><p>Lots of tweaks and corrections in the user guide.</p></li>
+<li><p>Fixed locating files in custom namespaces that were occassionally not found. Primarily affected console commands.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -316,7 +320,7 @@ representation of some of the bigger changes you should know about.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

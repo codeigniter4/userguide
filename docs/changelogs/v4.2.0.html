@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.2.0 &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Version 4.2.0 &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,10 +260,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../installation/index.html">Installation</a> &raquo;</li>
-          <li><a href="index.html">Change Logs</a> &raquo;</li>
-      <li>Version 4.2.0</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../installation/index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Change Logs</a></li>
+      <li class="breadcrumb-item active">Version 4.2.0</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,218 +272,207 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="version-4-2-0">
+  <section id="version-4-2-0">
 <h1>Version 4.2.0<a class="headerlink" href="#version-4-2-0" title="Permalink to this headline"></a></h1>
 <p>Release Date: June 3, 2022</p>
 <p><strong>4.2.0 release of CodeIgniter4</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#highlights" id="id12">Highlights</a><ul>
-<li><a class="reference internal" href="#new-contributors" id="id13">New Contributors</a></li>
+<li><p><a class="reference internal" href="#highlights" id="id12">Highlights</a></p>
+<ul>
+<li><p><a class="reference internal" href="#new-contributors" id="id13">New Contributors</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#breaking" id="id14">BREAKING</a><ul>
-<li><a class="reference internal" href="#method-signature-changes" id="id15">Method Signature Changes</a></li>
-<li><a class="reference internal" href="#behavior-changes" id="id16">Behavior Changes</a></li>
+<li><p><a class="reference internal" href="#breaking" id="id14">BREAKING</a></p>
+<ul>
+<li><p><a class="reference internal" href="#method-signature-changes" id="id15">Method Signature Changes</a></p></li>
+<li><p><a class="reference internal" href="#behavior-changes" id="id16">Behavior Changes</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#enhancements" id="id17">Enhancements</a><ul>
-<li><a class="reference internal" href="#new-improved-auto-routing" id="id18">New Improved Auto Routing</a></li>
-<li><a class="reference internal" href="#database" id="id19">Database</a></li>
-<li><a class="reference internal" href="#helpers-and-functions" id="id20">Helpers and Functions</a></li>
-<li><a class="reference internal" href="#commands" id="id21">Commands</a></li>
-<li><a class="reference internal" href="#others" id="id22">Others</a></li>
+<li><p><a class="reference internal" href="#enhancements" id="id17">Enhancements</a></p>
+<ul>
+<li><p><a class="reference internal" href="#new-improved-auto-routing" id="id18">New Improved Auto Routing</a></p></li>
+<li><p><a class="reference internal" href="#database" id="id19">Database</a></p></li>
+<li><p><a class="reference internal" href="#helpers-and-functions" id="id20">Helpers and Functions</a></p></li>
+<li><p><a class="reference internal" href="#commands" id="id21">Commands</a></p></li>
+<li><p><a class="reference internal" href="#others" id="id22">Others</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#changes" id="id23">Changes</a></li>
-<li><a class="reference internal" href="#deprecations" id="id24">Deprecations</a></li>
-<li><a class="reference internal" href="#bugs-fixed" id="id25">Bugs Fixed</a></li>
+<li><p><a class="reference internal" href="#changes" id="id23">Changes</a></p></li>
+<li><p><a class="reference internal" href="#deprecations" id="id24">Deprecations</a></p></li>
+<li><p><a class="reference internal" href="#bugs-fixed" id="id25">Bugs Fixed</a></p></li>
 </ul>
 </div>
-<div class="section" id="highlights">
+<section id="highlights">
 <h2><a class="toc-backref" href="#id12">Highlights</a><a class="headerlink" href="#highlights" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>Update minimal PHP requirement to 7.4.</li>
-<li>To make the default configuration more secure, auto-routing has been changed to disabled by default.</li>
-<li><strong>OCI8 Driver for Oracle Database</strong> (<em>contributed by</em> <a class="reference external" href="https://github.com/ytetsuro">ytetsuro</a>). See <a class="reference internal" href="#database">Database</a>.</li>
-<li><strong>Improved Auto Routing</strong> (opt-in) (<em>contributed by</em> <a class="reference external" href="https://github.com/kenjis">kenjis</a>). See <a class="reference internal" href="#new-improved-auto-routing">New Improved Auto Routing</a>.</li>
-<li>Query Builder <strong>Subqueries</strong> and <strong>UNION</strong> support (<em>contributed by</em> <a class="reference external" href="https://github.com/iRedds">Andrey Pyzhikov</a>). See <a class="reference internal" href="#database">Database</a>.</li>
+<li><p>Update minimal PHP requirement to 7.4.</p></li>
+<li><p>To make the default configuration more secure, auto-routing has been changed to disabled by default.</p></li>
+<li><p><strong>OCI8 Driver for Oracle Database</strong> (<em>contributed by</em> <a class="reference external" href="https://github.com/ytetsuro">ytetsuro</a>). See <a class="reference internal" href="#database">Database</a>.</p></li>
+<li><p><strong>Improved Auto Routing</strong> (opt-in) (<em>contributed by</em> <a class="reference external" href="https://github.com/kenjis">kenjis</a>). See <a class="reference internal" href="#new-improved-auto-routing">New Improved Auto Routing</a>.</p></li>
+<li><p>Query Builder <strong>Subqueries</strong> and <strong>UNION</strong> support (<em>contributed by</em> <a class="reference external" href="https://github.com/iRedds">Andrey Pyzhikov</a>). See <a class="reference internal" href="#database">Database</a>.</p></li>
 </ul>
-<div class="section" id="new-contributors">
+<section id="new-contributors">
 <h3><a class="toc-backref" href="#id13">New Contributors</a><a class="headerlink" href="#new-contributors" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/fdomgjoni99">&#64;fdomgjoni99</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5608">#5608</a></li>
-<li><a class="reference external" href="https://github.com/Nudasoft">&#64;Nudasoft</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5715">#5715</a></li>
-<li><a class="reference external" href="https://github.com/beganovich">&#64;beganovich</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5823">#5823</a></li>
-<li><a class="reference external" href="https://github.com/tcgumus">&#64;tcgumus</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5851">#5851</a></li>
-<li><a class="reference external" href="https://github.com/michaelrk02">&#64;michaelrk02</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5878">#5878</a></li>
-<li><a class="reference external" href="https://github.com/datamweb">&#64;datamweb</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5894">#5894</a></li>
-<li><a class="reference external" href="https://github.com/xlii-chl">&#64;xlii-chl</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5884">#5884</a></li>
-<li><a class="reference external" href="https://github.com/valmorflores">&#64;valmorflores</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/6051">#6051</a></li>
-<li><a class="reference external" href="https://github.com/tearoom6">&#64;tearoom6</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/6012">#6012</a></li>
-<li><a class="reference external" href="https://github.com/lonnie-vault">&#64;lonnie-vault</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/6060">#6060</a></li>
+<li><p><a class="reference external" href="https://github.com/fdomgjoni99">&#64;fdomgjoni99</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5608">#5608</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Nudasoft">&#64;Nudasoft</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5715">#5715</a></p></li>
+<li><p><a class="reference external" href="https://github.com/beganovich">&#64;beganovich</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5823">#5823</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tcgumus">&#64;tcgumus</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5851">#5851</a></p></li>
+<li><p><a class="reference external" href="https://github.com/michaelrk02">&#64;michaelrk02</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5878">#5878</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datamweb">&#64;datamweb</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5894">#5894</a></p></li>
+<li><p><a class="reference external" href="https://github.com/xlii-chl">&#64;xlii-chl</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/5884">#5884</a></p></li>
+<li><p><a class="reference external" href="https://github.com/valmorflores">&#64;valmorflores</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/6051">#6051</a></p></li>
+<li><p><a class="reference external" href="https://github.com/tearoom6">&#64;tearoom6</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/6012">#6012</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lonnie-vault">&#64;lonnie-vault</a> made their first contribution in <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/pull/6060">#6060</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="breaking">
+</section>
+</section>
+<section id="breaking">
 <h2><a class="toc-backref" href="#id14">BREAKING</a><a class="headerlink" href="#breaking" title="Permalink to this headline"></a></h2>
-<div class="section" id="method-signature-changes">
+<section id="method-signature-changes">
 <h3><a class="toc-backref" href="#id15">Method Signature Changes</a><a class="headerlink" href="#method-signature-changes" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li>The method signature of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\BaseBuilder::join()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\*\Builder::join()</span></code> have been changed.</li>
-<li>The method signature of <code class="docutils literal notranslate"><span class="pre">Validation::setRule()</span></code> has been changed. The <code class="docutils literal notranslate"><span class="pre">string</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$rules</span></code> parameter was removed. Extending classes should likewise remove the parameter so as not to break LSP.</li>
-<li>The method signature of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CLI\CommandRunner::_remap()</span></code> has been changed to fix a bug.</li>
-<li>The default parameter values for <code class="docutils literal notranslate"><span class="pre">Service::reset()</span></code> and <code class="docutils literal notranslate"><span class="pre">CIUnitTestCase::resetServices()</span></code> have been changed from <code class="docutils literal notranslate"><span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code>. This is to eliminate unexpected problems during testing, such as <code class="docutils literal notranslate"><span class="pre">lang()</span></code> not getting translated messages.</li>
+<li><p>The method signature of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\BaseBuilder::join()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\*\Builder::join()</span></code> have been changed.</p></li>
+<li><p>The method signature of <code class="docutils literal notranslate"><span class="pre">Validation::setRule()</span></code> has been changed. The <code class="docutils literal notranslate"><span class="pre">string</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$rules</span></code> parameter was removed. Extending classes should likewise remove the parameter so as not to break LSP.</p></li>
+<li><p>The method signature of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CLI\CommandRunner::_remap()</span></code> has been changed to fix a bug.</p></li>
+<li><p>The default parameter values for <code class="docutils literal notranslate"><span class="pre">Service::reset()</span></code> and <code class="docutils literal notranslate"><span class="pre">CIUnitTestCase::resetServices()</span></code> have been changed from <code class="docutils literal notranslate"><span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code>. This is to eliminate unexpected problems during testing, such as <code class="docutils literal notranslate"><span class="pre">lang()</span></code> not getting translated messages.</p></li>
 </ul>
-</div>
-<div class="section" id="behavior-changes">
+</section>
+<section id="behavior-changes">
 <h3><a class="toc-backref" href="#id16">Behavior Changes</a><a class="headerlink" href="#behavior-changes" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>The <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CodeIgniter</span></code> class has a new property <code class="docutils literal notranslate"><span class="pre">$context</span></code> and it must have the correct context at runtime. So the following files have been changed:</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">spark</span></code></li>
+<li><dl class="simple">
+<dt>The <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CodeIgniter</span></code> class has a new property <code class="docutils literal notranslate"><span class="pre">$context</span></code> and it must have the correct context at runtime. So the following files have been changed:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>The <code class="docutils literal notranslate"><span class="pre">system/bootstrap.php</span></code> file has been modified to easily implement <a class="reference external" href="https://www.php.net/manual/en/opcache.preloading.php">Preloading</a>. Returning a <code class="docutils literal notranslate"><span class="pre">CodeIgniter</span></code> instance and loading <code class="docutils literal notranslate"><span class="pre">.env</span></code> file have been moved to <code class="docutils literal notranslate"><span class="pre">index.php</span></code> and <code class="docutils literal notranslate"><span class="pre">spark</span></code>.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Autoloader\Autoloader::initialize()</span></code> has changed the behavior to fix a bug. It used to use Composer classmap only when <code class="docutils literal notranslate"><span class="pre">$modules-&gt;discoverInComposer</span></code> is true. Now it always uses the Composer classmap if Composer is available.</li>
-<li>The color code output by <a class="reference internal" href="../cli/cli_library.html#cli-library-color"><span class="std std-ref">CLI::color()</span></a> has been changed to fix a bug.</li>
-<li>To prevent unexpected access from the web browser, if a controller is added to a cli route (<code class="docutils literal notranslate"><span class="pre">$routes-&gt;cli()</span></code>), all methods of that controller are no longer accessible via auto-routing.</li>
-<li>There is a possible backward compatibility break for those users extending the History Collector and they should probably update <code class="docutils literal notranslate"><span class="pre">History::setFiles()</span></code> method.</li>
-<li>The <a class="reference internal" href="../helpers/array_helper.html#dot_array_search" title="dot_array_search"><code class="xref php php-func docutils literal notranslate"><span class="pre">dot_array_search()</span></code></a>’s unexpected behavior has been fixed. Now <code class="docutils literal notranslate"><span class="pre">dot_array_search('foo.bar.baz',</span> <span class="pre">['foo'</span> <span class="pre">=&gt;</span> <span class="pre">['bar'</span> <span class="pre">=&gt;</span> <span class="pre">23]])</span></code> returns <code class="docutils literal notranslate"><span class="pre">null</span></code>. The previous versions returned <code class="docutils literal notranslate"><span class="pre">23</span></code>.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">CodeIgniter::storePreviousURL()</span></code> has been changed to store only the URLs whose Content-Type was <code class="docutils literal notranslate"><span class="pre">text/html</span></code>. It also affects the behavior of <a class="reference internal" href="../helpers/url_helper.html#previous_url" title="previous_url"><code class="xref php php-func docutils literal notranslate"><span class="pre">previous_url()</span></code></a> and <a class="reference internal" href="../general/common_functions.html#redirect" title="redirect"><code class="xref php php-func docutils literal notranslate"><span class="pre">redirect()-&gt;back()</span></code></a>.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">system/bootstrap.php</span></code> file has been modified to easily implement <a class="reference external" href="https://www.php.net/manual/en/opcache.preloading.php">Preloading</a>. Returning a <code class="docutils literal notranslate"><span class="pre">CodeIgniter</span></code> instance and loading <code class="docutils literal notranslate"><span class="pre">.env</span></code> file have been moved to <code class="docutils literal notranslate"><span class="pre">index.php</span></code> and <code class="docutils literal notranslate"><span class="pre">spark</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Autoloader\Autoloader::initialize()</span></code> has changed the behavior to fix a bug. It used to use Composer classmap only when <code class="docutils literal notranslate"><span class="pre">$modules-&gt;discoverInComposer</span></code> is true. Now it always uses the Composer classmap if Composer is available.</p></li>
+<li><p>The color code output by <a class="reference internal" href="../cli/cli_library.html#cli-library-color"><span class="std std-ref">CLI::color()</span></a> has been changed to fix a bug.</p></li>
+<li><p>To prevent unexpected access from the web browser, if a controller is added to a cli route (<code class="docutils literal notranslate"><span class="pre">$routes-&gt;cli()</span></code>), all methods of that controller are no longer accessible via auto-routing.</p></li>
+<li><p>There is a possible backward compatibility break for those users extending the History Collector and they should probably update <code class="docutils literal notranslate"><span class="pre">History::setFiles()</span></code> method.</p></li>
+<li><p>The <a class="reference internal" href="../helpers/array_helper.html#dot_array_search" title="dot_array_search"><code class="xref php php-func docutils literal notranslate"><span class="pre">dot_array_search()</span></code></a>’s unexpected behavior has been fixed. Now <code class="docutils literal notranslate"><span class="pre">dot_array_search('foo.bar.baz',</span> <span class="pre">['foo'</span> <span class="pre">=&gt;</span> <span class="pre">['bar'</span> <span class="pre">=&gt;</span> <span class="pre">23]])</span></code> returns <code class="docutils literal notranslate"><span class="pre">null</span></code>. The previous versions returned <code class="docutils literal notranslate"><span class="pre">23</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">CodeIgniter::storePreviousURL()</span></code> has been changed to store only the URLs whose Content-Type was <code class="docutils literal notranslate"><span class="pre">text/html</span></code>. It also affects the behavior of <a class="reference internal" href="../helpers/url_helper.html#previous_url" title="previous_url"><code class="xref php php-func docutils literal notranslate"><span class="pre">previous_url()</span></code></a> and <a class="reference internal" href="../general/common_functions.html#redirect" title="redirect"><code class="xref php php-func docutils literal notranslate"><span class="pre">redirect()-&gt;back()</span></code></a>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="enhancements">
+</section>
+</section>
+<section id="enhancements">
 <h2><a class="toc-backref" href="#id17">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline"></a></h2>
-<div class="section" id="new-improved-auto-routing">
+<section id="new-improved-auto-routing">
 <h3><a class="toc-backref" href="#id18">New Improved Auto Routing</a><a class="headerlink" href="#new-improved-auto-routing" title="Permalink to this headline"></a></h3>
 <p>Added an optional new more secure auto router. These are the changes from the legacy auto-routing:</p>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>A controller method needs HTTP verb prefix like <code class="docutils literal notranslate"><span class="pre">getIndex()</span></code>, <code class="docutils literal notranslate"><span class="pre">postCreate()</span></code>.</dt>
-<dd><ul class="first last">
-<li>Developers always know the HTTP method, so requests by an unexpected HTTP method does not pass.</li>
+<li><dl class="simple">
+<dt>A controller method needs HTTP verb prefix like <code class="docutils literal notranslate"><span class="pre">getIndex()</span></code>, <code class="docutils literal notranslate"><span class="pre">postCreate()</span></code>.</dt><dd><ul>
+<li><p>Developers always know the HTTP method, so requests by an unexpected HTTP method does not pass.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>The Default Controller (<code class="docutils literal notranslate"><span class="pre">Home</span></code> by default) and the Default Method (<code class="docutils literal notranslate"><span class="pre">index</span></code> by default) must be omitted in the URI.</dt>
-<dd><ul class="first last">
-<li>It restricts one-to-one correspondence between controller methods and URIs.</li>
-<li>E.g. by default, you can access <code class="docutils literal notranslate"><span class="pre">/</span></code>, but <code class="docutils literal notranslate"><span class="pre">/home</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/index</span></code> will be 404.</li>
+<li><dl class="simple">
+<dt>The Default Controller (<code class="docutils literal notranslate"><span class="pre">Home</span></code> by default) and the Default Method (<code class="docutils literal notranslate"><span class="pre">index</span></code> by default) must be omitted in the URI.</dt><dd><ul>
+<li><p>It restricts one-to-one correspondence between controller methods and URIs.</p></li>
+<li><p>E.g. by default, you can access <code class="docutils literal notranslate"><span class="pre">/</span></code>, but <code class="docutils literal notranslate"><span class="pre">/home</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/index</span></code> will be 404.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>It checks method parameter count.</dt>
-<dd><ul class="first last">
-<li>If there are more parameters in the URI than the method parameters, it results in 404.</li>
+<li><dl class="simple">
+<dt>It checks method parameter count.</dt><dd><ul>
+<li><p>If there are more parameters in the URI than the method parameters, it results in 404.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>It does not support <code class="docutils literal notranslate"><span class="pre">_remap()</span></code> method.</dt>
-<dd><ul class="first last">
-<li>It restricts one-to-one correspondence between controller methods and URIs.</li>
+<li><dl class="simple">
+<dt>It does not support <code class="docutils literal notranslate"><span class="pre">_remap()</span></code> method.</dt><dd><ul>
+<li><p>It restricts one-to-one correspondence between controller methods and URIs.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Can’t access controllers in Defined Routes.</dt>
-<dd><ul class="first last">
-<li>It completely separates controllers accessible via <strong>Auto Routes</strong> from those accessible via <strong>Defined Routes</strong>.</li>
+<li><dl class="simple">
+<dt>Can’t access controllers in Defined Routes.</dt><dd><ul>
+<li><p>It completely separates controllers accessible via <strong>Auto Routes</strong> from those accessible via <strong>Defined Routes</strong>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
 <p>See <a class="reference internal" href="../incoming/routing.html#auto-routing-improved"><span class="std std-ref">Auto Routing (Improved)</span></a> for the details.</p>
-</div>
-<div class="section" id="database">
+</section>
+<section id="database">
 <h3><a class="toc-backref" href="#id19">Database</a><a class="headerlink" href="#database" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Added new OCI8 driver for database.</dt>
-<dd><ul class="first last">
-<li>It can access Oracle Database and supports SQL and PL/SQL statements.</li>
+<li><dl class="simple">
+<dt>Added new OCI8 driver for database.</dt><dd><ul>
+<li><p>It can access Oracle Database and supports SQL and PL/SQL statements.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>QueryBuilder</dt>
-<dd><ul class="first last">
-<li>Added Subqueries in the FROM section. See <a class="reference internal" href="../database/query_builder.html#query-builder-from-subquery"><span class="std std-ref">Subqueries</span></a>.</li>
-<li>Added Subqueries in the SELECT section. See <a class="reference internal" href="../database/query_builder.html#query-builder-select"><span class="std std-ref">Select</span></a>.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">BaseBuilder::buildSubquery()</span></code> method can take an optional third argument <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">$alias</span></code>.</li>
-<li>Union queries. See <a class="reference internal" href="../database/query_builder.html#query-builder-union"><span class="std std-ref">Union queries</span></a>.</li>
+<li><dl class="simple">
+<dt>QueryBuilder</dt><dd><ul>
+<li><p>Added Subqueries in the FROM section. See <a class="reference internal" href="../database/query_builder.html#query-builder-from-subquery"><span class="std std-ref">Subqueries</span></a>.</p></li>
+<li><p>Added Subqueries in the SELECT section. See <a class="reference internal" href="../database/query_builder.html#query-builder-select"><span class="std std-ref">Select</span></a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">BaseBuilder::buildSubquery()</span></code> method can take an optional third argument <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">$alias</span></code>.</p></li>
+<li><p>Union queries. See <a class="reference internal" href="../database/query_builder.html#query-builder-union"><span class="std std-ref">Union queries</span></a>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Raw SQL string support</dt>
-<dd><ul class="first last">
-<li>Added the class <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> which expresses raw SQL strings.</li>
-<li><a class="reference internal" href="../database/query_builder.html#query-builder-select-rawsql"><span class="std std-ref">select()</span></a>, <a class="reference internal" href="../database/query_builder.html#query-builder-where-rawsql"><span class="std std-ref">where()</span></a>, <a class="reference internal" href="../database/query_builder.html#query-builder-like-rawsql"><span class="std std-ref">like()</span></a>, <a class="reference internal" href="../database/query_builder.html#query-builder-join-rawsql"><span class="std std-ref">join()</span></a> accept the <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance.</li>
-<li><code class="docutils literal notranslate"><span class="pre">DBForge::addField()</span></code> default value raw SQL string support. See <a class="reference internal" href="../dbmgmt/forge.html#forge-addfield-default-value-rawsql"><span class="std std-ref">Raw Sql Strings as Default Values</span></a>.</li>
+<li><dl class="simple">
+<dt>Raw SQL string support</dt><dd><ul>
+<li><p>Added the class <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> which expresses raw SQL strings.</p></li>
+<li><p><a class="reference internal" href="../database/query_builder.html#query-builder-select-rawsql"><span class="std std-ref">select()</span></a>, <a class="reference internal" href="../database/query_builder.html#query-builder-where-rawsql"><span class="std std-ref">where()</span></a>, <a class="reference internal" href="../database/query_builder.html#query-builder-like-rawsql"><span class="std std-ref">like()</span></a>, <a class="reference internal" href="../database/query_builder.html#query-builder-join-rawsql"><span class="std std-ref">join()</span></a> accept the <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DBForge::addField()</span></code> default value raw SQL string support. See <a class="reference internal" href="../dbmgmt/forge.html#forge-addfield-default-value-rawsql"><span class="std std-ref">Raw Sql Strings as Default Values</span></a>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="helpers-and-functions">
+</section>
+<section id="helpers-and-functions">
 <h3><a class="toc-backref" href="#id20">Helpers and Functions</a><a class="headerlink" href="#helpers-and-functions" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li>HTML helper <code class="docutils literal notranslate"><span class="pre">script_tag()</span></code> now uses <code class="docutils literal notranslate"><span class="pre">null</span></code> values to write boolean attributes in minimized form: <code class="docutils literal notranslate"><span class="pre">&lt;script</span> <span class="pre">src=&quot;...&quot;</span> <span class="pre">defer</span> <span class="pre">/&gt;</span></code>. See the sample code for <a class="reference internal" href="../helpers/html_helper.html#script_tag" title="script_tag"><code class="xref php php-func docutils literal notranslate"><span class="pre">script_tag()</span></code></a>.</li>
-<li>Added 4th parameter <code class="docutils literal notranslate"><span class="pre">$includeDir</span></code> to <code class="docutils literal notranslate"><span class="pre">get_filenames()</span></code>. See <a class="reference internal" href="../helpers/filesystem_helper.html#get_filenames" title="get_filenames"><code class="xref php php-func docutils literal notranslate"><span class="pre">get_filenames()</span></code></a>.</li>
-<li><dl class="first docutils">
-<dt>Exception information logged through <code class="docutils literal notranslate"><span class="pre">log_message()</span></code> has now improved. It now includes the file and line where the exception originated. It also does not truncate the message anymore.</dt>
-<dd><ul class="first last">
-<li>The log format has also changed. If users are depending on the log format in their apps, the new log format is “&lt;1-based count&gt; &lt;cleaned filepath&gt;(&lt;line&gt;): &lt;class&gt;&lt;function&gt;&lt;args&gt;”</li>
+<li><p>HTML helper <code class="docutils literal notranslate"><span class="pre">script_tag()</span></code> now uses <code class="docutils literal notranslate"><span class="pre">null</span></code> values to write boolean attributes in minimized form: <code class="docutils literal notranslate"><span class="pre">&lt;script</span> <span class="pre">src=&quot;...&quot;</span> <span class="pre">defer</span> <span class="pre">/&gt;</span></code>. See the sample code for <a class="reference internal" href="../helpers/html_helper.html#script_tag" title="script_tag"><code class="xref php php-func docutils literal notranslate"><span class="pre">script_tag()</span></code></a>.</p></li>
+<li><p>Added 4th parameter <code class="docutils literal notranslate"><span class="pre">$includeDir</span></code> to <code class="docutils literal notranslate"><span class="pre">get_filenames()</span></code>. See <a class="reference internal" href="../helpers/filesystem_helper.html#get_filenames" title="get_filenames"><code class="xref php php-func docutils literal notranslate"><span class="pre">get_filenames()</span></code></a>.</p></li>
+<li><dl class="simple">
+<dt>Exception information logged through <code class="docutils literal notranslate"><span class="pre">log_message()</span></code> has now improved. It now includes the file and line where the exception originated. It also does not truncate the message anymore.</dt><dd><ul>
+<li><p>The log format has also changed. If users are depending on the log format in their apps, the new log format is “&lt;1-based count&gt; &lt;cleaned filepath&gt;(&lt;line&gt;): &lt;class&gt;&lt;function&gt;&lt;args&gt;”</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="commands">
+</section>
+<section id="commands">
 <h3><a class="toc-backref" href="#id21">Commands</a><a class="headerlink" href="#commands" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Added <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span></code> command. See <a class="reference internal" href="../dbmgmt/db_commands.html"><span class="doc">Database Commands</span></a> for the details.</dt>
-<dd><ul class="first last">
-<li><dl class="first docutils">
-<dt>You can now see the names of all the tables in the database you are currently connected in the terminal.</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">--show</span></code></li>
+<li><dl class="simple">
+<dt>Added <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span></code> command. See <a class="reference internal" href="../dbmgmt/db_commands.html"><span class="doc">Database Commands</span></a> for the details.</dt><dd><ul>
+<li><dl class="simple">
+<dt>You can now see the names of all the tables in the database you are currently connected in the terminal.</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">--show</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Or you can see the field names and the records of a table.</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">my_table</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">my_table</span> <span class="pre">--limit-rows</span> <span class="pre">50</span> <span class="pre">--limit-field-value</span> <span class="pre">20</span> <span class="pre">--desc</span></code></li>
+<li><dl class="simple">
+<dt>Or you can see the field names and the records of a table.</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">my_table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">my_table</span> <span class="pre">--limit-rows</span> <span class="pre">50</span> <span class="pre">--limit-field-value</span> <span class="pre">20</span> <span class="pre">--desc</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Or you can see metadata like the column type, max length of a table.</dt>
-<dd><ul class="first last">
-<li><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">my_table</span> <span class="pre">--metadata</span></code></li>
+<li><dl class="simple">
+<dt>Or you can see metadata like the column type, max length of a table.</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">db:table</span> <span class="pre">my_table</span> <span class="pre">--metadata</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -488,70 +481,68 @@
 </dd>
 </dl>
 </li>
-<li>The <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">routes</span></code> command now shows closure routes, auto routes, and filters. See <a class="reference internal" href="../incoming/routing.html#spark-routes"><span class="std std-ref">URI Routing</span></a>.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">routes</span></code> command now shows closure routes, auto routes, and filters. See <a class="reference internal" href="../incoming/routing.html#spark-routes"><span class="std std-ref">URI Routing</span></a>.</p></li>
 </ul>
-</div>
-<div class="section" id="others">
+</section>
+<section id="others">
 <h3><a class="toc-backref" href="#id22">Others</a><a class="headerlink" href="#others" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><dl class="first docutils">
-<dt>Content Security Policy (CSP) enhancements</dt>
-<dd><ul class="first last">
-<li>Added the configs <code class="docutils literal notranslate"><span class="pre">$scriptNonceTag</span></code> and <code class="docutils literal notranslate"><span class="pre">$styleNonceTag</span></code> in  <code class="docutils literal notranslate"><span class="pre">Config\ContentSecurityPolicy</span></code> to customize the CSP placeholders (<code class="docutils literal notranslate"><span class="pre">{csp-script-nonce}</span></code> and <code class="docutils literal notranslate"><span class="pre">{csp-style-nonce}</span></code>)</li>
-<li>Added the config <code class="docutils literal notranslate"><span class="pre">$autoNonce</span></code> in <code class="docutils literal notranslate"><span class="pre">Config\ContentSecurityPolicy</span></code> to disable the CSP placeholder replacement</li>
-<li>Added the functions <code class="docutils literal notranslate"><span class="pre">csp_script_nonce()</span></code> and <code class="docutils literal notranslate"><span class="pre">csp_style_nonce()</span></code> to get nonce attributes</li>
-<li>See <a class="reference internal" href="../outgoing/response.html#content-security-policy"><span class="std std-ref">Content Security Policy</span></a> for details.</li>
+<li><dl class="simple">
+<dt>Content Security Policy (CSP) enhancements</dt><dd><ul>
+<li><p>Added the configs <code class="docutils literal notranslate"><span class="pre">$scriptNonceTag</span></code> and <code class="docutils literal notranslate"><span class="pre">$styleNonceTag</span></code> in  <code class="docutils literal notranslate"><span class="pre">Config\ContentSecurityPolicy</span></code> to customize the CSP placeholders (<code class="docutils literal notranslate"><span class="pre">{csp-script-nonce}</span></code> and <code class="docutils literal notranslate"><span class="pre">{csp-style-nonce}</span></code>)</p></li>
+<li><p>Added the config <code class="docutils literal notranslate"><span class="pre">$autoNonce</span></code> in <code class="docutils literal notranslate"><span class="pre">Config\ContentSecurityPolicy</span></code> to disable the CSP placeholder replacement</p></li>
+<li><p>Added the functions <code class="docutils literal notranslate"><span class="pre">csp_script_nonce()</span></code> and <code class="docutils literal notranslate"><span class="pre">csp_style_nonce()</span></code> to get nonce attributes</p></li>
+<li><p>See <a class="reference internal" href="../outgoing/response.html#content-security-policy"><span class="std std-ref">Content Security Policy</span></a> for details.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>New <a class="reference internal" href="../outgoing/view_decorators.html"><span class="doc">View Decorators</span></a> allow modifying the generated HTML prior to caching.</li>
-<li>Added Validation Strict Rules. See <a class="reference internal" href="../libraries/validation.html#validation-traditional-and-strict-rules"><span class="std std-ref">Traditional and Strict Rules</span></a>.</li>
-<li>Added support for webp files to <strong>app/Config/Mimes.php</strong>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">RouteCollection::addRedirect()</span></code> can now use placeholders. See <a class="reference internal" href="../incoming/routing.html#redirecting-routes"><span class="std std-ref">Redirecting Routes</span></a> for details.</li>
-<li><dl class="first docutils">
-<dt>Debugbar enhancements</dt>
-<dd><ul class="first last">
-<li>Debug toolbar is now using <code class="docutils literal notranslate"><span class="pre">microtime()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">time()</span></code>.</li>
+<li><p>New <a class="reference internal" href="../outgoing/view_decorators.html"><span class="doc">View Decorators</span></a> allow modifying the generated HTML prior to caching.</p></li>
+<li><p>Added Validation Strict Rules. See <a class="reference internal" href="../libraries/validation.html#validation-traditional-and-strict-rules"><span class="std std-ref">Traditional and Strict Rules</span></a>.</p></li>
+<li><p>Added support for webp files to <strong>app/Config/Mimes.php</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RouteCollection::addRedirect()</span></code> can now use placeholders. See <a class="reference internal" href="../incoming/routing.html#redirecting-routes"><span class="std std-ref">Redirecting Routes</span></a> for details.</p></li>
+<li><dl class="simple">
+<dt>Debugbar enhancements</dt><dd><ul>
+<li><p>Debug toolbar is now using <code class="docutils literal notranslate"><span class="pre">microtime()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">time()</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li>Added a sample file for <a class="reference external" href="https://www.php.net/manual/en/opcache.preloading.php">Preloading</a>. See <strong>preload.php</strong>.</li>
+<li><p>Added a sample file for <a class="reference external" href="https://www.php.net/manual/en/opcache.preloading.php">Preloading</a>. See <strong>preload.php</strong>.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="changes">
+</section>
+</section>
+<section id="changes">
 <h2><a class="toc-backref" href="#id23">Changes</a><a class="headerlink" href="#changes" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>Update minimal PHP requirement to 7.4.</li>
-<li>To make the default configuration more secure, auto-routing has been changed to disabled by default.</li>
-<li>Validation. Changed generation of errors when using fields with a wildcard (*). Now the error key contains the full path. See <a class="reference internal" href="../libraries/validation.html#validation-getting-all-errors"><span class="std std-ref">Getting All Errors</span></a>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Validation::getError()</span></code> when using a wildcard will return all found errors matching the mask as a string.</li>
-<li>The current version of Content Security Policy (CSP) outputs one nonce for script and one for style tags. The previous version outputted one nonce for each tag.</li>
-<li>The process of sending cookies has been moved to the <code class="docutils literal notranslate"><span class="pre">Response</span></code> class. Now the <code class="docutils literal notranslate"><span class="pre">Session</span></code> class doesn’t send cookies, set them to the Response.</li>
+<li><p>Update minimal PHP requirement to 7.4.</p></li>
+<li><p>To make the default configuration more secure, auto-routing has been changed to disabled by default.</p></li>
+<li><p>Validation. Changed generation of errors when using fields with a wildcard (*). Now the error key contains the full path. See <a class="reference internal" href="../libraries/validation.html#validation-getting-all-errors"><span class="std std-ref">Getting All Errors</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Validation::getError()</span></code> when using a wildcard will return all found errors matching the mask as a string.</p></li>
+<li><p>The current version of Content Security Policy (CSP) outputs one nonce for script and one for style tags. The previous version outputted one nonce for each tag.</p></li>
+<li><p>The process of sending cookies has been moved to the <code class="docutils literal notranslate"><span class="pre">Response</span></code> class. Now the <code class="docutils literal notranslate"><span class="pre">Session</span></code> class doesn’t send cookies, set them to the Response.</p></li>
 </ul>
-</div>
-<div class="section" id="deprecations">
+</section>
+<section id="deprecations">
 <h2><a class="toc-backref" href="#id24">Deprecations</a><a class="headerlink" href="#deprecations" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\SQLSRV\Connection::getError()</span></code> is deprecated. Use <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\SQLSRV\Connection::error()</span></code> instead.</li>
-<li><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Debug\Exceptions::cleanPath()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Debug\Toolbar\Collectors\BaseCollector::cleanPath()</span></code> are deprecated. Use the <code class="docutils literal notranslate"><span class="pre">clean_path()</span></code> function instead.</li>
-<li><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Log\Logger::cleanFilenames()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\TestLogger::cleanup()</span></code> are both deprecated. Use the <code class="docutils literal notranslate"><span class="pre">clean_path()</span></code> function instead.</li>
-<li><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Router\Router::setDefaultController()</span></code> is deprecated.</li>
-<li>The constant <code class="docutils literal notranslate"><span class="pre">SPARKED</span></code> in <strong>spark</strong> is deprecated. Use the <code class="docutils literal notranslate"><span class="pre">$context</span></code> property in <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CodeIgniter</span></code> instead.</li>
-<li><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Autoloader\Autoloader::discoverComposerNamespaces()</span></code> is deprecated, and no longer used.</li>
-<li>The constants <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_LOW</span></code>, <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_NORMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_HIGH</span></code> are deprecated. Use the class constants <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_LOW</span></code>, <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_NORMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_HIGH</span></code> instead.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\SQLSRV\Connection::getError()</span></code> is deprecated. Use <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\SQLSRV\Connection::error()</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Debug\Exceptions::cleanPath()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Debug\Toolbar\Collectors\BaseCollector::cleanPath()</span></code> are deprecated. Use the <code class="docutils literal notranslate"><span class="pre">clean_path()</span></code> function instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Log\Logger::cleanFilenames()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Test\TestLogger::cleanup()</span></code> are both deprecated. Use the <code class="docutils literal notranslate"><span class="pre">clean_path()</span></code> function instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Router\Router::setDefaultController()</span></code> is deprecated.</p></li>
+<li><p>The constant <code class="docutils literal notranslate"><span class="pre">SPARKED</span></code> in <strong>spark</strong> is deprecated. Use the <code class="docutils literal notranslate"><span class="pre">$context</span></code> property in <code class="docutils literal notranslate"><span class="pre">CodeIgniter\CodeIgniter</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CodeIgniter\Autoloader\Autoloader::discoverComposerNamespaces()</span></code> is deprecated, and no longer used.</p></li>
+<li><p>The constants <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_LOW</span></code>, <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_NORMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_HIGH</span></code> are deprecated. Use the class constants <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_LOW</span></code>, <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_NORMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_HIGH</span></code> instead.</p></li>
 </ul>
-</div>
-<div class="section" id="bugs-fixed">
+</section>
+<section id="bugs-fixed">
 <h2><a class="toc-backref" href="#id25">Bugs Fixed</a><a class="headerlink" href="#bugs-fixed" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li>The SQLSRV driver ignores the port value from the config.</li>
+<li><p>The SQLSRV driver ignores the port value from the config.</p></li>
 </ul>
 <p>See the repo’s <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CHANGELOG.md">CHANGELOG.md</a> for a complete list of bugs fixed.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -565,7 +556,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

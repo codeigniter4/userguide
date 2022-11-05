@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrading from 4.0.4 to 4.0.5 &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Upgrading from 4.0.4 to 4.0.5 &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,10 +260,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Installation</a> &raquo;</li>
-          <li><a href="upgrading.html">Upgrading From a Previous Version</a> &raquo;</li>
-      <li>Upgrading from 4.0.4 to 4.0.5</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="upgrading.html">Upgrading From a Previous Version</a></li>
+      <li class="breadcrumb-item active">Upgrading from 4.0.4 to 4.0.5</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -268,19 +272,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="upgrading-from-4-0-4-to-4-0-5">
+  <section id="upgrading-from-4-0-4-to-4-0-5">
 <h1>Upgrading from 4.0.4 to 4.0.5<a class="headerlink" href="#upgrading-from-4-0-4-to-4-0-5" title="Permalink to this headline"></a></h1>
 <p>Please refer to the upgrade instructions corresponding to your installation method.</p>
 <ul class="simple">
-<li><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></li>
-<li><a class="reference internal" href="installing_composer.html#adding-codeigniter4-upgrading"><span class="std std-ref">Composer Installation Adding CodeIgniter4 to an Existing Project Upgrading</span></a></li>
-<li><a class="reference internal" href="installing_manual.html#installing-manual-upgrading"><span class="std std-ref">Manual Installation Upgrading</span></a></li>
+<li><p><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></p></li>
+<li><p><a class="reference internal" href="installing_composer.html#adding-codeigniter4-upgrading"><span class="std std-ref">Composer Installation Adding CodeIgniter4 to an Existing Project Upgrading</span></a></p></li>
+<li><p><a class="reference internal" href="installing_manual.html#installing-manual-upgrading"><span class="std std-ref">Manual Installation Upgrading</span></a></p></li>
 </ul>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#project-files" id="id1">Project Files</a><ul>
-<li><a class="reference internal" href="#content-changes" id="id2">Content Changes</a></li>
-<li><a class="reference internal" href="#all-changes" id="id3">All Changes</a></li>
+<li><p><a class="reference internal" href="#project-files" id="id1">Project Files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#content-changes" id="id2">Content Changes</a></p></li>
+<li><p><a class="reference internal" href="#all-changes" id="id3">All Changes</a></p></li>
 </ul>
 </li>
 </ul>
@@ -300,14 +305,14 @@ with <code class="docutils literal notranslate"><span class="pre">Message::heade
 to all classes that extend <code class="docutils literal notranslate"><span class="pre">Message</span></code> as well: <code class="docutils literal notranslate"><span class="pre">Request</span></code>, <code class="docutils literal notranslate"><span class="pre">Response</span></code> and their subclasses.</p>
 <p>Additional related deprecations from the HTTP layer:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Message::isJSON</span></code>: Check the “Content-Type” header directly</li>
-<li><code class="docutils literal notranslate"><span class="pre">Request[Interface]::isValidIP</span></code>: Use the Validation class with <code class="docutils literal notranslate"><span class="pre">valid_ip</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">Request[Interface]::getMethod()</span></code>: The <code class="docutils literal notranslate"><span class="pre">$upper</span></code> parameter will be removed, use str_to_upper()</li>
-<li><code class="docutils literal notranslate"><span class="pre">Request[Trait]::$ipAddress</span></code>: This property will become private</li>
-<li><code class="docutils literal notranslate"><span class="pre">Request::$proxyIPs</span></code>: This property will be removed; access <code class="docutils literal notranslate"><span class="pre">config('App')-&gt;proxyIPs</span></code> directly</li>
-<li><code class="docutils literal notranslate"><span class="pre">Request::__construct()</span></code>: The constructor will no longer take <code class="docutils literal notranslate"><span class="pre">Config\App</span></code> and has been made nullable to aid transition</li>
-<li><code class="docutils literal notranslate"><span class="pre">Response[Interface]::getReason()</span></code>: Use <code class="docutils literal notranslate"><span class="pre">getReasonPhrase()</span></code> instead</li>
-<li><code class="docutils literal notranslate"><span class="pre">Response[Interface]::getStatusCode()</span></code>: The explicit <code class="docutils literal notranslate"><span class="pre">int</span></code> return type will be removed (no action required)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Message::isJSON</span></code>: Check the “Content-Type” header directly</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Request[Interface]::isValidIP</span></code>: Use the Validation class with <code class="docutils literal notranslate"><span class="pre">valid_ip</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Request[Interface]::getMethod()</span></code>: The <code class="docutils literal notranslate"><span class="pre">$upper</span></code> parameter will be removed, use str_to_upper()</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Request[Trait]::$ipAddress</span></code>: This property will become private</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Request::$proxyIPs</span></code>: This property will be removed; access <code class="docutils literal notranslate"><span class="pre">config('App')-&gt;proxyIPs</span></code> directly</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Request::__construct()</span></code>: The constructor will no longer take <code class="docutils literal notranslate"><span class="pre">Config\App</span></code> and has been made nullable to aid transition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Response[Interface]::getReason()</span></code>: Use <code class="docutils literal notranslate"><span class="pre">getReasonPhrase()</span></code> instead</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Response[Interface]::getStatusCode()</span></code>: The explicit <code class="docutils literal notranslate"><span class="pre">int</span></code> return type will be removed (no action required)</p></li>
 </ul>
 <p><strong>ResponseInterface</strong></p>
 <p>This interface intends to include the necessary methods for any framework-compatible response class.
@@ -315,112 +320,112 @@ A number of methods expected by the framework were missing and have noe been add
 classes the implement <code class="docutils literal notranslate"><span class="pre">ResponseInterface</span></code> directly they will need to be compatible with the
 updated requirements. These methods are as follows:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">setLastModified($date);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">setLink(PagerInterface</span> <span class="pre">$pager);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">setJSON($body,</span> <span class="pre">bool</span> <span class="pre">$unencoded</span> <span class="pre">=</span> <span class="pre">false);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">getJSON();</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">setXML($body);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">getXML();</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">send();</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">sendHeaders();</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">sendBody();</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">setCookie($name,</span> <span class="pre">$value</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$expire</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$domain</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$path</span> <span class="pre">=</span> <span class="pre">'/',</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$secure</span> <span class="pre">=</span> <span class="pre">false,</span> <span class="pre">$httponly</span> <span class="pre">=</span> <span class="pre">false,</span> <span class="pre">$samesite</span> <span class="pre">=</span> <span class="pre">null);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">hasCookie(string</span> <span class="pre">$name,</span> <span class="pre">string</span> <span class="pre">$value</span> <span class="pre">=</span> <span class="pre">null,</span> <span class="pre">string</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">''):</span> <span class="pre">bool;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">getCookie(string</span> <span class="pre">$name</span> <span class="pre">=</span> <span class="pre">null,</span> <span class="pre">string</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">'');</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">deleteCookie(string</span> <span class="pre">$name</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">string</span> <span class="pre">$domain</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">string</span> <span class="pre">$path</span> <span class="pre">=</span> <span class="pre">'/',</span> <span class="pre">string</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">'');</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">getCookies();</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">redirect(string</span> <span class="pre">$uri,</span> <span class="pre">string</span> <span class="pre">$method</span> <span class="pre">=</span> <span class="pre">'auto',</span> <span class="pre">int</span> <span class="pre">$code</span> <span class="pre">=</span> <span class="pre">null);</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">download(string</span> <span class="pre">$filename</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$data</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">bool</span> <span class="pre">$setMime</span> <span class="pre">=</span> <span class="pre">false);</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setLastModified($date);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setLink(PagerInterface</span> <span class="pre">$pager);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setJSON($body,</span> <span class="pre">bool</span> <span class="pre">$unencoded</span> <span class="pre">=</span> <span class="pre">false);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getJSON();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setXML($body);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getXML();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">send();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sendHeaders();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sendBody();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">setCookie($name,</span> <span class="pre">$value</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$expire</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$domain</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$path</span> <span class="pre">=</span> <span class="pre">'/',</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$secure</span> <span class="pre">=</span> <span class="pre">false,</span> <span class="pre">$httponly</span> <span class="pre">=</span> <span class="pre">false,</span> <span class="pre">$samesite</span> <span class="pre">=</span> <span class="pre">null);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hasCookie(string</span> <span class="pre">$name,</span> <span class="pre">string</span> <span class="pre">$value</span> <span class="pre">=</span> <span class="pre">null,</span> <span class="pre">string</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">''):</span> <span class="pre">bool;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getCookie(string</span> <span class="pre">$name</span> <span class="pre">=</span> <span class="pre">null,</span> <span class="pre">string</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">'');</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deleteCookie(string</span> <span class="pre">$name</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">string</span> <span class="pre">$domain</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">string</span> <span class="pre">$path</span> <span class="pre">=</span> <span class="pre">'/',</span> <span class="pre">string</span> <span class="pre">$prefix</span> <span class="pre">=</span> <span class="pre">'');</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getCookies();</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">redirect(string</span> <span class="pre">$uri,</span> <span class="pre">string</span> <span class="pre">$method</span> <span class="pre">=</span> <span class="pre">'auto',</span> <span class="pre">int</span> <span class="pre">$code</span> <span class="pre">=</span> <span class="pre">null);</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">download(string</span> <span class="pre">$filename</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">$data</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">bool</span> <span class="pre">$setMime</span> <span class="pre">=</span> <span class="pre">false);</span></code></p></li>
 </ul>
 <p>To facilitate use of this interface these methods have been moved from the framework’s <code class="docutils literal notranslate"><span class="pre">Response</span></code> into a <code class="docutils literal notranslate"><span class="pre">ResponseTrait</span></code>
 which you may use, and <code class="docutils literal notranslate"><span class="pre">DownloadResponse</span></code> now extends <code class="docutils literal notranslate"><span class="pre">Response</span></code> directly to ensure maximum compatibility.</p>
 <p><strong>ConfigServices</strong></p>
 <p>Service discovery has been updated to allow third-party services (when enabled via Modules) to take precedence over core services. Update
 <strong>app/Config/Services.php</strong> so the class extends <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Config\BaseService</span></code> to allow proper discovery of third-party services.</p>
-<div class="section" id="project-files">
+<section id="project-files">
 <h2><a class="toc-backref" href="#id1">Project Files</a><a class="headerlink" href="#project-files" title="Permalink to this headline"></a></h2>
 <p>Numerous files in the project space (root, app, public, writable) received updates. Due to
 these files being outside of the system scope they will not be changed without your intervention.
 There are some third-party CodeIgniter modules available to assist with merging changes to
 the project space: <a class="reference external" href="https://packagist.org/explore/?query=codeigniter4%20updates">Explore on Packagist</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Except in very rare cases for bug fixes, no changes made to files for the project space
+<p class="admonition-title">Note</p>
+<p>Except in very rare cases for bug fixes, no changes made to files for the project space
 will break your application. All changes noted here are optional until the next major version,
 and any mandatory changes will be covered in the sections above.</p>
 </div>
-<div class="section" id="content-changes">
+<section id="content-changes">
 <h3><a class="toc-backref" href="#id2">Content Changes</a><a class="headerlink" href="#content-changes" title="Permalink to this headline"></a></h3>
 <p>The following files received significant changes (including deprecations or visual adjustments)
 and it is recommended that you merge the updated versions with your application:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">app/Views/*</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">public/.htaccess</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">spark</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">phpunit.xml.dist</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">composer.json</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Views/*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/.htaccess</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phpunit.xml.dist</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">composer.json</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="all-changes">
+</section>
+<section id="all-changes">
 <h3><a class="toc-backref" href="#id3">All Changes</a><a class="headerlink" href="#all-changes" title="Permalink to this headline"></a></h3>
 <p>This is a list of all files in the project space that received changes;
 many will be simple comments or formatting that have no effect on the runtime:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">README.md</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/App.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Autoload.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Boot/development.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Boot/production.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Boot/testing.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Cache.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Constants.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/ContentSecurityPolicy.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Database.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/DocTypes.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Email.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Encryption.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Events.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Exceptions.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Filters.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/ForeignCharacters.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Format.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Generators.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Honeypot.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Images.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Kint.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Logger.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Migrations.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Mimes.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Modules.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Pager.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Paths.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Routes.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Security.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Services.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Toolbar.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/UserAgents.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/Validation.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Config/View.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Controllers/BaseController.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Controllers/Home.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Views/errors/cli/error_404.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Views/errors/cli/error_exception.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Views/errors/html/debug.css</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Views/errors/html/debug.js</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">app/Views/errors/html/error_exception.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">composer.json</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">env</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">license.txt</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">phpunit.xml.dist</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">public/.htaccess</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">spark</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/App.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Autoload.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Boot/development.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Boot/production.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Boot/testing.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Cache.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Constants.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/ContentSecurityPolicy.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Database.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/DocTypes.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Email.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Encryption.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Events.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Exceptions.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Filters.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/ForeignCharacters.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Format.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Generators.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Honeypot.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Images.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Kint.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Logger.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Migrations.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Mimes.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Modules.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Pager.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Paths.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Routes.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Security.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Services.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Toolbar.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/UserAgents.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/Validation.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Config/View.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Controllers/BaseController.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Controllers/Home.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Views/errors/cli/error_404.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Views/errors/cli/error_exception.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Views/errors/html/debug.css</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Views/errors/html/debug.js</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">app/Views/errors/html/error_exception.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">composer.json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">env</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">license.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phpunit.xml.dist</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/.htaccess</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span></code></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -434,7 +439,7 @@ many will be simple comments or formatting that have no effect on the runtime:</
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

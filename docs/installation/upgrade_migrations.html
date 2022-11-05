@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrade Migrations &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Upgrade Migrations &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,11 +260,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Installation</a> &raquo;</li>
-          <li><a href="upgrading.html">Upgrading From a Previous Version</a> &raquo;</li>
-          <li><a href="upgrade_4xx.html">Upgrading from 3.x to 4.x</a> &raquo;</li>
-      <li>Upgrade Migrations</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="upgrading.html">Upgrading From a Previous Version</a></li>
+          <li class="breadcrumb-item"><a href="upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
+      <li class="breadcrumb-item active">Upgrade Migrations</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -269,85 +273,77 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="upgrade-migrations">
+  <section id="upgrade-migrations">
 <h1>Upgrade Migrations<a class="headerlink" href="#upgrade-migrations" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#documentations" id="id1">Documentations</a></li>
-<li><a class="reference internal" href="#what-has-been-changed" id="id2">What has been changed</a></li>
-<li><a class="reference internal" href="#upgrade-guide" id="id3">Upgrade Guide</a></li>
-<li><a class="reference internal" href="#code-example" id="id4">Code Example</a><ul>
-<li><a class="reference internal" href="#codeigniter-version-3-x" id="id5">CodeIgniter Version 3.x</a></li>
-<li><a class="reference internal" href="#codeigniter-version-4-x" id="id6">CodeIgniter Version 4.x</a></li>
+<li><p><a class="reference internal" href="#documentations" id="id1">Documentations</a></p></li>
+<li><p><a class="reference internal" href="#what-has-been-changed" id="id2">What has been changed</a></p></li>
+<li><p><a class="reference internal" href="#upgrade-guide" id="id3">Upgrade Guide</a></p></li>
+<li><p><a class="reference internal" href="#code-example" id="id4">Code Example</a></p>
+<ul>
+<li><p><a class="reference internal" href="#codeigniter-version-3-x" id="id5">CodeIgniter Version 3.x</a></p></li>
+<li><p><a class="reference internal" href="#codeigniter-version-4-x" id="id6">CodeIgniter Version 4.x</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#search-replace" id="id7">Search &amp; Replace</a></li>
+<li><p><a class="reference internal" href="#search-replace" id="id7">Search &amp; Replace</a></p></li>
 </ul>
 </div>
-<div class="section" id="documentations">
+<section id="documentations">
 <h2><a class="toc-backref" href="#id1">Documentations</a><a class="headerlink" href="#documentations" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://codeigniter.com/userguide3/libraries/migration.html">Database Migrations Documentation CodeIgniter 3.X</a></li>
-<li><a class="reference internal" href="../dbmgmt/migration.html"><span class="doc">Database Migrations Documentation CodeIgniter 4.X</span></a></li>
+<li><p><a class="reference external" href="http://codeigniter.com/userguide3/libraries/migration.html">Database Migrations Documentation CodeIgniter 3.X</a></p></li>
+<li><p><a class="reference internal" href="../dbmgmt/migration.html"><span class="doc">Database Migrations Documentation CodeIgniter 4.X</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="what-has-been-changed">
+</section>
+<section id="what-has-been-changed">
 <h2><a class="toc-backref" href="#id2">What has been changed</a><a class="headerlink" href="#what-has-been-changed" title="Permalink to this headline"></a></h2>
 <ul>
-<li><p class="first">First of all, the sequential naming (<code class="docutils literal notranslate"><span class="pre">001_create_users</span></code>, <code class="docutils literal notranslate"><span class="pre">002_create_posts</span></code>) of migrations is not longer supported. Version 4 of CodeIgniter only supports the timestamp scheme (<code class="docutils literal notranslate"><span class="pre">20121031100537_create_users</span></code>, <code class="docutils literal notranslate"><span class="pre">20121031500638_create_posts</span></code>) . If you have used sequential naming you have to rename each migration file.</p>
-</li>
-<li><p class="first">The migration table definition was changed. If you upgrade from CI3 to CI4 and use the same database,
-You need to upgrade the migration table definition and its data.</p>
-</li>
-<li><p class="first">The migration procedure has been also changed. You can now migrate the database with a simple CLI command:</p>
+<li><p>First of all, the sequential naming (<code class="docutils literal notranslate"><span class="pre">001_create_users</span></code>, <code class="docutils literal notranslate"><span class="pre">002_create_posts</span></code>) of migrations is not longer supported. Version 4 of CodeIgniter only supports the timestamp scheme (<code class="docutils literal notranslate"><span class="pre">20121031100537_create_users</span></code>, <code class="docutils literal notranslate"><span class="pre">20121031500638_create_posts</span></code>) . If you have used sequential naming you have to rename each migration file.</p></li>
+<li><p>The migration table definition was changed. If you upgrade from CI3 to CI4 and use the same database,
+You need to upgrade the migration table definition and its data.</p></li>
+<li><p>The migration procedure has been also changed. You can now migrate the database with a simple CLI command:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">migrate</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="upgrade-guide">
+</section>
+<section id="upgrade-guide">
 <h2><a class="toc-backref" href="#id3">Upgrade Guide</a><a class="headerlink" href="#upgrade-guide" title="Permalink to this headline"></a></h2>
 <ol class="arabic">
-<li><p class="first">If your v3 project uses sequential migration names you have to change those to timestamp names.</p>
-</li>
-<li><p class="first">You have to move all migration files to the new folder <strong>app/Database/Migrations</strong>.</p>
-</li>
-<li><p class="first">Remove the following line <code class="docutils literal notranslate"><span class="pre">defined('BASEPATH')</span> <span class="pre">OR</span> <span class="pre">exit('No</span> <span class="pre">direct</span> <span class="pre">script</span> <span class="pre">access</span> <span class="pre">allowed');</span></code>.</p>
-</li>
-<li><p class="first">Add this line just after the opening php tag: <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Database\Migrations;</span></code>.</p>
-</li>
-<li><p class="first">Below the <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Database\Migrations;</span></code> line add this line: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">CodeIgniter\Database\Migration;</span></code></p>
-</li>
-<li><p class="first">Replace <code class="docutils literal notranslate"><span class="pre">extends</span> <span class="pre">CI_Migration</span></code> with <code class="docutils literal notranslate"><span class="pre">extends</span> <span class="pre">Migration</span></code>.</p>
-</li>
-<li><p class="first">The method names within the <code class="docutils literal notranslate"><span class="pre">Forge</span></code> class has been changed to use camelCase. For example:</p>
+<li><p>If your v3 project uses sequential migration names you have to change those to timestamp names.</p></li>
+<li><p>You have to move all migration files to the new folder <strong>app/Database/Migrations</strong>.</p></li>
+<li><p>Remove the following line <code class="docutils literal notranslate"><span class="pre">defined('BASEPATH')</span> <span class="pre">OR</span> <span class="pre">exit('No</span> <span class="pre">direct</span> <span class="pre">script</span> <span class="pre">access</span> <span class="pre">allowed');</span></code>.</p></li>
+<li><p>Add this line just after the opening php tag: <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Database\Migrations;</span></code>.</p></li>
+<li><p>Below the <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">App\Database\Migrations;</span></code> line add this line: <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">CodeIgniter\Database\Migration;</span></code></p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">extends</span> <span class="pre">CI_Migration</span></code> with <code class="docutils literal notranslate"><span class="pre">extends</span> <span class="pre">Migration</span></code>.</p></li>
+<li><p>The method names within the <code class="docutils literal notranslate"><span class="pre">Forge</span></code> class has been changed to use camelCase. For example:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;add_field</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addField</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;add_key</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addKey</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;create_table</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addTable</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;drop_table</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addTable</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;add_field</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addField</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;add_key</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addKey</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;create_table</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addTable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$this-&gt;dbforge-&gt;drop_table</span></code> to <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge-&gt;addTable</span></code></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">(optional) You can change the array syntax from <code class="docutils literal notranslate"><span class="pre">array(...)</span></code> to <code class="docutils literal notranslate"><span class="pre">[...]</span></code></p>
-</li>
-<li><p class="first">Upgrade the migration table, if you use the same database.</p>
+<li><p>(optional) You can change the array syntax from <code class="docutils literal notranslate"><span class="pre">array(...)</span></code> to <code class="docutils literal notranslate"><span class="pre">[...]</span></code></p></li>
+<li><p>Upgrade the migration table, if you use the same database.</p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>(development)</strong> Run the CI4 migration in the development environment or so with brand new database, to create the new migration table.</li>
-<li><strong>(development)</strong> Export the migration table.</li>
-<li><strong>(production)</strong> Drop (or rename) the existing CI3 migration table.</li>
-<li><strong>(production)</strong> Import the new migration table and the data.</li>
+<li><p><strong>(development)</strong> Run the CI4 migration in the development environment or so with brand new database, to create the new migration table.</p></li>
+<li><p><strong>(development)</strong> Export the migration table.</p></li>
+<li><p><strong>(production)</strong> Drop (or rename) the existing CI3 migration table.</p></li>
+<li><p><strong>(production)</strong> Import the new migration table and the data.</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ol>
-</div>
-<div class="section" id="code-example">
+</section>
+<section id="code-example">
 <h2><a class="toc-backref" href="#id4">Code Example</a><a class="headerlink" href="#code-example" title="Permalink to this headline"></a></h2>
-<div class="section" id="codeigniter-version-3-x">
+<section id="codeigniter-version-3-x">
 <h3><a class="toc-backref" href="#id5">CodeIgniter Version 3.x</a><a class="headerlink" href="#codeigniter-version-3-x" title="Permalink to this headline"></a></h3>
 <p>Path: <strong>application/migrations</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -385,8 +381,8 @@ You need to upgrade the migration table definition and its data.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="codeigniter-version-4-x">
+</section>
+<section id="codeigniter-version-4-x">
 <h3><a class="toc-backref" href="#id6">CodeIgniter Version 4.x</a><a class="headerlink" href="#codeigniter-version-4-x" title="Permalink to this headline"></a></h3>
 <p>Path: <strong>app/Database/Migrations</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -426,41 +422,41 @@ You need to upgrade the migration table definition and its data.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="search-replace">
+</section>
+</section>
+<section id="search-replace">
 <h2><a class="toc-backref" href="#id7">Search &amp; Replace</a><a class="headerlink" href="#search-replace" title="Permalink to this headline"></a></h2>
 <p>You can use to following table to search &amp; replace your old CI3 files.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="52%" />
-<col width="48%" />
+<col style="width: 52%" />
+<col style="width: 48%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Search</th>
-<th class="head">Replace</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Search</p></th>
+<th class="head"><p>Replace</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>extends CI_Migration</td>
-<td>extends Migration</td>
+<tbody>
+<tr class="row-even"><td><p>extends CI_Migration</p></td>
+<td><p>extends Migration</p></td>
 </tr>
-<tr class="row-odd"><td>$this-&gt;dbforge-&gt;add_field</td>
-<td>$this-&gt;forge-&gt;addField</td>
+<tr class="row-odd"><td><p>$this-&gt;dbforge-&gt;add_field</p></td>
+<td><p>$this-&gt;forge-&gt;addField</p></td>
 </tr>
-<tr class="row-even"><td>$this-&gt;dbforge-&gt;add_key</td>
-<td>$this-&gt;forge-&gt;addKey</td>
+<tr class="row-even"><td><p>$this-&gt;dbforge-&gt;add_key</p></td>
+<td><p>$this-&gt;forge-&gt;addKey</p></td>
 </tr>
-<tr class="row-odd"><td>$this-&gt;dbforge-&gt;create_table</td>
-<td>$this-&gt;forge-&gt;createTable</td>
+<tr class="row-odd"><td><p>$this-&gt;dbforge-&gt;create_table</p></td>
+<td><p>$this-&gt;forge-&gt;createTable</p></td>
 </tr>
-<tr class="row-even"><td>$this-&gt;dbforge-&gt;drop_table</td>
-<td>$this-&gt;forge-&gt;dropTable</td>
+<tr class="row-even"><td><p>$this-&gt;dbforge-&gt;drop_table</p></td>
+<td><p>$this-&gt;forge-&gt;dropTable</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -474,7 +470,7 @@ You need to upgrade the migration table definition and its data.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

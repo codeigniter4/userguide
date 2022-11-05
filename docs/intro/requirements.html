@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Server Requirements &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Server Requirements &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Welcome to CodeIgniter4</a> &raquo;</li>
-      <li>Server Requirements</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Welcome to CodeIgniter4</a></li>
+      <li class="breadcrumb-item active">Server Requirements</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="server-requirements">
+  <section id="server-requirements">
 <h1>Server Requirements<a class="headerlink" href="#server-requirements" title="Permalink to this headline"></a></h1>
 <p><a class="reference external" href="https://www.php.net/">PHP</a> version 7.4 or newer is required, with the
 <a class="reference external" href="https://www.php.net/manual/en/intl.requirements.php">*intl* extension</a> and <a class="reference external" href="https://www.php.net/manual/en/mbstring.requirements.php">*mbstring* extension</a>
@@ -275,9 +279,9 @@ installed.</p>
 <p>The following PHP extensions should be enabled on your server:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">php-json</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">php-mysqlnd</span></code> (if you use MySQL)</li>
-<li><code class="docutils literal notranslate"><span class="pre">php-xml</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">php-json</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">php-mysqlnd</span></code> (if you use MySQL)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">php-xml</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>In order to use the <a class="reference internal" href="../libraries/curlrequest.html"><span class="doc">CURLRequest</span></a>, you will need
@@ -286,28 +290,28 @@ installed.</p>
 Currently supported databases are:</p>
 <blockquote>
 <div><ul class="simple">
-<li>MySQL via the <em>MySQLi</em> driver (version 5.1 and above only)</li>
-<li>PostgreSQL via the <em>Postgre</em> driver</li>
-<li>SQLite3 via the <em>SQLite3</em> driver</li>
-<li>MSSQL via the <em>SQLSRV</em> driver (version 2005 and above only)</li>
-<li>Oracle via the <em>OCI8</em> driver (version 12.1 and above only)</li>
+<li><p>MySQL via the <em>MySQLi</em> driver (version 5.1 and above only)</p></li>
+<li><p>PostgreSQL via the <em>Postgre</em> driver</p></li>
+<li><p>SQLite3 via the <em>SQLite3</em> driver</p></li>
+<li><p>MSSQL via the <em>SQLSRV</em> driver (version 2005 and above only)</p></li>
+<li><p>Oracle via the <em>OCI8</em> driver (version 12.1 and above only)</p></li>
 </ul>
 </div></blockquote>
 <p>Not all of the drivers have been converted/rewritten for CodeIgniter4.
 The list below shows the outstanding ones.</p>
 <blockquote>
 <div><ul class="simple">
-<li>MySQL (5.1+) via the <em>pdo</em> driver</li>
-<li>Oracle via the <em>pdo</em> drivers</li>
-<li>PostgreSQL via the <em>pdo</em> driver</li>
-<li>MSSQL via the <em>pdo</em> driver</li>
-<li>SQLite via the <em>sqlite</em> (version 2) and <em>pdo</em> drivers</li>
-<li>CUBRID via the <em>cubrid</em> and <em>pdo</em> drivers</li>
-<li>Interbase/Firebird via the <em>ibase</em> and <em>pdo</em> drivers</li>
-<li>ODBC via the <em>odbc</em> and <em>pdo</em> drivers (you should know that ODBC is actually an abstraction layer)</li>
+<li><p>MySQL (5.1+) via the <em>pdo</em> driver</p></li>
+<li><p>Oracle via the <em>pdo</em> drivers</p></li>
+<li><p>PostgreSQL via the <em>pdo</em> driver</p></li>
+<li><p>MSSQL via the <em>pdo</em> driver</p></li>
+<li><p>SQLite via the <em>sqlite</em> (version 2) and <em>pdo</em> drivers</p></li>
+<li><p>CUBRID via the <em>cubrid</em> and <em>pdo</em> drivers</p></li>
+<li><p>Interbase/Firebird via the <em>ibase</em> and <em>pdo</em> drivers</p></li>
+<li><p>ODBC via the <em>odbc</em> and <em>pdo</em> drivers (you should know that ODBC is actually an abstraction layer)</p></li>
 </ul>
 </div></blockquote>
-</div>
+</section>
 
 
            </div>
@@ -321,7 +325,7 @@ The list below shows the outstanding ones.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Views &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>Views &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Building Responses</a> &raquo;</li>
-      <li>Views</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Building Responses</a></li>
+      <li class="breadcrumb-item active">Views</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,21 +271,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="views">
+  <section id="views">
 <h1>Views<a class="headerlink" href="#views" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#creating-a-view" id="id2">Creating a View</a></li>
-<li><a class="reference internal" href="#displaying-a-view" id="id3">Displaying a View</a></li>
-<li><a class="reference internal" href="#loading-multiple-views" id="id4">Loading Multiple Views</a></li>
-<li><a class="reference internal" href="#storing-views-within-sub-directories" id="id5">Storing Views within Sub-directories</a></li>
-<li><a class="reference internal" href="#namespaced-views" id="id6">Namespaced Views</a></li>
-<li><a class="reference internal" href="#caching-views" id="id7">Caching Views</a></li>
-<li><a class="reference internal" href="#adding-dynamic-data-to-the-view" id="id8">Adding Dynamic Data to the View</a><ul>
-<li><a class="reference internal" href="#the-savedata-option" id="id9">The saveData Option</a></li>
+<li><p><a class="reference internal" href="#creating-a-view" id="id2">Creating a View</a></p></li>
+<li><p><a class="reference internal" href="#displaying-a-view" id="id3">Displaying a View</a></p></li>
+<li><p><a class="reference internal" href="#loading-multiple-views" id="id4">Loading Multiple Views</a></p></li>
+<li><p><a class="reference internal" href="#storing-views-within-sub-directories" id="id5">Storing Views within Sub-directories</a></p></li>
+<li><p><a class="reference internal" href="#namespaced-views" id="id6">Namespaced Views</a></p></li>
+<li><p><a class="reference internal" href="#caching-views" id="id7">Caching Views</a></p></li>
+<li><p><a class="reference internal" href="#adding-dynamic-data-to-the-view" id="id8">Adding Dynamic Data to the View</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-savedata-option" id="id9">The saveData Option</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#creating-loops" id="id10">Creating Loops</a></li>
+<li><p><a class="reference internal" href="#creating-loops" id="id10">Creating Loops</a></p></li>
 </ul>
 </div>
 <p>A view is simply a web page, or a page fragment, like a header, footer, sidebar, etc. In fact,
@@ -291,7 +296,7 @@ this type of hierarchy.</p>
 the Controller acts as the traffic cop, so it is responsible for fetching a particular view. If you have
 not read the <a class="reference internal" href="../incoming/controllers.html"><span class="doc">Controllers</span></a> page, you should do so before continuing.</p>
 <p>Using the example controller you created in the controller page, let’s add a view to it.</p>
-<div class="section" id="creating-a-view">
+<section id="creating-a-view">
 <h2><a class="toc-backref" href="#id2">Creating a View</a><a class="headerlink" href="#creating-a-view" title="Permalink to this headline"></a></h2>
 <p>Using your text editor, create a file called <code class="docutils literal notranslate"><span class="pre">blog_view.php</span></code> and put this in it:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -305,8 +310,8 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 </pre></div>
 </div>
 <p>Then save the file in your <strong>app/Views</strong> directory.</p>
-</div>
-<div class="section" id="displaying-a-view">
+</section>
+<section id="displaying-a-view">
 <h2><a class="toc-backref" href="#id3">Displaying a View</a><a class="headerlink" href="#displaying-a-view" title="Permalink to this headline"></a></h2>
 <p>To load and display a particular view file you will use the following function:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -316,8 +321,8 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 </div>
 <p>Where <em>name</em> is the name of your view file.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">If the file extension is omitted, then the views are expected to end with the .php extension.</p>
+<p class="admonition-title">Important</p>
+<p>If the file extension is omitted, then the views are expected to end with the .php extension.</p>
 </div>
 <p>Now, open the controller file you made earlier called <code class="docutils literal notranslate"><span class="pre">Blog.php</span></code>, and replace the echo statement with the view function:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -339,8 +344,8 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="loading-multiple-views">
+</section>
+<section id="loading-multiple-views">
 <h2><a class="toc-backref" href="#id4">Loading Multiple Views</a><a class="headerlink" href="#loading-multiple-views" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter will intelligently handle multiple calls to <code class="docutils literal notranslate"><span class="pre">view()</span></code> from within a controller. If more than one
 call happens they will be appended together. For example, you may wish to have a header view, a menu view, a
@@ -368,8 +373,8 @@ content view, and a footer view. That might look something like this:</p>
 </pre></div>
 </div>
 <p>In the example above, we are using “dynamically added data”, which you will see below.</p>
-</div>
-<div class="section" id="storing-views-within-sub-directories">
+</section>
+<section id="storing-views-within-sub-directories">
 <h2><a class="toc-backref" href="#id5">Storing Views within Sub-directories</a><a class="headerlink" href="#storing-views-within-sub-directories" title="Permalink to this headline"></a></h2>
 <p>Your view files can also be stored within sub-directories if you prefer that type of organization.
 When doing so you will need to include the directory name loading the view. Example:</p>
@@ -378,8 +383,8 @@ When doing so you will need to include the directory name loading the view. Exam
 <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;directory_name/file_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="namespaced-views">
+</section>
+<section id="namespaced-views">
 <h2><a class="toc-backref" href="#id6">Namespaced Views</a><a class="headerlink" href="#namespaced-views" title="Permalink to this headline"></a></h2>
 <p>You can store views under a <strong>View</strong> directory that is namespaced, and load that view as if it was namespaced. While
 PHP does not support loading non-class files from a namespace, CodeIgniter provides this feature to make it possible
@@ -392,8 +397,8 @@ example, you could load the <strong>blog_view.php</strong> file from <strong>exa
 <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Example\Blog\Views\blog_view&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="caching-views">
+</section>
+<section id="caching-views">
 <span id="id1"></span><h2><a class="toc-backref" href="#id7">Caching Views</a><a class="headerlink" href="#caching-views" title="Permalink to this headline"></a></h2>
 <p>You can cache a view with the <code class="docutils literal notranslate"><span class="pre">view</span></code> command by passing a <code class="docutils literal notranslate"><span class="pre">cache</span></code> option with the number of seconds to cache
 the view for, in the third parameter:</p>
@@ -411,8 +416,8 @@ along <code class="docutils literal notranslate"><span class="pre">cache_name</s
 <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;cache_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;my_cached_view&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="adding-dynamic-data-to-the-view">
+</section>
+<section id="adding-dynamic-data-to-the-view">
 <h2><a class="toc-backref" href="#id8">Adding Dynamic Data to the View</a><a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Permalink to this headline"></a></h2>
 <p>Data is passed from the controller to the view by way of an array in the second parameter of the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function.
 Here’s an example:</p>
@@ -458,7 +463,7 @@ Here’s an example:</p>
 </pre></div>
 </div>
 <p>Then load the page at the URL you’ve been using and you should see the variables replaced.</p>
-<div class="section" id="the-savedata-option">
+<section id="the-savedata-option">
 <h3><a class="toc-backref" href="#id9">The saveData Option</a><a class="headerlink" href="#the-savedata-option" title="Permalink to this headline"></a></h3>
 <p>The data passed in is retained for subsequent calls to <code class="docutils literal notranslate"><span class="pre">view()</span></code>. If you call the function multiple times
 in a single request, you will not have to pass the desired data to each <code class="docutils literal notranslate"><span class="pre">view()</span></code>.</p>
@@ -478,9 +483,9 @@ into the <code class="docutils literal notranslate"><span class="pre">$option</s
 </div>
 <p>Additionally, if you would like the default functionality of the <code class="docutils literal notranslate"><span class="pre">view()</span></code> function to be that it does clear the data
 between calls, you can set <code class="docutils literal notranslate"><span class="pre">$saveData</span></code> to <strong>false</strong> in <strong>app/Config/Views.php</strong>.</p>
-</div>
-</div>
-<div class="section" id="creating-loops">
+</section>
+</section>
+<section id="creating-loops">
 <h2><a class="toc-backref" href="#id10">Creating Loops</a><a class="headerlink" href="#creating-loops" title="Permalink to this headline"></a></h2>
 <p>The data array you pass to your view files is not limited to simple variables. You can pass multi dimensional
 arrays, which can be looped to generate multiple rows. For example, if you pull data from your database it will
@@ -529,8 +534,8 @@ typically be in the form of a multi-dimensional array.</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -544,7 +549,7 @@ typically be in the form of a multi-dimensional array.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IncomingRequest Class &mdash; CodeIgniter 4.2.8 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <title>IncomingRequest Class &mdash; CodeIgniter 4.2.10 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js/citheme.js"></script>
-        <script type="text/javascript" src="../_static/js/carbon.js"></script>
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html"><img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -256,9 +260,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Controllers and Routing</a> &raquo;</li>
-      <li>IncomingRequest Class</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Controllers and Routing</a></li>
+      <li class="breadcrumb-item active">IncomingRequest Class</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -267,26 +271,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="incomingrequest-class">
+  <section id="incomingrequest-class">
 <h1>IncomingRequest Class<a class="headerlink" href="#incomingrequest-class" title="Permalink to this headline"></a></h1>
 <p>The IncomingRequest class provides an object-oriented representation of an HTTP request from a client, like a browser.
 It extends from, and has access to all the methods of the <a class="reference internal" href="request.html"><span class="doc">Request</span></a> and <a class="reference internal" href="message.html"><span class="doc">Message</span></a>
 classes, in addition to the methods listed below.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#accessing-the-request" id="id1">Accessing the Request</a></li>
-<li><a class="reference internal" href="#determining-request-type" id="id2">Determining Request Type</a></li>
-<li><a class="reference internal" href="#retrieving-input" id="id3">Retrieving Input</a></li>
-<li><a class="reference internal" href="#retrieving-headers" id="id4">Retrieving Headers</a></li>
-<li><a class="reference internal" href="#the-request-url" id="id5">The Request URL</a></li>
-<li><a class="reference internal" href="#uploaded-files" id="id6">Uploaded Files</a></li>
-<li><a class="reference internal" href="#content-negotiation" id="id7">Content Negotiation</a><ul>
-<li><a class="reference internal" href="#class-reference" id="id8">Class Reference</a></li>
+<li><p><a class="reference internal" href="#accessing-the-request" id="id1">Accessing the Request</a></p></li>
+<li><p><a class="reference internal" href="#determining-request-type" id="id2">Determining Request Type</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-input" id="id3">Retrieving Input</a></p></li>
+<li><p><a class="reference internal" href="#retrieving-headers" id="id4">Retrieving Headers</a></p></li>
+<li><p><a class="reference internal" href="#the-request-url" id="id5">The Request URL</a></p></li>
+<li><p><a class="reference internal" href="#uploaded-files" id="id6">Uploaded Files</a></p></li>
+<li><p><a class="reference internal" href="#content-negotiation" id="id7">Content Negotiation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#class-reference" id="id8">Class Reference</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="accessing-the-request">
+<section id="accessing-the-request">
 <h2><a class="toc-backref" href="#id1">Accessing the Request</a><a class="headerlink" href="#accessing-the-request" title="Permalink to this headline"></a></h2>
 <p>An instance of the request class already populated for you if the current class is a descendant of
 <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Controller</span></code> and can be accessed as a class property:</p>
@@ -333,8 +338,8 @@ the controller, where you can save it as a class property:</p>
 <span class="nv">$someClass</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SomeClass</span><span class="p">(</span><span class="nx">\Config\Services</span><span class="o">::</span><span class="na">request</span><span class="p">());</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="determining-request-type">
+</section>
+<section id="determining-request-type">
 <h2><a class="toc-backref" href="#id2">Determining Request Type</a><a class="headerlink" href="#determining-request-type" title="Permalink to this headline"></a></h2>
 <p>A request could be of several types, including an AJAX request or a request from the command line. This can
 be checked with the <code class="docutils literal notranslate"><span class="pre">isAJAX()</span></code> and <code class="docutils literal notranslate"><span class="pre">isCLI()</span></code> methods:</p>
@@ -352,8 +357,8 @@ be checked with the <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">isAJAX()</span></code> method depends on the <code class="docutils literal notranslate"><span class="pre">X-Requested-With</span></code> header,
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">isAJAX()</span></code> method depends on the <code class="docutils literal notranslate"><span class="pre">X-Requested-With</span></code> header,
 which in some cases is not sent by default in XHR requests via JavaScript (i.e., fetch).
 See the <a class="reference internal" href="../general/ajax.html"><span class="doc">AJAX Requests</span></a> section on how to avoid this problem.</p>
 </div>
@@ -378,8 +383,8 @@ uppercase version by wrapping the call in <code class="docutils literal notransl
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="retrieving-input">
+</section>
+<section id="retrieving-input">
 <h2><a class="toc-backref" href="#id3">Retrieving Input</a><a class="headerlink" href="#retrieving-input" title="Permalink to this headline"></a></h2>
 <p>You can retrieve input from $_SERVER, $_GET, $_POST, and $_ENV through the Request object.
 The data is not automatically filtered and returns the raw input data as passed in the request. The main
@@ -401,22 +406,22 @@ like this:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">getVar()</span></code> method will pull from $_REQUEST, so will return any data from $_GET, $POST, or $_COOKIE. While this
 is convenient, you will often need to use a more specific method, like:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">$request-&gt;getGet()</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$request-&gt;getPost()</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$request-&gt;getServer()</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">$request-&gt;getCookie()</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$request-&gt;getGet()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$request-&gt;getPost()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$request-&gt;getServer()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$request-&gt;getCookie()</span></code></p></li>
 </ul>
 <p>In addition, there are a few utility methods for retrieving information from either $_GET or $_POST, while
 maintaining the ability to control the order you look for it:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">$request-&gt;getPostGet()</span></code> - checks $_POST first, then $_GET</li>
-<li><code class="docutils literal notranslate"><span class="pre">$request-&gt;getGetPost()</span></code> - checks $_GET first, then $_POST</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$request-&gt;getPostGet()</span></code> - checks $_POST first, then $_GET</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$request-&gt;getGetPost()</span></code> - checks $_GET first, then $_POST</p></li>
 </ul>
 <p><strong>Getting JSON data</strong></p>
 <p>You can grab the contents of php://input as a JSON stream with <code class="docutils literal notranslate"><span class="pre">getJSON()</span></code>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This has no way of checking if the incoming data is valid JSON or not, you should only use this
+<p class="admonition-title">Note</p>
+<p>This has no way of checking if the incoming data is valid JSON or not, you should only use this
 method if you know that you’re expecting JSON.</p>
 </div>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -466,8 +471,8 @@ correct <code class="docutils literal notranslate"><span class="pre">CONTENT_TYP
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">See the documentation for <code class="docutils literal notranslate"><span class="pre">dot_array_search()</span></code> in the <code class="docutils literal notranslate"><span class="pre">Array</span></code> helper for more information on “dot” notation.</p>
+<p class="admonition-title">Note</p>
+<p>See the documentation for <code class="docutils literal notranslate"><span class="pre">dot_array_search()</span></code> in the <code class="docutils literal notranslate"><span class="pre">Array</span></code> helper for more information on “dot” notation.</p>
 </div>
 <p><strong>Retrieving Raw data (PUT, PATCH, DELETE)</strong></p>
 <p>Finally, you can grab the contents of php://input as a raw stream with <code class="docutils literal notranslate"><span class="pre">getRawInput()</span></code>:</p>
@@ -503,8 +508,8 @@ filter types</a>.</p>
 </div>
 <p>All of the methods mentioned above support the filter type passed in as the second parameter, with the
 exception of <code class="docutils literal notranslate"><span class="pre">getJSON()</span></code>.</p>
-</div>
-<div class="section" id="retrieving-headers">
+</section>
+<section id="retrieving-headers">
 <h2><a class="toc-backref" href="#id4">Retrieving Headers</a><a class="headerlink" href="#retrieving-headers" title="Permalink to this headline"></a></h2>
 <p>You can get access to any header that was sent with the request with the <code class="docutils literal notranslate"><span class="pre">headers()</span></code> method, which returns
 an array of all headers, with the key as the name of the header, and the value is an instance of
@@ -554,8 +559,8 @@ specified header object in a case-insensitive manner if it exists. If not, then 
 <span class="k">echo</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$header</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-request-url">
+</section>
+<section id="the-request-url">
 <h2><a class="toc-backref" href="#id5">The Request URL</a><a class="headerlink" href="#the-request-url" title="Permalink to this headline"></a></h2>
 <p>You can retrieve a <a class="reference internal" href="../libraries/uri.html"><span class="doc">URI</span></a> object that represents the current URI for this request through the
 <code class="docutils literal notranslate"><span class="pre">$request-&gt;getUri()</span></code> method. You can cast this object as a string to get a full URL for the current request:</p>
@@ -599,8 +604,8 @@ functions use, so this is a helpful way to “spoof” an incoming request for t
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="uploaded-files">
+</section>
+<section id="uploaded-files">
 <h2><a class="toc-backref" href="#id6">Uploaded Files</a><a class="headerlink" href="#uploaded-files" title="Permalink to this headline"></a></h2>
 <p>Information about all uploaded files can be retrieved through <code class="docutils literal notranslate"><span class="pre">$request-&gt;getFiles()</span></code>, which returns an array of
 <code class="docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Files\UploadedFile</span></code> instance. This helps to ease the pain of working with uploaded files,
@@ -625,11 +630,11 @@ multi-file upload, based on the filename given in the HTML file input:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The files here correspond to <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code>. Even if a user just clicks submit button of a form and does not upload any file, the file will still exist. You can check that the file was actually uploaded by the <code class="docutils literal notranslate"><span class="pre">isValid()</span></code> method in UploadedFile. See <a class="reference internal" href="../libraries/uploaded_files.html#verify-a-file"><span class="std std-ref">Verify a File</span></a> for more details.</p>
+<p class="admonition-title">Note</p>
+<p>The files here correspond to <code class="docutils literal notranslate"><span class="pre">$_FILES</span></code>. Even if a user just clicks submit button of a form and does not upload any file, the file will still exist. You can check that the file was actually uploaded by the <code class="docutils literal notranslate"><span class="pre">isValid()</span></code> method in UploadedFile. See <a class="reference internal" href="../libraries/uploaded_files.html#verify-a-file"><span class="std std-ref">Verify a File</span></a> for more details.</p>
 </div>
-</div>
-<div class="section" id="content-negotiation">
+</section>
+<section id="content-negotiation">
 <h2><a class="toc-backref" href="#id7">Content Negotiation</a><a class="headerlink" href="#content-negotiation" title="Permalink to this headline"></a></h2>
 <p>You can easily negotiate content types with the request through the <code class="docutils literal notranslate"><span class="pre">negotiate()</span></code> method:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -642,110 +647,100 @@ multi-file upload, based on the filename given in the HTML file input:</p>
 </pre></div>
 </div>
 <p>See the <a class="reference internal" href="content_negotiation.html"><span class="doc">Content Negotiation</span></a> page for more details.</p>
-<div class="section" id="class-reference">
+<section id="class-reference">
 <h3><a class="toc-backref" href="#id8">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline"></a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In addition to the methods listed here, this class inherits the methods from the
+<p class="admonition-title">Note</p>
+<p>In addition to the methods listed here, this class inherits the methods from the
 <a class="reference internal" href="request.html"><span class="doc">Request Class</span></a> and the <a class="reference internal" href="message.html"><span class="doc">Message Class</span></a>.</p>
 </div>
 <p>The methods provided by the parent classes that are available are:</p>
 <ul class="simple">
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getIPAddress()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::isValidIP()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getMethod()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::setMethod()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getServer()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getEnv()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::setGlobal()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::fetchGlobal()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::getBody()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::setBody()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::appendBody()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::populateHeaders()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::headers()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::header()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::hasHeader()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::getHeaderLine()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::setHeader()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::removeHeader()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::appendHeader()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::prependHeader()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::getProtocolVersion()</span></code></li>
-<li><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::setProtocolVersion()</span></code></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getIPAddress()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::isValidIP()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getMethod()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::setMethod()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getServer()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::getEnv()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::setGlobal()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Request::fetchGlobal()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::getBody()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::setBody()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::appendBody()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::populateHeaders()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::headers()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::header()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::hasHeader()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::getHeaderLine()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::setHeader()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::removeHeader()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::appendHeader()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::prependHeader()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::getProtocolVersion()</span></code></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message::setProtocolVersion()</span></code></p></li>
 </ul>
-<span class="target" id="namespace-CodeIgniter\HTTP"></span><dl class="class">
-<dt id="CodeIgniter\HTTP\IncomingRequest">
-<em class="property">class </em><code class="descclassname">CodeIgniter\HTTP\</code><code class="descname">IncomingRequest</code><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest" title="Permalink to this definition"></a></dt>
-<dd><dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::isCLI">
-<code class="descname">isCLI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::isCLI" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the request was initiated from the command line, otherwise false.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<span class="target" id="namespace-CodeIgniter\HTTP"></span><dl class="php class">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CodeIgniter\HTTP\</span></span><span class="sig-name descname"><span class="pre">IncomingRequest</span></span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest" title="Permalink to this definition"></a></dt>
+<dd><dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::isCLI">
+<span class="sig-name descname"><span class="pre">isCLI</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::isCLI" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the request was initiated from the command line, otherwise false.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::isAJAX">
-<code class="descname">isAJAX</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::isAJAX" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the request is an AJAX request, otherwise false.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::isAJAX">
+<span class="sig-name descname"><span class="pre">isAJAX</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::isAJAX" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the request is an AJAX request, otherwise false.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::isSecure">
-<code class="descname">isSecure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::isSecure" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the request is an HTTPS request, otherwise false.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::isSecure">
+<span class="sig-name descname"><span class="pre">isSecure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::isSecure" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the request is an HTTPS request, otherwise false.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getVar">
-<code class="descname">getVar</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getVar" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) – The name of the variable/key to look for.</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getVar">
+<span class="sig-name descname"><span class="pre">getVar</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getVar" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_REQUEST if no parameters supplied, otherwise the REQUEST value if found, or null if not</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed|null</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_REQUEST if no parameters supplied, otherwise the REQUEST value if found, or null if not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed|null</span></code></span></p>
+</dd>
+</dl>
 <p>The first parameter will contain the name of the REQUEST item you are looking for:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -786,86 +781,74 @@ the filter type to apply:</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getGet">
-<code class="descname">getGet</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getGet" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) – The name of the variable/key to look for.</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getGet">
+<span class="sig-name descname"><span class="pre">getGet</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getGet" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_GET if no parameters supplied, otherwise the GET value if found, or null if not</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed|null</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_GET if no parameters supplied, otherwise the GET value if found, or null if not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed|null</span></code></span></p>
+</dd>
+</dl>
 <p>This method is identical to <code class="docutils literal notranslate"><span class="pre">getVar()</span></code>, only it fetches GET data.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getPost">
-<code class="descname">getPost</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getPost" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) – The name of the variable/key to look for.</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getPost">
+<span class="sig-name descname"><span class="pre">getPost</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getPost" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_POST if no parameters supplied, otherwise the POST value if found, or null if not</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><p>mixed|null</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_POST if no parameters supplied, otherwise the POST value if found, or null if not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p>mixed|null</p>
 <p>This method is identical to <code class="docutils literal notranslate"><span class="pre">getVar()</span></code>, only it fetches POST data.</p>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getPostGet">
-<code class="descname">getPostGet</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getPostGet" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) – The name of the variable/key to look for.</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getPostGet">
+<span class="sig-name descname"><span class="pre">getPostGet</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getPostGet" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_POST and $_GET combined if no parameters specified (prefer POST value on conflict),
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_POST and $_GET combined if no parameters specified (prefer POST value on conflict),
 otherwise looks for POST value, if nothing found looks for GET value, if no value found returns null</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed|null</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed|null</span></code></span></p>
+</dd>
+</dl>
 <p>This method works pretty much the same way as <code class="docutils literal notranslate"><span class="pre">getPost()</span></code> and <code class="docutils literal notranslate"><span class="pre">getGet()</span></code>, only combined.
 It will search through both POST and GET streams for data, looking first in POST, and
 then in GET:</p>
@@ -878,31 +861,27 @@ then in GET:</p>
 Although POST data will be preferred in case of name conflict.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getGetPost">
-<code class="descname">getGetPost</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getGetPost" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) – The name of the variable/key to look for.</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getGetPost">
+<span class="sig-name descname"><span class="pre">getGetPost</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getGetPost" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_GET and $_POST combined if no parameters specified (prefer GET value on conflict),
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_GET and $_POST combined if no parameters specified (prefer GET value on conflict),
 otherwise looks for GET value, if nothing found looks for POST value, if no value found returns null</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed|null</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed|null</span></code></span></p>
+</dd>
+</dl>
 <p>This method works pretty much the same way as <code class="docutils literal notranslate"><span class="pre">getPost()</span></code> and <code class="docutils literal notranslate"><span class="pre">getGet()</span></code>, only combined.
 It will search through both GET and POST streams for data, looking first in GET, and
 then in POST:</p>
@@ -915,30 +894,26 @@ then in POST:</p>
 Although GET data will be preferred in case of name conflict.</p>
 </dd></dl>
 
-<dl class="method">
-<dt>
-<code class="descname">getCookie</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) – COOKIE name</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php">
+<span class="sig-name descname"><span class="pre">getCookie</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – COOKIE name</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_COOKIE if no parameters supplied, otherwise the COOKIE value if found or null if not</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_COOKIE if no parameters supplied, otherwise the COOKIE value if found or null if not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>This method is identical to <code class="docutils literal notranslate"><span class="pre">getPost()</span></code> and <code class="docutils literal notranslate"><span class="pre">getGet()</span></code>, only it fetches cookie data:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -953,37 +928,33 @@ found <a class="reference external" href="https://www.php.net/manual/en/filter.f
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Unlike the <a class="reference internal" href="../helpers/cookie_helper.html"><span class="doc">Cookie Helper</span></a>
+<p class="admonition-title">Note</p>
+<p>Unlike the <a class="reference internal" href="../helpers/cookie_helper.html"><span class="doc">Cookie Helper</span></a>
 function <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><code class="xref php php-func docutils literal notranslate"><span class="pre">get_cookie()</span></code></a>, this method does NOT prepend
 your configured <code class="docutils literal notranslate"><span class="pre">Config\Cookie::$prefix</span></code> value.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt>
-<code class="descname">getServer</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = null</em><span class="optional">[</span>, <em>$filter = null</em><span class="optional">[</span>, <em>$flags = null</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) – Value name</li>
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
-<li><strong>$flags</strong> (<em>int</em>) – Flags to apply. A list of flags can be found
-<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php">
+<span class="sig-name descname"><span class="pre">getServer</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$index</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$flags</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Value name</p></li>
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
+<li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
+<a class="reference external" href="https://www.php.net/manual/en/filter.filters.flags.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">$_SERVER item value if found, null if not</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>$_SERVER item value if found, null if not</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>This method is identical to the <code class="docutils literal notranslate"><span class="pre">getPost()</span></code>, <code class="docutils literal notranslate"><span class="pre">getGet()</span></code> and <code class="docutils literal notranslate"><span class="pre">getCookie()</span></code>
 methods, only it fetches getServer data (<code class="docutils literal notranslate"><span class="pre">$_SERVER</span></code>):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -1000,27 +971,23 @@ as an array.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getUserAgent">
-<code class="descname">getUserAgent</code><span class="sig-paren">(</span><span class="optional">[</span><em>$filter = null</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getUserAgent" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$filter</strong> (<em>int</em>) – The type of filter to apply. A list of filters can be
-found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getUserAgent">
+<span class="sig-name descname"><span class="pre">getUserAgent</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$filter</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getUserAgent" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
+found <a class="reference external" href="https://www.php.net/manual/en/filter.filters.php">here</a>.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The User Agent string, as found in the SERVER data, or null if not found.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">mixed</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The User Agent string, as found in the SERVER data, or null if not found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span></p>
+</dd>
+</dl>
 <p>This method returns the User Agent string from the SERVER data:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -1029,43 +996,37 @@ found <a class="reference external" href="https://www.php.net/manual/en/filter.f
 </div>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::getPath">
-<code class="descname">getPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getPath" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current URI path relative to <code class="docutils literal notranslate"><span class="pre">$_SERVER['SCRIPT_NAME']</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::getPath">
+<span class="sig-name descname"><span class="pre">getPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::getPath" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The current URI path relative to <code class="docutils literal notranslate"><span class="pre">$_SERVER['SCRIPT_NAME']</span></code></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+</dd>
+</dl>
 <p>This is the safest method to determine the “current URI”, since <code class="docutils literal notranslate"><span class="pre">IncomingRequest::$uri</span></code>
 may not be aware of the complete App configuration for base URLs.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="CodeIgniter\HTTP\IncomingRequest::setPath">
-<code class="descname">setPath</code><span class="sig-paren">(</span><em>$path</em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::setPath" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) – The relative path to use as the current URI</li>
+<dl class="php method">
+<dt class="sig sig-object php" id="CodeIgniter\HTTP\IncomingRequest::setPath">
+<span class="sig-name descname"><span class="pre">setPath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\HTTP\IncomingRequest::setPath" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The relative path to use as the current URI</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">This Incoming Request</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">IncomingRequest</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>This Incoming Request</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\HTTP\IncomingRequest" title="CodeIgniter\HTTP\IncomingRequest"><code class="xref php php-obj docutils literal notranslate"><span class="pre">IncomingRequest</span></code></a></span></p>
+</dd>
+</dl>
 <p>Used mostly just for testing purposes, this allows you to set the relative path
 value for the current request instead of relying on URI detection. This will also
 update the underlying <code class="docutils literal notranslate"><span class="pre">URI</span></code> instance with the new path.</p>
@@ -1073,9 +1034,9 @@ update the underlying <code class="docutils literal notranslate"><span class="pr
 
 </dd></dl>
 
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -1089,7 +1050,7 @@ update the underlying <code class="docutils literal notranslate"><span class="pr
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 31, 2022.
+      <span class="lastupdated">Last updated on Nov 05, 2022.
       </span></p>
   </div>
 
