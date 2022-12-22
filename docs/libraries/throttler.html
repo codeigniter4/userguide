@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Throttler &mdash; CodeIgniter 4.2.10 documentation</title>
+  <title>Throttler &mdash; CodeIgniter 4.2.11 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -417,8 +417,8 @@ filter:</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you use <code class="docutils literal notranslate"><span class="pre">$methods</span></code> filters, you should <a class="reference internal" href="../incoming/routing.html#use-defined-routes-only"><span class="std std-ref">disable auto-routing</span></a>
-because auto-routing permits any HTTP method to access a controller.
+<p>If you use <code class="docutils literal notranslate"><span class="pre">$methods</span></code> filters, you should <a class="reference internal" href="../incoming/routing.html#use-defined-routes-only"><span class="std std-ref">disable Auto Routing (Legacy)</span></a>
+because <a class="reference internal" href="../incoming/routing.html#auto-routing-legacy"><span class="std std-ref">Auto Routing (Legacy)</span></a> permits any HTTP method to access a controller.
 Accessing the controller with a method you don’t expect could bypass the filter.</p>
 </div>
 <p>And that’s all there is to it. Now all POST requests made on the site will have to be rate limited.</p>
@@ -501,7 +501,7 @@ Won’t fail if the bucket doesn’t exist.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Nov 05, 2022.
+      <span class="lastupdated">Last updated on Dec 22, 2022.
       </span></p>
   </div>
 

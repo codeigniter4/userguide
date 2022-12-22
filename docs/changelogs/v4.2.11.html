@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Seeding &mdash; CodeIgniter 4.2.11 documentation</title>
+  <title>Version 4.2.11 &mdash; CodeIgniter 4.2.11 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database Commands" href="db_commands.html" />
-    <link rel="prev" title="Database Migrations" href="migration.html" /> 
+    <link rel="next" title="Version 4.2.10" href="v4.2.10.html" />
+    <link rel="prev" title="Change Logs" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,13 +51,13 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../installation/index.html">Installation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -154,12 +154,12 @@
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Managing Databases</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="migration.html">Database Migrations</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Database Seeding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db_commands.html">Database Commands</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
 </ul>
 </li>
 </ul>
@@ -261,8 +261,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Managing Databases</a></li>
-      <li class="breadcrumb-item active">Database Seeding</li>
+          <li class="breadcrumb-item"><a href="../installation/index.html">Installation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Change Logs</a></li>
+      <li class="breadcrumb-item active">Version 4.2.11</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -271,111 +272,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="database-seeding">
-<h1>Database Seeding<a class="headerlink" href="#database-seeding" title="Permalink to this headline"></a></h1>
-<p>Database seeding is a simple way to add data into your database. It is especially useful during development where
-you need to populate the database with sample data that you can develop against, but it is not limited to that.
-Seeds can contain static data that you don’t want to include in a migration, like countries, or geo-coding tables,
-event or setting information, and more.</p>
-<p>Database seeds are simple classes that must have a <strong>run()</strong> method, and extend <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\Seeder</span></code>.
-Within the <strong>run()</strong> the class can create any form of data that it needs to. It has access to the database
-connection and the forge through <code class="docutils literal notranslate"><span class="pre">$this-&gt;db</span></code> and <code class="docutils literal notranslate"><span class="pre">$this-&gt;forge</span></code>, respectively. Seed files must be
-stored within the <strong>app/Database/Seeds</strong> directory. The name of the file must match the name of the class.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Database\Seeds</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Database\Seeder</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">SimpleSeeder</span> <span class="k">extends</span> <span class="nx">Seeder</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;darth&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;email&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;darth@theempire.com&#39;</span><span class="p">,</span>
-        <span class="p">];</span>
-
-        <span class="c1">// Simple Queries</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;INSERT INTO users (username, email) VALUES(:username:, :email:)&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-
-        <span class="c1">// Using Query Builder</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+  <section id="version-4-2-11">
+<h1>Version 4.2.11<a class="headerlink" href="#version-4-2-11" title="Permalink to this headline"></a></h1>
+<p>Release Date: December 21, 2022</p>
+<p><strong>4.2.11 release of CodeIgniter4</strong></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#security" id="id1">SECURITY</a></p></li>
+<li><p><a class="reference internal" href="#breaking" id="id2">BREAKING</a></p></li>
+<li><p><a class="reference internal" href="#bugs-fixed" id="id3">Bugs Fixed</a></p></li>
+</ul>
 </div>
-<section id="nesting-seeders">
-<h2>Nesting Seeders<a class="headerlink" href="#nesting-seeders" title="Permalink to this headline"></a></h2>
-<p>Seeders can call other seeders, with the <strong>call()</strong> method. This allows you to easily organize a central seeder,
-but organize the tasks into separate seeder files:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Database\Seeds</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Database\Seeder</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">TestSeeder</span> <span class="k">extends</span> <span class="nx">Seeder</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;UserSeeder&#39;</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;CountrySeeder&#39;</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;JobSeeder&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>You can also use a fully-qualified class name in the <strong>call()</strong> method, allowing you to keep your seeders
-anywhere the autoloader can find them. This is great for more modular code bases:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Database\Seeds</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Database\Seeder</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">SimpleSeeder</span> <span class="k">extends</span> <span class="nx">Seeder</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;UserSeeder&#39;</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;My\Database\Seeds\CountrySeeder&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<section id="security">
+<h2><a class="toc-backref" href="#id1">SECURITY</a><a class="headerlink" href="#security" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><em>Attackers may spoof IP address when using proxy</em> was fixed. See the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-ghw3-5qvm-3mqc">Security advisory GHSA-ghw3-5qvm-3mqc</a> for more information.</p></li>
+<li><p><em>Potential Session Handlers Vulnerability</em> was fixed. See the <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/security/advisories/GHSA-6cq5-8cj7-g558">Security advisory GHSA-6cq5-8cj7-g558</a> for more information.</p></li>
+</ul>
 </section>
-<section id="using-seeders">
-<h2>Using Seeders<a class="headerlink" href="#using-seeders" title="Permalink to this headline"></a></h2>
-<p>You can grab a copy of the main seeder through the database config class:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$seeder</span> <span class="o">=</span> <span class="nx">\Config\Database</span><span class="o">::</span><span class="na">seeder</span><span class="p">();</span>
-<span class="nv">$seeder</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;TestSeeder&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<section id="command-line-seeding">
-<h3>Command Line Seeding<a class="headerlink" href="#command-line-seeding" title="Permalink to this headline"></a></h3>
-<p>You can also seed data from the command line, as part of the Migrations CLI tools, if you don’t want to create
-a dedicated controller:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">db</span><span class="o">:</span><span class="nx">seed</span> <span class="nx">TestSeeder</span>
-</pre></div>
-</div>
+<section id="breaking">
+<h2><a class="toc-backref" href="#id2">BREAKING</a><a class="headerlink" href="#breaking" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Config\App::$proxyIPs</span></code> value format has been changed. See <a class="reference internal" href="../installation/upgrade_4211.html#upgrade-4211-proxyips"><span class="std std-ref">Upgrading Guide</span></a>.</p></li>
+<li><p>The key of the session data record for <a class="reference internal" href="../libraries/sessions.html#sessions-databasehandler-driver"><span class="std std-ref">DatabaseHandler Driver</span></a>,
+<a class="reference internal" href="../libraries/sessions.html#sessions-memcachedhandler-driver"><span class="std std-ref">MemcachedHandler Driver</span></a> and <a class="reference internal" href="../libraries/sessions.html#sessions-redishandler-driver"><span class="std std-ref">RedisHandler Driver</span></a>
+has changed. See <a class="reference internal" href="../installation/upgrade_4211.html#upgrade-4211-session-key"><span class="std std-ref">Upgrading Guide</span></a>.</p></li>
+</ul>
 </section>
-<section id="creating-seed-files">
-<h3>Creating Seed Files<a class="headerlink" href="#creating-seed-files" title="Permalink to this headline"></a></h3>
-<p>Using the command line, you can easily generate seed files.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">make</span><span class="o">:</span><span class="nx">seeder</span> <span class="nx">user</span> <span class="o">--</span><span class="nx">suffix</span>
-<span class="c1">// Output: UserSeeder.php file located at app/Database/Seeds directory.</span>
-</pre></div>
-</div>
-<p>You can supply the <strong>root</strong> namespace where the seed file will be stored by supplying the <code class="docutils literal notranslate"><span class="pre">--namespace</span></code> option:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">make</span><span class="o">:</span><span class="nx">seeder</span> <span class="nx">MySeeder</span> <span class="o">--</span><span class="k">namespace</span> <span class="nx">Acme\Blog</span>
-</pre></div>
-</div>
-<p>If <code class="docutils literal notranslate"><span class="pre">Acme\Blog</span></code> is mapped to <code class="docutils literal notranslate"><span class="pre">app/Blog</span></code> directory, then this command will generate <code class="docutils literal notranslate"><span class="pre">MySeeder.php</span></code> at <code class="docutils literal notranslate"><span class="pre">app/Blog/Database/Seeds</span></code> directory.</p>
-<p>Supplying the <code class="docutils literal notranslate"><span class="pre">--force</span></code> option will overwrite existing files in destination.</p>
-</section>
+<section id="bugs-fixed">
+<h2><a class="toc-backref" href="#id3">Bugs Fixed</a><a class="headerlink" href="#bugs-fixed" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Fixed a <code class="docutils literal notranslate"><span class="pre">FileLocator::locateFile()</span></code> bug where a similar namespace name could be replaced by another, causing a failure to find a file that exists.</p></li>
+<li><p>Fixed a <code class="docutils literal notranslate"><span class="pre">RedisHandler</span></code> session class to use the correct config when used with a socket connection.</p></li>
+</ul>
+<p>See the repo’s <a class="reference external" href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CHANGELOG.md">CHANGELOG.md</a> for a complete list of bugs fixed.</p>
 </section>
 </section>
 
@@ -383,8 +313,8 @@ a dedicated controller:</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="migration.html" class="btn btn-neutral float-left" title="Database Migrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="db_commands.html" class="btn btn-neutral float-right" title="Database Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Change Logs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="v4.2.10.html" class="btn btn-neutral float-right" title="Version 4.2.10" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
