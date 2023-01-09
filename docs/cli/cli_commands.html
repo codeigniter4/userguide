@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.11 documentation</title>
+  <title>Creating Spark Commands &mdash; CodeIgniter 4.2.12 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -296,11 +296,11 @@ and must extend <code class="docutils literal notranslate"><span class="pre">Cod
 <p>The following properties should be used in order to get listed in CLI commands and to add help functionality to your command:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$group</span></code>: a string to describe the group the command is lumped under when listing commands. For example: <code class="docutils literal notranslate"><span class="pre">Database</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$name</span></code>: a string to describe the command’s name. For example: <code class="docutils literal notranslate"><span class="pre">migrate:create</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$description</span></code>: a string to describe the command. For example: <code class="docutils literal notranslate"><span class="pre">Creates</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">migration</span> <span class="pre">file.</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$usage</span></code>: a string to describe the command usage. For example: <code class="docutils literal notranslate"><span class="pre">migrate:create</span> <span class="pre">[name]</span> <span class="pre">[options]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$arguments</span></code>: an array of strings to describe each command argument. For example: <code class="docutils literal notranslate"><span class="pre">'name'</span> <span class="pre">=&gt;</span> <span class="pre">'The</span> <span class="pre">migration</span> <span class="pre">file</span> <span class="pre">name'</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$options</span></code>: an array of strings to describe each command option. For example: <code class="docutils literal notranslate"><span class="pre">'-n'</span> <span class="pre">=&gt;</span> <span class="pre">'Set</span> <span class="pre">migration</span> <span class="pre">namespace'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$name</span></code>: a string to describe the command’s name. For example: <code class="docutils literal notranslate"><span class="pre">make:controller</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$description</span></code>: a string to describe the command. For example: <code class="docutils literal notranslate"><span class="pre">Generates</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">controller</span> <span class="pre">file.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$usage</span></code>: a string to describe the command usage. For example: <code class="docutils literal notranslate"><span class="pre">make:controller</span> <span class="pre">&lt;name&gt;</span> <span class="pre">[options]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$arguments</span></code>: an array of strings to describe each command argument. For example: <code class="docutils literal notranslate"><span class="pre">'name'</span> <span class="pre">=&gt;</span> <span class="pre">'The</span> <span class="pre">controller</span> <span class="pre">class</span> <span class="pre">name.'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$options</span></code>: an array of strings to describe each command option. For example: <code class="docutils literal notranslate"><span class="pre">'--force'</span> <span class="pre">=&gt;</span> <span class="pre">'Force</span> <span class="pre">overwrite</span> <span class="pre">existing</span> <span class="pre">file.'</span></code></p></li>
 </ul>
 <p><strong>Help description will be automatically generated according to the above parameters.</strong></p>
 <section id="file-location">
@@ -491,8 +491,8 @@ be familiar with when creating your own commands. It also has a <a class="refere
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2022 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Dec 22, 2022.
+    <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jan 09, 2023.
       </span></p>
   </div>
 
