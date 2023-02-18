@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Helper &mdash; CodeIgniter 4.3.1 documentation</title>
+  <title>URL Helper &mdash; CodeIgniter 4.3.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -30,12 +30,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html">
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working with HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
 </li>
@@ -171,7 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_collections.html">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
@@ -260,7 +264,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Helpers</a></li>
       <li class="breadcrumb-item active">URL Helper</li>
       <li class="wy-breadcrumbs-aside">
@@ -360,6 +364,12 @@ We use this for unit testing the framework itself.</p>
 <p>Since v4.3.0, if you set <code class="docutils literal notranslate"><span class="pre">Config\App::$allowedHostnames</span></code>,
 this returns the URL with the hostname set in it if the current URL matches.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In previous versions, this returned the base URL without a trailing
+slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) when called with no argument. The bug was fixed and
+since v4.3.2 it returns the base URL with a trailing slash.</p>
+</div>
 <p>Returns your site base URL, as specified in your config file. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -405,17 +415,17 @@ string to a file, such as an image or stylesheet. For example:</p>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string|\CodeIgniter\HTTP\URI</span></code></span></p>
 </dd>
 </dl>
-<p>Returns the full URL (including segments) of the page being currently viewed.</p>
+<p>Returns the full URL of the page being currently viewed.
+When returning string, the query and fragment parts of the URL are removed.
+When returning URI, the query and fragment parts are preserved.</p>
 <p>However for security reasons, it is created based on the <code class="docutils literal notranslate"><span class="pre">Config\App</span></code> settings,
 and not intended to match the browser URL.</p>
 <p>Since v4.3.0, if you set <code class="docutils literal notranslate"><span class="pre">Config\App::$allowedHostnames</span></code>,
 this returns the URL with the hostname set in it if the current URL matches.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Calling this function is the same as doing this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nx">site_url</span><span class="p">(</span><span class="nx">uri_string</span><span class="p">());</span>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">current_url()</span></code> is the same as doing this:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">site_url</span><span class="p">(</span><span class="nx">uri_string</span><span class="p">());</span>
 </pre></div>
 </div>
 </div>
@@ -444,44 +454,46 @@ this returns the URL with the hostname set in it if the current URL matches.</p>
 <p>Returns the full URL (including segments) of the page the user was previously on.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Due to security issues of blindly trusting the HTTP_REFERER system variable, CodeIgniter will
+<p>Due to security issues of blindly trusting the <code class="docutils literal notranslate"><span class="pre">HTTP_REFERER</span></code> system variable, CodeIgniter will
 store previously visited pages in the session if it’s available. This ensures that we always
 use a known and trusted source. If the session hasn’t been loaded, or is otherwise unavailable,
-then a sanitized version of HTTP_REFERER will be used.</p>
+then a sanitized version of <code class="docutils literal notranslate"><span class="pre">HTTP_REFERER</span></code> will be used.</p>
 </div>
 </dd></dl>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="uri_string">
-<span class="sig-name descname"><span class="pre">uri_string</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">$relative</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#uri_string" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">uri_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uri_string" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>$relative</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – True if you would like the string relative to baseURL</p></li>
-</ul>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A URI string</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A URI string</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
-<p>Returns the path part of the current URL.
-For example, if your URL was this:</p>
+<p>Returns the path part of the current URL relative to baseURL.</p>
+<p>For example, when your baseURL is <strong>http://some-site.com/</strong> and the current URL is:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">http</span><span class="o">://</span><span class="nx">some</span><span class="o">-</span><span class="nx">site</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
 <p>The function would return:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
-<p>Or with the optional relative parameter:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">app</span><span class="o">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="nx">http</span><span class="o">://</span><span class="nx">some</span><span class="o">-</span><span class="nx">site</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">subfolder</span><span class="o">/</span>
-
-<span class="nx">uri_string</span><span class="p">();</span> <span class="c1">// &quot;/subfolder/blog/comments/123&quot;</span>
-<span class="nx">uri_string</span><span class="p">(</span><span class="k">true</span><span class="p">);</span> <span class="c1">// &quot;blog/comments/123&quot;</span>
+<p>When your baseURL is <strong>http://some-site.com/subfolder/</strong> and the current URL is:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">http</span><span class="o">://</span><span class="nx">some</span><span class="o">-</span><span class="nx">site</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">subfolder</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
+</div>
+<p>The function would return:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In previous versions, the parameter <code class="docutils literal notranslate"><span class="pre">$relative</span> <span class="pre">=</span> <span class="pre">false</span></code> was defined.
+However, due to a bug, this function always returned a path relative to baseURL.
+Since v4.3.2, the parameter has been removed.</p>
 </div>
 </dd></dl>
 
@@ -495,7 +507,7 @@ For example, if your URL was this:</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>‘index_page’ value</p>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">indexPage</span></code> value</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
@@ -540,7 +552,7 @@ be a string or an array.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are building links that are internal to your application
-do not include the base URL (<cite>http://…</cite>). This will be added
+do not include the base URL (<code class="docutils literal notranslate"><span class="pre">http://...</span></code>). This will be added
 automatically from the information specified in your config file.
 Include only the URI segments you wish appended to the URL.</p>
 </div>
@@ -757,7 +769,7 @@ The value can be true or false (boolean):</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The only URLs recognized are those that start with “www.” or with “://”.</p>
+<p>The only URLs recognized are those that start with <code class="docutils literal notranslate"><span class="pre">www.</span></code> or with <code class="docutils literal notranslate"><span class="pre">://</span></code>.</p>
 </div>
 </dd></dl>
 
@@ -768,7 +780,7 @@ The value can be true or false (boolean):</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Input string</p></li>
-<li><p><strong>$separator</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Word separator (usually ‘-’ or ‘_’)</p></li>
+<li><p><strong>$separator</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Word separator (usually <code class="docutils literal notranslate"><span class="pre">'-'</span></code> or <code class="docutils literal notranslate"><span class="pre">'_'</span></code>)</p></li>
 <li><p><strong>$lowercase</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to transform the output string to lowercase</p></li>
 </ul>
 </dd>
@@ -790,7 +802,7 @@ title of your entries in the URL. Example:</p>
 </pre></div>
 </div>
 <p>The second parameter determines the word delimiter. By default dashes
-are used. Preferred options are: <strong>-</strong> (dash) or <strong>_</strong> (underscore).</p>
+are used. Preferred options are: <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash) or <code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore).</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -818,7 +830,7 @@ forced. By default they are not. Options are boolean true/false.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Input string</p></li>
-<li><p><strong>$separator</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Word separator (usually ‘-’ or ‘_’)</p></li>
+<li><p><strong>$separator</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Word separator (usually <code class="docutils literal notranslate"><span class="pre">'-'</span></code> or <code class="docutils literal notranslate"><span class="pre">'_'</span></code>)</p></li>
 <li><p><strong>$lowercase</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to transform the output string to lowercase</p></li>
 </ul>
 </dd>
@@ -840,7 +852,7 @@ accented characters automatically.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – URL string</p></li>
-<li><p><strong>$secure</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – true for <a class="reference external" href="https://">https://</a></p></li>
+<li><p><strong>$secure</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span>) – true for <code class="docutils literal notranslate"><span class="pre">https://</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -850,7 +862,7 @@ accented characters automatically.</p>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
-<p>This function will add <em>http://</em> or <em>https://</em> in the event that a protocol prefix
+<p>This function will add <code class="docutils literal notranslate"><span class="pre">http://</span></code> or <code class="docutils literal notranslate"><span class="pre">https://</span></code> in the event that a protocol prefix
 is missing from a URL.</p>
 <p>Pass the URL string to the function like this:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -866,8 +878,8 @@ is missing from a URL.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$controller</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Named route or Controller::method</p></li>
-<li><p><strong>...$args</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – One or more parameters to be passed to the route</p></li>
+<li><p><strong>$controller</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Route name or Controller::method</p></li>
+<li><p><strong>...$args</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – One or more parameters to be passed to the route. The last parameter allows you to set the locale.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -908,6 +920,22 @@ Here is an example:</p>
 </div>
 <p>This is useful because you can still change your routes after putting links
 into your views.</p>
+<p>Since v4.3.0, when you use <code class="docutils literal notranslate"><span class="pre">{locale}</span></code> in your route, you can optionally specify the locale value as the last parameter.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// The route is defined as:</span>
+<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span>
+    <span class="s1">&#39;{locale}/users/(:num)/gallery/(:num)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Galleries::showUserGallery/$1/$2&#39;</span><span class="p">,</span>
+    <span class="p">[</span><span class="s1">&#39;as&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;user_gallery&#39;</span><span class="p">]</span>
+<span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">url_to</span><span class="p">(</span><span class="s1">&#39;user_gallery&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>View Gallery<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="cm">&lt;!-- Result: &#39;http://example.com/en/users/15/gallery/12&#39; --&gt;</span>
+</pre></div>
+</div>
 <p>For full details, see the <a class="reference internal" href="../incoming/routing.html#reverse-routing"><span class="std std-ref">Reverse Routing</span></a> and <a class="reference internal" href="../incoming/routing.html#using-named-routes"><span class="std std-ref">Using Named Routes</span></a>.</p>
 </dd></dl>
 
@@ -917,7 +945,7 @@ into your views.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The path to check the current URI path against.</p></li>
+<li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The URL path relative to baseURL to check the current URI path against.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -932,7 +960,9 @@ into your views.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This would match <code class="docutils literal notranslate"><span class="pre">http://example.com/admin</span></code>. You can use the <code class="docutils literal notranslate"><span class="pre">*</span></code> wildcard to match
+<p>This would match <strong>http://example.com/admin</strong>. It would match <strong>http://example.com/subdir/admin</strong>
+if your baseURL is <code class="docutils literal notranslate"><span class="pre">http://example.com/subdir/</span></code>.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">*</span></code> wildcard to match
 any other applicable characters in the URL:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -965,7 +995,7 @@ any other applicable characters in the URL:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 14, 2023.
+      <span class="lastupdated">Last updated on Feb 18, 2023.
       </span></p>
   </div>
 

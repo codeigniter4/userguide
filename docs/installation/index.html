@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; CodeIgniter 4.3.1 documentation</title>
+  <title>Installation &mdash; CodeIgniter 4.3.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -30,12 +30,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html">
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working with HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
 </li>
@@ -171,7 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_collections.html">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
@@ -260,7 +264,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -280,8 +284,11 @@ Which is right for you?</p>
 <li><p>If you would like the simple “download &amp; go” install that CodeIgniter3
 is known for, choose the manual installation.</p></li>
 </ul>
-<p>However you choose to install and run CodeIgniter4, the
-<a class="reference external" href="https://codeigniter4.github.io/userguide/">user guide</a> is accessible online.</p>
+<p>However you choose to install and run CodeIgniter4, the latest
+<a class="reference external" href="https://codeigniter.com/user_guide/">user guide</a> is accessible online.
+If you want to see previous versions, you can download from the
+<a class="reference external" href="https://github.com/codeigniter4/userguide/releases">codeigniter4/userguide</a>
+repository.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Before using CodeIgniter 4, make sure that your server meets the
@@ -297,6 +304,7 @@ lines to enable “curl” and “intl”, for instance.</p>
 <li class="toctree-l1"><a class="reference internal" href="running.html">Running Your App</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelogs/index.html">Change Logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/v4.3.2.html">Version 4.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/v4.3.1.html">Version 4.3.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/v4.3.0.html">Version 4.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../changelogs/v4.2.12.html">Version 4.2.12</a></li>
@@ -343,6 +351,7 @@ lines to enable “curl” and “intl”, for instance.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading From a Previous Version</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="backward_compatibility_notes.html">Backward Compatibility Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade_432.html">Upgrading from 4.3.1 to 4.3.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrade_431.html">Upgrading from 4.3.0 to 4.3.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrade_430.html">Upgrading from 4.2.12 to 4.3.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrade_4212.html">Upgrading from 4.2.11 to 4.2.12</a></li>
@@ -406,7 +415,7 @@ lines to enable “curl” and “intl”, for instance.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 14, 2023.
+      <span class="lastupdated">Last updated on Feb 18, 2023.
       </span></p>
   </div>
 

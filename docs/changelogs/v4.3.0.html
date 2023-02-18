@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.3.0 &mdash; CodeIgniter 4.3.1 documentation</title>
+  <title>Version 4.3.0 &mdash; CodeIgniter 4.3.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -30,12 +30,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html">
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working with HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
 </li>
@@ -171,7 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html#file-collections">File Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_collections.html">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
@@ -260,7 +264,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../installation/index.html">Installation</a></li>
           <li class="breadcrumb-item"><a href="index.html">Change Logs</a></li>
       <li class="breadcrumb-item active">Version 4.3.0</li>
@@ -590,7 +594,7 @@ See <a class="reference internal" href="../incoming/routing.html#routing-spark-r
 <section id="forge">
 <h4><a class="toc-backref" href="#id28">Forge</a><a class="headerlink" href="#forge" title="Permalink to this headline"></a></h4>
 <ul class="simple">
-<li><p>Added <code class="docutils literal notranslate"><span class="pre">Forge::processIndexes()</span></code> allowing the creation of indexes on an existing table. See <a class="reference internal" href="../dbmgmt/forge.html#adding-keys"><span class="std std-ref">Adding Keys</span></a> for the details.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">Forge::processIndexes()</span></code> allowing the creation of indexes on an existing table. See <a class="reference internal" href="../dbmgmt/forge.html#db-forge-adding-keys-to-a-table"><span class="std std-ref">Adding Keys to a Table</span></a> for the details.</p></li>
 <li><p>Added the ability to manually set index names. These methods include: <code class="docutils literal notranslate"><span class="pre">Forge::addKey()</span></code>, <code class="docutils literal notranslate"><span class="pre">Forge::addPrimaryKey()</span></code>, and <code class="docutils literal notranslate"><span class="pre">Forge::addUniqueKey()</span></code></p></li>
 <li><p>The new method <code class="docutils literal notranslate"><span class="pre">Forge::dropPrimaryKey()</span></code> allows dropping the primary key on a table. See <a class="reference internal" href="../dbmgmt/forge.html#dropping-a-primary-key"><span class="std std-ref">Dropping a Primary Key</span></a>.</p></li>
 <li><p>Fixed <code class="docutils literal notranslate"><span class="pre">Forge::dropKey()</span></code> to allow dropping unique indexes. This required the <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">CONSTRAINT</span></code> SQL command.</p></li>
@@ -692,6 +696,7 @@ See <a class="reference internal" href="../incoming/incomingrequest.html#incomin
 <ul class="simple">
 <li><p>Updated English language strings to be more consistent.</p></li>
 <li><p>Added <code class="docutils literal notranslate"><span class="pre">CLI.generator.className.cell</span></code> and <code class="docutils literal notranslate"><span class="pre">CLI.generator.viewName.cell</span></code>.</p></li>
+<li><p>Added <strong>en/Errors.php</strong> file.</p></li>
 </ul>
 </section>
 <section id="changes">
@@ -758,7 +763,7 @@ for a complete list of bugs fixed.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 14, 2023.
+      <span class="lastupdated">Last updated on Feb 18, 2023.
       </span></p>
   </div>
 

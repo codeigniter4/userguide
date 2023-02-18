@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Validation &mdash; CodeIgniter 4.3.1 documentation</title>
+  <title>Validation &mdash; CodeIgniter 4.3.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -30,12 +30,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #DD4814" >
-            <a href="../index.html">
-            <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working With HTTP Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working with HTTP Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
 </ul>
 </li>
@@ -171,7 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="files.html">Working with Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="files.html#file-collections">File Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_collections.html">File Collections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="honeypot.html">Honeypot Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="images.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
@@ -260,7 +264,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Library Reference</a></li>
       <li class="breadcrumb-item active">Validation</li>
       <li class="wy-breadcrumbs-aside">
@@ -456,7 +460,7 @@ this code and save it to your <strong>app/Controllers/</strong> folder:</p>
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getMethod</span><span class="p">())</span> <span class="o">!==</span> <span class="s1">&#39;post&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">is</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">);</span>
         <span class="p">}</span>
 
@@ -470,6 +474,12 @@ this code and save it to your <strong>app/Controllers/</strong> folder:</p>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="../incoming/incomingrequest.html#incomingrequest-is"><span class="std std-ref">$this-&gt;request-&gt;is()</span></a> method can be used since v4.3.0.
+In previous versions, you need to use
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(strtolower($this-&gt;request-&gt;getMethod())</span> <span class="pre">!==</span> <span class="pre">'post')</span></code>.</p>
 </div>
 </section>
 <section id="the-routes">
@@ -1245,29 +1255,29 @@ shown above. The primary benefit here is that it provides some extra navigation 
 </section>
 <section id="creating-a-rule-class">
 <h4>Creating a Rule Class<a class="headerlink" href="#creating-a-rule-class" title="Permalink to this headline"></a></h4>
-<p>Within the file itself, each method is a rule and must accept a string as the first parameter, and must return
+<p>Within the file itself, each method is a rule and must accept a value to validate as the first parameter, and must return
 a boolean true or false value signifying true if it passed the test or false if it did not:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">MyRules</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">even</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$str</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">even</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$str</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>By default, the system will look within <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Language\en\Validation.php</span></code> for the language strings used
-within errors. In custom rules, you may provide error messages by accepting a <code class="docutils literal notranslate"><span class="pre">$error</span></code> variable by reference in the
+within errors. In custom rules, you may provide error messages by accepting a <code class="docutils literal notranslate"><span class="pre">&amp;$error</span></code> variable by reference in the
 second parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">MyRules</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">even</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$str</span><span class="p">,</span> <span class="o">?</span><span class="nx">string</span> <span class="o">&amp;</span><span class="nv">$error</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">even</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="o">?</span><span class="nx">string</span> <span class="o">&amp;</span><span class="nv">$error</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">((</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$str</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$error</span> <span class="o">=</span> <span class="nx">lang</span><span class="p">(</span><span class="s1">&#39;myerrors.evenError&#39;</span><span class="p">);</span>
 
             <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
@@ -1292,21 +1302,21 @@ second parameter:</p>
 </section>
 <section id="allowing-parameters">
 <h4>Allowing Parameters<a class="headerlink" href="#allowing-parameters" title="Permalink to this headline"></a></h4>
-<p>If your method needs to work with parameters, the function will need a minimum of three parameters: the string to validate,
+<p>If your method needs to work with parameters, the function will need a minimum of three parameters: the value to validate,
 the parameter string, and an array with all of the data that was submitted the form. The <code class="docutils literal notranslate"><span class="pre">$data</span></code> array is especially handy
 for rules like <code class="docutils literal notranslate"><span class="pre">required_with</span></code> that needs to check the value of another submitted field to base its result on:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">MyRules</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">required_with</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$fields</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">required_with</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$params</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$data</span><span class="p">)</span><span class="o">:</span> <span class="nx">bool</span>
     <span class="p">{</span>
-        <span class="nv">$fields</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$fields</span><span class="p">);</span>
+        <span class="nv">$params</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 
         <span class="c1">// If the field is present we can safely assume that</span>
         <span class="c1">// the field is here, no matter whether the corresponding</span>
         <span class="c1">// search field is present or not.</span>
-        <span class="nv">$present</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">required</span><span class="p">(</span><span class="nv">$str</span> <span class="o">??</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+        <span class="nv">$present</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">required</span><span class="p">(</span><span class="nv">$value</span> <span class="o">??</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nv">$present</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
@@ -1317,7 +1327,7 @@ for rules like <code class="docutils literal notranslate"><span class="pre">requ
         <span class="c1">// as $fields is the lis</span>
         <span class="nv">$requiredFields</span> <span class="o">=</span> <span class="p">[];</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$params</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="nv">$field</span><span class="p">,</span> <span class="nv">$data</span><span class="p">))</span> <span class="p">{</span>
                 <span class="nv">$requiredFields</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$field</span><span class="p">;</span>
             <span class="p">}</span>
@@ -1332,7 +1342,7 @@ for rules like <code class="docutils literal notranslate"><span class="pre">requ
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Custom errors can be returned as the fourth parameter, just as described above.</p>
+<p>Custom errors can be returned as the fourth parameter <code class="docutils literal notranslate"><span class="pre">&amp;$error</span></code>, just as described above.</p>
 </section>
 </section>
 <section id="using-closure-rule">
@@ -1818,7 +1828,7 @@ an image based on the mime type.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 14, 2023.
+      <span class="lastupdated">Last updated on Feb 18, 2023.
       </span></p>
   </div>
 
