@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; CodeIgniter 4.3.2 documentation</title>
+  <title>Index &mdash; CodeIgniter 4.3.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -32,7 +32,7 @@
           
           <a href="index.html">
             
-              <img src="_static/ci-logo-text.png" class="logo" alt="Logo"/>
+              <img src="_static/ci-logo-text.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -132,7 +132,7 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="database/index.html">Working With Databases</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="database/index.html">Working with Databases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="database/examples.html">Quick Start: Usage Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database/configuration.html">Database Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="database/connecting.html">Connecting to a Database</a></li>
@@ -682,8 +682,12 @@
 </li>
       <li><a href="database/query_builder.html#CodeIgniter\Database\BaseBuilder::getCompiledUpdate"><strong>getCompiledUpdate() (CodeIgniter\Database\BaseBuilder method)</strong></a>
 </li>
-      <li><a href="outgoing/response.html#CodeIgniter\HTTP\Response::getCookie"><strong>getCookie() (CodeIgniter\HTTP\Response method)</strong></a>
+      <li><a href="incoming/incomingrequest.html#CodeIgniter\HTTP\IncomingRequest::getCookie"><strong>getCookie() (CodeIgniter\HTTP\IncomingRequest method)</strong></a>
+
+      <ul>
+        <li><a href="outgoing/response.html#CodeIgniter\HTTP\Response::getCookie"><strong>(CodeIgniter\HTTP\Response method)</strong></a>
 </li>
+      </ul></li>
       <li><a href="outgoing/response.html#CodeIgniter\HTTP\Response::getCookies"><strong>getCookies() (CodeIgniter\HTTP\Response method)</strong></a>
 </li>
       <li><a href="database/results.html#CodeIgniter\Database\BaseResult::getCustomResultObject"><strong>getCustomResultObject() (CodeIgniter\Database\BaseResult method)</strong></a>
@@ -782,8 +786,12 @@
 </li>
       <li><a href="libraries/cookies.html#CodeIgniter\Cookie\Cookie::getSameSite"><strong>getSameSite() (CodeIgniter\Cookie\Cookie method)</strong></a>
 </li>
-      <li><a href="incoming/request.html#CodeIgniter\HTTP\Request::getServer"><strong>getServer() (CodeIgniter\HTTP\Request method)</strong></a>
+      <li><a href="incoming/incomingrequest.html#CodeIgniter\HTTP\IncomingRequest::getServer"><strong>getServer() (CodeIgniter\HTTP\IncomingRequest method)</strong></a>
+
+      <ul>
+        <li><a href="incoming/request.html#CodeIgniter\HTTP\Request::getServer"><strong>(CodeIgniter\HTTP\Request method)</strong></a>
 </li>
+      </ul></li>
       <li><a href="outgoing/response.html#CodeIgniter\HTTP\Response::getStatusCode"><strong>getStatusCode() (CodeIgniter\HTTP\Response method)</strong></a>
 </li>
       <li><a href="database/results.html#CodeIgniter\Database\BaseResult::getUnbufferedRow"><strong>getUnbufferedRow() (CodeIgniter\Database\BaseResult method)</strong></a>
@@ -1118,12 +1126,20 @@
 </li>
       <li><a href="dbmgmt/forge.html#CodeIgniter\Database\Forge::renameTable"><strong>renameTable() (CodeIgniter\Database\Forge method)</strong></a>
 </li>
+      <li><a href="outgoing/view_parser.html#CodeIgniter\View\Parser::render"><strong>render() (CodeIgniter\View\Parser method)</strong></a>
+
+      <ul>
+        <li><a href="outgoing/view_renderer.html#CodeIgniter\View\View::render"><strong>(CodeIgniter\View\View method)</strong></a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="outgoing/view_parser.html#CodeIgniter\View\Parser::render"><strong>render() (CodeIgniter\View\Parser method)</strong></a>
-</li>
       <li><a href="outgoing/view_parser.html#CodeIgniter\View\Parser::renderString"><strong>renderString() (CodeIgniter\View\Parser method)</strong></a>
+
+      <ul>
+        <li><a href="outgoing/view_renderer.html#CodeIgniter\View\View::renderString"><strong>(CodeIgniter\View\View method)</strong></a>
 </li>
+      </ul></li>
       <li><a href="database/query_builder.html#CodeIgniter\Database\BaseBuilder::replace"><strong>replace() (CodeIgniter\Database\BaseBuilder method)</strong></a>
 </li>
       <li><a href="incoming/request.html#CodeIgniter\HTTP\Request"><strong>Request (class in CodeIgniter\HTTP)</strong></a>
@@ -1221,6 +1237,8 @@
       <ul>
         <li><a href="outgoing/view_parser.html#CodeIgniter\View\Parser::setData"><strong>(CodeIgniter\View\Parser method)</strong></a>
 </li>
+        <li><a href="outgoing/view_renderer.html#CodeIgniter\View\View::setData"><strong>(CodeIgniter\View\View method)</strong></a>
+</li>
       </ul></li>
       <li><a href="outgoing/response.html#CodeIgniter\HTTP\Response::setDate"><strong>setDate() (CodeIgniter\HTTP\Response method)</strong></a>
 </li>
@@ -1228,10 +1246,10 @@
 </li>
       <li><a href="outgoing/view_parser.html#CodeIgniter\View\Parser::setDelimiters"><strong>setDelimiters() (CodeIgniter\View\Parser method)</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="outgoing/table.html#CodeIgniter\View\Table::setEmpty"><strong>setEmpty() (CodeIgniter\View\Table method)</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="outgoing/table.html#CodeIgniter\View\Table::setFooting"><strong>setFooting() (CodeIgniter\View\Table method)</strong></a>
 </li>
       <li><a href="libraries/email.html#CodeIgniter\Email\Email::setFrom"><strong>setFrom() (CodeIgniter\Email\Email method)</strong></a>
@@ -1240,8 +1258,12 @@
 </li>
       <li><a href="dbmgmt/migration.html#CodeIgniter\Database\MigrationRunner::setGroup"><strong>setGroup() (CodeIgniter\Database\MigrationRunner method)</strong></a>
 </li>
-      <li><a href="incoming/message.html#CodeIgniter\HTTP\Message::setHeader"><strong>setHeader() (CodeIgniter\HTTP\Message method)</strong></a>
+      <li><a href="libraries/email.html#CodeIgniter\Email\Email::setHeader"><strong>setHeader() (CodeIgniter\Email\Email method)</strong></a>
+
+      <ul>
+        <li><a href="incoming/message.html#CodeIgniter\HTTP\Message::setHeader"><strong>(CodeIgniter\HTTP\Message method)</strong></a>
 </li>
+      </ul></li>
       <li><a href="outgoing/table.html#CodeIgniter\View\Table::setHeading"><strong>setHeading() (CodeIgniter\View\Table method)</strong></a>
 </li>
       <li><a href="database/query_builder.html#CodeIgniter\Database\BaseBuilder::setInsertBatch"><strong>setInsertBatch() (CodeIgniter\Database\BaseBuilder method)</strong></a>
@@ -1283,7 +1305,11 @@
       <li><a href="models/model.html#CodeIgniter\Model::setValidationRules"><strong>setValidationRules() (CodeIgniter\Model method)</strong></a>
 </li>
       <li><a href="outgoing/view_parser.html#CodeIgniter\View\Parser::setVar"><strong>setVar() (CodeIgniter\View\Parser method)</strong></a>
+
+      <ul>
+        <li><a href="outgoing/view_renderer.html#CodeIgniter\View\View::setVar"><strong>(CodeIgniter\View\View method)</strong></a>
 </li>
+      </ul></li>
       <li><a href="cli/cli_commands.html#CodeIgniter\CLI\BaseCommand::showError"><strong>showError() (CodeIgniter\CLI\BaseCommand method)</strong></a>
 </li>
       <li><a href="cli/cli_commands.html#CodeIgniter\CLI\BaseCommand::showHelp"><strong>showHelp() (CodeIgniter\CLI\BaseCommand method)</strong></a>
@@ -1473,7 +1499,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Feb 18, 2023.
+      <span class="lastupdated">Last updated on Mar 26, 2023.
       </span></p>
   </div>
 

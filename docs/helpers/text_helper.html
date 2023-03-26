@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Text Helper &mdash; CodeIgniter 4.3.2 documentation</title>
+  <title>Text Helper &mdash; CodeIgniter 4.3.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -35,7 +35,7 @@
           
           <a href="../index.html">
             
-              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+              <img src="../_static/ci-logo-text.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -135,7 +135,7 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working With Databases</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working with Databases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: Usage Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">Database Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
@@ -315,6 +315,12 @@
 </dl>
 <p>Generates a random string based on the type and length you specify.
 Useful for creating passwords or generating random hashes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For types: <strong>basic</strong>, <strong>md5</strong>, and <strong>sha1</strong>, generated strings
+are not cryptographically secure. Therefore, these types cannot be used
+for cryptographic purposes or purposes requiring unguessable return values.</p>
+</div>
 <p>The first parameter specifies the type of string, the second parameter
 specifies the length. The following choices are available:</p>
 <ul class="simple">
@@ -331,6 +337,13 @@ specifies the length. The following choices are available:</p>
 <p class="admonition-title">Note</p>
 <p>When you use <strong>crypto</strong>, you must set an even number to the second parameter.
 Since v4.2.2, if you set an odd number, <code class="docutils literal notranslate"><span class="pre">InvalidArgumentException</span></code> will be thrown.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since v4.3.3, <strong>alpha</strong>, <strong>alnum</strong> and <strong>nozero</strong> use <code class="docutils literal notranslate"><span class="pre">random_byte()</span></code>,
+and <strong>numeric</strong> uses <code class="docutils literal notranslate"><span class="pre">random_int()</span></code>.
+In the previous versions, it used <code class="docutils literal notranslate"><span class="pre">str_shuffle()</span></code> that is not
+cryptographically secure.</p>
 </div>
 <p>Usage example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -973,7 +986,7 @@ at the end.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Feb 18, 2023.
+      <span class="lastupdated">Last updated on Mar 26, 2023.
       </span></p>
   </div>
 

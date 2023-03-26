@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autoloading Files &mdash; CodeIgniter 4.3.2 documentation</title>
+  <title>Autoloading Files &mdash; CodeIgniter 4.3.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -35,7 +35,7 @@
           
           <a href="../index.html">
             
-              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+              <img src="../_static/ci-logo-text.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -135,7 +135,7 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working With Databases</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working with Databases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: Usage Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">Database Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
@@ -279,10 +279,11 @@
 <h1>Autoloading Files<a class="headerlink" href="#autoloading-files" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#configuration" id="id1">Configuration</a></p></li>
-<li><p><a class="reference internal" href="#namespaces" id="id2">Namespaces</a></p></li>
-<li><p><a class="reference internal" href="#classmap" id="id3">Classmap</a></p></li>
-<li><p><a class="reference internal" href="#composer-support" id="id4">Composer Support</a></p></li>
+<li><p><a class="reference internal" href="#codeigniter4-autoloader" id="id1">CodeIgniter4 Autoloader</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id2">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id3">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classmap" id="id4">Classmap</a></p></li>
+<li><p><a class="reference internal" href="#composer-support" id="id5">Composer Support</a></p></li>
 </ul>
 </div>
 <p>Every application consists of a large number of classes in many different locations.
@@ -291,6 +292,8 @@ number of libraries, models, and other entities to make it work. You might have 
 classes that your project is using. Keeping track of where every single file is, and
 hard-coding that location into your files in a series of <code class="docutils literal notranslate"><span class="pre">requires()</span></code> is a massive
 headache and very error-prone. That’s where autoloaders come in.</p>
+<section id="codeigniter4-autoloader">
+<h2><a class="toc-backref" href="#id1">CodeIgniter4 Autoloader</a><a class="headerlink" href="#codeigniter4-autoloader" title="Permalink to this headline"></a></h2>
 <p>CodeIgniter provides a very flexible autoloader that can be used with very little configuration.
 It can locate individual namespaced classes that adhere to
 <a class="reference external" href="https://www.php-fig.org/psr/psr-4/">PSR-4</a> autoloading
@@ -302,28 +305,46 @@ Because they’re all registered through
 they work in sequence and don’t get in each other’s way.</p>
 <p>The autoloader is always active, being registered with <code class="docutils literal notranslate"><span class="pre">spl_autoload_register()</span></code> at the
 beginning of the framework’s execution.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You should always be careful about the case of filenames. Many
+developers develop on case-insensitive file systems on Windows or macOS.
+However, most server environments use case-sensitive file systems. If the
+file name case is incorrect, the autoloader cannot find the file on the
+server.</p>
+</div>
+</section>
 <section id="configuration">
-<h2><a class="toc-backref" href="#id1">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
 <p>Initial configuration is done in <strong>app/Config/Autoload.php</strong>. This file contains two primary
 arrays: one for the classmap, and one for PSR-4 compatible namespaces.</p>
 </section>
 <section id="namespaces">
-<h2><a class="toc-backref" href="#id2">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline"></a></h2>
 <p>The recommended method for organizing your classes is to create one or more namespaces for your
 application’s files. This is most important for any business-logic related classes, entity classes,
-etc. The <code class="docutils literal notranslate"><span class="pre">psr4</span></code> array in the configuration file allows you to map the namespace to the directory
+etc. The <code class="docutils literal notranslate"><span class="pre">$psr4</span></code> array in the configuration file allows you to map the namespace to the directory
 those classes can be found in:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;App&#39;</span>         <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
-    <span class="s1">&#39;CodeIgniter&#39;</span> <span class="o">=&gt;</span> <span class="nx">SYSTEMPATH</span><span class="p">,</span>
-<span class="p">];</span>
+<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\AutoloadConfig</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Autoload</span> <span class="k">extends</span> <span class="nx">AutoloadConfig</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">public</span> <span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">APP_NAMESPACE</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span> <span class="c1">// For custom app namespace</span>
+        <span class="s1">&#39;Config&#39;</span>      <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Config&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The key of each row is the namespace itself. This does not need a trailing back slash.
-The value is the location to the directory the classes can be found in. They should
-have a trailing slash.</p>
+The value is the location to the directory the classes can be found in.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can check the namespace configuration by <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">namespaces</span></code> command:</p>
@@ -331,13 +352,11 @@ have a trailing slash.</p>
 </pre></div>
 </div>
 </div>
-<p>By default, the application folder is namespace to the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace. While you are not forced to namespace the controllers,
-libraries, or models in the application directory, if you do, they will be found under the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace.
-You may change this namespace by editing the <strong>app/Config/Constants.php</strong> file and setting the
+<p>By default, the application directory is namespace to the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace. You must namespace the controllers,
+libraries, or models in the application directory, and they will be found under the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace.</p>
+<p>You may change this namespace by editing the <strong>app/Config/Constants.php</strong> file and setting the
 new namespace value under the <code class="docutils literal notranslate"><span class="pre">APP_NAMESPACE</span></code> setting:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;App&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;App&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You will need to modify any existing files that are referencing the current namespace.</p>
@@ -349,21 +368,31 @@ namespace has changed.</p>
 </div>
 </section>
 <section id="classmap">
-<h2><a class="toc-backref" href="#id3">Classmap</a><a class="headerlink" href="#classmap" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">Classmap</a><a class="headerlink" href="#classmap" title="Permalink to this headline"></a></h2>
 <p>The classmap is used extensively by CodeIgniter to eke the last ounces of performance out of the system
 by not hitting the file-system with extra <code class="docutils literal notranslate"><span class="pre">is_file()</span></code> calls. You can use the classmap to link to
 third-party libraries that are not namespaced:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$classmap</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Markdown&#39;</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;third_party/markdown.php&#39;</span><span class="p">,</span>
-<span class="p">];</span>
+<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\AutoloadConfig</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Autoload</span> <span class="k">extends</span> <span class="nx">AutoloadConfig</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">public</span> <span class="nv">$classmap</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;Markdown&#39;</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;ThirdParty/markdown.php&#39;</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The key of each row is the name of the class that you want to locate. The value is the path to locate it at.</p>
 </section>
 <section id="composer-support">
-<h2><a class="toc-backref" href="#id4">Composer Support</a><a class="headerlink" href="#composer-support" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">Composer Support</a><a class="headerlink" href="#composer-support" title="Permalink to this headline"></a></h2>
 <p>Composer support is automatically initialized by default. By default, it looks for Composer’s autoload file at
 <code class="docutils literal notranslate"><span class="pre">ROOTPATH</span> <span class="pre">.</span> <span class="pre">'vendor/autoload.php'</span></code>. If you need to change the location of that file for any reason, you can modify
 the value defined in <strong>app/Config/Constants.php</strong>.</p>
@@ -387,7 +416,7 @@ the first one to get a chance to locate the file.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Feb 18, 2023.
+      <span class="lastupdated">Last updated on Mar 26, 2023.
       </span></p>
   </div>
 

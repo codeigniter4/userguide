@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request Class &mdash; CodeIgniter 4.3.2 documentation</title>
+  <title>Request Class &mdash; CodeIgniter 4.3.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -35,7 +35,7 @@
           
           <a href="../index.html">
             
-              <img src="../_static/ci-logo-text.png" class="logo" alt="Logo"/>
+              <img src="../_static/ci-logo-text.svg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -135,7 +135,7 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working With Databases</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working with Databases</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: Usage Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">Database Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
@@ -296,14 +296,14 @@ from the Request class to add specific functionality. In practice, you will need
 <dd><dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>The user’s IP Address, if it can be detected. If the IP address
-is not a valid IP address, then will return 0.0.0.0.</p>
+is not a valid IP address, then will return <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
 <p>Returns the IP address for the current user. If the IP address is not valid, the method
-will return ‘0.0.0.0’:</p>
+will return <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getIPAddress</span><span class="p">();</span>
@@ -330,7 +330,7 @@ return the reported client IP address by the HTTP header for the allowed IP addr
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$ip</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – IP address</p></li>
-<li><p><strong>$which</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – IP protocol (‘ipv4’ or ‘ipv6’)</p></li>
+<li><p><strong>$which</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – IP protocol (<code class="docutils literal notranslate"><span class="pre">ipv4</span></code> or <code class="docutils literal notranslate"><span class="pre">ipv6</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -355,7 +355,7 @@ on whether it is valid or not.</p>
 </pre></div>
 </div>
 </div>
-<p>Accepts an optional second string parameter of ‘ipv4’ or ‘ipv6’ to specify
+<p>Accepts an optional second string parameter of <code class="docutils literal notranslate"><span class="pre">ipv4</span></code> or <code class="docutils literal notranslate"><span class="pre">ipv6</span></code> to specify
 an IP format. The default checks for both formats.</p>
 </dd></dl>
 
@@ -557,7 +557,7 @@ Can optionally filter the input when you retrieve it by passing in a filter.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Feb 18, 2023.
+      <span class="lastupdated">Last updated on Mar 26, 2023.
       </span></p>
   </div>
 
