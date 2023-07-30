@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Number Helper &mdash; CodeIgniter 4.3.6 documentation</title>
+  <title>Number Helper &mdash; CodeIgniter 4.3.7 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -439,7 +439,7 @@ for numbers up to the quadrillions. Examples:</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$num</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The number want to convert</p></li>
+<li><p><strong>$num</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int|string</span></code></span>) – The number want to convert</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -452,13 +452,13 @@ for numbers up to the quadrillions. Examples:</p>
 <p>Converts a number into roman:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">number_to_roman</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>  <span class="c1">// Returns XXIII</span>
-<span class="k">echo</span> <span class="nx">number_to_roman</span><span class="p">(</span><span class="mi">324</span><span class="p">);</span>  <span class="c1">// Returns CCCXXIV</span>
+<span class="k">echo</span> <span class="nx">number_to_roman</span><span class="p">(</span><span class="mi">23</span><span class="p">);</span>    <span class="c1">// Returns XXIII</span>
+<span class="k">echo</span> <span class="nx">number_to_roman</span><span class="p">(</span><span class="mi">324</span><span class="p">);</span>   <span class="c1">// Returns CCCXXIV</span>
 <span class="k">echo</span> <span class="nx">number_to_roman</span><span class="p">(</span><span class="mi">2534</span><span class="p">);</span>  <span class="c1">// Returns MMDXXXIV</span>
 </pre></div>
 </div>
 <p>This function only handles numbers in the range 1 through 3999.
-It will return null for any value outside that range.</p>
+It will return <code class="docutils literal notranslate"><span class="pre">null</span></code> for any value outside that range.</p>
 </dd></dl>
 
 </section>
@@ -476,7 +476,7 @@ It will return null for any value outside that range.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 17, 2023.
+      <span class="lastupdated">Last updated on Jul 30, 2023.
       </span></p>
   </div>
 

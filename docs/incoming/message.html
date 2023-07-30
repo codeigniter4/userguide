@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTTP Messages &mdash; CodeIgniter 4.3.6 documentation</title>
+  <title>HTTP Messages &mdash; CodeIgniter 4.3.7 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -597,8 +597,8 @@ If it is a string then a LogicException will be thrown.</p>
 <dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
-<p>Returns the message’s current HTTP protocol. If none has been set, will return <code class="docutils literal notranslate"><span class="pre">null</span></code>.
-Acceptable values are <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.1</span></code> and <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p>
+<p>Returns the message’s current HTTP protocol. If none has been set, will
+return <code class="docutils literal notranslate"><span class="pre">1.1</span></code>.</p>
 </dd></dl>
 
 <dl class="php method">
@@ -617,7 +617,8 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\HTTP\Message" title="CodeIgniter\HTTP\Message"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Message</span></code></a></span></p>
 </dd>
 </dl>
-<p>Sets the HTTP protocol version this Message uses. Valid values are <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.1</span></code> and <code class="docutils literal notranslate"><span class="pre">2.0</span></code>:</p>
+<p>Sets the HTTP protocol version this Message uses. Valid values are
+<code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.1</span></code>, <code class="docutils literal notranslate"><span class="pre">2.0</span></code> and <code class="docutils literal notranslate"><span class="pre">3.0</span></code>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setProtocolVersion</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
@@ -642,7 +643,7 @@ Acceptable values are <code class="docutils literal notranslate"><span class="pr
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jun 17, 2023.
+      <span class="lastupdated">Last updated on Jul 30, 2023.
       </span></p>
   </div>
 
