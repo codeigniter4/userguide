@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Working with Uploaded Files &mdash; CodeIgniter 4.3.8 documentation</title>
+  <title>Working with Uploaded Files &mdash; CodeIgniter 4.4.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -716,6 +716,20 @@ version, use <code class="docutils literal notranslate"><span class="pre">getMim
 <span class="nv">$type</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getClientMimeType</span><span class="p">();</span>
 
 <span class="k">echo</span> <span class="nv">$type</span><span class="p">;</span> <span class="c1">// image/png</span>
+</pre></div>
+</div>
+</section>
+<section id="getclientpath">
+<h4>getClientPath()<a class="headerlink" href="#getclientpath" title="Permalink to this headline"></a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 4.4.0.</span></p>
+</div>
+<p>Returns the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath">webkit relative path</a> of the uploaded file when the client has uploaded files via directory upload.
+In PHP versions below 8.1, this returns <code class="docutils literal notranslate"><span class="pre">null</span></code></p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="nv">$clientPath</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getClientPath</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$clientPath</span><span class="p">;</span> <span class="c1">// dir/file.txt, or dir/sub_dir/file.txt</span>
 </pre></div>
 </div>
 </section>

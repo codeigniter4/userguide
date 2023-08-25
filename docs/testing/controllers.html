@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing Controllers &mdash; CodeIgniter 4.3.8 documentation</title>
+  <title>Testing Controllers &mdash; CodeIgniter 4.4.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -468,6 +468,13 @@ representing a valid URI:</p>
 </pre></div>
 </div>
 <p>It is a good practice to always provide the URI during testing to avoid surprises.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since v4.4.0, this method creates a new Request instance with the URI.
+Because the Request instance should have the URI instance. Also if the hostname
+in the URI string is invalid with <code class="docutils literal notranslate"><span class="pre">Config\App</span></code>, the valid hostname will be
+set.</p>
+</div>
 </section>
 <section id="withbody-body">
 <h3><a class="toc-backref" href="#id11">withBody($body)</a><a class="headerlink" href="#withbody-body" title="Permalink to this headline"></a></h3>

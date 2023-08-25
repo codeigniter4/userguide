@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrading from 4.1.9 to 4.2.0 &mdash; CodeIgniter 4.4.0 documentation</title>
+  <title>Upgrading from 4.3.8 to 4.4.0 &mdash; CodeIgniter 4.4.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Upgrading from 4.1.7 to 4.1.8" href="upgrade_418.html" />
-    <link rel="prev" title="Upgrading from 4.2.0 to 4.2.1" href="upgrade_421.html" /> 
+    <link rel="next" title="Upgrading from 4.3.7 to 4.3.8" href="upgrade_438.html" />
+    <link rel="prev" title="Backward Compatibility Notes" href="backward_compatibility_notes.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -269,7 +269,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Installation</a></li>
           <li class="breadcrumb-item"><a href="upgrading.html">Upgrading From a Previous Version</a></li>
-      <li class="breadcrumb-item active">Upgrading from 4.1.9 to 4.2.0</li>
+      <li class="breadcrumb-item active">Upgrading from 4.3.8 to 4.4.0</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -278,8 +278,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="upgrading-from-4-1-9-to-4-2-0">
-<h1>Upgrading from 4.1.9 to 4.2.0<a class="headerlink" href="#upgrading-from-4-1-9-to-4-2-0" title="Permalink to this headline"></a></h1>
+  <section id="upgrading-from-4-3-8-to-4-4-0">
+<h1>Upgrading from 4.3.8 to 4.4.0<a class="headerlink" href="#upgrading-from-4-3-8-to-4-4-0" title="Permalink to this headline"></a></h1>
 <p>Please refer to the upgrade instructions corresponding to your installation method.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></p></li>
@@ -288,136 +288,292 @@
 </ul>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#mandatory-file-changes" id="id1">Mandatory File Changes</a></p>
+<li><p><a class="reference internal" href="#security" id="id1">SECURITY</a></p>
 <ul>
-<li><p><a class="reference internal" href="#index-php-and-spark" id="id2">index.php and spark</a></p></li>
-<li><p><a class="reference internal" href="#config-constants-php" id="id3">Config/Constants.php</a></p></li>
-<li><p><a class="reference internal" href="#composer-json" id="id4">composer.json</a></p></li>
+<li><p><a class="reference internal" href="#when-using-this-validate" id="id2">When Using $this-&gt;validate()</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#breaking-changes" id="id5">Breaking Changes</a></p></li>
-<li><p><a class="reference internal" href="#breaking-enhancements" id="id6">Breaking Enhancements</a></p></li>
-<li><p><a class="reference internal" href="#project-files" id="id7">Project Files</a></p>
+<li><p><a class="reference internal" href="#breaking-changes" id="id3">Breaking Changes</a></p>
 <ul>
-<li><p><a class="reference internal" href="#content-changes" id="id8">Content Changes</a></p></li>
-<li><p><a class="reference internal" href="#all-changes" id="id9">All Changes</a></p></li>
+<li><p><a class="reference internal" href="#uri-setsegment-change" id="id4">URI::setSegment() Change</a></p></li>
+<li><p><a class="reference internal" href="#site-uri-changes" id="id5">Site URI Changes</a></p></li>
+<li><p><a class="reference internal" href="#when-you-extend-exceptions" id="id6">When You Extend Exceptions</a></p></li>
+<li><p><a class="reference internal" href="#auto-routing-improved-and-translateuridashes" id="id7">Auto Routing (Improved) and translateURIDashes</a></p></li>
+<li><p><a class="reference internal" href="#when-passing-classname-with-namespace-to-factories" id="id8">When Passing Classname with Namespace to Factories</a></p></li>
+<li><p><a class="reference internal" href="#interface-changes" id="id9">Interface Changes</a></p></li>
+<li><p><a class="reference internal" href="#method-signature-changes" id="id10">Method Signature Changes</a></p></li>
+<li><p><a class="reference internal" href="#routecollection-routes" id="id11">RouteCollection::$routes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mandatory-file-changes" id="id12">Mandatory File Changes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#index-php-and-spark" id="id13">index.php and spark</a></p></li>
+<li><p><a class="reference internal" href="#config-files" id="id14">Config Files</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#breaking-enhancements" id="id15">Breaking Enhancements</a></p></li>
+<li><p><a class="reference internal" href="#project-files" id="id16">Project Files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#content-changes" id="id17">Content Changes</a></p></li>
+<li><p><a class="reference internal" href="#all-changes" id="id18">All Changes</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
-<section id="mandatory-file-changes">
-<h2><a class="toc-backref" href="#id1">Mandatory File Changes</a><a class="headerlink" href="#mandatory-file-changes" title="Permalink to this headline"></a></h2>
-<section id="index-php-and-spark">
-<h3><a class="toc-backref" href="#id2">index.php and spark</a><a class="headerlink" href="#index-php-and-spark" title="Permalink to this headline"></a></h3>
-<p>The following files received significant changes and
-<strong>you must merge the updated versions</strong> with your application:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spark</span></code></p></li>
-</ul>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If you don’t update the above two files, CodeIgniter will not work at all
-after running <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">update</span></code>.</p>
-<p>The upgrade procedure, for example, is as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">composer update</span>
-<span class="go">cp vendor/codeigniter4/framework/public/index.php public/index.php</span>
-<span class="go">cp vendor/codeigniter4/framework/spark .</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="config-constants-php">
-<h3><a class="toc-backref" href="#id3">Config/Constants.php</a><a class="headerlink" href="#config-constants-php" title="Permalink to this headline"></a></h3>
-<p>The constants <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_LOW</span></code>, <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_NORMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">EVENT_PRIORITY_HIGH</span></code> are deprecated, and the definitions are moved to <code class="docutils literal notranslate"><span class="pre">app/Config/Constants.php</span></code>. If you use these constants, define them in <code class="docutils literal notranslate"><span class="pre">app/Config/Constants.php</span></code>. Or use new class constants <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_LOW</span></code>, <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_NORMAL</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Events\Events::PRIORITY_HIGH</span></code>.</p>
-</section>
-<section id="composer-json">
-<h3><a class="toc-backref" href="#id4">composer.json</a><a class="headerlink" href="#composer-json" title="Permalink to this headline"></a></h3>
-<p>If you use Composer, when you installed CodeIgniter v4.1.9 or before, and
-if there are <code class="docutils literal notranslate"><span class="pre">App\\</span></code> and <code class="docutils literal notranslate"><span class="pre">Config\\</span></code> namespaces in your <code class="docutils literal notranslate"><span class="pre">/composer.json</span></code>’s <code class="docutils literal notranslate"><span class="pre">autoload.psr-4</span></code>
-like the following, you need to remove these lines, and run <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">dump-autoload</span></code>.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{
-    ...
-    &quot;autoload&quot;: {
-        &quot;psr-4&quot;: {
-            &quot;App\\&quot;: &quot;app&quot;,             &lt;-- Remove this line
-            &quot;Config\\&quot;: &quot;app/Config&quot;    &lt;-- Remove this line
-        }
-    },
-    ...
-}
+<section id="security">
+<h2><a class="toc-backref" href="#id1">SECURITY</a><a class="headerlink" href="#security" title="Permalink to this headline"></a></h2>
+<section id="when-using-this-validate">
+<h3><a class="toc-backref" href="#id2">When Using $this-&gt;validate()</a><a class="headerlink" href="#when-using-this-validate" title="Permalink to this headline"></a></h3>
+<p>There was a known potential vulnerability in <a class="reference internal" href="../incoming/controllers.html#controller-validate"><span class="std std-ref">$this-&gt;validate()</span></a> in the Controller to bypass validation.
+The attack could allow developers to misinterpret unvalidated empty data as
+validated and proceed with processing.</p>
+<p>The <a class="reference internal" href="../libraries/validation.html#validation-getting-validated-data"><span class="std std-ref">Validation::getValidated()</span></a>
+method has been added to ensure that validated data is obtained.</p>
+<p>Therefore, when you use <code class="docutils literal notranslate"><span class="pre">$this-&gt;validate()</span></code> in your Controllers, you should
+use the new <code class="docutils literal notranslate"><span class="pre">Validation::getValidated()</span></code> method to get the validated data.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// In Controller.</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+    <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|min_length[10]&#39;</span><span class="p">,</span>
+<span class="p">]))</span> <span class="p">{</span>
+    <span class="c1">// The validation failed.</span>
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">&#39;errors&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validator</span><span class="o">-&gt;</span><span class="na">getErrors</span><span class="p">(),</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="c1">// The validation was successful.</span>
+
+<span class="c1">// Get the validated data.</span>
+<span class="nv">$validData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validator</span><span class="o">-&gt;</span><span class="na">getValidated</span><span class="p">();</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="breaking-changes">
-<h2><a class="toc-backref" href="#id5">Breaking Changes</a><a class="headerlink" href="#breaking-changes" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Breaking Changes</a><a class="headerlink" href="#breaking-changes" title="Permalink to this headline"></a></h2>
+<section id="uri-setsegment-change">
+<span id="upgrade-440-uri-setsegment"></span><h3><a class="toc-backref" href="#id4">URI::setSegment() Change</a><a class="headerlink" href="#uri-setsegment-change" title="Permalink to this headline"></a></h3>
+<p>Dut to a bug, in previous versions an exception was not thrown if the last segment
+<code class="docutils literal notranslate"><span class="pre">+2</span></code> was specified. This bug has been fixed.</p>
+<p>If your code depends on this bug, fix the segment number.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// URI: http://example.com/one/two</span>
+
+<span class="c1">// Before:</span>
+<span class="nv">$uri</span><span class="o">-&gt;</span><span class="na">setSegment</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">);</span>
+<span class="c1">// The URI will be http://example.com/one/two/three</span>
+
+<span class="c1">// After:</span>
+<span class="nv">$uri</span><span class="o">-&gt;</span><span class="na">setSegment</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">);</span> <span class="c1">// Will throw Exception</span>
+<span class="nv">$uri</span><span class="o">-&gt;</span><span class="na">setSegment</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">);</span>
+<span class="c1">// The URI will be http://example.com/one/two/three</span>
+</pre></div>
+</div>
+</section>
+<section id="site-uri-changes">
+<h3><a class="toc-backref" href="#id5">Site URI Changes</a><a class="headerlink" href="#site-uri-changes" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">system/bootstrap.php</span></code> file no longer returns a <code class="docutils literal notranslate"><span class="pre">CodeIgniter</span></code> instance, and does not load the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file (now handled in <code class="docutils literal notranslate"><span class="pre">index.php</span></code> and <code class="docutils literal notranslate"><span class="pre">spark</span></code>). If you have code that expects these behaviors it will no longer work and must be modified. This has been changed to make <a class="reference external" href="https://www.php.net/manual/en/opcache.preloading.php">Preloading</a> easier to implement.</p></li>
+<li><p>Because of the rework for the current URI determination, the framework may return
+site URIs or the URI paths slightly differently than in previous versions. It may
+break your test code. Update assertions if the existing tests fail.</p></li>
+<li><p>When your baseURL has sub-directories and you get the relative path to baseURL of
+the current URI by the <code class="docutils literal notranslate"><span class="pre">URI::getPath()</span></code> method, you must use the new
+<code class="docutils literal notranslate"><span class="pre">SiteURI::getRoutePath()</span></code> method instead.</p></li>
+</ul>
+<p>See <a class="reference internal" href="../changelogs/v4.4.0.html#v440-site-uri-changes"><span class="std std-ref">Site URI Changes</span></a> for details.</p>
+</section>
+<section id="when-you-extend-exceptions">
+<h3><a class="toc-backref" href="#id6">When You Extend Exceptions</a><a class="headerlink" href="#when-you-extend-exceptions" title="Permalink to this headline"></a></h3>
+<p>If you are extending <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Debug\Exceptions</span></code> and have not overridden
+the <code class="docutils literal notranslate"><span class="pre">exceptionHandler()</span></code> method, defining the new <code class="docutils literal notranslate"><span class="pre">Config\Exceptions::handler()</span></code>
+method in your <strong>app/Config/Exceptions.php</strong> will cause the specified Exception
+Handler to be executed.</p>
+<p>Your overridden code will no longer be executed, so make any necessary changes
+by defining your own exception handler.</p>
+<p>See <a class="reference internal" href="../general/errors.html#custom-exception-handlers"><span class="std std-ref">Custom Exception Handlers</span></a> for the detail.</p>
+</section>
+<section id="auto-routing-improved-and-translateuridashes">
+<h3><a class="toc-backref" href="#id7">Auto Routing (Improved) and translateURIDashes</a><a class="headerlink" href="#auto-routing-improved-and-translateuridashes" title="Permalink to this headline"></a></h3>
+<p>When using Auto Routing (Improved) and <code class="docutils literal notranslate"><span class="pre">$translateURIDashes</span></code> is true
+(<code class="docutils literal notranslate"><span class="pre">$routes-&gt;setTranslateURIDashes(true)</span></code>), in previous versions due to a bug
+two URIs correspond to a single controller method, one URI for dashes
+(e.g., <strong>foo-bar</strong>) and one URI for underscores (e.g., <strong>foo_bar</strong>).</p>
+<p>This bug was fixed and now URIs for underscores (<strong>foo_bar</strong>) is not accessible.</p>
+<p>If you have links to URIs for underscores (<strong>foo_bar</strong>), update them with URIs
+for dashes (<strong>foo-bar</strong>).</p>
+</section>
+<section id="when-passing-classname-with-namespace-to-factories">
+<h3><a class="toc-backref" href="#id8">When Passing Classname with Namespace to Factories</a><a class="headerlink" href="#when-passing-classname-with-namespace-to-factories" title="Permalink to this headline"></a></h3>
+<p>The behavior of passing a classname with a namespace to Factories has been changed.
+See <a class="reference internal" href="../changelogs/v4.4.0.html#v440-factories"><span class="std std-ref">ChangeLog</span></a> for details.</p>
+<p>If you have code like <code class="docutils literal notranslate"><span class="pre">model('\Myth\Auth\Models\UserModel::class')</span></code> or
+<code class="docutils literal notranslate"><span class="pre">model('Myth\Auth\Models\UserModel')</span></code> (the code may be in the third-party packages),
+and you expect to load your <code class="docutils literal notranslate"><span class="pre">App\Models\UserModel</span></code>, you need to define the
+classname to be loaded before the first loading of that class:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">Factories</span><span class="o">::</span><span class="na">define</span><span class="p">(</span><span class="s1">&#39;models&#39;</span><span class="p">,</span> <span class="s1">&#39;Myth\Auth\Models\UserModel&#39;</span><span class="p">,</span> <span class="s1">&#39;App\Models\UserModel&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../concepts/factories.html#factories-defining-classname-to-be-loaded"><span class="std std-ref">Defining Classname to be Loaded</span></a> for details.</p>
+</section>
+<section id="interface-changes">
+<h3><a class="toc-backref" href="#id9">Interface Changes</a><a class="headerlink" href="#interface-changes" title="Permalink to this headline"></a></h3>
+<p>Some interface changes have been made. Classes that implement them should update
+their APIs to reflect the changes. See <a class="reference internal" href="../changelogs/v4.4.0.html#v440-interface-changes"><span class="std std-ref">Interface Changes</span></a> for details.</p>
+</section>
+<section id="method-signature-changes">
+<h3><a class="toc-backref" href="#id10">Method Signature Changes</a><a class="headerlink" href="#method-signature-changes" title="Permalink to this headline"></a></h3>
+<p>Some method signature changes have been made. Classes that extend them should
+update their APIs to reflect the changes. See <a class="reference internal" href="../changelogs/v4.4.0.html#v440-method-signature-changes"><span class="std std-ref">Method Signature Changes</span></a>
+for details.</p>
+<p>Also, the parameter types of some constructors and <code class="docutils literal notranslate"><span class="pre">Services::security()</span></code> have changed.
+If you call them with the parameters, change the parameter values.
+See <a class="reference internal" href="../changelogs/v4.4.0.html#v440-parameter-type-changes"><span class="std std-ref">Parameter Type Changes</span></a> for details.</p>
+</section>
+<section id="routecollection-routes">
+<h3><a class="toc-backref" href="#id11">RouteCollection::$routes</a><a class="headerlink" href="#routecollection-routes" title="Permalink to this headline"></a></h3>
+<p>The array structure of the protected property <code class="docutils literal notranslate"><span class="pre">$routes</span></code> has been modified for
+performance.</p>
+<p>If you extend <code class="docutils literal notranslate"><span class="pre">RouteCollection</span></code> and use the <code class="docutils literal notranslate"><span class="pre">$routes</span></code>, update your code to
+match the new array structure.</p>
+</section>
+</section>
+<section id="mandatory-file-changes">
+<h2><a class="toc-backref" href="#id12">Mandatory File Changes</a><a class="headerlink" href="#mandatory-file-changes" title="Permalink to this headline"></a></h2>
+<section id="index-php-and-spark">
+<h3><a class="toc-backref" href="#id13">index.php and spark</a><a class="headerlink" href="#index-php-and-spark" title="Permalink to this headline"></a></h3>
+<p>The following files received significant changes and
+<strong>you must merge the updated versions</strong> with your application:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public/index.php</span></code> (see also <a class="reference internal" href="../changelogs/v4.4.0.html#v440-codeigniter-and-exit"><span class="std std-ref">CodeIgniter and exit()</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spark</span></code></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you don’t update the above files, CodeIgniter will not work
+properly after running <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">update</span></code>.</p>
+<p>The upgrade procedure, for example, is as follows:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">composer update</span>
+<span class="go">cp vendor/codeigniter4/framework/public/index.php public/index.php</span>
+<span class="go">cp vendor/codeigniter4/framework/spark spark</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="config-files">
+<h3><a class="toc-backref" href="#id14">Config Files</a><a class="headerlink" href="#config-files" title="Permalink to this headline"></a></h3>
+<section id="app-config-app-php">
+<h4>app/Config/App.php<a class="headerlink" href="#app-config-app-php" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>The property <code class="docutils literal notranslate"><span class="pre">$proxyIPs</span></code> must be an array. If you don’t use proxy servers,
+it must be <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">array</span> <span class="pre">$proxyIPs</span> <span class="pre">=</span> <span class="pre">[];</span></code>.</p></li>
 </ul>
 </section>
-<section id="breaking-enhancements">
-<h2><a class="toc-backref" href="#id6">Breaking Enhancements</a><a class="headerlink" href="#breaking-enhancements" title="Permalink to this headline"></a></h2>
+<section id="app-config-routing-php">
+<span id="upgrade-440-config-routing"></span><h4>app/Config/Routing.php<a class="headerlink" href="#app-config-routing-php" title="Permalink to this headline"></a></h4>
+<p>To clean up the routing system, the following changes were made:</p>
 <ul class="simple">
-<li><p>The method signature of <code class="docutils literal notranslate"><span class="pre">Validation::setRule()</span></code> has been changed. The <code class="docutils literal notranslate"><span class="pre">string</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$rules</span></code> parameter was removed. Extending classes should likewise remove the parameter so as not to break LSP.</p></li>
-<li><p>The method signature of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\BaseBuilder::join()</span></code> and <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\*\Builder::join()</span></code> have been changed. The <code class="docutils literal notranslate"><span class="pre">string</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$cond</span></code> parameter was removed. Extending classes should likewise remove the parameter so as not to break LSP.</p></li>
+<li><p>New <strong>app/Config/Routing.php</strong> file that holds the settings that used to be in the Routes file.</p></li>
+<li><p>The <strong>app/Config/Routes.php</strong> file was simplified so that it only contains the routes without settings and verbiage to clutter the file.</p></li>
+<li><p>The environment-specific routes files are no longer loaded automatically.</p></li>
+</ul>
+<p>So you need to do:</p>
+<ol class="arabic simple">
+<li><p>Copy <strong>app/Config/Routing.php</strong> from the new framework to your <strong>app/Config</strong>
+directory, and configure it.</p></li>
+<li><p>Remove all settings in <strong>app/Config/Routes.php</strong> that are no longer needed.</p></li>
+<li><p>If you use the environment-specific routes files, add them to the <code class="docutils literal notranslate"><span class="pre">$routeFiles</span></code> property in <strong>app/Config/Routing.php</strong>.</p></li>
+</ol>
+</section>
+<section id="app-config-cookie-php">
+<h4>app/Config/Cookie.php<a class="headerlink" href="#app-config-cookie-php" title="Permalink to this headline"></a></h4>
+<p>The Cookie config items in <strong>app/Config/App.php</strong> are no longer used.</p>
+<ol class="arabic simple">
+<li><p>Copy <strong>app/Config/Cookie.php</strong> from the new framework to your <strong>app/Config</strong>
+directory, and configure it.</p></li>
+<li><p>Remove the properties (from <code class="docutils literal notranslate"><span class="pre">$cookiePrefix</span></code> to <code class="docutils literal notranslate"><span class="pre">$cookieSameSite</span></code>) in
+<strong>app/Config/App.php</strong>.</p></li>
+</ol>
+</section>
+<section id="app-config-security-php">
+<h4>app/Config/Security.php<a class="headerlink" href="#app-config-security-php" title="Permalink to this headline"></a></h4>
+<p>The CSRF config items in <strong>app/Config/App.php</strong> are no longer used.</p>
+<ol class="arabic simple">
+<li><p>Copy <strong>app/Config/Security.php</strong> from the new framework to your <strong>app/Config</strong>
+directory, and configure it.</p></li>
+<li><p>Remove the properties (from <code class="docutils literal notranslate"><span class="pre">$CSRFTokenName</span></code> to <code class="docutils literal notranslate"><span class="pre">$CSRFSameSite</span></code>) in
+<strong>app/Config/App.php</strong>.</p></li>
+</ol>
+</section>
+<section id="app-config-session-php">
+<h4>app/Config/Session.php<a class="headerlink" href="#app-config-session-php" title="Permalink to this headline"></a></h4>
+<p>The Session config items in <strong>app/Config/App.php</strong> are no longer used.</p>
+<ol class="arabic simple">
+<li><p>Copy <strong>app/Config/Session.php</strong> from the new framework to your <strong>app/Config</strong>
+directory, and configure it.</p></li>
+<li><p>Remove the properties (from <code class="docutils literal notranslate"><span class="pre">$sessionDriver</span></code> to <code class="docutils literal notranslate"><span class="pre">$sessionDBGroup</span></code>) in
+<strong>app/Config/App.php</strong>.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="breaking-enhancements">
+<h2><a class="toc-backref" href="#id15">Breaking Enhancements</a><a class="headerlink" href="#breaking-enhancements" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Routing:</strong> The method signature of <code class="docutils literal notranslate"><span class="pre">RouteCollection::__construct()</span></code> has been changed.
+The third parameter <code class="docutils literal notranslate"><span class="pre">Routing</span> <span class="pre">$routing</span></code> has been added. Extending classes
+should likewise add the parameter so as not to break LSP.</p></li>
+<li><p><strong>Validation:</strong> The method signature of <code class="docutils literal notranslate"><span class="pre">Validation::check()</span></code> has been changed.
+The <code class="docutils literal notranslate"><span class="pre">string</span></code> typehint on the <code class="docutils literal notranslate"><span class="pre">$rule</span></code> parameter was removed. Extending classes
+should likewise remove the typehint so as not to break LSP.</p></li>
 </ul>
 </section>
 <section id="project-files">
-<h2><a class="toc-backref" href="#id7">Project Files</a><a class="headerlink" href="#project-files" title="Permalink to this headline"></a></h2>
-<p>Numerous files in the <strong>project space</strong> (root, app, public, writable) received updates. Due to
-these files being outside of the <strong>system</strong> scope they will not be changed without your intervention.
-There are some third-party CodeIgniter modules available to assist with merging changes to
+<h2><a class="toc-backref" href="#id16">Project Files</a><a class="headerlink" href="#project-files" title="Permalink to this headline"></a></h2>
+<p>Some files in the <strong>project space</strong> (root, app, public, writable) received updates. Due to
+these files being outside of the <strong>system</strong> scope they will not be changed without your intervention.</p>
+<p>There are some third-party CodeIgniter modules available to assist with merging changes to
 the project space: <a class="reference external" href="https://packagist.org/explore/?query=codeigniter4%20updates">Explore on Packagist</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Except in very rare cases for bug fixes, no changes made to files for the project space
-will break your application. All changes noted here are optional until the next major version,
-and any mandatory changes will be covered in the sections above.</p>
-</div>
 <section id="content-changes">
-<h3><a class="toc-backref" href="#id8">Content Changes</a><a class="headerlink" href="#content-changes" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id17">Content Changes</a><a class="headerlink" href="#content-changes" title="Permalink to this headline"></a></h3>
 <p>The following files received significant changes (including deprecations or visual adjustments)
 and it is recommended that you merge the updated versions with your application:</p>
+<section id="config">
+<h4>Config<a class="headerlink" href="#config" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">app/Config/Routes.php</span></code></dt><dd><ul>
-<li><p>To make the default configuration more secure, auto-routing has been changed to disabled by default.</p></li>
+<dt>app/Config/CURLRequest.php</dt><dd><ul>
+<li><p>The default value of <a class="reference internal" href="../libraries/curlrequest.html#curlrequest-sharing-options"><span class="std std-ref">$shareOptions</span></a> has been change to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>app/Config/Exceptions.php</dt><dd><ul>
+<li><p>Added the new method <code class="docutils literal notranslate"><span class="pre">handler()</span></code> that define custom Exception Handlers.
+See <a class="reference internal" href="../general/errors.html#custom-exception-handlers"><span class="std std-ref">Custom Exception Handlers</span></a>.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
 </section>
+</section>
 <section id="all-changes">
-<h3><a class="toc-backref" href="#id9">All Changes</a><a class="headerlink" href="#all-changes" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id18">All Changes</a><a class="headerlink" href="#all-changes" title="Permalink to this headline"></a></h3>
 <p>This is a list of all files in the <strong>project space</strong> that received changes;
 many will be simple comments or formatting that have no effect on the runtime:</p>
 <ul class="simple">
 <li><p>app/Config/App.php</p></li>
-<li><p>app/Config/Constants.php</p></li>
-<li><p>app/Config/ContentSecurityPolicy.php</p></li>
+<li><p>app/Config/CURLRequest.php</p></li>
+<li><p>app/Config/Cookie.php</p></li>
 <li><p>app/Config/Database.php</p></li>
 <li><p>app/Config/Events.php</p></li>
-<li><p>app/Config/Feature.php</p></li>
+<li><p>app/Config/Exceptions.php</p></li>
 <li><p>app/Config/Filters.php</p></li>
-<li><p>app/Config/Format.php</p></li>
-<li><p>app/Config/Logger.php</p></li>
-<li><p>app/Config/Mimes.php</p></li>
-<li><p>app/Config/Publisher.php</p></li>
 <li><p>app/Config/Routes.php</p></li>
-<li><p>app/Config/Security.php</p></li>
-<li><p>app/Config/Validation.php</p></li>
-<li><p>app/Config/View.php</p></li>
-<li><p>app/Controllers/BaseController.php</p></li>
-<li><p>app/Views/errors/html/debug.css</p></li>
-<li><p>app/Views/errors/html/debug.js</p></li>
-<li><p>app/Views/errors/html/error_404.php</p></li>
-<li><p>app/Views/errors/html/error_exception.php</p></li>
-<li><p>app/Views/errors/html/production.php</p></li>
-<li><p>app/Views/welcome_message.php</p></li>
-<li><p>app/index.html</p></li>
-<li><p>preload.php</p></li>
+<li><p>app/Config/Routing.php</p></li>
+<li><p>app/Config/Toolbar.php</p></li>
 <li><p>public/index.php</p></li>
 <li><p>spark</p></li>
 </ul>
@@ -429,8 +585,8 @@ many will be simple comments or formatting that have no effect on the runtime:</
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="upgrade_421.html" class="btn btn-neutral float-left" title="Upgrading from 4.2.0 to 4.2.1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="upgrade_418.html" class="btn btn-neutral float-right" title="Upgrading from 4.1.7 to 4.1.8" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="backward_compatibility_notes.html" class="btn btn-neutral float-left" title="Backward Compatibility Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrade_438.html" class="btn btn-neutral float-right" title="Upgrading from 4.3.7 to 4.3.8" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
