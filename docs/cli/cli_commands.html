@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creating Spark Commands &mdash; CodeIgniter 4.3.7 documentation</title>
+  <title>Creating Spark Commands &mdash; CodeIgniter 4.3.8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../extending/events.html">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/basecontroller.html">Extending the Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/composer_packages.html">Creating Composer Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/contributing.html">Contributing to CodeIgniter</a></li>
 </ul>
 </li>
@@ -357,7 +358,7 @@ what the command does.</p>
 <h4>run()<a class="headerlink" href="#run" title="Permalink to this headline"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">run()</span></code> method is the method that is called when the command is being run. The <code class="docutils literal notranslate"><span class="pre">$params</span></code> array is a list of
 any CLI arguments after the command name for your use. If the CLI string was:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">foo</span> <span class="nx">bar</span> <span class="nx">baz</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">php spark foo bar baz</span>
 </pre></div>
 </div>
 <p>Then <strong>foo</strong> is the command name, and the <code class="docutils literal notranslate"><span class="pre">$params</span></code> array would be:</p>
@@ -526,7 +527,7 @@ up descriptions:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 30, 2023.
+      <span class="lastupdated">Last updated on Aug 25, 2023.
       </span></p>
   </div>
 

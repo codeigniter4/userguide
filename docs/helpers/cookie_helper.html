@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookie Helper &mdash; CodeIgniter 4.3.7 documentation</title>
+  <title>Cookie Helper &mdash; CodeIgniter 4.3.8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../extending/events.html">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/basecontroller.html">Extending the Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/composer_packages.html">Creating Composer Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/contributing.html">Contributing to CodeIgniter</a></li>
 </ul>
 </li>
@@ -304,7 +305,7 @@ cookies.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Cookie name <em>or</em> associative array of all of the parameters available to this function</p></li>
+<li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|Cookie|string</span></code></span>) – Cookie name <em>or</em> associative array of all of the parameters available to this function <em>or</em> an instance of <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Cookie\Cookie</span></code></p></li>
 <li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cookie value</p></li>
 <li><p><strong>$expire</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Number of seconds until expiration. If set to <code class="docutils literal notranslate"><span class="pre">0</span></code> the cookie will only last as long as the browser is open</p></li>
 <li><p><strong>$domain</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Cookie domain (usually: .yourdomain.com)</p></li>
@@ -355,12 +356,13 @@ a description of its use, as this function is an alias for
 <p>This helper function gives you friendlier syntax to get browser
 cookies. Refer to the <a class="reference internal" href="../incoming/incomingrequest.html"><span class="doc">IncomingRequest Library</span></a> for
 detailed description of its use, as this function acts very
-similarly to <code class="docutils literal notranslate"><span class="pre">IncomingRequest::getCookie()</span></code>, except it will also prepend
+similarly to <a class="reference internal" href="../incoming/incomingrequest.html#CodeIgniter\HTTP\IncomingRequest::getCookie" title="CodeIgniter\HTTP\IncomingRequest::getCookie"><code class="xref php php-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\IncomingRequest::getCookie()</span></code></a>,
+except it will also prepend
 the <code class="docutils literal notranslate"><span class="pre">Config\Cookie::$prefix</span></code> that you might’ve set in your
 <strong>app/Config/Cookie.php</strong> file.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Using XSS filtering is a bad practice. It does not prevent XSS attacks perfectly. Using <code class="docutils literal notranslate"><span class="pre">esc()</span></code> with the correct <code class="docutils literal notranslate"><span class="pre">$context</span></code> in the views is recommended.</p>
+<p>Using XSS filtering is a bad practice. It does not prevent XSS attacks perfectly. Using <a class="reference internal" href="../general/common_functions.html#esc" title="esc"><code class="xref php php-func docutils literal notranslate"><span class="pre">esc()</span></code></a> with the correct <code class="docutils literal notranslate"><span class="pre">$context</span></code> in the views is recommended.</p>
 </div>
 </dd></dl>
 
@@ -387,11 +389,11 @@ values, only the name of the cookie is needed.</p>
 <span class="nx">delete_cookie</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This function is otherwise identical to <code class="docutils literal notranslate"><span class="pre">set_cookie()</span></code>, except that it
+<p>This function is otherwise identical to <a class="reference internal" href="#set_cookie" title="set_cookie"><code class="xref php php-func docutils literal notranslate"><span class="pre">set_cookie()</span></code></a>, except that it
 does not have the <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">expire</span></code> parameters.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When you use <code class="docutils literal notranslate"><span class="pre">set_cookie()</span></code>,
+<p>When you use <a class="reference internal" href="#set_cookie" title="set_cookie"><code class="xref php php-func docutils literal notranslate"><span class="pre">set_cookie()</span></code></a>,
 if the <code class="docutils literal notranslate"><span class="pre">value</span></code> is set to empty string and the <code class="docutils literal notranslate"><span class="pre">expire</span></code> is set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the cookie will be deleted.
 If the <code class="docutils literal notranslate"><span class="pre">value</span></code> is set to non-empty string and the <code class="docutils literal notranslate"><span class="pre">expire</span></code> is set to <code class="docutils literal notranslate"><span class="pre">0</span></code>, the cookie will only last as long as the browser is open.</p>
 </div>
@@ -438,7 +440,7 @@ parameters.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 30, 2023.
+      <span class="lastupdated">Last updated on Aug 25, 2023.
       </span></p>
   </div>
 

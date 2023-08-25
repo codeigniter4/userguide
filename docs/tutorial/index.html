@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Build Your First Application &mdash; CodeIgniter 4.3.7 documentation</title>
+  <title>Build Your First Application &mdash; CodeIgniter 4.3.8 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -244,6 +244,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../extending/events.html">Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/basecontroller.html">Extending the Controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/composer_packages.html">Creating Composer Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../extending/contributing.html">Contributing to CodeIgniter</a></li>
 </ul>
 </li>
@@ -340,7 +341,7 @@ further reading and other resources.</p></li>
 <p>You can download a release manually from the site, but for this tutorial we will
 use the recommended way and install the AppStarter package through Composer.
 From your command line type the following:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">composer</span> <span class="nx">create</span><span class="o">-</span><span class="nx">project</span> <span class="nx">codeigniter4</span><span class="o">/</span><span class="nx">appstarter</span> <span class="nx">ci</span><span class="o">-</span><span class="nx">news</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">composer create-project codeigniter4/appstarter ci-news</span>
 </pre></div>
 </div>
 <p>This creates a new folder, <strong>ci-news</strong>, which contains your application code, with
@@ -367,7 +368,7 @@ serve it through any server of your choice, Apache, Nginx, etc, but CodeIgniter
 comes with a simple command that takes advantage of PHP’s built-in server to get
 you up and running fast on your development machines. Type the following on the
 command line from the root of your project:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">spark</span> <span class="nx">serve</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">php spark serve</span>
 </pre></div>
 </div>
 </section>
@@ -428,7 +429,7 @@ small news application.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 30, 2023.
+      <span class="lastupdated">Last updated on Aug 25, 2023.
       </span></p>
   </div>
 
