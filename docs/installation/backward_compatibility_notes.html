@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backward Compatibility Notes &mdash; CodeIgniter 4.4.1 documentation</title>
+  <title>Backward Compatibility Notes &mdash; CodeIgniter 4.4.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Upgrading from 4.4.0 to 4.4.1" href="upgrade_441.html" />
+    <link rel="next" title="Upgrading from 4.4.1 to 4.4.2" href="upgrade_442.html" />
     <link rel="prev" title="Upgrading From a Previous Version" href="upgrading.html" /> 
 </head>
 
@@ -287,8 +287,9 @@ Minor releases (such as 4.2, 4.3 etc.) may introduce new features, but must do s
 <section id="what-are-not-breaking-changes">
 <h2>What are not Breaking Changes<a class="headerlink" href="#what-are-not-breaking-changes" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>The deprecated Config items are not covered by backwards compatibility (BC) promise. It may be removed in the next
-<strong>minor</strong> version or later.</p></li>
+<li><p>The deprecated items are not covered by backwards compatibility (BC) promise. It may be removed in the next next
+<strong>minor</strong> version or later. For example, if an item has been deprecated since 4.3.x,
+it may be removed in 4.5.0.</p></li>
 <li><p>System messages defined in <strong>system/Language/en/</strong> are strictly for internal framework use and are not covered by backwards compatibility (BC) promise. If developers are relying on language string output they should be checking it against the function call (<code class="docutils literal notranslate"><span class="pre">lang('...')</span></code>), not the content.</p></li>
 <li><p><a class="reference external" href="https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments">Named arguments</a> are not covered by backwards compatibility (BC) promise. We may choose to rename method/function parameter names when necessary in order to improve the  codebase.</p></li>
 </ul>
@@ -300,14 +301,14 @@ Minor releases (such as 4.2, 4.3 etc.) may introduce new features, but must do s
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="upgrading.html" class="btn btn-neutral float-left" title="Upgrading From a Previous Version" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="upgrade_441.html" class="btn btn-neutral float-right" title="Upgrading from 4.4.0 to 4.4.1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="upgrade_442.html" class="btn btn-neutral float-right" title="Upgrading from 4.4.1 to 4.4.2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Sep 05, 2023.
+      <span class="lastupdated">Last updated on Oct 19, 2023.
       </span></p>
   </div>
 
