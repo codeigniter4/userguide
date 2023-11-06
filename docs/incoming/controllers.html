@@ -476,6 +476,7 @@ and it validates data from
 or <a class="reference internal" href="incomingrequest.html#incomingrequest-retrieving-raw-data"><span class="std std-ref">$request-&gt;getRawInput()</span></a>
 or <a class="reference internal" href="incomingrequest.html#incomingrequest-getting-data"><span class="std std-ref">$request-&gt;getVar()</span></a>, and an attacker
 could change what data is validated.</p>
+<p>If you want to use the request with only HTML post, you can use <span class="std std-ref">$validation->validateData($request->getPost(), $rules)</span>. Because <span class="std std-ref">withRequest()</span> uses <span class="std std-ref">$request->getVar()</span>, the data comes from $_GET, $_POST, $_COOKIE. This can cause a conflict if there is a same named cookie and get or post value.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
