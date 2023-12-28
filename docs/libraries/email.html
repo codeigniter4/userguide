@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Email Class &mdash; CodeIgniter 4.4.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
+  <title>Email Class &mdash; CodeIgniter 4.4.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/js/citheme.js"></script>
-        <script src="../_static/js/carbon.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2da34e3f"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
+        <script src="../_static/js/carbon.js?v=b287325f"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -130,6 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/csp.html">Content Security Policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/localization.html">Localization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/alternative_php.html">Alternate PHP Syntax for View Files</a></li>
 </ul>
@@ -278,7 +282,7 @@
            <div itemprop="articleBody">
              
   <section id="email-class">
-<h1>Email Class<a class="headerlink" href="#email-class" title="Permalink to this headline"></a></h1>
+<h1>Email Class<a class="headerlink" href="#email-class" title="Link to this heading"></a></h1>
 <p>CodeIgniter’s robust Email Class supports the following features:</p>
 <ul class="simple">
 <li><p>Multiple Protocols: Mail, Sendmail, and SMTP</p></li>
@@ -293,30 +297,30 @@
 BCC batches.</p></li>
 <li><p>Email Debugging tools</p></li>
 </ul>
-<div class="contents local topic" id="contents">
+<nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#using-the-email-library" id="id2">Using the Email Library</a></p>
+<li><p><a class="reference internal" href="#using-the-email-library" id="id3">Using the Email Library</a></p>
 <ul>
-<li><p><a class="reference internal" href="#sending-email" id="id3">Sending Email</a></p></li>
-<li><p><a class="reference internal" href="#setting-email-preferences" id="id4">Setting Email Preferences</a></p>
+<li><p><a class="reference internal" href="#sending-email" id="id4">Sending Email</a></p></li>
+<li><p><a class="reference internal" href="#setting-email-preferences" id="id5">Setting Email Preferences</a></p>
 <ul>
-<li><p><a class="reference internal" href="#setting-email-preferences-by-passing-an-array" id="id5">Setting Email Preferences by Passing an Array</a></p></li>
-<li><p><a class="reference internal" href="#setting-email-preferences-in-a-config-file" id="id6">Setting Email Preferences in a Config File</a></p></li>
-<li><p><a class="reference internal" href="#ssl-versus-tls-for-smtp-protocol" id="id7">SSL versus TLS for SMTP Protocol</a></p></li>
-<li><p><a class="reference internal" href="#reviewing-preferences" id="id8">Reviewing Preferences</a></p></li>
+<li><p><a class="reference internal" href="#setting-email-preferences-by-passing-an-array" id="id6">Setting Email Preferences by Passing an Array</a></p></li>
+<li><p><a class="reference internal" href="#setting-email-preferences-in-a-config-file" id="id7">Setting Email Preferences in a Config File</a></p></li>
+<li><p><a class="reference internal" href="#ssl-versus-tls-for-smtp-protocol" id="id8">SSL versus TLS for SMTP Protocol</a></p></li>
+<li><p><a class="reference internal" href="#reviewing-preferences" id="id9">Reviewing Preferences</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#email-preferences" id="id9">Email Preferences</a></p></li>
-<li><p><a class="reference internal" href="#overriding-word-wrapping" id="id10">Overriding Word Wrapping</a></p></li>
+<li><p><a class="reference internal" href="#email-preferences" id="id10">Email Preferences</a></p></li>
+<li><p><a class="reference internal" href="#overriding-word-wrapping" id="id11">Overriding Word Wrapping</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#namespace-CodeIgniter\Email" id="id11">Class Reference</a></p></li>
+<li><p><a class="reference internal" href="#class-reference" id="id12">Class Reference</a></p></li>
 </ul>
-</div>
+</nav>
 <section id="using-the-email-library">
-<h2><a class="toc-backref" href="#id2">Using the Email Library</a><a class="headerlink" href="#using-the-email-library" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Using the Email Library</a><a class="headerlink" href="#using-the-email-library" title="Link to this heading"></a></h2>
 <section id="sending-email">
-<h3><a class="toc-backref" href="#id3">Sending Email</a><a class="headerlink" href="#sending-email" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Sending Email</a><a class="headerlink" href="#sending-email" title="Link to this heading"></a></h3>
 <p>Sending email is not only simple, but you can configure it on the fly or
 set your preferences in the <strong>app/Config/Email.php</strong> file.</p>
 <p>Here is a basic example demonstrating how you might send email:</p>
@@ -337,13 +341,13 @@ set your preferences in the <strong>app/Config/Email.php</strong> file.</p>
 </div>
 </section>
 <section id="setting-email-preferences">
-<span id="id1"></span><h3><a class="toc-backref" href="#id4">Setting Email Preferences</a><a class="headerlink" href="#setting-email-preferences" title="Permalink to this headline"></a></h3>
+<span id="id1"></span><h3><a class="toc-backref" href="#id5" role="doc-backlink">Setting Email Preferences</a><a class="headerlink" href="#setting-email-preferences" title="Link to this heading"></a></h3>
 <p>There are 21 different preferences available to tailor how your email
 messages are sent. You can either set them manually as described here,
 or automatically via preferences stored in your config file, described
-below:</p>
+in <a class="reference internal" href="#id2">Email Preferences</a>.</p>
 <section id="setting-email-preferences-by-passing-an-array">
-<h4><a class="toc-backref" href="#id5">Setting Email Preferences by Passing an Array</a><a class="headerlink" href="#setting-email-preferences-by-passing-an-array" title="Permalink to this headline"></a></h4>
+<h4><a class="toc-backref" href="#id6" role="doc-backlink">Setting Email Preferences by Passing an Array</a><a class="headerlink" href="#setting-email-preferences-by-passing-an-array" title="Link to this heading"></a></h4>
 <p>Preferences are set by passing an array of preference values to the
 email initialize method. Here is an example of how you might set some
 preferences:</p>
@@ -364,7 +368,7 @@ if you do not set them.</p>
 </div>
 </section>
 <section id="setting-email-preferences-in-a-config-file">
-<h4><a class="toc-backref" href="#id6">Setting Email Preferences in a Config File</a><a class="headerlink" href="#setting-email-preferences-in-a-config-file" title="Permalink to this headline"></a></h4>
+<h4><a class="toc-backref" href="#id7" role="doc-backlink">Setting Email Preferences in a Config File</a><a class="headerlink" href="#setting-email-preferences-in-a-config-file" title="Link to this heading"></a></h4>
 <p>If you prefer not to set preferences using the above method, you can
 instead put them into the config file. Simply open the
 <strong>app/Config/Email.php</strong> file, and set your configs in the
@@ -373,7 +377,7 @@ You will NOT need to use the <code class="docutils literal notranslate"><span cl
 you set your preferences in the config file.</p>
 </section>
 <section id="ssl-versus-tls-for-smtp-protocol">
-<span id="email-ssl-tls-for-smtp"></span><h4><a class="toc-backref" href="#id7">SSL versus TLS for SMTP Protocol</a><a class="headerlink" href="#ssl-versus-tls-for-smtp-protocol" title="Permalink to this headline"></a></h4>
+<span id="email-ssl-tls-for-smtp"></span><h4><a class="toc-backref" href="#id8" role="doc-backlink">SSL versus TLS for SMTP Protocol</a><a class="headerlink" href="#ssl-versus-tls-for-smtp-protocol" title="Link to this heading"></a></h4>
 <p>To protect the username, password and email content while communicating with the SMTP server,
 encryption on the channel should be used. Two different standards are widely deployed and
 it is important to understand the differences when trying to troubleshoot email sending
@@ -395,23 +399,17 @@ with the SMTP server to switch from clear-text to an encrypted channel. The init
 will be made in clear-text and the channel will be upgraded to TLS with the <code class="docutils literal notranslate"><span class="pre">STARTTLS</span></code> command.</p>
 </section>
 <section id="reviewing-preferences">
-<h4><a class="toc-backref" href="#id8">Reviewing Preferences</a><a class="headerlink" href="#reviewing-preferences" title="Permalink to this headline"></a></h4>
+<h4><a class="toc-backref" href="#id9" role="doc-backlink">Reviewing Preferences</a><a class="headerlink" href="#reviewing-preferences" title="Link to this heading"></a></h4>
 <p>The settings used for the last successful send are available from the
 instance property <code class="docutils literal notranslate"><span class="pre">$archive</span></code>. This is helpful for testing and debugging
 to determine that actual values at the time of the <code class="docutils literal notranslate"><span class="pre">send()</span></code> call.</p>
 </section>
 </section>
 <section id="email-preferences">
-<h3><a class="toc-backref" href="#id9">Email Preferences</a><a class="headerlink" href="#email-preferences" title="Permalink to this headline"></a></h3>
+<span id="id2"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink">Email Preferences</a><a class="headerlink" href="#email-preferences" title="Link to this heading"></a></h3>
 <p>The following is a list of all the preferences that can be set when
 sending email.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 16%" />
-<col style="width: 20%" />
-<col style="width: 51%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Preference</p></th>
 <th class="head"><p>Default Value</p></th>
@@ -427,7 +425,8 @@ sending email.</p>
 </tr>
 <tr class="row-odd"><td><p><strong>protocol</strong></p></td>
 <td><p>mail</p></td>
-<td><p>mail, sendmail, or smtp</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mail</span></code>, <code class="docutils literal notranslate"><span class="pre">sendmail</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">smtp</span></code></p></td>
 <td><p>The mail sending protocol.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>mailPath</strong></p></td>
@@ -438,7 +437,7 @@ sending email.</p>
 <tr class="row-odd"><td><p><strong>SMTPHost</strong></p></td>
 <td><p>No Default</p></td>
 <td><p>None</p></td>
-<td><p>SMTP Server Address.</p></td>
+<td><p>SMTP Server Hostname.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>SMTPUser</strong></p></td>
 <td><p>No Default</p></td>
@@ -463,21 +462,22 @@ regardless of <code class="docutils literal notranslate"><span class="pre">SMTPC
 </tr>
 <tr class="row-even"><td><p><strong>SMTPKeepAlive</strong></p></td>
 <td><p>false</p></td>
-<td><p>true or false (boolean)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code> (boolean)</p></td>
 <td><p>Enable persistent SMTP connections.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>SMTPCrypto</strong></p></td>
 <td><p>tls</p></td>
-<td><p>tls, ssl, or empty string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tls</span></code>, <code class="docutils literal notranslate"><span class="pre">ssl</span></code>, or
+empty string (<code class="docutils literal notranslate"><span class="pre">''</span></code>)</p></td>
 <td><p>SMTP Encryption. Setting this to <code class="docutils literal notranslate"><span class="pre">ssl</span></code> will create a secure
 channel to the server using SSL, and <code class="docutils literal notranslate"><span class="pre">tls</span></code> will issue a
-<code class="docutils literal notranslate"><span class="pre">STARTTLS</span></code> command to the server. Connection on port 465 should
+<code class="docutils literal notranslate"><span class="pre">STARTTLS</span></code> command to the server. Connection on port <code class="docutils literal notranslate"><span class="pre">465</span></code> should
 set this to an empty string (<code class="docutils literal notranslate"><span class="pre">''</span></code>). See also
 <a class="reference internal" href="#email-ssl-tls-for-smtp"><span class="std std-ref">SSL versus TLS for SMTP Protocol</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>wordWrap</strong></p></td>
 <td><p>true</p></td>
-<td><p>true or false (boolean)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code> (boolean)</p></td>
 <td><p>Enable word-wrap.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>wrapChars</strong></p></td>
@@ -487,7 +487,7 @@ set this to an empty string (<code class="docutils literal notranslate"><span cl
 </tr>
 <tr class="row-even"><td><p><strong>mailType</strong></p></td>
 <td><p>text</p></td>
-<td><p>text or html</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">text</span></code> or <code class="docutils literal notranslate"><span class="pre">html</span></code></p></td>
 <td><p>Type of mail. If you send HTML email you must send it as a complete web
 page. Make sure you don’t have any relative links or relative image
 paths otherwise they will not work.</p></td>
@@ -495,31 +495,31 @@ paths otherwise they will not work.</p></td>
 <tr class="row-odd"><td><p><strong>charset</strong></p></td>
 <td><p>utf-8</p></td>
 <td></td>
-<td><p>Character set (utf-8, iso-8859-1, etc.).</p></td>
+<td><p>Character set (<code class="docutils literal notranslate"><span class="pre">utf-8</span></code>, <code class="docutils literal notranslate"><span class="pre">iso-8859-1</span></code>, etc.).</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>validate</strong></p></td>
 <td><p>true</p></td>
-<td><p>true or false (boolean)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code> (boolean)</p></td>
 <td><p>Whether to validate the email address.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>priority</strong></p></td>
 <td><p>3</p></td>
 <td><p>1, 2, 3, 4, 5</p></td>
-<td><p>Email Priority. 1 = highest. 5 = lowest. 3 = normal.</p></td>
+<td><p>Email Priority. <code class="docutils literal notranslate"><span class="pre">1</span></code> = highest. <code class="docutils literal notranslate"><span class="pre">5</span></code> = lowest. <code class="docutils literal notranslate"><span class="pre">3</span></code> = normal.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>CRLF</strong></p></td>
 <td><p>\n</p></td>
-<td><p>“\r\n” or “\n” or “\r”</p></td>
-<td><p>Newline character. (Use “\r\n” to comply with RFC 822).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\r\n</span></code> or <code class="docutils literal notranslate"><span class="pre">\n</span></code> or <code class="docutils literal notranslate"><span class="pre">\r</span></code></p></td>
+<td><p>Newline character. (Use <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> to comply with RFC 822).</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>newline</strong></p></td>
 <td><p>\n</p></td>
-<td><p>“\r\n” or “\n” or “\r”</p></td>
-<td><p>Newline character. (Use “\r\n” to comply with RFC 822).</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\r\n</span></code> or <code class="docutils literal notranslate"><span class="pre">\n</span></code> or <code class="docutils literal notranslate"><span class="pre">\r</span></code></p></td>
+<td><p>Newline character. (Use <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> to comply with RFC 822).</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>BCCBatchMode</strong></p></td>
 <td><p>false</p></td>
-<td><p>true or false (boolean)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code> (boolean)</p></td>
 <td><p>Enable BCC Batch Mode.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>BCCBatchSize</strong></p></td>
@@ -529,14 +529,14 @@ paths otherwise they will not work.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>DSN</strong></p></td>
 <td><p>false</p></td>
-<td><p>true or false (boolean)</p></td>
-<td><p>Enable notify message from server</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code> (boolean)</p></td>
+<td><p>Enable notify message from server.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="overriding-word-wrapping">
-<h3><a class="toc-backref" href="#id10">Overriding Word Wrapping</a><a class="headerlink" href="#overriding-word-wrapping" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Overriding Word Wrapping</a><a class="headerlink" href="#overriding-word-wrapping" title="Link to this heading"></a></h3>
 <p>If you have word wrapping enabled (recommended to comply with RFC 822)
 and you have a very long link in your email it can get wrapped too,
 causing it to become un-clickable by the person receiving it.
@@ -554,26 +554,26 @@ message like this:</p>
 <p>Place the item you do not want word-wrapped between: {unwrap} {/unwrap}</p>
 </section>
 </section>
-<section id="namespace-CodeIgniter\Email">
-<span id="class-reference"></span><h2><a class="toc-backref" href="#id11">Class Reference</a><a class="headerlink" href="#namespace-CodeIgniter\Email" title="Permalink to this headline"></a></h2>
-<dl class="php class">
+<section id="class-reference">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Class Reference</a><a class="headerlink" href="#class-reference" title="Link to this heading"></a></h2>
+<dl class="php class" id="namespace-CodeIgniter\Email">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CodeIgniter\Email\</span></span><span class="sig-name descname"><span class="pre">Email</span></span><a class="headerlink" href="#CodeIgniter\Email\Email" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CodeIgniter\Email\</span></span><span class="sig-name descname"><span class="pre">Email</span></span><a class="headerlink" href="#CodeIgniter\Email\Email" title="Link to this definition"></a></dt>
 <dd><dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setFrom">
-<span class="sig-name descname"><span class="pre">setFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$from</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$name</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$returnPath</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setFrom" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$from</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$name</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$returnPath</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setFrom" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$from</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – “From” e-mail address</p></li>
 <li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – “From” display name</p></li>
 <li><p><strong>$returnPath</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Optional email address to redirect undelivered e-mail to</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -598,18 +598,18 @@ your protocol.</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setReplyTo">
-<span class="sig-name descname"><span class="pre">setReplyTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$replyto</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$name</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setReplyTo" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setReplyTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$replyto</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$name</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setReplyTo" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$replyto</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – E-mail address for replies</p></li>
 <li><p><strong>$name</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Display name for the reply-to e-mail address</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -624,17 +624,17 @@ information in the <a class="reference external" href="#setFrom">setFrom</a> met
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setTo">
-<span class="sig-name descname"><span class="pre">setTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$to</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setTo" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$to</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setTo" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$to</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Comma-delimited string or an array of e-mail addresses</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -659,17 +659,17 @@ a comma-delimited list or an array:</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setCC">
-<span class="sig-name descname"><span class="pre">setCC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$cc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setCC" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setCC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$cc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setCC" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$cc</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Comma-delimited string or an array of e-mail addresses</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -679,18 +679,18 @@ a comma-delimited list or an array.</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setBCC">
-<span class="sig-name descname"><span class="pre">setBCC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$bcc</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$limit</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setBCC" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setBCC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$bcc</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$limit</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setBCC" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$bcc</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">mixed</span></code></span>) – Comma-delimited string or an array of e-mail addresses</p></li>
 <li><p><strong>$limit</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Maximum number of e-mails to send per batch</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -703,17 +703,17 @@ the emails to batches, with each batch not exceeding the specified
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setSubject">
-<span class="sig-name descname"><span class="pre">setSubject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$subject</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setSubject" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setSubject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$subject</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setSubject" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$subject</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – E-mail subject line</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -727,17 +727,17 @@ the emails to batches, with each batch not exceeding the specified
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setMessage">
-<span class="sig-name descname"><span class="pre">setMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$body</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setMessage" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$body</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setMessage" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$body</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – E-mail message body</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -751,17 +751,17 @@ the emails to batches, with each batch not exceeding the specified
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setAltMessage">
-<span class="sig-name descname"><span class="pre">setAltMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setAltMessage" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setAltMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setAltMessage" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$str</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Alternative e-mail message body</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -781,18 +781,18 @@ and strip the tags.</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setHeader">
-<span class="sig-name descname"><span class="pre">setHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$header</span></em>, <em class="sig-param"><span class="pre">$value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setHeader" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$header</span></em>, <em class="sig-param"><span class="pre">$value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setHeader" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$header</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Header name</p></li>
 <li><p><strong>$value</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Header value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -807,17 +807,17 @@ and strip the tags.</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$clearAttachments</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::clear" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$clearAttachments</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::clear" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$clearAttachments</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether or not to clear attachments</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -848,17 +848,17 @@ well:</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::send">
-<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$autoClear</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::send" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$autoClear</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::send" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$autoClear</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to clear message data automatically</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>true on success, false on failure</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
 </dd>
 </dl>
@@ -895,9 +895,9 @@ boolean <code class="docutils literal notranslate"><span class="pre">true</span>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::attach">
-<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$filename</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$disposition</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$newname</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$mime</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::attach" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$filename</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$disposition</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$newname</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$mime</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::attach" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$filename</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – File name</p></li>
 <li><p><strong>$disposition</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – ‘disposition’ of the attachment. Most
@@ -907,10 +907,10 @@ specification used here. <a class="reference external" href="https://www.iana.or
 <li><p><strong>$mime</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – MIME type to use (useful for buffered data)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>CodeIgniter\Email\Email instance (method chaining)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><a class="reference internal" href="#CodeIgniter\Email\Email" title="CodeIgniter\Email\Email"><code class="xref php php-obj docutils literal notranslate"><span class="pre">CodeIgniter\Email\Email</span></code></a></span></p>
 </dd>
 </dl>
@@ -955,17 +955,17 @@ parameter as mime-type:</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::setAttachmentCID">
-<span class="sig-name descname"><span class="pre">setAttachmentCID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setAttachmentCID" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setAttachmentCID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::setAttachmentCID" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$filename</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Existing attachment filename</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Attachment Content-ID or false if not found</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
@@ -992,17 +992,17 @@ parameter as mime-type:</p>
 
 <dl class="php method">
 <dt class="sig sig-object php" id="CodeIgniter\Email\Email::printDebugger">
-<span class="sig-name descname"><span class="pre">printDebugger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$include</span> <span class="pre">=</span> <span class="pre">['headers',</span> <span class="pre">'subject',</span> <span class="pre">'body']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::printDebugger" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">printDebugger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$include</span> <span class="pre">=</span> <span class="pre">['headers',</span> <span class="pre">'subject',</span> <span class="pre">'body']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Email\Email::printDebugger" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$include</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – Which parts of the message to print out</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Formatted debug data</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
@@ -1045,7 +1045,7 @@ Valid options are: <strong>headers</strong>, <strong>subject</strong>, <strong>b
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 26, 2023.
+      <span class="lastupdated">Last updated on Dec 28, 2023.
       </span></p>
   </div>
 

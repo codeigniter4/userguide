@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filesystem Helper &mdash; CodeIgniter 4.4.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/citheme_dark.css" type="text/css" />
+  <title>Filesystem Helper &mdash; CodeIgniter 4.4.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/js/citheme.js"></script>
-        <script src="../_static/js/carbon.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2da34e3f"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
+        <script src="../_static/js/carbon.js?v=b287325f"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -130,6 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/csp.html">Content Security Policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/localization.html">Localization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/alternative_php.html">Alternate PHP Syntax for View Files</a></li>
 </ul>
@@ -278,17 +282,17 @@
            <div itemprop="articleBody">
              
   <section id="filesystem-helper">
-<h1>Filesystem Helper<a class="headerlink" href="#filesystem-helper" title="Permalink to this headline"></a></h1>
-<p>The Directory Helper file contains functions that assist in working with
-directories.</p>
-<div class="contents local topic" id="contents">
+<h1>Filesystem Helper<a class="headerlink" href="#filesystem-helper" title="Link to this heading"></a></h1>
+<p>The Filesystem Helper file contains functions that assist in working with
+files and directories.</p>
+<nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#loading-this-helper" id="id1">Loading this Helper</a></p></li>
-<li><p><a class="reference internal" href="#available-functions" id="id2">Available Functions</a></p></li>
+<li><p><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></p></li>
+<li><p><a class="reference internal" href="#available-functions" id="id3">Available Functions</a></p></li>
 </ul>
-</div>
+</nav>
 <section id="loading-this-helper">
-<h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Link to this heading"></a></h2>
 <p>This helper is loaded using the following code:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -297,23 +301,23 @@ directories.</p>
 </div>
 </section>
 <section id="available-functions">
-<h2><a class="toc-backref" href="#id2">Available Functions</a><a class="headerlink" href="#available-functions" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Available Functions</a><a class="headerlink" href="#available-functions" title="Link to this heading"></a></h2>
 <p>The following functions are available:</p>
 <dl class="php function">
 <dt class="sig sig-object php" id="directory_map">
-<span class="sig-name descname"><span class="pre">directory_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$sourceDir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$directoryDepth</span> <span class="pre">=</span> <span class="pre">0</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#directory_map" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">directory_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$sourceDir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$directoryDepth</span> <span class="pre">=</span> <span class="pre">0</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#directory_map" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$sourceDir</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Path to the source directory</p></li>
-<li><p><strong>$directoryDepth</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Depth of directories to traverse (0 = fully recursive, 1 = current dir, etc)</p></li>
+<li><p><strong>$directoryDepth</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Depth of directories to traverse (<code class="docutils literal notranslate"><span class="pre">0</span></code> = fully recursive, <code class="docutils literal notranslate"><span class="pre">1</span></code> = current dir, etc)</p></li>
 <li><p><strong>$hidden</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to include hidden paths</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An array of files</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span></p>
 </dd>
 </dl>
@@ -325,11 +329,11 @@ directories.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Paths are almost always relative to your main index.php file.</p>
+<p>Paths are almost always relative to your main <strong>index.php</strong> file.</p>
 </div>
 <p>Sub-folders contained within the directory will be mapped as well. If
 you wish to control the recursion depth, you can do so using the second
-parameter (integer). A depth of 1 will only map the top level directory:</p>
+parameter (integer). A depth of <code class="docutils literal notranslate"><span class="pre">1</span></code> will only map the top level directory:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
@@ -337,10 +341,10 @@ parameter (integer). A depth of 1 will only map the top level directory:</p>
 </div>
 <p>By default, hidden files will not be included in the returned array and
 hidden directories will be skipped. To override this behavior, you may
-set a third parameter to true (boolean):</p>
+set a third parameter to <code class="docutils literal notranslate"><span class="pre">true</span></code> (boolean):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Each folder name will be an array index, while its contained files will
@@ -378,9 +382,9 @@ be numerically indexed. Here is an example of a typical array:</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="directory_mirror">
-<span class="sig-name descname"><span class="pre">directory_mirror</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$original</span></em>, <em class="sig-param"><span class="pre">$target</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$overwrite</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#directory_mirror" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">directory_mirror</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$original</span></em>, <em class="sig-param"><span class="pre">$target</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$overwrite</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#directory_mirror" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$original</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Original source directory</p></li>
 <li><p><strong>$target</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Target destination directory</p></li>
@@ -405,19 +409,19 @@ into the target directory, i.e. “mirror” its contents.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="write_file">
-<span class="sig-name descname"><span class="pre">write_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em>, <em class="sig-param"><span class="pre">$data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$mode</span> <span class="pre">=</span> <span class="pre">'wb'</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#write_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">write_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em>, <em class="sig-param"><span class="pre">$data</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$mode</span> <span class="pre">=</span> <span class="pre">'wb'</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#write_file" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – File path</p></li>
 <li><p><strong>$data</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Data to write to file</p></li>
 <li><p><strong>$mode</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – <code class="docutils literal notranslate"><span class="pre">fopen()</span></code> mode</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>true if the write was successful, false in case of an error</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> if the write was successful, <code class="docutils literal notranslate"><span class="pre">false</span></code> in case of an error</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
 </dd>
 </dl>
@@ -441,7 +445,7 @@ function will create it.</p>
 <span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The default mode is ‘wb’. Please see the <a class="reference external" href="https://www.php.net/manual/en/function.fopen.php">PHP user guide</a>
+<p>The default mode is <code class="docutils literal notranslate"><span class="pre">'wb'</span></code>. Please see <a class="reference external" href="https://www.php.net/manual/en/function.fopen.php">fopen()</a> in the PHP manual
 for mode options.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -451,7 +455,7 @@ then the directory containing it must be writable.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The path is relative to your main site index.php file, NOT your
+<p>The path is relative to your main site <strong>index.php</strong> file, NOT your
 controller or view files. CodeIgniter uses a front controller so paths
 are always relative to the main site index.</p>
 </div>
@@ -463,9 +467,9 @@ are always relative to the main site index.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="delete_files">
-<span class="sig-name descname"><span class="pre">delete_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$delDir</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$htdocs</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_files" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$delDir</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$htdocs</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_files" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Directory path</p></li>
 <li><p><strong>$delDir</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to also delete directories</p></li>
@@ -473,10 +477,10 @@ are always relative to the main site index.</p>
 <li><p><strong>$hidden</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to also delete hidden files (files beginning with a period)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>true on success, false in case of an error</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">true</span></code> on success, <code class="docutils literal notranslate"><span class="pre">false</span></code> in case of an error</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
 </dd>
 </dl>
@@ -487,7 +491,7 @@ are always relative to the main site index.</p>
 <span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If the second parameter is set to true, any directories contained within the supplied
+<p>If the second parameter is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, any directories contained within the supplied
 root path will be deleted as well.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -503,9 +507,9 @@ root path will be deleted as well.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="get_filenames">
-<span class="sig-name descname"><span class="pre">get_filenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$sourceDir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$includePath</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$includeDir</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_filenames" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_filenames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$sourceDir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$includePath</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$hidden</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$includeDir</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_filenames" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$sourceDir</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Directory path</p></li>
 <li><p><strong>$includePath</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool|null</span></code></span>) – Whether to include the path as part of the filename; false for no path, null for the path relative to <code class="docutils literal notranslate"><span class="pre">$sourceDir</span></code>, true for the full path</p></li>
@@ -513,10 +517,10 @@ root path will be deleted as well.</p>
 <li><p><strong>$includeDir</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to include directories in the array output</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An array of file names</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span></p>
 </dd>
 </dl>
@@ -524,28 +528,32 @@ root path will be deleted as well.</p>
 contained within it. The file path can optionally be added to the file names by setting
 the second parameter to ‘relative’ for relative paths or any other non-empty value for
 a full file path.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to v4.4.4, due to a bug, this function did not follow symlink folders.</p>
+</div>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$controllers</span> <span class="o">=</span> <span class="nx">get_filenames</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;controllers/&#39;</span><span class="p">);</span>
+<span class="nv">$controllers</span> <span class="o">=</span> <span class="nx">get_filenames</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Controllers/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="get_dir_file_info">
-<span class="sig-name descname"><span class="pre">get_dir_file_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$sourceDir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$topLevelOnly</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_dir_file_info" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_dir_file_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$sourceDir</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$topLevelOnly</span> <span class="pre">=</span> <span class="pre">true</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_dir_file_info" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$sourceDir</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Directory path</p></li>
 <li><p><strong>$topLevelOnly</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to look only at the specified directory (excluding sub-directories)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An array containing info on the supplied directory’s contents</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span></p>
 </dd>
 </dl>
@@ -556,25 +564,25 @@ operation.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$models_info</span> <span class="o">=</span> <span class="nx">get_dir_file_info</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;models/&#39;</span><span class="p">);</span>
+<span class="nv">$models_info</span> <span class="o">=</span> <span class="nx">get_dir_file_info</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Models/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="get_file_info">
-<span class="sig-name descname"><span class="pre">get_file_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$file[,</span> <span class="pre">$returnedValues</span> <span class="pre">=</span> <span class="pre">['name',</span> <span class="pre">'server_path',</span> <span class="pre">'size',</span> <span class="pre">'date']]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get_file_info" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_file_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$file[,</span> <span class="pre">$returnedValues</span> <span class="pre">=</span> <span class="pre">['name',</span> <span class="pre">'server_path',</span> <span class="pre">'size',</span> <span class="pre">'date']]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#get_file_info" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$file</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – File path</p></li>
 <li><p><strong>$returnedValues</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|string</span></code></span>) – What type of info to return to be passed as array or comma separated string</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An array containing info on the specified file or false on failure</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span></p>
 </dd>
 </dl>
@@ -587,21 +595,21 @@ information you want returned.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="symbolic_permissions">
-<span class="sig-name descname"><span class="pre">symbolic_permissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$perms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#symbolic_permissions" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">symbolic_permissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$perms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#symbolic_permissions" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$perms</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Permissions</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Symbolic permissions string</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
-<p>Takes numeric permissions (such as is returned by <code class="docutils literal notranslate"><span class="pre">fileperms()</span></code>) and returns
+<p>Takes numeric permissions (such as is returned by <a class="reference external" href="https://www.php.net/manual/en/function.fileperms.php">fileperms()</a>) and returns
 standard symbolic notation of file permissions.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -612,21 +620,21 @@ standard symbolic notation of file permissions.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="octal_permissions">
-<span class="sig-name descname"><span class="pre">octal_permissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$perms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#octal_permissions" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">octal_permissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$perms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#octal_permissions" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$perms</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Permissions</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Octal permissions string</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
-<p>Takes numeric permissions (such as is returned by <code class="docutils literal notranslate"><span class="pre">fileperms()</span></code>) and returns
+<p>Takes numeric permissions (such as is returned by <a class="reference external" href="https://www.php.net/manual/en/function.fileperms.php">fileperms()</a>) and returns
 a three character octal notation of file permissions.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -637,18 +645,18 @@ a three character octal notation of file permissions.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="same_file">
-<span class="sig-name descname"><span class="pre">same_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$file1</span></em>, <em class="sig-param"><span class="pre">$file2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#same_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">same_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$file1</span></em>, <em class="sig-param"><span class="pre">$file2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#same_file" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$file1</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Path to the first file</p></li>
 <li><p><strong>$file2</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Path to the second file</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Whether both files exist with identical hashes</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">boolean</span></code></span></p>
 </dd>
 </dl>
@@ -662,18 +670,18 @@ a three character octal notation of file permissions.</p>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="set_realpath">
-<span class="sig-name descname"><span class="pre">set_realpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$checkExistence</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_realpath" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_realpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$path</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$checkExistence</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_realpath" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>$path</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Path</p></li>
 <li><p><strong>$checkExistence</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span>) – Whether to check if the path actually exists</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An absolute path</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span></p>
 </dd>
 </dl>
@@ -715,7 +723,7 @@ cause an error to be triggered if the path cannot be resolved.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 26, 2023.
+      <span class="lastupdated">Last updated on Dec 28, 2023.
       </span></p>
   </div>
 
