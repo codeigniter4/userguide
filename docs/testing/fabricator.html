@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Generating Test Data &mdash; CodeIgniter 4.4.4 documentation</title>
+  <title>Generating Test Data &mdash; CodeIgniter 4.4.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2da34e3f"></script>
+        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -341,6 +341,9 @@ You may use your own custom models by ensuring they implement <code class="docut
 <p>The parameter can be a string specifying the name of the model, or an instance of the model itself:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">App\Models\UserModel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
+
 <span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserModel</span><span class="p">(</span><span class="nv">$testDbConnection</span><span class="p">);</span>
 
 <span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="nv">$model</span><span class="p">);</span>
@@ -355,6 +358,9 @@ represents, falling back on <code class="docutils literal notranslate"><span cla
 correspond with common formatters, or if you don’t care much about the content of the fields, but most
 of the time you will want to specify the formatters to use as the second parameter to the constructor:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">App\Models\UserModel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
 
 <span class="nv">$formatters</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;first&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;firstName&#39;</span><span class="p">,</span>
@@ -434,6 +440,9 @@ a child class in your test support folder:</p>
 support your locale. Specify a locale in the third parameter while initiating a fabricator:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">App\Models\UserModel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
+
 <span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="nx">UserModel</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -445,7 +454,9 @@ You can check the locale of an existing fabricator using its <code class="docuti
 <p>Once you have a properly-initialized fabricator it is easy to generate test data with the <code class="docutils literal notranslate"><span class="pre">make()</span></code> command:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="nx">UserFabricator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
+
+<span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="nx">\UserFabricator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 <span class="nv">$testUser</span>   <span class="o">=</span> <span class="nv">$fabricator</span><span class="o">-&gt;</span><span class="na">make</span><span class="p">();</span>
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$testUser</span><span class="p">);</span>
 </pre></div>
@@ -588,6 +599,8 @@ the <code class="docutils literal notranslate"><span class="pre">fake($model,</s
 <p>This is equivalent to:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
+
 <span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="s1">&#39;App\Models\UserModel&#39;</span><span class="p">);</span>
 <span class="nv">$fabricator</span><span class="o">-&gt;</span><span class="na">setOverrides</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Gerry&#39;</span><span class="p">]);</span>
 <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$fabricator</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
@@ -667,8 +680,8 @@ you deleted a fake item but wanted to track the change.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Dec 28, 2023.
+    <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jan 27, 2024.
       </span></p>
   </div>
 

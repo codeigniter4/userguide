@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Times and Dates &mdash; CodeIgniter 4.4.4 documentation</title>
+  <title>Times and Dates &mdash; CodeIgniter 4.4.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2da34e3f"></script>
+        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -496,7 +496,7 @@ instance passed in:</p>
 
 <span class="k">use</span> <span class="nx">CodeIgniter\I18n\Time</span><span class="p">;</span>
 
-<span class="nv">$dt</span>   <span class="o">=</span> <span class="k">new</span> <span class="nx">DateTime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">);</span>
+<span class="nv">$dt</span>   <span class="o">=</span> <span class="k">new</span> <span class="nx">\DateTime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">);</span>
 <span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">createFromInstance</span><span class="p">(</span><span class="nv">$dt</span><span class="p">,</span> <span class="s1">&#39;en_US&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -954,7 +954,7 @@ a string is passed in the first parameter, the second parameter can be a timezon
 <span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;March 10, 2017&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">);</span>
 
 <span class="nv">$diff</span> <span class="o">=</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">difference</span><span class="p">(</span><span class="nx">Time</span><span class="o">::</span><span class="na">now</span><span class="p">());</span>
-<span class="nv">$diff</span> <span class="o">=</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">difference</span><span class="p">(</span><span class="k">new</span> <span class="nx">DateTime</span><span class="p">(</span><span class="s1">&#39;July 4, 1975&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">));</span>
+<span class="nv">$diff</span> <span class="o">=</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">difference</span><span class="p">(</span><span class="k">new</span> <span class="nx">\DateTime</span><span class="p">(</span><span class="s1">&#39;July 4, 1975&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">));</span>
 <span class="nv">$diff</span> <span class="o">=</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">difference</span><span class="p">(</span><span class="s1">&#39;July 4, 1975 13:32:05&#39;</span><span class="p">,</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -1056,8 +1056,8 @@ human readable format that is geared towards being easily understood. It can cre
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Dec 28, 2023.
+    <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jan 27, 2024.
       </span></p>
   </div>
 

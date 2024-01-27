@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events &mdash; CodeIgniter 4.4.4 documentation</title>
+  <title>Events &mdash; CodeIgniter 4.4.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2da34e3f"></script>
+        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -325,11 +325,13 @@ a callable that will be run when that event is triggered:</p>
 <a class="reference external" href="https://www.php.net/manual/en/function.is-callable.php">callable</a> that PHP recognizes:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">CodeIgniter\Events\Events</span><span class="p">;</span>
+
 <span class="c1">// Call a standalone function</span>
 <span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;pre_system&#39;</span><span class="p">,</span> <span class="s1">&#39;some_function&#39;</span><span class="p">);</span>
 
 <span class="c1">// Call on an instance method</span>
-<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">();</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\App\Libraries\User</span><span class="p">();</span>
 <span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;pre_system&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nv">$user</span><span class="p">,</span> <span class="s1">&#39;someMethod&#39;</span><span class="p">]);</span>
 
 <span class="c1">// Call on a static method</span>
@@ -347,6 +349,8 @@ a callable that will be run when that event is triggered:</p>
 are called. You can do this by passing a priority value as the third parameter of the <code class="docutils literal notranslate"><span class="pre">on()</span></code> method. Lower values
 are executed first, with a value of 1 having the highest priority, and there being no limit on the lower values:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Events\Events</span><span class="p">;</span>
 
 <span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;post_controller_constructor&#39;</span><span class="p">,</span> <span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 </pre></div>
@@ -384,7 +388,9 @@ need to call the <code class="docutils literal notranslate"><span class="pre">tr
 given the arguments in the same order as defined:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nx">\CodeIgniter\Events\Events</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_events&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Events\Events</span><span class="p">;</span>
+
+<span class="nx">Events</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_events&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">);</span>
 
 <span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;some_event&#39;</span><span class="p">,</span> <span class="k">static</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -399,11 +405,15 @@ and counter-productive. You can tell the Events class to only simulate running t
 When <strong>true</strong>, all events will be skipped over during the trigger method. Everything else will work as normal, though.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
+<span class="k">use</span> <span class="nx">CodeIgniter\Events\Events</span><span class="p">;</span>
+
 <span class="nx">Events</span><span class="o">::</span><span class="na">simulate</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You can stop simulation by passing false:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Events\Events</span><span class="p">;</span>
 
 <span class="nx">Events</span><span class="o">::</span><span class="na">simulate</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
 </pre></div>
@@ -437,8 +447,8 @@ at the end of system execution, after the execution of “after” controller fi
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Dec 28, 2023.
+    <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jan 27, 2024.
       </span></p>
   </div>
 

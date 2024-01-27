@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URI Routing &mdash; CodeIgniter 4.4.4 documentation</title>
+  <title>URI Routing &mdash; CodeIgniter 4.4.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2da34e3f"></script>
+        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -558,6 +558,8 @@ In such a case, you can specify the parameters manually:</p>
 executed when the user visits that URI. This is handy for quickly executing small tasks, or even just showing
 a simple view:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">App\Libraries\RSSFeeder</span><span class="p">;</span>
 
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;feed&#39;</span><span class="p">,</span> <span class="k">static</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nv">$rss</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RSSFeeder</span><span class="p">();</span>
@@ -1219,6 +1221,9 @@ controller:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routing.php</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\Routing</span> <span class="k">as</span> <span class="nx">BaseRouting</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
 <span class="k">class</span> <span class="nc">Routing</span> <span class="k">extends</span> <span class="nx">BaseRouting</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -1256,6 +1261,9 @@ URI segments when used in Auto Routing, thus saving you additional route entries
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routing.php</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\Routing</span> <span class="k">as</span> <span class="nx">BaseRouting</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
 <span class="k">class</span> <span class="nc">Routing</span> <span class="k">extends</span> <span class="nx">BaseRouting</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -1286,6 +1294,9 @@ to only those defined by you, by setting the <code class="docutils literal notra
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routing.php</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\Routing</span> <span class="k">as</span> <span class="nx">BaseRouting</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
 <span class="k">class</span> <span class="nc">Routing</span> <span class="k">extends</span> <span class="nx">BaseRouting</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -1311,10 +1322,13 @@ a valid class/method pair, just like you would show in any route, or a Closure:<
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routing.php</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\Routing</span> <span class="k">as</span> <span class="nx">BaseRouting</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
 <span class="k">class</span> <span class="nc">Routing</span> <span class="k">extends</span> <span class="nx">BaseRouting</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
-    <span class="k">public</span> <span class="nv">$override404</span> <span class="o">=</span> <span class="s1">&#39;App\Errors::show404&#39;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="o">?</span><span class="nx">string</span> <span class="nv">$override404</span> <span class="o">=</span> <span class="s1">&#39;App\Errors::show404&#39;</span><span class="p">;</span>
     <span class="c1">// ...</span>
 <span class="p">}</span>
 
@@ -1345,6 +1359,9 @@ For an example use of lowering the priority see <a class="reference internal" hr
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routing.php</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Config\Routing</span> <span class="k">as</span> <span class="nx">BaseRouting</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
 <span class="k">class</span> <span class="nc">Routing</span> <span class="k">extends</span> <span class="nx">BaseRouting</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -1699,8 +1716,8 @@ due to a bug.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2019-2023 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Dec 28, 2023.
+    <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Jan 27, 2024.
       </span></p>
   </div>
 
