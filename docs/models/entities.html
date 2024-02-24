@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using Entity Classes &mdash; CodeIgniter 4.4.5 documentation</title>
+  <title>Using Entity Classes &mdash; CodeIgniter 4.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
+        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -223,9 +223,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -795,7 +795,7 @@ Let’s say the class will be located in the <strong>app/Entities/Cast</strong> 
 
 <span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
-    <span class="c1">// Specifying the type for the field</span>
+    <span class="c1">// Specify the type for the field</span>
     <span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;base64&#39;</span><span class="p">,</span>
     <span class="p">];</span>
@@ -842,7 +842,7 @@ like <code class="docutils literal notranslate"><span class="pre">type[param1,</
 
 <span class="k">class</span> <span class="nc">MyEntity</span> <span class="k">extends</span> <span class="nx">Entity</span>
 <span class="p">{</span>
-    <span class="c1">// Defining a type with parameters</span>
+    <span class="c1">// Define a type with parameters</span>
     <span class="k">protected</span> <span class="nv">$casts</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;some_attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;class[App\SomeClass, param2, param3]&#39;</span><span class="p">,</span>
     <span class="p">];</span>
@@ -882,7 +882,7 @@ like <code class="docutils literal notranslate"><span class="pre">type[param1,</
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the casting type is marked as nullable <code class="docutils literal notranslate"><span class="pre">?bool</span></code> and the passed value is not null, then the parameter with
+<p>If the casting type is marked as nullable like <code class="docutils literal notranslate"><span class="pre">?bool</span></code> and the passed value is not null, then the parameter with
 the value <code class="docutils literal notranslate"><span class="pre">nullable</span></code> will be passed to the casting type handler.
 If casting type has predefined parameters, then <code class="docutils literal notranslate"><span class="pre">nullable</span></code> will be added to the end of the list.</p>
 </div>
@@ -923,7 +923,7 @@ attribute to check:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 27, 2024.
+      <span class="lastupdated">Last updated on Feb 24, 2024.
       </span></p>
   </div>
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to CodeIgniter4 &mdash; CodeIgniter 4.4.5 documentation</title>
+  <title>Welcome to CodeIgniter4 &mdash; CodeIgniter 4.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
+        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -223,9 +223,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -282,31 +282,36 @@
              
   <section id="welcome-to-codeigniter4">
 <h1>Welcome to CodeIgniter4<a class="headerlink" href="#welcome-to-codeigniter4" title="Link to this heading"></a></h1>
-<p>CodeIgniter is an Application Development Framework - a toolkit - for
+<p>CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and
+secure.</p>
+<p>It is an Application Development Framework - a toolkit - for
 people who build web sites using PHP. Its goal is to enable you to
 develop projects much faster than you could if you were writing code
 from scratch, by providing a rich set of libraries for commonly needed
 tasks, as well as a simple interface and logical structure to access
-these libraries. CodeIgniter lets you creatively focus on your project
-by minimizing the amount of code needed for a given task.</p>
+these libraries.</p>
+<p>CodeIgniter lets you creatively focus on your project by minimizing the amount
+of code needed for a given task.</p>
 <p>Where possible, CodeIgniter has been kept as flexible as possible,
 allowing you to work in the way you want, not being forced into working
 any certain way. The framework can have core parts easily extended
-or completely replaced to make the system work the way you need it to.
-In short, CodeIgniter is the malleable framework that tries to provide
-the tools you need while staying out of the way.</p>
+or completely replaced to make the system work the way you need it to.</p>
+<p>In short, CodeIgniter is the malleable framework that tries to provide the tools
+you need while staying out of the way.</p>
 <section id="is-codeigniter-right-for-you">
 <h2>Is CodeIgniter Right for You?<a class="headerlink" href="#is-codeigniter-right-for-you" title="Link to this heading"></a></h2>
 <p>CodeIgniter is right for you if:</p>
 <ul class="simple">
 <li><p>You want a framework with a small footprint.</p></li>
 <li><p>You need exceptional performance.</p></li>
+<li><p>You want a framework that incorporates a number of features and techniques to
+enable you to do good security practices easily.</p></li>
+<li><p>You want a non-magical framework that you can easily find and read the source
+code.</p></li>
 <li><p>You want a framework that requires nearly zero configuration.</p></li>
-<li><p>You want a framework that does not require you to use the command
-line.</p></li>
 <li><p>You want a framework that does not require you to adhere to
 restrictive coding rules.</p></li>
-<li><p>You are not interested in large-scale monolithic libraries like PEAR.</p></li>
+<li><p>You want a framework that makes it easy to create test code.</p></li>
 <li><p>You do not want to be forced to learn a templating language (although
 a template parser is optionally available if you desire one).</p></li>
 <li><p>You eschew complexity, favoring simple solutions.</p></li>
@@ -329,7 +334,7 @@ a template parser is optionally available if you desire one).</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 27, 2024.
+      <span class="lastupdated">Last updated on Feb 24, 2024.
       </span></p>
   </div>
 

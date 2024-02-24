@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrade Working with Uploaded Files &mdash; CodeIgniter 4.4.5 documentation</title>
+  <title>Upgrade Working with Uploaded Files &mdash; CodeIgniter 4.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
+        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -223,9 +223,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -375,7 +375,7 @@ To store the file you could use <code class="docutils literal notranslate"><span
 
     <span class="k">public</span> <span class="k">function</span> <span class="nf">do_upload</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validateData</span><span class="p">([],</span> <span class="p">[</span>
             <span class="s1">&#39;userfile&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">&#39;uploaded[userfile]&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;max_size[userfile,100]&#39;</span><span class="p">,</span>
@@ -413,7 +413,7 @@ To store the file you could use <code class="docutils literal notranslate"><span
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 27, 2024.
+      <span class="lastupdated">Last updated on Feb 24, 2024.
       </span></p>
   </div>
 

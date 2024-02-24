@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Metadata &mdash; CodeIgniter 4.4.5 documentation</title>
+  <title>Database Metadata &mdash; CodeIgniter 4.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
+        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -223,9 +223,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -436,6 +436,23 @@ the column type, max length, etc.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>The following data is available from this function if supported by your
+database:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> - column name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> - the type of the column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_length</span></code> - maximum length of the column</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nullable</span></code> - boolean <code class="docutils literal notranslate"><span class="pre">true</span></code> if the column is nullable, otherwise boolean <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> - the default value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">primary_key</span></code> - integer <code class="docutils literal notranslate"><span class="pre">1</span></code> if the column is a primary key (all integer <code class="docutils literal notranslate"><span class="pre">1</span></code>, even if there are multiple primary keys), otherwise integer <code class="docutils literal notranslate"><span class="pre">0</span></code> (This field is currently only available for <code class="docutils literal notranslate"><span class="pre">MySQLi</span></code> and <code class="docutils literal notranslate"><span class="pre">SQLite3</span></code>)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since v4.4.0, SQLSRV supported <code class="docutils literal notranslate"><span class="pre">nullable</span></code>.</p>
+</div>
+</section>
+<section id="query-getfielddata">
+<h4>$query-&gt;getFieldData()<a class="headerlink" href="#query-getfielddata" title="Link to this heading"></a></h4>
 <p>If you have run a query already you can use the result object instead of
 supplying the table name:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -446,19 +463,10 @@ supplying the table name:</p>
 <span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">getFieldData</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The following data is available from this function if supported by your
-database:</p>
-<ul class="simple">
-<li><p>name - column name</p></li>
-<li><p>type - the type of the column</p></li>
-<li><p>max_length - maximum length of the column</p></li>
-<li><p>primary_key - integer <code class="docutils literal notranslate"><span class="pre">1</span></code> if the column is a primary key (all integer <code class="docutils literal notranslate"><span class="pre">1</span></code>, even if there are multiple primary keys), otherwise integer <code class="docutils literal notranslate"><span class="pre">0</span></code> (This field is currently only available for MySQL and SQLite3)</p></li>
-<li><p>nullable - boolean <code class="docutils literal notranslate"><span class="pre">true</span></code> if the column is nullable, otherwise boolean <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
-<li><p>default - the default value</p></li>
-</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since v4.4.0, SQLSRV supported <code class="docutils literal notranslate"><span class="pre">nullable</span></code>.</p>
+<p>The data returned is different from the data from <code class="docutils literal notranslate"><span class="pre">$db-&gt;getFieldData()</span></code>.
+If you cannot get the data you need, use <code class="docutils literal notranslate"><span class="pre">$db-&gt;getFieldData()</span></code>.</p>
 </div>
 </section>
 </section>
@@ -527,7 +535,7 @@ for each key associated with a table.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 27, 2024.
+      <span class="lastupdated">Last updated on Feb 24, 2024.
       </span></p>
   </div>
 

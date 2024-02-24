@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Generating Test Data &mdash; CodeIgniter 4.4.5 documentation</title>
+  <title>Generating Test Data &mdash; CodeIgniter 4.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
+        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -223,9 +223,9 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mocking.html">Mocking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +284,7 @@
   <section id="generating-test-data">
 <h1>Generating Test Data<a class="headerlink" href="#generating-test-data" title="Link to this heading"></a></h1>
 <p>Often you will need sample data for your application to run its tests. The <code class="docutils literal notranslate"><span class="pre">Fabricator</span></code> class
-uses fzaninotto’s <a class="reference external" href="https://github.com/FakerPHP/Faker">Faker</a> to turn models into generators
+uses <a class="reference external" href="https://github.com/FakerPHP/Faker">Faker</a> to turn models into generators
 of random data. Use fabricators in your seeds or test cases to stage fake data for your unit tests.</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
@@ -382,6 +382,8 @@ method where you can define exactly what the faked data should look like:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
 
+<span class="k">use</span> <span class="nx">Faker\Generator</span><span class="p">;</span>
+
 <span class="k">class</span> <span class="nc">UserModel</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -389,10 +391,10 @@ method where you can define exactly what the faked data should look like:</p>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">fake</span><span class="p">(</span><span class="nx">Generator</span> <span class="o">&amp;</span><span class="nv">$faker</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span>
-            <span class="s1">&#39;first&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">,</span>
-            <span class="s1">&#39;email&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">,</span>
-            <span class="s1">&#39;phone&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">phoneNumber</span><span class="p">,</span>
-            <span class="s1">&#39;avatar&#39;</span> <span class="o">=&gt;</span> <span class="nx">Faker\Provider\Image</span><span class="o">::</span><span class="na">imageUrl</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+            <span class="s1">&#39;first&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">(),</span>
+            <span class="s1">&#39;email&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">(),</span>
+            <span class="s1">&#39;phone&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">phoneNumber</span><span class="p">(),</span>
+            <span class="s1">&#39;avatar&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Faker\Provider\Image</span><span class="o">::</span><span class="na">imageUrl</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
             <span class="s1">&#39;login&#39;</span>  <span class="o">=&gt;</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;Auth&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">allowRemembering</span> <span class="o">?</span> <span class="nb">date</span><span class="p">(</span><span class="s1">&#39;Y-m-d&#39;</span><span class="p">)</span> <span class="o">:</span> <span class="k">null</span><span class="p">,</span>
         <span class="p">];</span>
 
@@ -400,10 +402,10 @@ method where you can define exactly what the faked data should look like:</p>
 <span class="cm">         * Or you can return a return type object.</span>
 
 <span class="cm">        return new User([</span>
-<span class="cm">            &#39;first&#39;  =&gt; $faker-&gt;firstName,</span>
-<span class="cm">            &#39;email&#39;  =&gt; $faker-&gt;email,</span>
-<span class="cm">            &#39;phone&#39;  =&gt; $faker-&gt;phoneNumber,</span>
-<span class="cm">            &#39;avatar&#39; =&gt; Faker\Provider\Image::imageUrl(800, 400),</span>
+<span class="cm">            &#39;first&#39;  =&gt; $faker-&gt;firstName(),</span>
+<span class="cm">            &#39;email&#39;  =&gt; $faker-&gt;email(),</span>
+<span class="cm">            &#39;phone&#39;  =&gt; $faker-&gt;phoneNumber(),</span>
+<span class="cm">            &#39;avatar&#39; =&gt; \Faker\Provider\Image::imageUrl(800, 400),</span>
 <span class="cm">            &#39;login&#39;  =&gt; config(&#39;Auth&#39;)-&gt;allowRemembering ? date(&#39;Y-m-d&#39;) : null,</span>
 <span class="cm">        ]);</span>
 
@@ -414,18 +416,19 @@ method where you can define exactly what the faked data should look like:</p>
 </div>
 <p>Notice in this example how the first three values are equivalent to the formatters from before. However for <code class="docutils literal notranslate"><span class="pre">avatar</span></code>
 we have requested an image size other than the default and <code class="docutils literal notranslate"><span class="pre">login</span></code> uses a conditional based on app configuration,
-neither of which are possible using the <code class="docutils literal notranslate"><span class="pre">$formatters</span></code> parameter.
-You may want to keep your test data separate from your production models, so it is a good practice to define
+neither of which are possible using the <code class="docutils literal notranslate"><span class="pre">$formatters</span></code> parameter.</p>
+<p>You may want to keep your test data separate from your production models, so it is a good practice to define
 a child class in your test support folder:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Tests\Support\Models</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">App\Models\UserModel</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Faker\Generator</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">UserFabricator</span> <span class="k">extends</span> <span class="nx">UserModel</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">fake</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$faker</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">fake</span><span class="p">(</span><span class="nx">Generator</span> <span class="o">&amp;</span><span class="nv">$faker</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="c1">// ...</span>
     <span class="p">}</span>
@@ -455,8 +458,9 @@ You can check the locale of an existing fabricator using its <code class="docuti
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Tests\Support\Models\UserFabricator</span><span class="p">;</span>
 
-<span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="nx">\UserFabricator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="nv">$fabricator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Fabricator</span><span class="p">(</span><span class="nx">UserFabricator</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 <span class="nv">$testUser</span>   <span class="o">=</span> <span class="nv">$fabricator</span><span class="o">-&gt;</span><span class="na">make</span><span class="p">();</span>
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$testUser</span><span class="p">);</span>
 </pre></div>
@@ -621,6 +625,9 @@ Your model’s fake method could look like this:</p>
 
 <span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
 
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\Fabricator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Faker\Generator</span><span class="p">;</span>
+
 <span class="k">class</span> <span class="nc">UserModel</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span><span class="p">;</span>
@@ -628,8 +635,8 @@ Your model’s fake method could look like this:</p>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">fake</span><span class="p">(</span><span class="nx">Generator</span> <span class="o">&amp;</span><span class="nv">$faker</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span>
-            <span class="s1">&#39;first&#39;</span>    <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">,</span>
-            <span class="s1">&#39;email&#39;</span>    <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">,</span>
+            <span class="s1">&#39;first&#39;</span>    <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">firstName</span><span class="p">(),</span>
+            <span class="s1">&#39;email&#39;</span>    <span class="o">=&gt;</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">(),</span>
             <span class="s1">&#39;group_id&#39;</span> <span class="o">=&gt;</span> <span class="nb">mt_rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">Fabricator</span><span class="o">::</span><span class="na">getCount</span><span class="p">(</span><span class="s1">&#39;groups&#39;</span><span class="p">)),</span>
         <span class="p">];</span>
     <span class="p">}</span>
@@ -681,7 +688,7 @@ you deleted a fake item but wanted to track the change.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 27, 2024.
+      <span class="lastupdated">Last updated on Feb 24, 2024.
       </span></p>
   </div>
 

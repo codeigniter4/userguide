@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URI Routing &mdash; CodeIgniter 4.4.5 documentation</title>
+  <title>URI Routing &mdash; CodeIgniter 4.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=496c9e7b"></script>
+        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -223,9 +223,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../testing/controllers.html">Controller Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/feature.html">HTTP Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/benchmark.html">Benchmarking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing/debugging.html">Debugging Your Application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../testing/mocking.html">Mocking</a></li>
 </ul>
 </li>
 </ul>
@@ -1316,9 +1316,9 @@ requests. If the URI is accessible by the GET method, the CSRF protection will n
 </section>
 <section id="override">
 <h3><a class="toc-backref" href="#id53" role="doc-backlink">404 Override</a><a class="headerlink" href="#override" title="Link to this heading"></a></h3>
-<p>When a page is not found that matches the current URI, the system will show a generic 404 view. You can change
-what happens by specifying an action to happen with the <code class="docutils literal notranslate"><span class="pre">set404Override()</span></code> method. The value can be either
-a valid class/method pair, just like you would show in any route, or a Closure:</p>
+<p>When a page is not found that matches the current URI, the system will show a
+generic 404 view. Using the <code class="docutils literal notranslate"><span class="pre">$override404</span></code> property within the routing config
+file, you can define controller class/method for 404 routes.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routing.php</span>
@@ -1331,21 +1331,29 @@ a valid class/method pair, just like you would show in any route, or a Closure:<
     <span class="k">public</span> <span class="o">?</span><span class="nx">string</span> <span class="nv">$override404</span> <span class="o">=</span> <span class="s1">&#39;App\Errors::show404&#39;</span><span class="p">;</span>
     <span class="c1">// ...</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<p>You can also change what happens by specifying an action to happen with the
+<code class="docutils literal notranslate"><span class="pre">set404Override()</span></code> method in Routes config file. The value can be either a
+valid class/method pair, or a Closure:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// In app/Config/Routes.php</span>
 <span class="c1">// Would execute the show404 method of the App\Errors class</span>
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">set404Override</span><span class="p">(</span><span class="s1">&#39;App\Errors::show404&#39;</span><span class="p">);</span>
 
-<span class="c1">// Will display a custom view</span>
+<span class="c1">// Will display a custom view.</span>
 <span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">set404Override</span><span class="p">(</span><span class="k">static</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;my_errors/not_found.html&#39;</span><span class="p">);</span>
+    <span class="c1">// If you want to get the URI segments.</span>
+    <span class="nv">$segments</span> <span class="o">=</span> <span class="nx">request</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getUri</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getSegments</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;my_errors/not_found.html&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">$override404</span></code> property within the routing config file, you can use closures. Defining the override in the Routing file is restricted to class/method pairs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">set404Override()</span></code> method does not change the Response status code to <code class="docutils literal notranslate"><span class="pre">404</span></code>.
+<p>The 404 Override feature does not change the Response status code to <code class="docutils literal notranslate"><span class="pre">404</span></code>.
 If you don’t set the status code in the controller you set, the default status code <code class="docutils literal notranslate"><span class="pre">200</span></code>
 will be returned. See <a class="reference internal" href="../outgoing/response.html#CodeIgniter\HTTP\Response::setStatusCode" title="CodeIgniter\HTTP\Response::setStatusCode"><code class="xref php php-meth docutils literal notranslate"><span class="pre">CodeIgniter\HTTP\Response::setStatusCode()</span></code></a> for
 information on how to set the status code.</p>
@@ -1717,7 +1725,7 @@ due to a bug.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 27, 2024.
+      <span class="lastupdated">Last updated on Feb 24, 2024.
       </span></p>
   </div>
 
