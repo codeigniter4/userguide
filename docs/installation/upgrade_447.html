@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrade Emails &mdash; CodeIgniter 4.4.7 documentation</title>
+  <title>Upgrading from 4.4.6 to 4.4.7 &mdash; CodeIgniter 4.4.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -25,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Upgrade Encryption" href="upgrade_encryption.html" />
-    <link rel="prev" title="Upgrade Database" href="upgrade_database.html" /> 
+    <link rel="next" title="Upgrading from 4.4.5 to 4.4.6" href="upgrade_446.html" />
+    <link rel="prev" title="Backward Compatibility Notes" href="backward_compatibility_notes.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -273,8 +273,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Installation</a></li>
           <li class="breadcrumb-item"><a href="upgrading.html">Upgrading From a Previous Version</a></li>
-          <li class="breadcrumb-item"><a href="upgrade_4xx.html">Upgrading from 3.x to 4.x</a></li>
-      <li class="breadcrumb-item active">Upgrade Emails</li>
+      <li class="breadcrumb-item active">Upgrading from 4.4.6 to 4.4.7</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -283,81 +282,146 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="upgrade-emails">
-<h1>Upgrade Emails<a class="headerlink" href="#upgrade-emails" title="Link to this heading"></a></h1>
+  <section id="upgrading-from-4-4-6-to-4-4-7">
+<h1>Upgrading from 4.4.6 to 4.4.7<a class="headerlink" href="#upgrading-from-4-4-6-to-4-4-7" title="Link to this heading"></a></h1>
+<p>Please refer to the upgrade instructions corresponding to your installation method.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="installing_composer.html#app-starter-upgrading"><span class="std std-ref">Composer Installation App Starter Upgrading</span></a></p></li>
+<li><p><a class="reference internal" href="installing_composer.html#adding-codeigniter4-upgrading"><span class="std std-ref">Composer Installation Adding CodeIgniter4 to an Existing Project Upgrading</span></a></p></li>
+<li><p><a class="reference internal" href="installing_manual.html#installing-manual-upgrading"><span class="std std-ref">Manual Installation Upgrading</span></a></p></li>
+</ul>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#documentations" id="id1">Documentations</a></p></li>
-<li><p><a class="reference internal" href="#what-has-been-changed" id="id2">What has been changed</a></p></li>
-<li><p><a class="reference internal" href="#upgrade-guide" id="id3">Upgrade Guide</a></p></li>
-<li><p><a class="reference internal" href="#code-example" id="id4">Code Example</a></p>
+<li><p><a class="reference internal" href="#mandatory-file-changes" id="id1">Mandatory File Changes</a></p>
 <ul>
-<li><p><a class="reference internal" href="#codeigniter-version-3-x" id="id5">CodeIgniter Version 3.x</a></p></li>
-<li><p><a class="reference internal" href="#codeigniter-version-4-x" id="id6">CodeIgniter Version 4.x</a></p></li>
+<li><p><a class="reference internal" href="#uri-security" id="id2">URI Security</a></p></li>
+<li><p><a class="reference internal" href="#error-files" id="id3">Error Files</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#breaking-changes" id="id4">Breaking Changes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#paths-in-controller-filters" id="id5">Paths in Controller Filters</a></p></li>
+<li><p><a class="reference internal" href="#time-difference-and-dst" id="id6">Time::difference() and DST</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#project-files" id="id7">Project Files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#content-changes" id="id8">Content Changes</a></p></li>
+<li><p><a class="reference internal" href="#all-changes" id="id9">All Changes</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
-<section id="documentations">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Documentations</a><a class="headerlink" href="#documentations" title="Link to this heading"></a></h2>
+<section id="mandatory-file-changes">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Mandatory File Changes</a><a class="headerlink" href="#mandatory-file-changes" title="Link to this heading"></a></h2>
+<section id="uri-security">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">URI Security</a><a class="headerlink" href="#uri-security" title="Link to this heading"></a></h3>
+<p>The feature to check if URIs do not contain not permitted strings has been added.
+This check is equivalent to the URI Security found in CodeIgniter 3.</p>
+<p>We recommend you enable this feature. Add the following to <strong>app/Config/App.php</strong>:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nx">string</span> <span class="nv">$permittedURIChars</span> <span class="o">=</span> <span class="s1">&#39;a-z 0-9~%.:_\-&#39;</span><span class="p">;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="../general/urls.html#urls-uri-security"><span class="std std-ref">URI Security</span></a> for details.</p>
+</section>
+<section id="error-files">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Error Files</a><a class="headerlink" href="#error-files" title="Link to this heading"></a></h3>
+<p>The error page has been updated. Please update the following files:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://codeigniter.com/userguide3/libraries/email.html">Email Documentation CodeIgniter 3.X</a></p></li>
-<li><p><a class="reference internal" href="../libraries/email.html"><span class="doc">Email Documentation CodeIgniter 4.X</span></a></p></li>
+<li><p>app/Views/errors/html/debug.css</p></li>
+<li><p>app/Views/errors/html/error_exception.php</p></li>
 </ul>
 </section>
-<section id="what-has-been-changed">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">What has been changed</a><a class="headerlink" href="#what-has-been-changed" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Only small things like the method names and the loading of the library have changed.</p></li>
-<li><p>The behavior when using the SMTP protocol has been slightly changed. You may not be able to communicate with your SMTP server properly if you use the CI3 settings. See <a class="reference internal" href="../libraries/email.html#email-ssl-tls-for-smtp"><span class="std std-ref">SSL versus TLS for SMTP Protocol</span></a> and <a class="reference internal" href="../libraries/email.html#email-preferences"><span class="std std-ref">Email Preferences</span></a>.</p></li>
-</ul>
 </section>
-<section id="upgrade-guide">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Upgrade Guide</a><a class="headerlink" href="#upgrade-guide" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
-<li><p>Within your class change the <code class="docutils literal notranslate"><span class="pre">$this-&gt;load-&gt;library('email');</span></code> to <code class="docutils literal notranslate"><span class="pre">$email</span> <span class="pre">=</span> <span class="pre">service('email');</span></code>.</p></li>
-<li><p>From that on you have to replace every line starting with <code class="docutils literal notranslate"><span class="pre">$this-&gt;email</span></code> to <code class="docutils literal notranslate"><span class="pre">$email</span></code>.</p></li>
-<li><p>The methods in the Email class are named slightly different. All methods, except for <code class="docutils literal notranslate"><span class="pre">send()</span></code>, <code class="docutils literal notranslate"><span class="pre">attach()</span></code>, <code class="docutils literal notranslate"><span class="pre">printDebugger()</span></code> and <code class="docutils literal notranslate"><span class="pre">clear()</span></code> have a <code class="docutils literal notranslate"><span class="pre">set</span></code> as prefix followed by the previous method name. <code class="docutils literal notranslate"><span class="pre">bcc()</span></code> is now <code class="docutils literal notranslate"><span class="pre">setBcc()</span></code> and so on.</p></li>
-<li><p>The config attributes in <strong>app/Config/Email.php</strong> have changed. You should have a look at the <a class="reference internal" href="../libraries/email.html#setting-email-preferences"><span class="std std-ref">Setting Email Preferences</span></a> to have a list of the new attributes.</p></li>
-</ol>
-</section>
-<section id="code-example">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Code Example</a><a class="headerlink" href="#code-example" title="Link to this heading"></a></h2>
-<section id="codeigniter-version-3-x">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">CodeIgniter Version 3.x</a><a class="headerlink" href="#codeigniter-version-3-x" title="Link to this heading"></a></h3>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;your@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">cc</span><span class="p">(</span><span class="s1">&#39;another@another-example.com&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">bcc</span><span class="p">(</span><span class="s1">&#39;them@their-example.com&#39;</span><span class="p">);</span>
-
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">subject</span><span class="p">(</span><span class="s1">&#39;Email Test&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;Testing the email class.&#39;</span><span class="p">);</span>
-
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<section id="breaking-changes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Breaking Changes</a><a class="headerlink" href="#breaking-changes" title="Link to this heading"></a></h2>
+<section id="paths-in-controller-filters">
+<span id="upgrade-447-filter-paths"></span><h3><a class="toc-backref" href="#id5" role="doc-backlink">Paths in Controller Filters</a><a class="headerlink" href="#paths-in-controller-filters" title="Link to this heading"></a></h3>
+<p>A bug where URI paths processed by <a class="reference internal" href="../incoming/filters.html"><span class="doc">Controller Filters</span></a> were not URL-decoded has been fixed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that <a class="reference internal" href="../incoming/routing.html"><span class="doc">Router</span></a> processes URL-decoded URI paths.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Config\Filters</span></code> has some places to specify the URI paths. If the paths have
+different values when URL-decoded, change them to the URL-decoded values.</p>
+<p>E.g.,:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public array $globals = [</span>
+<span class="x">    &#39;before&#39; =&gt; [</span>
+<span class="x">        &#39;csrf&#39; =&gt; [&#39;except&#39; =&gt; &#39;%E6%97%A5%E6%9C%AC%E8%AA%9E/*&#39;],</span>
+<span class="x">    ],</span>
+<span class="x">    // ...</span>
+<span class="x">];</span>
+</pre></div>
+</div>
+<p>↓</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public array $globals = [</span>
+<span class="x">    &#39;before&#39; =&gt; [</span>
+<span class="x">        &#39;csrf&#39; =&gt; [&#39;except&#39; =&gt; &#39;日本語/*&#39;],</span>
+<span class="x">    ],</span>
+<span class="x">    // ...</span>
+<span class="x">];</span>
 </pre></div>
 </div>
 </section>
-<section id="codeigniter-version-4-x">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">CodeIgniter Version 4.x</a><a class="headerlink" href="#codeigniter-version-4-x" title="Link to this heading"></a></h3>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$email</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setFrom</span><span class="p">(</span><span class="s1">&#39;your@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setTo</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setCC</span><span class="p">(</span><span class="s1">&#39;another@another-example.com&#39;</span><span class="p">);</span>
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setBCC</span><span class="p">(</span><span class="s1">&#39;them@their-example.com&#39;</span><span class="p">);</span>
-
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setSubject</span><span class="p">(</span><span class="s1">&#39;Email Test&#39;</span><span class="p">);</span>
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">setMessage</span><span class="p">(</span><span class="s1">&#39;Testing the email class.&#39;</span><span class="p">);</span>
-
-<span class="nv">$email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
-</pre></div>
-</div>
+<section id="time-difference-and-dst">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Time::difference() and DST</a><a class="headerlink" href="#time-difference-and-dst" title="Link to this heading"></a></h3>
+<p>In previous versions, when comparing dates with <code class="docutils literal notranslate"><span class="pre">Time::difference()</span></code>, unexpected
+results were returned if the date included a day different from 24 hours due to
+Daylight Saving Time (DST). See <a class="reference internal" href="../libraries/time.html#time-viewing-differences"><span class="std std-ref">Note in Times and Dates</span></a>
+for details.</p>
+<p>This bug has been fixed, so date comparisons will now be shifted by one day in
+such cases.</p>
+<p>In the unlikely event that you wish to maintain the behavior of the previous
+versions, change the time zone of both dates being compared to UTC before passing
+them to <code class="docutils literal notranslate"><span class="pre">Time::difference()</span></code>.</p>
+</section>
+</section>
+<section id="project-files">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Project Files</a><a class="headerlink" href="#project-files" title="Link to this heading"></a></h2>
+<p>Some files in the <strong>project space</strong> (root, app, public, writable) received updates. Due to
+these files being outside of the <strong>system</strong> scope they will not be changed without your intervention.</p>
+<p>There are some third-party CodeIgniter modules available to assist with merging changes to
+the project space: <a class="reference external" href="https://packagist.org/explore/?query=codeigniter4%20updates">Explore on Packagist</a>.</p>
+<section id="content-changes">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Content Changes</a><a class="headerlink" href="#content-changes" title="Link to this heading"></a></h3>
+<p>The following files received significant changes (including deprecations or visual adjustments)
+and it is recommended that you merge the updated versions with your application:</p>
+<section id="config">
+<h4>Config<a class="headerlink" href="#config" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt>app/Config/App.php</dt><dd><ul>
+<li><p>The property <code class="docutils literal notranslate"><span class="pre">$permittedURIChars</span></code> was added. See <a class="reference internal" href="../general/urls.html#urls-uri-security"><span class="std std-ref">URI Security</span></a>
+for details.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<section id="all-changes">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">All Changes</a><a class="headerlink" href="#all-changes" title="Link to this heading"></a></h3>
+<p>This is a list of all files in the <strong>project space</strong> that received changes;
+many will be simple comments or formatting that have no effect on the runtime:</p>
+<ul class="simple">
+<li><p>app/Config/Cache.php</p></li>
+<li><p>app/Config/ContentSecurityPolicy.php</p></li>
+<li><p>app/Config/Database.php</p></li>
+<li><p>app/Config/Exceptions.php</p></li>
+<li><p>app/Config/Filters.php</p></li>
+<li><p>app/Config/Format.php</p></li>
+<li><p>app/Config/Logger.php</p></li>
+<li><p>app/Config/Mimes.php</p></li>
+<li><p>app/Config/Routing.php</p></li>
+<li><p>app/Config/Toolbar.php</p></li>
+<li><p>app/Config/Validation.php</p></li>
+<li><p>app/Config/View.php</p></li>
+<li><p>app/Controllers/BaseController.php</p></li>
+<li><p>app/Views/errors/html/debug.css</p></li>
+<li><p>app/Views/errors/html/error_exception.php</p></li>
+<li><p>composer.json</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -366,8 +430,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="upgrade_database.html" class="btn btn-neutral float-left" title="Upgrade Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="upgrade_encryption.html" class="btn btn-neutral float-right" title="Upgrade Encryption" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="backward_compatibility_notes.html" class="btn btn-neutral float-left" title="Backward Compatibility Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrade_446.html" class="btn btn-neutral float-right" title="Upgrading from 4.4.5 to 4.4.6" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

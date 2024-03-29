@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Times and Dates &mdash; CodeIgniter 4.4.6 documentation</title>
+  <title>Times and Dates &mdash; CodeIgniter 4.4.7 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=e43ceeb7"></script>
+        <script src="../_static/documentation_options.js?v=80f33ef3"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -339,14 +339,17 @@ compatibility, you can use deprecated <code class="docutils literal notranslate"
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Instantiating</a><a class="headerlink" href="#instantiating" title="Link to this heading"></a></h2>
 <p>There are several ways that a new Time instance can be created. The first is simply to create a new instance
 like any other class.</p>
-<p>When you do it this way, you can pass in a string representing the desired time. This can
-be any string that PHP’s <a class="reference external" href="https://www.php.net/manual/en/function.strtotime.php">strtotime()</a> function can parse:</p>
+<p>When you do it this way, you can pass in a string representing the desired time.
+This can be any string that PHP’s <a class="reference external" href="https://www.php.net/manual/en/class.datetimeimmutable.php">DateTimeImmutable</a> constructor can parse. See
+<a class="reference external" href="https://www.php.net/manual/en/datetime.formats.php">Supported Date and Time Formats</a> for details.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">use</span> <span class="nx">CodeIgniter\I18n\Time</span><span class="p">;</span>
 
-<span class="nv">$myTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Time</span><span class="p">(</span><span class="s1">&#39;+3 week&#39;</span><span class="p">);</span>
+<span class="nv">$myTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Time</span><span class="p">(</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">);</span>
+<span class="nv">$myTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Time</span><span class="p">(</span><span class="s1">&#39;2024-01-01 12:00:00&#39;</span><span class="p">);</span>
 <span class="nv">$myTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Time</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">);</span>
+<span class="nv">$myTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Time</span><span class="p">(</span><span class="s1">&#39;+3 week&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You can pass in strings representing the timezone and the locale in the second and parameters, respectively. Timezones
@@ -948,9 +951,10 @@ a timezone string in as the second parameter. If no timezone is given, the syste
 </section>
 </section>
 <section id="viewing-differences">
-<h3><a class="toc-backref" href="#id26" role="doc-backlink">Viewing Differences</a><a class="headerlink" href="#viewing-differences" title="Link to this heading"></a></h3>
+<span id="time-viewing-differences"></span><h3><a class="toc-backref" href="#id26" role="doc-backlink">Viewing Differences</a><a class="headerlink" href="#viewing-differences" title="Link to this heading"></a></h3>
 <p>To compare two Times directly, you would use the <code class="docutils literal notranslate"><span class="pre">difference()</span></code> method, which returns a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\I18n\TimeDifference</span></code>
-instance. The first parameter is either a Time instance, a DateTime instance, or a string with the date/time. If
+instance.</p>
+<p>The first parameter is either a Time instance, a DateTime instance, or a string with the date/time. If
 a string is passed in the first parameter, the second parameter can be a timezone string:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -983,6 +987,31 @@ the original time:</p>
 <span class="k">echo</span> <span class="nv">$diff</span><span class="o">-&gt;</span><span class="na">getMinutes</span><span class="p">();</span> <span class="c1">// -3682080</span>
 <span class="k">echo</span> <span class="nv">$diff</span><span class="o">-&gt;</span><span class="na">getSeconds</span><span class="p">();</span> <span class="c1">// -220924800</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to v4.4.7, Time always converted the time zones to UTC before
+comparison. This could lead to unexpected results when containing a day
+differed from 24 hours due to Daylight Saving Time (DST).</p>
+<p>Starting with v4.4.7, when comparing date/times that are in the same
+time zone, the comparison is performed as is, without conversion to UTC.</p>
+<blockquote>
+<div><div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\I18n\Time</span><span class="p">;</span>
+
+<span class="c1">// 31 Mar 2024 - Daylight Saving Time Starts</span>
+<span class="nv">$current</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;2024-03-31&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe/Madrid&#39;</span><span class="p">);</span>
+<span class="nv">$test</span>    <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;2024-04-01&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe/Madrid&#39;</span><span class="p">);</span>
+
+<span class="nv">$diff</span> <span class="o">=</span> <span class="nv">$current</span><span class="o">-&gt;</span><span class="na">difference</span><span class="p">(</span><span class="nv">$test</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$diff</span><span class="o">-&gt;</span><span class="na">getDays</span><span class="p">();</span>
+<span class="c1">// 0 in v4.4.6 or before</span>
+<span class="c1">// 1 in v4.4.7 or later</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 <p>You can use either <code class="docutils literal notranslate"><span class="pre">getX()</span></code> methods, or access the calculate values as if they were properties:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -1062,7 +1091,7 @@ human readable format that is geared towards being easily understood. It can cre
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Feb 24, 2024.
+      <span class="lastupdated">Last updated on Mar 29, 2024.
       </span></p>
   </div>
 
