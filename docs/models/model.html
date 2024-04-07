@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Using CodeIgniter’s Model &mdash; CodeIgniter 4.4.7 documentation</title>
+  <title>Using CodeIgniter’s Model &mdash; CodeIgniter 4.4.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -17,7 +17,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=80f33ef3"></script>
+        <script src="../_static/documentation_options.js?v=f57187cc"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -452,6 +452,8 @@ extra steps without repeating the constructor parameters, for example extending 
 
 <span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">UserAuthModel</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="sd">/**</span>
 <span class="sd">     * Called during initialization. Appends</span>
 <span class="sd">     * our custom field to the module&#39;s model.</span>
@@ -482,6 +484,8 @@ connection.</p>
 <span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$DBGroup</span> <span class="o">=</span> <span class="s1">&#39;group_name&#39;</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -596,7 +600,7 @@ configured to any name of your choice by using <a class="reference internal" hre
 </div>
 </section>
 <section id="allowedfields">
-<h4><a class="toc-backref" href="#id17" role="doc-backlink">$allowedFields</a><a class="headerlink" href="#allowedfields" title="Link to this heading"></a></h4>
+<span id="model-allowed-fields"></span><h4><a class="toc-backref" href="#id17" role="doc-backlink">$allowedFields</a><a class="headerlink" href="#allowedfields" title="Link to this heading"></a></h4>
 <p>This array should be updated with the field names that can be set during <code class="docutils literal notranslate"><span class="pre">save()</span></code>, <code class="docutils literal notranslate"><span class="pre">insert()</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">update()</span></code> methods. Any field names other than these will be discarded. This helps to protect
 against just taking input from a form and throwing it all at the model, resulting in
@@ -1070,6 +1074,8 @@ be applied. If you have custom error message that you want to use, place them in
 
 <span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$validationRules</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;username&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;required|max_length[30]|alpha_numeric_space|min_length[3]&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;required|max_length[254]|valid_email|is_unique[users.email]&#39;</span><span class="p">,</span>
@@ -1094,6 +1100,8 @@ and simply set <a class="reference internal" href="#validationrules">$validation
 
 <span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$validationRules</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -1275,6 +1283,8 @@ replaced by the <strong>value</strong> of the matched incoming field. An example
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$validationRules</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;max_length[19]|is_natural_no_zero&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|max_length[254]|valid_email|is_unique[users.email,id,{id}]&#39;</span><span class="p">,</span>
@@ -1306,6 +1316,8 @@ that has an id matching the placeholder’s value. Assuming that the form POST d
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$validationRules</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;max_length[19]|is_natural_no_zero&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|max_length[254]|valid_email|is_unique[users.email,id,4]&#39;</span><span class="p">,</span>
@@ -1337,6 +1349,8 @@ or primary keys do not get changed.</p>
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$allowedFields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
@@ -1504,6 +1518,8 @@ have the full information.</p>
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">hashPassword</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">]))</span> <span class="p">{</span>
@@ -1532,8 +1548,12 @@ use the same callback in multiple events:</p>
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$beforeInsert</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hashPassword&#39;</span><span class="p">];</span>
     <span class="k">protected</span> <span class="nv">$beforeUpdate</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hashPassword&#39;</span><span class="p">];</span>
+
+    <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1546,7 +1566,11 @@ use the same callback in multiple events:</p>
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$allowCallbacks</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1656,6 +1680,8 @@ boolean, <code class="docutils literal notranslate"><span class="pre">returnData
 
 <span class="k">class</span> <span class="nc">MyModel</span> <span class="k">extends</span> <span class="nx">Model</span>
 <span class="p">{</span>
+    <span class="c1">// ...</span>
+
     <span class="k">protected</span> <span class="nv">$beforeFind</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;checkCache&#39;</span><span class="p">];</span>
 
     <span class="c1">// ...</span>
@@ -1714,7 +1740,7 @@ Model gives you out of the box, and create a fully custom experience.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Mar 29, 2024.
+      <span class="lastupdated">Last updated on Apr 07, 2024.
       </span></p>
   </div>
 
