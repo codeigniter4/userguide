@@ -4,9 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Query Builder Class &mdash; CodeIgniter 4.5.1 documentation</title>
+  <title>Query Builder Class &mdash; CodeIgniter 4.5.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
 
   
@@ -17,8 +17,8 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=13e4e530"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=beb495fc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
         <script src="../_static/js/carbon.js?v=b287325f"></script>
@@ -126,9 +126,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
@@ -147,10 +147,10 @@
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Methods</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Query Builder Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metadata.html">Getting MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">Getting Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Database Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
@@ -459,7 +459,7 @@ $query, which can be used to show the results:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Please visit the <a class="reference internal" href="results.html"><span class="doc">getResult*() method</span></a> page for a full
+<p>Please visit the <a class="reference internal" href="results.html#getresult"><span class="std std-ref">getResult()</span></a> method for a full
 discussion regarding result generation.</p>
 </section>
 <section id="builder-getcompiledselect">
@@ -474,8 +474,8 @@ the query. This method simply returns the SQL query as a string.</p>
 <span class="c1">// Prints string: SELECT * FROM mytable</span>
 </pre></div>
 </div>
-<p>The first parameter enables you to set whether or not the query builder query
-will be reset (by default it will be reset, just like when using <code class="docutils literal notranslate"><span class="pre">$builder-&gt;get()</span></code>):</p>
+<p>The parameter (false) in the first query below enables you to set whether or not the query builder
+will be reset (because the default value of the parameter is true, <code class="docutils literal notranslate"><span class="pre">getCompiledSelect(bool</span> <span class="pre">$reset</span> <span class="pre">=</span> <span class="pre">true)</span></code>, by default it will be reset just like when using <code class="docutils literal notranslate"><span class="pre">$builder-&gt;get()</span></code>):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">echo</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getCompiledSelect</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
@@ -490,7 +490,7 @@ will be reset (by default it will be reset, just like when using <code class="do
 </div>
 <p>The key thing to notice in the above example is that the second query did not
 utilize <code class="docutils literal notranslate"><span class="pre">limit(10,</span> <span class="pre">20)</span></code> but the generated SQL query has <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">20,</span> <span class="pre">10</span></code>.
-The reason for this outcome is because the first parameter is set to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+The reason for this outcome is because the parameter in the first query is set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, <code class="docutils literal notranslate"><span class="pre">limit(10,</span> <span class="pre">20)</span></code> remained in the second query.</p>
 </section>
 <section id="builder-getwhere">
 <h4>$builder-&gt;getWhere()<a class="headerlink" href="#builder-getwhere" title="Link to this heading"></a></h4>
@@ -536,7 +536,7 @@ escaping of fields may break them.</p>
 <section id="rawsql">
 <span id="query-builder-select-rawsql"></span><h5>RawSql<a class="headerlink" href="#rawsql" title="Link to this heading"></a></h5>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.2.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.2.0.</span></p>
 </div>
 <p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">$builder-&gt;select()</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance, which expresses raw SQL strings.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -573,7 +573,7 @@ include a second parameter to rename the resulting field.</p>
 <section id="builder-selectmin">
 <h4>$builder-&gt;selectMin()<a class="headerlink" href="#builder-selectmin" title="Link to this heading"></a></h4>
 <p>Writes a <strong>SELECT MIN(field)</strong> portion for your query. As with
-<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, You can optionally include a second parameter to rename
+<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, you can optionally include a second parameter to rename
 the resulting field.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -586,7 +586,7 @@ the resulting field.</p>
 <section id="builder-selectavg">
 <h4>$builder-&gt;selectAvg()<a class="headerlink" href="#builder-selectavg" title="Link to this heading"></a></h4>
 <p>Writes a <strong>SELECT AVG(field)</strong> portion for your query. As with
-<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, You can optionally include a second parameter to rename
+<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, you can optionally include a second parameter to rename
 the resulting field.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -599,7 +599,7 @@ the resulting field.</p>
 <section id="builder-selectsum">
 <h4>$builder-&gt;selectSum()<a class="headerlink" href="#builder-selectsum" title="Link to this heading"></a></h4>
 <p>Writes a <strong>SELECT SUM(field)</strong> portion for your query. As with
-<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, You can optionally include a second parameter to rename
+<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, you can optionally include a second parameter to rename
 the resulting field.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -612,7 +612,7 @@ the resulting field.</p>
 <section id="builder-selectcount">
 <h4>$builder-&gt;selectCount()<a class="headerlink" href="#builder-selectcount" title="Link to this heading"></a></h4>
 <p>Writes a <strong>SELECT COUNT(field)</strong> portion for your query. As with
-<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, You can optionally include a second parameter to rename
+<code class="docutils literal notranslate"><span class="pre">selectMax()</span></code>, you can optionally include a second parameter to rename
 the resulting field.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -716,7 +716,7 @@ parameter of the method. Options are: <code class="docutils literal notranslate"
 <section id="query-builder-join-rawsql">
 <span id="id1"></span><h5>RawSql<a class="headerlink" href="#query-builder-join-rawsql" title="Link to this heading"></a></h5>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.2.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.2.0.</span></p>
 </div>
 <p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">$builder-&gt;join()</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance, which expresses raw SQL strings.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -836,7 +836,7 @@ control the comparison:</p>
 <span id="id2"></span><h5>5. RawSql<a class="headerlink" href="#query-builder-where-rawsql" title="Link to this heading"></a></h5>
 <blockquote>
 <div><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.2.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.2.0.</span></p>
 </div>
 <p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">$builder-&gt;where()</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance, which expresses raw SQL strings.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -1069,7 +1069,7 @@ an optional third argument. Your options are <code class="docutils literal notra
 <span id="id6"></span><h5>3. RawSql<a class="headerlink" href="#query-builder-like-rawsql" title="Link to this heading"></a></h5>
 <blockquote>
 <div><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.2.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.2.0.</span></p>
 </div>
 <p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">$builder-&gt;like()</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance, which expresses raw SQL strings.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -1832,7 +1832,7 @@ method. Here is an example using an array:</p>
 <section id="builder-upsert">
 <h4>$builder-&gt;upsert()<a class="headerlink" href="#builder-upsert" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>Generates an upsert string based on the data you supply, and runs the
 query. You can either pass an <strong>array</strong> or an <strong>object</strong> to the
@@ -1886,7 +1886,7 @@ constraint by default. Here is an example using an array:</p>
 <section id="builder-getcompiledupsert">
 <h4>$builder-&gt;getCompiledUpsert()<a class="headerlink" href="#builder-getcompiledupsert" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>Compiles the upsert query just like <code class="docutils literal notranslate"><span class="pre">$builder-&gt;upsert()</span></code> but does not
 <em>run</em> the query. This method simply returns the SQL query as a string.</p>
@@ -1922,7 +1922,7 @@ constraint by default. Here is an example using an array:</p>
 <section id="builder-upsertbatch">
 <h4>$builder-&gt;upsertBatch()<a class="headerlink" href="#builder-upsertbatch" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <section id="upsert-from-data">
 <h5>Upsert from Data<a class="headerlink" href="#upsert-from-data" title="Link to this heading"></a></h5>
@@ -2009,7 +2009,7 @@ methods can be used since v4.3.0.</p>
 <section id="builder-onconstraint">
 <h4>$builder-&gt;onConstraint()<a class="headerlink" href="#builder-onconstraint" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>Allows manually setting constraint to be used for upsert. This does
 not work with MySQL because MySQL checks all constraints by default.</p>
@@ -2039,7 +2039,7 @@ not work with MySQL because MySQL checks all constraints by default.</p>
 <section id="builder-updatefields">
 <h4>$builder-&gt;updateFields()<a class="headerlink" href="#builder-updatefields" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>Allows manually setting the fields to be updated when performing upserts.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -2491,7 +2491,7 @@ that it produces a <strong>DELETE</strong> SQL string instead of an <strong>INSE
 <section id="builder-deletebatch">
 <h4>$builder-&gt;deleteBatch()<a class="headerlink" href="#builder-deletebatch" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <section id="delete-from-data">
 <h5>Delete from Data<a class="headerlink" href="#delete-from-data" title="Link to this heading"></a></h5>
@@ -2609,7 +2609,7 @@ execute as “DELETE FROM table”.</p>
 <section id="builder-when">
 <h4>$builder-&gt;when()<a class="headerlink" href="#builder-when" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>This allows modifying the query based on a condition without breaking out of the
 query builder chain. The first parameter is the condition, and it should evaluate
@@ -2653,7 +2653,7 @@ This can be accomplished by providing a second closure:</p>
 <section id="builder-whennot">
 <h4>$builder-&gt;whenNot()<a class="headerlink" href="#builder-whennot" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>This works exactly the same way as <code class="docutils literal notranslate"><span class="pre">$builder-&gt;when()</span></code> except that it will
 only run the callable when the condition evaluates to <code class="docutils literal notranslate"><span class="pre">false</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">true</span></code> like <code class="docutils literal notranslate"><span class="pre">when()</span></code>.</p>
@@ -3041,7 +3041,7 @@ a <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></
 <dt class="sig sig-object php" id="CodeIgniter\Database\BaseBuilder::setQueryAsData">
 <span class="sig-name descname"><span class="pre">setQueryAsData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$query</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$alias</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$columns</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Database\BaseBuilder::setQueryAsData" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -3984,7 +3984,7 @@ pairs will be executed in one query.</p>
 <dt class="sig sig-object php" id="CodeIgniter\Database\BaseBuilder::updateFields">
 <span class="sig-name descname"><span class="pre">updateFields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$set</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$addToDefault</span> <span class="pre">=</span> <span class="pre">false</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$ignore</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Database\BaseBuilder::updateFields" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -4008,7 +4008,7 @@ pairs will be executed in one query.</p>
 <dt class="sig sig-object php" id="CodeIgniter\Database\BaseBuilder::onConstraint">
 <span class="sig-name descname"><span class="pre">onConstraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Database\BaseBuilder::onConstraint" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -4030,7 +4030,7 @@ pairs will be executed in one query.</p>
 <dt class="sig sig-object php" id="CodeIgniter\Database\BaseBuilder::setData">
 <span class="sig-name descname"><span class="pre">setData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$set</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$escape</span> <span class="pre">=</span> <span class="pre">null</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">$alias</span> <span class="pre">=</span> <span class="pre">''</span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Database\BaseBuilder::setData" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -4297,7 +4297,7 @@ a <code class="docutils literal notranslate"><span class="pre">DELETE</span></co
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on Jun 10, 2024.
       </span></p>
   </div>
 

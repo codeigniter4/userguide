@@ -4,9 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Views &mdash; CodeIgniter 4.5.1 documentation</title>
+  <title>Views &mdash; CodeIgniter 4.5.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
 
   
@@ -17,15 +17,15 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=13e4e530"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=beb495fc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
         <script src="../_static/js/carbon.js?v=b287325f"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="View Cells" href="view_cells.html" />
+    <link rel="next" title="View Renderer" href="view_renderer.html" />
     <link rel="prev" title="Building Responses" href="index.html" /> 
 </head>
 
@@ -126,9 +126,9 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Building Responses</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
@@ -147,10 +147,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">Running Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">Query Builder Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">Custom Function Calls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/events.html">Database Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">Database Utilities</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
@@ -288,18 +288,18 @@
 <h1>Views<a class="headerlink" href="#views" title="Link to this heading"></a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#creating-a-view" id="id2">Creating a View</a></p></li>
-<li><p><a class="reference internal" href="#displaying-a-view" id="id3">Displaying a View</a></p></li>
-<li><p><a class="reference internal" href="#loading-multiple-views" id="id4">Loading Multiple Views</a></p></li>
-<li><p><a class="reference internal" href="#storing-views-within-sub-directories" id="id5">Storing Views within Sub-directories</a></p></li>
-<li><p><a class="reference internal" href="#namespaced-views" id="id6">Namespaced Views</a></p></li>
-<li><p><a class="reference internal" href="#caching-views" id="id7">Caching Views</a></p></li>
-<li><p><a class="reference internal" href="#adding-dynamic-data-to-the-view" id="id8">Adding Dynamic Data to the View</a></p>
+<li><p><a class="reference internal" href="#creating-a-view" id="id3">Creating a View</a></p></li>
+<li><p><a class="reference internal" href="#displaying-a-view" id="id4">Displaying a View</a></p></li>
+<li><p><a class="reference internal" href="#loading-multiple-views" id="id5">Loading Multiple Views</a></p></li>
+<li><p><a class="reference internal" href="#storing-views-within-sub-directories" id="id6">Storing Views within Sub-directories</a></p></li>
+<li><p><a class="reference internal" href="#namespaced-views" id="id7">Namespaced Views</a></p></li>
+<li><p><a class="reference internal" href="#caching-views" id="id8">Caching Views</a></p></li>
+<li><p><a class="reference internal" href="#adding-dynamic-data-to-the-view" id="id9">Adding Dynamic Data to the View</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-savedata-option" id="id9">The saveData Option</a></p></li>
+<li><p><a class="reference internal" href="#the-savedata-option" id="id10">The saveData Option</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#creating-loops" id="id10">Creating Loops</a></p></li>
+<li><p><a class="reference internal" href="#creating-loops" id="id11">Creating Loops</a></p></li>
 </ul>
 </nav>
 <p>A view is simply a web page, or a page fragment, like a header, footer, sidebar, etc. In fact,
@@ -311,7 +311,7 @@ the Controller acts as the traffic cop, so it is responsible for fetching a part
 not read the <a class="reference internal" href="../incoming/controllers.html"><span class="doc">Controllers</span></a> page, you should do so before continuing.</p>
 <p>Using the example controller you created in the controller page, let’s add a view to it.</p>
 <section id="creating-a-view">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Creating a View</a><a class="headerlink" href="#creating-a-view" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Creating a View</a><a class="headerlink" href="#creating-a-view" title="Link to this heading"></a></h2>
 <p>Using your text editor, create a file called <strong>blog_view.php</strong> and put this in it:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
@@ -326,7 +326,7 @@ not read the <a class="reference internal" href="../incoming/controllers.html"><
 <p>Then save the file in your <strong>app/Views</strong> directory.</p>
 </section>
 <section id="displaying-a-view">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Displaying a View</a><a class="headerlink" href="#displaying-a-view" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Displaying a View</a><a class="headerlink" href="#displaying-a-view" title="Link to this heading"></a></h2>
 <p>To load and display a particular view file you will use the <a class="reference internal" href="../general/common_functions.html#view" title="view"><code class="xref php php-func docutils literal notranslate"><span class="pre">view()</span></code></a>
 function like following code in your controller:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
@@ -336,6 +336,10 @@ function like following code in your controller:</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If the file extension is omitted, then the views are expected to end with the <strong>.php</strong> extension.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">view()</span></code> function uses <a class="reference internal" href="view_renderer.html"><span class="doc">View Renderer</span></a> internally.</p>
 </div>
 <p>Now, create a file called <strong>Blog.php</strong> in the <strong>app/Controllers</strong> directory,
 and put this in it:</p>
@@ -365,7 +369,7 @@ Add the following code:</p>
 </div>
 </section>
 <section id="loading-multiple-views">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Loading Multiple Views</a><a class="headerlink" href="#loading-multiple-views" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Loading Multiple Views</a><a class="headerlink" href="#loading-multiple-views" title="Link to this heading"></a></h2>
 <p>CodeIgniter will intelligently handle multiple calls to <a class="reference internal" href="../general/common_functions.html#view" title="view"><code class="xref php php-func docutils literal notranslate"><span class="pre">view()</span></code></a> from
 within a controller. If more than one call happens they will be appended together.</p>
 <p>For example, you may wish to have a header view, a menu view, a
@@ -395,7 +399,7 @@ content view, and a footer view. That might look something like this:</p>
 <p>In the example above, we are using “dynamically added data”, which you will see below.</p>
 </section>
 <section id="storing-views-within-sub-directories">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Storing Views within Sub-directories</a><a class="headerlink" href="#storing-views-within-sub-directories" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Storing Views within Sub-directories</a><a class="headerlink" href="#storing-views-within-sub-directories" title="Link to this heading"></a></h2>
 <p>Your view files can also be stored within sub-directories if you prefer that type of organization.
 When doing so you will need to include the directory name loading the view. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;directory_name/file_name&#39;</span><span class="p">);</span>
@@ -403,7 +407,7 @@ When doing so you will need to include the directory name loading the view. Exam
 </div>
 </section>
 <section id="namespaced-views">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Namespaced Views</a><a class="headerlink" href="#namespaced-views" title="Link to this heading"></a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Namespaced Views</a><a class="headerlink" href="#namespaced-views" title="Link to this heading"></a></h2>
 <p>You can store views under a <strong>View</strong> directory that is namespaced, and load that view as if it was namespaced. While
 PHP does not support loading non-class files from a namespace, CodeIgniter provides this feature to make it possible
 to package your views together in a module-like fashion for easy re-use or distribution.</p>
@@ -418,7 +422,7 @@ example, you could load the <strong>blog_view.php</strong> file from <strong>exa
 </div>
 </section>
 <section id="caching-views">
-<span id="id1"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Caching Views</a><a class="headerlink" href="#caching-views" title="Link to this heading"></a></h2>
+<span id="id2"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">Caching Views</a><a class="headerlink" href="#caching-views" title="Link to this heading"></a></h2>
 <p>You can cache a view with the <a class="reference internal" href="../general/common_functions.html#view" title="view"><code class="xref php php-func docutils literal notranslate"><span class="pre">view()</span></code></a> function by passing a <code class="docutils literal notranslate"><span class="pre">cache</span></code>
 option with the number of seconds to cache the view for, in the third parameter:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Cache the view for 60 seconds</span>
@@ -433,7 +437,7 @@ along <code class="docutils literal notranslate"><span class="pre">cache_name</s
 </div>
 </section>
 <section id="adding-dynamic-data-to-the-view">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Adding Dynamic Data to the View</a><a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Adding Dynamic Data to the View</a><a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Link to this heading"></a></h2>
 <p>Data is passed from the controller to the view by way of an array in the second
 parameter of the <a class="reference internal" href="../general/common_functions.html#view" title="view"><code class="xref php php-func docutils literal notranslate"><span class="pre">view()</span></code></a> function.</p>
 <p>Here’s an example:</p>
@@ -476,7 +480,7 @@ parameter of the <a class="reference internal" href="../general/common_functions
 </div>
 <p>Then load the page at the URL you’ve been using and you should see the variables replaced.</p>
 <section id="the-savedata-option">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">The saveData Option</a><a class="headerlink" href="#the-savedata-option" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">The saveData Option</a><a class="headerlink" href="#the-savedata-option" title="Link to this heading"></a></h3>
 <p>The data passed in is retained for subsequent calls to <a class="reference internal" href="../general/common_functions.html#view" title="view"><code class="xref php php-func docutils literal notranslate"><span class="pre">view()</span></code></a>. If you
 call the function multiple times in a single request, you will not have to pass
 the desired data to each <code class="docutils literal notranslate"><span class="pre">view()</span></code>.</p>
@@ -497,7 +501,7 @@ between calls, you can set <code class="docutils literal notranslate"><span clas
 </section>
 </section>
 <section id="creating-loops">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Creating Loops</a><a class="headerlink" href="#creating-loops" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Creating Loops</a><a class="headerlink" href="#creating-loops" title="Link to this heading"></a></h2>
 <p>The data array you pass to your view files is not limited to simple variables. You can pass multi dimensional
 arrays, which can be looped to generate multiple rows. For example, if you pull data from your database it will
 typically be in the form of a multi-dimensional array.</p>
@@ -551,14 +555,14 @@ typically be in the form of a multi-dimensional array.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Building Responses" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="view_cells.html" class="btn btn-neutral float-right" title="View Cells" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="view_renderer.html" class="btn btn-neutral float-right" title="View Renderer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on Jun 10, 2024.
       </span></p>
   </div>
 

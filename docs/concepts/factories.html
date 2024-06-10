@@ -4,9 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Factories &mdash; CodeIgniter 4.5.1 documentation</title>
+  <title>Factories &mdash; CodeIgniter 4.5.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
 
   
@@ -17,8 +17,8 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=13e4e530"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=beb495fc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
         <script src="../_static/js/carbon.js?v=b287325f"></script>
@@ -126,9 +126,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
@@ -147,10 +147,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">Running Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">Query Builder Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">Custom Function Calls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/events.html">Database Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">Database Utilities</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
@@ -417,7 +417,7 @@ The following code loads <strong>app/Libraries/Sub/SubLib.php</strong> if it exi
 </section>
 </section>
 <section id="passing-fully-qualified-classname">
-<h4><a class="toc-backref" href="#id8" role="doc-backlink">Passing Fully Qualified Classname</a><a class="headerlink" href="#passing-fully-qualified-classname" title="Link to this heading"></a></h4>
+<span id="factories-passing-fully-qualified-classname"></span><h4><a class="toc-backref" href="#id8" role="doc-backlink">Passing Fully Qualified Classname</a><a class="headerlink" href="#passing-fully-qualified-classname" title="Link to this heading"></a></h4>
 <p>You could also request a fully qualified classname:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Config\Factories</span><span class="p">;</span>
 
@@ -475,7 +475,7 @@ option <code class="docutils literal notranslate"><span class="pre">preferApp</s
 <section id="defining-classname-to-be-loaded">
 <span id="factories-defining-classname-to-be-loaded"></span><h2><a class="toc-backref" href="#id12" role="doc-backlink">Defining Classname to be Loaded</a><a class="headerlink" href="#defining-classname-to-be-loaded" title="Link to this heading"></a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.4.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.4.0.</span></p>
 </div>
 <p>You could define a classname to be loaded before loading the class with
 the <code class="docutils literal notranslate"><span class="pre">Factories::define()</span></code> method:</p>
@@ -666,7 +666,13 @@ that single call will return a new or shared instance:</p>
 <section id="config-caching">
 <span id="factories-config-caching"></span><h2><a class="toc-backref" href="#id21" role="doc-backlink">Config Caching</a><a class="headerlink" href="#config-caching" title="Link to this heading"></a></h2>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.4.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.4.0.</span></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not use this feature unless you have carefully read this section
+and understand how this feature works. Otherwise, your application will not
+function properly.</p>
 </div>
 <p>To improve performance, Config Caching has been implemented.</p>
 <section id="prerequisite">
@@ -686,6 +692,11 @@ method.</p></li>
 </section>
 <section id="how-it-works">
 <h3><a class="toc-backref" href="#id23" role="doc-backlink">How It Works</a><a class="headerlink" href="#how-it-works" title="Link to this heading"></a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Once cached, configuration values are never changed until the cache
+is deleted, even if the configuration file or <strong>.env</strong> is changed.</p>
+</div>
 <ul class="simple">
 <li><p>Save the all Config instances in Factories into a cache file before shutdown,
 if the state of the Config instances in Factories changes.</p></li>
@@ -715,7 +726,7 @@ for them, and you must manually delete the cache file.</p>
 <section id="how-to-enable-config-caching">
 <h3><a class="toc-backref" href="#id25" role="doc-backlink">How to Enable Config Caching</a><a class="headerlink" href="#how-to-enable-config-caching" title="Link to this heading"></a></h3>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.5.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.5.0.</span></p>
 </div>
 <p>Set the following property to <code class="docutils literal notranslate"><span class="pre">true</span></code> in <strong>app/Config/Optimize.php</strong>:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nx">bool</span> <span class="nv">$configCacheEnabled</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -771,7 +782,7 @@ for them, and you must manually delete the cache file.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on Jun 10, 2024.
       </span></p>
   </div>
 

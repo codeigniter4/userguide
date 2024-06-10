@@ -4,9 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Forge Class &mdash; CodeIgniter 4.5.1 documentation</title>
+  <title>Database Forge Class &mdash; CodeIgniter 4.5.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
 
   
@@ -17,8 +17,8 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=13e4e530"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=beb495fc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
         <script src="../_static/js/carbon.js?v=b287325f"></script>
@@ -126,9 +126,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
@@ -147,10 +147,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">Running Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">Query Builder Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">Custom Function Calls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/events.html">Database Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">Database Utilities</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Managing Databases</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="seeds.html">Database Seeding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db_commands.html">Database Commands</a></li>
@@ -363,7 +363,7 @@ Returns true/false based on success or failure:</p>
 </pre></div>
 </div>
 <p>An optional second parameter set to true will add <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">EXISTS</span></code> statement
-or will check if a database exists before create it (depending on DBMS).</p>
+or will check if a database exists before creating it (depending on DBMS).</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nv">$forge</span><span class="o">-&gt;</span><span class="na">createDatabase</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
@@ -522,7 +522,7 @@ Previous versions converted to <code class="docutils literal notranslate"><span 
 <section id="raw-sql-strings-as-default-values">
 <span id="forge-addfield-default-value-rawsql"></span><h4>Raw Sql Strings as Default Values<a class="headerlink" href="#raw-sql-strings-as-default-values" title="Link to this heading"></a></h4>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.2.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.2.0.</span></p>
 </div>
 <p>Since v4.2.0, <code class="docutils literal notranslate"><span class="pre">$forge-&gt;addField()</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">CodeIgniter\Database\RawSql</span></code> instance, which expresses raw SQL strings.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -830,7 +830,7 @@ if you specify <code class="docutils literal notranslate"><span class="pre">'nul
 <section id="adding-keys-to-a-table">
 <span id="db-forge-adding-keys-to-a-table"></span><h3><a class="toc-backref" href="#id22" role="doc-backlink">Adding Keys to a Table</a><a class="headerlink" href="#adding-keys-to-a-table" title="Link to this heading"></a></h3>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>You may add keys to an existing table by using <code class="docutils literal notranslate"><span class="pre">addKey()</span></code>, <code class="docutils literal notranslate"><span class="pre">addPrimaryKey()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">addUniqueKey()</span></code> or <code class="docutils literal notranslate"><span class="pre">addForeignKey()</span></code> and <code class="docutils literal notranslate"><span class="pre">processIndexes()</span></code>:</p>
@@ -851,7 +851,7 @@ if you specify <code class="docutils literal notranslate"><span class="pre">'nul
 <section id="dropping-a-primary-key">
 <span id="id5"></span><h3><a class="toc-backref" href="#id23" role="doc-backlink">Dropping a Primary Key</a><a class="headerlink" href="#dropping-a-primary-key" title="Link to this heading"></a></h3>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <p>Execute a DROP PRIMARY KEY.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -1193,7 +1193,7 @@ if you specify <code class="docutils literal notranslate"><span class="pre">'nul
 <dt class="sig sig-object php" id="CodeIgniter\Database\Forge::processIndexes">
 <span class="sig-name descname"><span class="pre">processIndexes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">$table</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CodeIgniter\Database\Forge::processIndexes" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1270,7 +1270,7 @@ See <a class="reference internal" href="#adding-keys-to-a-table">Adding Keys to 
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on Jun 10, 2024.
       </span></p>
   </div>
 

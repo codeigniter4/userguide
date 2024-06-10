@@ -4,9 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Functions and Constants &mdash; CodeIgniter 4.5.1 documentation</title>
+  <title>Global Functions and Constants &mdash; CodeIgniter 4.5.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
 
   
@@ -17,8 +17,8 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=13e4e530"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=beb495fc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
         <script src="../_static/js/carbon.js?v=b287325f"></script>
@@ -126,9 +126,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
@@ -147,10 +147,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/queries.html">Running Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">Query Builder Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">Custom Function Calls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/events.html">Database Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">Database Utilities</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
@@ -474,14 +474,20 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$line</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The line of text to retrieve</p></li>
+<li><p><strong>$line</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The language filename and the key of the text to retrieve.</p></li>
 <li><p><strong>$args</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array</span></code></span>) – An array of data to substitute for placeholders.</p></li>
-<li><p><strong>$locale</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Specify a different locale to be used instead of default one.</p></li>
+<li><p><strong>$locale</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – Specify a different locale to be used instead of the current locale.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The text in the language file</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">list&lt;string&gt;|string</span></code></span></p>
+</dd>
 </dl>
-<p>Retrieves a locale-specific file based on an alias string.</p>
-<p>For more information, see the <a class="reference internal" href="../outgoing/localization.html"><span class="doc">Localization</span></a> page.</p>
+<p>Retrieves text from the language files.</p>
+<p>For more information, see the <a class="reference internal" href="../outgoing/localization.html#language-localization"><span class="std std-ref">Language Localization</span></a>.</p>
 </dd></dl>
 
 <dl class="php function">
@@ -626,6 +632,7 @@ timing if a timer with this name is already running.</p>
 </dd>
 </dl>
 <p>Grabs the current RendererInterface-compatible class
+(<a class="reference internal" href="../outgoing/view_renderer.html"><span class="doc">View</span></a> class by default)
 and tells it to render the specified view. Simply provides
 a convenience method that can be used in Controllers,
 libraries, and routed closures.</p>
@@ -655,10 +662,10 @@ libraries like Twig.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$library</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – </p></li>
-<li><p><strong>$params</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">null</span></code></span>) – </p></li>
-<li><p><strong>$ttl</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">integer</span></code></span>) – </p></li>
-<li><p><strong>$cacheName</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string|null</span></code></span>) – </p></li>
+<li><p><strong>$library</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>)</p></li>
+<li><p><strong>$params</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">null</span></code></span>)</p></li>
+<li><p><strong>$ttl</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">integer</span></code></span>)</p></li>
+<li><p><strong>$cacheName</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string|null</span></code></span>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -981,7 +988,7 @@ characters, like Java\0script.</p>
 <dt class="sig sig-object php" id="request">
 <span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#request" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -991,14 +998,14 @@ characters, like Java\0script.</p>
 <dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">IncomingRequest|CLIRequest</span></code></span></p>
 </dd>
 </dl>
-<p>This function is a wrapper for <code class="docutils literal notranslate"><span class="pre">Services::request()</span></code>.</p>
+<p>This function is a wrapper for <code class="docutils literal notranslate"><span class="pre">Services::request()</span></code> and <code class="docutils literal notranslate"><span class="pre">service('request')</span></code>.</p>
 </dd></dl>
 
 <dl class="php function">
 <dt class="sig sig-object php" id="response">
 <span class="sig-name descname"><span class="pre">response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#response" title="Link to this definition"></a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 4.3.0.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.0.</span></p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1008,7 +1015,7 @@ characters, like Java\0script.</p>
 <dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">Response</span></code></span></p>
 </dd>
 </dl>
-<p>This function is a wrapper for <code class="docutils literal notranslate"><span class="pre">Services::response()</span></code>.</p>
+<p>This function is a wrapper for <code class="docutils literal notranslate"><span class="pre">Services::response()</span></code> and <code class="docutils literal notranslate"><span class="pre">service('response')</span></code>.</p>
 </dd></dl>
 
 <dl class="php function">
@@ -1284,7 +1291,7 @@ instance every time.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on Jun 10, 2024.
       </span></p>
   </div>
 

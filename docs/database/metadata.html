@@ -4,9 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database Metadata &mdash; CodeIgniter 4.5.1 documentation</title>
+  <title>Getting Metadata &mdash; CodeIgniter 4.5.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d10597a4" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=d7c400b7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
 
   
@@ -17,8 +17,8 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=13e4e530"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/documentation_options.js?v=beb495fc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
         <script src="../_static/js/carbon.js?v=b287325f"></script>
@@ -126,9 +126,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
@@ -147,10 +147,10 @@
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query_builder.html">Query Builder Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting MetaData</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="events.html">Database Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Forge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
@@ -275,7 +275,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Working with Databases</a></li>
-      <li class="breadcrumb-item active">Database Metadata</li>
+      <li class="breadcrumb-item active">Getting Metadata</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -284,17 +284,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="database-metadata">
-<h1>Database Metadata<a class="headerlink" href="#database-metadata" title="Link to this heading"></a></h1>
+  <section id="getting-metadata">
+<h1>Getting Metadata<a class="headerlink" href="#getting-metadata" title="Link to this heading"></a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#table-metadata" id="id1">Table MetaData</a></p>
+<li><p><a class="reference internal" href="#table-metadata" id="id1">Table Metadata</a></p>
 <ul>
 <li><p><a class="reference internal" href="#list-the-tables-in-your-database" id="id2">List the Tables in Your Database</a></p></li>
 <li><p><a class="reference internal" href="#determine-if-a-table-exists" id="id3">Determine If a Table Exists</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#field-metadata" id="id4">Field MetaData</a></p>
+<li><p><a class="reference internal" href="#field-metadata" id="id4">Field Metadata</a></p>
 <ul>
 <li><p><a class="reference internal" href="#list-the-fields-in-a-table" id="id5">List the Fields in a Table</a></p></li>
 <li><p><a class="reference internal" href="#determine-if-a-field-is-present-in-a-table" id="id6">Determine If a Field is Present in a Table</a></p></li>
@@ -305,7 +305,7 @@
 </ul>
 </nav>
 <section id="table-metadata">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Table MetaData</a><a class="headerlink" href="#table-metadata" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Table Metadata</a><a class="headerlink" href="#table-metadata" title="Link to this heading"></a></h2>
 <p>These functions let you fetch table information.</p>
 <section id="list-the-tables-in-your-database">
 <h3><a class="toc-backref" href="#id2" role="doc-backlink">List the Tables in Your Database</a><a class="headerlink" href="#list-the-tables-in-your-database" title="Link to this heading"></a></h3>
@@ -353,7 +353,7 @@ running an operation on it. Returns a boolean true/false. Usage example:</p>
 </section>
 </section>
 <section id="field-metadata">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Field MetaData</a><a class="headerlink" href="#field-metadata" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Field Metadata</a><a class="headerlink" href="#field-metadata" title="Link to this heading"></a></h2>
 <section id="list-the-fields-in-a-table">
 <h3><a class="toc-backref" href="#id5" role="doc-backlink">List the Fields in a Table</a><a class="headerlink" href="#list-the-fields-in-a-table" title="Link to this heading"></a></h3>
 <section id="db-getfieldnames">
@@ -412,9 +412,7 @@ performing an action. Returns a boolean true/false. Usage example:</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Replace <em>field_name</em> with the name of the column you are looking
-for, and replace <em>table_name</em> with the name of the table you are
-looking for.</p>
+<p>Replace <em>field_name</em> and <em>table_name</em> with the column name and the table name you are looking for.</p>
 </div>
 </section>
 </section>
@@ -427,7 +425,7 @@ looking for.</p>
 the column type, max length, etc.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Not all databases provide meta-data.</p>
+<p>Not all databases provide metadata.</p>
 </div>
 <p>Usage example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -543,7 +541,7 @@ for each key associated with a table.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2024 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Apr 14, 2024.
+      <span class="lastupdated">Last updated on Jun 10, 2024.
       </span></p>
   </div>
 
