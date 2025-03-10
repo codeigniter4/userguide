@@ -749,6 +749,22 @@ and place your controller classes within them.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Directory names MUST start with an uppercase letter and be CamelCase.</p>
+<p>Namespaces need to updated to reflect the current namespace</p>
+<div>
+<pre>&lt;?php
+
+namespace App\Controllers\<strong>Products</strong>;
+
+<strong>use</strong> App\Controllers\BaseController;
+
+class Home extends BaseController {
+ public function getIndex() {
+ echo "Products";
+ }
+ 
+}
+</pre>
+</div>
 </div>
 <p>When using this feature the first segment of your URI must
 specify the directory. For example, let’s say you have a controller located here:</p>
