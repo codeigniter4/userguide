@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing &mdash; CodeIgniter 4.6.0 documentation</title>
+  <title>Testing &mdash; CodeIgniter 4.6.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css" />
@@ -628,7 +628,7 @@ parameter is an instance of the class to test. The second parameter is the name 
 <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
 
 <span class="c1">// Get the invoker for the &#39;privateMethod&#39; method.</span>
-<span class="nv">$method</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getPrivateMethodInvoker</span><span class="p">(</span><span class="nv">$obj</span><span class="p">,</span> <span class="s1">&#39;privateMethod&#39;</span><span class="p">);</span>
+<span class="nv">$method</span> <span class="o">=</span> <span class="nx">self</span><span class="o">::</span><span class="na">getPrivateMethodInvoker</span><span class="p">(</span><span class="nv">$obj</span><span class="p">,</span> <span class="s1">&#39;privateMethod&#39;</span><span class="p">);</span>
 
 <span class="c1">// Test the results</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nv">$method</span><span class="p">(</span><span class="s1">&#39;param1&#39;</span><span class="p">,</span> <span class="s1">&#39;param2&#39;</span><span class="p">));</span>
@@ -812,7 +812,7 @@ parameters.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2025 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jan 19, 2025.
+      <span class="lastupdated">Last updated on May 02, 2025.
       </span></p>
   </div>
 
