@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Query Builder Class &mdash; CodeIgniter 4.6.1 documentation</title>
+  <title>Query Builder Class &mdash; CodeIgniter 4.6.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css" />
@@ -2621,9 +2621,10 @@ execute as “DELETE FROM table”.</p>
 <p><span class="versionmodified added">New in version 4.3.0.</span></p>
 </div>
 <p>This allows modifying the query based on a condition without breaking out of the
-query builder chain. The first parameter is the condition, and it should evaluate
-to a boolean. The second parameter is a callable that will be ran
-when the condition is true.</p>
+query builder chain. The first parameter is the condition, and it is evaluated
+using PHP’s native boolean logic - meaning that values like <code class="docutils literal notranslate"><span class="pre">false</span></code>, <code class="docutils literal notranslate"><span class="pre">null</span></code>,
+<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">'0'</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, empty string <code class="docutils literal notranslate"><span class="pre">''</span></code> and empty array <code class="docutils literal notranslate"><span class="pre">[]</span></code> will be considered false.
+The second parameter is a callable that will be ran when the condition is true.</p>
 <p>For example, you might only want to apply a given WHERE statement based on the
 value sent within an HTTP request:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -4307,7 +4308,7 @@ a <code class="docutils literal notranslate"><span class="pre">DELETE</span></co
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2025 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on May 02, 2025.
+      <span class="lastupdated">Last updated on Jul 26, 2025.
       </span></p>
   </div>
 
