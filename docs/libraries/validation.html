@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Validation &mdash; CodeIgniter 4.6.3 documentation</title>
+  <title>Validation &mdash; CodeIgniter 4.6.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css" />
@@ -1717,26 +1717,26 @@ There can be no spaces before and after <code class="docutils literal notranslat
 <tr class="row-even"><td><p>alpha</p></td>
 <td><p>No</p></td>
 <td><p>Fails if field has anything other than
-alphabetic characters in ASCII.</p></td>
+alphabetic characters in ASCII or is empty.</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>alpha_dash</p></td>
 <td><p>No</p></td>
 <td><p>Fails if field contains anything other than
 alphanumeric characters, underscores or
-dashes in ASCII.</p></td>
+dashes in ASCII or is empty.</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>alpha_numeric</p></td>
 <td><p>No</p></td>
 <td><p>Fails if field contains anything other than
-alphanumeric characters in ASCII.</p></td>
+alphanumeric characters in ASCII or is empty.</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>alpha_numeric_punct</p></td>
 <td><p>No</p></td>
 <td><p>Fails if field contains anything other than
-alphanumeric, space, or this limited set of
+alphanumeric, space, this limited set of
 punctuation characters: <code class="docutils literal notranslate"><span class="pre">~</span></code> (tilde),
 <code class="docutils literal notranslate"><span class="pre">!</span></code> (exclamation), <code class="docutils literal notranslate"><span class="pre">#</span></code> (number),
 <code class="docutils literal notranslate"><span class="pre">$</span></code> (dollar), <code class="docutils literal notranslate"><span class="pre">%</span></code> (percent),
@@ -1744,19 +1744,21 @@ punctuation characters: <code class="docutils literal notranslate"><span class="
 <code class="docutils literal notranslate"><span class="pre">*</span></code> (asterisk), <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash),
 <code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore), <code class="docutils literal notranslate"><span class="pre">+</span></code> (plus),
 <code class="docutils literal notranslate"><span class="pre">=</span></code> (equals), <code class="docutils literal notranslate"><span class="pre">|</span></code> (vertical bar),
-<code class="docutils literal notranslate"><span class="pre">:</span></code> (colon), <code class="docutils literal notranslate"><span class="pre">.</span></code> (period).</p></td>
+<code class="docutils literal notranslate"><span class="pre">:</span></code> (colon), <code class="docutils literal notranslate"><span class="pre">.</span></code> (period) or is empty.</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>alpha_numeric_space</p></td>
 <td><p>No</p></td>
 <td><p>Fails if field contains anything other than
-alphanumeric or space characters in ASCII.</p></td>
+alphanumeric or space characters in ASCII or
+is empty.</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>alpha_space</p></td>
 <td><p>No</p></td>
 <td><p>Fails if field contains anything other than
-alphabetic characters or spaces in ASCII.</p></td>
+alphabetic characters or spaces in ASCII or
+is empty.</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>decimal</p></td>
@@ -1899,7 +1901,9 @@ numeric characters.</p></td>
 <tr class="row-odd"><td><p>permit_empty</p></td>
 <td><p>No</p></td>
 <td><p>Allows the field to receive an empty array,
-empty string, null or false.</p></td>
+empty string, null or false. On success, it
+skips all other validation rules except for
+required_with and required_without.</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>regex_match</p></td>
@@ -2142,7 +2146,7 @@ an image based on the mime type.</p></td>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2025 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Aug 02, 2025.
+      <span class="lastupdated">Last updated on Dec 12, 2025.
       </span></p>
   </div>
 
