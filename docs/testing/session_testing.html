@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session Testing &mdash; CodeIgniter 4.6.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/js/citheme.js"></script>
+        <script src="../_static/js/carbon.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command Line Usage" href="../cli/index.html" />
+    <link rel="prev" title="Debugging Your Application" href="debugging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/ci-logo-text.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html">Welcome to CodeIgniter4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/requirements.html">Server Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/credits.html">Credits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/psr.html">PSR Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../license.html">License Agreement</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/deployment.html">Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">CodeIgniter4 Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/structure.html">Application Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/mvc.html">Models, Views, and Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/autoloader.html">Autoloading Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/factories.html">Factories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/http.html">Working with HTTP Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/security.html">Security Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../concepts/goals.html">Design and Architectural Goals</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/logging.html">Logging Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">Web Page Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ajax.html">AJAX Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/modules.html">Code Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">Handling Multiple Environments</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/auto_routing_improved.html">Auto Routing (Improved)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/incomingrequest.html">IncomingRequest Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/content_negotiation.html">Content Negotiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/methodspoofing.html">HTTP Method Spoofing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/restful.html">RESTful Resource Handling</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../outgoing/index.html">Building Responses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/csp.html">Content Security Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/localization.html">Localization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outgoing/alternative_php.html">Alternate PHP Syntax for View Files</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Working with Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">Quick Start: Usage Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">Connecting to a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">Running Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">Generating Query Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">Query Helper Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">Query Builder Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">Getting Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">Custom Function Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/events.html">Database Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">Database Utilities</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../models/index.html">Modeling Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../models/model.html">Using CodeIgniter's Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/entities.html">Using Entity Classes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dbmgmt/index.html">Managing Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/forge.html">Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/migration.html">Database Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/seeds.html">Database Seeding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dbmgmt/db_commands.html">Database Commands</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Library Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cookies.html">Cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cors.html">Cross-Origin Resource Sharing (CORS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/files.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_collections.html">File Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/honeypot.html">Honeypot Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/images.html">Image Manipulation Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/publisher.html">Publisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/throttler.html">Throttler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/time.html">Times and Dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">Typography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">Working with URIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/validation.html">Validation</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">Date Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/filesystem_helper.html">Filesystem Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">Form Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">Inflector Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">Number Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/test_helper.html">Test Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML Helper</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Testing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fabricator.html">Generating Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controller Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature.html">HTTP Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response.html">Testing Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Testing CLI Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mocking.html">Mocking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session Testing</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/index.html">Command Line Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_overview.html">CLI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_controllers.html">Running Controllers via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/spark_commands.html">Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_commands.html">Creating Spark Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_generators.html">CLI Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_library.html">CLI Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/cli_request.html">CLIRequest Class</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../extending/index.html">Extending CodeIgniter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extending/core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/common.html">Replacing Common Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/basecontroller.html">Extending the Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/composer_packages.html">Creating Composer Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extending/contributing.html">Contributing to CodeIgniter</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/official_packages.html">Official Packages</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Testing</a></li>
+      <li class="breadcrumb-item active">Session Testing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="session-testing">
+<h1>Session Testing<a class="headerlink" href="#session-testing" title="Permalink to this heading"></a></h1>
+<p>Testing session behavior in your application is made simple with the ArrayHandler session driver.
+Unlike other session drivers, ArrayHandler does not persist data to disk, database, or external storage.
+This allows you to simulate session interactions safely during unit or integration tests, without affecting real session data.</p>
+<p>Using this driver, you can set, retrieve, and assert session data entirely in memory, making your tests faster and more isolated.
+While in most production scenarios you would use file, database, or cache-backed sessions, ArrayHandler exists specifically to support testing workflows and prevent side effects.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#initializing-sessions" id="id1">Initializing Sessions</a></p></li>
+<li><p><a class="reference internal" href="#setting-and-retrieving-data" id="id2">Setting and Retrieving Data</a></p></li>
+<li><p><a class="reference internal" href="#example-test-case" id="id3">Example Test Case</a></p></li>
+<li><p><a class="reference internal" href="#session-assertions" id="id4">Session Assertions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-phpunit-assertions-with-arrayhandler" id="id5">Using PHPUnit Assertions with ArrayHandler</a></p></li>
+<li><p><a class="reference internal" href="#session-assertions-via-testresponse" id="id6">Session Assertions via TestResponse</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#custom-session-values" id="id7">Custom Session Values</a></p></li>
+</ul>
+</nav>
+<section id="initializing-sessions">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Initializing Sessions</a><a class="headerlink" href="#initializing-sessions" title="Permalink to this heading"></a></h2>
+<p>You can initialize a session using the ArrayHandler driver for testing. This example shows how to create a session instance with a proper configuration:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Session\Handlers\ArrayHandler</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Session\Session</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Config\Session</span> <span class="k">as</span> <span class="nx">SessionConfig</span><span class="p">;</span>
+
+<span class="c1">// Load session config</span>
+<span class="nv">$config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">(</span><span class="nx">SessionConfig</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+<span class="c1">// Initialize ArrayHandler with config and optional IP</span>
+<span class="nv">$arrayHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ArrayHandler</span><span class="p">(</span><span class="nv">$config</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">);</span>
+
+<span class="c1">// Create session instance for testing</span>
+<span class="nv">$testSession</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="nv">$arrayHandler</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-and-retrieving-data">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Setting and Retrieving Data</a><a class="headerlink" href="#setting-and-retrieving-data" title="Permalink to this heading"></a></h2>
+<p>Once initialized, you can set session values and retrieve them as usual:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Set session data</span>
+<span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">,</span> <span class="s1">&#39;CodeIgniter4&#39;</span><span class="p">);</span>
+
+<span class="c1">// Retrieve session data</span>
+<span class="k">echo</span> <span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">);</span> <span class="c1">// outputs &#39;CodeIgniter4&#39;</span>
+
+<span class="c1">// Remove session data</span>
+<span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">remove</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Session data is stored in memory and lasts as long as the ArrayHandler object exists;
+after the object is destroyed (typically at the end of a request or test), the data is lost.</p>
+</div>
+</section>
+<section id="example-test-case">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Example Test Case</a><a class="headerlink" href="#example-test-case" title="Permalink to this heading"></a></h2>
+<p>Here’s a simple example demonstrating usage of the ArrayHandler in a PHPUnit test:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\Session\Handlers\ArrayHandler</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Session\Session</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Config\Session</span> <span class="k">as</span> <span class="nx">SessionConfig</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SessionTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nx">Session</span> <span class="nv">$testSession</span><span class="p">;</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
+
+        <span class="c1">// Load session configuration</span>
+        <span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SessionConfig</span><span class="p">();</span>
+
+        <span class="c1">// Initialize ArrayHandler with config</span>
+        <span class="nv">$arrayHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ArrayHandler</span><span class="p">(</span><span class="nv">$config</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">);</span>
+
+        <span class="c1">// Create session instance</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">testSession</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="nv">$arrayHandler</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testFrameworkNameInSession</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// Set a session value</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">testSession</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">,</span> <span class="s1">&#39;CodeIgniter&#39;</span><span class="p">);</span>
+
+        <span class="c1">// Assert the value exists and is correct</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="s1">&#39;CodeIgniter&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">testSession</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">));</span>
+
+        <span class="c1">// Remove the session value</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">testSession</span><span class="o">-&gt;</span><span class="na">remove</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNull</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">testSession</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="session-assertions">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Session Assertions</a><a class="headerlink" href="#session-assertions" title="Permalink to this heading"></a></h2>
+<section id="using-phpunit-assertions-with-arrayhandler">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Using PHPUnit Assertions with ArrayHandler</a><a class="headerlink" href="#using-phpunit-assertions-with-arrayhandler" title="Permalink to this heading"></a></h3>
+<p>When testing sessions directly with Session and ArrayHandler in a unit test, use standard PHPUnit assertions.
+<code class="docutils literal notranslate"><span class="pre">assertSessionHas()</span></code> and <code class="docutils literal notranslate"><span class="pre">assertSessionMissing()</span></code> are not available in this context because you are interacting directly with the session object,
+not a response object.</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="c1">// Set a session value</span>
+<span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">,</span> <span class="s1">&#39;CodeIgniter4&#39;</span><span class="p">);</span>
+
+<span class="c1">// Assert the state of the session using PHPUnit assertions</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="s1">&#39;CodeIgniter4&#39;</span><span class="p">,</span> <span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">));</span> <span class="c1">// Value exists</span>
+
+<span class="c1">// Not empty</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNotEmpty</span><span class="p">(</span><span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">));</span>
+
+<span class="c1">// Remove the value and assert it&#39;s gone</span>
+<span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">remove</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">);</span>
+
+<span class="c1">// Should be null</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertNull</span><span class="p">(</span><span class="nv">$testSession</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</section>
+<section id="session-assertions-via-testresponse">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Session Assertions via TestResponse</a><a class="headerlink" href="#session-assertions-via-testresponse" title="Permalink to this heading"></a></h3>
+<p>When testing controllers or HTTP responses, you can use CodeIgniter 4’s session
+assertion helpers, such as <code class="docutils literal notranslate"><span class="pre">assertSessionHas()</span></code> and <code class="docutils literal notranslate"><span class="pre">assertSessionMissing()</span></code>,
+which are available on the <code class="docutils literal notranslate"><span class="pre">TestResponse</span></code> object. These helpers allow you to
+assert the state of the session during the HTTP request/response lifecycle.
+See more: <a class="reference internal" href="response.html#response-session-assertions"><span class="std std-ref">Session Assertions</span></a></p>
+</section>
+</section>
+<section id="custom-session-values">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Custom Session Values</a><a class="headerlink" href="#custom-session-values" title="Permalink to this heading"></a></h2>
+<p>In Feature Tests, you can provide custom session data for a single test using the <code class="docutils literal notranslate"><span class="pre">withSession()</span></code> method.
+This allows you to simulate session states such as logged-in users or specific roles during the request.
+For full details and examples, see: <a class="reference internal" href="feature.html#feature-setting-session-values"><span class="std std-ref">Setting Session Values</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="debugging.html" class="btn btn-neutral float-left" title="Debugging Your Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../cli/index.html" class="btn btn-neutral float-right" title="Command Line Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
+      <span class="lastupdated">Last updated on Feb 01, 2026.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
