@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Times and Dates &mdash; CodeIgniter 4.7.2 documentation</title>
+  <title>Times and Dates &mdash; CodeIgniter 4.7.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,11 +15,12 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9b38edc8"></script>
+      <script src="../_static/documentation_options.js?v=fff73d8c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
       <script src="../_static/js/carbon.js?v=b287325f"></script>
+      <script src="../_static/js/version_switcher.js?v=124a45e9"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -1019,7 +1020,12 @@ a timezone string in as the second parameter. If no timezone is given, the syste
 </div>
 <p>Determines if the current instance’s time is in the past, relative to “now”.
 It returns a boolean true/false:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nx">literalinclude</span><span class="o">::</span> <span class="na">time</span><span class="o">/</span><span class="mf">043.</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\I18n\Time</span><span class="p">;</span>
+
+<span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;yesterday&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">isPast</span><span class="p">();</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 </section>
@@ -1030,7 +1036,12 @@ It returns a boolean true/false:</p>
 </div>
 <p>Determines if the current instance’s time is in the future, relative to “now”.
 It returns a boolean true/false:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nx">literalinclude</span><span class="o">::</span> <span class="na">time</span><span class="o">/</span><span class="mf">044.</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">use</span> <span class="nx">CodeIgniter\I18n\Time</span><span class="p">;</span>
+
+<span class="nv">$time</span> <span class="o">=</span> <span class="nx">Time</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">&#39;tomorrow&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$time</span><span class="o">-&gt;</span><span class="na">isFuture</span><span class="p">();</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 </section>
@@ -1177,7 +1188,7 @@ If you want to overwrite them, create <strong>app/Language/{locale}/Time.php</st
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Mar 24, 2026.
+      <span class="lastupdated">Last updated on May 22, 2026.
       </span></p>
   </div>
 

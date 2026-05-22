@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Managing your Applications &mdash; CodeIgniter 4.7.2 documentation</title>
+  <title>Managing your Applications &mdash; CodeIgniter 4.7.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,11 +15,12 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=9b38edc8"></script>
+      <script src="../_static/documentation_options.js?v=fff73d8c"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
       <script src="../_static/js/carbon.js?v=b287325f"></script>
+      <script src="../_static/js/version_switcher.js?v=124a45e9"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -306,7 +307,7 @@ rename or relocate your application directory.</p>
 <p>If you would like to rename your application directory or even move
 it to a different location on your server, other than your project root, open
 your main <strong>app/Config/Paths.php</strong> and set a <em>full server path</em> in the
-<code class="docutils literal notranslate"><span class="pre">$appDirectory</span></code> variable (at about line 44):</p>
+<code class="docutils literal notranslate"><span class="pre">$appDirectory</span></code> variable (at about line 45):</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
@@ -315,7 +316,7 @@ your main <strong>app/Config/Paths.php</strong> and set a <em>full server path</
 <span class="p">{</span>
     <span class="c1">// ...</span>
 
-    <span class="k">public</span> <span class="nv">$appDirectory</span> <span class="o">=</span> <span class="s1">&#39;/path/to/your/app&#39;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nx">string</span> <span class="nv">$appDirectory</span> <span class="o">=</span> <span class="s1">&#39;/path/to/your/app&#39;</span><span class="p">;</span>
 
     <span class="c1">// ...</span>
 <span class="p">}</span>
@@ -343,23 +344,23 @@ they can find the <strong>Paths</strong> configuration file:</p>
 <p>If you would like to share a common CodeIgniter framework installation, to manage
 several different applications, simply put all of the directories located
 inside your application directory into their own (sub)-directory.</p>
-<p>For example, let’s say you want to create two applications, named <strong>foo</strong>
-and <strong>bar</strong>. You could structure your application project directories like this:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>foo/
+<p>For example, let’s say you want to create two applications, named <strong>blog</strong>
+and <strong>shop</strong>. You could structure your application project directories like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>blog/
     app/
     public/
     tests/
     writable/
     env
-    phpunit.xml.dist
+    phpunit.dist.xml
     spark
-bar/
+shop/
     app/
     public/
     tests/
     writable/
     env
-    phpunit.xml.dist
+    phpunit.dist.xml
     spark
 vendor/
     autoload.php
@@ -371,13 +372,13 @@ composer.lock
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you install CodeIgniter from the Zip file, the directory structure would be following:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>foo/
-bar/
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>blog/
+shop/
 codeigniter4/system/
 </pre></div>
 </div>
 </div>
-<p>This would have two apps, <strong>foo</strong> and <strong>bar</strong>, both having standard application directories
+<p>This would have two apps, <strong>blog</strong> and <strong>shop</strong>, both having standard application directories
 and a <strong>public</strong> folder, and sharing a common <strong>codeigniter4/framework</strong>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">$systemDirectory</span></code> variable in <strong>app/Config/Paths.php</strong> inside each
 of those would be set to refer to the shared common <strong>codeigniter4/framework</strong> folder:</p>
@@ -395,16 +396,17 @@ of those would be set to refer to the shared common <strong>codeigniter4/framewo
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you install CodeIgniter from the Zip file, the <code class="docutils literal notranslate"><span class="pre">$systemDirectory</span></code> would be <code class="docutils literal notranslate"><span class="pre">__DIR__</span> <span class="pre">.</span> <span class="pre">'/../../../codeigniter4/system'</span></code>.</p>
-</div>
 <p>And modify the <code class="docutils literal notranslate"><span class="pre">COMPOSER_PATH</span></code> constant in <strong>app/Config/Constants.php</strong> inside each
 of those:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;COMPOSER_PATH&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;COMPOSER_PATH&#39;</span><span class="p">,</span> <span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">&#39;../vendor/autoload.php&#39;</span><span class="p">);</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you install CodeIgniter from the Zip file, the <code class="docutils literal notranslate"><span class="pre">$systemDirectory</span></code> would be <code class="docutils literal notranslate"><span class="pre">__DIR__</span> <span class="pre">.</span> <span class="pre">'/../../../codeigniter4/system'</span></code>.
+If you don’t use Composer, you don’t have to edit the <code class="docutils literal notranslate"><span class="pre">COMPOSER_PATH</span></code>.</p>
 </div>
 <p>Only when you change the Application Directory, see <a class="reference internal" href="#renaming-app-directory"><span class="std std-ref">Renaming or Relocating the Application Directory</span></a> and modify the paths in the <strong>index.php</strong> and <strong>spark</strong>.</p>
 </section>
@@ -440,7 +442,7 @@ database, mail server, or third-party APIs.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Mar 24, 2026.
+      <span class="lastupdated">Last updated on May 22, 2026.
       </span></p>
   </div>
 
