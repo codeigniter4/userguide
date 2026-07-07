@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IncomingRequest Class &mdash; CodeIgniter 4.7.3 documentation</title>
+  <title>IncomingRequest Class &mdash; CodeIgniter 4.7.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=fff73d8c"></script>
+      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -450,6 +450,21 @@ string (i.e., <code class="docutils literal notranslate"><span class="pre">'get'
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">X-Forwarded-Proto</span></code> and <code class="docutils literal notranslate"><span class="pre">Front-End-Https</span></code> headers are taken
+into account only when the request comes from a trusted proxy configured in
+<code class="docutils literal notranslate"><span class="pre">Config\App::$proxyIPs</span></code>. Otherwise, they are client-supplied and could be
+spoofed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On dual-stack servers, a proxy’s IPv4 address may be reported as an
+IPv4-mapped IPv6 address (e.g., <code class="docutils literal notranslate"><span class="pre">::ffff:192.168.5.21</span></code>), which does not
+match an IPv4 entry such as <code class="docutils literal notranslate"><span class="pre">192.168.5.0/24</span></code>. In that case, add the
+IPv4-mapped form to <code class="docutils literal notranslate"><span class="pre">Config\App::$proxyIPs</span></code>, e.g.,
+<code class="docutils literal notranslate"><span class="pre">::ffff:192.168.5.21</span></code> or <code class="docutils literal notranslate"><span class="pre">::ffff:192.168.5.0/120</span></code>.</p>
+</div>
 </section>
 </section>
 <section id="retrieving-input">
@@ -873,6 +888,12 @@ multi-file upload, based on the filename given in the HTML file input:</p>
 <dd class="field-even"><p><span><code class="xref php php-obj docutils literal notranslate"><span class="pre">bool</span></code></span></p>
 </dd>
 </dl>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">X-Forwarded-Proto</span></code> and <code class="docutils literal notranslate"><span class="pre">Front-End-Https</span></code> headers
+are taken into account only when the request comes from a trusted
+proxy configured in <code class="docutils literal notranslate"><span class="pre">Config\App::$proxyIPs</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="php method">
@@ -910,7 +931,7 @@ another, more appropriate method.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|string</span></code></span>) – The name of the variable/key to look for, or an array of names.</p></li>
 <li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be found in
 <a class="reference external" href="https://www.php.net/manual/en/filters.php">Types of filters</a>.</p></li>
 <li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found in
@@ -970,7 +991,7 @@ the filter type to apply:</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|string</span></code></span>) – The name of the variable/key to look for, or an array of names.</p></li>
 <li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be
 found <a class="reference external" href="https://www.php.net/manual/en/filters.php">here</a>.</p></li>
 <li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found
@@ -993,7 +1014,7 @@ found <a class="reference external" href="https://www.php.net/manual/en/filters.
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|string</span></code></span>) – The name of the variable/key to look for, or an array of names.</p></li>
 <li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be found in
 <a class="reference external" href="https://www.php.net/manual/en/filters.php">Types of filters</a>.</p></li>
 <li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found in
@@ -1016,6 +1037,8 @@ then in GET:</p>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getPostGet</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>If an array of indexes is specified, the method returns an associative array and applies
+the POST-then-GET lookup order to each index.</p>
 <p>If no index is specified, it will return both POST and GET streams combined.
 Although POST data will be preferred in case of name conflict.</p>
 </dd></dl>
@@ -1026,7 +1049,7 @@ Although POST data will be preferred in case of name conflict.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">string</span></code></span>) – The name of the variable/key to look for.</p></li>
+<li><p><strong>$index</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">array|string</span></code></span>) – The name of the variable/key to look for, or an array of names.</p></li>
 <li><p><strong>$filter</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The type of filter to apply. A list of filters can be found in
 <a class="reference external" href="https://www.php.net/manual/en/filters.php">Types of filters</a>.</p></li>
 <li><p><strong>$flags</strong> (<span><code class="xref php php-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Flags to apply. A list of flags can be found in
@@ -1049,6 +1072,8 @@ then in POST:</p>
 <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getGetPost</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>If an array of indexes is specified, the method returns an associative array and applies
+the GET-then-POST lookup order to each index.</p>
 <p>If no index is specified, it will return both GET and POST streams combined.
 Although GET data will be preferred in case of name conflict.</p>
 </dd></dl>
@@ -1186,7 +1211,7 @@ the complete App configuration for base URLs.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on May 22, 2026.
+      <span class="lastupdated">Last updated on Jul 07, 2026.
       </span></p>
   </div>
 

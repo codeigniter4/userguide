@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Resources &mdash; CodeIgniter 4.7.3 documentation</title>
+  <title>API Resources &mdash; CodeIgniter 4.7.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=fff73d8c"></script>
+      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -411,7 +411,7 @@ also rename or transform values as needed.</p>
 <p>Creates <strong>app/Transformers/UserTransformer.php</strong></p>
 </dd>
 <dt><strong>–namespace</strong></dt><dd><p>Specifies a custom root namespace:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">php spark make:transformer User --namespace=&quot;MyCompany\\API&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">php spark make:transformer User --namespace MyCompany\API</span>
 </pre></div>
 </div>
 </dd>
@@ -609,6 +609,16 @@ The <code class="docutils literal notranslate"><span class="pre">$this-&gt;resou
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">fields</span></code> and <code class="docutils literal notranslate"><span class="pre">include</span></code> query parameters describe the <strong>root</strong> resource only.
+Transformers instantiated inside an <code class="docutils literal notranslate"><span class="pre">include*()</span></code> method (such as <code class="docutils literal notranslate"><span class="pre">PostTransformer</span></code> above)
+are treated as nested resources: when created <strong>without an explicit request</strong> they do <strong>not</strong>
+inherit the root request’s <code class="docutils literal notranslate"><span class="pre">fields</span></code>/<code class="docutils literal notranslate"><span class="pre">include</span></code> state. This prevents the parent’s query
+parameters from leaking into related resources, which could otherwise cause incorrect field
+filtering or unexpected/recursive includes. If you deliberately pass a request to a nested
+transformer, that request’s scope is honored.</p>
 </div>
 </section>
 <section id="restricting-available-includes">
@@ -837,6 +847,15 @@ method to get the data:</p>
 </dd>
 </dl>
 <p>Initializes the transformer and extracts the <code class="docutils literal notranslate"><span class="pre">fields</span></code> and <code class="docutils literal notranslate"><span class="pre">include</span></code> query parameters from the request.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When no request is explicitly passed, the global request’s <code class="docutils literal notranslate"><span class="pre">fields</span></code> and <code class="docutils literal notranslate"><span class="pre">include</span></code>
+are read <strong>only for the root transformer</strong>. A transformer constructed during a nested
+transformation (i.e. inside an <code class="docutils literal notranslate"><span class="pre">include*()</span></code> method) without an explicit request still uses
+the global request object, but does not read <code class="docutils literal notranslate"><span class="pre">fields</span></code>/<code class="docutils literal notranslate"><span class="pre">include</span></code> from it, to avoid leaking
+the root’s scope. Passing an explicit request always applies that request’s scope, regardless
+of nesting.</p>
+</div>
 </dd></dl>
 
 <dl class="php method">
@@ -1144,7 +1163,7 @@ requested includes have proper handler methods defined.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on May 22, 2026.
+      <span class="lastupdated">Last updated on Jul 07, 2026.
       </span></p>
   </div>
 
