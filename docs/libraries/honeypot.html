@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Honeypot Class &mdash; CodeIgniter 4.7.4 documentation</title>
+  <title>Honeypot Class &mdash; CodeIgniter 4.7.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
+      <script src="../_static/documentation_options.js?v=7e26da55"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -293,7 +293,8 @@
 <p>The Honeypot Class makes it possible to determine when a Bot makes a request to a CodeIgniter4 application,
 if it’s enabled in <strong>app/Config/Filters.php</strong> file. This is done by attaching form fields to any form,
 and this form field is hidden from a human but accessible to a Bot. When data is entered into the field, it’s
-assumed the request is coming from a Bot, and you can throw a <code class="docutils literal notranslate"><span class="pre">HoneypotException</span></code>.</p>
+assumed the request is coming from a Bot. The bundled Honeypot filter throws a <code class="docutils literal notranslate"><span class="pre">HoneypotException</span></code> with
+an HTTP status code of 403 (Forbidden).</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#enabling-honeypot" id="id1">Enabling Honeypot</a></p></li>
@@ -315,15 +316,15 @@ from the <code class="docutils literal notranslate"><span class="pre">$globals</
     <span class="c1">// ...</span>
 
     <span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;honeypot&#39;</span><span class="p">,</span>
-            <span class="c1">// &#39;csrf&#39;,</span>
-            <span class="c1">// &#39;invalidchars&#39;,</span>
+        <span class="s1">'before'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'honeypot'</span><span class="p">,</span>
+            <span class="c1">// 'csrf',</span>
+            <span class="c1">// 'invalidchars',</span>
         <span class="p">],</span>
-        <span class="s1">&#39;after&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;toolbar&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;honeypot&#39;</span><span class="p">,</span>
-            <span class="c1">// &#39;secureheaders&#39;,</span>
+        <span class="s1">'after'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'toolbar'</span><span class="p">,</span>
+            <span class="s1">'honeypot'</span><span class="p">,</span>
+            <span class="c1">// 'secureheaders',</span>
         <span class="p">],</span>
     <span class="p">];</span>
 
@@ -363,7 +364,7 @@ If you enables CSP, you can remove <code class="docutils literal notranslate"><s
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 07, 2026.
+      <span class="lastupdated">Last updated on Oct 09, 2026.
       </span></p>
   </div>
 

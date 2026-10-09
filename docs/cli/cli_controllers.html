@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Running Controllers via CLI &mdash; CodeIgniter 4.7.4 documentation</title>
+  <title>Running Controllers via CLI &mdash; CodeIgniter 4.7.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
+      <script src="../_static/documentation_options.js?v=7e26da55"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -327,9 +327,9 @@ in it:</p>
 
 <span class="k">class</span> <span class="nc">Tools</span> <span class="k">extends</span> <span class="nx">Controller</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">message</span><span class="p">(</span><span class="nv">$to</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">message</span><span class="p">(</span><span class="nv">$to</span> <span class="o">=</span> <span class="s1">'World'</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="s2">&quot;Hello </span><span class="si">{</span><span class="nv">$to</span><span class="si">}</span><span class="s2">!&quot;</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s2">"Hello </span><span class="si">{</span><span class="nv">$to</span><span class="si">}</span><span class="s2">!"</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -349,7 +349,7 @@ the CLI as easily as you would create any other route. Instead of using the <cod
 works exactly like a normal route definition:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">cli</span><span class="p">(</span><span class="s1">&#39;tools/message/(:segment)&#39;</span><span class="p">,</span> <span class="s1">&#39;Tools::message/$1&#39;</span><span class="p">);</span>
+<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">cli</span><span class="p">(</span><span class="s1">'tools/message/(:segment)'</span><span class="p">,</span> <span class="s1">'Tools::message/$1'</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>For more information, see the <a class="reference internal" href="../incoming/routing.html#command-line-only-routes"><span class="std std-ref">Routes</span></a> page.</p>
@@ -372,7 +372,7 @@ $<span class="w"> </span>php<span class="w"> </span>index.php<span class="w"> </
 </pre></div>
 </div>
 <p>If you did it right, you should see “Hello World!” printed.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>php<span class="w"> </span>index.php<span class="w"> </span>tools<span class="w"> </span>message<span class="w"> </span><span class="s2">&quot;John Smith&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>php<span class="w"> </span>index.php<span class="w"> </span>tools<span class="w"> </span>message<span class="w"> </span><span class="s2">"John Smith"</span>
 </pre></div>
 </div>
 <p>Here we are passing it an argument in the same way that URL parameters
@@ -410,7 +410,7 @@ you with CLI-only tools.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 07, 2026.
+      <span class="lastupdated">Last updated on Oct 09, 2026.
       </span></p>
   </div>
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrading from 4.2.0 to 4.2.1 &mdash; CodeIgniter 4.7.4 documentation</title>
+  <title>Upgrading from 4.2.0 to 4.2.1 &mdash; CodeIgniter 4.7.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
+      <script src="../_static/documentation_options.js?v=7e26da55"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -334,20 +334,20 @@
 <p>If there is a cookie with a prefixed name and a cookie with the same name without a prefix, the previous <code class="docutils literal notranslate"><span class="pre">get_cookie()</span></code> had the tricky behavior of returning the cookie without the prefix.</p>
 <p>For example, when <code class="docutils literal notranslate"><span class="pre">Config\Cookie::$prefix</span></code> is <code class="docutils literal notranslate"><span class="pre">prefix_</span></code>, there are two cookies, <code class="docutils literal notranslate"><span class="pre">test</span></code> and <code class="docutils literal notranslate"><span class="pre">prefix_test</span></code>:</p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$_COOKIES = [</span>
-<span class="x">    &#39;test&#39;        =&gt; &#39;Non CI Cookie&#39;,</span>
-<span class="x">    &#39;prefix_test&#39; =&gt; &#39;CI Cookie&#39;,</span>
+<span class="x">    'test'        =&gt; 'Non CI Cookie',</span>
+<span class="x">    'prefix_test' =&gt; 'CI Cookie',</span>
 <span class="x">];</span>
 </pre></div>
 </div>
 <p>Previously, <code class="docutils literal notranslate"><span class="pre">get_cookie()</span></code> returns the following:</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">get_cookie(&#39;test&#39;);        // returns &quot;Non CI Cookie&quot;</span>
-<span class="x">get_cookie(&#39;prefix_test&#39;); // returns &quot;CI Cookie&quot;</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">get_cookie('test');        // returns "Non CI Cookie"</span>
+<span class="x">get_cookie('prefix_test'); // returns "CI Cookie"</span>
 </pre></div>
 </div>
 <p>Now the behavior has been fixed as a bug, and has been changed like the following.</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">get_cookie(&#39;test&#39;);              // returns &quot;CI Cookie&quot;</span>
-<span class="x">get_cookie(&#39;prefix_test&#39;);       // returns null</span>
-<span class="x">get_cookie(&#39;test&#39;, false, null); // returns &quot;Non CI Cookie&quot;</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">get_cookie('test');              // returns "CI Cookie"</span>
+<span class="x">get_cookie('prefix_test');       // returns null</span>
+<span class="x">get_cookie('test', false, null); // returns "Non CI Cookie"</span>
 </pre></div>
 </div>
 <p>If you depend on the previous behavior, you need to change your code.</p>
@@ -399,7 +399,7 @@ many will be simple comments or formatting that have no effect on the runtime:</
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 07, 2026.
+      <span class="lastupdated">Last updated on Oct 09, 2026.
       </span></p>
   </div>
 

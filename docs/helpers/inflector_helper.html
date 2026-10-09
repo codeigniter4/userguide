@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inflector Helper &mdash; CodeIgniter 4.7.4 documentation</title>
+  <title>Inflector Helper &mdash; CodeIgniter 4.7.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
+      <script src="../_static/documentation_options.js?v=7e26da55"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -303,7 +303,7 @@
 <p>This helper is loaded using the following code:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;inflector&#39;</span><span class="p">);</span>
+<span class="nx">helper</span><span class="p">(</span><span class="s1">'inflector'</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -329,7 +329,7 @@
 <p>Changes a plural word to singular. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">&#39;dogs&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dog&#39;</span>
+<span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">'dogs'</span><span class="p">);</span> <span class="c1">// Prints 'dog'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -353,7 +353,7 @@
 <p>Changes a singular word to plural. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;dogs&#39;</span>
+<span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">'dog'</span><span class="p">);</span> <span class="c1">// Prints 'dogs'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -378,7 +378,7 @@
 <p>Changes a word and its count to a phrase. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">counted</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;3 dogs&#39;</span>
+<span class="k">echo</span> <span class="nx">counted</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'dog'</span><span class="p">);</span> <span class="c1">// Prints '3 dogs'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -403,7 +403,7 @@
 case. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;myDogSpot&#39;</span>
+<span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">'my_dog_spot'</span><span class="p">);</span> <span class="c1">// Prints 'myDogSpot'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -428,7 +428,7 @@ case. Example:</p>
 case, which is camel case with the first letter capitalized. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">pascalize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;MyDogSpot&#39;</span>
+<span class="k">echo</span> <span class="nx">pascalize</span><span class="p">(</span><span class="s1">'my_dog_spot'</span><span class="p">);</span> <span class="c1">// Prints 'MyDogSpot'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -453,7 +453,7 @@ case, which is camel case with the first letter capitalized. Example:</p>
 Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">&#39;my dog spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;my_dog_spot&#39;</span>
+<span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">'my dog spot'</span><span class="p">);</span> <span class="c1">// Prints 'my_dog_spot'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -478,7 +478,7 @@ Example:</p>
 Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">decamelize</span><span class="p">(</span><span class="s1">&#39;myDogSpot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;my_dog_spot&#39;</span>
+<span class="k">echo</span> <span class="nx">decamelize</span><span class="p">(</span><span class="s1">'myDogSpot'</span><span class="p">);</span> <span class="c1">// Prints 'my_dog_spot'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -505,13 +505,13 @@ them. Each word is capitalized.</p>
 <p>Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
+<span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">'my_dog_spot'</span><span class="p">);</span> <span class="c1">// Prints 'My Dog Spot'</span>
 </pre></div>
 </div>
 <p>To use dashes instead of underscores:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my-dog-spot&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
+<span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">'my-dog-spot'</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">);</span> <span class="c1">// Prints 'My Dog Spot'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -535,7 +535,7 @@ them. Each word is capitalized.</p>
 <p>Checks if the given word has a plural version. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nx">is_pluralizable</span><span class="p">(</span><span class="s1">&#39;equipment&#39;</span><span class="p">);</span> <span class="c1">// Returns false</span>
+<span class="nx">is_pluralizable</span><span class="p">(</span><span class="s1">'equipment'</span><span class="p">);</span> <span class="c1">// Returns false</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -559,7 +559,7 @@ them. Each word is capitalized.</p>
 <p>Replaces underscores with dashes in the string. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nx">dasherize</span><span class="p">(</span><span class="s1">&#39;hello_world&#39;</span><span class="p">);</span> <span class="c1">// Returns &#39;hello-world&#39;</span>
+<span class="nx">dasherize</span><span class="p">(</span><span class="s1">'hello_world'</span><span class="p">);</span> <span class="c1">// Returns 'hello-world'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -585,7 +585,7 @@ number to denote the position such as
 1st, 2nd, 3rd, 4th. Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nx">ordinal</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Returns &#39;st&#39;</span>
+<span class="nx">ordinal</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Returns 'st'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -611,7 +611,7 @@ to denote the position such as 1st, 2nd, 3rd, 4th.
 Example:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-<span class="nx">ordinalize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Returns &#39;1st&#39;</span>
+<span class="nx">ordinalize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// Returns '1st'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -631,7 +631,7 @@ Example:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 07, 2026.
+      <span class="lastupdated">Last updated on Oct 09, 2026.
       </span></p>
   </div>
 

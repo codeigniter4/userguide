@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrade Localization &mdash; CodeIgniter 4.7.4 documentation</title>
+  <title>Upgrade Localization &mdash; CodeIgniter 4.7.5 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=1ae90a11"></script>
+      <script src="../_static/documentation_options.js?v=7e26da55"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
@@ -332,7 +332,7 @@
 <span class="p">{</span>
     <span class="c1">// ...</span>
 
-    <span class="k">public</span> <span class="nx">string</span> <span class="nv">$defaultLocale</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nx">string</span> <span class="nv">$defaultLocale</span> <span class="o">=</span> <span class="s1">'en'</span><span class="p">;</span>
 
     <span class="c1">// ...</span>
 <span class="p">}</span>
@@ -352,14 +352,14 @@
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// error.php</span>
-<span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;error_email_missing&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="s1">&#39;You must submit an email address&#39;</span><span class="p">;</span>
-<span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;error_url_missing&#39;</span><span class="p">]</span>      <span class="o">=</span> <span class="s1">&#39;You must submit a URL&#39;</span><span class="p">;</span>
-<span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;error_username_missing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;You must submit a username&#39;</span><span class="p">;</span>
+<span class="nv">$lang</span><span class="p">[</span><span class="s1">'error_email_missing'</span><span class="p">]</span>    <span class="o">=</span> <span class="s1">'You must submit an email address'</span><span class="p">;</span>
+<span class="nv">$lang</span><span class="p">[</span><span class="s1">'error_url_missing'</span><span class="p">]</span>      <span class="o">=</span> <span class="s1">'You must submit a URL'</span><span class="p">;</span>
+<span class="nv">$lang</span><span class="p">[</span><span class="s1">'error_username_missing'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'You must submit a username'</span><span class="p">;</span>
 
 <span class="c1">// ...</span>
 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nv">$lang</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">&#39;error_email_missing&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nv">$lang</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">'error_email_missing'</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -369,19 +369,19 @@
 
 <span class="c1">// Errors.php</span>
 <span class="k">return</span> <span class="p">[</span>
-    <span class="s1">&#39;errorEmailMissing&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;You must submit an email address&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;errorURLMissing&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;You must submit a URL&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;errorUsernameMissing&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;You must submit a username&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;nested&#39;</span>               <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="s1">&#39;error&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-            <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;A specific error message&#39;</span><span class="p">,</span>
+    <span class="s1">'errorEmailMissing'</span>    <span class="o">=&gt;</span> <span class="s1">'You must submit an email address'</span><span class="p">,</span>
+    <span class="s1">'errorURLMissing'</span>      <span class="o">=&gt;</span> <span class="s1">'You must submit a URL'</span><span class="p">,</span>
+    <span class="s1">'errorUsernameMissing'</span> <span class="o">=&gt;</span> <span class="s1">'You must submit a username'</span><span class="p">,</span>
+    <span class="s1">'nested'</span>               <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">'error'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'A specific error message'</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">],</span>
 <span class="p">];</span>
 
 <span class="c1">// ...</span>
 
-<span class="k">echo</span> <span class="nx">lang</span><span class="p">(</span><span class="s1">&#39;Errors.errorEmailMissing&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nx">lang</span><span class="p">(</span><span class="s1">'Errors.errorEmailMissing'</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -400,7 +400,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Jul 07, 2026.
+      <span class="lastupdated">Last updated on Oct 09, 2026.
       </span></p>
   </div>
 
