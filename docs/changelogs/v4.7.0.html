@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Version 4.7.0 &mdash; CodeIgniter 4.7.5 documentation</title>
+  <title>Version 4.7.0 &mdash; CodeIgniter 4.7.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme.css?v=eacb1234" />
       <link rel="stylesheet" type="text/css" href="../_static/css/citheme_dark.css?v=2b70fae9" />
@@ -15,12 +15,12 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=7e26da55"></script>
+      <script src="../_static/documentation_options.js?v=d376aa99"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/js/citheme.js?v=e0bcfc84"></script>
       <script src="../_static/js/carbon.js?v=b287325f"></script>
-      <script src="../_static/js/version_switcher.js?v=124a45e9"></script>
+      <script src="../_static/js/version_switcher.js?v=2d2083b2"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -637,7 +637,7 @@ service instead of relying on <code class="docutils literal notranslate"><span c
 <li><p><strong>Encryption:</strong> Added <code class="docutils literal notranslate"><span class="pre">Config\Encryption::$previousKeys</span></code> configuration option to support encryption key rotation. When decryption with the current key fails, the system automatically falls back to previous keys, allowing you to rotate encryption keys without losing access to old encrypted data.</p></li>
 <li><p><strong>Image:</strong> The <code class="docutils literal notranslate"><span class="pre">ImageMagickHandler</span></code> has been rewritten to rely solely on the PHP <code class="docutils literal notranslate"><span class="pre">imagick</span></code> extension.</p></li>
 <li><p><strong>Image:</strong> Added <code class="docutils literal notranslate"><span class="pre">ImageMagickHandler::clearMetadata()</span></code> method to remove image metadata for privacy protection.</p></li>
-<li><p><strong>ResponseTrait:</strong> Added <code class="docutils literal notranslate"><span class="pre">paginate`</span></code> method to simplify paginated API responses. See <a class="reference internal" href="../outgoing/api_responses.html#api-response-trait-paginate"><span class="std std-ref">ResponseTrait::paginate()</span></a> for details.</p></li>
+<li><p><strong>ResponseTrait:</strong> Added <code class="docutils literal notranslate"><span class="pre">paginate()</span></code> method to simplify paginated API responses. See <a class="reference internal" href="../outgoing/api_responses.html#api-response-trait-paginate"><span class="std std-ref">ResponseTrait::paginate()</span></a> for details.</p></li>
 <li><p><strong>Session:</strong> Added <code class="docutils literal notranslate"><span class="pre">persistent</span></code> config item to <code class="docutils literal notranslate"><span class="pre">RedisHandler</span></code>.</p></li>
 <li><p><strong>Session:</strong> Added connection persistence for Redis and Memcached session handlers via <code class="docutils literal notranslate"><span class="pre">PersistsConnection</span></code> trait, improving performance in worker mode by reusing connections across requests.</p></li>
 <li><p><strong>Time:</strong> added methods <code class="docutils literal notranslate"><span class="pre">Time::addCalendarMonths()</span></code> and <code class="docutils literal notranslate"><span class="pre">Time::subCalendarMonths()</span></code></p></li>
@@ -789,7 +789,7 @@ for a complete list of bugs fixed.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2019-2026 CodeIgniter Foundation.
-      <span class="lastupdated">Last updated on Oct 09, 2026.
+      <span class="lastupdated">Last updated on Nov 01, 2026.
       </span></p>
   </div>
 
